@@ -9,7 +9,7 @@ namespace Models
     public class Despesas
     {
         public int Id { get; set; }
-        public float Ganhos { get; set; }
-        public string Renda { get; set; }
+        public float Gastos { get; set; }
+        public string Descricao { get; set; }
     }
 }

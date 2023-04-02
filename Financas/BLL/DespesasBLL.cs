@@ -10,17 +10,17 @@ namespace BLL
 {
     public class DespesasBLL
     {
-        public void Inserir(Banco _banco)
+        public void Inserir(Despesas _despesas)
         {
-            new BancoDAL().Inserir(_banco);
+            new DespesasDAL().Inserir(_despesas);
         }
-        public void Alterar(Banco _banco)
+        public void Alterar(Despesas _despesas)
         {
-            new BancoDAL().Alterar(_banco);
+            new DespesasDAL().Alterar(_despesas);
         }
         public void Excluir(int _id)
         {
-            new BancoDAL().Excluir(_id);
+            new DespesasDAL().Excluir(_id);
         }
     }
 }

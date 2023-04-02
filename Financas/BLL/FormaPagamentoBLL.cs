@@ -10,17 +10,17 @@ namespace BLL
 {
     public class FormaPagamentoBLL
     {
-        public void Inserir(Banco _banco)
+        public void Inserir(FormaPagamento _formaPagamento)
         {
-            new BancoDAL().Inserir(_banco);
+            new FormaPagamentoDAL().Inserir(_formaPagamento);
         }
-        public void Alterar(Banco _banco)
+        public void Alterar(FormaPagamento _formaPagamento)
         {
-            new BancoDAL().Alterar(_banco);
+            new FormaPagamentoDAL().Alterar(_formaPagamento);
         }
         public void Excluir(int _id)
         {
-            new BancoDAL().Excluir(_id);
+            new FormaPagamentoDAL().Excluir(_id);
         }
     }
 }

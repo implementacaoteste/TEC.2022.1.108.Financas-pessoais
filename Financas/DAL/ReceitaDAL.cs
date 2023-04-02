@@ -11,16 +11,39 @@ namespace DAL
 {
     public class ReceitaDAL
     {
+        public void Inserir(Receita _receita)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = @"INSERT INTO Receita(Ganhos, Descricao)
+                                    VALUES(@Ganhos, @Descricao)";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Ganhos", _receita.Ganhos);
+                cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu erro ao tentar inserir uma Receita no banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public void Alterar(Receita _receita)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Receita SET Gastos=@Gastos, Descricao=@Descricao WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Receita SET Ganhos=@Ganhos, Descricao=@Descricao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Gastos", _receita.Gastos);
+                cmd.Parameters.AddWithValue("@Ganhos", _receita.Ganhos);
                 cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
                 cmd.Connection = cn;
                 cn.Open();
@@ -71,29 +94,5 @@ namespace DAL
             }
         }
 
-        public void Inserir(Receita _receita)
-        {
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
-            {
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Receita(Gastos, Descricao)
-                                    VALUES(@Gastos, @Descricao)";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Gastos", _receita.Gastos);
-                cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
-                cmd.Connection = cn;
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu erro ao tentar inserir uma Receita no banco de dados", ex);
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
     }
 }
