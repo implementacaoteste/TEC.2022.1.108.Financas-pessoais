@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Receita
+    public class Contato
     {
         public int Id { get; set; }
-        public float Gastos { get; set; }
-        public string Descricao { get; set; }
+        public string Name { get; set; }
+        public string Endereco { get; set; }
+        public int Numero { get;}
     }
 }

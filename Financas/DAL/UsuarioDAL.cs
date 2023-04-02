@@ -170,6 +170,43 @@ namespace DAL
                 cn.Close();
             }
         }
+        public Usuario BuscarPorNomeUsuario(string _nome, string _senha)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Usuario usuario = new Usuario();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome, Senha, Renda FROM Usuario WHERE Nome = @NomeUsuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Nome", _nome);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        usuario = new Usuario();
+                        usuario.Id = Convert.ToInt32(rd["ID"]);
+                        usuario.Nome = rd["Nome"].ToString();
+                        usuario.Renda = rd.GetFloat(rd.GetOrdinal("Renda"));
+                        usuario.Senha = rd["Senha"].ToString();
+
+                    }
+                }
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar os usuários por nome usuário do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public Usuario BuscarPorId(int _id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

@@ -42,7 +42,7 @@ namespace BLL
         }
         public void Altenticar(string _nome, string _senha)
         {
-            Usuario usuario = new UsuarioDAL().BuscarPorNome(_nome);
+            Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_nome, _senha);
             if (_senha == usuario.Senha)
                 Constantes.IdUsuarioLogado = usuario.Id;
             else
