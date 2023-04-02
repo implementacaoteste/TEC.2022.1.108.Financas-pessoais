@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Banco
+    public class ContatoDAL
     {
-
     }
 }

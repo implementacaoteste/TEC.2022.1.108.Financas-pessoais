@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace BLL
 {
-    internal class ContasPagar
+    public class DespesasBLL
     {
     }
 }

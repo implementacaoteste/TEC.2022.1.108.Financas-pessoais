@@ -41,15 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Banco.cs" />
+    <Compile Include="BancoDAL.cs" />
     <Compile Include="Conexao.cs" />
-    <Compile Include="ContasPagar.cs" />
-    <Compile Include="ContasReceber.cs" />
-    <Compile Include="Contato.cs" />
-    <Compile Include="Despesas.cs" />
-    <Compile Include="FormaPagamento.cs" />
+    <Compile Include="ContasPagarDAL.cs" />
+    <Compile Include="ContasReceberDAL.cs" />
+    <Compile Include="ContatoDAL.cs" />
+    <Compile Include="DespesasDAL.cs" />
+    <Compile Include="FormaPagamentoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Receita.cs" />
+    <Compile Include="ReceitaDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>

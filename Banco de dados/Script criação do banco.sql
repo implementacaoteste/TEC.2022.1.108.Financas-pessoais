@@ -92,6 +92,7 @@ IF OBJECT_ID('Banco', 'U') IS NULL
 CREATE TABLE Banco
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
+	Nome VARCHAR(150),
 	IdReceita INT,
 	IdDespesas INT,
 	Saldo FLOAT,
