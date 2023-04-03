@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -93,5 +94,40 @@ namespace DAL
             }
         }
 
+        public Despesas BuscarPorId(int _id)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Despesas despesas = new Despesas();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Gastos, Descricao FROM Despesas WHERE Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", _id);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        despesas = new Despesas();
+                        despesas.Id = Convert.ToInt32(rd["ID"]);
+                        despesas.Gastos = rd.GetFloat(rd.GetOrdinal("Ganhos"));
+                        despesas.Descricao = rd["Descricao"].ToString();
+                    }
+                }
+                return despesas;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as despesas por id do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

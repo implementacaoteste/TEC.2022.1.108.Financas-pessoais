@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -94,5 +95,40 @@ namespace DAL
             }
         }
 
+        public Receita BuscarPorId(int _id)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Receita receita = new Receita();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Ganhos, Descricao FROM Receita WHERE Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", _id);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        receita = new Receita();
+                        receita.Id = Convert.ToInt32(rd["ID"]);
+                        receita.Ganhos = rd.GetFloat(rd.GetOrdinal("Ganhos"));
+                        receita.Descricao = rd["Descricao"].ToString();
+                    }
+                }
+                return receita;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as receitas por id do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

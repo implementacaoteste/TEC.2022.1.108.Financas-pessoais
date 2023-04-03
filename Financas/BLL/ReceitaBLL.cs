@@ -22,5 +22,9 @@ namespace BLL
         {
             new ReceitaDAL().Excluir(_id);
         }
+        public void BuscarPorId(int _id)
+        {
+            new ReceitaDAL().BuscarPorId(_id);
+        }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -59,7 +60,7 @@ namespace DAL
                 cn.Close();
             }
         }
-    
+
 
         public void Excluir(int _id, SqlTransaction _transaction = null)
         {
@@ -96,5 +97,41 @@ namespace DAL
             }
         }
 
+        public Banco BuscarPorId(int _id)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Banco banco = new Banco();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome, Saldo, Poupanca FROM Banco WHERE Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", _id);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        banco = new Banco();
+                        banco.Id = Convert.ToInt32(rd["ID"]);
+                        banco.Nome = rd["Nome"].ToString();
+                        banco.Saldo = rd.GetFloat(rd.GetOrdinal("Saldo"));
+                        banco.Poupanca = rd.GetFloat(rd.GetOrdinal("Poupanca"));
+                    }
+                }
+                return banco;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a pagar por id do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
