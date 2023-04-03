@@ -22,5 +22,9 @@ namespace BLL
         {
             new BancoDAL().Excluir(_id);
         }
+        public void BuscarPorId(int _id)
+        {
+            new BancoDAL().BuscarPorId(_id);
+        }
     }
 }
