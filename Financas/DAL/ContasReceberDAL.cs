@@ -129,5 +129,80 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public List<ContasReceber> BuscarTodos()
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            List<ContasReceber> contaReceber = new List<ContasReceber>();
+            ContasReceber contasReceber;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, ValorReceber, Descricao FROM ContasReceber";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contasReceber = new ContasReceber();
+                        contasReceber.Id = Convert.ToInt32(rd["Id"]);
+                        contasReceber.ValorReceber = rd.GetFloat(rd.GetOrdinal("ValorReceber"));
+                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contaReceber.Add(contasReceber);
+                    }
+                }
+                return contaReceber;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar todos os contato do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<ContasReceber> BuscarPorDescricao(string _descricao)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<ContasReceber> contaReceber = new List<ContasReceber>();
+            ContasReceber contasReceber;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, ValorReceber, Descricao FROM ContasReceber WHERE Descricao LIKE @Descricao";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contasReceber = new ContasReceber();
+                        contasReceber.Id = Convert.ToInt32(rd["Id"]);
+                        contasReceber.ValorReceber = rd.GetFloat(rd.GetOrdinal("ValorReceber"));
+                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contaReceber.Add(contasReceber);
+                    }
+                }
+                return contaReceber;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar os contatos por descrição do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

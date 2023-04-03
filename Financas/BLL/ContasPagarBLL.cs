@@ -22,6 +22,14 @@ namespace BLL
         {
             new ContasPagarDAL().Excluir(_id);
         }
+        public List<ContasPagar> BuscarTodos()
+        {
+            return new ContasPagarDAL().BuscarTodos();
+        }
+        public List<ContasPagar> BuscarPorDescricao(string _descricao)
+        {
+            return new ContasPagarDAL().BuscarPorDescricao(_descricao);
+        }
         public void BuscarPorId(int _id)
         {
             new ContasPagarDAL().BuscarPorId(_id);

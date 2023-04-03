@@ -22,6 +22,14 @@ namespace BLL
         {
             new BancoDAL().Excluir(_id);
         }
+        public List<Banco> BuscarTodos()
+        {
+            return new BancoDAL().BuscarTodos();
+        }
+        public List<Banco> BuscarPorNome(string _nome)
+        {
+            return new BancoDAL().BuscarPorNome(_nome);
+        }
         public void BuscarPorId(int _id)
         {
             new BancoDAL().BuscarPorId(_id);

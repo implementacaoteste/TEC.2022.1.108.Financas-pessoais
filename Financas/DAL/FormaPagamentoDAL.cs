@@ -91,6 +91,41 @@ namespace DAL
                 }
             }
         }
+        public List<FormaPagamento> BuscarTodos()
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            List<FormaPagamento> formaPagamentos = new List<FormaPagamento>();
+            FormaPagamento formaPagamento;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        formaPagamento = new FormaPagamento();
+                        formaPagamento.Id = Convert.ToInt32(rd["Id"]);
+                        formaPagamento.Descricao = rd["Descricao"].ToString();
+                        formaPagamentos.Add(formaPagamento);
+                    }
+                }
+                return formaPagamentos;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar todos as formas de pagamento do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
 
         public FormaPagamento BuscarPorId(int _id)
         {
@@ -119,6 +154,43 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("Ocorreu um erro ao tentar buscar as formas de pagamento por id do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<FormaPagamento> BuscarPorDescricao(string _descricao)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<FormaPagamento> formaPagamentos = new List<FormaPagamento>();
+            FormaPagamento formaPagamento;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento WHERE Descricao LIKE @Descricao";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        formaPagamento = new FormaPagamento();
+                        formaPagamento.Id = Convert.ToInt32(rd["Id"]);
+                        formaPagamento.Descricao = rd["Descricao"].ToString();
+                        formaPagamentos.Add(formaPagamento);
+                    }
+                }
+                return formaPagamentos;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as formas de pagamento por descrição do banco de dados", ex);
             }
             finally
             {

@@ -129,5 +129,80 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public List<Despesas> BuscarTodos()
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            List<Despesas> despesa = new List<Despesas>();
+            Despesas despesas;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Gastos, Descricao FROM Despesas";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        despesas = new Despesas();
+                        despesas.Id = Convert.ToInt32(rd["Id"]);
+                        despesas.Gastos = rd.GetFloat(rd.GetOrdinal("Gastos"));
+                        despesas.Descricao = rd["Descricao"].ToString();
+                        despesa.Add(despesas);
+                    }
+                }
+                return despesa;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar todas as despesas do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<Despesas> BuscarPorDescricao(string _descricao)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<Despesas> despesa = new List<Despesas>();
+            Despesas despesas;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Ganhos, Descricao, Renda FROM Despesas WHERE Descricao LIKE @Descricao";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        despesas = new Despesas();
+                        despesas.Id = Convert.ToInt32(rd["Id"]);
+                        despesas.Gastos = rd.GetFloat(rd.GetOrdinal("GastosB"));
+                        despesas.Descricao = rd["Descricao"].ToString();
+                        despesa.Add(despesas);
+                    }
+                }
+                return despesa;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as despesas por descrição do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
