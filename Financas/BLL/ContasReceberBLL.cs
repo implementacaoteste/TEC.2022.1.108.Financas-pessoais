@@ -10,17 +10,17 @@ namespace BLL
 {
     public class ContasReceberBLL
     {
-        public void Inserir(Banco _banco)
+        public void Inserir(ContasReceber _contasReceber)
         {
-            new BancoDAL().Inserir(_banco);
+            new ContasReceberDAL().Inserir(_contasReceber);
         }
-        public void Alterar(Banco _banco)
+        public void Alterar(ContasReceber _contasReceber)
         {
-            new BancoDAL().Alterar(_banco);
+            new ContasReceberDAL().Alterar(_contasReceber);
         }
         public void Excluir(int _id)
         {
-            new BancoDAL().Excluir(_id);
+            new ContasReceberDAL().Excluir(_id);
         }
     }
 }
