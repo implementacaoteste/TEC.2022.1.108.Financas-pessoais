@@ -38,7 +38,7 @@ CREATE TABLE Receita
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
-	Gastos FLOAT,
+	Ganhos FLOAT,
 	Descricao VARCHAR(250)
 )
 GO
