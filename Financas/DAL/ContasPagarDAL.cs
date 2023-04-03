@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -94,5 +95,40 @@ namespace DAL
             }
         }
 
+        public ContasPagar BuscarPorId(int _id)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            ContasPagar contasPagar = new ContasPagar();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, ValorPagar, Descricao FROM ContasPagar WHERE Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", _id);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        contasPagar = new ContasPagar();
+                        contasPagar.Id = Convert.ToInt32(rd["ID"]);
+                        contasPagar.ValorPagar = rd.GetFloat(rd.GetOrdinal("ValorPagar"));
+                        contasPagar.Descricao = rd["Descricao"].ToString();
+                    }
+                }
+                return contasPagar;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a pagar por id do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

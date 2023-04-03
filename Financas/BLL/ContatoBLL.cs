@@ -22,5 +22,9 @@ namespace BLL
         {
             new ContatoDAL().Excluir(_id);
         }
+        public void BuscarPorId(int _id)
+        {
+            new ContatoDAL().BuscarPorId(_id);
+        }
     }
 }
