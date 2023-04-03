@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Financas
 {
-    public partial class Form1 : Form
+    public partial class FormCadastroUsuario : Form
     {
-        public Form1()
+        public FormCadastroUsuario()
         {
             InitializeComponent();
+        }
+
+        private void FormCadastroUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

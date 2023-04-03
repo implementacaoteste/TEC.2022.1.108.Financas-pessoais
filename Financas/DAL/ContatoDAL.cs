@@ -60,7 +60,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void Excluir(int _id, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
@@ -95,7 +94,6 @@ namespace DAL
                 }
             }
         }
-
         public Contato BuscarPorId(int _id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
