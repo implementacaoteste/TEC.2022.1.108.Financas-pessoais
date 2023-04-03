@@ -64,6 +64,12 @@
     <Compile Include="FormCadastroUsuario.Designer.cs">
       <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConsultaContasPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaContasPagar.Designer.cs">
+      <DependentUpon>FormConsultaContasPagar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConsultarReceita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaBanco.resx">
       <DependentUpon>FormConsultaBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaContasPagar.resx">
+      <DependentUpon>FormConsultaContasPagar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultarReceita.resx">
       <DependentUpon>FormConsultarReceita.cs</DependentUpon>
