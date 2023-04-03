@@ -16,5 +16,10 @@ namespace Financas
         {
             InitializeComponent();
         }
+
+        private void FormCadastroUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
