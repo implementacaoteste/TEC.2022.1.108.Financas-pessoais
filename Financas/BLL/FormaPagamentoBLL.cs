@@ -22,5 +22,9 @@ namespace BLL
         {
             new FormaPagamentoDAL().Excluir(_id);
         }
+        public void BuscarPorId(int _id)
+        {
+            new FormaPagamentoDAL().BuscarPorId(_id);
+        }
     }
 }

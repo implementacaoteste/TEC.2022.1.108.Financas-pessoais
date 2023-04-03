@@ -22,5 +22,9 @@ namespace BLL
         {
             new DespesasDAL().Excluir(_id);
         }
+        public void BuscarPorId(int _id)
+        {
+            new DespesasDAL().BuscarPorId(_id);
+        }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -95,5 +96,42 @@ namespace DAL
             }
         }
 
+        public Contato BuscarPorId(int _id)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Contato contato = new Contato();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato WHERE Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", _id);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        contato = new Contato();
+                        contato.Id = Convert.ToInt32(rd["ID"]);
+                        contato.Nome = rd["Nome"].ToString();
+                        contato.Endereco = rd["Endereco"].ToString();
+                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Descricao = rd["Descricao"].ToString();
+                    }
+                }
+                return contato;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar os contatos por id do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
