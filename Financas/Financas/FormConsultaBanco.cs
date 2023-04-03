@@ -10,13 +10,21 @@ using System.Windows.Forms;
 
 namespace Financas
 {
-    public partial class FormConsultacs : Form
+    public partial class FormConsultaBanco : Form
     {
-        public FormConsultacs()
+        public FormConsultaBanco()
         {
             InitializeComponent();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -22,6 +22,26 @@ namespace BLL
         {
             new ContatoDAL().Excluir(_id);
         }
+        public List<Contato> BuscarTodos()
+        {
+            return new ContatoDAL().BuscarTodos();
+        }
+        public List<Contato> BuscarPorNome(string _nome)
+        {
+            return new ContatoDAL().BuscarPorNome(_nome);
+        }
+        public List<Contato> BuscarPorEndereco(string _endereco)
+        {
+            return new ContatoDAL().BuscarPorEndereco(_endereco);
+        }
+        public List<Contato> BuscarPorNumero(int _numero)
+        {
+            return new ContatoDAL().BuscarPorNumero(_numero);
+        }
+        public List<Contato> BuscarPorDescricao(string _descricao)
+        {
+            return new ContatoDAL().BuscarPorDescricao(_descricao);
+        }
         public void BuscarPorId(int _id)
         {
             new ContatoDAL().BuscarPorId(_id);

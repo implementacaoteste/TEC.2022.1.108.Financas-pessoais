@@ -10,19 +10,13 @@ using System.Windows.Forms;
 
 namespace Financas
 {
-    public partial class Form1 : Form
+    public partial class FormConsultaContasPagar : Form
     {
-        public Form1()
+        public FormConsultaContasPagar()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            using (FormConsultaDespesas form = new FormConsultaDespesas())
-            {
-                form.ShowDialog();
-            }
-        }
+      
     }
 }

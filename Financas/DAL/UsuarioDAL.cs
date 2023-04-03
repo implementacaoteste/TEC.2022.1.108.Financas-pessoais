@@ -170,7 +170,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Usuario BuscarPorNomeUsuario(string _nome, string _senha)
+        public Usuario BuscarPorNomeUsuario(string _nomeUsuario)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             Usuario usuario = new Usuario();
@@ -181,7 +181,7 @@ namespace DAL
                 cmd.CommandText = "SELECT Id, Nome, Senha, Renda FROM Usuario WHERE Nome = @NomeUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Nome", _nome);
+                cmd.Parameters.AddWithValue("@Nome", _nomeUsuario);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -192,7 +192,6 @@ namespace DAL
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.Renda = rd.GetFloat(rd.GetOrdinal("Renda"));
                         usuario.Senha = rd["Senha"].ToString();
-
                     }
                 }
                 return usuario;

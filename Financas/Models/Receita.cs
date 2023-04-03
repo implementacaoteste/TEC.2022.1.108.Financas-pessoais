@@ -11,5 +11,6 @@ namespace Models
         public int Id { get; set; }
         public float Ganhos { get; set; }
         public string Descricao { get; set; }
+        public List<Receita> Receitas { get; set; }
     }
 }

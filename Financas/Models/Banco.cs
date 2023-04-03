@@ -12,5 +12,6 @@ namespace Models
         public string Nome { get; set; }
         public float Saldo { get; set; }
         public float Poupanca { get; set; }
+        public List<Banco> Bancos { get; set; }
     }
 }
