@@ -43,7 +43,10 @@ namespace Financas
 
         private void despesasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            using (FormConsultaDespesas frm = new FormConsultaDespesas())
+            {
+                frm.ShowDialog();
+            }
         }
 
         private void contasAPagarToolStripMenuItem_Click(object sender, EventArgs e)
