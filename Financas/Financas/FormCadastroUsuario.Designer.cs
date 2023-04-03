@@ -115,7 +115,7 @@
             // labelAvisoSenha
             // 
             this.labelAvisoSenha.AutoSize = true;
-            this.labelAvisoSenha.Location = new System.Drawing.Point(329, 200);
+            this.labelAvisoSenha.Location = new System.Drawing.Point(69, 344);
             this.labelAvisoSenha.Name = "labelAvisoSenha";
             this.labelAvisoSenha.Size = new System.Drawing.Size(164, 32);
             this.labelAvisoSenha.TabIndex = 7;
@@ -124,7 +124,7 @@
             // buttonSalvarCadastroUsuario
             // 
             this.buttonSalvarCadastroUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadastroUsuario.Location = new System.Drawing.Point(378, 433);
+            this.buttonSalvarCadastroUsuario.Location = new System.Drawing.Point(378, 456);
             this.buttonSalvarCadastroUsuario.Name = "buttonSalvarCadastroUsuario";
             this.buttonSalvarCadastroUsuario.Size = new System.Drawing.Size(85, 39);
             this.buttonSalvarCadastroUsuario.TabIndex = 8;
@@ -134,7 +134,7 @@
             // buttonCancelarCadastroUsuario
             // 
             this.buttonCancelarCadastroUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastroUsuario.Location = new System.Drawing.Point(484, 433);
+            this.buttonCancelarCadastroUsuario.Location = new System.Drawing.Point(482, 456);
             this.buttonCancelarCadastroUsuario.Name = "buttonCancelarCadastroUsuario";
             this.buttonCancelarCadastroUsuario.Size = new System.Drawing.Size(85, 39);
             this.buttonCancelarCadastroUsuario.TabIndex = 9;
@@ -162,7 +162,7 @@
             // 
             this.labelRendaCadastroUsuario.AutoSize = true;
             this.labelRendaCadastroUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRendaCadastroUsuario.Location = new System.Drawing.Point(239, 377);
+            this.labelRendaCadastroUsuario.Location = new System.Drawing.Point(239, 382);
             this.labelRendaCadastroUsuario.Name = "labelRendaCadastroUsuario";
             this.labelRendaCadastroUsuario.Size = new System.Drawing.Size(69, 25);
             this.labelRendaCadastroUsuario.TabIndex = 12;
@@ -170,7 +170,7 @@
             // 
             // textBoxRendaCadastroUsuario
             // 
-            this.textBoxRendaCadastroUsuario.Location = new System.Drawing.Point(193, 405);
+            this.textBoxRendaCadastroUsuario.Location = new System.Drawing.Point(193, 415);
             this.textBoxRendaCadastroUsuario.Name = "textBoxRendaCadastroUsuario";
             this.textBoxRendaCadastroUsuario.Size = new System.Drawing.Size(156, 22);
             this.textBoxRendaCadastroUsuario.TabIndex = 13;
