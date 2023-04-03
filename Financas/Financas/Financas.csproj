@@ -70,6 +70,12 @@
     <Compile Include="FormConsultaContasReceber.Designer.cs">
       <DependentUpon>FormConsultaContasReceber.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConsultaFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaFormaPagamento.Designer.cs">
+      <DependentUpon>FormConsultaFormaPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConsultarReceita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaContasReceber.resx">
       <DependentUpon>FormConsultaContasReceber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaFormaPagamento.resx">
+      <DependentUpon>FormConsultaFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultarReceita.resx">
       <DependentUpon>FormConsultarReceita.cs</DependentUpon>
