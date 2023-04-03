@@ -28,7 +28,7 @@ namespace Financas
         {
             try
             {
-              despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos(textBoxBuscarDespesas);
+              //despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos(textBoxBuscarDespesas);
             }
             catch
             {
