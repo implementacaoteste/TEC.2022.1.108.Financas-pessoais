@@ -77,5 +77,13 @@ namespace Financas
                 frm.ShowDialog();
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            using (FormConsultaDespesas form = new FormConsultaDespesas())
+            {
+                form.ShowDialog();
+            }
+        }
     }
 }
