@@ -52,14 +52,73 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+
     <Compile Include="FormConsultaContato.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormConsultaContato.Designer.cs">
       <DependentUpon>FormConsultaContato.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="FormConsultaBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaBanco.Designer.cs">
+      <DependentUpon>FormConsultaBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroUsuario.Designer.cs">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
+    </Compile>
+
+    <Compile Include="FormConsultaContasPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaContasPagar.Designer.cs">
+      <DependentUpon>FormConsultaContasPagar.cs</DependentUpon>
+    </Compile>
+
+    <Compile Include="FormConsultaContasReceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaContasReceber.Designer.cs">
+      <DependentUpon>FormConsultaContasReceber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultaFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaFormaPagamento.Designer.cs">
+      <DependentUpon>FormConsultaFormaPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultarReceita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultarReceita.Designer.cs">
+      <DependentUpon>FormConsultarReceita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCadastroUsuario.resx">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaBanco.resx">
+      <DependentUpon>FormConsultaBanco.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="FormConsultaContasPagar.resx">
+      <DependentUpon>FormConsultaContasPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaContasReceber.resx">
+      <DependentUpon>FormConsultaContasReceber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaFormaPagamento.resx">
+      <DependentUpon>FormConsultaFormaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultarReceita.resx">
+      <DependentUpon>FormConsultarReceita.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaContato.resx">
       <DependentUpon>FormConsultaContato.cs</DependentUpon>
     </EmbeddedResource>
