@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +11,16 @@ using System.Windows.Forms;
 
 namespace Financas
 {
-    public partial class FormConsultacs : Form
+    public partial class FormConsultaContato : Form
     {
-        public FormConsultacs()
+        public FormConsultaContato()
         {
             InitializeComponent();
         }
 
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
