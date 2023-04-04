@@ -71,7 +71,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(131, 32);
+            this.label1.Location = new System.Drawing.Point(103, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(540, 46);
             this.label1.TabIndex = 3;
@@ -118,7 +118,7 @@
             this.buttonBuscarContatoContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarContatoContasReceber.Location = new System.Drawing.Point(447, 276);
             this.buttonBuscarContatoContasReceber.Name = "buttonBuscarContatoContasReceber";
-            this.buttonBuscarContatoContasReceber.Size = new System.Drawing.Size(85, 23);
+            this.buttonBuscarContatoContasReceber.Size = new System.Drawing.Size(78, 23);
             this.buttonBuscarContatoContasReceber.TabIndex = 7;
             this.buttonBuscarContatoContasReceber.Text = "Buscar";
             this.buttonBuscarContatoContasReceber.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             this.buttonSalvarCadastroContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvarCadastroContasReceber.Location = new System.Drawing.Point(339, 371);
             this.buttonSalvarCadastroContasReceber.Name = "buttonSalvarCadastroContasReceber";
-            this.buttonSalvarCadastroContasReceber.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalvarCadastroContasReceber.Size = new System.Drawing.Size(78, 23);
             this.buttonSalvarCadastroContasReceber.TabIndex = 8;
             this.buttonSalvarCadastroContasReceber.Text = "Salvar";
             this.buttonSalvarCadastroContasReceber.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@
             this.buttonCancelarCadastroContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelarCadastroContasReceber.Location = new System.Drawing.Point(456, 371);
             this.buttonCancelarCadastroContasReceber.Name = "buttonCancelarCadastroContasReceber";
-            this.buttonCancelarCadastroContasReceber.Size = new System.Drawing.Size(85, 23);
+            this.buttonCancelarCadastroContasReceber.Size = new System.Drawing.Size(103, 23);
             this.buttonCancelarCadastroContasReceber.TabIndex = 9;
             this.buttonCancelarCadastroContasReceber.Text = "Cancelar";
             this.buttonCancelarCadastroContasReceber.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(788, 455);
             this.Controls.Add(this.buttonCancelarCadastroContasReceber);
             this.Controls.Add(this.buttonSalvarCadastroContasReceber);
             this.Controls.Add(this.buttonBuscarContatoContasReceber);
@@ -159,6 +159,8 @@
             this.Controls.Add(valorReceberLabel);
             this.Controls.Add(this.valorReceberTextBoxContasReceber);
             this.Name = "FormCadastroContasReceber";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormCadastroContasReceber";
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).EndInit();
             this.ResumeLayout(false);
