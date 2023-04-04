@@ -66,6 +66,7 @@
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
+            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
             // usuarioToolStripMenuItem
             // 
@@ -86,6 +87,7 @@
             this.bancoToolStripMenuItem.Name = "bancoToolStripMenuItem";
             this.bancoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.bancoToolStripMenuItem.Text = "Banco";
+            this.bancoToolStripMenuItem.Click += new System.EventHandler(this.bancoToolStripMenuItem_Click);
             // 
             // consultaToolStripMenuItem
             // 
