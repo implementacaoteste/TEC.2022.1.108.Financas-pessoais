@@ -58,6 +58,36 @@
             nomeLabel.TabIndex = 1;
             nomeLabel.Text = "Nome:";
             // 
+            // enderecoLabel
+            // 
+            enderecoLabel.AutoSize = true;
+            enderecoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            enderecoLabel.Location = new System.Drawing.Point(368, 160);
+            enderecoLabel.Name = "enderecoLabel";
+            enderecoLabel.Size = new System.Drawing.Size(78, 16);
+            enderecoLabel.TabIndex = 2;
+            enderecoLabel.Text = "Endereco:";
+            // 
+            // numeroLabel
+            // 
+            numeroLabel.AutoSize = true;
+            numeroLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            numeroLabel.Location = new System.Drawing.Point(83, 250);
+            numeroLabel.Name = "numeroLabel";
+            numeroLabel.Size = new System.Drawing.Size(65, 16);
+            numeroLabel.TabIndex = 4;
+            numeroLabel.Text = "Numero:";
+            // 
+            // descricaoLabel
+            // 
+            descricaoLabel.AutoSize = true;
+            descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descricaoLabel.Location = new System.Drawing.Point(374, 250);
+            descricaoLabel.Name = "descricaoLabel";
+            descricaoLabel.Size = new System.Drawing.Size(82, 16);
+            descricaoLabel.TabIndex = 6;
+            descricaoLabel.Text = "Descricao:";
+            // 
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Nome", true));
@@ -70,16 +100,6 @@
             // 
             this.contatoBindingSource.DataSource = typeof(Models.Contato);
             // 
-            // enderecoLabel
-            // 
-            enderecoLabel.AutoSize = true;
-            enderecoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            enderecoLabel.Location = new System.Drawing.Point(368, 160);
-            enderecoLabel.Name = "enderecoLabel";
-            enderecoLabel.Size = new System.Drawing.Size(78, 16);
-            enderecoLabel.TabIndex = 2;
-            enderecoLabel.Text = "Endereco:";
-            // 
             // enderecoTextBox
             // 
             this.enderecoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Endereco", true));
@@ -88,16 +108,6 @@
             this.enderecoTextBox.Size = new System.Drawing.Size(194, 22);
             this.enderecoTextBox.TabIndex = 3;
             // 
-            // numeroLabel
-            // 
-            numeroLabel.AutoSize = true;
-            numeroLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            numeroLabel.Location = new System.Drawing.Point(83, 250);
-            numeroLabel.Name = "numeroLabel";
-            numeroLabel.Size = new System.Drawing.Size(65, 16);
-            numeroLabel.TabIndex = 4;
-            numeroLabel.Text = "Numero:";
-            // 
             // numeroTextBox
             // 
             this.numeroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Numero", true));
@@ -105,16 +115,6 @@
             this.numeroTextBox.Name = "numeroTextBox";
             this.numeroTextBox.Size = new System.Drawing.Size(170, 22);
             this.numeroTextBox.TabIndex = 5;
-            // 
-            // descricaoLabel
-            // 
-            descricaoLabel.AutoSize = true;
-            descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(374, 250);
-            descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(82, 16);
-            descricaoLabel.TabIndex = 6;
-            descricaoLabel.Text = "Descricao:";
             // 
             // descricaoTextBox
             // 
@@ -139,7 +139,7 @@
             this.buttonCancelarCadastroContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelarCadastroContato.Location = new System.Drawing.Point(423, 338);
             this.buttonCancelarCadastroContato.Name = "buttonCancelarCadastroContato";
-            this.buttonCancelarCadastroContato.Size = new System.Drawing.Size(101, 30);
+            this.buttonCancelarCadastroContato.Size = new System.Drawing.Size(103, 23);
             this.buttonCancelarCadastroContato.TabIndex = 9;
             this.buttonCancelarCadastroContato.Text = "Cancelar";
             this.buttonCancelarCadastroContato.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@
             this.buttonSalvarCadastroContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvarCadastroContato.Location = new System.Drawing.Point(221, 338);
             this.buttonSalvarCadastroContato.Name = "buttonSalvarCadastroContato";
-            this.buttonSalvarCadastroContato.Size = new System.Drawing.Size(96, 30);
+            this.buttonSalvarCadastroContato.Size = new System.Drawing.Size(78, 23);
             this.buttonSalvarCadastroContato.TabIndex = 9;
             this.buttonSalvarCadastroContato.Text = "Salvar";
             this.buttonSalvarCadastroContato.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 450);
+            this.ClientSize = new System.Drawing.Size(788, 455);
             this.Controls.Add(this.buttonSalvarCadastroContato);
             this.Controls.Add(this.buttonCancelarCadastroContato);
             this.Controls.Add(this.label1);

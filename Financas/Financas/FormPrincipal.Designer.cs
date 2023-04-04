@@ -41,6 +41,11 @@
             this.contasAPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasAReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formaDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAPagarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.despesasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAReceberToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.formaDePagamentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.receitasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +67,12 @@
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuarioToolStripMenuItem,
             this.contatoToolStripMenuItem,
-            this.bancoToolStripMenuItem});
+            this.bancoToolStripMenuItem,
+            this.contasAPagarToolStripMenuItem1,
+            this.despesasToolStripMenuItem1,
+            this.contasAReceberToolStripMenuItem1,
+            this.formaDePagamentoToolStripMenuItem1,
+            this.receitasToolStripMenuItem1});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
@@ -152,6 +162,39 @@
             this.formaDePagamentoToolStripMenuItem.Text = "Forma de pagamento";
             this.formaDePagamentoToolStripMenuItem.Click += new System.EventHandler(this.formaDePagamentoToolStripMenuItem_Click);
             // 
+            // contasAPagarToolStripMenuItem1
+            // 
+            this.contasAPagarToolStripMenuItem1.Name = "contasAPagarToolStripMenuItem1";
+            this.contasAPagarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.contasAPagarToolStripMenuItem1.Text = "Contas a pagar";
+            this.contasAPagarToolStripMenuItem1.Click += new System.EventHandler(this.contasAPagarToolStripMenuItem1_Click);
+            // 
+            // despesasToolStripMenuItem1
+            // 
+            this.despesasToolStripMenuItem1.Name = "despesasToolStripMenuItem1";
+            this.despesasToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.despesasToolStripMenuItem1.Text = "Despesas";
+            this.despesasToolStripMenuItem1.Click += new System.EventHandler(this.despesasToolStripMenuItem1_Click);
+            // 
+            // contasAReceberToolStripMenuItem1
+            // 
+            this.contasAReceberToolStripMenuItem1.Name = "contasAReceberToolStripMenuItem1";
+            this.contasAReceberToolStripMenuItem1.Size = new System.Drawing.Size(236, 26);
+            this.contasAReceberToolStripMenuItem1.Text = "Contas a receber";
+            // 
+            // formaDePagamentoToolStripMenuItem1
+            // 
+            this.formaDePagamentoToolStripMenuItem1.Name = "formaDePagamentoToolStripMenuItem1";
+            this.formaDePagamentoToolStripMenuItem1.Size = new System.Drawing.Size(236, 26);
+            this.formaDePagamentoToolStripMenuItem1.Text = "Forma de pagamento";
+            // 
+            // receitasToolStripMenuItem1
+            // 
+            this.receitasToolStripMenuItem1.Name = "receitasToolStripMenuItem1";
+            this.receitasToolStripMenuItem1.Size = new System.Drawing.Size(236, 26);
+            this.receitasToolStripMenuItem1.Text = "Receita";
+            this.receitasToolStripMenuItem1.Click += new System.EventHandler(this.receitasToolStripMenuItem1_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -185,6 +228,11 @@
         private System.Windows.Forms.ToolStripMenuItem contasAPagarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contasAReceberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formaDePagamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contasAPagarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem despesasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem contasAReceberToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem formaDePagamentoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem receitasToolStripMenuItem1;
     }
 }
 
