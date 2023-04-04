@@ -91,15 +91,28 @@ namespace Financas
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-           /* using(FormLogin florm = new FormLogin())
-            {
-                florm.ShowDialog();
-            }*/
+             using(FormLogin florm = new FormLogin())
+             {
+                 florm.ShowDialog();
+             }
         }
 
         private void contatoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormCadastroContato frm = new FormCadastroContato())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bancoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroBanco frm = new FormCadastroBanco())
             {
                 frm.ShowDialog();
             }

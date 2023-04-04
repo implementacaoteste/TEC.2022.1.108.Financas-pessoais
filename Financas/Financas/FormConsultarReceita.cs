@@ -16,5 +16,10 @@ namespace Financas
         {
             InitializeComponent();
         }
+
+        private void buttonAlterarReceita_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
