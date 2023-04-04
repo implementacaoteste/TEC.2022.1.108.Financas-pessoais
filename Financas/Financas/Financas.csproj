@@ -150,6 +150,9 @@
     <EmbeddedResource Include="FormCadastroContasPaga.resx">
       <DependentUpon>FormCadastroContasPaga.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroContasReceber.resx">
+      <DependentUpon>FormCadastroContasReceber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroContato.resx">
       <DependentUpon>FormCadastroContato.cs</DependentUpon>
     </EmbeddedResource>
