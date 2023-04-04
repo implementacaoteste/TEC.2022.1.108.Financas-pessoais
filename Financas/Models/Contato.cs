@@ -13,6 +13,5 @@ namespace Models
         public string Endereco { get; set; }
         public int Numero { get; set; }
         public string Descricao { get; set; }
-        public List<Contato> Contatos { get; set; }
     }
 }

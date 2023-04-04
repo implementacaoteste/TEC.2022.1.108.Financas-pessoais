@@ -57,12 +57,12 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.contasPagarDataGridView.DataSource = this.contasPagarBindingSource;
-            this.contasPagarDataGridView.Location = new System.Drawing.Point(108, 161);
+            this.contasPagarDataGridView.Location = new System.Drawing.Point(29, 146);
             this.contasPagarDataGridView.Name = "contasPagarDataGridView";
             this.contasPagarDataGridView.ReadOnly = true;
             this.contasPagarDataGridView.RowHeadersWidth = 51;
             this.contasPagarDataGridView.RowTemplate.Height = 24;
-            this.contasPagarDataGridView.Size = new System.Drawing.Size(577, 220);
+            this.contasPagarDataGridView.Size = new System.Drawing.Size(701, 255);
             this.contasPagarDataGridView.TabIndex = 1;
             // 
             // contasPagarBindingSource
@@ -83,22 +83,23 @@
             // 
             this.labelConsultarContasPagar.AutoSize = true;
             this.labelConsultarContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConsultarContasPagar.Location = new System.Drawing.Point(26, 118);
+            this.labelConsultarContasPagar.Location = new System.Drawing.Point(26, 122);
             this.labelConsultarContasPagar.Name = "labelConsultarContasPagar";
-            this.labelConsultarContasPagar.Size = new System.Drawing.Size(76, 16);
+            this.labelConsultarContasPagar.Size = new System.Drawing.Size(67, 16);
             this.labelConsultarContasPagar.TabIndex = 3;
-            this.labelConsultarContasPagar.Text = "Consultar:";
+            this.labelConsultarContasPagar.Text = "Consulta";
             // 
             // textBoxConsultaContasPagar
             // 
-            this.textBoxConsultaContasPagar.Location = new System.Drawing.Point(108, 115);
+            this.textBoxConsultaContasPagar.Location = new System.Drawing.Point(92, 119);
             this.textBoxConsultaContasPagar.Name = "textBoxConsultaContasPagar";
-            this.textBoxConsultaContasPagar.Size = new System.Drawing.Size(250, 22);
+            this.textBoxConsultaContasPagar.Size = new System.Drawing.Size(308, 22);
             this.textBoxConsultaContasPagar.TabIndex = 4;
             // 
             // buttonBuscarConsultaContasPagar
             // 
-            this.buttonBuscarConsultaContasPagar.Location = new System.Drawing.Point(364, 115);
+            this.buttonBuscarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarConsultaContasPagar.Location = new System.Drawing.Point(406, 118);
             this.buttonBuscarConsultaContasPagar.Name = "buttonBuscarConsultaContasPagar";
             this.buttonBuscarConsultaContasPagar.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarConsultaContasPagar.TabIndex = 5;
@@ -107,16 +108,18 @@
             // 
             // buttonAdicionarConsultaContasPagar
             // 
-            this.buttonAdicionarConsultaContasPagar.Location = new System.Drawing.Point(462, 115);
+            this.buttonAdicionarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarConsultaContasPagar.Location = new System.Drawing.Point(487, 118);
             this.buttonAdicionarConsultaContasPagar.Name = "buttonAdicionarConsultaContasPagar";
-            this.buttonAdicionarConsultaContasPagar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdicionarConsultaContasPagar.Size = new System.Drawing.Size(81, 23);
             this.buttonAdicionarConsultaContasPagar.TabIndex = 6;
             this.buttonAdicionarConsultaContasPagar.Text = "Adicionar";
             this.buttonAdicionarConsultaContasPagar.UseVisualStyleBackColor = true;
             // 
             // buttonAlterarConsultaContasPagar
             // 
-            this.buttonAlterarConsultaContasPagar.Location = new System.Drawing.Point(561, 115);
+            this.buttonAlterarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterarConsultaContasPagar.Location = new System.Drawing.Point(574, 117);
             this.buttonAlterarConsultaContasPagar.Name = "buttonAlterarConsultaContasPagar";
             this.buttonAlterarConsultaContasPagar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterarConsultaContasPagar.TabIndex = 7;
@@ -125,6 +128,7 @@
             // 
             // buttonExcluirConsultaContasPagar
             // 
+            this.buttonExcluirConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluirConsultaContasPagar.Location = new System.Drawing.Point(655, 117);
             this.buttonExcluirConsultaContasPagar.Name = "buttonExcluirConsultaContasPagar";
             this.buttonExcluirConsultaContasPagar.Size = new System.Drawing.Size(75, 23);
@@ -146,27 +150,26 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ValorPagar";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ValorPagar";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Valor a Pagar";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 105;
+            this.dataGridViewTextBoxColumn2.Width = 119;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descricao";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 98;
+            this.dataGridViewTextBoxColumn3.Width = 200;
             // 
             // FormConsultaContasPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 422);
+            this.ClientSize = new System.Drawing.Size(831, 444);
             this.Controls.Add(this.buttonExcluirConsultaContasPagar);
             this.Controls.Add(this.buttonAlterarConsultaContasPagar);
             this.Controls.Add(this.buttonAdicionarConsultaContasPagar);

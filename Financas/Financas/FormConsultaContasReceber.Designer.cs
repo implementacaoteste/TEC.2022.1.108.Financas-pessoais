@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.contasReceberDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contasReceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarContasReceber = new System.Windows.Forms.Button();
             this.buttonAlterarContasReceber = new System.Windows.Forms.Button();
@@ -37,9 +40,6 @@
             this.buttonAdicionarContasReceber = new System.Windows.Forms.Button();
             this.textBoxConsultarContasReceber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).BeginInit();
@@ -57,74 +57,13 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.contasReceberDataGridView.DataSource = this.contasReceberBindingSource;
-            this.contasReceberDataGridView.Location = new System.Drawing.Point(33, 160);
+            this.contasReceberDataGridView.Location = new System.Drawing.Point(33, 145);
             this.contasReceberDataGridView.Name = "contasReceberDataGridView";
             this.contasReceberDataGridView.ReadOnly = true;
             this.contasReceberDataGridView.RowHeadersWidth = 51;
             this.contasReceberDataGridView.RowTemplate.Height = 24;
-            this.contasReceberDataGridView.Size = new System.Drawing.Size(685, 231);
+            this.contasReceberDataGridView.Size = new System.Drawing.Size(685, 255);
             this.contasReceberDataGridView.TabIndex = 1;
-            // 
-            // contasReceberBindingSource
-            // 
-            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
-            // 
-            // buttonBuscarContasReceber
-            // 
-            this.buttonBuscarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarContasReceber.Location = new System.Drawing.Point(331, 113);
-            this.buttonBuscarContasReceber.Name = "buttonBuscarContasReceber";
-            this.buttonBuscarContasReceber.Size = new System.Drawing.Size(75, 23);
-            this.buttonBuscarContasReceber.TabIndex = 8;
-            this.buttonBuscarContasReceber.Text = "Buscar";
-            this.buttonBuscarContasReceber.UseVisualStyleBackColor = true;
-            // 
-            // buttonAlterarContasReceber
-            // 
-            this.buttonAlterarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterarContasReceber.Location = new System.Drawing.Point(520, 113);
-            this.buttonAlterarContasReceber.Name = "buttonAlterarContasReceber";
-            this.buttonAlterarContasReceber.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlterarContasReceber.TabIndex = 9;
-            this.buttonAlterarContasReceber.Text = "Alterar";
-            this.buttonAlterarContasReceber.UseVisualStyleBackColor = true;
-            // 
-            // buttonExcluirContasReceber
-            // 
-            this.buttonExcluirContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirContasReceber.Location = new System.Drawing.Point(626, 113);
-            this.buttonExcluirContasReceber.Name = "buttonExcluirContasReceber";
-            this.buttonExcluirContasReceber.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluirContasReceber.TabIndex = 10;
-            this.buttonExcluirContasReceber.Text = "Excluir";
-            this.buttonExcluirContasReceber.UseVisualStyleBackColor = true;
-            // 
-            // buttonAdicionarContasReceber
-            // 
-            this.buttonAdicionarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionarContasReceber.Location = new System.Drawing.Point(426, 113);
-            this.buttonAdicionarContasReceber.Name = "buttonAdicionarContasReceber";
-            this.buttonAdicionarContasReceber.Size = new System.Drawing.Size(88, 23);
-            this.buttonAdicionarContasReceber.TabIndex = 11;
-            this.buttonAdicionarContasReceber.Text = "Adicionar";
-            this.buttonAdicionarContasReceber.UseVisualStyleBackColor = true;
-            // 
-            // textBoxConsultarContasReceber
-            // 
-            this.textBoxConsultarContasReceber.Location = new System.Drawing.Point(117, 113);
-            this.textBoxConsultarContasReceber.Name = "textBoxConsultarContasReceber";
-            this.textBoxConsultarContasReceber.Size = new System.Drawing.Size(203, 22);
-            this.textBoxConsultarContasReceber.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Consultar:";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -153,13 +92,74 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // contasReceberBindingSource
+            // 
+            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
+            // 
+            // buttonBuscarContasReceber
+            // 
+            this.buttonBuscarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarContasReceber.Location = new System.Drawing.Point(376, 116);
+            this.buttonBuscarContasReceber.Name = "buttonBuscarContasReceber";
+            this.buttonBuscarContasReceber.Size = new System.Drawing.Size(86, 23);
+            this.buttonBuscarContasReceber.TabIndex = 8;
+            this.buttonBuscarContasReceber.Text = "Buscar";
+            this.buttonBuscarContasReceber.UseVisualStyleBackColor = true;
+            // 
+            // buttonAlterarContasReceber
+            // 
+            this.buttonAlterarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterarContasReceber.Location = new System.Drawing.Point(562, 116);
+            this.buttonAlterarContasReceber.Name = "buttonAlterarContasReceber";
+            this.buttonAlterarContasReceber.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterarContasReceber.TabIndex = 9;
+            this.buttonAlterarContasReceber.Text = "Alterar";
+            this.buttonAlterarContasReceber.UseVisualStyleBackColor = true;
+            // 
+            // buttonExcluirContasReceber
+            // 
+            this.buttonExcluirContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluirContasReceber.Location = new System.Drawing.Point(643, 116);
+            this.buttonExcluirContasReceber.Name = "buttonExcluirContasReceber";
+            this.buttonExcluirContasReceber.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluirContasReceber.TabIndex = 10;
+            this.buttonExcluirContasReceber.Text = "Excluir";
+            this.buttonExcluirContasReceber.UseVisualStyleBackColor = true;
+            // 
+            // buttonAdicionarContasReceber
+            // 
+            this.buttonAdicionarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarContasReceber.Location = new System.Drawing.Point(468, 116);
+            this.buttonAdicionarContasReceber.Name = "buttonAdicionarContasReceber";
+            this.buttonAdicionarContasReceber.Size = new System.Drawing.Size(88, 23);
+            this.buttonAdicionarContasReceber.TabIndex = 11;
+            this.buttonAdicionarContasReceber.Text = "Adicionar";
+            this.buttonAdicionarContasReceber.UseVisualStyleBackColor = true;
+            // 
+            // textBoxConsultarContasReceber
+            // 
+            this.textBoxConsultarContasReceber.Location = new System.Drawing.Point(102, 116);
+            this.textBoxConsultarContasReceber.Name = "textBoxConsultarContasReceber";
+            this.textBoxConsultarContasReceber.Size = new System.Drawing.Size(268, 22);
+            this.textBoxConsultarContasReceber.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Consulta";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(94, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(591, 46);
+            this.label2.Size = new System.Drawing.Size(563, 46);
             this.label2.TabIndex = 12;
             this.label2.Text = "Consulta de contas Recebidas";
             // 
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 471);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonBuscarContasReceber);
             this.Controls.Add(this.buttonAlterarContasReceber);

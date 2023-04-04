@@ -31,16 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.contatoDataGridView = new System.Windows.Forms.DataGridView();
+            this.contatoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonBuscar = new System.Windows.Forms.Button();
-            this.buttonSelecionar = new System.Windows.Forms.Button();
+            this.buttonAdicionar = new System.Windows.Forms.Button();
+            this.buttonAlterar = new System.Windows.Forms.Button();
+            this.buttonExcluir = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contatoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contatoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(759, 57);
+            this.label1.Size = new System.Drawing.Size(821, 91);
             this.label1.TabIndex = 0;
             this.label1.Text = "Consulta de contatos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -69,74 +70,101 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.contatoDataGridView.DataSource = this.contatoBindingSource;
-            this.contatoDataGridView.Location = new System.Drawing.Point(23, 120);
+            this.contatoDataGridView.Location = new System.Drawing.Point(23, 123);
             this.contatoDataGridView.Name = "contatoDataGridView";
             this.contatoDataGridView.ReadOnly = true;
             this.contatoDataGridView.RowHeadersWidth = 51;
             this.contatoDataGridView.RowTemplate.Height = 24;
-            this.contatoDataGridView.Size = new System.Drawing.Size(714, 339);
+            this.contatoDataGridView.Size = new System.Drawing.Size(736, 336);
             this.contatoDataGridView.TabIndex = 1;
+            // 
+            // contatoBindingSource
+            // 
+            this.contatoBindingSource.DataSource = typeof(Models.Contato);
             // 
             // textBoxBuscar
             // 
-            this.textBoxBuscar.Location = new System.Drawing.Point(23, 88);
+            this.textBoxBuscar.Location = new System.Drawing.Point(98, 94);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(454, 26);
+            this.textBoxBuscar.Size = new System.Drawing.Size(334, 26);
             this.textBoxBuscar.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 65);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 20);
+            this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Id do contato:";
+            this.label2.Text = "Consultar";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(513, 88);
+            this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscar.Location = new System.Drawing.Point(438, 94);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(96, 26);
+            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscar.TabIndex = 4;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
-            // buttonSelecionar
+            // buttonAdicionar
             // 
-            this.buttonSelecionar.Location = new System.Drawing.Point(633, 88);
-            this.buttonSelecionar.Name = "buttonSelecionar";
-            this.buttonSelecionar.Size = new System.Drawing.Size(104, 26);
-            this.buttonSelecionar.TabIndex = 5;
-            this.buttonSelecionar.Text = "Selecionar";
-            this.buttonSelecionar.UseVisualStyleBackColor = true;
+            this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionar.Location = new System.Drawing.Point(519, 94);
+            this.buttonAdicionar.Name = "buttonAdicionar";
+            this.buttonAdicionar.Size = new System.Drawing.Size(82, 23);
+            this.buttonAdicionar.TabIndex = 5;
+            this.buttonAdicionar.Text = "Adicionar";
+            this.buttonAdicionar.UseVisualStyleBackColor = true;
+            // 
+            // buttonAlterar
+            // 
+            this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterar.Location = new System.Drawing.Point(607, 94);
+            this.buttonAlterar.Name = "buttonAlterar";
+            this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterar.TabIndex = 4;
+            this.buttonAlterar.Text = "Alterar";
+            this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
+            // buttonExcluir
+            // 
+            this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluir.Location = new System.Drawing.Point(688, 93);
+            this.buttonExcluir.Name = "buttonExcluir";
+            this.buttonExcluir.Size = new System.Drawing.Size(71, 23);
+            this.buttonExcluir.TabIndex = 5;
+            this.buttonExcluir.Text = "Excluir";
+            this.buttonExcluir.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 82;
+            this.dataGridViewTextBoxColumn2.Width = 200;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Endereco";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Endereco";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Endereço";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 109;
+            this.dataGridViewTextBoxColumn3.Width = 147;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Numero";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Numero";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Número";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -144,33 +172,20 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Descricao";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Descrição";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 115;
-            // 
-            // contatoBindingSource
-            // 
-            this.contatoBindingSource.DataSource = typeof(Models.Contato);
-            // 
-            // buttonCancelar
-            // 
-            this.buttonCancelar.Location = new System.Drawing.Point(649, 465);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(88, 31);
-            this.buttonCancelar.TabIndex = 6;
-            this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn5.Width = 217;
             // 
             // FormConsultaContato
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(759, 508);
-            this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonSelecionar);
+            this.ClientSize = new System.Drawing.Size(821, 508);
+            this.Controls.Add(this.buttonExcluir);
+            this.Controls.Add(this.buttonAdicionar);
+            this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxBuscar);
@@ -199,14 +214,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource contatoBindingSource;
         private System.Windows.Forms.DataGridView contatoDataGridView;
+        private System.Windows.Forms.TextBox textBoxBuscar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.Button buttonAdicionar;
+        private System.Windows.Forms.Button buttonAlterar;
+        private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.TextBox textBoxBuscar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.Button buttonSelecionar;
-        private System.Windows.Forms.Button buttonCancelar;
     }
 }

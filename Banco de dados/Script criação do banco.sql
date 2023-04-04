@@ -29,6 +29,7 @@ CREATE TABLE Despesas
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
+	IdContato INT,
 	Gastos FLOAT,
 	Descricao VARCHAR(250)
 )
@@ -39,6 +40,7 @@ CREATE TABLE Receita
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
+	IdContato INT,
 	Ganhos FLOAT,
 	Descricao VARCHAR(250)
 )
@@ -49,6 +51,7 @@ CREATE TABLE ContasPagar
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
+	IdContato INT,
 	ValorPagar FLOAT,
 	Descricao VARCHAR(250)
 )
@@ -59,6 +62,7 @@ CREATE TABLE ContasReceber
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
+	IdContato INT,
 	ValorReceber FLOAT,
 	Descricao VARCHAR(250)
 )
@@ -68,10 +72,6 @@ IF OBJECT_ID('Contato', 'U') IS NULL
 CREATE TABLE Contato
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	IdDespesas INT,
-	IdReceita INT,
-	IdcontasPagar INT,
-	IdcontasReceber INT,
 	Nome VARCHAR(150),
 	Endereco VARCHAR(150),
 	Numero INT,
@@ -138,31 +138,31 @@ FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id)
 
 GO
 
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Contato') AND name = 'FK_Contato_Despesas')
-ALTER TABLE Contato
-ADD CONSTRAINT FK_Contato_Despesas
-FOREIGN KEY (IdDespesas) REFERENCES Despesas(Id)
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Despesas') AND name = 'FK_Despesas_Contato')
+ALTER TABLE Despesas
+ADD CONSTRAINT FK_Despesas_Contato
+FOREIGN KEY (IdContato) REFERENCES Contato(Id)
 
 GO
 
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Contato') AND name = 'FK_Contato_Receita')
-ALTER TABLE Contato
-ADD CONSTRAINT FK_Contato_Receita
-FOREIGN KEY (IdReceita) REFERENCES Receita(Id)
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Receita') AND name = 'FK_Receita_Contato')
+ALTER TABLE Receita
+ADD CONSTRAINT FK_Receita_Contato
+FOREIGN KEY (IdContato) REFERENCES Contato(Id)
 
 GO
 
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Contato') AND name = 'FK_Contato_ContasPagar')
-ALTER TABLE Contato
-ADD CONSTRAINT FK_Contato_ContasPagar
-FOREIGN KEY (IdContasPagar) REFERENCES ContasPagar(Id)
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('ContasPagar') AND name = 'FK_ContasPagar_Contato')
+ALTER TABLE ContasPagar
+ADD CONSTRAINT FK_ContasPagar_Contato
+FOREIGN KEY (IdContato) REFERENCES Contato(Id)
 
 GO
 
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Contato') AND name = 'FK_Contato_ContasReceber')
-ALTER TABLE Contato
-ADD CONSTRAINT FK_Contato_ContasReceber
-FOREIGN KEY (IdContasReceber) REFERENCES ContasReceber(Id)
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('ContasReceber') AND name = 'FK_ContasReceber_Contato')
+ALTER TABLE ContasReceber
+ADD CONSTRAINT FK_ContasReceber_Contato
+FOREIGN KEY (IdContato) REFERENCES Contato(Id)
 
 GO
 
