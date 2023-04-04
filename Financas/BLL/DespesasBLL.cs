@@ -22,9 +22,19 @@ namespace BLL
         {
             new DespesasDAL().Excluir(_id);
         }
+        public List<Despesas> BuscarTodos()
+        {
+            return new DespesasDAL().BuscarTodos();
+        }
+        public List<Despesas> BuscarPorDescricao(string _descricao)
+        {
+            return new DespesasDAL().BuscarPorDescricao(_descricao);
+        }
         public void BuscarPorId(int _id)
         {
             new DespesasDAL().BuscarPorId(_id);
         }
+
+        
     }
 }

@@ -18,6 +18,7 @@ CREATE TABLE Usuario
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(150),
+	NomeUsuario VARCHAR(150),
 	Senha VARCHAR(50),
 	Renda FLOAT
 )

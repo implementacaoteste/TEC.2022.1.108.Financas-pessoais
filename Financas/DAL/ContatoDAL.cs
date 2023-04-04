@@ -131,5 +131,204 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public List<Contato> BuscarTodos()
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            List<Contato> contatos = new List<Contato>();
+            Contato contato;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contato = new Contato();
+                        contato.Id = Convert.ToInt32(rd["Id"]);
+                        contato.Nome = rd["Nome"].ToString();
+                        contato.Endereco = rd["Endereco"].ToString();
+                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Descricao = rd["Descricao"].ToString();
+                        contatos.Add(contato);
+                    }
+                }
+                return contatos;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar todos os contato do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<Contato> BuscarPorNome(string _nome)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<Contato> contatos = new List<Contato>();
+            Contato contato;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato WHERE Nome LIKE @Nome";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contato = new Contato();
+                        contato.Id = Convert.ToInt32(rd["Id"]);
+                        contato.Nome = rd["Nome"].ToString();
+                        contato.Endereco = rd["Endereco"].ToString();
+                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Descricao = rd["Descricao"].ToString();
+                        contatos.Add(contato);
+                    }
+                }
+                return contatos;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar os contatos por nome do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<Contato> BuscarPorEndereco(string _endereco)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<Contato> contatos = new List<Contato>();
+            Contato contato;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato WHERE Endereco LIKE @Endereco";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Endereco", "%" + _endereco + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contato = new Contato();
+                        contato.Id = Convert.ToInt32(rd["Id"]);
+                        contato.Nome = rd["Nome"].ToString();
+                        contato.Endereco = rd["Endereco"].ToString();
+                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Descricao = rd["Descricao"].ToString();
+                        contatos.Add(contato);
+                    }
+                }
+                return contatos;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar os contatos por Endereço do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<Contato> BuscarPorNumero(int _numero)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Contato contato = new Contato();
+            List<Contato> contatos = new List<Contato>();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato WHERE Numero = @Numero";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Numero", _numero);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        contato = new Contato();
+                        contato.Id = Convert.ToInt32(rd["ID"]);
+                        contato.Nome = rd["Nome"].ToString();
+                        contato.Endereco = rd["Endereco"].ToString();
+                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Descricao = rd["Descricao"].ToString();
+                        contatos.Add(contato);
+                    }
+                }
+                return contatos;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar os contatos por número do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<Contato> BuscarPorDescricao(string _descricao)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<Contato> contatos = new List<Contato>();
+            Contato contato;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato WHERE Descricao LIKE @Descricao";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contato = new Contato();
+                        contato.Id = Convert.ToInt32(rd["ID"]);
+                        contato.Nome = rd["Nome"].ToString();
+                        contato.Endereco = rd["Endereco"].ToString();
+                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Descricao = rd["Descricao"].ToString();
+                        contatos.Add(contato);
+                    }
+                }
+                return contatos;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar os contatos por descrição do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

@@ -133,5 +133,82 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public List<Banco> BuscarTodos()
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            List<Banco> bancos = new List<Banco>();
+            Banco banco;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome, Saldo, Poupanca FROM Banco";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        banco = new Banco();
+                        banco.Id = Convert.ToInt32(rd["Id"]);
+                        banco.Nome = rd["Nome"].ToString();
+                        banco.Saldo = rd.GetFloat(rd.GetOrdinal("Saldo"));
+                        banco.Poupanca = rd.GetFloat(rd.GetOrdinal("Poupanca"));
+                        bancos.Add(banco);
+                    }
+                }
+                return bancos;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar todos os bancos a pagar do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<Banco> BuscarPorNome(string _nome)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<Banco> bancos = new List<Banco>();
+            Banco banco;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome, Saldo, Poupanca FROM Banco WHERE Nome LIKE @Nome";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        banco = new Banco();
+                        banco.Id = Convert.ToInt32(rd["Id"]);
+                        banco.Nome = rd["Nome"].ToString();
+                        banco.Saldo = rd.GetFloat(rd.GetOrdinal("Saldo"));
+                        banco.Poupanca = rd.GetFloat(rd.GetOrdinal("Poupanca"));
+                        bancos.Add(banco);
+                    }
+                }
+                return bancos;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar os bancos por nome do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

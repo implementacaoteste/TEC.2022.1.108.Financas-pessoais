@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.formaPagamentoDataGridView = new System.Windows.Forms.DataGridView();
-            this.formaPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formaPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
             this.buttonAlterarFormaPagamento = new System.Windows.Forms.Button();
             this.buttonExcluirFormaPagamento = new System.Windows.Forms.Button();
@@ -55,17 +55,14 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.formaPagamentoDataGridView.DataSource = this.formaPagamentoBindingSource;
-            this.formaPagamentoDataGridView.Location = new System.Drawing.Point(26, 156);
+            this.formaPagamentoDataGridView.Location = new System.Drawing.Point(20, 127);
+            this.formaPagamentoDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.formaPagamentoDataGridView.Name = "formaPagamentoDataGridView";
             this.formaPagamentoDataGridView.ReadOnly = true;
             this.formaPagamentoDataGridView.RowHeadersWidth = 51;
             this.formaPagamentoDataGridView.RowTemplate.Height = 24;
-            this.formaPagamentoDataGridView.Size = new System.Drawing.Size(677, 255);
+            this.formaPagamentoDataGridView.Size = new System.Drawing.Size(508, 207);
             this.formaPagamentoDataGridView.TabIndex = 1;
-            // 
-            // formaPagamentoBindingSource
-            // 
-            this.formaPagamentoBindingSource.DataSource = typeof(Models.FormaPagamento);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -85,60 +82,75 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
+            // formaPagamentoBindingSource
+            // 
+            this.formaPagamentoBindingSource.DataSource = typeof(Models.FormaPagamento);
+            // 
             // buttonBuscarFormaPagamento
             // 
             this.buttonBuscarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(325, 114);
+            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(244, 93);
+            this.buttonBuscarFormaPagamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
-            this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(56, 19);
             this.buttonBuscarFormaPagamento.TabIndex = 8;
             this.buttonBuscarFormaPagamento.Text = "Buscar";
             this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscarFormaPagamento_Click);
             // 
             // buttonAlterarFormaPagamento
             // 
             this.buttonAlterarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterarFormaPagamento.Location = new System.Drawing.Point(514, 114);
+            this.buttonAlterarFormaPagamento.Location = new System.Drawing.Point(386, 93);
+            this.buttonAlterarFormaPagamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
-            this.buttonAlterarFormaPagamento.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterarFormaPagamento.Size = new System.Drawing.Size(56, 19);
             this.buttonAlterarFormaPagamento.TabIndex = 9;
             this.buttonAlterarFormaPagamento.Text = "Alterar";
             this.buttonAlterarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonAlterarFormaPagamento.Click += new System.EventHandler(this.buttonAlterarFormaPagamento_Click);
             // 
             // buttonExcluirFormaPagamento
             // 
             this.buttonExcluirFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirFormaPagamento.Location = new System.Drawing.Point(620, 114);
+            this.buttonExcluirFormaPagamento.Location = new System.Drawing.Point(465, 93);
+            this.buttonExcluirFormaPagamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
-            this.buttonExcluirFormaPagamento.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluirFormaPagamento.Size = new System.Drawing.Size(56, 19);
             this.buttonExcluirFormaPagamento.TabIndex = 10;
             this.buttonExcluirFormaPagamento.Text = "Excluir";
             this.buttonExcluirFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonExcluirFormaPagamento.Click += new System.EventHandler(this.buttonExcluirFormaPagamento_Click);
             // 
             // buttonAdicionarFormaPagamento
             // 
             this.buttonAdicionarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionarFormaPagamento.Location = new System.Drawing.Point(420, 114);
+            this.buttonAdicionarFormaPagamento.Location = new System.Drawing.Point(315, 93);
+            this.buttonAdicionarFormaPagamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAdicionarFormaPagamento.Name = "buttonAdicionarFormaPagamento";
-            this.buttonAdicionarFormaPagamento.Size = new System.Drawing.Size(88, 23);
+            this.buttonAdicionarFormaPagamento.Size = new System.Drawing.Size(66, 19);
             this.buttonAdicionarFormaPagamento.TabIndex = 11;
             this.buttonAdicionarFormaPagamento.Text = "Adicionar";
             this.buttonAdicionarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonAdicionarFormaPagamento.Click += new System.EventHandler(this.buttonAdicionarFormaPagamento_Click);
             // 
             // textBoxConsultarFormaPagamento
             // 
-            this.textBoxConsultarFormaPagamento.Location = new System.Drawing.Point(111, 114);
+            this.textBoxConsultarFormaPagamento.Location = new System.Drawing.Point(83, 93);
+            this.textBoxConsultarFormaPagamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxConsultarFormaPagamento.Name = "textBoxConsultarFormaPagamento";
-            this.textBoxConsultarFormaPagamento.Size = new System.Drawing.Size(203, 22);
+            this.textBoxConsultarFormaPagamento.Size = new System.Drawing.Size(153, 20);
             this.textBoxConsultarFormaPagamento.TabIndex = 7;
+            this.textBoxConsultarFormaPagamento.TextChanged += new System.EventHandler(this.textBoxConsultarFormaPagamento_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 114);
+            this.label1.Location = new System.Drawing.Point(22, 93);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 16);
+            this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Consultar:";
             // 
@@ -146,17 +158,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(121, 41);
+            this.label2.Location = new System.Drawing.Point(91, 33);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(574, 46);
+            this.label2.Size = new System.Drawing.Size(464, 37);
             this.label2.TabIndex = 12;
             this.label2.Text = "Consulta Forma de Pagamento";
             // 
             // FormConsultaFormaPagamento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 454);
+            this.ClientSize = new System.Drawing.Size(600, 369);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonBuscarFormaPagamento);
             this.Controls.Add(this.buttonAlterarFormaPagamento);
@@ -165,10 +178,12 @@
             this.Controls.Add(this.textBoxConsultarFormaPagamento);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.formaPagamentoDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormConsultaFormaPagamento";
             this.Text = "FormConsultaFormaPagamento";
+            this.Load += new System.EventHandler(this.FormConsultaFormaPagamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).EndInit();
             this.ResumeLayout(false);

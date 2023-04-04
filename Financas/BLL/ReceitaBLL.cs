@@ -22,6 +22,14 @@ namespace BLL
         {
             new ReceitaDAL().Excluir(_id);
         }
+        public List<Receita> BuscarTodos()
+        {
+            return new ReceitaDAL().BuscarTodos();
+        }
+        public List<Receita> BuscarPorDescricao(string _descricao)
+        {
+            return new ReceitaDAL().BuscarPorDescricao(_descricao);
+        }
         public void BuscarPorId(int _id)
         {
             new ReceitaDAL().BuscarPorId(_id);

@@ -40,9 +40,13 @@ namespace BLL
         {
             return new UsuarioDAL().BuscarPorId(_id);
         }
-        public void Altenticar(string _nome, string _senha)
+        public Usuario BuscarPorNomeUsuario(string _nomeUsuario)
         {
-            Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_nome, _senha);
+            return new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
+        }
+        public void Altenticar(string _nomeUsuario, string _senha)
+        {
+            Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
             if (_senha == usuario.Senha)
                 Constantes.IdUsuarioLogado = usuario.Id;
             else

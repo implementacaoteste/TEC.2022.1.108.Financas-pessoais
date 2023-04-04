@@ -130,5 +130,80 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public List<Receita> BuscarTodos()
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            List<Receita> receitas = new List<Receita>();
+            Receita receita;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Ganhos, Descricao FROM Receita";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        receita = new Receita();
+                        receita.Id = Convert.ToInt32(rd["Id"]);
+                        receita.Ganhos = rd.GetFloat(rd.GetOrdinal("Ganhos"));
+                        receita.Descricao = rd["Descricao"].ToString();
+                        receitas.Add(receita);
+                    }
+                }
+                return receitas;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar todas as receitas do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<Receita> BuscarPorDescricao(string _descricao)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<Receita> receitas = new List<Receita>();
+            Receita receita;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Ganhos, Descricao, Renda FROM Receita WHERE Descricao LIKE @Descricao";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        receita = new Receita();
+                        receita.Id = Convert.ToInt32(rd["Id"]);
+                        receita.Ganhos = rd.GetFloat(rd.GetOrdinal("Ganhos"));
+                        receita.Descricao = rd["Descricao"].ToString();
+                        receitas.Add(receita);
+                    }
+                }
+                return receitas;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as receitas por descrição do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

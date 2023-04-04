@@ -130,5 +130,80 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public List<ContasPagar> BuscarTodos()
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            List<ContasPagar> contaPagar = new List<ContasPagar>();
+            ContasPagar contasPagar;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, ValorPagar, Descricao FROM ContasPagar";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contasPagar = new ContasPagar();
+                        contasPagar.Id = Convert.ToInt32(rd["Id"]);
+                        contasPagar.ValorPagar = rd.GetFloat(rd.GetOrdinal("ValorPagar"));
+                        contasPagar.Descricao = rd["Descricao"].ToString();
+                        contaPagar.Add(contasPagar);
+                    }
+                }
+                return contaPagar;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar todas as contas a pagar do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<ContasPagar> BuscarPorDescricao(string _descricao)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<ContasPagar> contaPagar = new List<ContasPagar>();
+            ContasPagar contasPagar;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, ValorPagar, Descricao FROM ContasPagar WHERE Descricao LIKE @Descricao";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contasPagar = new ContasPagar();
+                        contasPagar.Id = Convert.ToInt32(rd["Id"]);
+                        contasPagar.ValorPagar = rd.GetFloat(rd.GetOrdinal("ValorPagar"));
+                        contasPagar.Descricao = rd["Descricao"].ToString();
+                        contaPagar.Add(contasPagar);
+                    }
+                }
+                return contaPagar;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a pagar por descrição do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

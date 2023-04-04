@@ -46,20 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCadastroBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroBanco.Designer.cs">
+      <DependentUpon>FormCadastroBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroContato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroContato.Designer.cs">
+      <DependentUpon>FormCadastroContato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-
     <Compile Include="FormConsultaContato.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormConsultaContato.Designer.cs">
       <DependentUpon>FormConsultaContato.cs</DependentUpon>
     </Compile>
-
     <Compile Include="FormConsultaBanco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,14 +88,18 @@
     <Compile Include="FormCadastroUsuario.Designer.cs">
       <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
     </Compile>
-
+    <Compile Include="FormConsultaDespesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaDespesas.Designer.cs">
+      <DependentUpon>FormConsultaDespesas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConsultaContasPagar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormConsultaContasPagar.Designer.cs">
       <DependentUpon>FormConsultaContasPagar.cs</DependentUpon>
     </Compile>
-
     <Compile Include="FormConsultaContasReceber.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,13 +120,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCadastroBanco.resx">
+      <DependentUpon>FormCadastroBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroContato.resx">
+      <DependentUpon>FormCadastroContato.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroUsuario.resx">
       <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaDespesas.resx">
+      <DependentUpon>FormConsultaDespesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaBanco.resx">
       <DependentUpon>FormConsultaBanco.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="FormConsultaContasPagar.resx">
       <DependentUpon>FormConsultaContasPagar.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaContato.resx">
       <DependentUpon>FormConsultaContato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
