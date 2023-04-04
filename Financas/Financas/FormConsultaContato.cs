@@ -20,7 +20,14 @@ namespace Financas
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNome(textBoxBuscar.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
