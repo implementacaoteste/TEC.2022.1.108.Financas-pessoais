@@ -45,20 +45,25 @@
             // gastosLabel
             // 
             gastosLabel.AutoSize = true;
+
             gastosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             gastosLabel.Location = new System.Drawing.Point(174, 140);
             gastosLabel.Name = "gastosLabel";
             gastosLabel.Size = new System.Drawing.Size(60, 16);
+
+
             gastosLabel.TabIndex = 8;
             gastosLabel.Text = "Gastos:";
             // 
             // descricaoLabel
             // 
             descricaoLabel.AutoSize = true;
+
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descricaoLabel.Location = new System.Drawing.Point(155, 241);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(82, 16);
+
             descricaoLabel.TabIndex = 9;
             descricaoLabel.Text = "Descricao:";
             // 
@@ -76,7 +81,9 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.buttonCancelar.Location = new System.Drawing.Point(389, 348);
+
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(103, 23);
             this.buttonCancelar.TabIndex = 6;
@@ -87,7 +94,9 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.buttonSalvar.Location = new System.Drawing.Point(254, 348);
+
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(78, 23);
             this.buttonSalvar.TabIndex = 7;
@@ -102,7 +111,9 @@
             // textBoxGastos
             // 
             this.textBoxGastos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Gastos", true));
+
             this.textBoxGastos.Location = new System.Drawing.Point(233, 137);
+
             this.textBoxGastos.Name = "textBoxGastos";
             this.textBoxGastos.Size = new System.Drawing.Size(331, 22);
             this.textBoxGastos.TabIndex = 9;
