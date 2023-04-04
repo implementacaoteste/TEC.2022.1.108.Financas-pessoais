@@ -58,6 +58,12 @@
     <Compile Include="FormCadastroContasPaga.Designer.cs">
       <DependentUpon>FormCadastroContasPaga.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroContasReceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroContasReceber.Designer.cs">
+      <DependentUpon>FormCadastroContasReceber.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroContato.cs">
       <SubType>Form</SubType>
     </Compile>
