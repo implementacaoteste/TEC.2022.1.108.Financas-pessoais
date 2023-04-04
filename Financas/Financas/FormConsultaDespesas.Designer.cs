@@ -118,7 +118,7 @@
             this.despesasDataGridView.AllowUserToDeleteRows = false;
             this.despesasDataGridView.AllowUserToOrderColumns = true;
             this.despesasDataGridView.AutoGenerateColumns = false;
-            this.despesasDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.despesasDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.despesasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.despesasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
