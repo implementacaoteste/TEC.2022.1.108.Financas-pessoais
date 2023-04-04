@@ -88,5 +88,13 @@ namespace Financas
                 form.ShowDialog();
             }
         }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            using(FormLogin florm = new FormLogin())
+            {
+                florm.ShowDialog();
+            }
+        }
     }
 }

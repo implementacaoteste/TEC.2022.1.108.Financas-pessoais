@@ -45,5 +45,25 @@ namespace Financas
             }
             buttonBuscar_Click(null, null);
         }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+            //if(despesasBindingSource.Count <= 0)
+            //{
+            //    MessageBox.Show("Não há registro selecionar para ser alterado.");
+            //    return;
+            //}
+            //else
+            //{
+            //    int id = ((Despesas)despesasBindingSource.Current).Id;
+
+            //    using (FormConsultaDespesas frm = new FormConsultaDespesas(id))
+            //    {
+            //        frm.ShowDialog();
+            //    }
+            //    buttonBuscar_Click(null, null);
+
+            //}
+        }
     }
 }
