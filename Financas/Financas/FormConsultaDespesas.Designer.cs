@@ -34,15 +34,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.buttonBuscar = new System.Windows.Forms.Button();
-            this.buttonSelecionar = new System.Windows.Forms.Button();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.dateTimePickerCalendario = new System.Windows.Forms.DateTimePicker();
+            this.buttonSair = new System.Windows.Forms.Button();
+            this.textBoxBuscarDespesas = new System.Windows.Forms.TextBox();
             this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.despesasDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBoxBuscarDespesas = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAdicionar = new System.Windows.Forms.Button();
+            this.buttonAlterar = new System.Windows.Forms.Button();
+            this.labelInforamaConsultaDespesa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasDataGridView)).BeginInit();
@@ -53,7 +54,7 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(697, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(548, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -62,8 +63,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(697, 46);
+            this.label1.Size = new System.Drawing.Size(548, 37);
             this.label1.TabIndex = 4;
             this.label1.Text = "Consulta Despesas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -77,42 +79,34 @@
             // 
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonBuscar.Location = new System.Drawing.Point(168, 196);
+            this.buttonBuscar.Location = new System.Drawing.Point(216, 124);
+            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(111, 35);
-            this.buttonBuscar.TabIndex = 5;
+            this.buttonBuscar.Size = new System.Drawing.Size(71, 27);
+            this.buttonBuscar.TabIndex = 8;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
-            // buttonSelecionar
+            // buttonSair
             // 
-            this.buttonSelecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(285, 200);
-            this.buttonSelecionar.Name = "buttonSelecionar";
-            this.buttonSelecionar.Size = new System.Drawing.Size(150, 31);
-            this.buttonSelecionar.TabIndex = 5;
-            this.buttonSelecionar.Text = "Selecionar";
-            this.buttonSelecionar.UseVisualStyleBackColor = true;
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Location = new System.Drawing.Point(469, 123);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(67, 27);
+            this.buttonSair.TabIndex = 5;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
             // 
-            // buttonCancelar
+            // textBoxBuscarDespesas
             // 
-            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonCancelar.Location = new System.Drawing.Point(451, 200);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(170, 33);
-            this.buttonCancelar.TabIndex = 5;
-            this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePickerCalendario
-            // 
-            this.dateTimePickerCalendario.Location = new System.Drawing.Point(397, 106);
-            this.dateTimePickerCalendario.Name = "dateTimePickerCalendario";
-            this.dateTimePickerCalendario.Size = new System.Drawing.Size(156, 22);
-            this.dateTimePickerCalendario.TabIndex = 6;
-            this.dateTimePickerCalendario.Value = new System.DateTime(2023, 4, 3, 0, 0, 0, 0);
+            this.textBoxBuscarDespesas.Location = new System.Drawing.Point(11, 123);
+            this.textBoxBuscarDespesas.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxBuscarDespesas.Multiline = true;
+            this.textBoxBuscarDespesas.Name = "textBoxBuscarDespesas";
+            this.textBoxBuscarDespesas.Size = new System.Drawing.Size(201, 28);
+            this.textBoxBuscarDespesas.TabIndex = 8;
             // 
             // despesasBindingSource
             // 
@@ -129,64 +123,85 @@
             this.despesasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
+            this.dataGridViewTextBoxColumn7});
             this.despesasDataGridView.DataSource = this.despesasBindingSource;
-            this.despesasDataGridView.Location = new System.Drawing.Point(12, 239);
+            this.despesasDataGridView.Location = new System.Drawing.Point(7, 155);
             this.despesasDataGridView.Name = "despesasDataGridView";
             this.despesasDataGridView.ReadOnly = true;
-            this.despesasDataGridView.RowHeadersWidth = 51;
-            this.despesasDataGridView.RowTemplate.Height = 24;
-            this.despesasDataGridView.Size = new System.Drawing.Size(609, 222);
-            this.despesasDataGridView.TabIndex = 7;
+            this.despesasDataGridView.Size = new System.Drawing.Size(529, 220);
+            this.despesasDataGridView.TabIndex = 9;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Id";
             this.dataGridViewTextBoxColumn4.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 80;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Gastos";
             this.dataGridViewTextBoxColumn5.HeaderText = "Gastos";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 120;
             // 
-            // dataGridViewTextBoxColumn6
+            // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Descrição";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Descricao";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // textBoxBuscarDespesas
+            // buttonAdicionar
             // 
-            this.textBoxBuscarDespesas.Location = new System.Drawing.Point(23, 200);
-            this.textBoxBuscarDespesas.Multiline = true;
-            this.textBoxBuscarDespesas.Name = "textBoxBuscarDespesas";
-            this.textBoxBuscarDespesas.Size = new System.Drawing.Size(126, 33);
-            this.textBoxBuscarDespesas.TabIndex = 8;
+            this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionar.Location = new System.Drawing.Point(292, 123);
+            this.buttonAdicionar.Name = "buttonAdicionar";
+            this.buttonAdicionar.Size = new System.Drawing.Size(75, 27);
+            this.buttonAdicionar.TabIndex = 8;
+            this.buttonAdicionar.Text = "Adicionar";
+            this.buttonAdicionar.UseVisualStyleBackColor = true;
+            this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
+            // 
+            // buttonAlterar
+            // 
+            this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterar.Location = new System.Drawing.Point(373, 123);
+            this.buttonAlterar.Name = "buttonAlterar";
+            this.buttonAlterar.Size = new System.Drawing.Size(91, 27);
+            this.buttonAlterar.TabIndex = 10;
+            this.buttonAlterar.Text = "Alterar";
+            this.buttonAlterar.UseVisualStyleBackColor = true;
+            // 
+            // labelInforamaConsultaDespesa
+            // 
+            this.labelInforamaConsultaDespesa.AutoSize = true;
+            this.labelInforamaConsultaDespesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInforamaConsultaDespesa.Location = new System.Drawing.Point(13, 104);
+            this.labelInforamaConsultaDespesa.Name = "labelInforamaConsultaDespesa";
+            this.labelInforamaConsultaDespesa.Size = new System.Drawing.Size(116, 15);
+            this.labelInforamaConsultaDespesa.TabIndex = 11;
+            this.labelInforamaConsultaDespesa.Text = "Informe Consulta";
             // 
             // FormConsultaDespesas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 473);
-            this.Controls.Add(this.textBoxBuscarDespesas);
+            this.ClientSize = new System.Drawing.Size(548, 383);
+            this.Controls.Add(this.labelInforamaConsultaDespesa);
+            this.Controls.Add(this.buttonAlterar);
+            this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.despesasDataGridView);
-            this.Controls.Add(this.dateTimePickerCalendario);
-            this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonSelecionar);
+            this.Controls.Add(this.textBoxBuscarDespesas);
+            this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormConsultaDespesas";
@@ -210,14 +225,16 @@
         private System.Windows.Forms.Label label1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.Button buttonCancelar;
-        private System.Windows.Forms.Button buttonSelecionar;
-        private System.Windows.Forms.DateTimePicker dateTimePickerCalendario;
+        private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.TextBox textBoxBuscarDespesas;
         private System.Windows.Forms.DataGridView despesasDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.BindingSource despesasBindingSource;
-        private System.Windows.Forms.TextBox textBoxBuscarDespesas;
+        private System.Windows.Forms.Button buttonAlterar;
+        private System.Windows.Forms.Button buttonAdicionar;
+        private System.Windows.Forms.Label labelInforamaConsultaDespesa;
     }
 }

@@ -28,14 +28,22 @@ namespace Financas
         {
             try
             {
-              //despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos(textBoxBuscarDespesas);
+              despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos();
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             
         }
 
+        private void buttonAdicionar_Click(object sender, EventArgs e)
+        {
+            using (FormConsultaDespesas frm = new FormConsultaDespesas())
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
+        }
     }
 }
