@@ -23,7 +23,7 @@ namespace Financas
 
         private void buttonsair_Click(object sender, EventArgs e)
         {
-            //Application.Exit();
+           // Application.Exit();
             Close();
         }
 
@@ -53,6 +53,16 @@ namespace Financas
         }
 
         private void labelUsuarioLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

@@ -45,6 +45,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.bancoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // nomeLabel
+            // 
+            nomeLabel.AutoSize = true;
+            nomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomeLabel.Location = new System.Drawing.Point(31, 115);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(63, 20);
+            nomeLabel.TabIndex = 2;
+            nomeLabel.Text = "Nome:";
+            // 
+            // poupancaLabel
+            // 
+            poupancaLabel.AutoSize = true;
+            poupancaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            poupancaLabel.Location = new System.Drawing.Point(388, 112);
+            poupancaLabel.Name = "poupancaLabel";
+            poupancaLabel.Size = new System.Drawing.Size(97, 20);
+            poupancaLabel.TabIndex = 4;
+            poupancaLabel.Text = "Poupança:";
+            // 
+            // saldoLabel
+            // 
+            saldoLabel.AutoSize = true;
+            saldoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            saldoLabel.Location = new System.Drawing.Point(211, 211);
+            saldoLabel.Name = "saldoLabel";
+            saldoLabel.Size = new System.Drawing.Size(62, 20);
+            saldoLabel.TabIndex = 6;
+            saldoLabel.Text = "Saldo:";
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -60,61 +90,35 @@
             // 
             this.bancoBindingSource.DataSource = typeof(Models.Banco);
             // 
-            // nomeLabel
-            // 
-            nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(66, 80);
-            nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(58, 20);
-            nomeLabel.TabIndex = 2;
-            nomeLabel.Text = "Nome:";
-            // 
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bancoBindingSource, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(130, 80);
+            this.nomeTextBox.Location = new System.Drawing.Point(95, 115);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(246, 26);
             this.nomeTextBox.TabIndex = 3;
             // 
-            // poupancaLabel
-            // 
-            poupancaLabel.AutoSize = true;
-            poupancaLabel.Location = new System.Drawing.Point(36, 120);
-            poupancaLabel.Name = "poupancaLabel";
-            poupancaLabel.Size = new System.Drawing.Size(88, 20);
-            poupancaLabel.TabIndex = 4;
-            poupancaLabel.Text = "Poupanca:";
-            // 
             // poupancaTextBox
             // 
             this.poupancaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bancoBindingSource, "Poupanca", true));
-            this.poupancaTextBox.Location = new System.Drawing.Point(130, 120);
+            this.poupancaTextBox.Location = new System.Drawing.Point(482, 109);
             this.poupancaTextBox.Name = "poupancaTextBox";
-            this.poupancaTextBox.Size = new System.Drawing.Size(246, 26);
+            this.poupancaTextBox.Size = new System.Drawing.Size(253, 26);
             this.poupancaTextBox.TabIndex = 5;
-            // 
-            // saldoLabel
-            // 
-            saldoLabel.AutoSize = true;
-            saldoLabel.Location = new System.Drawing.Point(65, 159);
-            saldoLabel.Name = "saldoLabel";
-            saldoLabel.Size = new System.Drawing.Size(56, 20);
-            saldoLabel.TabIndex = 6;
-            saldoLabel.Text = "Saldo:";
             // 
             // saldoTextBox
             // 
             this.saldoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bancoBindingSource, "Saldo", true));
-            this.saldoTextBox.Location = new System.Drawing.Point(130, 159);
+            this.saldoTextBox.Enabled = false;
+            this.saldoTextBox.Location = new System.Drawing.Point(279, 208);
             this.saldoTextBox.Name = "saldoTextBox";
-            this.saldoTextBox.Size = new System.Drawing.Size(246, 26);
+            this.saldoTextBox.Size = new System.Drawing.Size(262, 26);
             this.saldoTextBox.TabIndex = 7;
             // 
             // buttonSalvarCadBanco
             // 
             this.buttonSalvarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadBanco.Location = new System.Drawing.Point(110, 237);
+            this.buttonSalvarCadBanco.Location = new System.Drawing.Point(262, 310);
             this.buttonSalvarCadBanco.Name = "buttonSalvarCadBanco";
             this.buttonSalvarCadBanco.Size = new System.Drawing.Size(70, 35);
             this.buttonSalvarCadBanco.TabIndex = 8;
@@ -124,9 +128,9 @@
             // buttonCancelarCadBanco
             // 
             this.buttonCancelarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadBanco.Location = new System.Drawing.Point(263, 237);
+            this.buttonCancelarCadBanco.Location = new System.Drawing.Point(418, 310);
             this.buttonCancelarCadBanco.Name = "buttonCancelarCadBanco";
-            this.buttonCancelarCadBanco.Size = new System.Drawing.Size(70, 35);
+            this.buttonCancelarCadBanco.Size = new System.Drawing.Size(85, 35);
             this.buttonCancelarCadBanco.TabIndex = 8;
             this.buttonCancelarCadBanco.Text = "Cancelar";
             this.buttonCancelarCadBanco.UseVisualStyleBackColor = true;
