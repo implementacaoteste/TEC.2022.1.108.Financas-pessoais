@@ -52,6 +52,12 @@
     <Compile Include="FormCadastroBanco.Designer.cs">
       <DependentUpon>FormCadastroBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroContasPaga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroContasPaga.Designer.cs">
+      <DependentUpon>FormCadastroContasPaga.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroContato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCadastroBanco.resx">
       <DependentUpon>FormCadastroBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroContasPaga.resx">
+      <DependentUpon>FormCadastroContasPaga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroContato.resx">
       <DependentUpon>FormCadastroContato.cs</DependentUpon>
