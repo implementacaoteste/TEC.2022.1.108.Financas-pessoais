@@ -21,5 +21,10 @@ namespace Financas
         {
 
         }
+
+        private void buttonCancelarCadastrodeUsuario_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
