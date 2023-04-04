@@ -96,5 +96,13 @@ namespace Financas
                 florm.ShowDialog();
             }
         }
+
+        private void contatoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroContato frm = new FormCadastroContato())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
