@@ -26,5 +26,10 @@ namespace Financas
         {
 
         }
+
+        private void buttonCancelarCadBanco_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

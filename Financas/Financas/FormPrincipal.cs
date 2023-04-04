@@ -117,5 +117,26 @@ namespace Financas
                 frm.ShowDialog();
             }
         }
+
+        private void contasAPagarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroContasPaga frm = new FormCadastroContasPaga())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void despesasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroDespesas frm = new FormCadastroDespesas())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void receitasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

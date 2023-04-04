@@ -16,5 +16,10 @@ namespace Financas
         {
             InitializeComponent();
         }
+
+        private void buttonCancelarCadastroContasPagar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
