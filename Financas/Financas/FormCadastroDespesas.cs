@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,30 @@ namespace Financas
         public FormCadastroDespesas()
         {
             InitializeComponent();
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DespesasBLL despesasBLL = new DespesasBLL();
+                despesasBindingSource.EndEdit();
+
+                despesasBLL.Inserir((Despesas)despesasBindingSource.Current);
+            }
+            catch
+            {
+                MessageBox.Show("Registro salvo com sucesso!");
+            }
+            finally
+            {
+                Close();
+            }
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
