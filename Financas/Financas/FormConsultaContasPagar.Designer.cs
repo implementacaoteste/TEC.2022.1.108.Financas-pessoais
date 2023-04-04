@@ -37,9 +37,10 @@
             this.buttonAdicionarConsultaContasPagar = new System.Windows.Forms.Button();
             this.buttonAlterarConsultaContasPagar = new System.Windows.Forms.Button();
             this.buttonExcluirConsultaContasPagar = new System.Windows.Forms.Button();
-            this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -131,10 +132,6 @@
             this.buttonExcluirConsultaContasPagar.Text = "Excluir";
             this.buttonExcluirConsultaContasPagar.UseVisualStyleBackColor = true;
             // 
-            // contasPagarBindingSource
-            // 
-            this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
-            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -154,11 +151,26 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // contasPagarBindingSource
+            // 
+            this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
+            // 
+            // buttonSair
+            // 
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Location = new System.Drawing.Point(700, 407);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(75, 23);
+            this.buttonSair.TabIndex = 8;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            // 
             // FormConsultaContasPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 444);
+            this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonExcluirConsultaContasPagar);
             this.Controls.Add(this.buttonAlterarConsultaContasPagar);
             this.Controls.Add(this.buttonAdicionarConsultaContasPagar);
@@ -167,8 +179,14 @@
             this.Controls.Add(this.labelConsultarContasPagar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.contasPagarDataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormConsultaContasPagar";
-            this.Text = "FormConsultaContasPagar";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consulta de Contas a Pagar";
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -189,5 +207,6 @@
         private System.Windows.Forms.Button buttonExcluirConsultaContasPagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button buttonSair;
     }
 }

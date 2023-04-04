@@ -35,12 +35,13 @@
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.textBoxBuscarDespesas = new System.Windows.Forms.TextBox();
             this.despesasDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAdicionar = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.labelInforamaConsultaDespesa = new System.Windows.Forms.Label();
             this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.despesasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -99,18 +100,36 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7});
             this.despesasDataGridView.Location = new System.Drawing.Point(35, 135);
-            this.despesasDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.despesasDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.despesasDataGridView.Name = "despesasDataGridView";
             this.despesasDataGridView.ReadOnly = true;
             this.despesasDataGridView.RowHeadersWidth = 51;
             this.despesasDataGridView.Size = new System.Drawing.Size(740, 266);
             this.despesasDataGridView.TabIndex = 9;
             // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Gastos";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Gastos";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
             // buttonAdicionar
             // 
             this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdicionar.Location = new System.Drawing.Point(524, 110);
-            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(86, 23);
             this.buttonAdicionar.TabIndex = 8;
@@ -122,7 +141,7 @@
             // 
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterar.Location = new System.Drawing.Point(618, 110);
-            this.buttonAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterar.TabIndex = 10;
@@ -145,23 +164,16 @@
             // 
             this.despesasBindingSource.DataSource = typeof(Models.Despesas);
             // 
-            // dataGridViewTextBoxColumn5
+            // buttonSair
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Gastos";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Gastos";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Location = new System.Drawing.Point(700, 407);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(75, 23);
+            this.buttonSair.TabIndex = 5;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
             // 
             // FormConsultaDespesas
             // 
@@ -173,6 +185,7 @@
             this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.despesasDataGridView);
             this.Controls.Add(this.textBoxBuscarDespesas);
+            this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.label1);
@@ -208,5 +221,6 @@
         private System.Windows.Forms.BindingSource despesasBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Button buttonSair;
     }
 }
