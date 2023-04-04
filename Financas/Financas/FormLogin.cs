@@ -52,6 +52,9 @@ namespace Financas
             } 
         }
 
-        
+        private void labelUsuarioLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
