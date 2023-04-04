@@ -37,10 +37,9 @@
             this.textBoxConsultarReceita = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.receitaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +52,6 @@
             this.receitaDataGridView.AutoGenerateColumns = false;
             this.receitaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.receitaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.receitaDataGridView.DataSource = this.receitaBindingSource;
@@ -134,23 +132,18 @@
             this.label2.Text = "Consultar Receita";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewTextBoxColumn1
+            // receitaBindingSource
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 125;
+            this.receitaBindingSource.DataSource = typeof(Models.Receita);
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Ganhos";
             this.dataGridViewTextBoxColumn2.HeaderText = "Ganhos";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 147;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -160,10 +153,6 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // receitaBindingSource
-            // 
-            this.receitaBindingSource.DataSource = typeof(Models.Receita);
             // 
             // FormConsultarReceita
             // 
@@ -191,9 +180,6 @@
 
         private System.Windows.Forms.BindingSource receitaBindingSource;
         private System.Windows.Forms.DataGridView receitaDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button buttonBuscarReceita;
         private System.Windows.Forms.Button buttonAlterarReceita;
         private System.Windows.Forms.Button buttonExcluirReceita;
@@ -201,5 +187,7 @@
         private System.Windows.Forms.TextBox textBoxConsultarReceita;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

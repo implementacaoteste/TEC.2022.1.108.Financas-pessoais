@@ -39,7 +39,6 @@
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.labelInforamaConsultaDespesa = new System.Windows.Forms.Label();
             this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.despesasDataGridView)).BeginInit();
@@ -83,11 +82,11 @@
             // 
             // textBoxBuscarDespesas
             // 
-            this.textBoxBuscarDespesas.Location = new System.Drawing.Point(106, 108);
+            this.textBoxBuscarDespesas.Location = new System.Drawing.Point(98, 108);
             this.textBoxBuscarDespesas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxBuscarDespesas.Multiline = true;
             this.textBoxBuscarDespesas.Name = "textBoxBuscarDespesas";
-            this.textBoxBuscarDespesas.Size = new System.Drawing.Size(330, 23);
+            this.textBoxBuscarDespesas.Size = new System.Drawing.Size(338, 23);
             this.textBoxBuscarDespesas.TabIndex = 8;
             // 
             // despesasDataGridView
@@ -97,7 +96,6 @@
             this.despesasDataGridView.AllowUserToOrderColumns = true;
             this.despesasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.despesasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7});
             this.despesasDataGridView.Location = new System.Drawing.Point(35, 135);
@@ -146,15 +144,6 @@
             // despesasBindingSource
             // 
             this.despesasBindingSource.DataSource = typeof(Models.Despesas);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 80;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -217,7 +206,6 @@
         private System.Windows.Forms.Button buttonAdicionar;
         private System.Windows.Forms.Label labelInforamaConsultaDespesa;
         private System.Windows.Forms.BindingSource despesasBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
