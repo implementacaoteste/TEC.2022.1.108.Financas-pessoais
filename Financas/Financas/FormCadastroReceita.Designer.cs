@@ -42,10 +42,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // receitaBindingSource
-            // 
-            this.receitaBindingSource.DataSource = typeof(Models.Receita);
-            // 
             // descricaoLabel
             // 
             descricaoLabel.AutoSize = true;
@@ -53,15 +49,7 @@
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(72, 16);
             descricaoLabel.TabIndex = 1;
-            descricaoLabel.Text = "Descricao:";
-            // 
-            // textBoxDescricao
-            // 
-            this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "Descricao", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(135, 227);
-            this.textBoxDescricao.Name = "textBoxDescricao";
-            this.textBoxDescricao.Size = new System.Drawing.Size(408, 22);
-            this.textBoxDescricao.TabIndex = 2;
+            descricaoLabel.Text = "Descrição:";
             // 
             // ganhosLabel
             // 
@@ -71,6 +59,18 @@
             ganhosLabel.Size = new System.Drawing.Size(57, 16);
             ganhosLabel.TabIndex = 3;
             ganhosLabel.Text = "Ganhos:";
+            // 
+            // receitaBindingSource
+            // 
+            this.receitaBindingSource.DataSource = typeof(Models.Receita);
+            // 
+            // textBoxDescricao
+            // 
+            this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "Descricao", true));
+            this.textBoxDescricao.Location = new System.Drawing.Point(135, 227);
+            this.textBoxDescricao.Name = "textBoxDescricao";
+            this.textBoxDescricao.Size = new System.Drawing.Size(408, 22);
+            this.textBoxDescricao.TabIndex = 2;
             // 
             // textBoxGanhos
             // 
@@ -95,7 +95,7 @@
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelar.Location = new System.Drawing.Point(364, 315);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.Size = new System.Drawing.Size(82, 23);
             this.buttonCancelar.TabIndex = 12;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
