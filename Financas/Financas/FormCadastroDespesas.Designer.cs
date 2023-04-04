@@ -42,6 +42,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // gastosLabel
+            // 
+            gastosLabel.AutoSize = true;
+            gastosLabel.Location = new System.Drawing.Point(76, 178);
+            gastosLabel.Name = "gastosLabel";
+            gastosLabel.Size = new System.Drawing.Size(53, 16);
+            gastosLabel.TabIndex = 8;
+            gastosLabel.Text = "Gastos:";
+            // 
+            // descricaoLabel
+            // 
+            descricaoLabel.AutoSize = true;
+            descricaoLabel.Location = new System.Drawing.Point(57, 230);
+            descricaoLabel.Name = "descricaoLabel";
+            descricaoLabel.Size = new System.Drawing.Size(72, 16);
+            descricaoLabel.TabIndex = 9;
+            descricaoLabel.Text = "Descricao:";
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -55,6 +73,7 @@
             // 
             // buttonCancelar
             // 
+            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelar.Location = new System.Drawing.Point(374, 316);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
@@ -65,6 +84,7 @@
             // 
             // buttonSalvar
             // 
+            this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvar.Location = new System.Drawing.Point(468, 316);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
@@ -77,31 +97,13 @@
             // 
             this.despesasBindingSource.DataSource = typeof(Models.Despesas);
             // 
-            // gastosLabel
-            // 
-            gastosLabel.AutoSize = true;
-            gastosLabel.Location = new System.Drawing.Point(76, 159);
-            gastosLabel.Name = "gastosLabel";
-            gastosLabel.Size = new System.Drawing.Size(53, 16);
-            gastosLabel.TabIndex = 8;
-            gastosLabel.Text = "Gastos:";
-            // 
             // textBoxGastos
             // 
             this.textBoxGastos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Gastos", true));
-            this.textBoxGastos.Location = new System.Drawing.Point(135, 156);
+            this.textBoxGastos.Location = new System.Drawing.Point(135, 175);
             this.textBoxGastos.Name = "textBoxGastos";
             this.textBoxGastos.Size = new System.Drawing.Size(188, 22);
             this.textBoxGastos.TabIndex = 9;
-            // 
-            // descricaoLabel
-            // 
-            descricaoLabel.AutoSize = true;
-            descricaoLabel.Location = new System.Drawing.Point(57, 230);
-            descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(72, 16);
-            descricaoLabel.TabIndex = 9;
-            descricaoLabel.Text = "Descricao:";
             // 
             // textBoxDescricao
             // 
