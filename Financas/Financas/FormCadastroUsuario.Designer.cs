@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelNome = new System.Windows.Forms.Label();
             this.labelNomeUsuario = new System.Windows.Forms.Label();
             this.labelSenha = new System.Windows.Forms.Label();
@@ -45,12 +44,9 @@
             this.labelRendaCadastroUsuario = new System.Windows.Forms.Label();
             this.textBoxRendaCadastroUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
             // 
             // labelNome
             // 
@@ -84,6 +80,7 @@
             // 
             // textBoxNomeCadastroUsuario
             // 
+            this.textBoxNomeCadastroUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nome", true));
             this.textBoxNomeCadastroUsuario.Location = new System.Drawing.Point(72, 168);
             this.textBoxNomeCadastroUsuario.Name = "textBoxNomeCadastroUsuario";
             this.textBoxNomeCadastroUsuario.Size = new System.Drawing.Size(161, 22);
@@ -91,6 +88,7 @@
             // 
             // textBoxNomeUsuarioCadastroUsuario
             // 
+            this.textBoxNomeUsuarioCadastroUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
             this.textBoxNomeUsuarioCadastroUsuario.Location = new System.Drawing.Point(319, 168);
             this.textBoxNomeUsuarioCadastroUsuario.Name = "textBoxNomeUsuarioCadastroUsuario";
             this.textBoxNomeUsuarioCadastroUsuario.Size = new System.Drawing.Size(191, 22);
@@ -98,6 +96,7 @@
             // 
             // textBoxSenhaCadastroUsuario
             // 
+            this.textBoxSenhaCadastroUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
             this.textBoxSenhaCadastroUsuario.Location = new System.Drawing.Point(72, 319);
             this.textBoxSenhaCadastroUsuario.Name = "textBoxSenhaCadastroUsuario";
             this.textBoxSenhaCadastroUsuario.Size = new System.Drawing.Size(161, 22);
@@ -170,6 +169,7 @@
             // 
             // textBoxRendaCadastroUsuario
             // 
+            this.textBoxRendaCadastroUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Renda", true));
             this.textBoxRendaCadastroUsuario.Location = new System.Drawing.Point(193, 415);
             this.textBoxRendaCadastroUsuario.Name = "textBoxRendaCadastroUsuario";
             this.textBoxRendaCadastroUsuario.Size = new System.Drawing.Size(156, 22);
@@ -184,6 +184,10 @@
             this.label1.Size = new System.Drawing.Size(386, 46);
             this.label1.TabIndex = 14;
             this.label1.Text = "Cadastro de Usuario";
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
             // 
             // FormCadastroUsuario
             // 

@@ -56,6 +56,7 @@
             this.dataGridViewTextBoxColumn2});
             this.formaPagamentoDataGridView.DataSource = this.formaPagamentoBindingSource;
             this.formaPagamentoDataGridView.Location = new System.Drawing.Point(32, 154);
+            this.formaPagamentoDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.formaPagamentoDataGridView.Name = "formaPagamentoDataGridView";
             this.formaPagamentoDataGridView.ReadOnly = true;
             this.formaPagamentoDataGridView.RowHeadersWidth = 51;
@@ -87,50 +88,60 @@
             // 
             // buttonBuscarFormaPagamento
             // 
-            this.buttonBuscarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(395, 126);
+            this.buttonBuscarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(395, 126);
+            this.buttonBuscarFormaPagamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
-            this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(56, 19);
             this.buttonBuscarFormaPagamento.TabIndex = 8;
             this.buttonBuscarFormaPagamento.Text = "Buscar";
             this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscarFormaPagamento_Click);
             // 
             // buttonAlterarFormaPagamento
             // 
             this.buttonAlterarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterarFormaPagamento.Location = new System.Drawing.Point(570, 126);
+            this.buttonAlterarFormaPagamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
-            this.buttonAlterarFormaPagamento.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterarFormaPagamento.Size = new System.Drawing.Size(56, 19);
             this.buttonAlterarFormaPagamento.TabIndex = 9;
             this.buttonAlterarFormaPagamento.Text = "Alterar";
             this.buttonAlterarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonAlterarFormaPagamento.Click += new System.EventHandler(this.buttonAlterarFormaPagamento_Click);
             // 
             // buttonExcluirFormaPagamento
             // 
             this.buttonExcluirFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluirFormaPagamento.Location = new System.Drawing.Point(651, 126);
+            this.buttonExcluirFormaPagamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
-            this.buttonExcluirFormaPagamento.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluirFormaPagamento.Size = new System.Drawing.Size(56, 19);
             this.buttonExcluirFormaPagamento.TabIndex = 10;
             this.buttonExcluirFormaPagamento.Text = "Excluir";
             this.buttonExcluirFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonExcluirFormaPagamento.Click += new System.EventHandler(this.buttonExcluirFormaPagamento_Click);
             // 
             // buttonAdicionarFormaPagamento
             // 
             this.buttonAdicionarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdicionarFormaPagamento.Location = new System.Drawing.Point(476, 126);
+            this.buttonAdicionarFormaPagamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAdicionarFormaPagamento.Name = "buttonAdicionarFormaPagamento";
-            this.buttonAdicionarFormaPagamento.Size = new System.Drawing.Size(88, 23);
+            this.buttonAdicionarFormaPagamento.Size = new System.Drawing.Size(66, 19);
             this.buttonAdicionarFormaPagamento.TabIndex = 11;
             this.buttonAdicionarFormaPagamento.Text = "Adicionar";
             this.buttonAdicionarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonAdicionarFormaPagamento.Click += new System.EventHandler(this.buttonAdicionarFormaPagamento_Click);
             // 
             // textBoxConsultarFormaPagamento
             // 
             this.textBoxConsultarFormaPagamento.Location = new System.Drawing.Point(102, 127);
             this.textBoxConsultarFormaPagamento.Name = "textBoxConsultarFormaPagamento";
             this.textBoxConsultarFormaPagamento.Size = new System.Drawing.Size(287, 22);
+            this.textBoxConsultarFormaPagamento.Location = new System.Drawing.Point(83, 93);
+            this.textBoxConsultarFormaPagamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxConsultarFormaPagamento.TabIndex = 7;
+            this.textBoxConsultarFormaPagamento.TextChanged += new System.EventHandler(this.textBoxConsultarFormaPagamento_TextChanged);
             // 
             // label1
             // 
@@ -139,6 +150,7 @@
             this.label1.Location = new System.Drawing.Point(29, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.TabIndex = 6;
             this.label1.Text = "Consulta";
             // 
@@ -148,15 +160,16 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.Location = new System.Drawing.Point(108, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(574, 46);
+            this.label2.Size = new System.Drawing.Size(464, 37);
             this.label2.TabIndex = 12;
             this.label2.Text = "Consulta Forma de Pagamento";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormConsultaFormaPagamento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 479);
             this.Controls.Add(this.label2);
@@ -167,10 +180,12 @@
             this.Controls.Add(this.textBoxConsultarFormaPagamento);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.formaPagamentoDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormConsultaFormaPagamento";
             this.Text = "FormConsultaFormaPagamento";
+            this.Load += new System.EventHandler(this.FormConsultaFormaPagamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
