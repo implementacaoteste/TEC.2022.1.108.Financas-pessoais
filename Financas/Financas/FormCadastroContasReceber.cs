@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Financas
 {
-    public partial class FormConsultarReceita : Form
+    public partial class FormCadastroContasReceber : Form
     {
-        public FormConsultarReceita()
+        public FormCadastroContasReceber()
         {
             InitializeComponent();
-        }
-
-        private void buttonAlterarReceita_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

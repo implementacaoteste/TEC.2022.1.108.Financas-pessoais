@@ -64,6 +64,12 @@
     <Compile Include="FormCadastroContato.Designer.cs">
       <DependentUpon>FormCadastroContato.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroDespesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroDespesas.Designer.cs">
+      <DependentUpon>FormCadastroDespesas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroContato.resx">
       <DependentUpon>FormCadastroContato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroDespesas.resx">
+      <DependentUpon>FormCadastroDespesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroUsuario.resx">
       <DependentUpon>FormCadastroUsuario.cs</DependentUpon>

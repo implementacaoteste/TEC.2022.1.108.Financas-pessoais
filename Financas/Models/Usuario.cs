@@ -9,6 +9,5 @@ namespace Models
         public string NomeUsuario { get; set; }
         public string Senha { get; set; }
         public float Renda { get; set; }
-        public List<Usuario> Usuarios { get; set; }
     }
 }
