@@ -81,7 +81,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(747, 52);
+            this.label1.Size = new System.Drawing.Size(753, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro Banco";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 296);
+            this.ClientSize = new System.Drawing.Size(753, 440);
             this.Controls.Add(this.buttonCancelarCadBanco);
             this.Controls.Add(this.buttonSalvarCadBanco);
             this.Controls.Add(saldoLabel);
