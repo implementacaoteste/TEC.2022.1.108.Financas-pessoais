@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,14 +31,46 @@ namespace Financas
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-
+            using (FormCadastroContato frm = new FormCadastroContato())
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
         }
 
-        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        private void buttonExcluir_Click(object sender, EventArgs e)
         {
+            if (contatoBindingSource.Count <= 0)
+            {
+                MessageBox.Show("Não existe registro para ser excluído");
+                return;
+            }
 
+            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            int id = ((Contato)contatoBindingSource.Current).Id;
+            new ContatoBLL().Excluir(id);
+            contatoBindingSource.RemoveCurrent();
+
+            MessageBox.Show("Registro excluído com sucesso!");
+        }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+            int id = ((Contato)contatoBindingSource.Current).Id;
+            using (FormCadastroContato frm = new FormCadastroContato(id))
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
         }
     }
 }
