@@ -122,7 +122,6 @@
             this.buttonAdicionarFormaPagamento.TabIndex = 11;
             this.buttonAdicionarFormaPagamento.Text = "Adicionar";
             this.buttonAdicionarFormaPagamento.UseVisualStyleBackColor = true;
-
             // 
             // textBoxConsultarFormaPagamento
             // 
@@ -131,7 +130,6 @@
             this.textBoxConsultarFormaPagamento.Name = "textBoxConsultarFormaPagamento";
             this.textBoxConsultarFormaPagamento.Size = new System.Drawing.Size(334, 22);
             this.textBoxConsultarFormaPagamento.TabIndex = 7;
-            
             // 
             // label1
             // 
@@ -164,7 +162,7 @@
             this.buttonSair.TabIndex = 13;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
-
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // FormConsultaFormaPagamento
             // 
@@ -190,7 +188,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Forma de Pagamento";
-            
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
