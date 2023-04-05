@@ -53,9 +53,9 @@
             valorReceberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             valorReceberLabel.Location = new System.Drawing.Point(108, 152);
             valorReceberLabel.Name = "valorReceberLabel";
-            valorReceberLabel.Size = new System.Drawing.Size(112, 16);
+            valorReceberLabel.Size = new System.Drawing.Size(125, 16);
             valorReceberLabel.TabIndex = 1;
-            valorReceberLabel.Text = "Valor Receber:";
+            valorReceberLabel.Text = "Valor a Receber:";
             // 
             // descricaoLabel
             // 
@@ -65,7 +65,7 @@
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(82, 16);
             descricaoLabel.TabIndex = 3;
-            descricaoLabel.Text = "Descricao:";
+            descricaoLabel.Text = "Descrição:";
             // 
             // contasReceberBindingSource
             // 
@@ -85,9 +85,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(103, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(540, 46);
+            this.label1.Size = new System.Drawing.Size(574, 46);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Cadastro Contas a Receber";
+            this.label1.Text = "Cadastro de contas a receber";
             // 
             // descricaoTextBoxContasReceber
             // 
@@ -104,14 +104,14 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(108, 276);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 16);
+            this.label2.Size = new System.Drawing.Size(182, 16);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Quem Vai Pagar:";
+            this.label2.Text = "Efetuador do pagamento:";
             // 
             // buttonBuscarContatoContasReceber
             // 
             this.buttonBuscarContatoContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarContatoContasReceber.Location = new System.Drawing.Point(447, 276);
+            this.buttonBuscarContatoContasReceber.Location = new System.Drawing.Point(540, 277);
             this.buttonBuscarContatoContasReceber.Name = "buttonBuscarContatoContasReceber";
             this.buttonBuscarContatoContasReceber.Size = new System.Drawing.Size(78, 23);
             this.buttonBuscarContatoContasReceber.TabIndex = 7;
@@ -122,7 +122,7 @@
             // buttonSalvarCadastroContasReceber
             // 
             this.buttonSalvarCadastroContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadastroContasReceber.Location = new System.Drawing.Point(339, 371);
+            this.buttonSalvarCadastroContasReceber.Location = new System.Drawing.Point(412, 371);
             this.buttonSalvarCadastroContasReceber.Name = "buttonSalvarCadastroContasReceber";
             this.buttonSalvarCadastroContasReceber.Size = new System.Drawing.Size(78, 23);
             this.buttonSalvarCadastroContasReceber.TabIndex = 8;
@@ -133,7 +133,7 @@
             // buttonCancelarCadastroContasReceber
             // 
             this.buttonCancelarCadastroContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastroContasReceber.Location = new System.Drawing.Point(456, 371);
+            this.buttonCancelarCadastroContasReceber.Location = new System.Drawing.Point(518, 371);
             this.buttonCancelarCadastroContasReceber.Name = "buttonCancelarCadastroContasReceber";
             this.buttonCancelarCadastroContasReceber.Size = new System.Drawing.Size(103, 23);
             this.buttonCancelarCadastroContasReceber.TabIndex = 9;
@@ -148,9 +148,9 @@
             // textBoxBuscarContato
             // 
             this.textBoxBuscarContato.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Nome", true));
-            this.textBoxBuscarContato.Location = new System.Drawing.Point(238, 277);
+            this.textBoxBuscarContato.Location = new System.Drawing.Point(296, 277);
             this.textBoxBuscarContato.Name = "textBoxBuscarContato";
-            this.textBoxBuscarContato.Size = new System.Drawing.Size(179, 22);
+            this.textBoxBuscarContato.Size = new System.Drawing.Size(194, 22);
             this.textBoxBuscarContato.TabIndex = 10;
             // 
             // FormCadastroContasReceber
@@ -168,10 +168,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(valorReceberLabel);
             this.Controls.Add(this.valorReceberTextBoxContasReceber);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCadastroContasReceber";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "FormCadastroContasReceber";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro contas de contas a receber";
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).EndInit();
             this.ResumeLayout(false);
