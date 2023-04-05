@@ -44,6 +44,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = "UPDATE Banco SET Nome=@Nome, Saldo=@Saldo, Poupanca=@Poupanca WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Id", _banco.Id);
                 cmd.Parameters.AddWithValue("@Nome", _banco.Nome);
                 cmd.Parameters.AddWithValue("@Saldo", _banco.Saldo);
                 cmd.Parameters.AddWithValue("@Poupanca", _banco.Poupanca);
