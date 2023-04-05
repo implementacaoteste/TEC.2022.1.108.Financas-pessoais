@@ -138,5 +138,13 @@ namespace Financas
         {
 
         }
+
+        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using(FormConsultaUsuario frm = new FormConsultaUsuario())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

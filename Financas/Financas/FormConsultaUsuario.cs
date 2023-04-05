@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +19,58 @@ namespace Financas
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void buttonBuscar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorNome(textBoxBuscar.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void buttonAdicionar_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroUsuario frm = new FormCadastroUsuario())
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
+        }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+            int id = ((Usuario)usuarioBindingSource.Current).Id;
+            using (FormCadastroUsuario frm = new FormCadastroUsuario(id))
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
+        }
+
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+            if (usuarioBindingSource.Count <= 0)
+            {
+                MessageBox.Show("Não existe registro para ser excluído");
+                return;
+            }
+
+            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            int id = ((Usuario)usuarioBindingSource.Current).Id;
+            new ContatoBLL().Excluir(id);
+            usuarioBindingSource.RemoveCurrent();
+
+            MessageBox.Show("Registro excluído com sucesso!");
+        }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
