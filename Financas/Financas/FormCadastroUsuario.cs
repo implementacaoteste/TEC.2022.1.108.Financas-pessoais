@@ -52,7 +52,10 @@ namespace Financas
 
         private void FormCadastroUsuario_Load_1(object sender, EventArgs e)
         {
-
+            if (Id == 0)
+                usuarioBindingSource.AddNew();
+            else
+                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarTodos();
         }
     }
 }
