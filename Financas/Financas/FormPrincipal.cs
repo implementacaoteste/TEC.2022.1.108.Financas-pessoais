@@ -35,7 +35,7 @@ namespace Financas
 
         private void receitasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (FormConsultarReceita frm = new FormConsultarReceita())
+            using (FormConsultaReceita frm = new FormConsultaReceita())
             {
                 frm.ShowDialog();
             }
@@ -136,7 +136,10 @@ namespace Financas
 
         private void receitasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            using (FormCadastroReceita fr = new FormCadastroReceita())
+            {
+                fr.ShowDialog();
+            }
         }
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,6 +153,14 @@ namespace Financas
         private void contasAReceberToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             using (FormCadastroContasReceber frm = new FormCadastroContasReceber())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void formaDePagamentoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroFormaPagamento frm = new FormCadastroFormaPagamento())
             {
                 frm.ShowDialog();
             }

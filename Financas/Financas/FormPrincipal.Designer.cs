@@ -126,6 +126,7 @@
             this.formaDePagamentoToolStripMenuItem1.Name = "formaDePagamentoToolStripMenuItem1";
             this.formaDePagamentoToolStripMenuItem1.Size = new System.Drawing.Size(236, 26);
             this.formaDePagamentoToolStripMenuItem1.Text = "Forma de pagamento";
+            this.formaDePagamentoToolStripMenuItem1.Click += new System.EventHandler(this.formaDePagamentoToolStripMenuItem1_Click);
             // 
             // receitasToolStripMenuItem1
             // 

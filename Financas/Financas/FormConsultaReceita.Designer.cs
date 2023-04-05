@@ -1,6 +1,6 @@
 ﻿namespace Financas
 {
-    partial class FormConsultarReceita
+    partial class FormConsultaReceita
     {
         /// <summary>
         /// Required designer variable.
