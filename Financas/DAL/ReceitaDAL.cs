@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +19,10 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Receita(Ganhos, Descricao)
-                                    VALUES(@Ganhos, @Descricao)";
+                cmd.CommandText = @"INSERT INTO Receita(Valor, Descricao)
+                                    VALUES(@Valor, @Descricao)";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Ganhos", _receita.Ganhos);
+                cmd.Parameters.AddWithValue("@Valor", _receita.Valor);
                 cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
                 cmd.Connection = cn;
                 cn.Open();
@@ -42,9 +43,9 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Receita SET Ganhos=@Ganhos, Descricao=@Descricao WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Receita SET Valor=@Valor, Descricao=@Descricao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Ganhos", _receita.Ganhos);
+                cmd.Parameters.AddWithValue("@Valor", _receita.Valor);
                 cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
                 cmd.Connection = cn;
                 cn.Open();
@@ -103,7 +104,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Ganhos, Descricao FROM Receita WHERE Id = @Id";
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Valor, Receita.Descricao, Contato.Nome FROM Receita
+                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id WHERE Receita.Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -114,8 +116,9 @@ namespace DAL
                     {
                         receita = new Receita();
                         receita.Id = Convert.ToInt32(rd["ID"]);
-                        receita.Ganhos = (double)rd["Ganhos"];
+                        receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
+                        receita.Contato = rd["Nome"].ToString();
                     }
                 }
                 return receita;
@@ -141,7 +144,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Ganhos, Descricao FROM Receita";
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Valor, Receita.Descricao, Contato.Nome FROM Receita
+                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -150,8 +154,9 @@ namespace DAL
                     {
                         receita = new Receita();
                         receita.Id = Convert.ToInt32(rd["Id"]);
-                        receita.Ganhos = (double)rd["Ganhos"];
+                        receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
+                        receita.Contato = rd["Nome"].ToString();
                         receitas.Add(receita);
                     }
                 }
@@ -177,7 +182,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Ganhos, Descricao, Renda FROM Receita WHERE Descricao LIKE @Descricao";
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Valor, Receita.Descricao, Contato.Nome FROM Receita
+                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id WHERE Receita.Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
@@ -188,8 +194,9 @@ namespace DAL
                     {
                         receita = new Receita();
                         receita.Id = Convert.ToInt32(rd["Id"]);
-                        receita.Ganhos = (double)rd["Ganhos"];
+                        receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
+                        receita.Contato = rd["Nome"].ToString();
                         receitas.Add(receita);
                     }
                 }

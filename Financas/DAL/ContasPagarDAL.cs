@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -103,7 +104,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, ValorPagar, Descricao FROM ContasPagar WHERE Id = @Id";
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.ValorPagar, ContasPagar.Descricao, Contato.Nome FROM ContasPagar
+                                    INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id WHERE ContasPagar.Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -116,6 +118,7 @@ namespace DAL
                         contasPagar.Id = Convert.ToInt32(rd["ID"]);
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
+                        contasPagar.Contato = rd["Nome"].ToString();
                     }
                 }
                 return contasPagar;
@@ -141,7 +144,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, ValorPagar, Descricao FROM ContasPagar";
+                cmd.CommandText = "SELECT ContasPagar.Id, ContasPagar.ValorPagar, ContasPagar.Descricao, Contato.Nome FROM ContasPagar";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -152,6 +155,7 @@ namespace DAL
                         contasPagar.Id = Convert.ToInt32(rd["Id"]);
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
+                        contasPagar.Contato = rd["Nome"].ToString();
                         contaPagar.Add(contasPagar);
                     }
                 }
@@ -177,7 +181,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, ValorPagar, Descricao FROM ContasPagar WHERE Descricao LIKE @Descricao";
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.ValorPagar, ContasPagar.Descricao, Contato.Nome FROM ContasPagar
+                                    INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id WHERE ContasPagar.Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
@@ -190,6 +195,7 @@ namespace DAL
                         contasPagar.Id = Convert.ToInt32(rd["Id"]);
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
+                        contasPagar.Contato = rd["Nome"].ToString();
                         contaPagar.Add(contasPagar);
                     }
                 }

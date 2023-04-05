@@ -30,7 +30,7 @@ CREATE TABLE Despesas
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
 	IdContato INT,
-	Gastos FLOAT,
+	Valor FLOAT,
 	Descricao VARCHAR(250)
 )
 GO
@@ -41,7 +41,7 @@ CREATE TABLE Receita
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
 	IdContato INT,
-	Ganhos FLOAT,
+	Valor FLOAT,
 	Descricao VARCHAR(250)
 )
 GO

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.receitaDataGridView = new System.Windows.Forms.DataGridView();
-            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarReceita = new System.Windows.Forms.Button();
             this.buttonAlterarReceita = new System.Windows.Forms.Button();
             this.buttonExcluirReceita = new System.Windows.Forms.Button();
@@ -40,8 +39,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.receitaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,8 @@
             this.receitaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.receitaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn3,
+            this.Contato});
             this.receitaDataGridView.DataSource = this.receitaBindingSource;
             this.receitaDataGridView.Location = new System.Drawing.Point(35, 135);
             this.receitaDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -65,10 +67,6 @@
             this.receitaDataGridView.RowTemplate.Height = 24;
             this.receitaDataGridView.Size = new System.Drawing.Size(740, 266);
             this.receitaDataGridView.TabIndex = 1;
-            // 
-            // receitaBindingSource
-            // 
-            this.receitaBindingSource.DataSource = typeof(Models.Receita);
             // 
             // buttonBuscarReceita
             // 
@@ -159,6 +157,10 @@
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
+            // receitaBindingSource
+            // 
+            this.receitaBindingSource.DataSource = typeof(Models.Receita);
+            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Ganhos";
@@ -180,6 +182,15 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // Contato
+            // 
+            this.Contato.DataPropertyName = "Contato";
+            this.Contato.HeaderText = "Contato";
+            this.Contato.MinimumWidth = 6;
+            this.Contato.Name = "Contato";
+            this.Contato.ReadOnly = true;
+            this.Contato.Width = 125;
             // 
             // FormConsultaReceita
             // 
@@ -226,5 +237,6 @@
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contato;
     }
 }

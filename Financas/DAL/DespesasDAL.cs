@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,10 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Despesas(Gastos, Descricao)
-                                    VALUES(@Gastos, @Descricao)";
+                cmd.CommandText = @"INSERT INTO Despesas(Valor, Descricao)
+                                    VALUES(@Valor, @Descricao)";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Gastos", _despesas.Gastos);
+                cmd.Parameters.AddWithValue("@Valor", _despesas.Valor);
                 cmd.Parameters.AddWithValue("@Descricao", _despesas.Descricao);
                 cmd.Connection = cn;
                 cn.Open();
@@ -41,9 +42,9 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Despesas SET Gastos=@Gastos, Descricao=@Descricao WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Despesas SET Valor=@Valor, Descricao=@Descricao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Gastos", _despesas.Gastos);
+                cmd.Parameters.AddWithValue("@Valor", _despesas.Valor);
                 cmd.Parameters.AddWithValue("@Descricao", _despesas.Descricao);
                 cmd.Connection = cn;
                 cn.Open();
@@ -102,7 +103,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Gastos, Descricao FROM Despesas WHERE Id = @Id";
+                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Valor, Despesas.Descricao, Contato.Nome FROM Despesas
+                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id WHERE Despesas.Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -113,8 +115,9 @@ namespace DAL
                     {
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["ID"]);
-                        despesas.Gastos = (double)rd["Gastos"];
+                        despesas.Valor = (double)rd["Valor"];
                         despesas.Descricao = rd["Descricao"].ToString();
+                        despesas.Contato = rd["Nome"].ToString();
                     }
                 }
                 return despesas;
@@ -140,7 +143,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Gastos, Descricao FROM Despesas";
+                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Valor, Despesas.Descricao, Contato.Nome FROM Despesas
+                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -149,8 +153,9 @@ namespace DAL
                     {
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["Id"]);
-                        despesas.Gastos = (double)rd["Gastos"];
+                        despesas.Valor = (double)rd["Valor"];
                         despesas.Descricao = rd["Descricao"].ToString();
+                        despesas.Contato = rd["Nome"].ToString();
                         despesa.Add(despesas);
                     }
                 }
@@ -176,7 +181,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Gastos, Descricao, Renda FROM Despesas WHERE Descricao LIKE @Descricao";
+                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Valor, Despesas.Descricao, Contato.Nome FROM Despesas
+                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id WHERE Despesas.Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
@@ -187,8 +193,9 @@ namespace DAL
                     {
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["Id"]);
-                        despesas.Gastos = (double)rd["Gastos"];
+                        despesas.Valor = (double)rd["Valor"];
                         despesas.Descricao = rd["Descricao"].ToString();
+                        despesas.Contato = rd["Nome"].ToString();
                         despesa.Add(despesas);
                     }
                 }
