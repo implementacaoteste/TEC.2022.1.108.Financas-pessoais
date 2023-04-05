@@ -131,7 +131,7 @@
             this.textBoxConsultarFormaPagamento.Name = "textBoxConsultarFormaPagamento";
             this.textBoxConsultarFormaPagamento.Size = new System.Drawing.Size(334, 22);
             this.textBoxConsultarFormaPagamento.TabIndex = 7;
-            this.textBoxConsultarFormaPagamento.TextChanged += new System.EventHandler(this.textBoxConsultarFormaPagamento_TextChanged);
+            
             // 
             // label1
             // 
@@ -190,7 +190,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Forma de Pagamento";
-            this.Load += new System.EventHandler(this.FormConsultaFormaPagamento_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
