@@ -114,7 +114,7 @@ namespace DAL
                     {
                         receita = new Receita();
                         receita.Id = Convert.ToInt32(rd["ID"]);
-                        receita.Ganhos = rd.GetFloat(rd.GetOrdinal("Ganhos"));
+                        receita.Ganhos = (double)rd["Ganhos"];
                         receita.Descricao = rd["Descricao"].ToString();
                     }
                 }
@@ -150,7 +150,7 @@ namespace DAL
                     {
                         receita = new Receita();
                         receita.Id = Convert.ToInt32(rd["Id"]);
-                        receita.Ganhos = rd.GetFloat(rd.GetOrdinal("Ganhos"));
+                        receita.Ganhos = (double)rd["Ganhos"];
                         receita.Descricao = rd["Descricao"].ToString();
                         receitas.Add(receita);
                     }
@@ -188,7 +188,7 @@ namespace DAL
                     {
                         receita = new Receita();
                         receita.Id = Convert.ToInt32(rd["Id"]);
-                        receita.Ganhos = rd.GetFloat(rd.GetOrdinal("Ganhos"));
+                        receita.Ganhos = (double)rd["Ganhos"];
                         receita.Descricao = rd["Descricao"].ToString();
                         receitas.Add(receita);
                     }

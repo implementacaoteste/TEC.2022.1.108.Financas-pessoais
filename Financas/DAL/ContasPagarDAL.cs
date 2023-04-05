@@ -114,7 +114,7 @@ namespace DAL
                     {
                         contasPagar = new ContasPagar();
                         contasPagar.Id = Convert.ToInt32(rd["ID"]);
-                        contasPagar.ValorPagar = rd.GetFloat(rd.GetOrdinal("ValorPagar"));
+                        contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                     }
                 }
@@ -150,7 +150,7 @@ namespace DAL
                     {
                         contasPagar = new ContasPagar();
                         contasPagar.Id = Convert.ToInt32(rd["Id"]);
-                        contasPagar.ValorPagar = rd.GetFloat(rd.GetOrdinal("ValorPagar"));
+                        contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contaPagar.Add(contasPagar);
                     }
@@ -188,7 +188,7 @@ namespace DAL
                     {
                         contasPagar = new ContasPagar();
                         contasPagar.Id = Convert.ToInt32(rd["Id"]);
-                        contasPagar.ValorPagar = rd.GetFloat(rd.GetOrdinal("ValorPagar"));
+                        contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contaPagar.Add(contasPagar);
                     }

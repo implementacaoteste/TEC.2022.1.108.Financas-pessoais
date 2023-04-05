@@ -9,7 +9,7 @@ namespace Models
     public class ContasReceber
     {
         public int Id { get; set; }
-        public float ValorReceber { get; set; }
+        public double ValorReceber { get; set; }
         public string Descricao { get; set; }
     }
 }
