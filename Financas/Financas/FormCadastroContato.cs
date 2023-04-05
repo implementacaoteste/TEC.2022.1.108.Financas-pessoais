@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +23,21 @@ namespace Financas
 
         private void buttonSalvarCadastroContato_Click(object sender, EventArgs e)
         {
+            try
+            {
+                ContatoBLL contatoBLL = new ContatoBLL();
+                contatoBindingSource.EndEdit();
 
+                contatoBLL.Inserir((Contato)contatoBindingSource.Current);
+            }
+            catch
+            {
+                MessageBox.Show("Registro salvo com sucesso!");
+            }
+            finally
+            {
+                Close();
+            }
         }
 
         private void buttonCancelarCadastroContato_Click(object sender, EventArgs e)
