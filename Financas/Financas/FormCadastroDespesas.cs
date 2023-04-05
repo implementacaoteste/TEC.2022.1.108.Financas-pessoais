@@ -14,9 +14,11 @@ namespace Financas
 {
     public partial class FormCadastroDespesas : Form
     {
-        public FormCadastroDespesas()
+        public  int Id;
+        public FormCadastroDespesas(int id=0)
         {
             InitializeComponent();
+            Id = id;
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)

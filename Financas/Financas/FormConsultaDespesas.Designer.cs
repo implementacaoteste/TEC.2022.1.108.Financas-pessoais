@@ -51,8 +51,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(824, 86);
+            this.label1.Size = new System.Drawing.Size(618, 70);
             this.label1.TabIndex = 4;
             this.label1.Text = "Consulta Despesas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -61,10 +62,10 @@
             // 
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonBuscar.Location = new System.Drawing.Point(442, 110);
-            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonBuscar.Location = new System.Drawing.Point(332, 89);
+            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.Size = new System.Drawing.Size(56, 19);
             this.buttonBuscar.TabIndex = 8;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
@@ -73,21 +74,22 @@
             // buttonExcluir
             // 
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluir.Location = new System.Drawing.Point(700, 110);
-            this.buttonExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonExcluir.Location = new System.Drawing.Point(525, 89);
+            this.buttonExcluir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluir.Size = new System.Drawing.Size(56, 19);
             this.buttonExcluir.TabIndex = 5;
             this.buttonExcluir.Text = "Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // textBoxBuscarDespesas
             // 
-            this.textBoxBuscarDespesas.Location = new System.Drawing.Point(98, 108);
-            this.textBoxBuscarDespesas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxBuscarDespesas.Location = new System.Drawing.Point(74, 88);
+            this.textBoxBuscarDespesas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxBuscarDespesas.Multiline = true;
             this.textBoxBuscarDespesas.Name = "textBoxBuscarDespesas";
-            this.textBoxBuscarDespesas.Size = new System.Drawing.Size(338, 23);
+            this.textBoxBuscarDespesas.Size = new System.Drawing.Size(254, 19);
             this.textBoxBuscarDespesas.TabIndex = 8;
             // 
             // despesasDataGridView
@@ -99,12 +101,11 @@
             this.despesasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7});
-            this.despesasDataGridView.Location = new System.Drawing.Point(35, 135);
-            this.despesasDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.despesasDataGridView.Location = new System.Drawing.Point(26, 110);
             this.despesasDataGridView.Name = "despesasDataGridView";
             this.despesasDataGridView.ReadOnly = true;
             this.despesasDataGridView.RowHeadersWidth = 51;
-            this.despesasDataGridView.Size = new System.Drawing.Size(740, 266);
+            this.despesasDataGridView.Size = new System.Drawing.Size(555, 216);
             this.despesasDataGridView.TabIndex = 9;
             // 
             // dataGridViewTextBoxColumn5
@@ -128,10 +129,9 @@
             // buttonAdicionar
             // 
             this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionar.Location = new System.Drawing.Point(524, 110);
-            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAdicionar.Location = new System.Drawing.Point(393, 89);
             this.buttonAdicionar.Name = "buttonAdicionar";
-            this.buttonAdicionar.Size = new System.Drawing.Size(86, 23);
+            this.buttonAdicionar.Size = new System.Drawing.Size(64, 19);
             this.buttonAdicionar.TabIndex = 8;
             this.buttonAdicionar.Text = "Adicionar";
             this.buttonAdicionar.UseVisualStyleBackColor = true;
@@ -140,10 +140,9 @@
             // buttonAlterar
             // 
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterar.Location = new System.Drawing.Point(618, 110);
-            this.buttonAlterar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAlterar.Location = new System.Drawing.Point(464, 89);
             this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterar.Size = new System.Drawing.Size(56, 19);
             this.buttonAlterar.TabIndex = 10;
             this.buttonAlterar.Text = "Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
@@ -153,10 +152,9 @@
             // 
             this.labelInforamaConsultaDespesa.AutoSize = true;
             this.labelInforamaConsultaDespesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInforamaConsultaDespesa.Location = new System.Drawing.Point(32, 111);
-            this.labelInforamaConsultaDespesa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelInforamaConsultaDespesa.Location = new System.Drawing.Point(24, 90);
             this.labelInforamaConsultaDespesa.Name = "labelInforamaConsultaDespesa";
-            this.labelInforamaConsultaDespesa.Size = new System.Drawing.Size(67, 16);
+            this.labelInforamaConsultaDespesa.Size = new System.Drawing.Size(56, 13);
             this.labelInforamaConsultaDespesa.TabIndex = 11;
             this.labelInforamaConsultaDespesa.Text = "Consulta";
             // 
@@ -167,19 +165,20 @@
             // buttonSair
             // 
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(700, 407);
-            this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSair.Location = new System.Drawing.Point(525, 331);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(75, 23);
+            this.buttonSair.Size = new System.Drawing.Size(56, 19);
             this.buttonSair.TabIndex = 5;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // FormConsultaDespesas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 444);
+            this.ClientSize = new System.Drawing.Size(618, 361);
             this.Controls.Add(this.labelInforamaConsultaDespesa);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonAdicionar);
@@ -190,7 +189,7 @@
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormConsultaDespesas";

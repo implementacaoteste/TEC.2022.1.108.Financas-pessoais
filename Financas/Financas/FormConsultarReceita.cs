@@ -31,9 +31,17 @@ namespace Financas
 
         private void buttonBuscarReceita_Click(object sender, EventArgs e)
         {
-            receitaBindingSource.DataSource = new ReceitaBLL().BuscarTodos();
+            try
+            {
+                receitaBindingSource.DataSource = new ReceitaBLL().BuscarTodos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+           
         }
-
         private void buttonAdicionarReceita_Click(object sender, EventArgs e)
         {
             using(FormCadastroReceita frm = new FormCadastroReceita())
@@ -65,5 +73,7 @@ namespace Financas
         {
             Close();
         }
+
+
     }
 }

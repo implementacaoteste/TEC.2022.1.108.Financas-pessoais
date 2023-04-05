@@ -21,8 +21,17 @@ namespace Financas
 
         private void buttonBuscarBanco_Click(object sender, EventArgs e)
         {
-            bancoBindingSource.DataSource = new BancoBLL().BuscarTodos();
+            try
+            {
+                bancoBindingSource.DataSource = new BancoBLL().BuscarTodos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
+            
 
         private void bancoBindingSource_CurrentChanged(object sender, EventArgs e)
         {

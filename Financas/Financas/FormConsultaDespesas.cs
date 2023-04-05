@@ -48,22 +48,35 @@ namespace Financas
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            //if(despesasBindingSource.Count <= 0)
-            //{
-            //    MessageBox.Show("Não há registro selecionar para ser alterado.");
-            //    return;
-            //}
-            //else
-            //{
-            //    int id = ((Despesas)despesasBindingSource.Current).Id;
+            int id = ((Despesas)despesasBindingSource.Current).Id;
+            using (FormCadastroDespesas frm = new FormCadastroDespesas(id))
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
+        }
 
-            //    using (FormConsultaDespesas frm = new FormConsultaDespesas(id))
-            //    {
-            //        frm.ShowDialog();
-            //    }
-            //    buttonBuscar_Click(null, null);
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+            if (despesasBindingSource.Count <= 0)
+            {
+                MessageBox.Show("Não existe registro para ser excluído");
+                return;
+            }
 
-            //}
+            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            int id = ((Receita)despesasBindingSource.Current).Id;
+            new ReceitaBLL().Excluir(id);
+            despesasBindingSource.RemoveCurrent();
+
+            MessageBox.Show("Registro excluído com sucesso!");
+        }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

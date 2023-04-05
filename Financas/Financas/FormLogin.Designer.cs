@@ -46,9 +46,9 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(645, 444);
+            this.pictureBox1.Size = new System.Drawing.Size(484, 361);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -61,40 +61,36 @@
             this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(645, 66);
+            this.label1.Size = new System.Drawing.Size(484, 50);
             this.label1.TabIndex = 2;
             this.label1.Text = "LOGIN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(145, 188);
-            this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxUsuario.Location = new System.Drawing.Point(109, 153);
             this.textBoxUsuario.Multiline = true;
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(312, 29);
+            this.textBoxUsuario.Size = new System.Drawing.Size(235, 24);
             this.textBoxUsuario.TabIndex = 8;
             // 
             // textBoxSenhaLogin
             // 
-            this.textBoxSenhaLogin.Location = new System.Drawing.Point(145, 240);
-            this.textBoxSenhaLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSenhaLogin.Location = new System.Drawing.Point(109, 195);
             this.textBoxSenhaLogin.Multiline = true;
             this.textBoxSenhaLogin.Name = "textBoxSenhaLogin";
             this.textBoxSenhaLogin.PasswordChar = '*';
-            this.textBoxSenhaLogin.Size = new System.Drawing.Size(312, 29);
+            this.textBoxSenhaLogin.Size = new System.Drawing.Size(235, 24);
             this.textBoxSenhaLogin.TabIndex = 3;
             // 
             // labelUsuarioLogin
             // 
             this.labelUsuarioLogin.AutoSize = true;
             this.labelUsuarioLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuarioLogin.Location = new System.Drawing.Point(64, 194);
-            this.labelUsuarioLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUsuarioLogin.Location = new System.Drawing.Point(48, 158);
             this.labelUsuarioLogin.Name = "labelUsuarioLogin";
-            this.labelUsuarioLogin.Size = new System.Drawing.Size(77, 18);
+            this.labelUsuarioLogin.Size = new System.Drawing.Size(65, 15);
             this.labelUsuarioLogin.TabIndex = 4;
             this.labelUsuarioLogin.Text = " Usuário:";
             this.labelUsuarioLogin.Click += new System.EventHandler(this.labelUsuarioLogin_Click);
@@ -103,20 +99,18 @@
             // 
             this.labelSenhaLogin.AutoSize = true;
             this.labelSenhaLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSenhaLogin.Location = new System.Drawing.Point(75, 246);
-            this.labelSenhaLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSenhaLogin.Location = new System.Drawing.Point(56, 200);
             this.labelSenhaLogin.Name = "labelSenhaLogin";
-            this.labelSenhaLogin.Size = new System.Drawing.Size(60, 18);
+            this.labelSenhaLogin.Size = new System.Drawing.Size(52, 15);
             this.labelSenhaLogin.TabIndex = 4;
             this.labelSenhaLogin.Text = "Senha:";
             // 
             // buttonEntrar
             // 
             this.buttonEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEntrar.Location = new System.Drawing.Point(214, 320);
-            this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonEntrar.Location = new System.Drawing.Point(160, 260);
             this.buttonEntrar.Name = "buttonEntrar";
-            this.buttonEntrar.Size = new System.Drawing.Size(66, 35);
+            this.buttonEntrar.Size = new System.Drawing.Size(50, 28);
             this.buttonEntrar.TabIndex = 5;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = true;
@@ -125,10 +119,9 @@
             // buttonsair
             // 
             this.buttonsair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonsair.Location = new System.Drawing.Point(303, 320);
-            this.buttonsair.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonsair.Location = new System.Drawing.Point(227, 260);
             this.buttonsair.Name = "buttonsair";
-            this.buttonsair.Size = new System.Drawing.Size(66, 35);
+            this.buttonsair.Size = new System.Drawing.Size(50, 28);
             this.buttonsair.TabIndex = 5;
             this.buttonsair.Text = "Sair";
             this.buttonsair.UseVisualStyleBackColor = true;
@@ -137,10 +130,9 @@
             // buttonCdastraLogin
             // 
             this.buttonCdastraLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCdastraLogin.Location = new System.Drawing.Point(193, 375);
-            this.buttonCdastraLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCdastraLogin.Location = new System.Drawing.Point(145, 305);
             this.buttonCdastraLogin.Name = "buttonCdastraLogin";
-            this.buttonCdastraLogin.Size = new System.Drawing.Size(195, 38);
+            this.buttonCdastraLogin.Size = new System.Drawing.Size(146, 31);
             this.buttonCdastraLogin.TabIndex = 5;
             this.buttonCdastraLogin.Text = "Cadastra-se";
             this.buttonCdastraLogin.UseVisualStyleBackColor = true;
@@ -148,9 +140,9 @@
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 444);
+            this.ClientSize = new System.Drawing.Size(484, 361);
             this.Controls.Add(this.buttonsair);
             this.Controls.Add(this.buttonCdastraLogin);
             this.Controls.Add(this.buttonEntrar);
@@ -162,7 +154,6 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";

@@ -21,7 +21,15 @@ namespace Financas
 
         private void buttonBuscarContasReceber_Click(object sender, EventArgs e)
         {
-            contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
+            try
+            {
+
+                contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonAdicionarContasReceber_Click(object sender, EventArgs e)
