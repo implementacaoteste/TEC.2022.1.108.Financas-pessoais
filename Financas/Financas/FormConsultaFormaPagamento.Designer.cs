@@ -122,7 +122,6 @@
             this.buttonAdicionarFormaPagamento.TabIndex = 11;
             this.buttonAdicionarFormaPagamento.Text = "Adicionar";
             this.buttonAdicionarFormaPagamento.UseVisualStyleBackColor = true;
-
             // 
             // textBoxConsultarFormaPagamento
             // 
@@ -131,7 +130,6 @@
             this.textBoxConsultarFormaPagamento.Name = "textBoxConsultarFormaPagamento";
             this.textBoxConsultarFormaPagamento.Size = new System.Drawing.Size(334, 22);
             this.textBoxConsultarFormaPagamento.TabIndex = 7;
-            
             // 
             // label1
             // 
@@ -139,9 +137,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(32, 111);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 16);
+            this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Consulta";
+            this.label1.Text = "Consultar:";
             // 
             // label2
             // 
@@ -152,7 +150,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(824, 86);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Consulta Forma de Pagamento";
+            this.label2.Text = "Consulta de forma de pagamento";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonSair
@@ -164,7 +162,6 @@
             this.buttonSair.TabIndex = 13;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
-
             // 
             // FormConsultaFormaPagamento
             // 
@@ -190,7 +187,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Forma de Pagamento";
-            
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).EndInit();
             this.ResumeLayout(false);

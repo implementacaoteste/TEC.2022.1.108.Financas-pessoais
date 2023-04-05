@@ -28,7 +28,7 @@ namespace Financas
                 ContatoBLL contatoBLL = new ContatoBLL();
                 contatoBindingSource.EndEdit();
 
-                contatoBLL.Inserir((Contato)contatoBindingSource.Current);
+                contatoBLL.Alterar((Contato)contatoBindingSource.Current);
             }
             catch
             {
@@ -44,6 +44,14 @@ namespace Financas
         {
             Close();
            
+        }
+
+        private void FormCadastroContato_Load(object sender, EventArgs e)
+        {
+            if (Id == 0)
+                contatoBindingSource.AddNew();
+            else
+                contatoBindingSource.DataSource = new ContatoBLL().BuscarTodos();
         }
     }
 }

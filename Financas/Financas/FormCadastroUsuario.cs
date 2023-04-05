@@ -49,5 +49,16 @@ namespace Financas
             MessageBox.Show("Registro salvo com sucesso");
             Close();
         }
+
+        private void FormCadastroUsuario_Load_1(object sender, EventArgs e)
+        {
+            if (Id == 0)
+                usuarioBindingSource.AddNew();
+            else
+
+                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
+
+  
+        }
     }
 }

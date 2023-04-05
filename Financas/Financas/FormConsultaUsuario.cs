@@ -62,7 +62,7 @@ namespace Financas
                 return;
 
             int id = ((Usuario)usuarioBindingSource.Current).Id;
-            new ContatoBLL().Excluir(id);
+            new UsuarioBLL().Excluir(id);
             usuarioBindingSource.RemoveCurrent();
 
             MessageBox.Show("Registro excluído com sucesso!");

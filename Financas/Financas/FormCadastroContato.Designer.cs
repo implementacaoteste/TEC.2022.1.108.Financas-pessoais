@@ -66,7 +66,7 @@
             enderecoLabel.Name = "enderecoLabel";
             enderecoLabel.Size = new System.Drawing.Size(78, 16);
             enderecoLabel.TabIndex = 2;
-            enderecoLabel.Text = "Endereco:";
+            enderecoLabel.Text = "Endereço:";
             // 
             // numeroLabel
             // 
@@ -76,7 +76,7 @@
             numeroLabel.Name = "numeroLabel";
             numeroLabel.Size = new System.Drawing.Size(65, 16);
             numeroLabel.TabIndex = 4;
-            numeroLabel.Text = "Numero:";
+            numeroLabel.Text = "Número:";
             // 
             // descricaoLabel
             // 
@@ -86,7 +86,7 @@
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(82, 16);
             descricaoLabel.TabIndex = 6;
-            descricaoLabel.Text = "Descricao:";
+            descricaoLabel.Text = "Descrição:";
             // 
             // nomeTextBox
             // 
@@ -172,8 +172,15 @@
             this.Controls.Add(this.enderecoTextBox);
             this.Controls.Add(nomeLabel);
             this.Controls.Add(this.nomeTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCadastroContato";
-            this.Text = "FormCadastroContato";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro de contato";
+            this.Load += new System.EventHandler(this.FormCadastroContato_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
