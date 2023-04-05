@@ -116,7 +116,7 @@ namespace DAL
                         usuario.Id = Convert.ToInt32(rd["Id"]);
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.Senha = rd["Senha"].ToString();
-                        usuario.Renda = rd.GetFloat(rd.GetOrdinal("Renda"));
+                        usuario.Renda = (double)rd["Renda"];
                         usuarios.Add(usuario);
                     }
                 }
@@ -155,7 +155,7 @@ namespace DAL
                         usuario.Id = Convert.ToInt32(rd["ID"]);
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.Senha = rd["Senha"].ToString();
-                        usuario.Renda = rd.GetFloat(rd.GetOrdinal("Renda"));
+                        usuario.Renda = (double)rd["Renda"];
                     }
                 }
                 return usuarios;
@@ -190,7 +190,7 @@ namespace DAL
                         usuario = new Usuario();
                         usuario.Id = Convert.ToInt32(rd["ID"]);
                         usuario.Nome = rd["Nome"].ToString();
-                        usuario.Renda = rd.GetFloat(rd.GetOrdinal("Renda"));
+                        usuario.Renda = (double)rd["Renda"];
                         usuario.Senha = rd["Senha"].ToString();
                     }
                 }
@@ -227,7 +227,7 @@ namespace DAL
                         usuario.Id = Convert.ToInt32(rd["ID"]);
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.Senha = rd["Senha"].ToString();
-                        usuario.Renda = rd.GetFloat(rd.GetOrdinal("Renda"));
+                        usuario.Renda = (double)rd["Renda"];
                     }
                 }
                 return usuario;

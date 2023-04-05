@@ -113,7 +113,7 @@ namespace DAL
                     {
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["ID"]);
-                        despesas.Gastos = rd.GetFloat(rd.GetOrdinal("Ganhos"));
+                        despesas.Gastos = (double)rd["Gastos"];
                         despesas.Descricao = rd["Descricao"].ToString();
                     }
                 }
@@ -149,7 +149,7 @@ namespace DAL
                     {
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["Id"]);
-                        despesas.Gastos = rd.GetFloat(rd.GetOrdinal("Gastos"));
+                        despesas.Gastos = (double)rd["Gastos"];
                         despesas.Descricao = rd["Descricao"].ToString();
                         despesa.Add(despesas);
                     }
@@ -176,7 +176,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Ganhos, Descricao, Renda FROM Despesas WHERE Descricao LIKE @Descricao";
+                cmd.CommandText = "SELECT Id, Gastos, Descricao, Renda FROM Despesas WHERE Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
@@ -187,7 +187,7 @@ namespace DAL
                     {
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["Id"]);
-                        despesas.Gastos = rd.GetFloat(rd.GetOrdinal("GastosB"));
+                        despesas.Gastos = (double)rd["Gastos"];
                         despesas.Descricao = rd["Descricao"].ToString();
                         despesa.Add(despesas);
                     }

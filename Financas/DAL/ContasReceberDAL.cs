@@ -113,7 +113,7 @@ namespace DAL
                     {
                         contasReceber = new ContasReceber();
                         contasReceber.Id = Convert.ToInt32(rd["ID"]);
-                        contasReceber.ValorReceber = rd.GetFloat(rd.GetOrdinal("ValorReceber"));
+                        contasReceber.ValorReceber = (double)rd["ValorReceber"];
                         contasReceber.Descricao = rd["Descricao"].ToString();
                     }
                 }
@@ -149,7 +149,7 @@ namespace DAL
                     {
                         contasReceber = new ContasReceber();
                         contasReceber.Id = Convert.ToInt32(rd["Id"]);
-                        contasReceber.ValorReceber = rd.GetFloat(rd.GetOrdinal("ValorReceber"));
+                        contasReceber.ValorReceber = (double)rd["ValorReceber"];
                         contasReceber.Descricao = rd["Descricao"].ToString();
                         contaReceber.Add(contasReceber);
                     }
@@ -187,7 +187,7 @@ namespace DAL
                     {
                         contasReceber = new ContasReceber();
                         contasReceber.Id = Convert.ToInt32(rd["Id"]);
-                        contasReceber.ValorReceber = rd.GetFloat(rd.GetOrdinal("ValorReceber"));
+                        contasReceber.ValorReceber = (double)rd["ValorReceber"];
                         contasReceber.Descricao = rd["Descricao"].ToString();
                         contaReceber.Add(contasReceber);
                     }

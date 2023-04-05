@@ -8,6 +8,6 @@ namespace Models
         public string Nome { get; set; }
         public string NomeUsuario { get; set; }
         public string Senha { get; set; }
-        public float Renda { get; set; }
+        public double Renda { get; set; }
     }
 }
