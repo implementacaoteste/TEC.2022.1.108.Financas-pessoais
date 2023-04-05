@@ -26,7 +26,7 @@ namespace Financas
 
         private void buttonAdicionarConsultaContasPagar_Click(object sender, EventArgs e)
         {
-            using (FormCadastroBanco frm = new FormCadastroBanco())
+            using (FormCadastroContasPaga frm = new FormCadastroContasPaga())
             {
                 frm.ShowDialog();
             }

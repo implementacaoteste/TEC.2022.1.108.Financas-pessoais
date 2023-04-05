@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace Financas
         public FormConsultaContasReceber()
         {
             InitializeComponent();
+        }
+
+        private void buttonBuscarContasReceber_Click(object sender, EventArgs e)
+        {
+            contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
+        }
+
+        private void buttonAdicionarContasReceber_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroBanco frm = new FormCadastroBanco())
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscarConsultaContasPagar_Click(null, null);
         }
     }
 }
