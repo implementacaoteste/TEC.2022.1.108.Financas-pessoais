@@ -57,7 +57,7 @@ namespace Financas
             formaPagamentoBindingSource.RemoveCurrent();
 
             MessageBox.Show("Registro excluído com sucesso!");
-
+        }
         private void buttonAdicionarFormaPagamento_Click(object sender, EventArgs e)
         {
             using (FormCadastroFormaPagamento frm = new FormCadastroFormaPagamento())

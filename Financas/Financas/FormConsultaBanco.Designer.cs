@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bancoDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxConsultarBanco = new System.Windows.Forms.TextBox();
@@ -42,6 +41,9 @@
             this.buttonExcluirBanco = new System.Windows.Forms.Button();
             this.buttonAlterarBanco = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bancoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,14 +60,108 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.bancoDataGridView.DataSource = this.bancoBindingSource;
-            this.bancoDataGridView.Location = new System.Drawing.Point(26, 110);
-            this.bancoDataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.bancoDataGridView.Location = new System.Drawing.Point(35, 135);
+            this.bancoDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bancoDataGridView.Name = "bancoDataGridView";
             this.bancoDataGridView.ReadOnly = true;
             this.bancoDataGridView.RowHeadersWidth = 51;
             this.bancoDataGridView.RowTemplate.Height = 24;
-            this.bancoDataGridView.Size = new System.Drawing.Size(555, 216);
+            this.bancoDataGridView.Size = new System.Drawing.Size(740, 266);
             this.bancoDataGridView.TabIndex = 1;
+            // 
+            // bancoBindingSource
+            // 
+            this.bancoBindingSource.DataSource = typeof(Models.Banco);
+            this.bancoBindingSource.CurrentChanged += new System.EventHandler(this.bancoBindingSource_CurrentChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Consulta";
+            // 
+            // textBoxConsultarBanco
+            // 
+            this.textBoxConsultarBanco.Location = new System.Drawing.Point(111, 107);
+            this.textBoxConsultarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxConsultarBanco.Name = "textBoxConsultarBanco";
+            this.textBoxConsultarBanco.Size = new System.Drawing.Size(327, 22);
+            this.textBoxConsultarBanco.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(824, 82);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Consultar Banco";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonAdicionarBanco
+            // 
+            this.buttonAdicionarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarBanco.Location = new System.Drawing.Point(525, 107);
+            this.buttonAdicionarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonAdicionarBanco.Name = "buttonAdicionarBanco";
+            this.buttonAdicionarBanco.Size = new System.Drawing.Size(88, 23);
+            this.buttonAdicionarBanco.TabIndex = 5;
+            this.buttonAdicionarBanco.Text = "Adicionar";
+            this.buttonAdicionarBanco.UseVisualStyleBackColor = true;
+            this.buttonAdicionarBanco.Click += new System.EventHandler(this.buttonAdicionarBanco_Click);
+            // 
+            // buttonBuscarBanco
+            // 
+            this.buttonBuscarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarBanco.Location = new System.Drawing.Point(444, 107);
+            this.buttonBuscarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonBuscarBanco.Name = "buttonBuscarBanco";
+            this.buttonBuscarBanco.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscarBanco.TabIndex = 5;
+            this.buttonBuscarBanco.Text = "Buscar";
+            this.buttonBuscarBanco.UseVisualStyleBackColor = true;
+            this.buttonBuscarBanco.Click += new System.EventHandler(this.buttonBuscarBanco_Click);
+            // 
+            // buttonExcluirBanco
+            // 
+            this.buttonExcluirBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluirBanco.Location = new System.Drawing.Point(700, 107);
+            this.buttonExcluirBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonExcluirBanco.Name = "buttonExcluirBanco";
+            this.buttonExcluirBanco.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluirBanco.TabIndex = 5;
+            this.buttonExcluirBanco.Text = "Excluir";
+            this.buttonExcluirBanco.UseVisualStyleBackColor = true;
+            this.buttonExcluirBanco.Click += new System.EventHandler(this.buttonExcluirBanco_Click);
+            // 
+            // buttonAlterarBanco
+            // 
+            this.buttonAlterarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterarBanco.Location = new System.Drawing.Point(619, 107);
+            this.buttonAlterarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonAlterarBanco.Name = "buttonAlterarBanco";
+            this.buttonAlterarBanco.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterarBanco.TabIndex = 5;
+            this.buttonAlterarBanco.Text = "Alterar";
+            this.buttonAlterarBanco.UseVisualStyleBackColor = true;
+            this.buttonAlterarBanco.Click += new System.EventHandler(this.buttonAlterarBanco_Click);
+            // 
+            // buttonSair
+            // 
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Location = new System.Drawing.Point(700, 407);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(75, 23);
+            this.buttonSair.TabIndex = 5;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -79,6 +175,10 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Saldo";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn3.HeaderText = "Saldo";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -88,113 +188,21 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Poupanca";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn4.HeaderText = "Poupanca";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 147;
             // 
-            // bancoBindingSource
-            // 
-            this.bancoBindingSource.DataSource = typeof(Models.Banco);
-            this.bancoBindingSource.CurrentChanged += new System.EventHandler(this.bancoBindingSource_CurrentChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 89);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Consulta";
-            // 
-            // textBoxConsultarBanco
-            // 
-            this.textBoxConsultarBanco.Location = new System.Drawing.Point(83, 87);
-            this.textBoxConsultarBanco.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxConsultarBanco.Name = "textBoxConsultarBanco";
-            this.textBoxConsultarBanco.Size = new System.Drawing.Size(246, 20);
-            this.textBoxConsultarBanco.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(618, 67);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Consultar Banco";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonAdicionarBanco
-            // 
-            this.buttonAdicionarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionarBanco.Location = new System.Drawing.Point(394, 87);
-            this.buttonAdicionarBanco.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAdicionarBanco.Name = "buttonAdicionarBanco";
-            this.buttonAdicionarBanco.Size = new System.Drawing.Size(66, 19);
-            this.buttonAdicionarBanco.TabIndex = 5;
-            this.buttonAdicionarBanco.Text = "Adicionar";
-            this.buttonAdicionarBanco.UseVisualStyleBackColor = true;
-            this.buttonAdicionarBanco.Click += new System.EventHandler(this.buttonAdicionarBanco_Click);
-            // 
-            // buttonBuscarBanco
-            // 
-            this.buttonBuscarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarBanco.Location = new System.Drawing.Point(333, 87);
-            this.buttonBuscarBanco.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonBuscarBanco.Name = "buttonBuscarBanco";
-            this.buttonBuscarBanco.Size = new System.Drawing.Size(56, 19);
-            this.buttonBuscarBanco.TabIndex = 5;
-            this.buttonBuscarBanco.Text = "Buscar";
-            this.buttonBuscarBanco.UseVisualStyleBackColor = true;
-            this.buttonBuscarBanco.Click += new System.EventHandler(this.buttonBuscarBanco_Click);
-            // 
-            // buttonExcluirBanco
-            // 
-            this.buttonExcluirBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirBanco.Location = new System.Drawing.Point(525, 87);
-            this.buttonExcluirBanco.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonExcluirBanco.Name = "buttonExcluirBanco";
-            this.buttonExcluirBanco.Size = new System.Drawing.Size(56, 19);
-            this.buttonExcluirBanco.TabIndex = 5;
-            this.buttonExcluirBanco.Text = "Excluir";
-            this.buttonExcluirBanco.UseVisualStyleBackColor = true;
-            this.buttonExcluirBanco.Click += new System.EventHandler(this.buttonExcluirBanco_Click);
-            // 
-            // buttonAlterarBanco
-            // 
-            this.buttonAlterarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterarBanco.Location = new System.Drawing.Point(464, 87);
-            this.buttonAlterarBanco.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAlterarBanco.Name = "buttonAlterarBanco";
-            this.buttonAlterarBanco.Size = new System.Drawing.Size(56, 19);
-            this.buttonAlterarBanco.TabIndex = 5;
-            this.buttonAlterarBanco.Text = "Alterar";
-            this.buttonAlterarBanco.UseVisualStyleBackColor = true;
-            this.buttonAlterarBanco.Click += new System.EventHandler(this.buttonAlterarBanco_Click);
-            // 
-            // buttonSair
-            // 
-            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(525, 331);
-            this.buttonSair.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(56, 19);
-            this.buttonSair.TabIndex = 5;
-            this.buttonSair.Text = "Sair";
-            this.buttonSair.UseVisualStyleBackColor = true;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            // 
             // FormConsultaBanco
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 361);
+            this.ClientSize = new System.Drawing.Size(824, 444);
             this.Controls.Add(this.buttonBuscarBanco);
             this.Controls.Add(this.buttonAlterarBanco);
             this.Controls.Add(this.buttonSair);
@@ -206,7 +214,7 @@
             this.Controls.Add(this.bancoDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormConsultaBanco";
@@ -232,9 +240,9 @@
         private System.Windows.Forms.Button buttonBuscarBanco;
         private System.Windows.Forms.Button buttonExcluirBanco;
         private System.Windows.Forms.Button buttonAlterarBanco;
+        private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Button buttonSair;
     }
 }
