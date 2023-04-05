@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using Models;
 
 namespace Financas
 {
@@ -19,18 +21,22 @@ namespace Financas
             Id = id;
         }
 
-        private void FormCadastroBanco_Load(object sender, EventArgs e)
+          private void buttonCancelarCadBanco_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void buttonSalvarCadBanco_Click(object sender, EventArgs e)
         {
+            BancoBLL BancoBLL = new BancoBLL();
+            bancoBindingSource.EndEdit();
 
-        }
+            if (Id == 0)
+                BancoBLL.Inserir((Banco)bancoBindingSource.Current);
+            else
+                BancoBLL.Alterar((Banco)bancoBindingSource.Current);
 
-        private void buttonCancelarCadBanco_Click(object sender, EventArgs e)
-        {
+            MessageBox.Show("Registro salvo com sucesso");
             Close();
         }
     }

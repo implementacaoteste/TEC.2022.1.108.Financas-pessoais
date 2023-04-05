@@ -128,7 +128,7 @@
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(254, 20);
             this.textBoxBuscar.TabIndex = 3;
-            this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            
             // 
             // buttonExcluir
             // 
