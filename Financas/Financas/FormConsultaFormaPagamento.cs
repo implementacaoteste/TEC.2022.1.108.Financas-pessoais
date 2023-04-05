@@ -19,7 +19,6 @@ namespace Financas
             InitializeComponent();
         }
 
-
         private void buttonBuscarFormaPagamento_Click(object sender, EventArgs e)
         {
             try
@@ -67,13 +66,6 @@ namespace Financas
             }
             buttonBuscarFormaPagamento_Click(null, null);
         }
-
-        private void buttonSair_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-
         private void FormConsultaFormaPagamento_Load(object sender, EventArgs e)
         {
 
@@ -82,10 +74,9 @@ namespace Financas
         {
 
         }
-
         private void buttonSair_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }
