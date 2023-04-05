@@ -36,13 +36,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.descricaoTextBoxContasReceber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonBuscarContatoContasReceber = new System.Windows.Forms.Button();
             this.buttonSalvarCadastroContasReceber = new System.Windows.Forms.Button();
             this.buttonCancelarCadastroContasReceber = new System.Windows.Forms.Button();
+            this.contatoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxBuscarContato = new System.Windows.Forms.TextBox();
             valorReceberLabel = new System.Windows.Forms.Label();
             descricaoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // valorReceberLabel
@@ -106,13 +108,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Quem Vai Pagar:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(239, 276);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 22);
-            this.textBox1.TabIndex = 6;
-            // 
             // buttonBuscarContatoContasReceber
             // 
             this.buttonBuscarContatoContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,6 +117,7 @@
             this.buttonBuscarContatoContasReceber.TabIndex = 7;
             this.buttonBuscarContatoContasReceber.Text = "Buscar";
             this.buttonBuscarContatoContasReceber.UseVisualStyleBackColor = true;
+            this.buttonBuscarContatoContasReceber.Click += new System.EventHandler(this.buttonBuscarContatoContasReceber_Click);
             // 
             // buttonSalvarCadastroContasReceber
             // 
@@ -143,16 +139,29 @@
             this.buttonCancelarCadastroContasReceber.TabIndex = 9;
             this.buttonCancelarCadastroContasReceber.Text = "Cancelar";
             this.buttonCancelarCadastroContasReceber.UseVisualStyleBackColor = true;
+            this.buttonCancelarCadastroContasReceber.Click += new System.EventHandler(this.buttonCancelarCadastroContasReceber_Click);
+            // 
+            // contatoBindingSource
+            // 
+            this.contatoBindingSource.DataSource = typeof(Models.Contato);
+            // 
+            // textBoxBuscarContato
+            // 
+            this.textBoxBuscarContato.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Nome", true));
+            this.textBoxBuscarContato.Location = new System.Drawing.Point(238, 277);
+            this.textBoxBuscarContato.Name = "textBoxBuscarContato";
+            this.textBoxBuscarContato.Size = new System.Drawing.Size(179, 22);
+            this.textBoxBuscarContato.TabIndex = 10;
             // 
             // FormCadastroContasReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 455);
+            this.Controls.Add(this.textBoxBuscarContato);
             this.Controls.Add(this.buttonCancelarCadastroContasReceber);
             this.Controls.Add(this.buttonSalvarCadastroContasReceber);
             this.Controls.Add(this.buttonBuscarContatoContasReceber);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(descricaoLabel);
             this.Controls.Add(this.descricaoTextBoxContasReceber);
@@ -164,6 +173,7 @@
             this.ShowInTaskbar = false;
             this.Text = "FormCadastroContasReceber";
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,9 +186,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox descricaoTextBoxContasReceber;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonBuscarContatoContasReceber;
         private System.Windows.Forms.Button buttonSalvarCadastroContasReceber;
         private System.Windows.Forms.Button buttonCancelarCadastroContasReceber;
+        private System.Windows.Forms.BindingSource contatoBindingSource;
+        private System.Windows.Forms.TextBox textBoxBuscarContato;
     }
 }
