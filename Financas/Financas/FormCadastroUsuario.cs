@@ -29,7 +29,7 @@ namespace Financas
             if (Id == 0)
                 usuarioBindingSource.AddNew();
             else
-                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarTodos();
+                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
         }
 
         private void buttonCancelarCadastrodeUsuario_Click(object sender, EventArgs e)
@@ -52,7 +52,10 @@ namespace Financas
 
         private void FormCadastroUsuario_Load_1(object sender, EventArgs e)
         {
-
+            if (Id == 0)
+                usuarioBindingSource.AddNew();
+            else
+                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
         }
     }
 }

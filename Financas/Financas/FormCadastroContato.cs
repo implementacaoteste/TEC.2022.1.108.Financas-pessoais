@@ -28,7 +28,7 @@ namespace Financas
                 ContatoBLL contatoBLL = new ContatoBLL();
                 contatoBindingSource.EndEdit();
 
-                contatoBLL.Inserir((Contato)contatoBindingSource.Current);
+                contatoBLL.Alterar((Contato)contatoBindingSource.Current);
             }
             catch
             {
