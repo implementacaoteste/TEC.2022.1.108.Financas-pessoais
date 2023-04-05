@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,11 +26,44 @@ namespace Financas
 
         private void buttonAdicionarContasReceber_Click(object sender, EventArgs e)
         {
-            using (FormCadastroBanco frm = new FormCadastroBanco())
+            using (FormCadastroContasReceber frm = new FormCadastroContasReceber())
             {
                 frm.ShowDialog();
             }
-            buttonBuscarConsultaContasPagar_Click(null, null);
+            buttonBuscarContasReceber_Click(null, null);
+        }
+
+        private void buttonAlterarContasReceber_Click(object sender, EventArgs e)
+        {
+            int id = ((ContasReceber)contasReceberBindingSource.Current).Id;
+            using (FormCadastroContasReceber frm = new FormCadastroContasReceber(id))
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscarContasReceber_Click(null, null);
+        }
+
+        private void buttonExcluirContasReceber_Click(object sender, EventArgs e)
+        {
+            if (contasReceberBindingSource.Count <= 0)
+            {
+                MessageBox.Show("Não existe registro para ser excluído");
+                return;
+            }
+
+            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            int id = ((ContasPagar)contasReceberBindingSource.Current).Id;
+            new ContasReceberBLL().Excluir(id);
+            contasReceberBindingSource.RemoveCurrent();
+
+            MessageBox.Show("Registro excluído com sucesso!");
+        }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -12,9 +12,11 @@ namespace Financas
 {
     public partial class FormCadastroContasPaga : Form
     {
-        public FormCadastroContasPaga()
+        public int Id;
+        public FormCadastroContasPaga(int id=0)
         {
             InitializeComponent();
+            Id = id;
         }
 
         private void buttonCancelarCadastroContasPagar_Click(object sender, EventArgs e)

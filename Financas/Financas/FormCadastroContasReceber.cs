@@ -12,9 +12,11 @@ namespace Financas
 {
     public partial class FormCadastroContasReceber : Form
     {
-        public FormCadastroContasReceber()
+        public int Id;
+        public FormCadastroContasReceber(int id=0)
         {
             InitializeComponent();
+            Id = id;
         }
     }
 }

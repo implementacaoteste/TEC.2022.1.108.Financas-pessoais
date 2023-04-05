@@ -36,7 +36,7 @@ namespace Financas
         private void buttonAlterarConsultaContasPagar_Click(object sender, EventArgs e)
         {
             int id = ((ContasPagar)contasPagarBindingSource.Current).Id;
-            using (FormCadastroBanco frm = new FormCadastroBanco(id))
+            using (FormCadastroContasPaga frm = new FormCadastroContasPaga(id))
             {
                 frm.ShowDialog();
             }
@@ -55,7 +55,7 @@ namespace Financas
                 return;
 
             int id = ((ContasPagar)contasPagarBindingSource.Current).Id;
-            new BancoBLL().Excluir(id);
+            new ContasPagarBLL().Excluir(id);
             contasPagarBindingSource.RemoveCurrent();
 
             MessageBox.Show("Registro excluído com sucesso!");

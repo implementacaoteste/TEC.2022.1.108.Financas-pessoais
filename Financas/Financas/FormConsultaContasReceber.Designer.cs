@@ -111,6 +111,7 @@
             this.buttonAlterarContasReceber.TabIndex = 9;
             this.buttonAlterarContasReceber.Text = "Alterar";
             this.buttonAlterarContasReceber.UseVisualStyleBackColor = true;
+            this.buttonAlterarContasReceber.Click += new System.EventHandler(this.buttonAlterarContasReceber_Click);
             // 
             // buttonExcluirContasReceber
             // 
@@ -122,6 +123,7 @@
             this.buttonExcluirContasReceber.TabIndex = 10;
             this.buttonExcluirContasReceber.Text = "Excluir";
             this.buttonExcluirContasReceber.UseVisualStyleBackColor = true;
+            this.buttonExcluirContasReceber.Click += new System.EventHandler(this.buttonExcluirContasReceber_Click);
             // 
             // buttonAdicionarContasReceber
             // 
@@ -176,6 +178,7 @@
             this.buttonSair.TabIndex = 10;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // FormConsultaContasReceber
             // 
