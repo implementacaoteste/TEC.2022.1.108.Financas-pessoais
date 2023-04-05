@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.contasPagarDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.labelConsultarContasPagar = new System.Windows.Forms.Label();
             this.textBoxConsultaContasPagar = new System.Windows.Forms.TextBox();
@@ -37,9 +40,6 @@
             this.buttonAdicionarConsultaContasPagar = new System.Windows.Forms.Button();
             this.buttonAlterarConsultaContasPagar = new System.Windows.Forms.Button();
             this.buttonExcluirConsultaContasPagar = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
@@ -56,81 +56,14 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.contasPagarDataGridView.DataSource = this.contasPagarBindingSource;
-            this.contasPagarDataGridView.Location = new System.Drawing.Point(35, 135);
+            this.contasPagarDataGridView.Location = new System.Drawing.Point(26, 110);
+            this.contasPagarDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.contasPagarDataGridView.Name = "contasPagarDataGridView";
             this.contasPagarDataGridView.ReadOnly = true;
             this.contasPagarDataGridView.RowHeadersWidth = 51;
             this.contasPagarDataGridView.RowTemplate.Height = 24;
-            this.contasPagarDataGridView.Size = new System.Drawing.Size(740, 266);
+            this.contasPagarDataGridView.Size = new System.Drawing.Size(555, 216);
             this.contasPagarDataGridView.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(824, 86);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Consulta de Contas a Pagar";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelConsultarContasPagar
-            // 
-            this.labelConsultarContasPagar.AutoSize = true;
-            this.labelConsultarContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConsultarContasPagar.Location = new System.Drawing.Point(32, 111);
-            this.labelConsultarContasPagar.Name = "labelConsultarContasPagar";
-            this.labelConsultarContasPagar.Size = new System.Drawing.Size(67, 16);
-            this.labelConsultarContasPagar.TabIndex = 3;
-            this.labelConsultarContasPagar.Text = "Consulta";
-            // 
-            // textBoxConsultaContasPagar
-            // 
-            this.textBoxConsultaContasPagar.Location = new System.Drawing.Point(105, 109);
-            this.textBoxConsultaContasPagar.Name = "textBoxConsultaContasPagar";
-            this.textBoxConsultaContasPagar.Size = new System.Drawing.Size(340, 22);
-            this.textBoxConsultaContasPagar.TabIndex = 4;
-            // 
-            // buttonBuscarConsultaContasPagar
-            // 
-            this.buttonBuscarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarConsultaContasPagar.Location = new System.Drawing.Point(451, 108);
-            this.buttonBuscarConsultaContasPagar.Name = "buttonBuscarConsultaContasPagar";
-            this.buttonBuscarConsultaContasPagar.Size = new System.Drawing.Size(75, 23);
-            this.buttonBuscarConsultaContasPagar.TabIndex = 5;
-            this.buttonBuscarConsultaContasPagar.Text = "Buscar";
-            this.buttonBuscarConsultaContasPagar.UseVisualStyleBackColor = true;
-            // 
-            // buttonAdicionarConsultaContasPagar
-            // 
-            this.buttonAdicionarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionarConsultaContasPagar.Location = new System.Drawing.Point(532, 108);
-            this.buttonAdicionarConsultaContasPagar.Name = "buttonAdicionarConsultaContasPagar";
-            this.buttonAdicionarConsultaContasPagar.Size = new System.Drawing.Size(81, 23);
-            this.buttonAdicionarConsultaContasPagar.TabIndex = 6;
-            this.buttonAdicionarConsultaContasPagar.Text = "Adicionar";
-            this.buttonAdicionarConsultaContasPagar.UseVisualStyleBackColor = true;
-            // 
-            // buttonAlterarConsultaContasPagar
-            // 
-            this.buttonAlterarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterarConsultaContasPagar.Location = new System.Drawing.Point(619, 108);
-            this.buttonAlterarConsultaContasPagar.Name = "buttonAlterarConsultaContasPagar";
-            this.buttonAlterarConsultaContasPagar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlterarConsultaContasPagar.TabIndex = 7;
-            this.buttonAlterarConsultaContasPagar.Text = "Alterar";
-            this.buttonAlterarConsultaContasPagar.UseVisualStyleBackColor = true;
-            // 
-            // buttonExcluirConsultaContasPagar
-            // 
-            this.buttonExcluirConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirConsultaContasPagar.Location = new System.Drawing.Point(700, 108);
-            this.buttonExcluirConsultaContasPagar.Name = "buttonExcluirConsultaContasPagar";
-            this.buttonExcluirConsultaContasPagar.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluirConsultaContasPagar.TabIndex = 8;
-            this.buttonExcluirConsultaContasPagar.Text = "Excluir";
-            this.buttonExcluirConsultaContasPagar.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -140,7 +73,7 @@
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 118;
+            this.dataGridViewTextBoxColumn2.Width = 95;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -155,21 +88,102 @@
             // 
             this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
             // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(618, 70);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Consulta de Contas a Pagar";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelConsultarContasPagar
+            // 
+            this.labelConsultarContasPagar.AutoSize = true;
+            this.labelConsultarContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConsultarContasPagar.Location = new System.Drawing.Point(24, 90);
+            this.labelConsultarContasPagar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelConsultarContasPagar.Name = "labelConsultarContasPagar";
+            this.labelConsultarContasPagar.Size = new System.Drawing.Size(56, 13);
+            this.labelConsultarContasPagar.TabIndex = 3;
+            this.labelConsultarContasPagar.Text = "Consulta";
+            // 
+            // textBoxConsultaContasPagar
+            // 
+            this.textBoxConsultaContasPagar.Location = new System.Drawing.Point(79, 89);
+            this.textBoxConsultaContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxConsultaContasPagar.Name = "textBoxConsultaContasPagar";
+            this.textBoxConsultaContasPagar.Size = new System.Drawing.Size(256, 20);
+            this.textBoxConsultaContasPagar.TabIndex = 4;
+            // 
+            // buttonBuscarConsultaContasPagar
+            // 
+            this.buttonBuscarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarConsultaContasPagar.Location = new System.Drawing.Point(338, 88);
+            this.buttonBuscarConsultaContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonBuscarConsultaContasPagar.Name = "buttonBuscarConsultaContasPagar";
+            this.buttonBuscarConsultaContasPagar.Size = new System.Drawing.Size(56, 19);
+            this.buttonBuscarConsultaContasPagar.TabIndex = 5;
+            this.buttonBuscarConsultaContasPagar.Text = "Buscar";
+            this.buttonBuscarConsultaContasPagar.UseVisualStyleBackColor = true;
+            this.buttonBuscarConsultaContasPagar.Click += new System.EventHandler(this.buttonBuscarConsultaContasPagar_Click);
+            // 
+            // buttonAdicionarConsultaContasPagar
+            // 
+            this.buttonAdicionarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarConsultaContasPagar.Location = new System.Drawing.Point(399, 88);
+            this.buttonAdicionarConsultaContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdicionarConsultaContasPagar.Name = "buttonAdicionarConsultaContasPagar";
+            this.buttonAdicionarConsultaContasPagar.Size = new System.Drawing.Size(61, 19);
+            this.buttonAdicionarConsultaContasPagar.TabIndex = 6;
+            this.buttonAdicionarConsultaContasPagar.Text = "Adicionar";
+            this.buttonAdicionarConsultaContasPagar.UseVisualStyleBackColor = true;
+            this.buttonAdicionarConsultaContasPagar.Click += new System.EventHandler(this.buttonAdicionarConsultaContasPagar_Click);
+            // 
+            // buttonAlterarConsultaContasPagar
+            // 
+            this.buttonAlterarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterarConsultaContasPagar.Location = new System.Drawing.Point(464, 88);
+            this.buttonAlterarConsultaContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAlterarConsultaContasPagar.Name = "buttonAlterarConsultaContasPagar";
+            this.buttonAlterarConsultaContasPagar.Size = new System.Drawing.Size(56, 19);
+            this.buttonAlterarConsultaContasPagar.TabIndex = 7;
+            this.buttonAlterarConsultaContasPagar.Text = "Alterar";
+            this.buttonAlterarConsultaContasPagar.UseVisualStyleBackColor = true;
+            this.buttonAlterarConsultaContasPagar.Click += new System.EventHandler(this.buttonAlterarConsultaContasPagar_Click);
+            // 
+            // buttonExcluirConsultaContasPagar
+            // 
+            this.buttonExcluirConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluirConsultaContasPagar.Location = new System.Drawing.Point(525, 88);
+            this.buttonExcluirConsultaContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonExcluirConsultaContasPagar.Name = "buttonExcluirConsultaContasPagar";
+            this.buttonExcluirConsultaContasPagar.Size = new System.Drawing.Size(56, 19);
+            this.buttonExcluirConsultaContasPagar.TabIndex = 8;
+            this.buttonExcluirConsultaContasPagar.Text = "Excluir";
+            this.buttonExcluirConsultaContasPagar.UseVisualStyleBackColor = true;
+            this.buttonExcluirConsultaContasPagar.Click += new System.EventHandler(this.buttonExcluirConsultaContasPagar_Click);
+            // 
             // buttonSair
             // 
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(700, 407);
+            this.buttonSair.Location = new System.Drawing.Point(525, 331);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(75, 23);
+            this.buttonSair.Size = new System.Drawing.Size(56, 19);
             this.buttonSair.TabIndex = 8;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // FormConsultaContasPagar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 444);
+            this.ClientSize = new System.Drawing.Size(618, 361);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonExcluirConsultaContasPagar);
             this.Controls.Add(this.buttonAlterarConsultaContasPagar);
@@ -180,6 +194,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.contasPagarDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormConsultaContasPagar";
