@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +19,25 @@ namespace Financas
         {
             InitializeComponent();
             Id = id;
+        }
+
+        private void buttonSalvarCadastroContasReceber_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ContasReceberBLL contasReceberBLL = new ContasReceberBLL();
+                contasReceberBindingSource.EndEdit();
+
+                contasReceberBLL.Inserir((ContasReceber)contasReceberBindingSource.Current);
+            }
+            catch
+            {
+                MessageBox.Show("Registro salvo com sucesso!");
+            }
+            finally
+            {
+                Close();
+            }
         }
     }
 }

@@ -45,10 +45,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // contasReceberBindingSource
-            // 
-            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
-            // 
             // valorReceberLabel
             // 
             valorReceberLabel.AutoSize = true;
@@ -58,6 +54,20 @@
             valorReceberLabel.Size = new System.Drawing.Size(112, 16);
             valorReceberLabel.TabIndex = 1;
             valorReceberLabel.Text = "Valor Receber:";
+            // 
+            // descricaoLabel
+            // 
+            descricaoLabel.AutoSize = true;
+            descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descricaoLabel.Location = new System.Drawing.Point(108, 213);
+            descricaoLabel.Name = "descricaoLabel";
+            descricaoLabel.Size = new System.Drawing.Size(82, 16);
+            descricaoLabel.TabIndex = 3;
+            descricaoLabel.Text = "Descricao:";
+            // 
+            // contasReceberBindingSource
+            // 
+            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
             // 
             // valorReceberTextBoxContasReceber
             // 
@@ -76,16 +86,6 @@
             this.label1.Size = new System.Drawing.Size(540, 46);
             this.label1.TabIndex = 3;
             this.label1.Text = "Cadastro Contas a Receber";
-            // 
-            // descricaoLabel
-            // 
-            descricaoLabel.AutoSize = true;
-            descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(108, 213);
-            descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(82, 16);
-            descricaoLabel.TabIndex = 3;
-            descricaoLabel.Text = "Descricao:";
             // 
             // descricaoTextBoxContasReceber
             // 
@@ -132,6 +132,7 @@
             this.buttonSalvarCadastroContasReceber.TabIndex = 8;
             this.buttonSalvarCadastroContasReceber.Text = "Salvar";
             this.buttonSalvarCadastroContasReceber.UseVisualStyleBackColor = true;
+            this.buttonSalvarCadastroContasReceber.Click += new System.EventHandler(this.buttonSalvarCadastroContasReceber_Click);
             // 
             // buttonCancelarCadastroContasReceber
             // 
