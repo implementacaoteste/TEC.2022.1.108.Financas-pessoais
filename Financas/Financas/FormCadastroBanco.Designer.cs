@@ -51,7 +51,7 @@
             nomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nomeLabel.Location = new System.Drawing.Point(23, 130);
             nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(54, 17);
+            nomeLabel.Size = new System.Drawing.Size(63, 20);
             nomeLabel.TabIndex = 2;
             nomeLabel.Text = "Nome:";
             // 
@@ -61,7 +61,7 @@
             poupancaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             poupancaLabel.Location = new System.Drawing.Point(380, 127);
             poupancaLabel.Name = "poupancaLabel";
-            poupancaLabel.Size = new System.Drawing.Size(85, 17);
+            poupancaLabel.Size = new System.Drawing.Size(97, 20);
             poupancaLabel.TabIndex = 4;
             poupancaLabel.Text = "Poupança:";
             // 
@@ -71,7 +71,7 @@
             saldoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             saldoLabel.Location = new System.Drawing.Point(203, 226);
             saldoLabel.Name = "saldoLabel";
-            saldoLabel.Size = new System.Drawing.Size(54, 17);
+            saldoLabel.Size = new System.Drawing.Size(62, 20);
             saldoLabel.TabIndex = 6;
             saldoLabel.Text = "Saldo:";
             // 
@@ -95,7 +95,7 @@
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bancoBindingSource, "Nome", true));
             this.nomeTextBox.Location = new System.Drawing.Point(87, 130);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(246, 22);
+            this.nomeTextBox.Size = new System.Drawing.Size(246, 26);
             this.nomeTextBox.TabIndex = 3;
             // 
             // poupancaTextBox
@@ -103,7 +103,7 @@
             this.poupancaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bancoBindingSource, "Poupanca", true));
             this.poupancaTextBox.Location = new System.Drawing.Point(474, 124);
             this.poupancaTextBox.Name = "poupancaTextBox";
-            this.poupancaTextBox.Size = new System.Drawing.Size(253, 22);
+            this.poupancaTextBox.Size = new System.Drawing.Size(253, 26);
             this.poupancaTextBox.TabIndex = 5;
             // 
             // saldoTextBox
@@ -111,7 +111,7 @@
             this.saldoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bancoBindingSource, "Saldo", true));
             this.saldoTextBox.Location = new System.Drawing.Point(271, 223);
             this.saldoTextBox.Name = "saldoTextBox";
-            this.saldoTextBox.Size = new System.Drawing.Size(262, 22);
+            this.saldoTextBox.Size = new System.Drawing.Size(262, 26);
             this.saldoTextBox.TabIndex = 7;
             // 
             // buttonSalvarCadBanco
@@ -138,7 +138,7 @@
             // 
             // FormCadastroBanco
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 455);
             this.Controls.Add(this.buttonCancelarCadBanco);
@@ -159,7 +159,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Banco";
-            
+            this.Load += new System.EventHandler(this.FormCadastroBanco_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bancoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
