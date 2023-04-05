@@ -16,7 +16,7 @@ namespace DAL
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
-                SqlCommand cmd = cn.CreateCommand();
+                SqlCommand cmd = cn.CreateCommand();    
                 cmd.CommandText = @"INSERT INTO Banco(Nome, Saldo, Poupanca)
                                     VALUES(@Nome, @Saldo, @Poupanca)";
                 cmd.CommandType = System.Data.CommandType.Text;

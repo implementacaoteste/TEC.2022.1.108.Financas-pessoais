@@ -30,9 +30,9 @@ namespace BLL
         {
             return new BancoDAL().BuscarPorNome(_nome);
         }
-        public void BuscarPorId(int _id)
+        public Banco BuscarPorId(int _id)
         {
-            new BancoDAL().BuscarPorId(_id);
+            return new BancoDAL().BuscarPorId(_id);
         }
     }
 }
