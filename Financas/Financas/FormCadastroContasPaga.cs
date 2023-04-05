@@ -40,5 +40,15 @@ namespace Financas
             MessageBox.Show("Registro salvo com sucesso");
             Close();
         }
+
+        private void FormCadastroContasPaga_Load(object sender, EventArgs e)
+        {
+            if (Id == 0)
+
+                contasPagarBindingSource.AddNew();
+            else
+                contasPagarBindingSource.DataSource = new ContasPagarBLL();
+            
+        }
     }
 }

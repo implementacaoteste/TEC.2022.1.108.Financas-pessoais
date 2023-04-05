@@ -211,6 +211,7 @@
             this.buttonSalvarCadastrodeUsuario.TabIndex = 15;
             this.buttonSalvarCadastrodeUsuario.Text = "Salvar";
             this.buttonSalvarCadastrodeUsuario.UseVisualStyleBackColor = true;
+            this.buttonSalvarCadastrodeUsuario.Click += new System.EventHandler(this.buttonSalvarCadastrodeUsuario_Click);
             // 
             // FormCadastroUsuario
             // 
@@ -239,7 +240,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroUsuario";
-            this.Load += new System.EventHandler(this.FormCadastroUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
