@@ -28,13 +28,14 @@ namespace Financas
 
         private void buttonSalvarCadastroContasPagar_Click(object sender, EventArgs e)
         {
-            ContasPagarBLL BancoBLL = new ContasPagarBLL();
+            ContasPagarBLL contasPagarBLL = new ContasPagarBLL();
+           // ContasPagarBLL ContaPagaroBLL = new ContasPagarBLL();
            contasPagarBindingSource.EndEdit();
 
             if (Id == 0)
-                BancoBLL.Inserir((ContasPagar)contasPagarBindingSource.Current);
+                contasPagarBLL.Inserir((ContasPagar)contasPagarBindingSource.Current);
             else
-                BancoBLL.Alterar((ContasPagar)contasPagarBindingSource.Current);
+                contasPagarBLL.Alterar((ContasPagar)contasPagarBindingSource.Current);
 
             MessageBox.Show("Registro salvo com sucesso");
             Close();
