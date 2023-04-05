@@ -57,6 +57,7 @@ namespace Financas
             formaPagamentoBindingSource.RemoveCurrent();
 
             MessageBox.Show("Registro excluído com sucesso!");
+        }
 
         private void buttonAdicionarFormaPagamento_Click(object sender, EventArgs e)
         {
@@ -66,14 +67,7 @@ namespace Financas
             }
             buttonBuscarFormaPagamento_Click(null, null);
         }
-        private void FormConsultaFormaPagamento_Load(object sender, EventArgs e)
-        {
 
-        }
-        private void textBoxConsultarFormaPagamento_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Close();
