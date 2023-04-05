@@ -88,11 +88,11 @@
     <Compile Include="FormCadastroReceita.Designer.cs">
       <DependentUpon>FormCadastroReceita.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFormaPagamento.cs">
+    <Compile Include="FormCadastroFormaPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormFormaPagamento.Designer.cs">
-      <DependentUpon>FormFormaPagamento.cs</DependentUpon>
+    <Compile Include="FormCadastroFormaPagamento.Designer.cs">
+      <DependentUpon>FormCadastroFormaPagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -198,12 +198,11 @@
     <EmbeddedResource Include="FormConsultaContato.resx">
       <DependentUpon>FormConsultaContato.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="FormConsultaUsuario.resx">
       <DependentUpon>FormConsultaUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFormaPagamento.resx">
-      <DependentUpon>FormFormaPagamento.cs</DependentUpon>
+    <EmbeddedResource Include="FormCadastroFormaPagamento.resx">
+      <DependentUpon>FormCadastroFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Financas
 {
-    public partial class FormFormaPagamento : Form
+    public partial class FormCadastroFormaPagamento : Form
     {
-        public FormFormaPagamento()
+        public FormCadastroFormaPagamento()
         {
             InitializeComponent();
         }
@@ -43,6 +43,11 @@ namespace Financas
             {
                 Close();
             }
+        }
+
+        private void FormFormaPagamento_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

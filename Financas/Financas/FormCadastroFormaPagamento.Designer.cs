@@ -1,6 +1,6 @@
 ﻿namespace Financas
 {
-    partial class FormFormaPagamento
+    partial class FormCadastroFormaPagamento
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // descricaoLabel
+            // 
+            descricaoLabel.AutoSize = true;
+            descricaoLabel.Location = new System.Drawing.Point(61, 198);
+            descricaoLabel.Name = "descricaoLabel";
+            descricaoLabel.Size = new System.Drawing.Size(72, 16);
+            descricaoLabel.TabIndex = 2;
+            descricaoLabel.Text = "Descrição:";
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -53,15 +62,6 @@
             // formaPagamentoBindingSource
             // 
             this.formaPagamentoBindingSource.DataSource = typeof(Models.FormaPagamento);
-            // 
-            // descricaoLabel
-            // 
-            descricaoLabel.AutoSize = true;
-            descricaoLabel.Location = new System.Drawing.Point(61, 198);
-            descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(72, 16);
-            descricaoLabel.TabIndex = 2;
-            descricaoLabel.Text = "Descrição:";
             // 
             // textBoxDescricao
             // 
@@ -111,6 +111,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Forma de pagamento";
+            this.Load += new System.EventHandler(this.FormFormaPagamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
