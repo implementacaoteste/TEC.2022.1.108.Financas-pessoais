@@ -74,7 +74,7 @@ CREATE TABLE Contato
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(150),
 	Endereco VARCHAR(150),
-	Numero INT,
+	Numero VARCHAR(11),
 	Descricao VARCHAR(250)
 )
 GO
@@ -216,16 +216,25 @@ GO
 --IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Dag'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Dagorlina', 'Dag', '123456', 1)
 --GO
 
---INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Gerente')
---INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Vendedor')
---INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Fiscal de caixa')
---INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Estoquista')
---INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Operador de caixa')
+INSERT INTO Banco (Nome, Saldo, Poupanca) VALUES('Inter', 500, 50.5)
+INSERT INTO Banco (Nome, Saldo, Poupanca) VALUES('Nubank', 100.5, 30.0)
+INSERT INTO Banco (Nome, Saldo, Poupanca) VALUES('Caixa', 150.0, 10.5)
+INSERT INTO Banco (Nome, Saldo, Poupanca) VALUES('Banco do Brasil', 250.0, 20.0)
+GO
 
---GO
---INSERT INTO UsuarioGrupoUsuario VALUES(2,1)
---INSERT INTO UsuarioGrupoUsuario VALUES(1,2)
---GO
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda)VALUES('Ana', 'Ana', 123456, 1400)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda)VALUES('Lucas', 'Lucas', 123456, 650)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda)VALUES('Maria', 'Maria', 123456, 800)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda)VALUES('João', 'João', 123456, 1000)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda)VALUES('Pedro', 'Pedro', 123456, 2000)
+GO
+
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao)VALUES('Gean', 'rua C', '63992929292', 'vizinho')
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao)VALUES('Alice', 'rua X', '1181818181', 'colega do serviço')
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao)VALUES('Bruno', 'rua Z', '63991919191', 'irmão')
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao)VALUES('Bruna', 'rua Jardim', '63992747474', 'colega de escola')
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao)VALUES('Marcelo', 'rua N', '63991121212', 'vizinha da mãe')
+GO
 
 --INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,1)
 --INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,2)

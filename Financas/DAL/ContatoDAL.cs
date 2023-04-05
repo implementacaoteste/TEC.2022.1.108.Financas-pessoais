@@ -115,7 +115,7 @@ namespace DAL
                         contato.Id = Convert.ToInt32(rd["ID"]);
                         contato.Nome = rd["Nome"].ToString();
                         contato.Endereco = rd["Endereco"].ToString();
-                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
                     }
                 }
@@ -153,7 +153,7 @@ namespace DAL
                         contato.Id = Convert.ToInt32(rd["Id"]);
                         contato.Nome = rd["Nome"].ToString();
                         contato.Endereco = rd["Endereco"].ToString();
-                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
                         contatos.Add(contato);
                     }
@@ -193,7 +193,7 @@ namespace DAL
                         contato.Id = Convert.ToInt32(rd["Id"]);
                         contato.Nome = rd["Nome"].ToString();
                         contato.Endereco = rd["Endereco"].ToString();
-                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
                         contatos.Add(contato);
                     }
@@ -233,7 +233,7 @@ namespace DAL
                         contato.Id = Convert.ToInt32(rd["Id"]);
                         contato.Nome = rd["Nome"].ToString();
                         contato.Endereco = rd["Endereco"].ToString();
-                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
                         contatos.Add(contato);
                     }
@@ -273,7 +273,7 @@ namespace DAL
                         contato.Id = Convert.ToInt32(rd["ID"]);
                         contato.Nome = rd["Nome"].ToString();
                         contato.Endereco = rd["Endereco"].ToString();
-                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
                         contatos.Add(contato);
                     }
@@ -313,7 +313,7 @@ namespace DAL
                         contato.Id = Convert.ToInt32(rd["ID"]);
                         contato.Nome = rd["Nome"].ToString();
                         contato.Endereco = rd["Endereco"].ToString();
-                        contato.Numero = Convert.ToInt32(rd["Numero"]);
+                        contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
                         contatos.Add(contato);
                     }
