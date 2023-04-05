@@ -46,10 +46,9 @@
             // 
             descricaoLabel.AutoSize = true;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(299, 134);
-            descricaoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            descricaoLabel.Location = new System.Drawing.Point(399, 165);
             descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(68, 13);
+            descricaoLabel.Size = new System.Drawing.Size(82, 16);
             descricaoLabel.TabIndex = 1;
             descricaoLabel.Text = "Descricao:";
             // 
@@ -57,20 +56,19 @@
             // 
             valorPagarLabel.AutoSize = true;
             valorPagarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            valorPagarLabel.Location = new System.Drawing.Point(38, 134);
-            valorPagarLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            valorPagarLabel.Location = new System.Drawing.Point(51, 165);
             valorPagarLabel.Name = "valorPagarLabel";
-            valorPagarLabel.Size = new System.Drawing.Size(77, 13);
+            valorPagarLabel.Size = new System.Drawing.Size(94, 16);
             valorPagarLabel.TabIndex = 3;
             valorPagarLabel.Text = "Valor Pagar:";
             // 
             // descricaoTextBox
             // 
             this.descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "Descricao", true));
-            this.descricaoTextBox.Location = new System.Drawing.Point(362, 131);
-            this.descricaoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.descricaoTextBox.Location = new System.Drawing.Point(483, 161);
+            this.descricaoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.descricaoTextBox.Name = "descricaoTextBox";
-            this.descricaoTextBox.Size = new System.Drawing.Size(173, 20);
+            this.descricaoTextBox.Size = new System.Drawing.Size(229, 22);
             this.descricaoTextBox.TabIndex = 2;
             // 
             // contasPagarBindingSource
@@ -80,30 +78,29 @@
             // valorPagarTextBox
             // 
             this.valorPagarTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "ValorPagar", true));
-            this.valorPagarTextBox.Location = new System.Drawing.Point(119, 132);
-            this.valorPagarTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.valorPagarTextBox.Location = new System.Drawing.Point(159, 162);
+            this.valorPagarTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.valorPagarTextBox.Name = "valorPagarTextBox";
-            this.valorPagarTextBox.Size = new System.Drawing.Size(166, 20);
+            this.valorPagarTextBox.Size = new System.Drawing.Size(220, 22);
             this.valorPagarTextBox.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(122, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(163, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(413, 37);
+            this.label1.Size = new System.Drawing.Size(507, 46);
             this.label1.TabIndex = 5;
             this.label1.Text = "cadastro de contas Pagas";
             // 
             // buttonCancelarCadastroContasPagar
             // 
             this.buttonCancelarCadastroContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastroContasPagar.Location = new System.Drawing.Point(315, 265);
-            this.buttonCancelarCadastroContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCancelarCadastroContasPagar.Location = new System.Drawing.Point(420, 326);
+            this.buttonCancelarCadastroContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadastroContasPagar.Name = "buttonCancelarCadastroContasPagar";
-            this.buttonCancelarCadastroContasPagar.Size = new System.Drawing.Size(77, 19);
+            this.buttonCancelarCadastroContasPagar.Size = new System.Drawing.Size(103, 23);
             this.buttonCancelarCadastroContasPagar.TabIndex = 7;
             this.buttonCancelarCadastroContasPagar.Text = "Cancelar";
             this.buttonCancelarCadastroContasPagar.UseVisualStyleBackColor = true;
@@ -112,19 +109,20 @@
             // buttonSalvarCadastroContasPagar
             // 
             this.buttonSalvarCadastroContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadastroContasPagar.Location = new System.Drawing.Point(184, 265);
-            this.buttonSalvarCadastroContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSalvarCadastroContasPagar.Location = new System.Drawing.Point(245, 326);
+            this.buttonSalvarCadastroContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCadastroContasPagar.Name = "buttonSalvarCadastroContasPagar";
-            this.buttonSalvarCadastroContasPagar.Size = new System.Drawing.Size(58, 19);
+            this.buttonSalvarCadastroContasPagar.Size = new System.Drawing.Size(77, 23);
             this.buttonSalvarCadastroContasPagar.TabIndex = 7;
             this.buttonSalvarCadastroContasPagar.Text = "Salvar";
             this.buttonSalvarCadastroContasPagar.UseVisualStyleBackColor = true;
+            this.buttonSalvarCadastroContasPagar.Click += new System.EventHandler(this.buttonSalvarCadastroContasPagar_Click);
             // 
             // FormCadastroContasPaga
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 370);
+            this.ClientSize = new System.Drawing.Size(788, 455);
             this.Controls.Add(this.buttonSalvarCadastroContasPagar);
             this.Controls.Add(this.buttonCancelarCadastroContasPagar);
             this.Controls.Add(this.label1);
@@ -132,7 +130,7 @@
             this.Controls.Add(this.valorPagarTextBox);
             this.Controls.Add(descricaoLabel);
             this.Controls.Add(this.descricaoTextBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormCadastroContasPaga";
             this.Text = "FormCadastroContasPaga";
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).EndInit();
