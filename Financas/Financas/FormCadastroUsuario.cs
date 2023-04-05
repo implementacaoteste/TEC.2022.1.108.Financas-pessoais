@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,13 +21,30 @@ namespace Financas
             Id = id;
         }
 
-        private void FormCadastroUsuario_Load(object sender, EventArgs e)
+        private void FormCadastroUsuario_Load(string _nome)
         {
 
+            if (Id == 0)
+                usuarioBindingSource.AddNew();
+            else
+                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorNome(_nome);
         }
 
         private void buttonCancelarCadastrodeUsuario_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void buttonSalvarCadastrodeUsuario_Click(object sender, EventArgs e)
+        {
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            usuarioBindingSource.EndEdit();
+
+            if (Id == 0)
+                usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current);
+            else 
+                usuarioBLL.Alterar((Usuario)usuarioBindingSource.Current);
+            MessageBox.Show("Registro salvo com sucesso");
             Close();
         }
     }
