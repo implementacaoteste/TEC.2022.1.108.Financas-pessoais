@@ -15,19 +15,21 @@ namespace Financas
     public partial class FormCadastroUsuario : Form
     {
         public int Id;
-        public FormCadastroUsuario(int id=0)
+     
+        public FormCadastroUsuario(int id=0 )
         {
             InitializeComponent();
             Id = id;
+          
         }
 
-        private void FormCadastroUsuario_Load(string _nome)
+        private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
 
             if (Id == 0)
                 usuarioBindingSource.AddNew();
             else
-                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorNome(_nome);
+                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
         }
 
         private void buttonCancelarCadastrodeUsuario_Click(object sender, EventArgs e)
