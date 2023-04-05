@@ -122,7 +122,7 @@
             this.buttonAdicionarFormaPagamento.TabIndex = 11;
             this.buttonAdicionarFormaPagamento.Text = "Adicionar";
             this.buttonAdicionarFormaPagamento.UseVisualStyleBackColor = true;
-            this.buttonAdicionarFormaPagamento.Click += new System.EventHandler(this.buttonAdicionarFormaPagamento_Click);
+
             // 
             // textBoxConsultarFormaPagamento
             // 
@@ -164,7 +164,7 @@
             this.buttonSair.TabIndex = 13;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+
             // 
             // FormConsultaFormaPagamento
             // 
