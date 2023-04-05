@@ -14,6 +14,7 @@ namespace DAL
         public void Inserir(Banco _banco)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Banco banco = new Banco();
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
