@@ -76,6 +76,12 @@
     <Compile Include="FormCadastroDespesas.Designer.cs">
       <DependentUpon>FormCadastroDespesas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConsultaReceita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaReceita.Designer.cs">
+      <DependentUpon>FormConsultaReceita.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConsultaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,12 +154,6 @@
     <Compile Include="FormConsultaFormaPagamento.Designer.cs">
       <DependentUpon>FormConsultaFormaPagamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormConsultarReceita.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormConsultarReceita.Designer.cs">
-      <DependentUpon>FormConsultarReceita.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCadastroBanco.resx">
@@ -192,11 +192,11 @@
     <EmbeddedResource Include="FormConsultaFormaPagamento.resx">
       <DependentUpon>FormConsultaFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormConsultarReceita.resx">
-      <DependentUpon>FormConsultarReceita.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaContato.resx">
       <DependentUpon>FormConsultaContato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaReceita.resx">
+      <DependentUpon>FormConsultaReceita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaUsuario.resx">
       <DependentUpon>FormConsultaUsuario.cs</DependentUpon>

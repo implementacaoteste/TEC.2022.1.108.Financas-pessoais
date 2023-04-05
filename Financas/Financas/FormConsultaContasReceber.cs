@@ -62,7 +62,7 @@ namespace Financas
             if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            int id = ((ContasPagar)contasReceberBindingSource.Current).Id;
+            int id = ((ContasReceber)contasReceberBindingSource.Current).Id;
             new ContasReceberBLL().Excluir(id);
             contasReceberBindingSource.RemoveCurrent();
 

@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Financas
 {
-    public partial class FormConsultarReceita : Form
+    public partial class FormConsultaReceita : Form
     {
-        public FormConsultarReceita()
+        public FormConsultaReceita()
         {
             InitializeComponent();
         }

@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contasPagarDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.labelConsultarContasPagar = new System.Windows.Forms.Label();
@@ -41,6 +40,8 @@
             this.buttonAlterarConsultaContasPagar = new System.Windows.Forms.Button();
             this.buttonExcluirConsultaContasPagar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -56,33 +57,14 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.contasPagarDataGridView.DataSource = this.contasPagarBindingSource;
-            this.contasPagarDataGridView.Location = new System.Drawing.Point(26, 110);
-            this.contasPagarDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.contasPagarDataGridView.Location = new System.Drawing.Point(35, 135);
+            this.contasPagarDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.contasPagarDataGridView.Name = "contasPagarDataGridView";
             this.contasPagarDataGridView.ReadOnly = true;
             this.contasPagarDataGridView.RowHeadersWidth = 51;
             this.contasPagarDataGridView.RowTemplate.Height = 24;
-            this.contasPagarDataGridView.Size = new System.Drawing.Size(555, 216);
+            this.contasPagarDataGridView.Size = new System.Drawing.Size(740, 266);
             this.contasPagarDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ValorPagar";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Valor a pagar";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 95;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // contasPagarBindingSource
             // 
@@ -93,9 +75,8 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(618, 70);
+            this.label1.Size = new System.Drawing.Size(824, 86);
             this.label1.TabIndex = 2;
             this.label1.Text = "Consulta de Contas a Pagar";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -104,28 +85,27 @@
             // 
             this.labelConsultarContasPagar.AutoSize = true;
             this.labelConsultarContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConsultarContasPagar.Location = new System.Drawing.Point(24, 90);
-            this.labelConsultarContasPagar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelConsultarContasPagar.Location = new System.Drawing.Point(32, 111);
             this.labelConsultarContasPagar.Name = "labelConsultarContasPagar";
-            this.labelConsultarContasPagar.Size = new System.Drawing.Size(56, 13);
+            this.labelConsultarContasPagar.Size = new System.Drawing.Size(67, 16);
             this.labelConsultarContasPagar.TabIndex = 3;
             this.labelConsultarContasPagar.Text = "Consulta";
             // 
             // textBoxConsultaContasPagar
             // 
-            this.textBoxConsultaContasPagar.Location = new System.Drawing.Point(79, 89);
-            this.textBoxConsultaContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxConsultaContasPagar.Location = new System.Drawing.Point(105, 110);
+            this.textBoxConsultaContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultaContasPagar.Name = "textBoxConsultaContasPagar";
-            this.textBoxConsultaContasPagar.Size = new System.Drawing.Size(256, 20);
+            this.textBoxConsultaContasPagar.Size = new System.Drawing.Size(340, 22);
             this.textBoxConsultaContasPagar.TabIndex = 4;
             // 
             // buttonBuscarConsultaContasPagar
             // 
             this.buttonBuscarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarConsultaContasPagar.Location = new System.Drawing.Point(338, 88);
-            this.buttonBuscarConsultaContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonBuscarConsultaContasPagar.Location = new System.Drawing.Point(451, 108);
+            this.buttonBuscarConsultaContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarConsultaContasPagar.Name = "buttonBuscarConsultaContasPagar";
-            this.buttonBuscarConsultaContasPagar.Size = new System.Drawing.Size(56, 19);
+            this.buttonBuscarConsultaContasPagar.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarConsultaContasPagar.TabIndex = 5;
             this.buttonBuscarConsultaContasPagar.Text = "Buscar";
             this.buttonBuscarConsultaContasPagar.UseVisualStyleBackColor = true;
@@ -134,10 +114,10 @@
             // buttonAdicionarConsultaContasPagar
             // 
             this.buttonAdicionarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionarConsultaContasPagar.Location = new System.Drawing.Point(399, 88);
-            this.buttonAdicionarConsultaContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdicionarConsultaContasPagar.Location = new System.Drawing.Point(532, 108);
+            this.buttonAdicionarConsultaContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionarConsultaContasPagar.Name = "buttonAdicionarConsultaContasPagar";
-            this.buttonAdicionarConsultaContasPagar.Size = new System.Drawing.Size(61, 19);
+            this.buttonAdicionarConsultaContasPagar.Size = new System.Drawing.Size(81, 23);
             this.buttonAdicionarConsultaContasPagar.TabIndex = 6;
             this.buttonAdicionarConsultaContasPagar.Text = "Adicionar";
             this.buttonAdicionarConsultaContasPagar.UseVisualStyleBackColor = true;
@@ -146,10 +126,10 @@
             // buttonAlterarConsultaContasPagar
             // 
             this.buttonAlterarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterarConsultaContasPagar.Location = new System.Drawing.Point(464, 88);
-            this.buttonAlterarConsultaContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAlterarConsultaContasPagar.Location = new System.Drawing.Point(619, 108);
+            this.buttonAlterarConsultaContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAlterarConsultaContasPagar.Name = "buttonAlterarConsultaContasPagar";
-            this.buttonAlterarConsultaContasPagar.Size = new System.Drawing.Size(56, 19);
+            this.buttonAlterarConsultaContasPagar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterarConsultaContasPagar.TabIndex = 7;
             this.buttonAlterarConsultaContasPagar.Text = "Alterar";
             this.buttonAlterarConsultaContasPagar.UseVisualStyleBackColor = true;
@@ -158,10 +138,10 @@
             // buttonExcluirConsultaContasPagar
             // 
             this.buttonExcluirConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirConsultaContasPagar.Location = new System.Drawing.Point(525, 88);
-            this.buttonExcluirConsultaContasPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonExcluirConsultaContasPagar.Location = new System.Drawing.Point(700, 108);
+            this.buttonExcluirConsultaContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluirConsultaContasPagar.Name = "buttonExcluirConsultaContasPagar";
-            this.buttonExcluirConsultaContasPagar.Size = new System.Drawing.Size(56, 19);
+            this.buttonExcluirConsultaContasPagar.Size = new System.Drawing.Size(75, 23);
             this.buttonExcluirConsultaContasPagar.TabIndex = 8;
             this.buttonExcluirConsultaContasPagar.Text = "Excluir";
             this.buttonExcluirConsultaContasPagar.UseVisualStyleBackColor = true;
@@ -170,20 +150,43 @@
             // buttonSair
             // 
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(525, 331);
-            this.buttonSair.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSair.Location = new System.Drawing.Point(700, 407);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(56, 19);
+            this.buttonSair.Size = new System.Drawing.Size(75, 23);
             this.buttonSair.TabIndex = 8;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ValorPagar";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Valor a pagar";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 118;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
             // FormConsultaContasPagar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 361);
+            this.ClientSize = new System.Drawing.Size(824, 444);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonExcluirConsultaContasPagar);
             this.Controls.Add(this.buttonAlterarConsultaContasPagar);
@@ -194,7 +197,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.contasPagarDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormConsultaContasPagar";
@@ -220,8 +223,8 @@
         private System.Windows.Forms.Button buttonAdicionarConsultaContasPagar;
         private System.Windows.Forms.Button buttonAlterarConsultaContasPagar;
         private System.Windows.Forms.Button buttonExcluirConsultaContasPagar;
+        private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.Button buttonSair;
     }
 }

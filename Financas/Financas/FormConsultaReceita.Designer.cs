@@ -1,6 +1,6 @@
 ﻿namespace Financas
 {
-    partial class FormConsultarReceita
+    partial class FormConsultaReceita
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.receitaDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarReceita = new System.Windows.Forms.Button();
             this.buttonAlterarReceita = new System.Windows.Forms.Button();
@@ -41,6 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.receitaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -56,18 +57,115 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.receitaDataGridView.DataSource = this.receitaBindingSource;
-            this.receitaDataGridView.Location = new System.Drawing.Point(26, 110);
-            this.receitaDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.receitaDataGridView.Location = new System.Drawing.Point(35, 135);
+            this.receitaDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.receitaDataGridView.Name = "receitaDataGridView";
             this.receitaDataGridView.ReadOnly = true;
             this.receitaDataGridView.RowHeadersWidth = 51;
             this.receitaDataGridView.RowTemplate.Height = 24;
-            this.receitaDataGridView.Size = new System.Drawing.Size(555, 216);
+            this.receitaDataGridView.Size = new System.Drawing.Size(740, 266);
             this.receitaDataGridView.TabIndex = 1;
+            // 
+            // receitaBindingSource
+            // 
+            this.receitaBindingSource.DataSource = typeof(Models.Receita);
+            // 
+            // buttonBuscarReceita
+            // 
+            this.buttonBuscarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarReceita.Location = new System.Drawing.Point(451, 105);
+            this.buttonBuscarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonBuscarReceita.Name = "buttonBuscarReceita";
+            this.buttonBuscarReceita.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscarReceita.TabIndex = 8;
+            this.buttonBuscarReceita.Text = "Buscar";
+            this.buttonBuscarReceita.UseVisualStyleBackColor = true;
+            this.buttonBuscarReceita.Click += new System.EventHandler(this.buttonBuscarReceita_Click);
+            // 
+            // buttonAlterarReceita
+            // 
+            this.buttonAlterarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterarReceita.Location = new System.Drawing.Point(619, 106);
+            this.buttonAlterarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonAlterarReceita.Name = "buttonAlterarReceita";
+            this.buttonAlterarReceita.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterarReceita.TabIndex = 9;
+            this.buttonAlterarReceita.Text = "Alterar";
+            this.buttonAlterarReceita.UseVisualStyleBackColor = true;
+            this.buttonAlterarReceita.Click += new System.EventHandler(this.buttonAlterarReceita_Click);
+            // 
+            // buttonExcluirReceita
+            // 
+            this.buttonExcluirReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluirReceita.Location = new System.Drawing.Point(700, 106);
+            this.buttonExcluirReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonExcluirReceita.Name = "buttonExcluirReceita";
+            this.buttonExcluirReceita.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluirReceita.TabIndex = 10;
+            this.buttonExcluirReceita.Text = "Excluir";
+            this.buttonExcluirReceita.UseVisualStyleBackColor = true;
+            this.buttonExcluirReceita.Click += new System.EventHandler(this.buttonExcluirReceita_Click);
+            // 
+            // buttonAdicionarReceita
+            // 
+            this.buttonAdicionarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarReceita.Location = new System.Drawing.Point(531, 106);
+            this.buttonAdicionarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonAdicionarReceita.Name = "buttonAdicionarReceita";
+            this.buttonAdicionarReceita.Size = new System.Drawing.Size(83, 23);
+            this.buttonAdicionarReceita.TabIndex = 11;
+            this.buttonAdicionarReceita.Text = "Adicionar";
+            this.buttonAdicionarReceita.UseVisualStyleBackColor = true;
+            this.buttonAdicionarReceita.Click += new System.EventHandler(this.buttonAdicionarReceita_Click);
+            // 
+            // textBoxConsultarReceita
+            // 
+            this.textBoxConsultarReceita.Location = new System.Drawing.Point(97, 106);
+            this.textBoxConsultarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxConsultarReceita.Name = "textBoxConsultarReceita";
+            this.textBoxConsultarReceita.Size = new System.Drawing.Size(347, 22);
+            this.textBoxConsultarReceita.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Consulta";
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(824, 86);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Consultar Receita";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonSair
+            // 
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Location = new System.Drawing.Point(700, 407);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(75, 23);
+            this.buttonSair.TabIndex = 13;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Ganhos";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn2.HeaderText = "Ganhos";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -83,106 +181,11 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // receitaBindingSource
+            // FormConsultaReceita
             // 
-            this.receitaBindingSource.DataSource = typeof(Models.Receita);
-            // 
-            // buttonBuscarReceita
-            // 
-            this.buttonBuscarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarReceita.Location = new System.Drawing.Point(338, 85);
-            this.buttonBuscarReceita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonBuscarReceita.Name = "buttonBuscarReceita";
-            this.buttonBuscarReceita.Size = new System.Drawing.Size(56, 19);
-            this.buttonBuscarReceita.TabIndex = 8;
-            this.buttonBuscarReceita.Text = "Buscar";
-            this.buttonBuscarReceita.UseVisualStyleBackColor = true;
-            this.buttonBuscarReceita.Click += new System.EventHandler(this.buttonBuscarReceita_Click);
-            // 
-            // buttonAlterarReceita
-            // 
-            this.buttonAlterarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterarReceita.Location = new System.Drawing.Point(464, 86);
-            this.buttonAlterarReceita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonAlterarReceita.Name = "buttonAlterarReceita";
-            this.buttonAlterarReceita.Size = new System.Drawing.Size(56, 19);
-            this.buttonAlterarReceita.TabIndex = 9;
-            this.buttonAlterarReceita.Text = "Alterar";
-            this.buttonAlterarReceita.UseVisualStyleBackColor = true;
-            this.buttonAlterarReceita.Click += new System.EventHandler(this.buttonAlterarReceita_Click);
-            // 
-            // buttonExcluirReceita
-            // 
-            this.buttonExcluirReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirReceita.Location = new System.Drawing.Point(525, 86);
-            this.buttonExcluirReceita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonExcluirReceita.Name = "buttonExcluirReceita";
-            this.buttonExcluirReceita.Size = new System.Drawing.Size(56, 19);
-            this.buttonExcluirReceita.TabIndex = 10;
-            this.buttonExcluirReceita.Text = "Excluir";
-            this.buttonExcluirReceita.UseVisualStyleBackColor = true;
-            this.buttonExcluirReceita.Click += new System.EventHandler(this.buttonExcluirReceita_Click);
-            // 
-            // buttonAdicionarReceita
-            // 
-            this.buttonAdicionarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionarReceita.Location = new System.Drawing.Point(398, 86);
-            this.buttonAdicionarReceita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonAdicionarReceita.Name = "buttonAdicionarReceita";
-            this.buttonAdicionarReceita.Size = new System.Drawing.Size(62, 19);
-            this.buttonAdicionarReceita.TabIndex = 11;
-            this.buttonAdicionarReceita.Text = "Adicionar";
-            this.buttonAdicionarReceita.UseVisualStyleBackColor = true;
-            this.buttonAdicionarReceita.Click += new System.EventHandler(this.buttonAdicionarReceita_Click);
-            // 
-            // textBoxConsultarReceita
-            // 
-            this.textBoxConsultarReceita.Location = new System.Drawing.Point(73, 86);
-            this.textBoxConsultarReceita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBoxConsultarReceita.Name = "textBoxConsultarReceita";
-            this.textBoxConsultarReceita.Size = new System.Drawing.Size(261, 20);
-            this.textBoxConsultarReceita.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 89);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Consulta";
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(618, 70);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Consultar Receita";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonSair
-            // 
-            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(525, 331);
-            this.buttonSair.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(56, 19);
-            this.buttonSair.TabIndex = 13;
-            this.buttonSair.Text = "Sair";
-            this.buttonSair.UseVisualStyleBackColor = true;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            // 
-            // FormConsultarReceita
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 361);
+            this.ClientSize = new System.Drawing.Size(824, 444);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonBuscarReceita);
@@ -194,10 +197,10 @@
             this.Controls.Add(this.receitaDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormConsultarReceita";
+            this.Name = "FormConsultaReceita";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -220,8 +223,8 @@
         private System.Windows.Forms.TextBox textBoxConsultarReceita;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.Button buttonSair;
     }
 }

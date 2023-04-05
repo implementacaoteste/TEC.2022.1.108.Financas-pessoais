@@ -14,9 +14,12 @@ namespace Financas
 {
     public partial class FormCadastroFormaPagamento : Form
     {
-        public FormCadastroFormaPagamento()
+        public int Id;
+
+        public FormCadastroFormaPagamento(int id = 0)
         {
             InitializeComponent();
+            Id = id;
         }
 
 
