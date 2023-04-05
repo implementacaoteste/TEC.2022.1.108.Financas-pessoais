@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.formaPagamentoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formaPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
             this.buttonAlterarFormaPagamento = new System.Windows.Forms.Button();
             this.buttonExcluirFormaPagamento = new System.Windows.Forms.Button();
@@ -37,9 +39,6 @@
             this.textBoxConsultarFormaPagamento = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formaPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).BeginInit();
@@ -63,6 +62,19 @@
             this.formaPagamentoDataGridView.RowTemplate.Height = 24;
             this.formaPagamentoDataGridView.Size = new System.Drawing.Size(740, 266);
             this.formaPagamentoDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // formaPagamentoBindingSource
+            // 
+            this.formaPagamentoBindingSource.DataSource = typeof(Models.FormaPagamento);
             // 
             // buttonBuscarFormaPagamento
             // 
@@ -143,53 +155,26 @@
             this.label2.Text = "Consulta Forma de Pagamento";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // formaPagamentoBindingSource
-            // 
-            this.formaPagamentoBindingSource.DataSource = typeof(Models.FormaPagamento);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(698, 405);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Excluir";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonExcluirFormaPagamento_Click);
-            // 
             // buttonSair
             // 
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(700, 405);
-            this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSair.Location = new System.Drawing.Point(698, 406);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
-            this.buttonSair.TabIndex = 10;
+            this.buttonSair.TabIndex = 13;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
-            this.buttonSair.Click += new System.EventHandler(this.buttonExcluirFormaPagamento_Click);
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // FormConsultaFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 444);
+            this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonBuscarFormaPagamento);
             this.Controls.Add(this.buttonAlterarFormaPagamento);
-            this.Controls.Add(this.buttonSair);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonExcluirFormaPagamento);
             this.Controls.Add(this.buttonAdicionarFormaPagamento);
             this.Controls.Add(this.textBoxConsultarFormaPagamento);
@@ -223,9 +208,8 @@
         private System.Windows.Forms.Button buttonAdicionarFormaPagamento;
         private System.Windows.Forms.TextBox textBoxConsultarFormaPagamento;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSair;
     }
 }
