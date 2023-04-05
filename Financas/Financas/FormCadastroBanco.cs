@@ -12,9 +12,11 @@ namespace Financas
 {
     public partial class FormCadastroBanco : Form
     {
-        public FormCadastroBanco()
+        public int Id;
+        public FormCadastroBanco(int id=0)
         {
             InitializeComponent();
+            Id = id;
         }
 
         private void FormCadastroBanco_Load(object sender, EventArgs e)
