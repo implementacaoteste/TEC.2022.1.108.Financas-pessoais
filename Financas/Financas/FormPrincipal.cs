@@ -146,5 +146,13 @@ namespace Financas
                 frm.ShowDialog();
             }
         }
+
+        private void contasAReceberToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroContasReceber frm = new FormCadastroContasReceber())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

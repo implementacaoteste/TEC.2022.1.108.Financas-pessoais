@@ -39,5 +39,15 @@ namespace Financas
                 Close();
             }
         }
+
+        private void buttonCancelarCadastroContasReceber_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void buttonBuscarContatoContasReceber_Click(object sender, EventArgs e)
+        {
+            contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNome(textBoxBuscarContato.Text);
+        }
     }
 }

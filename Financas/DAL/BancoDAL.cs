@@ -117,8 +117,8 @@ namespace DAL
                         banco = new Banco();
                         banco.Id = Convert.ToInt32(rd["ID"]);
                         banco.Nome = rd["Nome"].ToString();
-                        banco.Saldo = rd.GetFloat(rd.GetOrdinal("Saldo"));
-                        banco.Poupanca = rd.GetFloat(rd.GetOrdinal("Poupanca"));
+                        banco.Saldo = (double)rd["Saldo"];
+                        banco.Poupanca = (double)rd["Poupanca"];
                     }
                 }
                 return banco;
@@ -154,8 +154,8 @@ namespace DAL
                         banco = new Banco();
                         banco.Id = Convert.ToInt32(rd["Id"]);
                         banco.Nome = rd["Nome"].ToString();
-                        banco.Saldo = rd.GetFloat(rd.GetOrdinal("Saldo"));
-                        banco.Poupanca = rd.GetFloat(rd.GetOrdinal("Poupanca"));
+                        banco.Saldo = (double)rd["Saldo"];
+                        banco.Poupanca = (double)rd["Poupanca"];
                         bancos.Add(banco);
                     }
                 }
@@ -193,8 +193,8 @@ namespace DAL
                         banco = new Banco();
                         banco.Id = Convert.ToInt32(rd["Id"]);
                         banco.Nome = rd["Nome"].ToString();
-                        banco.Saldo = rd.GetFloat(rd.GetOrdinal("Saldo"));
-                        banco.Poupanca = rd.GetFloat(rd.GetOrdinal("Poupanca"));
+                        banco.Saldo = (double)rd["Saldo"];
+                        banco.Poupanca = (double)rd["Poupanca"];
                         bancos.Add(banco);
                     }
                 }
