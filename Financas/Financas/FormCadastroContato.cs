@@ -45,5 +45,13 @@ namespace Financas
             Close();
            
         }
+
+        private void FormCadastroContato_Load(object sender, EventArgs e)
+        {
+            if (Id == 0)
+                contatoBindingSource.AddNew();
+            else
+                contatoBindingSource.DataSource = new ContatoBLL().BuscarTodos();
+        }
     }
 }

@@ -174,6 +174,7 @@
             this.Controls.Add(this.nomeTextBox);
             this.Name = "FormCadastroContato";
             this.Text = "FormCadastroContato";
+            this.Load += new System.EventHandler(this.FormCadastroContato_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

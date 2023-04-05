@@ -44,5 +44,13 @@ namespace Financas
         {
             Close();
         }
+
+        private void FormCadastroDespesas_Load(object sender, EventArgs e)
+        {
+            if (Id == 0)
+                despesasBindingSource.AddNew();
+            else
+                despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos();
+        }
     }
 }
