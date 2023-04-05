@@ -51,7 +51,7 @@
             // 
             valorReceberLabel.AutoSize = true;
             valorReceberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            valorReceberLabel.Location = new System.Drawing.Point(108, 152);
+            valorReceberLabel.Location = new System.Drawing.Point(92, 152);
             valorReceberLabel.Name = "valorReceberLabel";
             valorReceberLabel.Size = new System.Drawing.Size(125, 16);
             valorReceberLabel.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             descricaoLabel.AutoSize = true;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(108, 213);
+            descricaoLabel.Location = new System.Drawing.Point(92, 292);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(82, 16);
             descricaoLabel.TabIndex = 3;
@@ -74,26 +74,27 @@
             // valorReceberTextBoxContasReceber
             // 
             this.valorReceberTextBoxContasReceber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasReceberBindingSource, "ValorReceber", true));
-            this.valorReceberTextBoxContasReceber.Location = new System.Drawing.Point(226, 149);
+            this.valorReceberTextBoxContasReceber.Location = new System.Drawing.Point(223, 149);
             this.valorReceberTextBoxContasReceber.Name = "valorReceberTextBoxContasReceber";
             this.valorReceberTextBoxContasReceber.Size = new System.Drawing.Size(197, 22);
             this.valorReceberTextBoxContasReceber.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(103, 9);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(574, 46);
+            this.label1.Size = new System.Drawing.Size(686, 81);
             this.label1.TabIndex = 3;
             this.label1.Text = "Cadastro de contas a receber";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // descricaoTextBoxContasReceber
             // 
             this.descricaoTextBoxContasReceber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasReceberBindingSource, "Descricao", true));
             this.descricaoTextBoxContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descricaoTextBoxContasReceber.Location = new System.Drawing.Point(207, 213);
+            this.descricaoTextBoxContasReceber.Location = new System.Drawing.Point(180, 292);
             this.descricaoTextBoxContasReceber.Name = "descricaoTextBoxContasReceber";
             this.descricaoTextBoxContasReceber.Size = new System.Drawing.Size(411, 22);
             this.descricaoTextBoxContasReceber.TabIndex = 4;
@@ -102,7 +103,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(108, 276);
+            this.label2.Location = new System.Drawing.Point(92, 224);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(182, 16);
             this.label2.TabIndex = 5;
@@ -111,7 +112,7 @@
             // buttonBuscarContatoContasReceber
             // 
             this.buttonBuscarContatoContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarContatoContasReceber.Location = new System.Drawing.Point(540, 277);
+            this.buttonBuscarContatoContasReceber.Location = new System.Drawing.Point(513, 221);
             this.buttonBuscarContatoContasReceber.Name = "buttonBuscarContatoContasReceber";
             this.buttonBuscarContatoContasReceber.Size = new System.Drawing.Size(78, 23);
             this.buttonBuscarContatoContasReceber.TabIndex = 7;
@@ -122,7 +123,7 @@
             // buttonSalvarCadastroContasReceber
             // 
             this.buttonSalvarCadastroContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadastroContasReceber.Location = new System.Drawing.Point(412, 371);
+            this.buttonSalvarCadastroContasReceber.Location = new System.Drawing.Point(396, 371);
             this.buttonSalvarCadastroContasReceber.Name = "buttonSalvarCadastroContasReceber";
             this.buttonSalvarCadastroContasReceber.Size = new System.Drawing.Size(78, 23);
             this.buttonSalvarCadastroContasReceber.TabIndex = 8;
@@ -133,7 +134,7 @@
             // buttonCancelarCadastroContasReceber
             // 
             this.buttonCancelarCadastroContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastroContasReceber.Location = new System.Drawing.Point(518, 371);
+            this.buttonCancelarCadastroContasReceber.Location = new System.Drawing.Point(488, 371);
             this.buttonCancelarCadastroContasReceber.Name = "buttonCancelarCadastroContasReceber";
             this.buttonCancelarCadastroContasReceber.Size = new System.Drawing.Size(103, 23);
             this.buttonCancelarCadastroContasReceber.TabIndex = 9;
@@ -148,7 +149,7 @@
             // textBoxBuscarContato
             // 
             this.textBoxBuscarContato.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Nome", true));
-            this.textBoxBuscarContato.Location = new System.Drawing.Point(296, 277);
+            this.textBoxBuscarContato.Location = new System.Drawing.Point(280, 221);
             this.textBoxBuscarContato.Name = "textBoxBuscarContato";
             this.textBoxBuscarContato.Size = new System.Drawing.Size(194, 22);
             this.textBoxBuscarContato.TabIndex = 10;
@@ -157,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 455);
+            this.ClientSize = new System.Drawing.Size(686, 455);
             this.Controls.Add(this.textBoxBuscarContato);
             this.Controls.Add(this.buttonCancelarCadastroContasReceber);
             this.Controls.Add(this.buttonSalvarCadastroContasReceber);
