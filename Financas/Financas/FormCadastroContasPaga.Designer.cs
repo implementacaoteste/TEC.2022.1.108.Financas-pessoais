@@ -50,7 +50,7 @@
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(82, 16);
             descricaoLabel.TabIndex = 1;
-            descricaoLabel.Text = "Descricao:";
+            descricaoLabel.Text = "Descrição:";
             // 
             // valorPagarLabel
             // 
@@ -58,9 +58,9 @@
             valorPagarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             valorPagarLabel.Location = new System.Drawing.Point(51, 165);
             valorPagarLabel.Name = "valorPagarLabel";
-            valorPagarLabel.Size = new System.Drawing.Size(94, 16);
+            valorPagarLabel.Size = new System.Drawing.Size(107, 16);
             valorPagarLabel.TabIndex = 3;
-            valorPagarLabel.Text = "Valor Pagar:";
+            valorPagarLabel.Text = "Valor a Pagar:";
             // 
             // descricaoTextBox
             // 
@@ -90,9 +90,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(163, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(507, 46);
+            this.label1.Size = new System.Drawing.Size(538, 46);
             this.label1.TabIndex = 5;
-            this.label1.Text = "cadastro de contas Pagas";
+            this.label1.Text = "Cadastro de contas a pagar";
             // 
             // buttonCancelarCadastroContasPagar
             // 
@@ -130,9 +130,15 @@
             this.Controls.Add(this.valorPagarTextBox);
             this.Controls.Add(descricaoLabel);
             this.Controls.Add(this.descricaoTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCadastroContasPaga";
-            this.Text = "FormCadastroContasPaga";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro de contas a pagar";
             this.Load += new System.EventHandler(this.FormCadastroContasPaga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).EndInit();
             this.ResumeLayout(false);
