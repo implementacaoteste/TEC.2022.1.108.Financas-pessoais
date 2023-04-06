@@ -30,6 +30,8 @@ CREATE TABLE Despesas
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
 	IdContato INT,
+	IdBanco INT,
+	IdFormaPagamento INT,
 	Valor FLOAT,
 	Descricao VARCHAR(250)
 )
@@ -41,6 +43,8 @@ CREATE TABLE Receita
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
 	IdContato INT,
+	IdBanco INT,
+	IdFormaPagamento INT,
 	Valor FLOAT,
 	Descricao VARCHAR(250)
 )
@@ -52,6 +56,8 @@ CREATE TABLE ContasPagar
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
 	IdContato INT,
+	IdBanco INT,
+	IdFormaPagamento INT,
 	ValorPagar FLOAT,
 	Descricao VARCHAR(250)
 )
@@ -63,6 +69,8 @@ CREATE TABLE ContasReceber
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
 	IdContato INT,
+	IdBanco INT,
+	IdFormaPagamento INT,
 	ValorReceber FLOAT,
 	Descricao VARCHAR(250)
 )
@@ -83,8 +91,6 @@ IF OBJECT_ID('FormaPagamento', 'U') IS NULL
 CREATE TABLE FormaPagamento
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	IdDespesas INT,
-	IdReceita INT,
 	Descricao VARCHAR(250)
 )
 GO
@@ -94,8 +100,6 @@ CREATE TABLE Banco
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(150),
-	IdReceita INT,
-	IdDespesas INT,
 	Saldo FLOAT,
 	Poupanca FLOAT
 )
@@ -166,31 +170,59 @@ FOREIGN KEY (IdContato) REFERENCES Contato(Id)
 
 GO
 
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('FormaPagamento') AND name = 'FK_FormaPagamento_Despesas')
-ALTER TABLE FormaPagamento
-ADD CONSTRAINT FK_FormaPagamento_Despesas
-FOREIGN KEY (IdDespesas) REFERENCES Despesas(Id)
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Despesas') AND name = 'FK_Despesas_FormaPagamento')
+ALTER TABLE Despesas
+ADD CONSTRAINT FK_Despesas_FormaPagamento
+FOREIGN KEY (IdFormaPagamento) REFERENCES FormaPagamento(Id)
 
 GO
 
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('FormaPagamento') AND name = 'FK_FormaPagamento_Receita')
-ALTER TABLE FormaPagamento
-ADD CONSTRAINT FK_FormaPagamento_Receita
-FOREIGN KEY (IdReceita) REFERENCES Receita(Id)
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Receita') AND name = 'FK_Receita_FormaPagamento')
+ALTER TABLE Receita
+ADD CONSTRAINT FK_Receita_FormaPagamento
+FOREIGN KEY (IdFormaPagamento) REFERENCES FormaPagamento(Id)
 
 GO
 
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Banco') AND name = 'FK_Banco_Receita')
-ALTER TABLE Banco
-ADD CONSTRAINT FK_Banco_Receita
-FOREIGN KEY (IdReceita) REFERENCES Receita(Id)
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('ContasReceber') AND name = 'FK_ContasReceber_FormaPagamento')
+ALTER TABLE ContasReceber
+ADD CONSTRAINT FK_ContasReceber_FormaPagamento
+FOREIGN KEY (IdFormaPagamento) REFERENCES FormaPagamento(Id)
 
 GO
 
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Banco') AND name = 'FK_Banco_Despesas')
-ALTER TABLE Banco
-ADD CONSTRAINT FK_Banco_Despesas
-FOREIGN KEY (IdDespesas) REFERENCES Despesas(Id)
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('ContasPagar') AND name = 'FK_ContasPagar_FormaPagamento')
+ALTER TABLE ContasPagar
+ADD CONSTRAINT FK_ContasPagar_FormaPagamento
+FOREIGN KEY (IdFormaPagamento) REFERENCES FormaPagamento(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Receita') AND name = 'FK_Receita_Banco')
+ALTER TABLE Receita
+ADD CONSTRAINT FK_Receita_Banco
+FOREIGN KEY (Idbanco) REFERENCES Banco(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Despesas') AND name = 'FK_Despesas_Banco')
+ALTER TABLE Despesas
+ADD CONSTRAINT FK_Despesas_Banco
+FOREIGN KEY (IdBanco) REFERENCES Banco(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('ContasReceber') AND name = 'FK_ContasReceber_Banco')
+ALTER TABLE ContasReceber
+ADD CONSTRAINT FK_ContasReceber_Banco
+FOREIGN KEY (IdBanco) REFERENCES Banco(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('ContasPagar') AND name = 'FK_ContasPagar_Banco')
+ALTER TABLE ContasPagar
+ADD CONSTRAINT FK_ContasPagar_Banco
+FOREIGN KEY (IdBanco) REFERENCES Banco(Id)
 
 GO
 
@@ -250,6 +282,3 @@ GO
 --INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 2)
 --INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
 --GO
-
-
-SELECT * FROM Usuario
