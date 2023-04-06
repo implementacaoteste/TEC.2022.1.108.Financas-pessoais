@@ -23,8 +23,8 @@ namespace Financas
 
         private void buttonsair_Click(object sender, EventArgs e)
         {
-           // Application.Exit();
-            Close();
+            Application.Exit();
+            //Close();
         }
 
         
