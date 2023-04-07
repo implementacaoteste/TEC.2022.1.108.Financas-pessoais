@@ -13,5 +13,9 @@ namespace Models
         public string Descricao { get; set; }
         public string Contato { get; set; }
         public int IdContato { get; set; }
+        public string Banco { get; set; }
+        public int IdBanco { get; set; }
+        public string FormaPagamento { get; set; }
+        public int IdFormaPagamento { get; set; }
     }
 }
