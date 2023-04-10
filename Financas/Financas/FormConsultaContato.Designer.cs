@@ -45,6 +45,7 @@
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contatoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -209,10 +210,21 @@
             this.buttonAlterar.UseVisualStyleBackColor = true;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(587, 407);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Selecionar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormConsultaContato
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(824, 444);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonExcluir);
@@ -258,5 +270,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.Button buttonAlterar;
+        private System.Windows.Forms.Button button1;
     }
 }

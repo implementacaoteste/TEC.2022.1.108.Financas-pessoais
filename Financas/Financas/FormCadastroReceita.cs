@@ -23,26 +23,28 @@ namespace Financas
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-                try
-                {
-                    ReceitaBLL receitaBLL = new ReceitaBLL();
-                    receitaBindingSource.EndEdit();
+              ReceitaBLL receitaBLL = new ReceitaBLL();
+              receitaBindingSource.EndEdit();
 
-                    receitaBLL.Inserir((Receita)receitaBindingSource.Current);
-                }
-                catch
-                {
-                    MessageBox.Show("Registro salvo com sucesso!");
-                }
-                finally
-                {
-                    Close();
-                }
+            if (Id == 0)
+                receitaBLL.Inserir((Receita)receitaBindingSource.Current);
+            else 
+                receitaBLL.Alterar((Receita)receitaBindingSource.Current);
+            MessageBox.Show("Registro salvo com sucesso");
+            Close();
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void FormCadastroReceita_Load(object sender, EventArgs e)
+        {
+            if (Id == 0)
+                receitaBindingSource.AddNew();
+            else
+                receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorId(Id);
         }
     }
 }

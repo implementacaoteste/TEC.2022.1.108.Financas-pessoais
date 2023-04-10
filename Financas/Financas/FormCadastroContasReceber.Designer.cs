@@ -90,7 +90,7 @@
             // 
             bancoLabel.AutoSize = true;
             bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bancoLabel.Location = new System.Drawing.Point(59, 235);
+            bancoLabel.Location = new System.Drawing.Point(23, 235);
             bancoLabel.Name = "bancoLabel";
             bancoLabel.Size = new System.Drawing.Size(55, 16);
             bancoLabel.TabIndex = 12;
@@ -100,11 +100,11 @@
             // 
             formaPagamentoLabel.AutoSize = true;
             formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            formaPagamentoLabel.Location = new System.Drawing.Point(316, 234);
+            formaPagamentoLabel.Location = new System.Drawing.Point(311, 234);
             formaPagamentoLabel.Name = "formaPagamentoLabel";
-            formaPagamentoLabel.Size = new System.Drawing.Size(138, 16);
+            formaPagamentoLabel.Size = new System.Drawing.Size(160, 16);
             formaPagamentoLabel.TabIndex = 13;
-            formaPagamentoLabel.Text = "Forma Pagamento:";
+            formaPagamentoLabel.Text = "Forma de Pagamento:";
             // 
             // contasReceberBindingSource
             // 
@@ -182,30 +182,7 @@
             this.textBoxBuscarContato.Name = "textBoxBuscarContato";
             this.textBoxBuscarContato.Size = new System.Drawing.Size(182, 22);
             this.textBoxBuscarContato.TabIndex = 10;
-
             this.textBoxBuscarContato.TextChanged += new System.EventHandler(this.textBoxBuscarContato_TextChanged);
-
-            // 
-            // contatoLabel
-            // 
-            contatoLabel.AutoSize = true;
-            contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contatoLabel.Location = new System.Drawing.Point(316, 113);
-            contatoLabel.Name = "contatoLabel";
-            contatoLabel.Size = new System.Drawing.Size(71, 16);
-            contatoLabel.TabIndex = 10;
-            contatoLabel.Text = "Devedor:";
-            // 
-            // bancoLabel
-            // 
-            bancoLabel.AutoSize = true;
-            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bancoLabel.Location = new System.Drawing.Point(23, 235);
-            bancoLabel.Name = "bancoLabel";
-            bancoLabel.Size = new System.Drawing.Size(55, 16);
-            bancoLabel.TabIndex = 12;
-            bancoLabel.Text = "Banco:";
-
             // 
             // bancoTextBox
             // 
@@ -216,18 +193,6 @@
             this.bancoTextBox.Size = new System.Drawing.Size(131, 22);
             this.bancoTextBox.TabIndex = 13;
             // 
-
-            // formaPagamentoLabel
-            // 
-            formaPagamentoLabel.AutoSize = true;
-            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            formaPagamentoLabel.Location = new System.Drawing.Point(311, 234);
-            formaPagamentoLabel.Name = "formaPagamentoLabel";
-            formaPagamentoLabel.Size = new System.Drawing.Size(160, 16);
-            formaPagamentoLabel.TabIndex = 13;
-            formaPagamentoLabel.Text = "Forma de Pagamento:";
-            // 
-
             // formaPagamentoTextBox
             // 
             this.formaPagamentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasReceberBindingSource, "FormaPagamento", true));
@@ -245,6 +210,7 @@
             this.buttonBuscarBanco.TabIndex = 15;
             this.buttonBuscarBanco.Text = "Buscar";
             this.buttonBuscarBanco.UseVisualStyleBackColor = true;
+            this.buttonBuscarBanco.Click += new System.EventHandler(this.buttonBuscarBanco_Click);
             // 
             // buttonBuscarFormaPagamento
             // 
@@ -255,6 +221,7 @@
             this.buttonBuscarFormaPagamento.TabIndex = 16;
             this.buttonBuscarFormaPagamento.Text = "Buscar";
             this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscarFormaPagamento_Click);
             // 
             // FormCadastroContasReceber
             // 
@@ -285,6 +252,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro contas de contas a receber";
+            this.Load += new System.EventHandler(this.FormCadastroContasReceber_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).EndInit();
             this.ResumeLayout(false);
