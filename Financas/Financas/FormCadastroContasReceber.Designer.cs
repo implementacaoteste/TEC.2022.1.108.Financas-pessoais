@@ -45,6 +45,8 @@
             this.textBoxBuscarContato = new System.Windows.Forms.TextBox();
             this.bancoTextBox = new System.Windows.Forms.TextBox();
             this.formaPagamentoTextBox = new System.Windows.Forms.TextBox();
+            this.buttonBuscarBanco = new System.Windows.Forms.Button();
+            this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
             valorReceberLabel = new System.Windows.Forms.Label();
             descricaoLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
@@ -180,30 +182,87 @@
             this.textBoxBuscarContato.Name = "textBoxBuscarContato";
             this.textBoxBuscarContato.Size = new System.Drawing.Size(182, 22);
             this.textBoxBuscarContato.TabIndex = 10;
+
             this.textBoxBuscarContato.TextChanged += new System.EventHandler(this.textBoxBuscarContato_TextChanged);
+
+            // 
+            // contatoLabel
+            // 
+            contatoLabel.AutoSize = true;
+            contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            contatoLabel.Location = new System.Drawing.Point(316, 113);
+            contatoLabel.Name = "contatoLabel";
+            contatoLabel.Size = new System.Drawing.Size(71, 16);
+            contatoLabel.TabIndex = 10;
+            contatoLabel.Text = "Devedor:";
+            // 
+            // bancoLabel
+            // 
+            bancoLabel.AutoSize = true;
+            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            bancoLabel.Location = new System.Drawing.Point(23, 235);
+            bancoLabel.Name = "bancoLabel";
+            bancoLabel.Size = new System.Drawing.Size(55, 16);
+            bancoLabel.TabIndex = 12;
+            bancoLabel.Text = "Banco:";
+
             // 
             // bancoTextBox
             // 
             this.bancoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasReceberBindingSource, "Banco", true));
             this.bancoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bancoTextBox.Location = new System.Drawing.Point(128, 232);
+            this.bancoTextBox.Location = new System.Drawing.Point(75, 232);
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(131, 22);
             this.bancoTextBox.TabIndex = 13;
             // 
+
+            // formaPagamentoLabel
+            // 
+            formaPagamentoLabel.AutoSize = true;
+            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            formaPagamentoLabel.Location = new System.Drawing.Point(311, 234);
+            formaPagamentoLabel.Name = "formaPagamentoLabel";
+            formaPagamentoLabel.Size = new System.Drawing.Size(160, 16);
+            formaPagamentoLabel.TabIndex = 13;
+            formaPagamentoLabel.Text = "Forma de Pagamento:";
+            // 
+
             // formaPagamentoTextBox
             // 
             this.formaPagamentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasReceberBindingSource, "FormaPagamento", true));
-            this.formaPagamentoTextBox.Location = new System.Drawing.Point(460, 232);
+            this.formaPagamentoTextBox.Location = new System.Drawing.Point(471, 232);
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(115, 22);
             this.formaPagamentoTextBox.TabIndex = 14;
+            // 
+            // buttonBuscarBanco
+            // 
+            this.buttonBuscarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarBanco.Location = new System.Drawing.Point(213, 232);
+            this.buttonBuscarBanco.Name = "buttonBuscarBanco";
+            this.buttonBuscarBanco.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscarBanco.TabIndex = 15;
+            this.buttonBuscarBanco.Text = "Buscar";
+            this.buttonBuscarBanco.UseVisualStyleBackColor = true;
+            // 
+            // buttonBuscarFormaPagamento
+            // 
+            this.buttonBuscarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(599, 234);
+            this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
+            this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscarFormaPagamento.TabIndex = 16;
+            this.buttonBuscarFormaPagamento.Text = "Buscar";
+            this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
             // 
             // FormCadastroContasReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 455);
+            this.Controls.Add(this.buttonBuscarFormaPagamento);
+            this.Controls.Add(this.buttonBuscarBanco);
             this.Controls.Add(formaPagamentoLabel);
             this.Controls.Add(this.formaPagamentoTextBox);
             this.Controls.Add(bancoLabel);
@@ -246,5 +305,7 @@
         private System.Windows.Forms.TextBox textBoxBuscarContato;
         private System.Windows.Forms.TextBox bancoTextBox;
         private System.Windows.Forms.TextBox formaPagamentoTextBox;
+        private System.Windows.Forms.Button buttonBuscarBanco;
+        private System.Windows.Forms.Button buttonBuscarFormaPagamento;
     }
 }
