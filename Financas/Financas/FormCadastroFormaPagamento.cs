@@ -31,26 +31,24 @@ namespace Financas
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                FormaPagamentoBLL formaPagamentoBLL = new FormaPagamentoBLL();
-                formaPagamentoBindingSource.EndEdit();
-
+            FormaPagamentoBLL formaPagamentoBLL = new FormaPagamentoBLL();
+            formaPagamentoBindingSource.EndEdit();
+            if (Id == 0)
                 formaPagamentoBLL.Inserir((FormaPagamento)formaPagamentoBindingSource.Current);
-            }
-            catch
-            {
-                MessageBox.Show("Registro salvo com sucesso!");
-            }
-            finally
-            {
-                Close();
-            }
+            else 
+                formaPagamentoBLL.Alterar((FormaPagamento)formaPagamentoBindingSource.Current);
+            MessageBox.Show("Registro salvo com sucesso");
+            Close();
         }
 
         private void FormFormaPagamento_Load(object sender, EventArgs e)
         {
-
+            if (Id == 0)
+                formaPagamentoBindingSource.AddNew();
+            else
+                formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorId(Id);
+           
         }
+
     }
 }

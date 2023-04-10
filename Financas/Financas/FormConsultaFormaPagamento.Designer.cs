@@ -122,6 +122,7 @@
             this.buttonAdicionarFormaPagamento.TabIndex = 11;
             this.buttonAdicionarFormaPagamento.Text = "Adicionar";
             this.buttonAdicionarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonAdicionarFormaPagamento.Click += new System.EventHandler(this.buttonAdicionarFormaPagamento_Click_1);
             // 
             // textBoxConsultarFormaPagamento
             // 

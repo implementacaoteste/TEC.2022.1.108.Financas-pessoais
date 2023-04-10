@@ -30,9 +30,9 @@ namespace BLL
         {
             return new FormaPagamentoDAL().BuscarPorDescricao(_descricao);
         }
-        public void BuscarPorId(int _id)
+        public FormaPagamento BuscarPorId(int _id)
         {
-            new FormaPagamentoDAL().BuscarPorId(_id);
+            return new FormaPagamentoDAL().BuscarPorId(_id);
         }
     }
 }
