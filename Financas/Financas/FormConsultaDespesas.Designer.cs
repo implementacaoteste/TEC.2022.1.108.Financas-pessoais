@@ -36,10 +36,10 @@
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.textBoxBuscarDespesas = new System.Windows.Forms.TextBox();
             this.despesasDataGridView = new System.Windows.Forms.DataGridView();
+            this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonAdicionar = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.labelInforamaConsultaDespesa = new System.Windows.Forms.Label();
-            this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonSair = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,6 +117,10 @@
             this.despesasDataGridView.Size = new System.Drawing.Size(740, 266);
             this.despesasDataGridView.TabIndex = 9;
             // 
+            // despesasBindingSource
+            // 
+            this.despesasBindingSource.DataSource = typeof(Models.Despesas);
+            // 
             // buttonAdicionar
             // 
             this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,10 +156,6 @@
             this.labelInforamaConsultaDespesa.TabIndex = 11;
             this.labelInforamaConsultaDespesa.Text = "Consulta";
             // 
-            // despesasBindingSource
-            // 
-            this.despesasBindingSource.DataSource = typeof(Models.Despesas);
-            // 
             // buttonSair
             // 
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,25 +170,25 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Descricao";
             this.dataGridViewTextBoxColumn7.HeaderText = "Descrição";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 140;
             // 
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.Format = "C2";
             dataGridViewCellStyle1.NullValue = null;
             this.Valor.DefaultCellStyle = dataGridViewCellStyle1;
             this.Valor.HeaderText = "Valor";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
-            this.Valor.Width = 87;
+            this.Valor.Width = 80;
             // 
             // Contato
             // 
@@ -205,7 +205,7 @@
             this.FormaPagamento.MinimumWidth = 6;
             this.FormaPagamento.Name = "FormaPagamento";
             this.FormaPagamento.ReadOnly = true;
-            this.FormaPagamento.Width = 167;
+            this.FormaPagamento.Width = 95;
             // 
             // Banco
             // 
@@ -214,7 +214,7 @@
             this.Banco.MinimumWidth = 6;
             this.Banco.Name = "Banco";
             this.Banco.ReadOnly = true;
-            this.Banco.Width = 125;
+            this.Banco.Width = 85;
             // 
             // FormConsultaDespesas
             // 

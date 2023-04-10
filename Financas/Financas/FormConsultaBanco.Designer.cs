@@ -133,7 +133,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(824, 82);
+            this.label2.Size = new System.Drawing.Size(821, 82);
             this.label2.TabIndex = 4;
             this.label2.Text = "Consultar banco";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -202,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 444);
+            this.ClientSize = new System.Drawing.Size(821, 453);
             this.Controls.Add(this.buttonBuscarBanco);
             this.Controls.Add(this.buttonAlterarBanco);
             this.Controls.Add(this.buttonSair);
@@ -222,6 +222,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Banco";
+            this.Load += new System.EventHandler(this.FormConsultaBanco_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bancoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoBindingSource)).EndInit();
             this.ResumeLayout(false);
