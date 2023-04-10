@@ -103,8 +103,11 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Valor, Despesas.Descricao, Contato.Nome FROM Despesas
-                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id WHERE Despesas.Id = @Id";
+                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesa, Despesas.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
+                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
+                                    WHERE Despesas.Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -118,6 +121,8 @@ namespace DAL
                         despesas.Valor = (double)rd["Valor"];
                         despesas.Descricao = rd["Descricao"].ToString();
                         despesas.Contato = rd["Nome"].ToString();
+                        despesas.FormaPagamento = rd["Descricao"].ToString();
+                        despesas.Banco = rd["Nome"].ToString();
                     }
                 }
                 return despesas;
@@ -143,8 +148,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Valor, Despesas.Descricao, Contato.Nome FROM Despesas
-                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id";
+                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesa, Despesas.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
+                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON Despesas.IdBanco = Banco.Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -156,6 +163,8 @@ namespace DAL
                         despesas.Valor = (double)rd["Valor"];
                         despesas.Descricao = rd["Descricao"].ToString();
                         despesas.Contato = rd["Nome"].ToString();
+                        despesas.FormaPagamento = rd["Descricao"].ToString();
+                        despesas.Banco = rd["Nome"].ToString();
                         despesa.Add(despesas);
                     }
                 }
@@ -181,8 +190,11 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Valor, Despesas.Descricao, Contato.Nome FROM Despesas
-                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id WHERE Despesas.Descricao LIKE @Descricao";
+                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesa, Despesas.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
+                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
+                                    WHERE Despesas.Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
@@ -196,6 +208,8 @@ namespace DAL
                         despesas.Valor = (double)rd["Valor"];
                         despesas.Descricao = rd["Descricao"].ToString();
                         despesas.Contato = rd["Nome"].ToString();
+                        despesas.FormaPagamento = rd["Descricao"].ToString();
+                        despesas.Banco = rd["Nome"].ToString();
                         despesa.Add(despesas);
                     }
                 }

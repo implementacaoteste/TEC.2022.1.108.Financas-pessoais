@@ -104,8 +104,11 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.ValorPagar, ContasPagar.Descricao, Contato.Nome FROM ContasPagar
-                                    INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id WHERE ContasPagar.Id = @Id";
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
+                                    INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON ContasPagar.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id 
+                                    WHERE ContasPagar.Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -119,6 +122,8 @@ namespace DAL
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contasPagar.Contato = rd["Nome"].ToString();
+                        contasPagar.FormaPagamento = rd["Descricao"].ToString();
+                        contasPagar.Banco = rd["Nome"].ToString();
                     }
                 }
                 return contasPagar;
@@ -144,7 +149,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT ContasPagar.Id, ContasPagar.ValorPagar, ContasPagar.Descricao, Contato.Nome FROM ContasPagar";
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
+                                    INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON ContasPagar.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -156,6 +164,8 @@ namespace DAL
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contasPagar.Contato = rd["Nome"].ToString();
+                        contasPagar.FormaPagamento = rd["Descricao"].ToString();
+                        contasPagar.Banco = rd["Nome"].ToString();
                         contaPagar.Add(contasPagar);
                     }
                 }
@@ -181,8 +191,11 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.ValorPagar, ContasPagar.Descricao, Contato.Nome FROM ContasPagar
-                                    INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id WHERE ContasPagar.Descricao LIKE @Descricao";
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
+                                    INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON ContasPagar.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id
+                                    WHERE ContasPagar.Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
@@ -196,6 +209,8 @@ namespace DAL
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contasPagar.Contato = rd["Nome"].ToString();
+                        contasPagar.FormaPagamento = rd["Descricao"].ToString();
+                        contasPagar.Banco = rd["Nome"].ToString();
                         contaPagar.Add(contasPagar);
                     }
                 }
