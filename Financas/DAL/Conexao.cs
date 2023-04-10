@@ -16,6 +16,6 @@ namespace DAL
             }
         }
     }
-            //ESXPRESS2019
+            //EXPRESS2019
           //Senailab02
 }
