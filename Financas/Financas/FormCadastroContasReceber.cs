@@ -49,5 +49,10 @@ namespace Financas
         {
             contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNome(textBoxBuscarContato.Text);
         }
+
+        private void textBoxBuscarContato_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

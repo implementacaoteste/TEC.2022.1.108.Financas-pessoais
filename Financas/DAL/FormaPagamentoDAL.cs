@@ -42,6 +42,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = "UPDATE FormaPagamento SET Descricao=@Descricao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Id", _formaPagamento.Id);
                 cmd.Parameters.AddWithValue("@Descricao", _formaPagamento.Descricao);
                 cmd.Connection = cn;
                 cn.Open();

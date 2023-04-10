@@ -22,6 +22,7 @@ namespace DAL
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@ValorReceber", _contasReceber.ValorReceber);
                 cmd.Parameters.AddWithValue("@Descricao", _contasReceber.Descricao);
+                
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
