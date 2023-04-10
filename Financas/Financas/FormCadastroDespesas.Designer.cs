@@ -29,34 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label gastosLabel;
+            System.Windows.Forms.Label valorLabel;
             System.Windows.Forms.Label descricaoLabel;
+            System.Windows.Forms.Label contatoLabel;
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxGastos = new System.Windows.Forms.TextBox();
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
-            gastosLabel = new System.Windows.Forms.Label();
+            this.contatoTextBox = new System.Windows.Forms.TextBox();
+            valorLabel = new System.Windows.Forms.Label();
             descricaoLabel = new System.Windows.Forms.Label();
+            contatoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // gastosLabel
+            // valorLabel
             // 
-            gastosLabel.AutoSize = true;
-            gastosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            gastosLabel.Location = new System.Drawing.Point(174, 140);
-            gastosLabel.Name = "gastosLabel";
-            gastosLabel.Size = new System.Drawing.Size(60, 16);
-            gastosLabel.TabIndex = 8;
-            gastosLabel.Text = "Gastos:";
+            valorLabel.AutoSize = true;
+            valorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            valorLabel.Location = new System.Drawing.Point(34, 123);
+            valorLabel.Name = "valorLabel";
+            valorLabel.Size = new System.Drawing.Size(48, 16);
+            valorLabel.TabIndex = 8;
+            valorLabel.Text = "Valor:";
             // 
             // descricaoLabel
             // 
             descricaoLabel.AutoSize = true;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(155, 241);
+            descricaoLabel.Location = new System.Drawing.Point(116, 294);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(82, 16);
             descricaoLabel.TabIndex = 9;
@@ -102,27 +105,46 @@
             // textBoxGastos
             // 
             this.textBoxGastos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Gastos", true));
-            this.textBoxGastos.Location = new System.Drawing.Point(233, 137);
+            this.textBoxGastos.Location = new System.Drawing.Point(93, 120);
             this.textBoxGastos.Name = "textBoxGastos";
-            this.textBoxGastos.Size = new System.Drawing.Size(331, 22);
+            this.textBoxGastos.Size = new System.Drawing.Size(113, 22);
             this.textBoxGastos.TabIndex = 9;
             // 
             // textBoxDescricao
             // 
             this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Descricao", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(233, 238);
+            this.textBoxDescricao.Location = new System.Drawing.Point(194, 291);
             this.textBoxDescricao.Name = "textBoxDescricao";
-            this.textBoxDescricao.Size = new System.Drawing.Size(331, 22);
+            this.textBoxDescricao.Size = new System.Drawing.Size(352, 22);
             this.textBoxDescricao.TabIndex = 10;
+            // 
+            // contatoLabel
+            // 
+            contatoLabel.AutoSize = true;
+            contatoLabel.Location = new System.Drawing.Point(538, 124);
+            contatoLabel.Name = "contatoLabel";
+            contatoLabel.Size = new System.Drawing.Size(56, 16);
+            contatoLabel.TabIndex = 10;
+            contatoLabel.Text = "Contato:";
+            // 
+            // contatoTextBox
+            // 
+            this.contatoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Contato", true));
+            this.contatoTextBox.Location = new System.Drawing.Point(600, 121);
+            this.contatoTextBox.Name = "contatoTextBox";
+            this.contatoTextBox.Size = new System.Drawing.Size(100, 22);
+            this.contatoTextBox.TabIndex = 11;
             // 
             // FormCadastroDespesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 455);
+            this.Controls.Add(contatoLabel);
+            this.Controls.Add(this.contatoTextBox);
             this.Controls.Add(descricaoLabel);
             this.Controls.Add(this.textBoxDescricao);
-            this.Controls.Add(gastosLabel);
+            this.Controls.Add(valorLabel);
             this.Controls.Add(this.textBoxGastos);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
@@ -151,5 +173,6 @@
         private System.Windows.Forms.BindingSource despesasBindingSource;
         private System.Windows.Forms.TextBox textBoxGastos;
         private System.Windows.Forms.TextBox textBoxDescricao;
+        private System.Windows.Forms.TextBox contatoTextBox;
     }
 }
