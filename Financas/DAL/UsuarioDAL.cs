@@ -183,10 +183,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Senha, Renda FROM Usuario WHERE Nome = @NomeUsuario";
+                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Senha, Renda FROM Usuario WHERE NomeUsuario = @NomeUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Nome", _nomeUsuario);
+                cmd.Parameters.AddWithValue("@NomeUsuario", _nomeUsuario);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -195,6 +195,7 @@ namespace DAL
                         usuario = new Usuario();
                         usuario.Id = Convert.ToInt32(rd["ID"]);
                         usuario.Nome = rd["Nome"].ToString();
+                        usuario.NomeUsuario = rd["NomeUsuario"].ToString();
                         usuario.Renda = (double)rd["Renda"];
                         usuario.Senha = rd["Senha"].ToString();
                     }

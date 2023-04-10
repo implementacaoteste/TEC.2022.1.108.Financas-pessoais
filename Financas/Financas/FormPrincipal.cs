@@ -165,5 +165,10 @@ namespace Financas
                 frm.ShowDialog();
             }
         }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
