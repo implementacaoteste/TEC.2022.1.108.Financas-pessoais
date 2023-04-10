@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -65,6 +66,18 @@ namespace Financas
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBoxMostrarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxMostrarSenha.Checked)
+            {
+                textBoxSenhaLogin.PasswordChar = '\u0000';
+            }
+            else
+            {
+                textBoxSenhaLogin.PasswordChar = '*';
+            }
         }
     }
 }
