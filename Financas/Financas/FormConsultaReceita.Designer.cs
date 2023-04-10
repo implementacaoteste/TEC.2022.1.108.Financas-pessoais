@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.receitaDataGridView = new System.Windows.Forms.DataGridView();
             this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarReceita = new System.Windows.Forms.Button();
@@ -41,9 +42,9 @@
             this.buttonSair = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.receitaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,9 +59,9 @@
             this.receitaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.Valor,
-            this.Banco,
+            this.Contato,
             this.FormaPagamento,
-            this.Contato});
+            this.Banco});
             this.receitaDataGridView.DataSource = this.receitaBindingSource;
             this.receitaDataGridView.Location = new System.Drawing.Point(35, 135);
             this.receitaDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -78,7 +79,7 @@
             // buttonBuscarReceita
             // 
             this.buttonBuscarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarReceita.Location = new System.Drawing.Point(451, 105);
+            this.buttonBuscarReceita.Location = new System.Drawing.Point(437, 110);
             this.buttonBuscarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarReceita.Name = "buttonBuscarReceita";
             this.buttonBuscarReceita.Size = new System.Drawing.Size(75, 23);
@@ -90,7 +91,7 @@
             // buttonAlterarReceita
             // 
             this.buttonAlterarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterarReceita.Location = new System.Drawing.Point(619, 106);
+            this.buttonAlterarReceita.Location = new System.Drawing.Point(619, 110);
             this.buttonAlterarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAlterarReceita.Name = "buttonAlterarReceita";
             this.buttonAlterarReceita.Size = new System.Drawing.Size(75, 23);
@@ -102,7 +103,7 @@
             // buttonExcluirReceita
             // 
             this.buttonExcluirReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirReceita.Location = new System.Drawing.Point(700, 106);
+            this.buttonExcluirReceita.Location = new System.Drawing.Point(700, 110);
             this.buttonExcluirReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluirReceita.Name = "buttonExcluirReceita";
             this.buttonExcluirReceita.Size = new System.Drawing.Size(75, 23);
@@ -114,10 +115,10 @@
             // buttonAdicionarReceita
             // 
             this.buttonAdicionarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionarReceita.Location = new System.Drawing.Point(531, 106);
+            this.buttonAdicionarReceita.Location = new System.Drawing.Point(518, 110);
             this.buttonAdicionarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionarReceita.Name = "buttonAdicionarReceita";
-            this.buttonAdicionarReceita.Size = new System.Drawing.Size(83, 23);
+            this.buttonAdicionarReceita.Size = new System.Drawing.Size(95, 23);
             this.buttonAdicionarReceita.TabIndex = 11;
             this.buttonAdicionarReceita.Text = "Adicionar";
             this.buttonAdicionarReceita.UseVisualStyleBackColor = true;
@@ -125,21 +126,21 @@
             // 
             // textBoxConsultarReceita
             // 
-            this.textBoxConsultarReceita.Location = new System.Drawing.Point(109, 106);
+            this.textBoxConsultarReceita.Location = new System.Drawing.Point(106, 109);
             this.textBoxConsultarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarReceita.Name = "textBoxConsultarReceita";
-            this.textBoxConsultarReceita.Size = new System.Drawing.Size(335, 22);
+            this.textBoxConsultarReceita.Size = new System.Drawing.Size(327, 22);
             this.textBoxConsultarReceita.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 110);
+            this.label1.Location = new System.Drawing.Point(32, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
+            this.label1.Size = new System.Drawing.Size(67, 16);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Consulta:";
+            this.label1.Text = "Consulta";
             // 
             // label2
             // 
@@ -147,7 +148,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(824, 86);
+            this.label2.Size = new System.Drawing.Size(824, 82);
             this.label2.TabIndex = 12;
             this.label2.Text = "Consulta de receita";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -176,11 +177,32 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle4;
             this.Valor.HeaderText = "Valor";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
-            this.Valor.Width = 125;
+            this.Valor.Width = 87;
+            // 
+            // Contato
+            // 
+            this.Contato.DataPropertyName = "Contato";
+            this.Contato.HeaderText = "Contato";
+            this.Contato.MinimumWidth = 6;
+            this.Contato.Name = "Contato";
+            this.Contato.ReadOnly = true;
+            // 
+            // FormaPagamento
+            // 
+            this.FormaPagamento.DataPropertyName = "FormaPagamento";
+            this.FormaPagamento.HeaderText = "Forma de Pagamento";
+            this.FormaPagamento.MinimumWidth = 6;
+            this.FormaPagamento.Name = "FormaPagamento";
+            this.FormaPagamento.ReadOnly = true;
+            this.FormaPagamento.Width = 167;
             // 
             // Banco
             // 
@@ -190,24 +212,6 @@
             this.Banco.Name = "Banco";
             this.Banco.ReadOnly = true;
             this.Banco.Width = 125;
-            // 
-            // FormaPagamento
-            // 
-            this.FormaPagamento.DataPropertyName = "FormaPagamento";
-            this.FormaPagamento.HeaderText = "FormaPagamento";
-            this.FormaPagamento.MinimumWidth = 6;
-            this.FormaPagamento.Name = "FormaPagamento";
-            this.FormaPagamento.ReadOnly = true;
-            this.FormaPagamento.Width = 125;
-            // 
-            // Contato
-            // 
-            this.Contato.DataPropertyName = "Contato";
-            this.Contato.HeaderText = "Contato";
-            this.Contato.MinimumWidth = 6;
-            this.Contato.Name = "Contato";
-            this.Contato.ReadOnly = true;
-            this.Contato.Width = 125;
             // 
             // FormConsultaReceita
             // 
@@ -255,8 +259,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Banco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FormaPagamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FormaPagamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Banco;
     }
 }
