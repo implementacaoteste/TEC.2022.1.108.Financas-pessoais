@@ -50,5 +50,29 @@ namespace Financas
                 contasPagarBindingSource.DataSource = new ContasPagarBLL();
             
         }
+
+        private void buttonBuscarContatoContasPagar_Click(object sender, EventArgs e)
+        {
+            using (FormConsultaContato frm = new FormConsultaContato())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (FormConsultaBanco frm = new FormConsultaBanco())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using(FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

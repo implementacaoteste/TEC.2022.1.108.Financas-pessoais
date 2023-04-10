@@ -74,6 +74,36 @@
             valorPagarLabel.TabIndex = 3;
             valorPagarLabel.Text = "Valor a Pagar:";
             // 
+            // contatoLabel
+            // 
+            contatoLabel.AutoSize = true;
+            contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            contatoLabel.Location = new System.Drawing.Point(329, 131);
+            contatoLabel.Name = "contatoLabel";
+            contatoLabel.Size = new System.Drawing.Size(71, 16);
+            contatoLabel.TabIndex = 7;
+            contatoLabel.Text = "Devedor:";
+            // 
+            // bancoLabel
+            // 
+            bancoLabel.AutoSize = true;
+            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            bancoLabel.Location = new System.Drawing.Point(12, 244);
+            bancoLabel.Name = "bancoLabel";
+            bancoLabel.Size = new System.Drawing.Size(55, 16);
+            bancoLabel.TabIndex = 10;
+            bancoLabel.Text = "Banco:";
+            // 
+            // formaPagamentoLabel
+            // 
+            formaPagamentoLabel.AutoSize = true;
+            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            formaPagamentoLabel.Location = new System.Drawing.Point(328, 243);
+            formaPagamentoLabel.Name = "formaPagamentoLabel";
+            formaPagamentoLabel.Size = new System.Drawing.Size(138, 16);
+            formaPagamentoLabel.TabIndex = 13;
+            formaPagamentoLabel.Text = "Forma Pagamento:";
+            // 
             // descricaoTextBox
             // 
             this.descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "Descricao", true));
@@ -132,16 +162,6 @@
             this.buttonSalvarCadastroContasPagar.UseVisualStyleBackColor = true;
             this.buttonSalvarCadastroContasPagar.Click += new System.EventHandler(this.buttonSalvarCadastroContasPagar_Click);
             // 
-            // contatoLabel
-            // 
-            contatoLabel.AutoSize = true;
-            contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contatoLabel.Location = new System.Drawing.Point(329, 131);
-            contatoLabel.Name = "contatoLabel";
-            contatoLabel.Size = new System.Drawing.Size(71, 16);
-            contatoLabel.TabIndex = 7;
-            contatoLabel.Text = "Devedor:";
-            // 
             // contatoTextBox
             // 
             this.contatoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "Contato", true));
@@ -159,16 +179,7 @@
             this.buttonBuscarContatoContasPagar.TabIndex = 9;
             this.buttonBuscarContatoContasPagar.Text = "Buscar";
             this.buttonBuscarContatoContasPagar.UseVisualStyleBackColor = true;
-            // 
-            // bancoLabel
-            // 
-            bancoLabel.AutoSize = true;
-            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bancoLabel.Location = new System.Drawing.Point(12, 244);
-            bancoLabel.Name = "bancoLabel";
-            bancoLabel.Size = new System.Drawing.Size(55, 16);
-            bancoLabel.TabIndex = 10;
-            bancoLabel.Text = "Banco:";
+            this.buttonBuscarContatoContasPagar.Click += new System.EventHandler(this.buttonBuscarContatoContasPagar_Click);
             // 
             // bancoTextBox
             // 
@@ -187,16 +198,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // formaPagamentoLabel
-            // 
-            formaPagamentoLabel.AutoSize = true;
-            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            formaPagamentoLabel.Location = new System.Drawing.Point(328, 243);
-            formaPagamentoLabel.Name = "formaPagamentoLabel";
-            formaPagamentoLabel.Size = new System.Drawing.Size(138, 16);
-            formaPagamentoLabel.TabIndex = 13;
-            formaPagamentoLabel.Text = "Forma Pagamento:";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // formaPagamentoTextBox
             // 
@@ -215,6 +217,7 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormCadastroContasPaga
             // 

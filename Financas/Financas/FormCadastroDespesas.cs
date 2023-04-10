@@ -52,5 +52,29 @@ namespace Financas
             else
                 despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos();
         }
+
+        private void buttonBuscarContatoDespesas_Click(object sender, EventArgs e)
+        {
+            using(FormConsultaContato frm = new FormConsultaContato())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            using(FormConsultaBanco frm = new FormConsultaBanco())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonBuscarFormaPagamentoDespesas_Click(object sender, EventArgs e)
+        {
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

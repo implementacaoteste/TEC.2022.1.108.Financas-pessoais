@@ -84,6 +84,26 @@
             contatoLabel.TabIndex = 10;
             contatoLabel.Text = "Credor:";
             // 
+            // bancoLabel
+            // 
+            bancoLabel.AutoSize = true;
+            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            bancoLabel.Location = new System.Drawing.Point(61, 249);
+            bancoLabel.Name = "bancoLabel";
+            bancoLabel.Size = new System.Drawing.Size(55, 16);
+            bancoLabel.TabIndex = 12;
+            bancoLabel.Text = "Banco:";
+            // 
+            // formaPagamentoLabel
+            // 
+            formaPagamentoLabel.AutoSize = true;
+            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            formaPagamentoLabel.Location = new System.Drawing.Point(390, 249);
+            formaPagamentoLabel.Name = "formaPagamentoLabel";
+            formaPagamentoLabel.Size = new System.Drawing.Size(160, 16);
+            formaPagamentoLabel.TabIndex = 14;
+            formaPagamentoLabel.Text = "Forma de Pagamento:";
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -123,7 +143,7 @@
             // 
             // textBoxGastos
             // 
-            this.textBoxGastos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Gastos", true));
+            this.textBoxGastos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Valor", true));
             this.textBoxGastos.Location = new System.Drawing.Point(176, 120);
             this.textBoxGastos.Name = "textBoxGastos";
             this.textBoxGastos.Size = new System.Drawing.Size(124, 22);
@@ -154,16 +174,7 @@
             this.buttonBuscarContatoDespesas.TabIndex = 12;
             this.buttonBuscarContatoDespesas.Text = "Buscar";
             this.buttonBuscarContatoDespesas.UseVisualStyleBackColor = true;
-            // 
-            // bancoLabel
-            // 
-            bancoLabel.AutoSize = true;
-            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bancoLabel.Location = new System.Drawing.Point(61, 249);
-            bancoLabel.Name = "bancoLabel";
-            bancoLabel.Size = new System.Drawing.Size(55, 16);
-            bancoLabel.TabIndex = 12;
-            bancoLabel.Text = "Banco:";
+            this.buttonBuscarContatoDespesas.Click += new System.EventHandler(this.buttonBuscarContatoDespesas_Click);
             // 
             // bancoTextBox
             // 
@@ -182,16 +193,7 @@
             this.buttonBuscar.TabIndex = 14;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
-            // 
-            // formaPagamentoLabel
-            // 
-            formaPagamentoLabel.AutoSize = true;
-            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            formaPagamentoLabel.Location = new System.Drawing.Point(390, 249);
-            formaPagamentoLabel.Name = "formaPagamentoLabel";
-            formaPagamentoLabel.Size = new System.Drawing.Size(138, 16);
-            formaPagamentoLabel.TabIndex = 14;
-            formaPagamentoLabel.Text = "Forma Pagamento:";
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // formaPagamentoTextBox
             // 
@@ -210,6 +212,7 @@
             this.buttonBuscarFormaPagamentoDespesas.TabIndex = 16;
             this.buttonBuscarFormaPagamentoDespesas.Text = "Buscar";
             this.buttonBuscarFormaPagamentoDespesas.UseVisualStyleBackColor = true;
+            this.buttonBuscarFormaPagamentoDespesas.Click += new System.EventHandler(this.buttonBuscarFormaPagamentoDespesas_Click);
             // 
             // FormCadastroDespesas
             // 
