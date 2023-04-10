@@ -74,6 +74,36 @@
             descricaoLabel.TabIndex = 3;
             descricaoLabel.Text = "Descrição:";
             // 
+            // contatoLabel
+            // 
+            contatoLabel.AutoSize = true;
+            contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            contatoLabel.Location = new System.Drawing.Point(316, 113);
+            contatoLabel.Name = "contatoLabel";
+            contatoLabel.Size = new System.Drawing.Size(71, 16);
+            contatoLabel.TabIndex = 10;
+            contatoLabel.Text = "Devedor:";
+            // 
+            // bancoLabel
+            // 
+            bancoLabel.AutoSize = true;
+            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            bancoLabel.Location = new System.Drawing.Point(59, 235);
+            bancoLabel.Name = "bancoLabel";
+            bancoLabel.Size = new System.Drawing.Size(55, 16);
+            bancoLabel.TabIndex = 12;
+            bancoLabel.Text = "Banco:";
+            // 
+            // formaPagamentoLabel
+            // 
+            formaPagamentoLabel.AutoSize = true;
+            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            formaPagamentoLabel.Location = new System.Drawing.Point(316, 234);
+            formaPagamentoLabel.Name = "formaPagamentoLabel";
+            formaPagamentoLabel.Size = new System.Drawing.Size(138, 16);
+            formaPagamentoLabel.TabIndex = 13;
+            formaPagamentoLabel.Text = "Forma Pagamento:";
+            // 
             // contasReceberBindingSource
             // 
             this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
@@ -150,26 +180,7 @@
             this.textBoxBuscarContato.Name = "textBoxBuscarContato";
             this.textBoxBuscarContato.Size = new System.Drawing.Size(182, 22);
             this.textBoxBuscarContato.TabIndex = 10;
-            // 
-            // contatoLabel
-            // 
-            contatoLabel.AutoSize = true;
-            contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contatoLabel.Location = new System.Drawing.Point(316, 113);
-            contatoLabel.Name = "contatoLabel";
-            contatoLabel.Size = new System.Drawing.Size(71, 16);
-            contatoLabel.TabIndex = 10;
-            contatoLabel.Text = "Devedor:";
-            // 
-            // bancoLabel
-            // 
-            bancoLabel.AutoSize = true;
-            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bancoLabel.Location = new System.Drawing.Point(59, 235);
-            bancoLabel.Name = "bancoLabel";
-            bancoLabel.Size = new System.Drawing.Size(55, 16);
-            bancoLabel.TabIndex = 12;
-            bancoLabel.Text = "Banco:";
+            this.textBoxBuscarContato.TextChanged += new System.EventHandler(this.textBoxBuscarContato_TextChanged);
             // 
             // bancoTextBox
             // 
@@ -179,16 +190,6 @@
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(131, 22);
             this.bancoTextBox.TabIndex = 13;
-            // 
-            // formaPagamentoLabel
-            // 
-            formaPagamentoLabel.AutoSize = true;
-            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            formaPagamentoLabel.Location = new System.Drawing.Point(316, 234);
-            formaPagamentoLabel.Name = "formaPagamentoLabel";
-            formaPagamentoLabel.Size = new System.Drawing.Size(138, 16);
-            formaPagamentoLabel.TabIndex = 13;
-            formaPagamentoLabel.Text = "Forma Pagamento:";
             // 
             // formaPagamentoTextBox
             // 
