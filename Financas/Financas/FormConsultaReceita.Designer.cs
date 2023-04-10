@@ -167,12 +167,12 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
             this.dataGridViewTextBoxColumn3.HeaderText = "Descricao";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 140;
             // 
             // Valor
             // 
@@ -185,7 +185,7 @@
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
-            this.Valor.Width = 87;
+            this.Valor.Width = 80;
             // 
             // Contato
             // 
@@ -194,7 +194,6 @@
             this.Contato.MinimumWidth = 6;
             this.Contato.Name = "Contato";
             this.Contato.ReadOnly = true;
-            this.Contato.Width = 125;
             // 
             // FormaPagamento
             // 
@@ -203,7 +202,7 @@
             this.FormaPagamento.MinimumWidth = 6;
             this.FormaPagamento.Name = "FormaPagamento";
             this.FormaPagamento.ReadOnly = true;
-            this.FormaPagamento.Width = 167;
+            this.FormaPagamento.Width = 95;
             // 
             // Banco
             // 
@@ -212,7 +211,7 @@
             this.Banco.MinimumWidth = 6;
             this.Banco.Name = "Banco";
             this.Banco.ReadOnly = true;
-            this.Banco.Width = 125;
+            this.Banco.Width = 85;
             // 
             // FormConsultaReceita
             // 

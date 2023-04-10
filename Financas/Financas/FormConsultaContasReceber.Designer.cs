@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contasReceberDataGridView = new System.Windows.Forms.DataGridView();
             this.contasReceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarContasReceber = new System.Windows.Forms.Button();
@@ -178,15 +178,15 @@
             // ValorReceber
             // 
             this.ValorReceber.DataPropertyName = "ValorReceber";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.ValorReceber.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ValorReceber.DefaultCellStyle = dataGridViewCellStyle1;
             this.ValorReceber.HeaderText = "Valor";
             this.ValorReceber.MinimumWidth = 6;
             this.ValorReceber.Name = "ValorReceber";
             this.ValorReceber.ReadOnly = true;
-            this.ValorReceber.Width = 87;
+            this.ValorReceber.Width = 80;
             // 
             // Contato
             // 
@@ -203,7 +203,7 @@
             this.FormaPagamento.MinimumWidth = 6;
             this.FormaPagamento.Name = "FormaPagamento";
             this.FormaPagamento.ReadOnly = true;
-            this.FormaPagamento.Width = 167;
+            this.FormaPagamento.Width = 95;
             // 
             // Banco
             // 
@@ -212,7 +212,7 @@
             this.Banco.MinimumWidth = 6;
             this.Banco.Name = "Banco";
             this.Banco.ReadOnly = true;
-            this.Banco.Width = 125;
+            this.Banco.Width = 85;
             // 
             // FormConsultaContasReceber
             // 
