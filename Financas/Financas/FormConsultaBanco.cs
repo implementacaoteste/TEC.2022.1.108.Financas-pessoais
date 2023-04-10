@@ -83,7 +83,7 @@ namespace Financas
 
         private void FormConsultaBanco_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(this.Size.ToString());
+            
         }
     }
 }
