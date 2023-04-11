@@ -74,8 +74,7 @@
             this.textBoxUsuario.Multiline = true;
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(235, 24);
-            this.textBoxUsuario.TabIndex = 2;
-            this.textBoxUsuario.Text = "ana";
+            this.textBoxUsuario.TabIndex = 4;
             // 
             // textBoxSenhaLogin
             // 
@@ -111,9 +110,9 @@
             // buttonEntrar
             // 
             this.buttonEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEntrar.Location = new System.Drawing.Point(160, 271);
+            this.buttonEntrar.Location = new System.Drawing.Point(164, 265);
             this.buttonEntrar.Name = "buttonEntrar";
-            this.buttonEntrar.Size = new System.Drawing.Size(50, 28);
+            this.buttonEntrar.Size = new System.Drawing.Size(60, 28);
             this.buttonEntrar.TabIndex = 6;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = true;
@@ -122,20 +121,20 @@
             // buttonsair
             // 
             this.buttonsair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonsair.Location = new System.Drawing.Point(232, 271);
+            this.buttonsair.Location = new System.Drawing.Point(235, 264);
             this.buttonsair.Name = "buttonsair";
-            this.buttonsair.Size = new System.Drawing.Size(50, 28);
-            this.buttonsair.TabIndex = 7;
+            this.buttonsair.Size = new System.Drawing.Size(60, 28);
+            this.buttonsair.TabIndex = 6;
             this.buttonsair.Text = "Sair";
             this.buttonsair.UseVisualStyleBackColor = true;
             this.buttonsair.Click += new System.EventHandler(this.buttonsair_Click);
             // 
             // buttonCdastraLogin
             // 
-            this.buttonCdastraLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCdastraLogin.Location = new System.Drawing.Point(147, 306);
+            this.buttonCdastraLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCdastraLogin.Location = new System.Drawing.Point(169, 309);
             this.buttonCdastraLogin.Name = "buttonCdastraLogin";
-            this.buttonCdastraLogin.Size = new System.Drawing.Size(146, 31);
+            this.buttonCdastraLogin.Size = new System.Drawing.Size(120, 35);
             this.buttonCdastraLogin.TabIndex = 8;
             this.buttonCdastraLogin.Text = "Cadastra-se";
             this.buttonCdastraLogin.UseVisualStyleBackColor = true;
@@ -144,10 +143,11 @@
             // checkBoxMostrarSenha
             // 
             this.checkBoxMostrarSenha.AutoSize = true;
-            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(175, 240);
+            this.checkBoxMostrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(175, 230);
             this.checkBoxMostrarSenha.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxMostrarSenha.Name = "checkBoxMostrarSenha";
-            this.checkBoxMostrarSenha.Size = new System.Drawing.Size(104, 17);
+            this.checkBoxMostrarSenha.Size = new System.Drawing.Size(92, 16);
             this.checkBoxMostrarSenha.TabIndex = 5;
             this.checkBoxMostrarSenha.Text = "Mostrar a Senha";
             this.checkBoxMostrarSenha.UseVisualStyleBackColor = true;
