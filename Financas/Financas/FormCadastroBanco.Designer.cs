@@ -116,10 +116,10 @@
             // 
             // buttonSalvarCadBanco
             // 
-            this.buttonSalvarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvarCadBanco.Location = new System.Drawing.Point(433, 371);
             this.buttonSalvarCadBanco.Name = "buttonSalvarCadBanco";
-            this.buttonSalvarCadBanco.Size = new System.Drawing.Size(78, 23);
+            this.buttonSalvarCadBanco.Size = new System.Drawing.Size(84, 36);
             this.buttonSalvarCadBanco.TabIndex = 8;
             this.buttonSalvarCadBanco.Text = "Salvar";
             this.buttonSalvarCadBanco.UseVisualStyleBackColor = true;
@@ -127,10 +127,10 @@
             // 
             // buttonCancelarCadBanco
             // 
-            this.buttonCancelarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelarCadBanco.Location = new System.Drawing.Point(527, 371);
             this.buttonCancelarCadBanco.Name = "buttonCancelarCadBanco";
-            this.buttonCancelarCadBanco.Size = new System.Drawing.Size(103, 23);
+            this.buttonCancelarCadBanco.Size = new System.Drawing.Size(106, 36);
             this.buttonCancelarCadBanco.TabIndex = 8;
             this.buttonCancelarCadBanco.Text = "Cancelar";
             this.buttonCancelarCadBanco.UseVisualStyleBackColor = true;

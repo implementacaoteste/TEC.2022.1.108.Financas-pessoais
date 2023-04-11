@@ -137,10 +137,10 @@
             // 
             // buttonCancelarCadastroContato
             // 
-            this.buttonCancelarCadastroContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelarCadastroContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelarCadastroContato.Location = new System.Drawing.Point(523, 376);
             this.buttonCancelarCadastroContato.Name = "buttonCancelarCadastroContato";
-            this.buttonCancelarCadastroContato.Size = new System.Drawing.Size(103, 23);
+            this.buttonCancelarCadastroContato.Size = new System.Drawing.Size(106, 36);
             this.buttonCancelarCadastroContato.TabIndex = 9;
             this.buttonCancelarCadastroContato.Text = "Cancelar";
             this.buttonCancelarCadastroContato.UseVisualStyleBackColor = true;
@@ -148,10 +148,10 @@
             // 
             // buttonSalvarCadastroContato
             // 
-            this.buttonSalvarCadastroContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvarCadastroContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvarCadastroContato.Location = new System.Drawing.Point(422, 376);
             this.buttonSalvarCadastroContato.Name = "buttonSalvarCadastroContato";
-            this.buttonSalvarCadastroContato.Size = new System.Drawing.Size(78, 23);
+            this.buttonSalvarCadastroContato.Size = new System.Drawing.Size(84, 36);
             this.buttonSalvarCadastroContato.TabIndex = 9;
             this.buttonSalvarCadastroContato.Text = "Salvar";
             this.buttonSalvarCadastroContato.UseVisualStyleBackColor = true;

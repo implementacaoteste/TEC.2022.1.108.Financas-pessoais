@@ -72,8 +72,8 @@
             // descricaoLabel
             // 
             descricaoLabel.AutoSize = true;
-            descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(42, 346);
+            descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descricaoLabel.Location = new System.Drawing.Point(59, 301);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
             descricaoLabel.TabIndex = 9;
@@ -93,7 +93,7 @@
             // 
             bancoLabel.AutoSize = true;
             bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bancoLabel.Location = new System.Drawing.Point(381, 190);
+            bancoLabel.Location = new System.Drawing.Point(381, 205);
             bancoLabel.Name = "bancoLabel";
             bancoLabel.Size = new System.Drawing.Size(62, 20);
             bancoLabel.TabIndex = 12;
@@ -103,11 +103,21 @@
             // 
             formaPagamentoLabel.AutoSize = true;
             formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            formaPagamentoLabel.Location = new System.Drawing.Point(58, 190);
+            formaPagamentoLabel.Location = new System.Drawing.Point(58, 205);
             formaPagamentoLabel.Name = "formaPagamentoLabel";
             formaPagamentoLabel.Size = new System.Drawing.Size(174, 20);
             formaPagamentoLabel.TabIndex = 14;
             formaPagamentoLabel.Text = "Forma de Pagamento:";
+            // 
+            // dataEmissaoLabel
+            // 
+            dataEmissaoLabel.AutoSize = true;
+            dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataEmissaoLabel.Location = new System.Drawing.Point(382, 298);
+            dataEmissaoLabel.Name = "dataEmissaoLabel";
+            dataEmissaoLabel.Size = new System.Drawing.Size(143, 20);
+            dataEmissaoLabel.TabIndex = 16;
+            dataEmissaoLabel.Text = "Data de Emissão:";
             // 
             // label1
             // 
@@ -115,17 +125,17 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(705, 88);
+            this.label1.Size = new System.Drawing.Size(788, 88);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de despesas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.Location = new System.Drawing.Point(538, 376);
+            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelar.Location = new System.Drawing.Point(523, 404);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(88, 23);
+            this.buttonCancelar.Size = new System.Drawing.Size(106, 36);
             this.buttonCancelar.TabIndex = 6;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -133,10 +143,10 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(437, 376);
+            this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvar.Location = new System.Drawing.Point(417, 405);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(78, 23);
+            this.buttonSalvar.Size = new System.Drawing.Size(84, 36);
             this.buttonSalvar.TabIndex = 7;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
@@ -157,7 +167,7 @@
             // textBoxDescricao
             // 
             this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Descricao", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(120, 343);
+            this.textBoxDescricao.Location = new System.Drawing.Point(62, 329);
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(253, 22);
             this.textBoxDescricao.TabIndex = 10;
@@ -172,10 +182,10 @@
             // 
             // buttonBuscarContatoDespesas
             // 
-            this.buttonBuscarContatoDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarContatoDespesas.Location = new System.Drawing.Point(545, 133);
+            this.buttonBuscarContatoDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarContatoDespesas.Location = new System.Drawing.Point(545, 121);
             this.buttonBuscarContatoDespesas.Name = "buttonBuscarContatoDespesas";
-            this.buttonBuscarContatoDespesas.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscarContatoDespesas.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscarContatoDespesas.TabIndex = 12;
             this.buttonBuscarContatoDespesas.Text = "Buscar";
             this.buttonBuscarContatoDespesas.UseVisualStyleBackColor = true;
@@ -184,17 +194,17 @@
             // bancoTextBox
             // 
             this.bancoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Banco", true));
-            this.bancoTextBox.Location = new System.Drawing.Point(385, 212);
+            this.bancoTextBox.Location = new System.Drawing.Point(385, 227);
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(154, 22);
             this.bancoTextBox.TabIndex = 13;
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscar.Location = new System.Drawing.Point(545, 211);
+            this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscar.Location = new System.Drawing.Point(545, 214);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscar.TabIndex = 14;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
@@ -203,17 +213,17 @@
             // formaPagamentoTextBox
             // 
             this.formaPagamentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "FormaPagamento", true));
-            this.formaPagamentoTextBox.Location = new System.Drawing.Point(62, 213);
+            this.formaPagamentoTextBox.Location = new System.Drawing.Point(62, 228);
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(187, 22);
             this.formaPagamentoTextBox.TabIndex = 15;
             // 
             // buttonBuscarFormaPagamentoDespesas
             // 
-            this.buttonBuscarFormaPagamentoDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarFormaPagamentoDespesas.Location = new System.Drawing.Point(255, 212);
+            this.buttonBuscarFormaPagamentoDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarFormaPagamentoDespesas.Location = new System.Drawing.Point(255, 214);
             this.buttonBuscarFormaPagamentoDespesas.Name = "buttonBuscarFormaPagamentoDespesas";
-            this.buttonBuscarFormaPagamentoDespesas.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscarFormaPagamentoDespesas.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscarFormaPagamentoDespesas.TabIndex = 16;
             this.buttonBuscarFormaPagamentoDespesas.Text = "Buscar";
             this.buttonBuscarFormaPagamentoDespesas.UseVisualStyleBackColor = true;
@@ -223,20 +233,10 @@
             // 
             this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
             // 
-            // dataEmissaoLabel
-            // 
-            dataEmissaoLabel.AutoSize = true;
-            dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataEmissaoLabel.Location = new System.Drawing.Point(399, 346);
-            dataEmissaoLabel.Name = "dataEmissaoLabel";
-            dataEmissaoLabel.Size = new System.Drawing.Size(130, 16);
-            dataEmissaoLabel.TabIndex = 16;
-            dataEmissaoLabel.Text = "Data de Emissão:";
-            // 
             // dataEmissaoDateTimePicker
             // 
             this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.contasPagarBindingSource, "DataEmissao", true));
-            this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(529, 343);
+            this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(385, 329);
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
             this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dataEmissaoDateTimePicker.TabIndex = 17;
