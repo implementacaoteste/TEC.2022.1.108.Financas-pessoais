@@ -46,5 +46,9 @@ namespace BLL
         {
             return new DespesasDAL().BuscarPorContato(_contato);
         }
+        public List<Despesas> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        {
+            return new DespesasDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
+        }
     }
 }
