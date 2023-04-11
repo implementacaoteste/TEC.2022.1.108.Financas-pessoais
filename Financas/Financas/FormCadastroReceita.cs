@@ -49,7 +49,23 @@ namespace Financas
 
         private void buttonBuscarContatoReceita_Click(object sender, EventArgs e)
         {
-            using(FormCadastroContato frm = new FormCadastroContato())
+            using(FormConsultaReceita frm = new FormConsultaReceita())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonBuscarBancoReceita_Click(object sender, EventArgs e)
+        {
+            using(FormConsultaBanco frm = new FormConsultaBanco())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonBuscarFormaPagamentoReceita_Click(object sender, EventArgs e)
+        {
+            using(FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
             {
                 frm.ShowDialog();
             }
