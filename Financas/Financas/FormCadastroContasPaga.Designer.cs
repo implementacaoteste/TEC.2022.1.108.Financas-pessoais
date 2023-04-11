@@ -34,6 +34,7 @@
             System.Windows.Forms.Label contatoLabel;
             System.Windows.Forms.Label bancoLabel;
             System.Windows.Forms.Label formaPagamentoLabel;
+            System.Windows.Forms.Label dataEmissaoLabel;
             this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.valorPagarTextBox = new System.Windows.Forms.TextBox();
@@ -46,19 +47,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.formaPagamentoTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.dataEmissaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             descricaoLabel = new System.Windows.Forms.Label();
             valorPagarLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
             bancoLabel = new System.Windows.Forms.Label();
             formaPagamentoLabel = new System.Windows.Forms.Label();
+            dataEmissaoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // descricaoLabel
             // 
             descricaoLabel.AutoSize = true;
-            descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(65, 292);
+            descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descricaoLabel.Location = new System.Drawing.Point(66, 307);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
             descricaoLabel.TabIndex = 1;
@@ -80,9 +83,9 @@
             contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contatoLabel.Location = new System.Drawing.Point(311, 111);
             contatoLabel.Name = "contatoLabel";
-            contatoLabel.Size = new System.Drawing.Size(77, 20);
+            contatoLabel.Size = new System.Drawing.Size(65, 20);
             contatoLabel.TabIndex = 7;
-            contatoLabel.Text = "Devedor:";
+            contatoLabel.Text = "Credor:";
             // 
             // bancoLabel
             // 
@@ -104,13 +107,23 @@
             formaPagamentoLabel.TabIndex = 13;
             formaPagamentoLabel.Text = "Forma de pagamento:";
             // 
+            // dataEmissaoLabel
+            // 
+            dataEmissaoLabel.AutoSize = true;
+            dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataEmissaoLabel.Location = new System.Drawing.Point(376, 302);
+            dataEmissaoLabel.Name = "dataEmissaoLabel";
+            dataEmissaoLabel.Size = new System.Drawing.Size(143, 20);
+            dataEmissaoLabel.TabIndex = 16;
+            dataEmissaoLabel.Text = "Data de Emissão:";
+            // 
             // descricaoTextBox
             // 
             this.descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "Descricao", true));
-            this.descricaoTextBox.Location = new System.Drawing.Point(69, 314);
+            this.descricaoTextBox.Location = new System.Drawing.Point(69, 334);
             this.descricaoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.descricaoTextBox.Name = "descricaoTextBox";
-            this.descricaoTextBox.Size = new System.Drawing.Size(544, 22);
+            this.descricaoTextBox.Size = new System.Drawing.Size(212, 22);
             this.descricaoTextBox.TabIndex = 2;
             // 
             // contasPagarBindingSource
@@ -132,7 +145,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(705, 77);
+            this.label1.Size = new System.Drawing.Size(686, 77);
             this.label1.TabIndex = 5;
             this.label1.Text = "Cadastro de contas a pagar";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -140,11 +153,11 @@
             // 
             // buttonCancelarCadastroContasPagar
             // 
-            this.buttonCancelarCadastroContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelarCadastroContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelarCadastroContasPagar.Location = new System.Drawing.Point(510, 382);
             this.buttonCancelarCadastroContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadastroContasPagar.Name = "buttonCancelarCadastroContasPagar";
-            this.buttonCancelarCadastroContasPagar.Size = new System.Drawing.Size(103, 23);
+            this.buttonCancelarCadastroContasPagar.Size = new System.Drawing.Size(103, 36);
             this.buttonCancelarCadastroContasPagar.TabIndex = 7;
             this.buttonCancelarCadastroContasPagar.Text = "Cancelar";
             this.buttonCancelarCadastroContasPagar.UseVisualStyleBackColor = true;
@@ -152,11 +165,11 @@
             // 
             // buttonSalvarCadastroContasPagar
             // 
-            this.buttonSalvarCadastroContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvarCadastroContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvarCadastroContasPagar.Location = new System.Drawing.Point(427, 382);
             this.buttonSalvarCadastroContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCadastroContasPagar.Name = "buttonSalvarCadastroContasPagar";
-            this.buttonSalvarCadastroContasPagar.Size = new System.Drawing.Size(77, 23);
+            this.buttonSalvarCadastroContasPagar.Size = new System.Drawing.Size(77, 36);
             this.buttonSalvarCadastroContasPagar.TabIndex = 7;
             this.buttonSalvarCadastroContasPagar.Text = "Salvar";
             this.buttonSalvarCadastroContasPagar.UseVisualStyleBackColor = true;
@@ -172,10 +185,10 @@
             // 
             // buttonBuscarContatoContasPagar
             // 
-            this.buttonBuscarContatoContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarContatoContasPagar.Location = new System.Drawing.Point(538, 133);
+            this.buttonBuscarContatoContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarContatoContasPagar.Location = new System.Drawing.Point(538, 128);
             this.buttonBuscarContatoContasPagar.Name = "buttonBuscarContatoContasPagar";
-            this.buttonBuscarContatoContasPagar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscarContatoContasPagar.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscarContatoContasPagar.TabIndex = 9;
             this.buttonBuscarContatoContasPagar.Text = "Buscar";
             this.buttonBuscarContatoContasPagar.UseVisualStyleBackColor = true;
@@ -191,10 +204,10 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(206, 216);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(206, 207);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(84, 36);
             this.button1.TabIndex = 12;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
@@ -210,21 +223,31 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(538, 215);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(538, 208);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(84, 36);
             this.button2.TabIndex = 15;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // dataEmissaoDateTimePicker
+            // 
+            this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.contasPagarBindingSource, "DataEmissao", true));
+            this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(376, 332);
+            this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
+            this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dataEmissaoDateTimePicker.TabIndex = 17;
+            // 
             // FormCadastroContasPaga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(686, 455);
+            this.Controls.Add(dataEmissaoLabel);
+            this.Controls.Add(this.dataEmissaoDateTimePicker);
             this.BackColor = System.Drawing.Color.PowderBlue;
-            this.ClientSize = new System.Drawing.Size(705, 424);
             this.Controls.Add(this.button2);
             this.Controls.Add(formaPagamentoLabel);
             this.Controls.Add(this.formaPagamentoTextBox);
@@ -271,5 +294,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox formaPagamentoTextBox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dataEmissaoDateTimePicker;
     }
 }

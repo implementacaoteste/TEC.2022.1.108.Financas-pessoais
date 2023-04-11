@@ -48,7 +48,7 @@
             // nomeLabel
             // 
             nomeLabel.AutoSize = true;
-            nomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nomeLabel.Location = new System.Drawing.Point(37, 108);
             nomeLabel.Name = "nomeLabel";
             nomeLabel.Size = new System.Drawing.Size(58, 20);
@@ -119,11 +119,10 @@
             // 
             // buttonSalvarCadBanco
             // 
-            this.buttonSalvarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadBanco.Location = new System.Drawing.Point(406, 334);
-            this.buttonSalvarCadBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSalvarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvarCadBanco.Location = new System.Drawing.Point(378, 329);
             this.buttonSalvarCadBanco.Name = "buttonSalvarCadBanco";
-            this.buttonSalvarCadBanco.Size = new System.Drawing.Size(69, 28);
+            this.buttonSalvarCadBanco.Size = new System.Drawing.Size(84, 36);
             this.buttonSalvarCadBanco.TabIndex = 8;
             this.buttonSalvarCadBanco.Text = "Salvar";
             this.buttonSalvarCadBanco.UseVisualStyleBackColor = true;
@@ -131,11 +130,11 @@
             // 
             // buttonCancelarCadBanco
             // 
-            this.buttonCancelarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadBanco.Location = new System.Drawing.Point(482, 334);
+            this.buttonCancelarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelarCadBanco.Location = new System.Drawing.Point(488, 329);
             this.buttonCancelarCadBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadBanco.Name = "buttonCancelarCadBanco";
-            this.buttonCancelarCadBanco.Size = new System.Drawing.Size(91, 28);
+            this.buttonCancelarCadBanco.Size = new System.Drawing.Size(106, 36);
             this.buttonCancelarCadBanco.TabIndex = 8;
             this.buttonCancelarCadBanco.Text = "Cancelar";
             this.buttonCancelarCadBanco.UseVisualStyleBackColor = true;

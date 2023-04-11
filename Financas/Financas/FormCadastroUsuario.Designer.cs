@@ -201,11 +201,11 @@
             // 
             // buttonCancelarCadastrodeUsuario
             // 
-            this.buttonCancelarCadastrodeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelarCadastrodeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelarCadastrodeUsuario.Location = new System.Drawing.Point(538, 376);
             this.buttonCancelarCadastrodeUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadastrodeUsuario.Name = "buttonCancelarCadastrodeUsuario";
-            this.buttonCancelarCadastrodeUsuario.Size = new System.Drawing.Size(103, 23);
+            this.buttonCancelarCadastrodeUsuario.Size = new System.Drawing.Size(106, 36);
             this.buttonCancelarCadastrodeUsuario.TabIndex = 15;
             this.buttonCancelarCadastrodeUsuario.Text = "Cancelar";
             this.buttonCancelarCadastrodeUsuario.UseVisualStyleBackColor = true;
@@ -213,11 +213,11 @@
             // 
             // buttonSalvarCadastrodeUsuario
             // 
-            this.buttonSalvarCadastrodeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvarCadastrodeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvarCadastrodeUsuario.Location = new System.Drawing.Point(437, 376);
             this.buttonSalvarCadastrodeUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCadastrodeUsuario.Name = "buttonSalvarCadastrodeUsuario";
-            this.buttonSalvarCadastrodeUsuario.Size = new System.Drawing.Size(77, 23);
+            this.buttonSalvarCadastrodeUsuario.Size = new System.Drawing.Size(84, 36);
             this.buttonSalvarCadastrodeUsuario.TabIndex = 15;
             this.buttonSalvarCadastrodeUsuario.Text = "Salvar";
             this.buttonSalvarCadastrodeUsuario.UseVisualStyleBackColor = true;
