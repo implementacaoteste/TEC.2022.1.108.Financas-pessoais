@@ -102,7 +102,6 @@
             this.labelUsuarioLogin.TabIndex = 1;
 
             this.labelUsuarioLogin.Text = "Nome Usuario:";
-            this.labelUsuarioLogin.Click += new System.EventHandler(this.labelUsuarioLogin_Click);
 
             // 
             // labelSenhaLogin
