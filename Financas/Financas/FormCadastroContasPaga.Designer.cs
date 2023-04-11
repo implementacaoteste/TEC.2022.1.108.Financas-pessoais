@@ -60,87 +60,89 @@
             // descricaoLabel
             // 
             descricaoLabel.AutoSize = true;
+
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descricaoLabel.Location = new System.Drawing.Point(31, 339);
+
             descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(82, 16);
+            descricaoLabel.Size = new System.Drawing.Size(91, 20);
             descricaoLabel.TabIndex = 1;
             descricaoLabel.Text = "Descrição:";
             // 
             // valorPagarLabel
             // 
             valorPagarLabel.AutoSize = true;
-            valorPagarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            valorPagarLabel.Location = new System.Drawing.Point(12, 132);
+            valorPagarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            valorPagarLabel.Location = new System.Drawing.Point(65, 112);
             valorPagarLabel.Name = "valorPagarLabel";
-            valorPagarLabel.Size = new System.Drawing.Size(107, 16);
+            valorPagarLabel.Size = new System.Drawing.Size(114, 20);
             valorPagarLabel.TabIndex = 3;
-            valorPagarLabel.Text = "Valor a Pagar:";
+            valorPagarLabel.Text = "Valor a pagar:";
             // 
             // contatoLabel
             // 
             contatoLabel.AutoSize = true;
-            contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contatoLabel.Location = new System.Drawing.Point(329, 131);
+            contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            contatoLabel.Location = new System.Drawing.Point(311, 111);
             contatoLabel.Name = "contatoLabel";
-            contatoLabel.Size = new System.Drawing.Size(58, 16);
+            contatoLabel.Size = new System.Drawing.Size(77, 20);
             contatoLabel.TabIndex = 7;
             contatoLabel.Text = "Credor:";
             // 
             // bancoLabel
             // 
             bancoLabel.AutoSize = true;
-            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bancoLabel.Location = new System.Drawing.Point(12, 244);
+            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            bancoLabel.Location = new System.Drawing.Point(65, 193);
             bancoLabel.Name = "bancoLabel";
-            bancoLabel.Size = new System.Drawing.Size(55, 16);
+            bancoLabel.Size = new System.Drawing.Size(62, 20);
             bancoLabel.TabIndex = 10;
             bancoLabel.Text = "Banco:";
             // 
             // formaPagamentoLabel
             // 
             formaPagamentoLabel.AutoSize = true;
-            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            formaPagamentoLabel.Location = new System.Drawing.Point(328, 243);
+            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            formaPagamentoLabel.Location = new System.Drawing.Point(311, 193);
             formaPagamentoLabel.Name = "formaPagamentoLabel";
-            formaPagamentoLabel.Size = new System.Drawing.Size(138, 16);
+            formaPagamentoLabel.Size = new System.Drawing.Size(172, 20);
             formaPagamentoLabel.TabIndex = 13;
-            formaPagamentoLabel.Text = "Forma Pagamento:";
+            formaPagamentoLabel.Text = "Forma de pagamento:";
             // 
             // descricaoTextBox
             // 
             this.descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "Descricao", true));
             this.descricaoTextBox.Location = new System.Drawing.Point(120, 336);
+            this.descricaoTextBox.Size = new System.Drawing.Size(187, 22);
             this.descricaoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.descricaoTextBox.Name = "descricaoTextBox";
-            this.descricaoTextBox.Size = new System.Drawing.Size(187, 22);
             this.descricaoTextBox.TabIndex = 2;
             // 
             // valorPagarTextBox
             // 
             this.valorPagarTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "ValorPagar", true));
-            this.valorPagarTextBox.Location = new System.Drawing.Point(120, 129);
+            this.valorPagarTextBox.Location = new System.Drawing.Point(69, 134);
             this.valorPagarTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.valorPagarTextBox.Name = "valorPagarTextBox";
-            this.valorPagarTextBox.Size = new System.Drawing.Size(119, 22);
+            this.valorPagarTextBox.Size = new System.Drawing.Size(164, 22);
             this.valorPagarTextBox.TabIndex = 4;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 29);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(538, 54);
+            this.label1.Size = new System.Drawing.Size(705, 77);
             this.label1.TabIndex = 5;
             this.label1.Text = "Cadastro de contas a pagar";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.UseCompatibleTextRendering = true;
             // 
             // buttonCancelarCadastroContasPagar
             // 
             this.buttonCancelarCadastroContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastroContasPagar.Location = new System.Drawing.Point(490, 382);
+            this.buttonCancelarCadastroContasPagar.Location = new System.Drawing.Point(510, 382);
             this.buttonCancelarCadastroContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadastroContasPagar.Name = "buttonCancelarCadastroContasPagar";
             this.buttonCancelarCadastroContasPagar.Size = new System.Drawing.Size(103, 23);
@@ -152,7 +154,7 @@
             // buttonSalvarCadastroContasPagar
             // 
             this.buttonSalvarCadastroContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadastroContasPagar.Location = new System.Drawing.Point(396, 382);
+            this.buttonSalvarCadastroContasPagar.Location = new System.Drawing.Point(427, 382);
             this.buttonSalvarCadastroContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCadastroContasPagar.Name = "buttonSalvarCadastroContasPagar";
             this.buttonSalvarCadastroContasPagar.Size = new System.Drawing.Size(77, 23);
@@ -164,15 +166,15 @@
             // contatoTextBox
             // 
             this.contatoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "Contato", true));
-            this.contatoTextBox.Location = new System.Drawing.Point(391, 128);
+            this.contatoTextBox.Location = new System.Drawing.Point(315, 134);
             this.contatoTextBox.Name = "contatoTextBox";
-            this.contatoTextBox.Size = new System.Drawing.Size(128, 22);
+            this.contatoTextBox.Size = new System.Drawing.Size(217, 22);
             this.contatoTextBox.TabIndex = 8;
             // 
             // buttonBuscarContatoContasPagar
             // 
             this.buttonBuscarContatoContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarContatoContasPagar.Location = new System.Drawing.Point(526, 129);
+            this.buttonBuscarContatoContasPagar.Location = new System.Drawing.Point(538, 133);
             this.buttonBuscarContatoContasPagar.Name = "buttonBuscarContatoContasPagar";
             this.buttonBuscarContatoContasPagar.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarContatoContasPagar.TabIndex = 9;
@@ -183,15 +185,15 @@
             // bancoTextBox
             // 
             this.bancoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "Banco", true));
-            this.bancoTextBox.Location = new System.Drawing.Point(67, 241);
+            this.bancoTextBox.Location = new System.Drawing.Point(69, 216);
             this.bancoTextBox.Name = "bancoTextBox";
-            this.bancoTextBox.Size = new System.Drawing.Size(130, 22);
+            this.bancoTextBox.Size = new System.Drawing.Size(131, 22);
             this.bancoTextBox.TabIndex = 11;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(203, 240);
+            this.button1.Location = new System.Drawing.Point(206, 216);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
@@ -202,15 +204,15 @@
             // formaPagamentoTextBox
             // 
             this.formaPagamentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "FormaPagamento", true));
-            this.formaPagamentoTextBox.Location = new System.Drawing.Point(456, 240);
+            this.formaPagamentoTextBox.Location = new System.Drawing.Point(315, 216);
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
-            this.formaPagamentoTextBox.Size = new System.Drawing.Size(121, 22);
+            this.formaPagamentoTextBox.Size = new System.Drawing.Size(217, 22);
             this.formaPagamentoTextBox.TabIndex = 14;
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(583, 239);
+            this.button2.Location = new System.Drawing.Point(538, 215);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 15;

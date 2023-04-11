@@ -70,5 +70,10 @@ namespace Financas
                 frm.ShowDialog();
             }
         }
+
+        private void bancoLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
