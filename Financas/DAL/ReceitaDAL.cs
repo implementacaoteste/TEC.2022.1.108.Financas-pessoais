@@ -104,8 +104,11 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Receita.Id, Receita.Valor, Receita.Descricao, Contato.Nome FROM Receita
-                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id WHERE Receita.Id = @Id";
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
+                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id 
+                                    INNER JOIN FormaPagamento ON Receita.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON Receita.IdBanco = Banco.Id
+                                    WHERE Receita.Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -119,6 +122,8 @@ namespace DAL
                         receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
                         receita.Contato = rd["Nome"].ToString();
+                        receita.FormaPagamento = rd["Descricao"].ToString();
+                        receita.Banco = rd["Nome"].ToString();
                     }
                 }
                 return receita;
@@ -144,8 +149,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Receita.Id, Receita.Valor, Receita.Descricao, Contato.Nome FROM Receita
-                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id";
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
+                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id 
+                                    INNER JOIN FormaPagamento ON Receita.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON Receita.IdBanco = Banco.Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -155,8 +162,10 @@ namespace DAL
                         receita = new Receita();
                         receita.Id = Convert.ToInt32(rd["Id"]);
                         receita.Valor = (double)rd["Valor"];
-                        receita.Descricao = rd["Descricao"].ToString();
-                        receita.Contato = rd["Nome"].ToString();
+                        receita.Descricao = rd["DescricaoReceita"].ToString();
+                        receita.Contato = rd["Contato"].ToString();
+                        receita.FormaPagamento = rd["FormaPagamento"].ToString();
+                        receita.Banco = rd["Banco"].ToString();
                         receitas.Add(receita);
                     }
                 }
@@ -182,8 +191,11 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Receita.Id, Receita.Valor, Receita.Descricao, Contato.Nome FROM Receita
-                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id WHERE Receita.Descricao LIKE @Descricao";
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
+                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id 
+                                    INNER JOIN FormaPagamento ON Receita.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON Receita.IdBanco = Banco.Id
+                                    WHERE Receita.Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
@@ -197,6 +209,8 @@ namespace DAL
                         receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
                         receita.Contato = rd["Nome"].ToString();
+                        receita.FormaPagamento = rd["Descricao"].ToString();
+                        receita.Banco = rd["Nome"].ToString();
                         receitas.Add(receita);
                     }
                 }

@@ -79,7 +79,7 @@
             // buttonBuscarFormaPagamento
             // 
             this.buttonBuscarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(442, 108);
+            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(437, 110);
             this.buttonBuscarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
             this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(75, 23);
@@ -91,7 +91,7 @@
             // buttonAlterarFormaPagamento
             // 
             this.buttonAlterarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterarFormaPagamento.Location = new System.Drawing.Point(617, 108);
+            this.buttonAlterarFormaPagamento.Location = new System.Drawing.Point(619, 110);
             this.buttonAlterarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
             this.buttonAlterarFormaPagamento.Size = new System.Drawing.Size(75, 23);
@@ -103,7 +103,7 @@
             // buttonExcluirFormaPagamento
             // 
             this.buttonExcluirFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirFormaPagamento.Location = new System.Drawing.Point(698, 108);
+            this.buttonExcluirFormaPagamento.Location = new System.Drawing.Point(700, 110);
             this.buttonExcluirFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
             this.buttonExcluirFormaPagamento.Size = new System.Drawing.Size(75, 23);
@@ -115,31 +115,32 @@
             // buttonAdicionarFormaPagamento
             // 
             this.buttonAdicionarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionarFormaPagamento.Location = new System.Drawing.Point(523, 108);
+            this.buttonAdicionarFormaPagamento.Location = new System.Drawing.Point(518, 110);
             this.buttonAdicionarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionarFormaPagamento.Name = "buttonAdicionarFormaPagamento";
-            this.buttonAdicionarFormaPagamento.Size = new System.Drawing.Size(88, 23);
+            this.buttonAdicionarFormaPagamento.Size = new System.Drawing.Size(95, 23);
             this.buttonAdicionarFormaPagamento.TabIndex = 11;
             this.buttonAdicionarFormaPagamento.Text = "Adicionar";
             this.buttonAdicionarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonAdicionarFormaPagamento.Click += new System.EventHandler(this.buttonAdicionarFormaPagamento_Click_1);
             // 
             // textBoxConsultarFormaPagamento
             // 
-            this.textBoxConsultarFormaPagamento.Location = new System.Drawing.Point(102, 108);
+            this.textBoxConsultarFormaPagamento.Location = new System.Drawing.Point(106, 109);
             this.textBoxConsultarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarFormaPagamento.Name = "textBoxConsultarFormaPagamento";
-            this.textBoxConsultarFormaPagamento.Size = new System.Drawing.Size(334, 22);
+            this.textBoxConsultarFormaPagamento.Size = new System.Drawing.Size(327, 22);
             this.textBoxConsultarFormaPagamento.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 111);
+            this.label1.Location = new System.Drawing.Point(32, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 16);
+            this.label1.Size = new System.Drawing.Size(67, 16);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Consultar:";
+            this.label1.Text = "Consulta";
             // 
             // label2
             // 
@@ -148,7 +149,7 @@
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(824, 86);
+            this.label2.Size = new System.Drawing.Size(824, 82);
             this.label2.TabIndex = 12;
             this.label2.Text = "Consulta de forma de pagamento";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -156,7 +157,7 @@
             // buttonSair
             // 
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(698, 406);
+            this.buttonSair.Location = new System.Drawing.Point(700, 407);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
             this.buttonSair.TabIndex = 13;

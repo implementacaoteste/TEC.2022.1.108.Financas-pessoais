@@ -22,6 +22,7 @@ namespace DAL
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@ValorReceber", _contasReceber.ValorReceber);
                 cmd.Parameters.AddWithValue("@Descricao", _contasReceber.Descricao);
+                
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -102,8 +103,11 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.ValorReceber, ContasReceber.Descricao, Contato.Nome FROM ContasReceber
-                                    INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id  WHERE ContasReceber.Id = @Id";
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                                    INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id
+                                    WHERE ContasReceber.Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -117,6 +121,8 @@ namespace DAL
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
                         contasReceber.Descricao = rd["Descricao"].ToString();
                         contasReceber.Contato = rd["Nome"].ToString();
+                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
+                        contasReceber.Banco = rd["Nome"].ToString();
                     }
                 }
                 return contasReceber;
@@ -142,8 +148,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.ValorReceber, ContasReceber.Descricao, Contato.Nome FROM ContasReceber
-                                    INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id";
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                                    INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -155,6 +163,8 @@ namespace DAL
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
                         contasReceber.Descricao = rd["Descricao"].ToString();
                         contasReceber.Contato = rd["Nome"].ToString();
+                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
+                        contasReceber.Banco = rd["Nome"].ToString();
                         contaReceber.Add(contasReceber);
                     }
                 }
@@ -180,8 +190,11 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.ValorReceber, ContasReceber.Descricao, Contato.Nome FROM ContasReceber
-                                    INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id WHERE ContasReceber.Descricao LIKE @Descricao";
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                                    INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id 
+                                    WHERE ContasReceber.Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
@@ -195,6 +208,8 @@ namespace DAL
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
                         contasReceber.Descricao = rd["Descricao"].ToString();
                         contasReceber.Contato = rd["Nome"].ToString();
+                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
+                        contasReceber.Banco = rd["Nome"].ToString();
                         contaReceber.Add(contasReceber);
                     }
                 }

@@ -30,9 +30,9 @@ namespace BLL
         {
             return new ReceitaDAL().BuscarPorDescricao(_descricao);
         }
-        public void BuscarPorId(int _id)
+        public Receita BuscarPorId(int _id)
         {
-            new ReceitaDAL().BuscarPorId(_id);
+           return new ReceitaDAL().BuscarPorId(_id);
         }
     }
 }

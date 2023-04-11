@@ -71,5 +71,14 @@ namespace Financas
         {
             Close();
         }
+
+        private void buttonAdicionarFormaPagamento_Click_1(object sender, EventArgs e)
+        {
+            using (FormCadastroFormaPagamento frm = new FormCadastroFormaPagamento())
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscarFormaPagamento_Click(null,null);
+        }
     }
 }

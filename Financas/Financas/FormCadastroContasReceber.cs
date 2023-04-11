@@ -47,7 +47,37 @@ namespace Financas
 
         private void buttonBuscarContatoContasReceber_Click(object sender, EventArgs e)
         {
-            contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNome(textBoxBuscarContato.Text);
+            using(FormConsultaContato frm = new FormConsultaContato())
+            {
+                frm.ShowDialog();
+            }
+           // contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNome(textBoxBuscarContato.Text);
+        }
+
+        private void textBoxBuscarContato_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBuscarBanco_Click(object sender, EventArgs e)
+        {
+            using (FormConsultaBanco frm = new FormConsultaBanco())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonBuscarFormaPagamento_Click(object sender, EventArgs e)
+        {
+            using(FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void FormCadastroContasReceber_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
