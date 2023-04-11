@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.receitaDataGridView = new System.Windows.Forms.DataGridView();
-            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarReceita = new System.Windows.Forms.Button();
             this.buttonAlterarReceita = new System.Windows.Forms.Button();
             this.buttonExcluirReceita = new System.Windows.Forms.Button();
@@ -40,11 +40,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.receitaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +62,7 @@
             this.receitaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.receitaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
+            this.DataEmissao,
             this.Valor,
             this.Contato,
             this.FormaPagamento,
@@ -69,17 +74,13 @@
             this.receitaDataGridView.ReadOnly = true;
             this.receitaDataGridView.RowHeadersWidth = 51;
             this.receitaDataGridView.RowTemplate.Height = 24;
-            this.receitaDataGridView.Size = new System.Drawing.Size(740, 266);
+            this.receitaDataGridView.Size = new System.Drawing.Size(1040, 515);
             this.receitaDataGridView.TabIndex = 1;
-            // 
-            // receitaBindingSource
-            // 
-            this.receitaBindingSource.DataSource = typeof(Models.Receita);
             // 
             // buttonBuscarReceita
             // 
             this.buttonBuscarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarReceita.Location = new System.Drawing.Point(437, 110);
+            this.buttonBuscarReceita.Location = new System.Drawing.Point(737, 110);
             this.buttonBuscarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarReceita.Name = "buttonBuscarReceita";
             this.buttonBuscarReceita.Size = new System.Drawing.Size(75, 23);
@@ -91,7 +92,7 @@
             // buttonAlterarReceita
             // 
             this.buttonAlterarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterarReceita.Location = new System.Drawing.Point(619, 110);
+            this.buttonAlterarReceita.Location = new System.Drawing.Point(919, 110);
             this.buttonAlterarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAlterarReceita.Name = "buttonAlterarReceita";
             this.buttonAlterarReceita.Size = new System.Drawing.Size(75, 23);
@@ -103,7 +104,7 @@
             // buttonExcluirReceita
             // 
             this.buttonExcluirReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirReceita.Location = new System.Drawing.Point(700, 110);
+            this.buttonExcluirReceita.Location = new System.Drawing.Point(1000, 109);
             this.buttonExcluirReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluirReceita.Name = "buttonExcluirReceita";
             this.buttonExcluirReceita.Size = new System.Drawing.Size(75, 23);
@@ -115,7 +116,7 @@
             // buttonAdicionarReceita
             // 
             this.buttonAdicionarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionarReceita.Location = new System.Drawing.Point(518, 110);
+            this.buttonAdicionarReceita.Location = new System.Drawing.Point(818, 110);
             this.buttonAdicionarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionarReceita.Name = "buttonAdicionarReceita";
             this.buttonAdicionarReceita.Size = new System.Drawing.Size(95, 23);
@@ -129,7 +130,7 @@
             this.textBoxConsultarReceita.Location = new System.Drawing.Point(106, 109);
             this.textBoxConsultarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarReceita.Name = "textBoxConsultarReceita";
-            this.textBoxConsultarReceita.Size = new System.Drawing.Size(327, 22);
+            this.textBoxConsultarReceita.Size = new System.Drawing.Size(498, 22);
             this.textBoxConsultarReceita.TabIndex = 7;
             // 
             // label1
@@ -148,7 +149,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(824, 82);
+            this.label2.Size = new System.Drawing.Size(1111, 82);
             this.label2.TabIndex = 12;
             this.label2.Text = "Consulta de receita";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -156,7 +157,7 @@
             // buttonSair
             // 
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(700, 407);
+            this.buttonSair.Location = new System.Drawing.Point(1000, 654);
             this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
@@ -164,6 +165,10 @@
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            // 
+            // receitaBindingSource
+            // 
+            this.receitaBindingSource.DataSource = typeof(Models.Receita);
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -174,13 +179,25 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 140;
             // 
+            // DataEmissao
+            // 
+            this.DataEmissao.DataPropertyName = "DataEmissao";
+            dataGridViewCellStyle9.Format = "d";
+            dataGridViewCellStyle9.NullValue = null;
+            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle9;
+            this.DataEmissao.HeaderText = "Data de Emissao";
+            this.DataEmissao.MinimumWidth = 6;
+            this.DataEmissao.Name = "DataEmissao";
+            this.DataEmissao.ReadOnly = true;
+            this.DataEmissao.Width = 140;
+            // 
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle10;
             this.Valor.HeaderText = "Valor";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -194,6 +211,7 @@
             this.Contato.MinimumWidth = 6;
             this.Contato.Name = "Contato";
             this.Contato.ReadOnly = true;
+            this.Contato.Width = 115;
             // 
             // FormaPagamento
             // 
@@ -202,7 +220,7 @@
             this.FormaPagamento.MinimumWidth = 6;
             this.FormaPagamento.Name = "FormaPagamento";
             this.FormaPagamento.ReadOnly = true;
-            this.FormaPagamento.Width = 95;
+            this.FormaPagamento.Width = 167;
             // 
             // Banco
             // 
@@ -213,11 +231,38 @@
             this.Banco.ReadOnly = true;
             this.Banco.Width = 85;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Todos",
+            "Descrição",
+            "Periodo",
+            "Contato",
+            "Forma pagamento",
+            "Banco"});
+            this.comboBox1.Location = new System.Drawing.Point(610, 106);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(610, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Buscar por";
+            // 
             // FormConsultaReceita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 444);
+            this.ClientSize = new System.Drawing.Size(1111, 688);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonBuscarReceita);
@@ -225,6 +270,7 @@
             this.Controls.Add(this.buttonExcluirReceita);
             this.Controls.Add(this.buttonAdicionarReceita);
             this.Controls.Add(this.textBoxConsultarReceita);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.receitaDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -258,9 +304,12 @@
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataEmissao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contato;
         private System.Windows.Forms.DataGridViewTextBoxColumn FormaPagamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Banco;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
