@@ -70,7 +70,7 @@
             // 
             valorLabel.AutoSize = true;
             valorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            valorLabel.Location = new System.Drawing.Point(58, 116);
+            valorLabel.Location = new System.Drawing.Point(58, 112);
             valorLabel.Name = "valorLabel";
             valorLabel.Size = new System.Drawing.Size(53, 20);
             valorLabel.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             contatoLabel.AutoSize = true;
             contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contatoLabel.Location = new System.Drawing.Point(381, 118);
+            contatoLabel.Location = new System.Drawing.Point(381, 112);
             contatoLabel.Name = "contatoLabel";
             contatoLabel.Size = new System.Drawing.Size(65, 20);
             contatoLabel.TabIndex = 13;
@@ -90,7 +90,7 @@
             // 
             bancoLabel.AutoSize = true;
             bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bancoLabel.Location = new System.Drawing.Point(381, 188);
+            bancoLabel.Location = new System.Drawing.Point(381, 190);
             bancoLabel.Name = "bancoLabel";
             bancoLabel.Size = new System.Drawing.Size(62, 20);
             bancoLabel.TabIndex = 14;
@@ -164,7 +164,7 @@
             this.contatoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Contato", true));
             this.contatoTextBox.Location = new System.Drawing.Point(385, 134);
             this.contatoTextBox.Name = "contatoTextBox";
-            this.contatoTextBox.Size = new System.Drawing.Size(137, 22);
+            this.contatoTextBox.Size = new System.Drawing.Size(154, 22);
             this.contatoTextBox.TabIndex = 14;
             // 
             // despesasBindingSource
