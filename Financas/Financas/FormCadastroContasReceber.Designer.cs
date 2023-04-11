@@ -34,19 +34,19 @@
             System.Windows.Forms.Label contatoLabel;
             System.Windows.Forms.Label bancoLabel;
             System.Windows.Forms.Label formaPagamentoLabel;
-            this.contasReceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.valorReceberTextBoxContasReceber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.descricaoTextBoxContasReceber = new System.Windows.Forms.TextBox();
             this.buttonBuscarContatoContasReceber = new System.Windows.Forms.Button();
             this.buttonSalvarCadastroContasReceber = new System.Windows.Forms.Button();
             this.buttonCancelarCadastroContasReceber = new System.Windows.Forms.Button();
-            this.contatoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxBuscarContato = new System.Windows.Forms.TextBox();
             this.bancoTextBox = new System.Windows.Forms.TextBox();
             this.formaPagamentoTextBox = new System.Windows.Forms.TextBox();
             this.buttonBuscarBanco = new System.Windows.Forms.Button();
             this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
+            this.contasReceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contatoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             valorReceberLabel = new System.Windows.Forms.Label();
             descricaoLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
@@ -62,9 +62,9 @@
             valorReceberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             valorReceberLabel.Location = new System.Drawing.Point(65, 111);
             valorReceberLabel.Name = "valorReceberLabel";
-            valorReceberLabel.Size = new System.Drawing.Size(135, 20);
+            valorReceberLabel.Size = new System.Drawing.Size(129, 20);
             valorReceberLabel.TabIndex = 1;
-            valorReceberLabel.Text = "Valor a Receber:";
+            valorReceberLabel.Text = "Valor a receber:";
             // 
             // descricaoLabel
             // 
@@ -102,13 +102,9 @@
             formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             formaPagamentoLabel.Location = new System.Drawing.Point(311, 193);
             formaPagamentoLabel.Name = "formaPagamentoLabel";
-            formaPagamentoLabel.Size = new System.Drawing.Size(174, 20);
+            formaPagamentoLabel.Size = new System.Drawing.Size(172, 20);
             formaPagamentoLabel.TabIndex = 13;
-            formaPagamentoLabel.Text = "Forma de Pagamento:";
-            // 
-            // contasReceberBindingSource
-            // 
-            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
+            formaPagamentoLabel.Text = "Forma de pagamento:";
             // 
             // valorReceberTextBoxContasReceber
             // 
@@ -171,10 +167,6 @@
             this.buttonCancelarCadastroContasReceber.UseVisualStyleBackColor = true;
             this.buttonCancelarCadastroContasReceber.Click += new System.EventHandler(this.buttonCancelarCadastroContasReceber_Click);
             // 
-            // contatoBindingSource
-            // 
-            this.contatoBindingSource.DataSource = typeof(Models.Contato);
-            // 
             // textBoxBuscarContato
             // 
             this.textBoxBuscarContato.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Nome", true));
@@ -222,6 +214,14 @@
             this.buttonBuscarFormaPagamento.Text = "Buscar";
             this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscarFormaPagamento_Click);
+            // 
+            // contasReceberBindingSource
+            // 
+            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
+            // 
+            // contatoBindingSource
+            // 
+            this.contatoBindingSource.DataSource = typeof(Models.Contato);
             // 
             // FormCadastroContasReceber
             // 
