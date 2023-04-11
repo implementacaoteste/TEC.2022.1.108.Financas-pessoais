@@ -34,26 +34,26 @@
             System.Windows.Forms.Label contatoLabel;
             System.Windows.Forms.Label bancoLabel;
             System.Windows.Forms.Label formaPagamentoLabel;
-            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.textBoxGanhos = new System.Windows.Forms.TextBox();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contatoTextBox = new System.Windows.Forms.TextBox();
             this.bancoTextBox = new System.Windows.Forms.TextBox();
             this.formaPagamentoTextBox = new System.Windows.Forms.TextBox();
             this.buttonBuscarContatoReceita = new System.Windows.Forms.Button();
             this.buttonBuscarBancoReceita = new System.Windows.Forms.Button();
             this.buttonBuscarFormaPagamentoReceita = new System.Windows.Forms.Button();
+            this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             descricaoLabel = new System.Windows.Forms.Label();
             valorLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
             bancoLabel = new System.Windows.Forms.Label();
             formaPagamentoLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // descricaoLabel
@@ -76,9 +76,35 @@
             valorLabel.TabIndex = 3;
             valorLabel.Text = "Valor:";
             // 
-            // receitaBindingSource
+            // contatoLabel
             // 
-            this.receitaBindingSource.DataSource = typeof(Models.Receita);
+            contatoLabel.AutoSize = true;
+            contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            contatoLabel.Location = new System.Drawing.Point(317, 120);
+            contatoLabel.Name = "contatoLabel";
+            contatoLabel.Size = new System.Drawing.Size(58, 16);
+            contatoLabel.TabIndex = 13;
+            contatoLabel.Text = "Credor:";
+            // 
+            // bancoLabel
+            // 
+            bancoLabel.AutoSize = true;
+            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            bancoLabel.Location = new System.Drawing.Point(5, 209);
+            bancoLabel.Name = "bancoLabel";
+            bancoLabel.Size = new System.Drawing.Size(55, 16);
+            bancoLabel.TabIndex = 14;
+            bancoLabel.Text = "Banco:";
+            // 
+            // formaPagamentoLabel
+            // 
+            formaPagamentoLabel.AutoSize = true;
+            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            formaPagamentoLabel.Location = new System.Drawing.Point(275, 209);
+            formaPagamentoLabel.Name = "formaPagamentoLabel";
+            formaPagamentoLabel.Size = new System.Drawing.Size(160, 16);
+            formaPagamentoLabel.TabIndex = 15;
+            formaPagamentoLabel.Text = "Forma de Pagamento:";
             // 
             // textBoxDescricao
             // 
@@ -128,20 +154,6 @@
             this.label1.Text = "Cadastro de receita";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // despesasBindingSource
-            // 
-            this.despesasBindingSource.DataSource = typeof(Models.Despesas);
-            // 
-            // contatoLabel
-            // 
-            contatoLabel.AutoSize = true;
-            contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contatoLabel.Location = new System.Drawing.Point(317, 120);
-            contatoLabel.Name = "contatoLabel";
-            contatoLabel.Size = new System.Drawing.Size(58, 16);
-            contatoLabel.TabIndex = 13;
-            contatoLabel.Text = "Credor:";
-            // 
             // contatoTextBox
             // 
             this.contatoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Contato", true));
@@ -150,16 +162,6 @@
             this.contatoTextBox.Size = new System.Drawing.Size(137, 22);
             this.contatoTextBox.TabIndex = 14;
             // 
-            // bancoLabel
-            // 
-            bancoLabel.AutoSize = true;
-            bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bancoLabel.Location = new System.Drawing.Point(5, 209);
-            bancoLabel.Name = "bancoLabel";
-            bancoLabel.Size = new System.Drawing.Size(55, 16);
-            bancoLabel.TabIndex = 14;
-            bancoLabel.Text = "Banco:";
-            // 
             // bancoTextBox
             // 
             this.bancoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Banco", true));
@@ -167,16 +169,6 @@
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(118, 22);
             this.bancoTextBox.TabIndex = 15;
-            // 
-            // formaPagamentoLabel
-            // 
-            formaPagamentoLabel.AutoSize = true;
-            formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            formaPagamentoLabel.Location = new System.Drawing.Point(275, 209);
-            formaPagamentoLabel.Name = "formaPagamentoLabel";
-            formaPagamentoLabel.Size = new System.Drawing.Size(160, 16);
-            formaPagamentoLabel.TabIndex = 15;
-            formaPagamentoLabel.Text = "Forma de Pagamento:";
             // 
             // formaPagamentoTextBox
             // 
@@ -195,6 +187,7 @@
             this.buttonBuscarContatoReceita.TabIndex = 17;
             this.buttonBuscarContatoReceita.Text = "Buscar";
             this.buttonBuscarContatoReceita.UseVisualStyleBackColor = true;
+            this.buttonBuscarContatoReceita.Click += new System.EventHandler(this.buttonBuscarContatoReceita_Click);
             // 
             // buttonBuscarBancoReceita
             // 
@@ -215,6 +208,14 @@
             this.buttonBuscarFormaPagamentoReceita.TabIndex = 19;
             this.buttonBuscarFormaPagamentoReceita.Text = "Buscar";
             this.buttonBuscarFormaPagamentoReceita.UseVisualStyleBackColor = true;
+            // 
+            // despesasBindingSource
+            // 
+            this.despesasBindingSource.DataSource = typeof(Models.Despesas);
+            // 
+            // receitaBindingSource
+            // 
+            this.receitaBindingSource.DataSource = typeof(Models.Receita);
             // 
             // FormCadastroReceita
             // 
@@ -246,8 +247,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de receita";
             this.Load += new System.EventHandler(this.FormCadastroReceita_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

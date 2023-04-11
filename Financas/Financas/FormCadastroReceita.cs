@@ -46,5 +46,13 @@ namespace Financas
             else
                 receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorId(Id);
         }
+
+        private void buttonBuscarContatoReceita_Click(object sender, EventArgs e)
+        {
+            using(FormCadastroContato frm = new FormCadastroContato())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
