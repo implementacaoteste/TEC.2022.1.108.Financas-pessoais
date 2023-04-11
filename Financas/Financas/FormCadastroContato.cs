@@ -23,21 +23,14 @@ namespace Financas
 
         private void buttonSalvarCadastroContato_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ContatoBLL contatoBLL = new ContatoBLL();
-                contatoBindingSource.EndEdit();
-
+            ContatoBLL contatoBLL = new ContatoBLL();
+            contatoBindingSource.EndEdit();
+            if (Id == 0)
+                contatoBLL.Inserir((Contato)contatoBindingSource.Current);
+            else
                 contatoBLL.Alterar((Contato)contatoBindingSource.Current);
-            }
-            catch
-            {
-                MessageBox.Show("Registro salvo com sucesso!");
-            }
-            finally
-            {
-                Close();
-            }
+            MessageBox.Show("Registro salvo com sucesso");
+            Close();
         }
 
         private void buttonCancelarCadastroContato_Click(object sender, EventArgs e)
