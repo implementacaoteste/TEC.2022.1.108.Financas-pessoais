@@ -58,6 +58,36 @@
             descricaoLabel.TabIndex = 6;
             descricaoLabel.Text = "Descrição:";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(69, 115);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(58, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Nome:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Location = new System.Drawing.Point(69, 191);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(85, 20);
+            label3.TabIndex = 2;
+            label3.Text = "Endereço:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(394, 115);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(73, 20);
+            label4.TabIndex = 4;
+            label4.Text = "Número:";
+            // 
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Nome", true));
@@ -97,7 +127,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(705, 76);
@@ -126,36 +156,6 @@
             this.buttonSalvarCadastroContato.Text = "Salvar";
             this.buttonSalvarCadastroContato.UseVisualStyleBackColor = true;
             this.buttonSalvarCadastroContato.Click += new System.EventHandler(this.buttonSalvarCadastroContato_Click);
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(69, 115);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(58, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Nome:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(69, 191);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(85, 20);
-            label3.TabIndex = 2;
-            label3.Text = "Endereço:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(394, 115);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(73, 20);
-            label4.TabIndex = 4;
-            label4.Text = "Número:";
             // 
             // FormCadastroContato
             // 
