@@ -248,6 +248,7 @@
             this.ClientSize = new System.Drawing.Size(788, 455);
             this.Controls.Add(dataEmissaoLabel);
             this.Controls.Add(this.dataEmissaoDateTimePicker);
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.Controls.Add(this.buttonBuscarFormaPagamentoDespesas);
             this.Controls.Add(formaPagamentoLabel);
             this.Controls.Add(this.formaPagamentoTextBox);

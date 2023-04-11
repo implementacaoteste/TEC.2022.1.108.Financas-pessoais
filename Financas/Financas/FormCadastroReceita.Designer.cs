@@ -72,10 +72,11 @@
             // valorLabel
             // 
             valorLabel.AutoSize = true;
+
             valorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             valorLabel.Location = new System.Drawing.Point(62, 96);
             valorLabel.Name = "valorLabel";
-            valorLabel.Size = new System.Drawing.Size(53, 20);
+            valorLabel.Size = new System.Drawing.Size(48, 16);
             valorLabel.TabIndex = 3;
             valorLabel.Text = "Valor:";
             // 
@@ -95,7 +96,7 @@
             bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             bancoLabel.Location = new System.Drawing.Point(61, 176);
             bancoLabel.Name = "bancoLabel";
-            bancoLabel.Size = new System.Drawing.Size(62, 20);
+            bancoLabel.Size = new System.Drawing.Size(55, 16);
             bancoLabel.TabIndex = 14;
             bancoLabel.Text = "Banco:";
             // 
@@ -233,6 +234,7 @@
             dataEmissaoLabel.Text = "Data Emissao:";
             // 
             // dataEmissaoDateTimePicker
+            // dataEmissaoTextBox
             // 
             this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.receitaBindingSource, "DataEmissao", true));
             this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(390, 303);
@@ -248,6 +250,7 @@
             this.Controls.Add(dataEmissaoLabel);
             this.Controls.Add(this.dataEmissaoDateTimePicker);
             this.Controls.Add(this.contatoTextBox);
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.Controls.Add(this.buttonBuscarFormaPagamentoReceita);
             this.Controls.Add(this.buttonBuscarBancoReceita);
             this.Controls.Add(this.buttonBuscarContatoReceita);

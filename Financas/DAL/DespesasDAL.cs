@@ -225,5 +225,56 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public List<Despesas> BuscarPorBanco(string _banco)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<Despesas> todasDespesas = new List<Despesas>();
+            Despesas despesas;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesas, Despesas.Valor, Despesas.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
+                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
+                                    INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
+                                    WHERE Banco.Nome LIKE @Nome";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Nome", "%" + _banco + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        despesas = new Despesas();
+                        despesas.Id = Convert.ToInt32(rd["Id"]);
+                        despesas.Valor = (double)rd["Valor"];
+                        despesas.Descricao = rd["Descricao"].ToString();
+                        despesas.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        despesas.Contato = rd["Nome"].ToString();
+                        despesas.FormaPagamento = rd["Descricao"].ToString();
+                        despesas.Banco = rd["Nome"].ToString();
+                        todasDespesas.Add(despesas);
+                    }
+                }
+                return todasDespesas;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as receitas por banco do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<Despesas> BuscarPorFormaPagamento(string formaPagamento)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
