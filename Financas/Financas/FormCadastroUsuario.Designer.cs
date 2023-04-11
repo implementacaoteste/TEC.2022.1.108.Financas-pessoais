@@ -196,7 +196,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(718, 69);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Cadastro de Usuário";
+            this.label1.Text = "Cadastro de usuário";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonCancelarCadastrodeUsuario
