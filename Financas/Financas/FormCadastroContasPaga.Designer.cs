@@ -34,8 +34,8 @@
             System.Windows.Forms.Label contatoLabel;
             System.Windows.Forms.Label bancoLabel;
             System.Windows.Forms.Label formaPagamentoLabel;
+            System.Windows.Forms.Label dataEmissaoLabel;
             this.descricaoTextBox = new System.Windows.Forms.TextBox();
-            this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.valorPagarTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelarCadastroContasPagar = new System.Windows.Forms.Button();
@@ -46,11 +46,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.formaPagamentoTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataEmissaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             descricaoLabel = new System.Windows.Forms.Label();
             valorPagarLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
             bancoLabel = new System.Windows.Forms.Label();
             formaPagamentoLabel = new System.Windows.Forms.Label();
+            dataEmissaoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +61,7 @@
             // 
             descricaoLabel.AutoSize = true;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(85, 317);
+            descricaoLabel.Location = new System.Drawing.Point(31, 339);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(82, 16);
             descricaoLabel.TabIndex = 1;
@@ -80,9 +83,9 @@
             contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contatoLabel.Location = new System.Drawing.Point(329, 131);
             contatoLabel.Name = "contatoLabel";
-            contatoLabel.Size = new System.Drawing.Size(71, 16);
+            contatoLabel.Size = new System.Drawing.Size(58, 16);
             contatoLabel.TabIndex = 7;
-            contatoLabel.Text = "Devedor:";
+            contatoLabel.Text = "Credor:";
             // 
             // bancoLabel
             // 
@@ -107,15 +110,11 @@
             // descricaoTextBox
             // 
             this.descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "Descricao", true));
-            this.descricaoTextBox.Location = new System.Drawing.Point(193, 314);
+            this.descricaoTextBox.Location = new System.Drawing.Point(120, 336);
             this.descricaoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.descricaoTextBox.Name = "descricaoTextBox";
-            this.descricaoTextBox.Size = new System.Drawing.Size(400, 22);
+            this.descricaoTextBox.Size = new System.Drawing.Size(187, 22);
             this.descricaoTextBox.TabIndex = 2;
-            // 
-            // contasPagarBindingSource
-            // 
-            this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
             // 
             // valorPagarTextBox
             // 
@@ -219,11 +218,35 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // contasPagarBindingSource
+            // 
+            this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
+            // 
+            // dataEmissaoDateTimePicker
+            // 
+            this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.contasPagarBindingSource, "DataEmissao", true));
+            this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(454, 337);
+            this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
+            this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dataEmissaoDateTimePicker.TabIndex = 17;
+            // 
+            // dataEmissaoLabel
+            // 
+            dataEmissaoLabel.AutoSize = true;
+            dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataEmissaoLabel.Location = new System.Drawing.Point(322, 340);
+            dataEmissaoLabel.Name = "dataEmissaoLabel";
+            dataEmissaoLabel.Size = new System.Drawing.Size(130, 16);
+            dataEmissaoLabel.TabIndex = 16;
+            dataEmissaoLabel.Text = "Data de Emissão:";
+            // 
             // FormCadastroContasPaga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 455);
+            this.Controls.Add(dataEmissaoLabel);
+            this.Controls.Add(this.dataEmissaoDateTimePicker);
             this.Controls.Add(this.button2);
             this.Controls.Add(formaPagamentoLabel);
             this.Controls.Add(this.formaPagamentoTextBox);
@@ -270,5 +293,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox formaPagamentoTextBox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dataEmissaoDateTimePicker;
     }
 }
