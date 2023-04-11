@@ -1,0 +1,2 @@
+SELECT * FROM Usuario
+GO
