@@ -101,7 +101,6 @@ namespace Financas
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(this.Size.ToString());
             textBoxConsultarReceita.Width = 498;
             textBoxConsultarReceita2.Visible = false;
 

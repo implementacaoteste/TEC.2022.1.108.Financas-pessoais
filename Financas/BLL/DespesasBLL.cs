@@ -34,15 +34,21 @@ namespace BLL
         {
             new DespesasDAL().BuscarPorId(_id);
         }
-
         public List<Despesas> BuscarPorBanco(string _banco)
         {
             return new DespesasDAL().BuscarPorBanco(_banco);
         }
-
         public List<Despesas> BuscarPorFormaPagamento(string _formaPagamento)
         {
             return new DespesasDAL().BuscarPorFormaPagamento(_formaPagamento);
+        }
+        public List<Despesas> BuscarPorContato(string _contato)
+        {
+            return new DespesasDAL().BuscarPorContato(_contato);
+        }
+        public List<Despesas> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        {
+            return new DespesasDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
         }
     }
 }
