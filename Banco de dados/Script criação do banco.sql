@@ -33,7 +33,8 @@ CREATE TABLE Despesas
 	IdBanco INT,
 	IdFormaPagamento INT,
 	Valor FLOAT,
-	Descricao VARCHAR(250)
+	Descricao VARCHAR(250),
+	DataEmissao VARCHAR(10)
 )
 GO
 
@@ -46,7 +47,8 @@ CREATE TABLE Receita
 	IdBanco INT,
 	IdFormaPagamento INT,
 	Valor FLOAT,
-	Descricao VARCHAR(250)
+	Descricao VARCHAR(250),
+	DataEmissao VARCHAR(10)
 )
 GO
 
@@ -59,7 +61,8 @@ CREATE TABLE ContasPagar
 	IdBanco INT,
 	IdFormaPagamento INT,
 	ValorPagar FLOAT,
-	Descricao VARCHAR(250)
+	Descricao VARCHAR(250),
+	DataEmissao VARCHAR(10)
 )
 GO
 
@@ -72,7 +75,8 @@ CREATE TABLE ContasReceber
 	IdBanco INT,
 	IdFormaPagamento INT,
 	ValorReceber FLOAT,
-	Descricao VARCHAR(250)
+	Descricao VARCHAR(250), 
+	DataEmissao VARCHAR(10)
 )
 GO
 
