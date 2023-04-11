@@ -95,10 +95,6 @@
             // ValorPagar
             // 
             this.ValorPagar.DataPropertyName = "ValorPagar";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ValorPagar.DefaultCellStyle = dataGridViewCellStyle1;
             this.ValorPagar.HeaderText = "Valor";
             this.ValorPagar.MinimumWidth = 6;
             this.ValorPagar.Name = "ValorPagar";
