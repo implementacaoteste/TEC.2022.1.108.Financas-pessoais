@@ -53,40 +53,40 @@
             // labelNome
             // 
             this.labelNome.AutoSize = true;
-            this.labelNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNome.Location = new System.Drawing.Point(57, 99);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(70, 25);
+            this.labelNome.Size = new System.Drawing.Size(58, 20);
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome:";
             // 
             // labelNomeUsuario
             // 
             this.labelNomeUsuario.AutoSize = true;
-            this.labelNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNomeUsuario.Location = new System.Drawing.Point(57, 211);
             this.labelNomeUsuario.Name = "labelNomeUsuario";
-            this.labelNomeUsuario.Size = new System.Drawing.Size(166, 25);
+            this.labelNomeUsuario.Size = new System.Drawing.Size(141, 20);
             this.labelNomeUsuario.TabIndex = 1;
             this.labelNomeUsuario.Text = "Nome de usuário:";
             // 
             // labelSenha
             // 
             this.labelSenha.AutoSize = true;
-            this.labelSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSenha.Location = new System.Drawing.Point(401, 97);
             this.labelSenha.Name = "labelSenha";
-            this.labelSenha.Size = new System.Drawing.Size(76, 25);
+            this.labelSenha.Size = new System.Drawing.Size(61, 20);
             this.labelSenha.TabIndex = 2;
             this.labelSenha.Text = "Senha:";
             // 
             // textBoxNomeCadastroUsuario
             // 
             this.textBoxNomeCadastroUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nome", true));
-            this.textBoxNomeCadastroUsuario.Location = new System.Drawing.Point(62, 124);
+            this.textBoxNomeCadastroUsuario.Location = new System.Drawing.Point(61, 124);
             this.textBoxNomeCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeCadastroUsuario.Name = "textBoxNomeCadastroUsuario";
-            this.textBoxNomeCadastroUsuario.Size = new System.Drawing.Size(259, 22);
+            this.textBoxNomeCadastroUsuario.Size = new System.Drawing.Size(282, 22);
             this.textBoxNomeCadastroUsuario.TabIndex = 3;
             // 
             // usuarioBindingSource
@@ -99,7 +99,7 @@
             this.textBoxNomeUsuarioCadastroUsuario.Location = new System.Drawing.Point(62, 238);
             this.textBoxNomeUsuarioCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeUsuarioCadastroUsuario.Name = "textBoxNomeUsuarioCadastroUsuario";
-            this.textBoxNomeUsuarioCadastroUsuario.Size = new System.Drawing.Size(259, 22);
+            this.textBoxNomeUsuarioCadastroUsuario.Size = new System.Drawing.Size(254, 22);
             this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 4;
             // 
             // textBoxSenhaCadastroUsuario
@@ -154,10 +154,10 @@
             // labelConfirmarSenha
             // 
             this.labelConfirmarSenha.AutoSize = true;
-            this.labelConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConfirmarSenha.Location = new System.Drawing.Point(401, 211);
             this.labelConfirmarSenha.Name = "labelConfirmarSenha";
-            this.labelConfirmarSenha.Size = new System.Drawing.Size(166, 25);
+            this.labelConfirmarSenha.Size = new System.Drawing.Size(140, 20);
             this.labelConfirmarSenha.TabIndex = 10;
             this.labelConfirmarSenha.Text = "Confirmar Senha:";
             // 
@@ -172,10 +172,10 @@
             // labelRendaCadastroUsuario
             // 
             this.labelRendaCadastroUsuario.AutoSize = true;
-            this.labelRendaCadastroUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRendaCadastroUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRendaCadastroUsuario.Location = new System.Drawing.Point(57, 302);
             this.labelRendaCadastroUsuario.Name = "labelRendaCadastroUsuario";
-            this.labelRendaCadastroUsuario.Size = new System.Drawing.Size(75, 25);
+            this.labelRendaCadastroUsuario.Size = new System.Drawing.Size(62, 20);
             this.labelRendaCadastroUsuario.TabIndex = 12;
             this.labelRendaCadastroUsuario.Text = "Renda:";
             // 
@@ -202,7 +202,7 @@
             // buttonCancelarCadastrodeUsuario
             // 
             this.buttonCancelarCadastrodeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastrodeUsuario.Location = new System.Drawing.Point(538, 386);
+            this.buttonCancelarCadastrodeUsuario.Location = new System.Drawing.Point(538, 376);
             this.buttonCancelarCadastrodeUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadastrodeUsuario.Name = "buttonCancelarCadastrodeUsuario";
             this.buttonCancelarCadastrodeUsuario.Size = new System.Drawing.Size(103, 23);
@@ -214,7 +214,7 @@
             // buttonSalvarCadastrodeUsuario
             // 
             this.buttonSalvarCadastrodeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadastrodeUsuario.Location = new System.Drawing.Point(437, 386);
+            this.buttonSalvarCadastrodeUsuario.Location = new System.Drawing.Point(437, 376);
             this.buttonSalvarCadastrodeUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCadastrodeUsuario.Name = "buttonSalvarCadastrodeUsuario";
             this.buttonSalvarCadastrodeUsuario.Size = new System.Drawing.Size(77, 23);
@@ -227,7 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 455);
+            this.ClientSize = new System.Drawing.Size(718, 424);
             this.Controls.Add(this.buttonSalvarCadastrodeUsuario);
             this.Controls.Add(this.buttonCancelarCadastrodeUsuario);
             this.Controls.Add(this.label1);
