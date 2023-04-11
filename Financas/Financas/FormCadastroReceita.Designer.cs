@@ -65,6 +65,7 @@
             descricaoLabel.AutoSize = true;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descricaoLabel.Location = new System.Drawing.Point(58, 277);
+
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
             descricaoLabel.TabIndex = 1;
@@ -99,6 +100,7 @@
             bancoLabel.Size = new System.Drawing.Size(55, 16);
             bancoLabel.TabIndex = 14;
             bancoLabel.Text = "Banco:";
+
             // 
             // formaPagamentoLabel
             // 
