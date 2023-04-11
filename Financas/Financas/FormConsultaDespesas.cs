@@ -64,7 +64,7 @@ namespace Financas
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            using (FormConsultaDespesas frm = new FormConsultaDespesas())
+            using (FormCadastroDespesas frm = new FormCadastroDespesas())
             {
                 frm.ShowDialog();
             }

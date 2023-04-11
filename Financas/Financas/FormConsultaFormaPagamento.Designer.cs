@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             this.formaPagamentoDataGridView.AllowUserToDeleteRows = false;
             this.formaPagamentoDataGridView.AllowUserToOrderColumns = true;
             this.formaPagamentoDataGridView.AutoGenerateColumns = false;
+            this.formaPagamentoDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.formaPagamentoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.formaPagamentoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2});
@@ -163,12 +165,25 @@
             this.buttonSair.TabIndex = 13;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(578, 407);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Selecionar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormConsultaFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(824, 444);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonBuscarFormaPagamento);
@@ -208,5 +223,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.Button button1;
     }
 }

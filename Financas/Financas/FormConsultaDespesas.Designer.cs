@@ -49,6 +49,11 @@
             this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonAdicionar = new System.Windows.Forms.Button();
+            this.buttonAlterar = new System.Windows.Forms.Button();
+            this.labelInforamaConsultaDespesa = new System.Windows.Forms.Label();
+            this.buttonSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.despesasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -104,6 +109,7 @@
             this.despesasDataGridView.AllowUserToDeleteRows = false;
             this.despesasDataGridView.AllowUserToOrderColumns = true;
             this.despesasDataGridView.AutoGenerateColumns = false;
+            this.despesasDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.despesasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.despesasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
@@ -120,6 +126,55 @@
             this.despesasDataGridView.RowHeadersWidth = 51;
             this.despesasDataGridView.Size = new System.Drawing.Size(1040, 515);
             this.despesasDataGridView.TabIndex = 9;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 140;
+            // 
+            // Valor
+            // 
+            this.Valor.DataPropertyName = "Valor";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Valor.HeaderText = "Valor";
+            this.Valor.MinimumWidth = 6;
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            this.Valor.Width = 80;
+            // 
+            // Contato
+            // 
+            this.Contato.DataPropertyName = "Contato";
+            this.Contato.HeaderText = "Contato";
+            this.Contato.MinimumWidth = 6;
+            this.Contato.Name = "Contato";
+            this.Contato.ReadOnly = true;
+            this.Contato.Width = 125;
+            // 
+            // FormaPagamento
+            // 
+            this.FormaPagamento.DataPropertyName = "FormaPagamento";
+            this.FormaPagamento.HeaderText = "Forma de Pagamento";
+            this.FormaPagamento.MinimumWidth = 6;
+            this.FormaPagamento.Name = "FormaPagamento";
+            this.FormaPagamento.ReadOnly = true;
+            this.FormaPagamento.Width = 95;
+            // 
+            // Banco
+            // 
+            this.Banco.DataPropertyName = "Banco";
+            this.Banco.HeaderText = "Banco";
+            this.Banco.MinimumWidth = 6;
+            this.Banco.Name = "Banco";
+            this.Banco.ReadOnly = true;
+            this.Banco.Width = 85;
             // 
             // despesasBindingSource
             // 
@@ -264,6 +319,7 @@
             this.ClientSize = new System.Drawing.Size(1111, 688);
             this.Controls.Add(this.textBoxBuscarDespesas2);
             this.Controls.Add(this.comboBox1);
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.Controls.Add(this.labelInforamaConsultaDespesa);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonAdicionar);

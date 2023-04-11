@@ -80,5 +80,10 @@ namespace Financas
             }
             buttonBuscarFormaPagamento_Click(null,null);
         }
+
+        private void buttonSair_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

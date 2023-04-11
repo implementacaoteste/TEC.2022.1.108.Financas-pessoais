@@ -72,17 +72,18 @@
             // textBoxUsuario
             // 
             this.textBoxUsuario.Location = new System.Drawing.Point(152, 190);
-            this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsuario.Multiline = true;
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(312, 29);
             this.textBoxUsuario.TabIndex = 4;
             this.textBoxUsuario.Text = "ana";
+            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // textBoxSenhaLogin
             // 
             this.textBoxSenhaLogin.Location = new System.Drawing.Point(152, 241);
-            this.textBoxSenhaLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSenhaLogin.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSenhaLogin.Multiline = true;
             this.textBoxSenhaLogin.Name = "textBoxSenhaLogin";
             this.textBoxSenhaLogin.PasswordChar = '*';
@@ -94,12 +95,13 @@
             // 
             this.labelUsuarioLogin.AutoSize = true;
             this.labelUsuarioLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuarioLogin.Location = new System.Drawing.Point(64, 194);
+            this.labelUsuarioLogin.Location = new System.Drawing.Point(22, 191);
             this.labelUsuarioLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUsuarioLogin.Name = "labelUsuarioLogin";
-            this.labelUsuarioLogin.Size = new System.Drawing.Size(77, 18);
+            this.labelUsuarioLogin.Size = new System.Drawing.Size(122, 18);
             this.labelUsuarioLogin.TabIndex = 1;
-            this.labelUsuarioLogin.Text = " Usuário:";
+
+            this.labelUsuarioLogin.Text = "Nome Usuario:";
 
             // 
             // labelSenhaLogin
@@ -117,7 +119,7 @@
             // 
             this.buttonEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEntrar.Location = new System.Drawing.Point(219, 326);
-            this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(80, 34);
             this.buttonEntrar.TabIndex = 6;
@@ -129,7 +131,7 @@
             // 
             this.buttonsair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonsair.Location = new System.Drawing.Point(313, 325);
-            this.buttonsair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonsair.Margin = new System.Windows.Forms.Padding(4);
             this.buttonsair.Name = "buttonsair";
             this.buttonsair.Size = new System.Drawing.Size(80, 34);
             this.buttonsair.TabIndex = 6;
@@ -141,7 +143,7 @@
             // 
             this.buttonCdastraLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCdastraLogin.Location = new System.Drawing.Point(225, 380);
-            this.buttonCdastraLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCdastraLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCdastraLogin.Name = "buttonCdastraLogin";
             this.buttonCdastraLogin.Size = new System.Drawing.Size(160, 43);
             this.buttonCdastraLogin.TabIndex = 8;
@@ -179,7 +181,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";
