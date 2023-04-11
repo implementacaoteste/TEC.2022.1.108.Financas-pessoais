@@ -219,7 +219,7 @@
             this.formaPagamentoTextBox.TabIndex = 15;
             // 
             // buttonBuscarFormaPagamentoDespesas
-            // 
+            //
             this.buttonBuscarFormaPagamentoDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarFormaPagamentoDespesas.Location = new System.Drawing.Point(255, 214);
             this.buttonBuscarFormaPagamentoDespesas.Name = "buttonBuscarFormaPagamentoDespesas";
