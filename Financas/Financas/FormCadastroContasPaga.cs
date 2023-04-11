@@ -74,5 +74,7 @@ namespace Financas
                 frm.ShowDialog();
             }
         }
+
+
     }
 }

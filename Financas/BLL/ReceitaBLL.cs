@@ -34,5 +34,22 @@ namespace BLL
         {
            return new ReceitaDAL().BuscarPorId(_id);
         }
+        public List<Receita> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        {
+            return new ReceitaDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
+        }
+        public List<Receita> BuscarPorContato(string _contato)
+        {
+            return new ReceitaDAL().BuscarPorContato(_contato);
+        }
+        public List<Receita> BuscarPorFormaPagamento(string _formaPagamento)
+        {
+            return new ReceitaDAL().BuscarPorFormaPagamento(_formaPagamento);
+        }
+        public List<Receita> BuscarPorBanco(string _banco)
+        {
+            return new ReceitaDAL().BuscarPorBanco(_banco);
+        }
+
     }
 }

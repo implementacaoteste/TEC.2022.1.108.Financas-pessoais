@@ -104,7 +104,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Receita.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
                                     INNER JOIN Contato ON Receita.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Receita.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Receita.IdBanco = Banco.Id
@@ -121,6 +121,7 @@ namespace DAL
                         receita.Id = Convert.ToInt32(rd["ID"]);
                         receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
+                        receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
                         receita.Contato = rd["Nome"].ToString();
                         receita.FormaPagamento = rd["Descricao"].ToString();
                         receita.Banco = rd["Nome"].ToString();
@@ -149,7 +150,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Receita.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
                                     INNER JOIN Contato ON Receita.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Receita.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Receita.IdBanco = Banco.Id";
@@ -163,6 +164,7 @@ namespace DAL
                         receita.Id = Convert.ToInt32(rd["Id"]);
                         receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["DescricaoReceita"].ToString();
+                        receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
                         receita.Contato = rd["Contato"].ToString();
                         receita.FormaPagamento = rd["FormaPagamento"].ToString();
                         receita.Banco = rd["Banco"].ToString();
@@ -191,7 +193,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Receita.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
                                     INNER JOIN Contato ON Receita.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Receita.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Receita.IdBanco = Banco.Id
@@ -208,6 +210,7 @@ namespace DAL
                         receita.Id = Convert.ToInt32(rd["Id"]);
                         receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
+                        receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
                         receita.Contato = rd["Nome"].ToString();
                         receita.FormaPagamento = rd["Descricao"].ToString();
                         receita.Banco = rd["Nome"].ToString();
@@ -220,6 +223,193 @@ namespace DAL
             {
 
                 throw new Exception("Ocorreu um erro ao tentar buscar as receitas por descrição do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
+        public List<Receita> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<Receita> receitas = new List<Receita>();
+            Receita receita;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Receita.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
+                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id 
+                                    INNER JOIN FormaPagamento ON Receita.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON Receita.IdBanco = Banco.Id
+                                    WHERE Receita.DataEmissao BETWEEN @DataInicial AND @DataFinal";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@DataInicial", _periodoInicial);
+                cmd.Parameters.AddWithValue("@DataFinal", _periodoFinal);
+
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        receita = new Receita();
+                        receita.Id = Convert.ToInt32(rd["Id"]);
+                        receita.Valor = (double)rd["Valor"];
+                        receita.Descricao = rd["Descricao"].ToString();
+                        receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        receita.Contato = rd["Nome"].ToString();
+                        receita.FormaPagamento = rd["Descricao"].ToString();
+                        receita.Banco = rd["Nome"].ToString();
+                        receitas.Add(receita);
+                    }
+                }
+                return receitas;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as receitas por periodo do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<Receita> BuscarPorContato(string _contato)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<Receita> receitas = new List<Receita>();
+            Receita receita;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Receita.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
+                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id 
+                                    INNER JOIN FormaPagamento ON Receita.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON Receita.IdBanco = Banco.Id
+                                    WHERE Contato.Nome LIKE @Nome";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _contato + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        receita = new Receita();
+                        receita.Id = Convert.ToInt32(rd["Id"]);
+                        receita.Valor = (double)rd["Valor"];
+                        receita.Descricao = rd["Descricao"].ToString();
+                        receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        receita.Contato = rd["Nome"].ToString();
+                        receita.FormaPagamento = rd["Descricao"].ToString();
+                        receita.Banco = rd["Nome"].ToString();
+                        receitas.Add(receita);
+                    }
+                }
+                return receitas;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as receitas por Devedor do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<Receita> BuscarPorFormaPagamento(string _formaPagamento)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<Receita> receitas = new List<Receita>();
+            Receita receita;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Receita.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
+                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id 
+                                    INNER JOIN FormaPagamento ON Receita.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON Receita.IdBanco = Banco.Id
+                                    WHERE FormaPagamento.Descricao LIKE @Descricao";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _formaPagamento + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        receita = new Receita();
+                        receita.Id = Convert.ToInt32(rd["Id"]);
+                        receita.Valor = (double)rd["Valor"];
+                        receita.Descricao = rd["Descricao"].ToString();
+                        receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        receita.Contato = rd["Nome"].ToString();
+                        receita.FormaPagamento = rd["Descricao"].ToString();
+                        receita.Banco = rd["Nome"].ToString();
+                        receitas.Add(receita);
+                    }
+                }
+                return receitas;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as receitas por forma de pagamento do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<Receita> BuscarPorBanco(string _banco)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<Receita> receitas = new List<Receita>();
+            Receita receita;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Receita.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
+                                    INNER JOIN Contato ON Receita.IdContato = Contato.Id 
+                                    INNER JOIN FormaPagamento ON Receita.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON Receita.IdBanco = Banco.Id
+                                    WHERE Banco.Nome LIKE @Nome";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Nome", "%" + _banco + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        receita = new Receita();
+                        receita.Id = Convert.ToInt32(rd["Id"]);
+                        receita.Valor = (double)rd["Valor"];
+                        receita.Descricao = rd["Descricao"].ToString();
+                        receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        receita.Contato = rd["Nome"].ToString();
+                        receita.FormaPagamento = rd["Descricao"].ToString();
+                        receita.Banco = rd["Nome"].ToString();
+                        receitas.Add(receita);
+                    }
+                }
+                return receitas;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as receitas por banco do banco de dados", ex);
             }
             finally
             {

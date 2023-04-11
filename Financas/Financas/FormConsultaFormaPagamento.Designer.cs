@@ -51,6 +51,7 @@
             this.formaPagamentoDataGridView.AllowUserToDeleteRows = false;
             this.formaPagamentoDataGridView.AllowUserToOrderColumns = true;
             this.formaPagamentoDataGridView.AutoGenerateColumns = false;
+            this.formaPagamentoDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.formaPagamentoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.formaPagamentoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2});
@@ -180,6 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(824, 444);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSair);
