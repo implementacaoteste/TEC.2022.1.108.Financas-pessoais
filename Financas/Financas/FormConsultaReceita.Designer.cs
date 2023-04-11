@@ -32,6 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.receitaDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarReceita = new System.Windows.Forms.Button();
             this.buttonAlterarReceita = new System.Windows.Forms.Button();
             this.buttonExcluirReceita = new System.Windows.Forms.Button();
@@ -40,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
+
             this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,6 +58,7 @@
             this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBoxConsultarReceita2 = new System.Windows.Forms.TextBox();
+            
             ((System.ComponentModel.ISupportInitialize)(this.receitaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +69,7 @@
             this.receitaDataGridView.AllowUserToDeleteRows = false;
             this.receitaDataGridView.AllowUserToOrderColumns = true;
             this.receitaDataGridView.AutoGenerateColumns = false;
+            this.receitaDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.receitaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.receitaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
@@ -77,6 +87,71 @@
             this.receitaDataGridView.RowTemplate.Height = 24;
             this.receitaDataGridView.Size = new System.Drawing.Size(1040, 515);
             this.receitaDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descricao";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 140;
+            // 
+            // DataEmissao
+            // 
+            this.DataEmissao.DataPropertyName = "DataEmissao";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DataEmissao.HeaderText = "Data de Emissao";
+            this.DataEmissao.MinimumWidth = 6;
+            this.DataEmissao.Name = "DataEmissao";
+            this.DataEmissao.ReadOnly = true;
+            this.DataEmissao.Width = 140;
+            // 
+            // Valor
+            // 
+            this.Valor.DataPropertyName = "Valor";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Valor.HeaderText = "Valor";
+            this.Valor.MinimumWidth = 6;
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            this.Valor.Width = 80;
+            // 
+            // Contato
+            // 
+            this.Contato.DataPropertyName = "Contato";
+            this.Contato.HeaderText = "Contato";
+            this.Contato.MinimumWidth = 6;
+            this.Contato.Name = "Contato";
+            this.Contato.ReadOnly = true;
+            this.Contato.Width = 115;
+            // 
+            // FormaPagamento
+            // 
+            this.FormaPagamento.DataPropertyName = "FormaPagamento";
+            this.FormaPagamento.HeaderText = "Forma de Pagamento";
+            this.FormaPagamento.MinimumWidth = 6;
+            this.FormaPagamento.Name = "FormaPagamento";
+            this.FormaPagamento.ReadOnly = true;
+            this.FormaPagamento.Width = 167;
+            // 
+            // Banco
+            // 
+            this.Banco.DataPropertyName = "Banco";
+            this.Banco.HeaderText = "Banco";
+            this.Banco.MinimumWidth = 6;
+            this.Banco.Name = "Banco";
+            this.Banco.ReadOnly = true;
+            this.Banco.Width = 85;
+            // 
+            // receitaBindingSource
+            // 
+            this.receitaBindingSource.DataSource = typeof(Models.Receita);
             // 
             // buttonBuscarReceita
             // 
@@ -167,6 +242,7 @@
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
+
             // receitaBindingSource
             // 
             this.receitaBindingSource.DataSource = typeof(Models.Receita);
@@ -271,7 +347,11 @@
             // 
             // FormConsultaReceita
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
+
             this.ClientSize = new System.Drawing.Size(1111, 688);
             this.Controls.Add(this.textBoxConsultarReceita2);
             this.Controls.Add(this.comboBox1);
