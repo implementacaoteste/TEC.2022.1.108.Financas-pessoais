@@ -15,7 +15,7 @@ namespace Financas
     public partial class FormCadastroReceita : Form
     {
         public int Id;
-        public FormCadastroReceita(int id=0)
+        public FormCadastroReceita(int id = 0)
         {
             InitializeComponent();
             Id = id;
@@ -23,12 +23,12 @@ namespace Financas
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-              ReceitaBLL receitaBLL = new ReceitaBLL();
-              receitaBindingSource.EndEdit();
+            ReceitaBLL receitaBLL = new ReceitaBLL();
+            receitaBindingSource.EndEdit();
 
             if (Id == 0)
                 receitaBLL.Inserir((Receita)receitaBindingSource.Current);
-            else 
+            else
                 receitaBLL.Alterar((Receita)receitaBindingSource.Current);
             MessageBox.Show("Registro salvo com sucesso");
             Close();
@@ -49,7 +49,7 @@ namespace Financas
 
         private void buttonBuscarContatoReceita_Click(object sender, EventArgs e)
         {
-            using(FormConsultaContato frm = new FormConsultaContato())
+            using (FormConsultaContato frm = new FormConsultaContato())
             {
                 frm.ShowDialog();
             }
@@ -57,7 +57,7 @@ namespace Financas
 
         private void buttonBuscarBancoReceita_Click(object sender, EventArgs e)
         {
-            using(FormConsultaBanco frm = new FormConsultaBanco())
+            using (FormConsultaBanco frm = new FormConsultaBanco())
             {
                 frm.ShowDialog();
             }
@@ -65,7 +65,7 @@ namespace Financas
 
         private void buttonBuscarFormaPagamentoReceita_Click(object sender, EventArgs e)
         {
-            using(FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
             {
                 frm.ShowDialog();
             }
@@ -80,5 +80,6 @@ namespace Financas
                 frm.ShowDialog();
             }
 
+        }
     }
 }
