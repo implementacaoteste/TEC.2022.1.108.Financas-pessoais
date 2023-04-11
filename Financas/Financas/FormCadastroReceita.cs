@@ -70,5 +70,14 @@ namespace Financas
                 frm.ShowDialog();
             }
         }
+
+
+        private void buttonDataEmissaoCadastroReceita_Click(object sender, EventArgs e)
+        {
+            using (FormConsultaReceita frm = new FormConsultaReceita())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
