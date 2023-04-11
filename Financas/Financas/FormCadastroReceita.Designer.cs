@@ -69,8 +69,12 @@
             // valorLabel
             // 
             valorLabel.AutoSize = true;
+
             valorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             valorLabel.Location = new System.Drawing.Point(58, 112);
+
+  
+
             valorLabel.Name = "valorLabel";
             valorLabel.Size = new System.Drawing.Size(53, 20);
             valorLabel.TabIndex = 3;
@@ -121,7 +125,10 @@
             // 
             // textBoxGanhos
             // 
+
+
             this.textBoxGanhos.Location = new System.Drawing.Point(62, 135);
+
             this.textBoxGanhos.Name = "textBoxGanhos";
             this.textBoxGanhos.Size = new System.Drawing.Size(133, 22);
             this.textBoxGanhos.TabIndex = 10;
