@@ -17,12 +17,13 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Contato(Nome, Endereco, Numero)
-                                    VALUES(@Nome, @Endereco, @Numero)";
+                cmd.CommandText = @"INSERT INTO Contato(Nome, Endereco, Numero,Descricao)
+                                    VALUES(@Nome, @Endereco, @Numero,@Descricao)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", _contato.Nome);
                 cmd.Parameters.AddWithValue("@Endereco", _contato.Endereco);
                 cmd.Parameters.AddWithValue("@Numero", _contato.Numero);
+                cmd.Parameters.AddWithValue("@Descricao", _contato.Descricao);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -42,11 +43,13 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Despesas SET Nome=@Nome, Endereco=@Endereco, Numero=@Numero WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Contato SET Nome=@Nome, Endereco=@Endereco, Numero=@Numero , Descricao=@Descricao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("Id", _contato.Id);
                 cmd.Parameters.AddWithValue("@Nome", _contato.Nome);
                 cmd.Parameters.AddWithValue("@Endereco", _contato.Endereco);
                 cmd.Parameters.AddWithValue("@Numero", _contato.Numero);
+                cmd.Parameters.AddWithValue("@Descricao",_contato.Descricao);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();

@@ -79,5 +79,10 @@ namespace Financas
                 textBoxSenhaLogin.PasswordChar = '*';
             }
         }
+
+        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
