@@ -271,5 +271,10 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public List<Despesas> BuscarPorFormaPagamento(string formaPagamento)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

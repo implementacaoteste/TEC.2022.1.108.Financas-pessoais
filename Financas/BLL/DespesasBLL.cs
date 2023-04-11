@@ -40,6 +40,9 @@ namespace BLL
             return new DespesasDAL().BuscarPorBanco(_banco);
         }
 
-
+        public List<Despesas> BuscarPorFormaPagamento(string _formaPagamento)
+        {
+            return new DespesasDAL().BuscarPorFormaPagamento(_formaPagamento);
+        }
     }
 }
