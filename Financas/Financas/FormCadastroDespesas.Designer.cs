@@ -168,7 +168,7 @@
             // buttonBuscarContatoDespesas
             // 
             this.buttonBuscarContatoDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarContatoDespesas.Location = new System.Drawing.Point(545, 133);
+            this.buttonBuscarContatoDespesas.Location = new System.Drawing.Point(545, 135);
             this.buttonBuscarContatoDespesas.Name = "buttonBuscarContatoDespesas";
             this.buttonBuscarContatoDespesas.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarContatoDespesas.TabIndex = 12;
@@ -206,7 +206,7 @@
             // buttonBuscarFormaPagamentoDespesas
             // 
             this.buttonBuscarFormaPagamentoDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarFormaPagamentoDespesas.Location = new System.Drawing.Point(255, 212);
+            this.buttonBuscarFormaPagamentoDespesas.Location = new System.Drawing.Point(255, 213);
             this.buttonBuscarFormaPagamentoDespesas.Name = "buttonBuscarFormaPagamentoDespesas";
             this.buttonBuscarFormaPagamentoDespesas.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarFormaPagamentoDespesas.TabIndex = 16;
