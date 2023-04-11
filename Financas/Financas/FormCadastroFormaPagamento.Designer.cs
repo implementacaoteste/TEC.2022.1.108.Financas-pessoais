@@ -42,9 +42,10 @@
             // descricaoLabel
             // 
             descricaoLabel.AutoSize = true;
-            descricaoLabel.Location = new System.Drawing.Point(61, 198);
+            descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descricaoLabel.Location = new System.Drawing.Point(71, 160);
             descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(72, 16);
+            descricaoLabel.Size = new System.Drawing.Size(91, 20);
             descricaoLabel.TabIndex = 2;
             descricaoLabel.Text = "Descrição:";
             // 
@@ -54,9 +55,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(656, 86);
+            this.label1.Size = new System.Drawing.Size(624, 86);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro Forma de Pagamento";
+            this.label1.Text = "Cadastro forma de pagamento";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // formaPagamentoBindingSource
@@ -66,15 +67,15 @@
             // textBoxDescricao
             // 
             this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formaPagamentoBindingSource, "Descricao", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(139, 195);
+            this.textBoxDescricao.Location = new System.Drawing.Point(75, 193);
             this.textBoxDescricao.Name = "textBoxDescricao";
-            this.textBoxDescricao.Size = new System.Drawing.Size(421, 22);
+            this.textBoxDescricao.Size = new System.Drawing.Size(467, 22);
             this.textBoxDescricao.TabIndex = 3;
             // 
             // buttonCancelar
             // 
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.Location = new System.Drawing.Point(361, 309);
+            this.buttonCancelar.Location = new System.Drawing.Point(364, 316);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(90, 23);
             this.buttonCancelar.TabIndex = 4;
@@ -85,7 +86,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(472, 309);
+            this.buttonSalvar.Location = new System.Drawing.Point(467, 316);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvar.TabIndex = 5;
@@ -93,11 +94,11 @@
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
-            // FormFormaPagamento
+            // FormCadastroFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 391);
+            this.ClientSize = new System.Drawing.Size(624, 391);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(descricaoLabel);
@@ -106,7 +107,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormFormaPagamento";
+            this.Name = "FormCadastroFormaPagamento";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
