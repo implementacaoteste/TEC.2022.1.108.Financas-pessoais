@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> 839adf7fa3fff10e2bde497f8c27d15f74dea510
             this.label1 = new System.Windows.Forms.Label();
             this.contatoDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +73,7 @@
             this.contatoDataGridView.AllowUserToOrderColumns = true;
             this.contatoDataGridView.AutoGenerateColumns = false;
             this.contatoDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+<<<<<<< HEAD
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -76,6 +82,16 @@
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.contatoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+=======
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.contatoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+>>>>>>> 839adf7fa3fff10e2bde497f8c27d15f74dea510
             this.contatoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contatoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -83,6 +99,7 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.contatoDataGridView.DataSource = this.contatoBindingSource;
+<<<<<<< HEAD
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,6 +108,16 @@
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.contatoDataGridView.DefaultCellStyle = dataGridViewCellStyle18;
+=======
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.contatoDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+>>>>>>> 839adf7fa3fff10e2bde497f8c27d15f74dea510
             this.contatoDataGridView.Location = new System.Drawing.Point(35, 135);
             this.contatoDataGridView.Name = "contatoDataGridView";
             this.contatoDataGridView.ReadOnly = true;
@@ -143,7 +170,11 @@
             // 
             this.textBoxBuscar.Location = new System.Drawing.Point(106, 109);
             this.textBoxBuscar.Name = "textBoxBuscar";
+<<<<<<< HEAD
             this.textBoxBuscar.Size = new System.Drawing.Size(498, 22);
+=======
+            this.textBoxBuscar.Size = new System.Drawing.Size(625, 22);
+>>>>>>> 839adf7fa3fff10e2bde497f8c27d15f74dea510
             this.textBoxBuscar.TabIndex = 2;
             // 
             // label2
@@ -181,7 +212,11 @@
             // buttonExcluir
             // 
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.buttonExcluir.Location = new System.Drawing.Point(1000, 109);
+=======
+            this.buttonExcluir.Location = new System.Drawing.Point(1000, 111);
+>>>>>>> 839adf7fa3fff10e2bde497f8c27d15f74dea510
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(75, 23);
             this.buttonExcluir.TabIndex = 6;
@@ -192,7 +227,11 @@
             // buttonSair
             // 
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.buttonSair.Location = new System.Drawing.Point(1000, 656);
+=======
+            this.buttonSair.Location = new System.Drawing.Point(1000, 654);
+>>>>>>> 839adf7fa3fff10e2bde497f8c27d15f74dea510
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
             this.buttonSair.TabIndex = 6;
@@ -214,7 +253,11 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.button1.Location = new System.Drawing.Point(852, 656);
+=======
+            this.button1.Location = new System.Drawing.Point(900, 654);
+>>>>>>> 839adf7fa3fff10e2bde497f8c27d15f74dea510
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 8;
