@@ -21,10 +21,35 @@ namespace Financas
 
         private void buttonBuscarContasReceber_Click(object sender, EventArgs e)
         {
+                contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
             try
             {
-
-                contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
+                switch (comboBox1.SelectedIndex)
+                {
+                    case 0:
+                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarTodos();
+                        break;
+                    case 1:
+                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarPorId(Convert.ToInt32(textBoxConsultarContasReceber.Text));
+                        break;
+                    case 2:
+                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarPorDescricao(textBoxConsultarContasReceber.Text);
+                        break;
+                    case 3:
+                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultarContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
+                        break;
+                    case 4:
+                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarPorContato(textBoxConsultarContasReceber.Text);
+                        break;
+                    case 5:
+                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarPorFormaPagamento(textBoxConsultarContasReceber.Text);
+                        break;
+                    case 6:
+                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarPorBanco(textBoxConsultarContasReceber.Text);
+                        break;
+                    default:
+                        break;
+                }
             }
             catch (Exception ex)
             {
@@ -72,6 +97,22 @@ namespace Financas
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            labelDataInicial.Visible = false;
+            labelDataFinal.Visible = false;
+            textBoxConsultarContasReceber.Width = 498;
+            textBoxConsultarContasReceber2.Visible = false;
+
+            if (comboBox1.SelectedIndex == 3)
+            {
+                labelDataInicial.Visible = true;
+                labelDataFinal.Visible = true;
+                textBoxConsultarContasReceber.Width = 248;
+                textBoxConsultarContasReceber2.Visible = true;
+            }
         }
     }
 }
