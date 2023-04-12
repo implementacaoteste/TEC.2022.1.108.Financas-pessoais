@@ -199,7 +199,7 @@
             this.formaPagamentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "FormaPagamento", true));
             this.formaPagamentoTextBox.Location = new System.Drawing.Point(386, 205);
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
-            this.formaPagamentoTextBox.Size = new System.Drawing.Size(187, 22);
+            this.formaPagamentoTextBox.Size = new System.Drawing.Size(204, 22);
             this.formaPagamentoTextBox.TabIndex = 16;
             // 
             // buttonBuscarContatoReceita
@@ -227,7 +227,7 @@
             // buttonBuscarFormaPagamentoReceita
             // 
             this.buttonBuscarFormaPagamentoReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarFormaPagamentoReceita.Location = new System.Drawing.Point(579, 196);
+            this.buttonBuscarFormaPagamentoReceita.Location = new System.Drawing.Point(595, 196);
             this.buttonBuscarFormaPagamentoReceita.Name = "buttonBuscarFormaPagamentoReceita";
             this.buttonBuscarFormaPagamentoReceita.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscarFormaPagamentoReceita.TabIndex = 19;

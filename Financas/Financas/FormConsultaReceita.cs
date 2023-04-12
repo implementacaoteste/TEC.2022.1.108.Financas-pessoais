@@ -39,21 +39,18 @@ namespace Financas
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarTodos();
                         break;
                     case 1:
-                        receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorId(Convert.ToInt32(textBoxConsultarReceita.Text));
-                        break;
-                    case 2:
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorDescricao(textBoxConsultarReceita.Text);
                         break;
-                    case 3:
+                    case 2:
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultarReceita.Text), Convert.ToDateTime(textBoxConsultarReceita2.Text));
                         break;
-                    case 4:
+                    case 3:
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorContato(textBoxConsultarReceita.Text);
                         break;
-                    case 5:
+                    case 4:
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorFormaPagamento(textBoxConsultarReceita.Text);
                         break;
-                    case 6:
+                    case 5:
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorBanco(textBoxConsultarReceita.Text);
                         break;
                     default:
