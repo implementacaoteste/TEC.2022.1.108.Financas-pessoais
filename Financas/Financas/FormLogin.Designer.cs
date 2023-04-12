@@ -74,23 +74,23 @@
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(443, 196);
+            this.textBoxUsuario.Location = new System.Drawing.Point(446, 196);
             this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsuario.Multiline = true;
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(339, 29);
+            this.textBoxUsuario.Size = new System.Drawing.Size(339, 38);
             this.textBoxUsuario.TabIndex = 4;
             this.textBoxUsuario.Text = "ana";
             this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // textBoxSenhaLogin
             // 
-            this.textBoxSenhaLogin.Location = new System.Drawing.Point(443, 283);
+            this.textBoxSenhaLogin.Location = new System.Drawing.Point(445, 274);
             this.textBoxSenhaLogin.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSenhaLogin.Multiline = true;
             this.textBoxSenhaLogin.Name = "textBoxSenhaLogin";
             this.textBoxSenhaLogin.PasswordChar = '*';
-            this.textBoxSenhaLogin.Size = new System.Drawing.Size(312, 29);
+            this.textBoxSenhaLogin.Size = new System.Drawing.Size(312, 35);
             this.textBoxSenhaLogin.TabIndex = 4;
             this.textBoxSenhaLogin.Text = "123456";
             // 
@@ -98,7 +98,7 @@
             // 
             this.labelUsuarioLogin.AutoSize = true;
             this.labelUsuarioLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuarioLogin.Location = new System.Drawing.Point(305, 202);
+            this.labelUsuarioLogin.Location = new System.Drawing.Point(304, 207);
             this.labelUsuarioLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUsuarioLogin.Name = "labelUsuarioLogin";
             this.labelUsuarioLogin.Size = new System.Drawing.Size(122, 18);
@@ -119,10 +119,10 @@
             // buttonEntrar
             // 
             this.buttonEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEntrar.Location = new System.Drawing.Point(385, 452);
+            this.buttonEntrar.Location = new System.Drawing.Point(463, 452);
             this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEntrar.Name = "buttonEntrar";
-            this.buttonEntrar.Size = new System.Drawing.Size(80, 34);
+            this.buttonEntrar.Size = new System.Drawing.Size(96, 34);
             this.buttonEntrar.TabIndex = 6;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = true;
@@ -131,10 +131,10 @@
             // buttonsair
             // 
             this.buttonsair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonsair.Location = new System.Drawing.Point(561, 452);
+            this.buttonsair.Location = new System.Drawing.Point(584, 452);
             this.buttonsair.Margin = new System.Windows.Forms.Padding(4);
             this.buttonsair.Name = "buttonsair";
-            this.buttonsair.Size = new System.Drawing.Size(80, 34);
+            this.buttonsair.Size = new System.Drawing.Size(97, 34);
             this.buttonsair.TabIndex = 6;
             this.buttonsair.Text = "Sair";
             this.buttonsair.UseVisualStyleBackColor = true;
@@ -143,10 +143,10 @@
             // buttonCdastraLogin
             // 
             this.buttonCdastraLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCdastraLogin.Location = new System.Drawing.Point(429, 531);
+            this.buttonCdastraLogin.Location = new System.Drawing.Point(443, 527);
             this.buttonCdastraLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCdastraLogin.Name = "buttonCdastraLogin";
-            this.buttonCdastraLogin.Size = new System.Drawing.Size(160, 43);
+            this.buttonCdastraLogin.Size = new System.Drawing.Size(252, 43);
             this.buttonCdastraLogin.TabIndex = 8;
             this.buttonCdastraLogin.Text = "Cadastra-se";
             this.buttonCdastraLogin.UseVisualStyleBackColor = true;
