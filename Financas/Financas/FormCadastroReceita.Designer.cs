@@ -35,6 +35,7 @@
             System.Windows.Forms.Label bancoLabel;
             System.Windows.Forms.Label formaPagamentoLabel;
             System.Windows.Forms.Label dataEmissaoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroReceita));
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxGanhos = new System.Windows.Forms.TextBox();
@@ -63,7 +64,7 @@
             // 
             descricaoLabel.AutoSize = true;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(58, 270);
+            descricaoLabel.Location = new System.Drawing.Point(61, 276);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
             descricaoLabel.TabIndex = 1;
@@ -72,11 +73,10 @@
             // valorLabel
             // 
             valorLabel.AutoSize = true;
-
             valorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            valorLabel.Location = new System.Drawing.Point(62, 96);
+            valorLabel.Location = new System.Drawing.Point(65, 96);
             valorLabel.Name = "valorLabel";
-            valorLabel.Size = new System.Drawing.Size(48, 16);
+            valorLabel.Size = new System.Drawing.Size(53, 20);
             valorLabel.TabIndex = 3;
             valorLabel.Text = "Valor:";
             // 
@@ -84,7 +84,7 @@
             // 
             contatoLabel.AutoSize = true;
             contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contatoLabel.Location = new System.Drawing.Point(385, 96);
+            contatoLabel.Location = new System.Drawing.Point(389, 96);
             contatoLabel.Name = "contatoLabel";
             contatoLabel.Size = new System.Drawing.Size(77, 20);
             contatoLabel.TabIndex = 13;
@@ -94,9 +94,9 @@
             // 
             bancoLabel.AutoSize = true;
             bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bancoLabel.Location = new System.Drawing.Point(61, 176);
+            bancoLabel.Location = new System.Drawing.Point(61, 180);
             bancoLabel.Name = "bancoLabel";
-            bancoLabel.Size = new System.Drawing.Size(55, 16);
+            bancoLabel.Size = new System.Drawing.Size(62, 20);
             bancoLabel.TabIndex = 14;
             bancoLabel.Text = "Banco:";
             // 
@@ -104,11 +104,21 @@
             // 
             formaPagamentoLabel.AutoSize = true;
             formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            formaPagamentoLabel.Location = new System.Drawing.Point(383, 180);
+            formaPagamentoLabel.Location = new System.Drawing.Point(386, 180);
             formaPagamentoLabel.Name = "formaPagamentoLabel";
             formaPagamentoLabel.Size = new System.Drawing.Size(174, 20);
             formaPagamentoLabel.TabIndex = 15;
             formaPagamentoLabel.Text = "Forma de Pagamento:";
+            // 
+            // dataEmissaoLabel
+            // 
+            dataEmissaoLabel.AutoSize = true;
+            dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataEmissaoLabel.Location = new System.Drawing.Point(390, 276);
+            dataEmissaoLabel.Name = "dataEmissaoLabel";
+            dataEmissaoLabel.Size = new System.Drawing.Size(120, 20);
+            dataEmissaoLabel.TabIndex = 19;
+            dataEmissaoLabel.Text = "Data Emissao:";
             // 
             // textBoxDescricao
             // 
@@ -153,8 +163,10 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(737, 96);
@@ -177,9 +189,9 @@
             // bancoTextBox
             // 
             this.bancoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Banco", true));
-            this.bancoTextBox.Location = new System.Drawing.Point(66, 205);
+            this.bancoTextBox.Location = new System.Drawing.Point(61, 205);
             this.bancoTextBox.Name = "bancoTextBox";
-            this.bancoTextBox.Size = new System.Drawing.Size(154, 22);
+            this.bancoTextBox.Size = new System.Drawing.Size(159, 22);
             this.bancoTextBox.TabIndex = 15;
             // 
             // formaPagamentoTextBox
@@ -223,18 +235,7 @@
             this.buttonBuscarFormaPagamentoReceita.UseVisualStyleBackColor = true;
             this.buttonBuscarFormaPagamentoReceita.Click += new System.EventHandler(this.buttonBuscarFormaPagamentoReceita_Click);
             // 
-            // dataEmissaoLabel
-            // 
-            dataEmissaoLabel.AutoSize = true;
-            dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataEmissaoLabel.Location = new System.Drawing.Point(387, 275);
-            dataEmissaoLabel.Name = "dataEmissaoLabel";
-            dataEmissaoLabel.Size = new System.Drawing.Size(120, 20);
-            dataEmissaoLabel.TabIndex = 19;
-            dataEmissaoLabel.Text = "Data Emissao:";
-            // 
             // dataEmissaoDateTimePicker
-            // dataEmissaoTextBox
             // 
             this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.receitaBindingSource, "DataEmissao", true));
             this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(390, 303);
@@ -246,11 +247,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(737, 401);
             this.Controls.Add(dataEmissaoLabel);
             this.Controls.Add(this.dataEmissaoDateTimePicker);
             this.Controls.Add(this.contatoTextBox);
-            this.BackColor = System.Drawing.Color.PowderBlue;
             this.Controls.Add(this.buttonBuscarFormaPagamentoReceita);
             this.Controls.Add(this.buttonBuscarBancoReceita);
             this.Controls.Add(this.buttonBuscarContatoReceita);

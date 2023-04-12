@@ -33,6 +33,7 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroContato));
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.contatoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enderecoTextBox = new System.Windows.Forms.TextBox();
@@ -52,7 +53,7 @@
             // 
             descricaoLabel.AutoSize = true;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(69, 263);
+            descricaoLabel.Location = new System.Drawing.Point(73, 263);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
             descricaoLabel.TabIndex = 6;
@@ -62,7 +63,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(69, 115);
+            label2.Location = new System.Drawing.Point(73, 115);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(58, 20);
             label2.TabIndex = 1;
@@ -72,7 +73,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(69, 191);
+            label3.Location = new System.Drawing.Point(73, 191);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(85, 20);
             label3.TabIndex = 2;
@@ -82,7 +83,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(394, 115);
+            label4.Location = new System.Drawing.Point(398, 115);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(73, 20);
             label4.TabIndex = 4;
@@ -121,13 +122,15 @@
             this.descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Descricao", true));
             this.descricaoTextBox.Location = new System.Drawing.Point(73, 286);
             this.descricaoTextBox.Name = "descricaoTextBox";
-            this.descricaoTextBox.Size = new System.Drawing.Size(553, 22);
+            this.descricaoTextBox.Size = new System.Drawing.Size(506, 22);
             this.descricaoTextBox.TabIndex = 7;
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(705, 76);
@@ -161,7 +164,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(705, 424);
             this.Controls.Add(this.buttonSalvarCadastroContato);
             this.Controls.Add(this.buttonCancelarCadastroContato);

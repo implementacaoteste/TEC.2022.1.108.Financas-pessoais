@@ -35,6 +35,7 @@
             System.Windows.Forms.Label bancoLabel;
             System.Windows.Forms.Label formaPagamentoLabel;
             System.Windows.Forms.Label dataEmissaoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroContasReceber));
             this.valorReceberTextBoxContasReceber = new System.Windows.Forms.TextBox();
             this.contasReceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -62,8 +63,9 @@
             // valorReceberLabel
             // 
             valorReceberLabel.AutoSize = true;
+            valorReceberLabel.BackColor = System.Drawing.SystemColors.Control;
             valorReceberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            valorReceberLabel.Location = new System.Drawing.Point(65, 111);
+            valorReceberLabel.Location = new System.Drawing.Point(70, 111);
             valorReceberLabel.Name = "valorReceberLabel";
             valorReceberLabel.Size = new System.Drawing.Size(129, 20);
             valorReceberLabel.TabIndex = 1;
@@ -72,8 +74,9 @@
             // descricaoLabel
             // 
             descricaoLabel.AutoSize = true;
+            descricaoLabel.BackColor = System.Drawing.SystemColors.Control;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(66, 299);
+            descricaoLabel.Location = new System.Drawing.Point(71, 299);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
             descricaoLabel.TabIndex = 3;
@@ -82,8 +85,9 @@
             // contatoLabel
             // 
             contatoLabel.AutoSize = true;
+            contatoLabel.BackColor = System.Drawing.SystemColors.Control;
             contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contatoLabel.Location = new System.Drawing.Point(311, 111);
+            contatoLabel.Location = new System.Drawing.Point(316, 111);
             contatoLabel.Name = "contatoLabel";
             contatoLabel.Size = new System.Drawing.Size(77, 20);
             contatoLabel.TabIndex = 10;
@@ -92,8 +96,9 @@
             // bancoLabel
             // 
             bancoLabel.AutoSize = true;
+            bancoLabel.BackColor = System.Drawing.SystemColors.Control;
             bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bancoLabel.Location = new System.Drawing.Point(65, 193);
+            bancoLabel.Location = new System.Drawing.Point(70, 193);
             bancoLabel.Name = "bancoLabel";
             bancoLabel.Size = new System.Drawing.Size(62, 20);
             bancoLabel.TabIndex = 12;
@@ -102,8 +107,9 @@
             // formaPagamentoLabel
             // 
             formaPagamentoLabel.AutoSize = true;
+            formaPagamentoLabel.BackColor = System.Drawing.SystemColors.Control;
             formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            formaPagamentoLabel.Location = new System.Drawing.Point(311, 193);
+            formaPagamentoLabel.Location = new System.Drawing.Point(316, 193);
             formaPagamentoLabel.Name = "formaPagamentoLabel";
             formaPagamentoLabel.Size = new System.Drawing.Size(174, 20);
             formaPagamentoLabel.TabIndex = 13;
@@ -112,8 +118,9 @@
             // dataEmissaoLabel
             // 
             dataEmissaoLabel.AutoSize = true;
+            dataEmissaoLabel.BackColor = System.Drawing.SystemColors.Control;
             dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataEmissaoLabel.Location = new System.Drawing.Point(352, 296);
+            dataEmissaoLabel.Location = new System.Drawing.Point(358, 296);
             dataEmissaoLabel.Name = "dataEmissaoLabel";
             dataEmissaoLabel.Size = new System.Drawing.Size(143, 20);
             dataEmissaoLabel.TabIndex = 16;
@@ -133,8 +140,10 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(694, 81);
@@ -248,10 +257,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(694, 455);
             this.Controls.Add(dataEmissaoLabel);
             this.Controls.Add(this.dataEmissaoDateTimePicker);
-            this.BackColor = System.Drawing.Color.PowderBlue;
             this.Controls.Add(this.buttonBuscarFormaPagamento);
             this.Controls.Add(this.buttonBuscarBanco);
             this.Controls.Add(formaPagamentoLabel);
