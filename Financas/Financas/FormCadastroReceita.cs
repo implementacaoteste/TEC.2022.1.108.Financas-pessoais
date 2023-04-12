@@ -75,6 +75,8 @@ namespace Financas
             using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
             {
                 frm.ShowDialog();
+                ((Receita)receitaBindingSource.Current).IdFormaPagamento = frm.Id;
+                formaPagamentoTextBox.Text = frm.Descricao;
             }
         }
 

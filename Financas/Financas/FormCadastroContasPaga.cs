@@ -63,9 +63,11 @@ namespace Financas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (FormConsultaBanco frm = new FormConsultaBanco())
+            using (FormConsultaBanco frm = new FormConsultaBanco(true))
             {
                 frm.ShowDialog();
+                ((ContasPagar)contasPagarBindingSource.Current).IdBanco = frm.Id;
+                bancoTextBox.Text = frm.Nome;
             }
         }
 

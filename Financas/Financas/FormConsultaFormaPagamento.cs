@@ -14,6 +14,8 @@ namespace Financas
 {
     public partial class FormConsultaFormaPagamento : Form
     {
+        public int Id;
+        public string Descricao;
         public FormConsultaFormaPagamento()
         {
             InitializeComponent();
@@ -78,12 +80,32 @@ namespace Financas
             {
                 frm.ShowDialog();
             }
-            buttonBuscarFormaPagamento_Click(null,null);
+            buttonBuscarFormaPagamento_Click(null, null);
         }
 
         private void buttonSair_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (formaPagamentoBindingSource.Count > 0)
+                {
+                    Id = ((FormaPagamento)formaPagamentoBindingSource.Current).Id;
+                    Descricao = ((FormaPagamento)formaPagamentoBindingSource.Current).Descricao;
+                    Close();
+                }
+                else
+                    MessageBox.Show("Não existe um Devedor para ser selecionado.");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
