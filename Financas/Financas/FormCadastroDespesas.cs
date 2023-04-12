@@ -1,13 +1,6 @@
 ﻿using BLL;
 using Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Financas
@@ -79,12 +72,6 @@ namespace Financas
             {
                 frm.ShowDialog();
             }
-        }
-        private void bancoTextBox_TextChanged(object sender, EventArgs e)
-        private void descricaoLabel_Click(object sender, EventArgs e)
-
-        {
-
         }
     }
 }

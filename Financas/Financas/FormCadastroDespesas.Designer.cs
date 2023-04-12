@@ -81,7 +81,6 @@
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
             descricaoLabel.TabIndex = 9;
             descricaoLabel.Text = "Descrição:";
-            descricaoLabel.Click += new System.EventHandler(this.descricaoLabel_Click);
             // 
             // contatoLabel
             // 
@@ -208,7 +207,6 @@
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(154, 22);
             this.bancoTextBox.TabIndex = 13;
-            this.bancoTextBox.TextChanged += new System.EventHandler(this.bancoTextBox_TextChanged);
             // 
             // buttonBuscar
             // 
