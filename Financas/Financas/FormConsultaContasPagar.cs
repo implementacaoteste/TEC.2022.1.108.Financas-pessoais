@@ -29,21 +29,18 @@ namespace Financas
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarTodos();
                         break;
                     case 1:
-                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorId(Convert.ToInt32(textBoxConsultaContasPagar.Text));
-                        break;
-                    case 2:
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorDescricao(textBoxConsultaContasPagar.Text);
                         break;
-                    case 3:
+                    case 2:
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
                         break;
-                    case 4:
+                    case 3:
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorContato(textBoxConsultaContasPagar.Text);
                         break;
-                    case 5:
+                    case 4:
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorFormaPagamento(textBoxConsultaContasPagar.Text);
                         break;
-                    case 6:
+                    case 5:
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorBanco(textBoxConsultaContasPagar.Text);
                         break;
                     default:

@@ -14,9 +14,12 @@ namespace Financas
 {
     public partial class FormConsultaContato : Form
     {
-        public FormConsultaContato()
+        public int Id;
+        public string Nome;
+        public FormConsultaContato(bool _selecionar = false)
         {
             InitializeComponent();
+            buttonSelecionarContato.Visible = _selecionar;
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
@@ -72,7 +75,28 @@ namespace Financas
             }
             buttonBuscar_Click(null, null);
         }
+        private void buttonSelecionarContato_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (contatoBindingSource.Count > 0)
+                {
+                    Id = ((Contato)contatoBindingSource.Current).Id;
+                    Nome = ((Contato)contatoBindingSource.Current).Nome;
+                    Close();
+                }
+                else
+                    MessageBox.Show("Não existe um Devedor para ser selecionado.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void FormConsultaContato_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

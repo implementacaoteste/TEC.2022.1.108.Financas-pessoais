@@ -1,13 +1,6 @@
 ﻿using BLL;
 using Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Financas
@@ -55,17 +48,21 @@ namespace Financas
 
         private void buttonBuscarContatoDespesas_Click(object sender, EventArgs e)
         {
-            using(FormConsultaContato frm = new FormConsultaContato())
+            using(FormConsultaContato frm = new FormConsultaContato(true))
             {
                 frm.ShowDialog();
+                ((Despesas)despesasBindingSource.Current).IdContato = frm.Id;
+                contatoTextBox.Text = frm.Nome;
             }
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            using(FormConsultaBanco frm = new FormConsultaBanco())
+            using(FormConsultaBanco frm = new FormConsultaBanco(true))
             {
                 frm.ShowDialog();
+                ((Despesas)despesasBindingSource.Current).IdBanco = frm.Id;
+                bancoTextBox.Text = frm.Nome;
             }
         }
 
