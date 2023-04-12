@@ -269,7 +269,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar as receitas por periodo do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a pagar por periodo do banco de dados", ex);
             }
             finally
             {
@@ -314,7 +314,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar as receitas por Devedor do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a pagar por Devedor do banco de dados", ex);
             }
             finally
             {
@@ -359,7 +359,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar as receitas por forma de pagamento do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a pagar por forma de pagamento do banco de dados", ex);
             }
             finally
             {
@@ -405,7 +405,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar as receitas por banco do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a pagar por banco do banco de dados", ex);
             }
             finally
             {

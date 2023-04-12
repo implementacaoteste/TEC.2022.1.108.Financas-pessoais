@@ -30,9 +30,25 @@ namespace BLL
         {
             return new ContasReceberDAL().BuscarPorDescricao(_descricao);
         }
-        public void BuscarPorId(int _id)
+        public ContasReceber BuscarPorId(int _id)
         {
-            new ContasReceberDAL().BuscarPorId(_id);
+            return new ContasReceberDAL().BuscarPorId(_id);
+        }
+        public List<ContasReceber> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        {
+            return new ContasReceberDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
+        }
+        public List<ContasReceber> BuscarPorContato(string _contato)
+        {
+            return new ContasReceberDAL().BuscarPorContato(_contato);
+        }
+        public List<ContasReceber> BuscarPorFormaPagamento(string _formaPagamento)
+        {
+            return new ContasReceberDAL().BuscarPorFormaPagamento(_formaPagamento);
+        }
+        public List<ContasReceber> BuscarPorBanco(string _banco)
+        {
+            return new ContasReceberDAL().BuscarPorBanco(_banco);
         }
     }
 }

@@ -103,7 +103,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
                                     INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id
@@ -120,6 +120,7 @@ namespace DAL
                         contasReceber.Id = Convert.ToInt32(rd["ID"]);
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
                         contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
                         contasReceber.Contato = rd["Nome"].ToString();
                         contasReceber.FormaPagamento = rd["Descricao"].ToString();
                         contasReceber.Banco = rd["Nome"].ToString();
@@ -148,7 +149,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
                                     INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id";
@@ -162,6 +163,7 @@ namespace DAL
                         contasReceber.Id = Convert.ToInt32(rd["Id"]);
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
                         contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
                         contasReceber.Contato = rd["Nome"].ToString();
                         contasReceber.FormaPagamento = rd["Descricao"].ToString();
                         contasReceber.Banco = rd["Nome"].ToString();
@@ -190,7 +192,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
                                     INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id 
@@ -207,6 +209,7 @@ namespace DAL
                         contasReceber.Id = Convert.ToInt32(rd["Id"]);
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
                         contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
                         contasReceber.Contato = rd["Nome"].ToString();
                         contasReceber.FormaPagamento = rd["Descricao"].ToString();
                         contasReceber.Banco = rd["Nome"].ToString();
@@ -218,7 +221,190 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar os contatos por descrição do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a receber por descrição do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public List<ContasReceber> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<ContasReceber> contaReceber = new List<ContasReceber>();
+            ContasReceber contasReceber;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                                    INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id 
+                                    WHERE ContasReceber.DataEmissao BETWEEN @DataInicial AND @DataFinal";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@DataInicial", _periodoInicial);
+                cmd.Parameters.AddWithValue("@DataFinal", _periodoFinal);
+
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contasReceber = new ContasReceber();
+                        contasReceber.Id = Convert.ToInt32(rd["Id"]);
+                        contasReceber.ValorReceber = (double)rd["ValorReceber"];
+                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasReceber.Contato = rd["Nome"].ToString();
+                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
+                        contasReceber.Banco = rd["Nome"].ToString();
+                        contaReceber.Add(contasReceber);
+                    }
+                }
+                return contaReceber;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a receber por periodo do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public List<ContasReceber> BuscarPorContato(string _contato)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<ContasReceber> contaReceber = new List<ContasReceber>();
+            ContasReceber contasReceber;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                                    INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id
+                                    WHERE Contato.Nome LIKE @Nome";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _contato + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contasReceber = new ContasReceber();
+                        contasReceber.Id = Convert.ToInt32(rd["Id"]);
+                        contasReceber.ValorReceber = (double)rd["ValorReceber"];
+                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasReceber.Contato = rd["Nome"].ToString();
+                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
+                        contasReceber.Banco = rd["Nome"].ToString();
+                        contaReceber.Add(contasReceber);
+                    }
+                }
+                return contaReceber;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a receber por Devedor do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public List<ContasReceber> BuscarPorFormaPagamento(string _formaPagamento)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<ContasReceber> contaReceber = new List<ContasReceber>();
+            ContasReceber contasReceber;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                                    INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id
+                                    WHERE FormaPagamento.Descricao LIKE @Descricao";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _formaPagamento + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contasReceber = new ContasReceber();
+                        contasReceber.Id = Convert.ToInt32(rd["Id"]);
+                        contasReceber.ValorReceber = (double)rd["ValorReceber"];
+                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasReceber.Contato = rd["Nome"].ToString();
+                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
+                        contasReceber.Banco = rd["Nome"].ToString();
+                        contaReceber.Add(contasReceber);
+                    }
+                }
+                return contaReceber;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a receber por forma de pagamento do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<ContasReceber> BuscarPorBanco(string _banco)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<ContasReceber> contaReceber = new List<ContasReceber>();
+            ContasReceber contasReceber;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                                    INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id
+                                    WHERE Banco.Nome LIKE @Nome";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Nome", "%" + _banco + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contasReceber = new ContasReceber();
+                        contasReceber.Id = Convert.ToInt32(rd["Id"]);
+                        contasReceber.ValorReceber = (double)rd["ValorReceber"];
+                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasReceber.Contato = rd["Nome"].ToString();
+                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
+                        contasReceber.Banco = rd["Nome"].ToString();
+                        contaReceber.Add(contasReceber);
+                    }
+                }
+                return contaReceber;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a receber por banco do banco de dados", ex);
             }
             finally
             {
