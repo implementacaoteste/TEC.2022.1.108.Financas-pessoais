@@ -80,8 +80,9 @@ namespace Financas
                 frm.ShowDialog();
             }
         }
-
         private void bancoTextBox_TextChanged(object sender, EventArgs e)
+        private void descricaoLabel_Click(object sender, EventArgs e)
+
         {
 
         }

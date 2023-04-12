@@ -75,7 +75,6 @@ namespace Financas
             }
             buttonBuscar_Click(null, null);
         }
-
         private void buttonSelecionarContato_Click(object sender, EventArgs e)
         {
             try

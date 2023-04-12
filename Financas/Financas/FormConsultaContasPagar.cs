@@ -21,7 +21,6 @@ namespace Financas
 
         private void buttonBuscarConsultaContasPagar_Click(object sender, EventArgs e)
         {
-            contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarTodos();
             try
             {
                 switch (comboBox1.SelectedIndex)
@@ -101,11 +100,15 @@ namespace Financas
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            labelDataInicial.Visible = false;
+            labelDataFinal.Visible = false;
             textBoxConsultaContasPagar.Width = 498;
             textBoxConsultaContasPagar2.Visible = false;
 
             if (comboBox1.SelectedIndex == 3)
             {
+                labelDataInicial.Visible = true;
+                labelDataFinal.Visible = true;
                 textBoxConsultaContasPagar.Width = 248;
                 textBoxConsultaContasPagar2.Visible = true;
             }
