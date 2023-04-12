@@ -53,9 +53,11 @@ namespace Financas
 
         private void buttonBuscarContatoContasPagar_Click(object sender, EventArgs e)
         {
-            using (FormConsultaContato frm = new FormConsultaContato())
+            using (FormConsultaContato frm = new FormConsultaContato(true))
             {
                 frm.ShowDialog();
+                ((ContasPagar)contasPagarBindingSource.Current).IdContato = frm.Id;
+                contatoTextBox.Text = frm.Nome;
             }
         }
 

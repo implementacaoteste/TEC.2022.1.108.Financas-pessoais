@@ -49,17 +49,24 @@ namespace Financas
 
         private void buttonBuscarContatoReceita_Click(object sender, EventArgs e)
         {
-            using (FormConsultaContato frm = new FormConsultaContato())
+            using (FormConsultaContato frm = new FormConsultaContato(true))
             {
                 frm.ShowDialog();
+
+                ((Receita)receitaBindingSource.Current).IdContato = frm.Id;
+                contatoTextBox.Text = frm.Nome;
             }
         }
 
         private void buttonBuscarBancoReceita_Click(object sender, EventArgs e)
         {
-            using (FormConsultaBanco frm = new FormConsultaBanco())
+            using (FormConsultaBanco frm = new FormConsultaBanco(true))
             {
                 frm.ShowDialog();
+
+                ((Receita)receitaBindingSource.Current).IdBanco = frm.Id;
+                bancoTextBox.Text = frm.Nome;
+              
             }
         }
 

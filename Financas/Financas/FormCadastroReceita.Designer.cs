@@ -176,7 +176,7 @@
             // 
             // contatoTextBox
             // 
-            this.contatoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Contato", true));
+            this.contatoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "Contato", true));
             this.contatoTextBox.Location = new System.Drawing.Point(389, 117);
             this.contatoTextBox.Name = "contatoTextBox";
             this.contatoTextBox.Size = new System.Drawing.Size(154, 22);
@@ -188,7 +188,7 @@
             // 
             // bancoTextBox
             // 
-            this.bancoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Banco", true));
+            this.bancoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "Banco", true));
             this.bancoTextBox.Location = new System.Drawing.Point(61, 205);
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(159, 22);

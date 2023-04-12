@@ -14,9 +14,12 @@ namespace Financas
 {
     public partial class FormConsultaBanco : Form
     {
-        public FormConsultaBanco()
+        public int Id;
+        public string Nome;
+        public FormConsultaBanco(bool _selecionarBanco = false)
         {
             InitializeComponent();
+            buttonSelecionarBanco.Visible = _selecionarBanco;
         }
 
         private void buttonBuscarBanco_Click(object sender, EventArgs e)
@@ -84,6 +87,26 @@ namespace Financas
         private void FormConsultaBanco_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void buttonSelecionarBanco_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (bancoBindingSource.Count > 0)
+                {
+                    Id = ((Banco)bancoBindingSource.Current).Id;
+                    Nome = ((Banco)bancoBindingSource.Current).Nome;
+                    Close();
+                }
+                else
+                    MessageBox.Show("Não existe um Banco para ser selecionado.");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
