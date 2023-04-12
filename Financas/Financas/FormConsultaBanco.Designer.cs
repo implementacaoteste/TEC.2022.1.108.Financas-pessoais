@@ -44,7 +44,7 @@
             this.buttonExcluirBanco = new System.Windows.Forms.Button();
             this.buttonAlterarBanco = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonSelecionarBanco = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bancoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -201,15 +201,16 @@
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
-            // button1
+            // buttonSelecionarBanco
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(585, 407);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Selecionar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonSelecionarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSelecionarBanco.Location = new System.Drawing.Point(585, 407);
+            this.buttonSelecionarBanco.Name = "buttonSelecionarBanco";
+            this.buttonSelecionarBanco.Size = new System.Drawing.Size(109, 23);
+            this.buttonSelecionarBanco.TabIndex = 6;
+            this.buttonSelecionarBanco.Text = "Selecionar";
+            this.buttonSelecionarBanco.UseVisualStyleBackColor = true;
+            this.buttonSelecionarBanco.Click += new System.EventHandler(this.buttonSelecionarBanco_Click);
             // 
             // FormConsultaBanco
             // 
@@ -217,7 +218,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(821, 453);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonSelecionarBanco);
             this.Controls.Add(this.buttonBuscarBanco);
             this.Controls.Add(this.buttonAlterarBanco);
             this.Controls.Add(this.buttonSair);
@@ -260,6 +261,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonSelecionarBanco;
     }
 }

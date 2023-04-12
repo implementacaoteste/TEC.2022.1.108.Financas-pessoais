@@ -55,17 +55,21 @@ namespace Financas
 
         private void buttonBuscarContatoDespesas_Click(object sender, EventArgs e)
         {
-            using(FormConsultaContato frm = new FormConsultaContato())
+            using(FormConsultaContato frm = new FormConsultaContato(true))
             {
                 frm.ShowDialog();
+                ((Despesas)despesasBindingSource.Current).IdContato = frm.Id;
+                contatoTextBox.Text = frm.Nome;
             }
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            using(FormConsultaBanco frm = new FormConsultaBanco())
+            using(FormConsultaBanco frm = new FormConsultaBanco(true))
             {
                 frm.ShowDialog();
+                ((Despesas)despesasBindingSource.Current).IdBanco = frm.Id;
+                bancoTextBox.Text = frm.Nome;
             }
         }
 
@@ -75,6 +79,11 @@ namespace Financas
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void bancoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

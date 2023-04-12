@@ -198,6 +198,7 @@
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(154, 22);
             this.bancoTextBox.TabIndex = 13;
+            this.bancoTextBox.TextChanged += new System.EventHandler(this.bancoTextBox_TextChanged);
             // 
             // buttonBuscar
             // 
@@ -219,7 +220,7 @@
             this.formaPagamentoTextBox.TabIndex = 15;
             // 
             // buttonBuscarFormaPagamentoDespesas
-            //
+            // 
             this.buttonBuscarFormaPagamentoDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarFormaPagamentoDespesas.Location = new System.Drawing.Point(255, 214);
             this.buttonBuscarFormaPagamentoDespesas.Name = "buttonBuscarFormaPagamentoDespesas";
@@ -245,10 +246,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(788, 455);
             this.Controls.Add(dataEmissaoLabel);
             this.Controls.Add(this.dataEmissaoDateTimePicker);
-            this.BackColor = System.Drawing.Color.PowderBlue;
             this.Controls.Add(this.buttonBuscarFormaPagamentoDespesas);
             this.Controls.Add(formaPagamentoLabel);
             this.Controls.Add(this.formaPagamentoTextBox);

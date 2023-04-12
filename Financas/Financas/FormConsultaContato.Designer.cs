@@ -45,7 +45,7 @@
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonSelecionarContato = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contatoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -211,22 +211,23 @@
             this.buttonAlterar.UseVisualStyleBackColor = true;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
-            // button1
+            // buttonSelecionarContato
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(587, 407);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Selecionar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonSelecionarContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSelecionarContato.Location = new System.Drawing.Point(587, 407);
+            this.buttonSelecionarContato.Name = "buttonSelecionarContato";
+            this.buttonSelecionarContato.Size = new System.Drawing.Size(94, 23);
+            this.buttonSelecionarContato.TabIndex = 8;
+            this.buttonSelecionarContato.Text = "Selecionar";
+            this.buttonSelecionarContato.UseVisualStyleBackColor = true;
+            this.buttonSelecionarContato.Click += new System.EventHandler(this.buttonSelecionarContato_Click);
             // 
             // FormConsultaContato
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(824, 444);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonSelecionarContato);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonExcluir);
@@ -247,6 +248,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Contatos";
+            this.Load += new System.EventHandler(this.FormConsultaContato_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contatoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -272,6 +274,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.Button buttonAlterar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonSelecionarContato;
     }
 }

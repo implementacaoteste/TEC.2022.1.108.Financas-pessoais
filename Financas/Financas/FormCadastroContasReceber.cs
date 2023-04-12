@@ -47,9 +47,11 @@ namespace Financas
 
         private void buttonBuscarContatoContasReceber_Click(object sender, EventArgs e)
         {
-            using(FormConsultaContato frm = new FormConsultaContato())
+            using(FormConsultaContato frm = new FormConsultaContato(true))
             {
                 frm.ShowDialog();
+                ((ContasReceber)contasReceberBindingSource.Current).IdContato = frm.Id;
+                textBoxBuscarContato.Text = frm.Nome;
             }
            // contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNome(textBoxBuscarContato.Text);
         }
@@ -61,9 +63,11 @@ namespace Financas
 
         private void buttonBuscarBanco_Click(object sender, EventArgs e)
         {
-            using (FormConsultaBanco frm = new FormConsultaBanco())
+            using (FormConsultaBanco frm = new FormConsultaBanco(true))
             {
                 frm.ShowDialog();
+                ((ContasReceber)contasReceberBindingSource.Current).IdBanco = frm.Id;
+                bancoTextBox.Text = frm.Nome;
             }
         }
 
@@ -77,7 +81,10 @@ namespace Financas
 
         private void FormCadastroContasReceber_Load(object sender, EventArgs e)
         {
-
+            if (Id == 0)
+                contasReceberBindingSource.AddNew();
+            else
+                contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorId(Id);
         }
     }
 }
