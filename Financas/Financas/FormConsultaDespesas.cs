@@ -28,32 +28,29 @@ namespace Financas
         {
             try
             {
-                //switch (comboBox1.SelectedIndex)
-                //{
-                //    case 0:
-                //        despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos();
-                //        break;
-                //    case 1:
-                //        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorId(Convert.ToInt32(textBoxBuscarDespesas.Text));
-                //        break;
-                //    case 2:
-                //        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorDescricao(textBoxBuscarDespesas.Text);
-                //        break;
-                //    case 3:
-                //        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxBuscarDespesas.Text), Convert.ToDateTime(textBoxBuscarDespesas2.Text));
-                //        break;
-                //    case 4:
-                //        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorContato(textBoxBuscarDespesas.Text);
-                //        break;
-                //    case 5:
-                //        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorFormaPagamento(textBoxBuscarDespesas.Text);
-                //        break;
-                //    case 6:
-                //        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorBanco(textBoxBuscarDespesas.Text);
-                //        break;
-                //    default:
-                //        break;
-                //}
+                switch (comboBox1.SelectedIndex)
+                {
+                    case 0:
+                        despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos();
+                        break;
+                    case 1:
+                        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorDescricao(textBoxBuscarDespesas.Text);
+                        break;
+                    case 2:
+                        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxBuscarDespesas.Text), Convert.ToDateTime(textBoxBuscarDespesas2.Text));
+                        break;
+                    case 3:
+                        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorContato(textBoxBuscarDespesas.Text);
+                        break;
+                    case 4:
+                        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorFormaPagamento(textBoxBuscarDespesas.Text);
+                        break;
+                    case 5:
+                        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorBanco(textBoxBuscarDespesas.Text);
+                        break;
+                    default:
+                        break;
+                }
             }
             catch(Exception ex)
             {
