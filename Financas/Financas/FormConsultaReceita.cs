@@ -101,11 +101,15 @@ namespace Financas
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            labelDataInicial.Visible = false;
+            labelDataFinal.Visible = false;
             textBoxConsultarReceita.Width = 498;
             textBoxConsultarReceita2.Visible = false;
 
             if (comboBox1.SelectedIndex == 3)
             {
+                labelDataInicial.Visible = true;
+                labelDataFinal.Visible = true;
                 textBoxConsultarReceita.Width = 248;
                 textBoxConsultarReceita2.Visible = true;
             }
