@@ -51,7 +51,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(645, 444);
+            this.pictureBox1.Size = new System.Drawing.Size(1129, 735);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -67,25 +67,25 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(645, 62);
+            this.label1.Size = new System.Drawing.Size(1129, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(152, 190);
+            this.textBoxUsuario.Location = new System.Drawing.Point(443, 196);
             this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsuario.Multiline = true;
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(312, 29);
+            this.textBoxUsuario.Size = new System.Drawing.Size(339, 29);
             this.textBoxUsuario.TabIndex = 4;
             this.textBoxUsuario.Text = "ana";
             this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // textBoxSenhaLogin
             // 
-            this.textBoxSenhaLogin.Location = new System.Drawing.Point(152, 241);
+            this.textBoxSenhaLogin.Location = new System.Drawing.Point(443, 283);
             this.textBoxSenhaLogin.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSenhaLogin.Multiline = true;
             this.textBoxSenhaLogin.Name = "textBoxSenhaLogin";
@@ -98,7 +98,7 @@
             // 
             this.labelUsuarioLogin.AutoSize = true;
             this.labelUsuarioLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuarioLogin.Location = new System.Drawing.Point(22, 191);
+            this.labelUsuarioLogin.Location = new System.Drawing.Point(305, 202);
             this.labelUsuarioLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUsuarioLogin.Name = "labelUsuarioLogin";
             this.labelUsuarioLogin.Size = new System.Drawing.Size(122, 18);
@@ -109,7 +109,7 @@
             // 
             this.labelSenhaLogin.AutoSize = true;
             this.labelSenhaLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSenhaLogin.Location = new System.Drawing.Point(75, 246);
+            this.labelSenhaLogin.Location = new System.Drawing.Point(366, 291);
             this.labelSenhaLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSenhaLogin.Name = "labelSenhaLogin";
             this.labelSenhaLogin.Size = new System.Drawing.Size(60, 18);
@@ -119,7 +119,7 @@
             // buttonEntrar
             // 
             this.buttonEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEntrar.Location = new System.Drawing.Point(219, 326);
+            this.buttonEntrar.Location = new System.Drawing.Point(385, 452);
             this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(80, 34);
@@ -131,7 +131,7 @@
             // buttonsair
             // 
             this.buttonsair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonsair.Location = new System.Drawing.Point(313, 325);
+            this.buttonsair.Location = new System.Drawing.Point(561, 452);
             this.buttonsair.Margin = new System.Windows.Forms.Padding(4);
             this.buttonsair.Name = "buttonsair";
             this.buttonsair.Size = new System.Drawing.Size(80, 34);
@@ -143,7 +143,7 @@
             // buttonCdastraLogin
             // 
             this.buttonCdastraLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCdastraLogin.Location = new System.Drawing.Point(225, 380);
+            this.buttonCdastraLogin.Location = new System.Drawing.Point(429, 531);
             this.buttonCdastraLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCdastraLogin.Name = "buttonCdastraLogin";
             this.buttonCdastraLogin.Size = new System.Drawing.Size(160, 43);
@@ -156,7 +156,7 @@
             // 
             this.checkBoxMostrarSenha.AutoSize = true;
             this.checkBoxMostrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(233, 283);
+            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(561, 340);
             this.checkBoxMostrarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxMostrarSenha.Name = "checkBoxMostrarSenha";
             this.checkBoxMostrarSenha.Size = new System.Drawing.Size(120, 19);
@@ -169,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 444);
+            this.ClientSize = new System.Drawing.Size(1129, 735);
             this.Controls.Add(this.checkBoxMostrarSenha);
             this.Controls.Add(this.buttonsair);
             this.Controls.Add(this.buttonCdastraLogin);
