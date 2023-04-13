@@ -72,7 +72,7 @@ namespace Financas
 
         private void buttonBuscarFormaPagamentoReceita_Click(object sender, EventArgs e)
         {
-            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento(true))
             {
                 frm.ShowDialog();
                 ((Receita)receitaBindingSource.Current).IdFormaPagamento = frm.Id;

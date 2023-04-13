@@ -120,5 +120,13 @@ namespace Financas
                 textBoxConsultaContasPagar2.Visible = true;
             }
         }
+
+        private void buttonPagarContasPagar_Click(object sender, EventArgs e)
+        {
+            using(FormCadastroDespesas frm = new FormCadastroDespesas())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

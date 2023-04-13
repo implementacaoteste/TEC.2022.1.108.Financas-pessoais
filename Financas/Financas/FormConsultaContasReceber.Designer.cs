@@ -54,6 +54,7 @@
             this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonQuitarContasReceber = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -310,6 +311,16 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Buscar por";
             this.label3.Visible = false;
+            // buttonQuitarContasReceber
+            // 
+            this.buttonQuitarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQuitarContasReceber.Location = new System.Drawing.Point(907, 655);
+            this.buttonQuitarContasReceber.Name = "buttonQuitarContasReceber";
+            this.buttonQuitarContasReceber.Size = new System.Drawing.Size(75, 23);
+            this.buttonQuitarContasReceber.TabIndex = 20;
+            this.buttonQuitarContasReceber.Text = "Quitar";
+            this.buttonQuitarContasReceber.UseVisualStyleBackColor = true;
+            this.buttonQuitarContasReceber.Click += new System.EventHandler(this.buttonQuitarContasReceber_Click);
             // 
             // FormConsultaContasReceber
             // 
@@ -318,6 +329,7 @@
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1111, 688);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.buttonQuitarContasReceber);
             this.Controls.Add(this.labelDataFinal);
             this.Controls.Add(this.labelDataInicial);
             this.Controls.Add(this.textBoxConsultarContasReceber2);
@@ -371,5 +383,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DataEmissao;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataPagamento;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBoxConsultarContasReceber2;
+        private System.Windows.Forms.Label labelDataInicial;
+        private System.Windows.Forms.Label labelDataFinal;
+        private System.Windows.Forms.Button buttonQuitarContasReceber;
     }
 }

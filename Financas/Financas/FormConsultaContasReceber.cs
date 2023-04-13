@@ -121,5 +121,13 @@ namespace Financas
                 textBoxConsultarContasReceber2.Visible = true;
             }
         }
+
+        private void buttonQuitarContasReceber_Click(object sender, EventArgs e)
+        {
+            using(FormCadastroReceita frm = new FormCadastroReceita())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

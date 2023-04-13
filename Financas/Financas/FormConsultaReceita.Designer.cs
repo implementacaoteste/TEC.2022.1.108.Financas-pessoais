@@ -197,7 +197,7 @@
             // 
             // textBoxConsultarReceita
             // 
-            this.textBoxConsultarReceita.Location = new System.Drawing.Point(106, 109);
+            this.textBoxConsultarReceita.Location = new System.Drawing.Point(106, 112);
             this.textBoxConsultarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarReceita.Name = "textBoxConsultarReceita";
             this.textBoxConsultarReceita.Size = new System.Drawing.Size(498, 22);

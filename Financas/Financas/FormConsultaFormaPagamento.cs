@@ -16,16 +16,28 @@ namespace Financas
     {
         public int Id;
         public string Descricao;
-        public FormConsultaFormaPagamento()
+        public FormConsultaFormaPagamento(bool _selecionar = false)
         {
             InitializeComponent();
+            button1.Visible = _selecionar;
         }
 
         private void buttonBuscarFormaPagamento_Click(object sender, EventArgs e)
         {
             try
             {
-                formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarTodos();
+                switch (comboBox1.SelectedIndex)
+                {
+                    case 0:
+                        formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarTodos();
+                        break;
+                    case 1:
+                        formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(buttonBuscarFormaPagamento.Text);
+                        break;
+                   
+                    default:
+                        break;
+                }
             }
             catch (Exception ex)
             {
