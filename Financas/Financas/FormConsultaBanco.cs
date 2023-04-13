@@ -26,7 +26,17 @@ namespace Financas
         {
             try
             {
-                bancoBindingSource.DataSource = new BancoBLL().BuscarTodos();
+                switch (comboBoxBuscar.SelectedIndex)
+                {
+                    case 0:
+                        bancoBindingSource.DataSource = new BancoBLL().BuscarTodos();
+                        break;
+                    case 1:
+                        bancoBindingSource.DataSource = new BancoBLL().BuscarPorNome(textBoxConsultarBanco.Text);
+                        break;                    
+                    default:
+                        break;
+                }
             }
             catch (Exception ex)
             {
