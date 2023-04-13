@@ -25,7 +25,18 @@ namespace Financas
         {
             try
             {
-                formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarTodos();
+                switch (comboBox1.SelectedIndex)
+                {
+                    case 0:
+                        formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarTodos();
+                        break;
+                    case 1:
+                        formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(buttonBuscarFormaPagamento.Text);
+                        break;
+                   
+                    default:
+                        break;
+                }
             }
             catch (Exception ex)
             {

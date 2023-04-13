@@ -41,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -131,7 +133,7 @@
             this.textBoxConsultarFormaPagamento.Location = new System.Drawing.Point(106, 109);
             this.textBoxConsultarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarFormaPagamento.Name = "textBoxConsultarFormaPagamento";
-            this.textBoxConsultarFormaPagamento.Size = new System.Drawing.Size(616, 22);
+            this.textBoxConsultarFormaPagamento.Size = new System.Drawing.Size(486, 22);
             this.textBoxConsultarFormaPagamento.TabIndex = 7;
             // 
             // label1
@@ -178,12 +180,36 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Todos",
+            "Descrição"});
+            this.comboBox1.Location = new System.Drawing.Point(598, 109);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(605, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 16);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Buscar por";
+            // 
             // FormConsultaFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1111, 688);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.label2);
@@ -225,5 +251,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
