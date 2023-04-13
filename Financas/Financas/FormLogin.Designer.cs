@@ -122,7 +122,7 @@ namespace Financas
             // buttonEntrar
             // 
             this.buttonEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEntrar.Location = new System.Drawing.Point(463, 452);
+            this.buttonEntrar.Location = new System.Drawing.Point(465, 422);
             this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(96, 34);
@@ -134,7 +134,7 @@ namespace Financas
             // buttonsair
             // 
             this.buttonsair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonsair.Location = new System.Drawing.Point(584, 452);
+            this.buttonsair.Location = new System.Drawing.Point(603, 422);
             this.buttonsair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonsair.Name = "buttonsair";
             this.buttonsair.Size = new System.Drawing.Size(97, 34);
@@ -148,7 +148,7 @@ namespace Financas
             this.buttonCdastraLogin.BackColor = System.Drawing.Color.Transparent;
             this.buttonCdastraLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCdastraLogin.ForeColor = System.Drawing.Color.Black;
-            this.buttonCdastraLogin.Location = new System.Drawing.Point(443, 527);
+            this.buttonCdastraLogin.Location = new System.Drawing.Point(448, 492);
             this.buttonCdastraLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCdastraLogin.Name = "buttonCdastraLogin";
             this.buttonCdastraLogin.Size = new System.Drawing.Size(252, 43);
@@ -161,7 +161,7 @@ namespace Financas
             // 
             this.checkBoxMostrarSenha.AutoSize = true;
             this.checkBoxMostrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(561, 340);
+            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(549, 313);
             this.checkBoxMostrarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxMostrarSenha.Name = "checkBoxMostrarSenha";
             this.checkBoxMostrarSenha.Size = new System.Drawing.Size(120, 19);
