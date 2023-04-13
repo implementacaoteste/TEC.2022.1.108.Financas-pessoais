@@ -108,7 +108,7 @@ namespace Financas
             textBoxBuscarDespesas.Width = 498;
             textBoxBuscarDespesas2.Visible = false;
 
-            if (comboBox1.SelectedIndex == 3)
+            if (comboBox1.SelectedIndex == 2)
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;

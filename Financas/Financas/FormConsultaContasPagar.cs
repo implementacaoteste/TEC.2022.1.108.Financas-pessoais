@@ -35,12 +35,15 @@ namespace Financas
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
                         break;
                     case 3:
-                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorContato(textBoxConsultaContasPagar.Text);
+                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPagamento(Convert.ToDateTime(textBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
                         break;
                     case 4:
-                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorFormaPagamento(textBoxConsultaContasPagar.Text);
+                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorContato(textBoxConsultaContasPagar.Text);
                         break;
                     case 5:
+                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorFormaPagamento(textBoxConsultaContasPagar.Text);
+                        break;
+                    case 6:
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorBanco(textBoxConsultaContasPagar.Text);
                         break;
                     default:
@@ -102,6 +105,13 @@ namespace Financas
             textBoxConsultaContasPagar.Width = 498;
             textBoxConsultaContasPagar2.Visible = false;
 
+            if (comboBox1.SelectedIndex == 2)
+            {
+                labelDataInicial.Visible = true;
+                labelDataFinal.Visible = true;
+                textBoxConsultaContasPagar.Width = 248;
+                textBoxConsultaContasPagar2.Visible = true;
+            }
             if (comboBox1.SelectedIndex == 3)
             {
                 labelDataInicial.Visible = true;

@@ -38,6 +38,10 @@ namespace BLL
         {
             return new ContasReceberDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
         }
+        public List<ContasReceber> BuscarPagamento(DateTime _periodoInicial, DateTime _periodoFinal)
+        {
+            return new ContasReceberDAL().BuscarPagamento(_periodoInicial, _periodoFinal);
+        }
         public List<ContasReceber> BuscarPorContato(string _contato)
         {
             return new ContasReceberDAL().BuscarPorContato(_contato);

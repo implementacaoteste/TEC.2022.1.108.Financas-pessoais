@@ -34,17 +34,21 @@ namespace BLL
         {
             return new ContasPagarDAL().BuscarPorId(_id);
         }
-        public List<Receita> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        public List<ContasPagar> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
         {
-            return new ReceitaDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
+            return new ContasPagarDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
         }
-        public List<Receita> BuscarPorContato(string _contato)
+        public List<ContasPagar> BuscarPagamento(DateTime _periodoInicial, DateTime _periodoFinal)
         {
-            return new ReceitaDAL().BuscarPorContato(_contato);
+            return new ContasPagarDAL().BuscarPagamento(_periodoInicial, _periodoFinal);
         }
-        public List<Receita> BuscarPorFormaPagamento(string _formaPagamento)
+        public List<ContasPagar> BuscarPorContato(string _contato)
         {
-            return new ReceitaDAL().BuscarPorFormaPagamento(_formaPagamento);
+            return new ContasPagarDAL().BuscarPorContato(_contato);
+        }
+        public List<ContasPagar> BuscarPorFormaPagamento(string _formaPagamento)
+        {
+            return new ContasPagarDAL().BuscarPorFormaPagamento(_formaPagamento);
         }
         public List<Receita> BuscarPorBanco(string _banco)
         {

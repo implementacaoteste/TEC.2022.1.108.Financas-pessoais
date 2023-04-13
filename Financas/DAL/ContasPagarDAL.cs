@@ -104,10 +104,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, ContasPagar.DataPagamento, Contato.Nome AS Credor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
                                     INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasPagar.IdFormaPagamento = FormaPagamento.Id
-                                    INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id 
+                                    INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id
                                     WHERE ContasPagar.Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -122,6 +122,7 @@ namespace DAL
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contasPagar.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasPagar.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
                         contasPagar.Contato = rd["Nome"].ToString();
                         contasPagar.FormaPagamento = rd["Descricao"].ToString();
                         contasPagar.Banco = rd["Nome"].ToString();
@@ -150,7 +151,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, ContasPagar.DataPagamento, Contato.Nome AS Credor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
                                     INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasPagar.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id";
@@ -165,6 +166,7 @@ namespace DAL
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contasPagar.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasPagar.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
                         contasPagar.Contato = rd["Nome"].ToString();
                         contasPagar.FormaPagamento = rd["Descricao"].ToString();
                         contasPagar.Banco = rd["Nome"].ToString();
@@ -193,7 +195,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, ContasPagar.DataPagamento, Contato.Nome AS Credor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
                                     INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasPagar.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id
@@ -211,6 +213,7 @@ namespace DAL
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contasPagar.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasPagar.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
                         contasPagar.Contato = rd["Nome"].ToString();
                         contasPagar.FormaPagamento = rd["Descricao"].ToString();
                         contasPagar.Banco = rd["Nome"].ToString();
@@ -238,7 +241,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, ContasPagar.DataPagamento, Contato.Nome AS Credor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
                                     INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasPagar.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id
@@ -258,6 +261,7 @@ namespace DAL
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contasPagar.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasPagar.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
                         contasPagar.Contato = rd["Nome"].ToString();
                         contasPagar.FormaPagamento = rd["Descricao"].ToString();
                         contasPagar.Banco = rd["Nome"].ToString();
@@ -285,7 +289,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, ContasPagar.DataPagamento, Contato.Nome AS Credor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
                                     INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasPagar.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id
@@ -303,6 +307,7 @@ namespace DAL
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contasPagar.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasPagar.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
                         contasPagar.Contato = rd["Nome"].ToString();
                         contasPagar.FormaPagamento = rd["Descricao"].ToString();
                         contasPagar.Banco = rd["Nome"].ToString();
@@ -330,7 +335,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, ContasPagar.DataPagamento, Contato.Nome AS Credor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
                                     INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasPagar.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id
@@ -348,6 +353,7 @@ namespace DAL
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contasPagar.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasPagar.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
                         contasPagar.Contato = rd["Nome"].ToString();
                         contasPagar.FormaPagamento = rd["Descricao"].ToString();
                         contasPagar.Banco = rd["Nome"].ToString();
@@ -376,7 +382,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, ContasPagar.DataPagamento, Contato.Nome AS Credor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
                                     INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasPagar.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id
@@ -394,6 +400,7 @@ namespace DAL
                         contasPagar.ValorPagar = (double)rd["ValorPagar"];
                         contasPagar.Descricao = rd["Descricao"].ToString();
                         contasPagar.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasPagar.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
                         contasPagar.Contato = rd["Nome"].ToString();
                         contasPagar.FormaPagamento = rd["Descricao"].ToString();
                         contasPagar.Banco = rd["Nome"].ToString();
@@ -406,6 +413,55 @@ namespace DAL
             {
 
                 throw new Exception("Ocorreu um erro ao tentar buscar as contas a pagar por banco do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public List<ContasPagar> BuscarPagamento(DateTime _periodoInicial, DateTime _periodoFinal)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<ContasPagar> contaPagar = new List<ContasPagar>();
+            ContasPagar contasPagar;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT ContasPagar.Id, ContasPagar.Descricao AS DescricaoContasPagar, ContasPagar.ValorPagar, ContasPagar.DataEmissao, ContasPagar.DataPagamento, Contato.Nome AS Credor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasPagar
+                                    INNER JOIN Contato ON ContasPagar.IdContato = Contato.Id
+                                    INNER JOIN FormaPagamento ON ContasPagar.IdFormaPagamento = FormaPagamento.Id
+                                    INNER JOIN Banco ON ContasPagar.IdBanco = Banco.Id
+                                    WHERE ContasPagar.DataPagamento BETWEEN @DataInicial AND @DataFinal";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@DataInicial", _periodoInicial);
+                cmd.Parameters.AddWithValue("@DataFinal", _periodoFinal);
+
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contasPagar = new ContasPagar();
+                        contasPagar.Id = Convert.ToInt32(rd["Id"]);
+                        contasPagar.ValorPagar = (double)rd["ValorPagar"];
+                        contasPagar.Descricao = rd["Descricao"].ToString();
+                        contasPagar.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        contasPagar.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
+                        contasPagar.Contato = rd["Nome"].ToString();
+                        contasPagar.FormaPagamento = rd["Descricao"].ToString();
+                        contasPagar.Banco = rd["Nome"].ToString();
+                        contaPagar.Add(contasPagar);
+                    }
+                }
+                return contaPagar;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a pagar por pagamento do banco de dados", ex);
             }
             finally
             {

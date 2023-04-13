@@ -51,6 +51,7 @@
             this.textBoxBuscarDespesas2 = new System.Windows.Forms.TextBox();
             this.labelDataInicial = new System.Windows.Forms.Label();
             this.labelDataFinal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.despesasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -281,12 +282,24 @@
             this.labelDataFinal.Text = "Data final";
             this.labelDataFinal.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(607, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 16);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Buscar por";
+            this.label2.Visible = false;
+            // 
             // FormConsultaDespesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1111, 688);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.labelDataFinal);
             this.Controls.Add(this.labelDataInicial);
             this.Controls.Add(this.textBoxBuscarDespesas2);
@@ -341,5 +354,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DataEmissao;
         private System.Windows.Forms.Label labelDataInicial;
         private System.Windows.Forms.Label labelDataFinal;
+        private System.Windows.Forms.Label label2;
     }
 }

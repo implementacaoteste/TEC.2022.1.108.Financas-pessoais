@@ -27,22 +27,25 @@ namespace Financas
                 switch (comboBox1.SelectedIndex)
                 {
                     case 0:
-                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarTodos();
+                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
                         break;
                     case 1:
-                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarPorDescricao(textBoxConsultarContasReceber.Text);
+                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorDescricao(textBoxConsultarContasReceber.Text);
                         break;
                     case 2:
-                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultarContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
+                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultarContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
                         break;
                     case 3:
-                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarPorContato(textBoxConsultarContasReceber.Text);
+                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPagamento(Convert.ToDateTime(textBoxConsultarContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
                         break;
                     case 4:
-                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarPorFormaPagamento(textBoxConsultarContasReceber.Text);
+                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorContato(textBoxConsultarContasReceber.Text);
                         break;
                     case 5:
-                        contasReceberBindingSource.DataSource = new ContasPagarBLL().BuscarPorBanco(textBoxConsultarContasReceber.Text);
+                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorFormaPagamento(textBoxConsultarContasReceber.Text);
+                        break;
+                    case 6:
+                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorBanco(textBoxConsultarContasReceber.Text);
                         break;
                     default:
                         break;
@@ -103,6 +106,13 @@ namespace Financas
             textBoxConsultarContasReceber.Width = 498;
             textBoxConsultarContasReceber2.Visible = false;
 
+            if (comboBox1.SelectedIndex == 2)
+            {
+                labelDataInicial.Visible = true;
+                labelDataFinal.Visible = true;
+                textBoxConsultarContasReceber.Width = 248;
+                textBoxConsultarContasReceber2.Visible = true;
+            }
             if (comboBox1.SelectedIndex == 3)
             {
                 labelDataInicial.Visible = true;

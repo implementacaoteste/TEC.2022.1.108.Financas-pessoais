@@ -103,7 +103,7 @@ namespace Financas
             textBoxConsultarReceita.Width = 498;
             textBoxConsultarReceita2.Visible = false;
 
-            if (comboBox1.SelectedIndex == 3)
+            if (comboBox1.SelectedIndex == 2)
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;

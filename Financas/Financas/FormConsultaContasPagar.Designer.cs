@@ -29,16 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contasPagarDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.labelConsultarContasPagar = new System.Windows.Forms.Label();
             this.textBoxConsultaContasPagar = new System.Windows.Forms.TextBox();
@@ -51,6 +45,15 @@
             this.textBoxConsultaContasPagar2 = new System.Windows.Forms.TextBox();
             this.labelDataInicial = new System.Windows.Forms.Label();
             this.labelDataFinal = new System.Windows.Forms.Label();
+            this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +72,8 @@
             this.Contato,
             this.FormaPagamento,
             this.Banco,
-            this.DataEmissao});
+            this.DataEmissao,
+            this.DataPagamento});
             this.contasPagarDataGridView.DataSource = this.contasPagarBindingSource;
             this.contasPagarDataGridView.Location = new System.Drawing.Point(35, 135);
             this.contasPagarDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -79,71 +83,6 @@
             this.contasPagarDataGridView.RowTemplate.Height = 24;
             this.contasPagarDataGridView.Size = new System.Drawing.Size(1040, 515);
             this.contasPagarDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // ValorPagar
-            // 
-            this.ValorPagar.DataPropertyName = "ValorPagar";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ValorPagar.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ValorPagar.HeaderText = "Valor";
-            this.ValorPagar.MinimumWidth = 6;
-            this.ValorPagar.Name = "ValorPagar";
-            this.ValorPagar.ReadOnly = true;
-            this.ValorPagar.Width = 80;
-            // 
-            // Contato
-            // 
-            this.Contato.DataPropertyName = "Contato";
-            this.Contato.HeaderText = "Contato";
-            this.Contato.MinimumWidth = 6;
-            this.Contato.Name = "Contato";
-            this.Contato.ReadOnly = true;
-            this.Contato.Width = 115;
-            // 
-            // FormaPagamento
-            // 
-            this.FormaPagamento.DataPropertyName = "FormaPagamento";
-            this.FormaPagamento.HeaderText = "Forma de Pagamento";
-            this.FormaPagamento.MinimumWidth = 6;
-            this.FormaPagamento.Name = "FormaPagamento";
-            this.FormaPagamento.ReadOnly = true;
-            this.FormaPagamento.Width = 167;
-            // 
-            // Banco
-            // 
-            this.Banco.DataPropertyName = "Banco";
-            this.Banco.HeaderText = "Banco";
-            this.Banco.MinimumWidth = 6;
-            this.Banco.Name = "Banco";
-            this.Banco.ReadOnly = true;
-            this.Banco.Width = 85;
-            // 
-            // DataEmissao
-            // 
-            this.DataEmissao.DataPropertyName = "DataEmissao";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DataEmissao.HeaderText = "Data de emissao";
-            this.DataEmissao.MinimumWidth = 6;
-            this.DataEmissao.Name = "DataEmissao";
-            this.DataEmissao.ReadOnly = true;
-            this.DataEmissao.Width = 140;
-            // 
-            // contasPagarBindingSource
-            // 
-            this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
             // 
             // label1
             // 
@@ -243,7 +182,8 @@
             "Todos",
             "Descrição",
             "Periodo",
-            "Contato",
+            "Pagamento",
+            "Credor",
             "Forma pagamento",
             "Banco"});
             this.comboBox1.Location = new System.Drawing.Point(610, 108);
@@ -283,12 +223,101 @@
             this.labelDataFinal.Text = "Data final";
             this.labelDataFinal.Visible = false;
             // 
+            // contasPagarBindingSource
+            // 
+            this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // ValorPagar
+            // 
+            this.ValorPagar.DataPropertyName = "ValorPagar";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ValorPagar.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ValorPagar.HeaderText = "Valor";
+            this.ValorPagar.MinimumWidth = 6;
+            this.ValorPagar.Name = "ValorPagar";
+            this.ValorPagar.ReadOnly = true;
+            this.ValorPagar.Width = 80;
+            // 
+            // Contato
+            // 
+            this.Contato.DataPropertyName = "Contato";
+            this.Contato.HeaderText = "Contato";
+            this.Contato.MinimumWidth = 6;
+            this.Contato.Name = "Contato";
+            this.Contato.ReadOnly = true;
+            this.Contato.Width = 115;
+            // 
+            // FormaPagamento
+            // 
+            this.FormaPagamento.DataPropertyName = "FormaPagamento";
+            this.FormaPagamento.HeaderText = "Forma de Pagamento";
+            this.FormaPagamento.MinimumWidth = 6;
+            this.FormaPagamento.Name = "FormaPagamento";
+            this.FormaPagamento.ReadOnly = true;
+            this.FormaPagamento.Width = 167;
+            // 
+            // Banco
+            // 
+            this.Banco.DataPropertyName = "Banco";
+            this.Banco.HeaderText = "Banco";
+            this.Banco.MinimumWidth = 6;
+            this.Banco.Name = "Banco";
+            this.Banco.ReadOnly = true;
+            this.Banco.Width = 85;
+            // 
+            // DataEmissao
+            // 
+            this.DataEmissao.DataPropertyName = "DataEmissao";
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DataEmissao.HeaderText = "Data de emissao";
+            this.DataEmissao.MinimumWidth = 6;
+            this.DataEmissao.Name = "DataEmissao";
+            this.DataEmissao.ReadOnly = true;
+            this.DataEmissao.Width = 140;
+            // 
+            // DataPagamento
+            // 
+            this.DataPagamento.DataPropertyName = "DataPagamento";
+            dataGridViewCellStyle6.Format = "d";
+            dataGridViewCellStyle6.NullValue = null;
+            this.DataPagamento.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DataPagamento.HeaderText = "Data de pagamento";
+            this.DataPagamento.MinimumWidth = 6;
+            this.DataPagamento.Name = "DataPagamento";
+            this.DataPagamento.ReadOnly = true;
+            this.DataPagamento.Width = 125;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(610, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 16);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Buscar por";
+            this.label2.Visible = false;
+            // 
             // FormConsultaContasPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1111, 688);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.labelDataFinal);
             this.Controls.Add(this.labelDataInicial);
             this.Controls.Add(this.textBoxConsultaContasPagar2);
@@ -330,15 +359,17 @@
         private System.Windows.Forms.Button buttonAlterarConsultaContasPagar;
         private System.Windows.Forms.Button buttonExcluirConsultaContasPagar;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBoxConsultaContasPagar2;
+        private System.Windows.Forms.Label labelDataInicial;
+        private System.Windows.Forms.Label labelDataFinal;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorPagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contato;
         private System.Windows.Forms.DataGridViewTextBoxColumn FormaPagamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Banco;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataEmissao;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBoxConsultaContasPagar2;
-        private System.Windows.Forms.Label labelDataInicial;
-        private System.Windows.Forms.Label labelDataFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataPagamento;
+        private System.Windows.Forms.Label label2;
     }
 }
