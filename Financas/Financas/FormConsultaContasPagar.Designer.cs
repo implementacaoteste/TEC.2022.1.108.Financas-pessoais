@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contasPagarDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +51,7 @@
             this.textBoxConsultaContasPagar2 = new System.Windows.Forms.TextBox();
             this.labelDataInicial = new System.Windows.Forms.Label();
             this.labelDataFinal = new System.Windows.Forms.Label();
-            this.buttonQuitarConsultaContasPagar = new System.Windows.Forms.Button();
+            this.buttonPagarContasPagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -93,10 +93,10 @@
             // ValorPagar
             // 
             this.ValorPagar.DataPropertyName = "ValorPagar";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ValorPagar.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.ValorPagar.DefaultCellStyle = dataGridViewCellStyle3;
             this.ValorPagar.HeaderText = "Valor";
             this.ValorPagar.MinimumWidth = 6;
             this.ValorPagar.Name = "ValorPagar";
@@ -133,9 +133,9 @@
             // DataEmissao
             // 
             this.DataEmissao.DataPropertyName = "DataEmissao";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle4;
             this.DataEmissao.HeaderText = "Data de emissao";
             this.DataEmissao.MinimumWidth = 6;
             this.DataEmissao.Name = "DataEmissao";
@@ -284,15 +284,16 @@
             this.labelDataFinal.Text = "Data final";
             this.labelDataFinal.Visible = false;
             // 
-            // buttonQuitarConsultaContasPagar
+            // buttonPagarContasPagar
             // 
-            this.buttonQuitarConsultaContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonQuitarConsultaContasPagar.Location = new System.Drawing.Point(909, 654);
-            this.buttonQuitarConsultaContasPagar.Name = "buttonQuitarConsultaContasPagar";
-            this.buttonQuitarConsultaContasPagar.Size = new System.Drawing.Size(75, 23);
-            this.buttonQuitarConsultaContasPagar.TabIndex = 19;
-            this.buttonQuitarConsultaContasPagar.Text = "Quitar ";
-            this.buttonQuitarConsultaContasPagar.UseVisualStyleBackColor = true;
+            this.buttonPagarContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPagarContasPagar.Location = new System.Drawing.Point(922, 654);
+            this.buttonPagarContasPagar.Name = "buttonPagarContasPagar";
+            this.buttonPagarContasPagar.Size = new System.Drawing.Size(75, 23);
+            this.buttonPagarContasPagar.TabIndex = 19;
+            this.buttonPagarContasPagar.Text = "Pagar";
+            this.buttonPagarContasPagar.UseVisualStyleBackColor = true;
+            this.buttonPagarContasPagar.Click += new System.EventHandler(this.buttonPagarContasPagar_Click);
             // 
             // FormConsultaContasPagar
             // 
@@ -300,7 +301,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1111, 688);
-            this.Controls.Add(this.buttonQuitarConsultaContasPagar);
+            this.Controls.Add(this.buttonPagarContasPagar);
             this.Controls.Add(this.labelDataFinal);
             this.Controls.Add(this.labelDataInicial);
             this.Controls.Add(this.textBoxConsultaContasPagar2);
@@ -352,6 +353,6 @@
         private System.Windows.Forms.TextBox textBoxConsultaContasPagar2;
         private System.Windows.Forms.Label labelDataInicial;
         private System.Windows.Forms.Label labelDataFinal;
-        private System.Windows.Forms.Button buttonQuitarConsultaContasPagar;
+        private System.Windows.Forms.Button buttonPagarContasPagar;
     }
 }
