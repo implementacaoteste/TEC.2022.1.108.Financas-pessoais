@@ -293,7 +293,6 @@
             this.buttonQuitarConsultaContasPagar.TabIndex = 19;
             this.buttonQuitarConsultaContasPagar.Text = "Quitar ";
             this.buttonQuitarConsultaContasPagar.UseVisualStyleBackColor = true;
-            this.buttonQuitarConsultaContasPagar.Click += new System.EventHandler(this.buttonQuitarConsultaContasPagar_Click);
             // 
             // FormConsultaContasPagar
             // 
