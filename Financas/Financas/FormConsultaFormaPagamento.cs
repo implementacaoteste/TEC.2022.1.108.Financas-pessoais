@@ -16,9 +16,10 @@ namespace Financas
     {
         public int Id;
         public string Descricao;
-        public FormConsultaFormaPagamento()
+        public FormConsultaFormaPagamento(bool _selecionar = false)
         {
             InitializeComponent();
+            button1.Visible = _selecionar;
         }
 
         private void buttonBuscarFormaPagamento_Click(object sender, EventArgs e)

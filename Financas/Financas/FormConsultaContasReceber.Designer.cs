@@ -51,6 +51,7 @@
             this.textBoxConsultarContasReceber2 = new System.Windows.Forms.TextBox();
             this.labelDataInicial = new System.Windows.Forms.Label();
             this.labelDataFinal = new System.Windows.Forms.Label();
+            this.buttonQuitarContasReceber = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -283,12 +284,24 @@
             this.labelDataFinal.Text = "Data Final";
             this.labelDataFinal.Visible = false;
             // 
+            // buttonQuitarContasReceber
+            // 
+            this.buttonQuitarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQuitarContasReceber.Location = new System.Drawing.Point(907, 655);
+            this.buttonQuitarContasReceber.Name = "buttonQuitarContasReceber";
+            this.buttonQuitarContasReceber.Size = new System.Drawing.Size(75, 23);
+            this.buttonQuitarContasReceber.TabIndex = 20;
+            this.buttonQuitarContasReceber.Text = "Quitar";
+            this.buttonQuitarContasReceber.UseVisualStyleBackColor = true;
+            this.buttonQuitarContasReceber.Click += new System.EventHandler(this.buttonQuitarContasReceber_Click);
+            // 
             // FormConsultaContasReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1111, 688);
+            this.Controls.Add(this.buttonQuitarContasReceber);
             this.Controls.Add(this.labelDataFinal);
             this.Controls.Add(this.labelDataInicial);
             this.Controls.Add(this.textBoxConsultarContasReceber2);
@@ -340,5 +353,6 @@
         private System.Windows.Forms.TextBox textBoxConsultarContasReceber2;
         private System.Windows.Forms.Label labelDataInicial;
         private System.Windows.Forms.Label labelDataFinal;
+        private System.Windows.Forms.Button buttonQuitarContasReceber;
     }
 }

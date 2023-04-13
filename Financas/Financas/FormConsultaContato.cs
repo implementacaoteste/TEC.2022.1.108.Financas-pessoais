@@ -26,7 +26,26 @@ namespace Financas
         {
             try
             {
-                contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNome(textBoxBuscar.Text);
+                switch (comboBoxBuscar.SelectedIndex)
+                {
+                    case 0:
+                        contatoBindingSource.DataSource = new ContatoBLL().BuscarTodos();
+                        break;
+                    case 1:
+                        contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNome(textBoxBuscar.Text);
+                        break;
+                    case 2:
+                        contatoBindingSource.DataSource = new ContatoBLL().BuscarPorEndereco(textBoxBuscar.Text);
+                        break;
+                    case 3:
+                        contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNumero(Convert.ToInt32(textBoxBuscar.Text));
+                        break;
+                    case 4:
+                        contatoBindingSource.DataSource = new ContatoBLL().BuscarPorDescricao(textBoxBuscar.Text);
+                        break;
+                    default:
+                        break;
+                }
             }
             catch (Exception ex)
             {
@@ -94,9 +113,6 @@ namespace Financas
             }
         }
 
-        private void FormConsultaContato_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

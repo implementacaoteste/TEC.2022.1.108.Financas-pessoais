@@ -62,7 +62,8 @@ CREATE TABLE ContasPagar
 	IdFormaPagamento INT,
 	ValorPagar FLOAT,
 	Descricao VARCHAR(250),
-	DataEmissao DATE
+	DataEmissao DATE,
+	DataPagamento DATE
 )
 GO
 
@@ -76,7 +77,8 @@ CREATE TABLE ContasReceber
 	IdFormaPagamento INT,
 	ValorReceber FLOAT,
 	Descricao VARCHAR(250), 
-	DataEmissao DATE
+	DataEmissao DATE,
+	DataPagamento DATE
 )
 GO
 
