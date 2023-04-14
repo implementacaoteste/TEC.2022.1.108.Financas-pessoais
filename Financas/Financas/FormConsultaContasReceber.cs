@@ -124,7 +124,7 @@ namespace Financas
 
         private void buttonQuitarContasReceber_Click(object sender, EventArgs e)
         {
-            using(FormCadastroReceita frm = new FormCadastroReceita())
+            using (FormCadastroReceita frm = new FormCadastroReceita((ContasReceber)contasReceberBindingSource.Current))
             {
                 frm.ShowDialog();
             }

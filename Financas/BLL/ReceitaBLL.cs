@@ -10,9 +10,9 @@ namespace BLL
 {
     public class ReceitaBLL
     {
-        public void Inserir(Receita _receita)
+        public void Inserir(Receita _receita, ContasReceber _contasReceber = null)
         {
-            new ReceitaDAL().Inserir(_receita);
+            new ReceitaDAL().Inserir(_receita, _contasReceber);
         }
         public void Alterar(Receita _receita)
         {

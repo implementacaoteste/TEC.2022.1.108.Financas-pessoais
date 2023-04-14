@@ -43,7 +43,6 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.contatoTextBox = new System.Windows.Forms.TextBox();
-            this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bancoTextBox = new System.Windows.Forms.TextBox();
             this.formaPagamentoTextBox = new System.Windows.Forms.TextBox();
             this.buttonBuscarContatoReceita = new System.Windows.Forms.Button();
@@ -57,7 +56,6 @@
             formaPagamentoLabel = new System.Windows.Forms.Label();
             dataEmissaoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // descricaoLabel
@@ -134,6 +132,7 @@
             // 
             // textBoxGanhos
             // 
+            this.textBoxGanhos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "Valor", true));
             this.textBoxGanhos.Location = new System.Drawing.Point(65, 117);
             this.textBoxGanhos.Name = "textBoxGanhos";
             this.textBoxGanhos.Size = new System.Drawing.Size(133, 22);
@@ -182,10 +181,6 @@
             this.contatoTextBox.Size = new System.Drawing.Size(154, 22);
             this.contatoTextBox.TabIndex = 14;
             // 
-            // despesasBindingSource
-            // 
-            this.despesasBindingSource.DataSource = typeof(Models.Despesas);
-            // 
             // bancoTextBox
             // 
             this.bancoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "Banco", true));
@@ -196,7 +191,7 @@
             // 
             // formaPagamentoTextBox
             // 
-            this.formaPagamentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "FormaPagamento", true));
+            this.formaPagamentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "FormaPagamento", true));
             this.formaPagamentoTextBox.Location = new System.Drawing.Point(386, 205);
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(204, 22);
@@ -278,7 +273,6 @@
             this.Text = "Cadastro de receita";
             this.Load += new System.EventHandler(this.FormCadastroReceita_Load);
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,7 +286,6 @@
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource despesasBindingSource;
         private System.Windows.Forms.TextBox contatoTextBox;
         private System.Windows.Forms.TextBox bancoTextBox;
         private System.Windows.Forms.TextBox formaPagamentoTextBox;

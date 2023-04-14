@@ -17,12 +17,16 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO ContasReceber(ValorReceber, Descricao)
-                                    VALUES(@ValorReceber, @Descricao)";
+                cmd.CommandText = @"INSERT INTO ContasReceber(ValorReceber, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao)
+                                    VALUES(@ValorReceber, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@ValorReceber", _contasReceber.ValorReceber);
                 cmd.Parameters.AddWithValue("@Descricao", _contasReceber.Descricao);
-                
+                cmd.Parameters.AddWithValue("@IdContato", _contasReceber.IdContato);
+                cmd.Parameters.AddWithValue("@IdBanco", _contasReceber.IdBanco);
+                cmd.Parameters.AddWithValue("@IdFormaPagamento", _contasReceber.IdFormaPagamento);
+                cmd.Parameters.AddWithValue("@DataEmissao", _contasReceber.DataEmissao);
+
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -103,7 +107,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, ContasReceber.IdBanco, ContasReceber.IdContato, ContasReceber.IdFormaPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
                                     INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id  
@@ -117,14 +121,18 @@ namespace DAL
                     if (rd.Read())
                     {
                         contasReceber = new ContasReceber();
-                        contasReceber.Id = Convert.ToInt32(rd["ID"]);
+                        contasReceber.Id = Convert.ToInt32(rd["Id"]);
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
-                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.Descricao = rd["DescricaoContasReceber"].ToString();
                         contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
-                        contasReceber.Contato = rd["Nome"].ToString();
-                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
-                        contasReceber.Banco = rd["Nome"].ToString();
+                        if (rd["DataPagamento"].ToString() != "")
+                            contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
+                        contasReceber.Contato = rd["Devedor"].ToString();
+                        contasReceber.IdContato = Convert.ToInt32(rd["IdContato"]);
+                        contasReceber.FormaPagamento = rd["FormaPagamento"].ToString();
+                        contasReceber.IdFormaPagamento = Convert.ToInt32(rd["IdFormaPagamento"]);
+                        contasReceber.Banco = rd["Banco"].ToString();
+                        contasReceber.IdBanco = Convert.ToInt32(rd["IdBanco"]);
                     }
                 }
                 return contasReceber;
@@ -150,7 +158,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, ContasReceber.IdBanco, ContasReceber.IdContato, ContasReceber.IdFormaPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
                                     INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id  ";
@@ -163,12 +171,16 @@ namespace DAL
                         contasReceber = new ContasReceber();
                         contasReceber.Id = Convert.ToInt32(rd["Id"]);
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
-                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.Descricao = rd["DescricaoContasReceber"].ToString();
                         contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
-                        contasReceber.Contato = rd["Nome"].ToString();
-                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
-                        contasReceber.Banco = rd["Nome"].ToString();
+                        if (rd["DataPagamento"].ToString() != "")
+                            contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
+                        contasReceber.Contato = rd["Devedor"].ToString();
+                        contasReceber.IdContato = Convert.ToInt32(rd["IdContato"]);
+                        contasReceber.FormaPagamento = rd["FormaPagamento"].ToString();
+                        contasReceber.IdFormaPagamento = Convert.ToInt32(rd["IdFormaPagamento"]);
+                        contasReceber.Banco = rd["Banco"].ToString();
+                        contasReceber.IdBanco = Convert.ToInt32(rd["IdBanco"]);
                         contaReceber.Add(contasReceber);
                     }
                 }
@@ -194,7 +206,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, ContasReceber.IdBanco, ContasReceber.IdContato, ContasReceber.IdFormaPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
                                     INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id  
@@ -210,12 +222,16 @@ namespace DAL
                         contasReceber = new ContasReceber();
                         contasReceber.Id = Convert.ToInt32(rd["Id"]);
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
-                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.Descricao = rd["DescricaoContasReceber"].ToString();
                         contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
-                        contasReceber.Contato = rd["Nome"].ToString();
-                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
-                        contasReceber.Banco = rd["Nome"].ToString();
+                        if (rd["DataPagamento"].ToString() != "")
+                            contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
+                        contasReceber.Contato = rd["Devedor"].ToString();
+                        contasReceber.IdContato = Convert.ToInt32(rd["IdContato"]);
+                        contasReceber.FormaPagamento = rd["FormaPagamento"].ToString();
+                        contasReceber.IdFormaPagamento = Convert.ToInt32(rd["IdFormaPagamento"]);
+                        contasReceber.Banco = rd["Banco"].ToString();
+                        contasReceber.IdBanco = Convert.ToInt32(rd["IdBanco"]);
                         contaReceber.Add(contasReceber);
                     }
                 }
@@ -240,10 +256,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, ContasReceber.IdBanco, ContasReceber.IdContato, ContasReceber.IdFormaPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
                                     INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
-                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id  
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id 
                                     WHERE ContasReceber.DataEmissao BETWEEN @DataInicial AND @DataFinal";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -258,12 +274,16 @@ namespace DAL
                         contasReceber = new ContasReceber();
                         contasReceber.Id = Convert.ToInt32(rd["Id"]);
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
-                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.Descricao = rd["DescricaoContasReceber"].ToString();
                         contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
-                        contasReceber.Contato = rd["Nome"].ToString();
-                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
-                        contasReceber.Banco = rd["Nome"].ToString();
+                        if (rd["DataPagamento"].ToString() != "")
+                            contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
+                        contasReceber.Contato = rd["Devedor"].ToString();
+                        contasReceber.IdContato = Convert.ToInt32(rd["IdContato"]);
+                        contasReceber.FormaPagamento = rd["FormaPagamento"].ToString();
+                        contasReceber.IdFormaPagamento = Convert.ToInt32(rd["IdFormaPagamento"]);
+                        contasReceber.Banco = rd["Banco"].ToString();
+                        contasReceber.IdBanco = Convert.ToInt32(rd["IdBanco"]);
                         contaReceber.Add(contasReceber);
                     }
                 }
@@ -288,10 +308,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, ContasReceber.IdBanco, ContasReceber.IdContato, ContasReceber.IdFormaPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
                                     INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
-                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id  
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id 
                                     WHERE Contato.Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -304,12 +324,16 @@ namespace DAL
                         contasReceber = new ContasReceber();
                         contasReceber.Id = Convert.ToInt32(rd["Id"]);
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
-                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.Descricao = rd["DescricaoContasReceber"].ToString();
                         contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
-                        contasReceber.Contato = rd["Nome"].ToString();
-                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
-                        contasReceber.Banco = rd["Nome"].ToString();
+                        if (rd["DataPagamento"].ToString() != "")
+                            contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
+                        contasReceber.Contato = rd["Devedor"].ToString();
+                        contasReceber.IdContato = Convert.ToInt32(rd["IdContato"]);
+                        contasReceber.FormaPagamento = rd["FormaPagamento"].ToString();
+                        contasReceber.IdFormaPagamento = Convert.ToInt32(rd["IdFormaPagamento"]);
+                        contasReceber.Banco = rd["Banco"].ToString();
+                        contasReceber.IdBanco = Convert.ToInt32(rd["IdBanco"]);
                         contaReceber.Add(contasReceber);
                     }
                 }
@@ -334,10 +358,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, ContasReceber.IdBanco, ContasReceber.IdContato, ContasReceber.IdFormaPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
                                     INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
-                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id  
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id
                                     WHERE FormaPagamento.Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -350,12 +374,16 @@ namespace DAL
                         contasReceber = new ContasReceber();
                         contasReceber.Id = Convert.ToInt32(rd["Id"]);
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
-                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.Descricao = rd["DescricaoContasReceber"].ToString();
                         contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
-                        contasReceber.Contato = rd["Nome"].ToString();
-                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
-                        contasReceber.Banco = rd["Nome"].ToString();
+                        if (rd["DataPagamento"].ToString() != "")
+                            contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
+                        contasReceber.Contato = rd["Devedor"].ToString();
+                        contasReceber.IdContato = Convert.ToInt32(rd["IdContato"]);
+                        contasReceber.FormaPagamento = rd["FormaPagamento"].ToString();
+                        contasReceber.IdFormaPagamento = Convert.ToInt32(rd["IdFormaPagamento"]);
+                        contasReceber.Banco = rd["Banco"].ToString();
+                        contasReceber.IdBanco = Convert.ToInt32(rd["IdBanco"]);
                         contaReceber.Add(contasReceber);
                     }
                 }
@@ -381,10 +409,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, ContasReceber.IdBanco, ContasReceber.IdContato, ContasReceber.IdFormaPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
                                     INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
-                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id  
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id 
                                     WHERE Banco.Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -397,12 +425,16 @@ namespace DAL
                         contasReceber = new ContasReceber();
                         contasReceber.Id = Convert.ToInt32(rd["Id"]);
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
-                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.Descricao = rd["DescricaoContasReceber"].ToString();
                         contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
-                        contasReceber.Contato = rd["Nome"].ToString();
-                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
-                        contasReceber.Banco = rd["Nome"].ToString();
+                        if (rd["DataPagamento"].ToString() != "")
+                            contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
+                        contasReceber.Contato = rd["Devedor"].ToString();
+                        contasReceber.IdContato = Convert.ToInt32(rd["IdContato"]);
+                        contasReceber.FormaPagamento = rd["FormaPagamento"].ToString();
+                        contasReceber.IdFormaPagamento = Convert.ToInt32(rd["IdFormaPagamento"]);
+                        contasReceber.Banco = rd["Banco"].ToString();
+                        contasReceber.IdBanco = Convert.ToInt32(rd["IdBanco"]);
                         contaReceber.Add(contasReceber);
                     }
                 }
@@ -428,10 +460,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
+                cmd.CommandText = @"SELECT ContasReceber.Id, ContasReceber.Descricao AS DescricaoContasReceber, ContasReceber.ValorReceber, ContasReceber.DataEmissao, ContasReceber.DataPagamento, ContasReceber.IdBanco, ContasReceber.IdContato, ContasReceber.IdFormaPagamento, Contato.Nome AS Devedor, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco  FROM ContasReceber
                                     INNER JOIN Contato ON ContasReceber.IdContato = Contato.Id
                                     INNER JOIN FormaPagamento ON ContasReceber.IdFormaPagamento = FormaPagamento.Id
-                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id  
+                                    INNER JOIN Banco ON ContasReceber.IdBanco = Banco.Id
                                     WHERE ContasReceber.DataPagamento BETWEEN @DataInicial AND @DataFinal";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -446,12 +478,16 @@ namespace DAL
                         contasReceber = new ContasReceber();
                         contasReceber.Id = Convert.ToInt32(rd["Id"]);
                         contasReceber.ValorReceber = (double)rd["ValorReceber"];
-                        contasReceber.Descricao = rd["Descricao"].ToString();
+                        contasReceber.Descricao = rd["DescricaoContasReceber"].ToString();
                         contasReceber.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
-                        contasReceber.Contato = rd["Nome"].ToString();
-                        contasReceber.FormaPagamento = rd["Descricao"].ToString();
-                        contasReceber.Banco = rd["Nome"].ToString();
+                        if (rd["DataPagamento"].ToString() != "")
+                            contasReceber.DataPagamento = Convert.ToDateTime(rd["DataPagamento"]);
+                        contasReceber.Contato = rd["Devedor"].ToString();
+                        contasReceber.IdContato = Convert.ToInt32(rd["IdContato"]);
+                        contasReceber.FormaPagamento = rd["FormaPagamento"].ToString();
+                        contasReceber.IdFormaPagamento = Convert.ToInt32(rd["IdFormaPagamento"]);
+                        contasReceber.Banco = rd["Banco"].ToString();
+                        contasReceber.IdBanco = Convert.ToInt32(rd["IdBanco"]);
                         contaReceber.Add(contasReceber);
                     }
                 }

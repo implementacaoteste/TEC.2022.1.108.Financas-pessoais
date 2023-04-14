@@ -37,19 +37,19 @@
             System.Windows.Forms.Label dataEmissaoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroContasReceber));
             this.valorReceberTextBoxContasReceber = new System.Windows.Forms.TextBox();
-            this.contasReceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.descricaoTextBoxContasReceber = new System.Windows.Forms.TextBox();
             this.buttonBuscarContatoContasReceber = new System.Windows.Forms.Button();
             this.buttonSalvarCadastroContasReceber = new System.Windows.Forms.Button();
             this.buttonCancelarCadastroContasReceber = new System.Windows.Forms.Button();
             this.textBoxBuscarContato = new System.Windows.Forms.TextBox();
-            this.contatoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bancoTextBox = new System.Windows.Forms.TextBox();
             this.formaPagamentoTextBox = new System.Windows.Forms.TextBox();
             this.buttonBuscarBanco = new System.Windows.Forms.Button();
             this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
             this.dataEmissaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.contasReceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contatoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             valorReceberLabel = new System.Windows.Forms.Label();
             descricaoLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
@@ -134,10 +134,6 @@
             this.valorReceberTextBoxContasReceber.Size = new System.Drawing.Size(164, 22);
             this.valorReceberTextBoxContasReceber.TabIndex = 2;
             // 
-            // contasReceberBindingSource
-            // 
-            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
@@ -202,10 +198,6 @@
             this.textBoxBuscarContato.TabIndex = 10;
             this.textBoxBuscarContato.TextChanged += new System.EventHandler(this.textBoxBuscarContato_TextChanged);
             // 
-            // contatoBindingSource
-            // 
-            this.contatoBindingSource.DataSource = typeof(Models.Contato);
-            // 
             // bancoTextBox
             // 
             this.bancoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasReceberBindingSource, "Banco", true));
@@ -252,6 +244,14 @@
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
             this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dataEmissaoDateTimePicker.TabIndex = 17;
+            // 
+            // contasReceberBindingSource
+            // 
+            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
+            // 
+            // contatoBindingSource
+            // 
+            this.contatoBindingSource.DataSource = typeof(Models.Contato);
             // 
             // FormCadastroContasReceber
             // 
