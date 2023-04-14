@@ -449,10 +449,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DataEmissao;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataPagamento;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBoxConsultaContasPagar2;
-        private System.Windows.Forms.Label labelDataInicial;
-        private System.Windows.Forms.Label labelDataFinal;
+
+
+
+
         private System.Windows.Forms.Button buttonPagarContasPagar;
     }
 }
