@@ -187,7 +187,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Todos",
             "Descrição"});
-            this.comboBox1.Location = new System.Drawing.Point(598, 109);
+            this.comboBox1.Location = new System.Drawing.Point(608, 108);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 15;
