@@ -37,7 +37,6 @@ namespace Financas
             this.labelSenhaLogin = new System.Windows.Forms.Label();
             this.buttonEntrar = new System.Windows.Forms.Button();
             this.buttonsair = new System.Windows.Forms.Button();
-            this.buttonCdastraLogin = new System.Windows.Forms.Button();
             this.checkBoxMostrarSenha = new System.Windows.Forms.CheckBox();
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,7 +76,7 @@ namespace Financas
             // textBoxUsuario
             // 
             this.textBoxUsuario.Location = new System.Drawing.Point(448, 201);
-            this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsuario.Multiline = true;
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(339, 29);
@@ -88,7 +87,7 @@ namespace Financas
             // textBoxSenhaLogin
             // 
             this.textBoxSenhaLogin.Location = new System.Drawing.Point(445, 278);
-            this.textBoxSenhaLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSenhaLogin.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSenhaLogin.Multiline = true;
             this.textBoxSenhaLogin.Name = "textBoxSenhaLogin";
             this.textBoxSenhaLogin.PasswordChar = '*';
@@ -123,7 +122,7 @@ namespace Financas
             // 
             this.buttonEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEntrar.Location = new System.Drawing.Point(465, 422);
-            this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(96, 34);
             this.buttonEntrar.TabIndex = 6;
@@ -135,27 +134,13 @@ namespace Financas
             // 
             this.buttonsair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonsair.Location = new System.Drawing.Point(603, 422);
-            this.buttonsair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonsair.Margin = new System.Windows.Forms.Padding(4);
             this.buttonsair.Name = "buttonsair";
             this.buttonsair.Size = new System.Drawing.Size(97, 34);
             this.buttonsair.TabIndex = 6;
             this.buttonsair.Text = "Sair";
             this.buttonsair.UseVisualStyleBackColor = true;
             this.buttonsair.Click += new System.EventHandler(this.buttonsair_Click);
-            // 
-            // buttonCdastraLogin
-            // 
-            this.buttonCdastraLogin.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCdastraLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCdastraLogin.ForeColor = System.Drawing.Color.Black;
-            this.buttonCdastraLogin.Location = new System.Drawing.Point(448, 492);
-            this.buttonCdastraLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonCdastraLogin.Name = "buttonCdastraLogin";
-            this.buttonCdastraLogin.Size = new System.Drawing.Size(252, 43);
-            this.buttonCdastraLogin.TabIndex = 8;
-            this.buttonCdastraLogin.Text = "Cadastra-se";
-            this.buttonCdastraLogin.UseVisualStyleBackColor = false;
-            this.buttonCdastraLogin.Click += new System.EventHandler(this.buttonCdastraLogin_Click);
             // 
             // checkBoxMostrarSenha
             // 
@@ -177,7 +162,6 @@ namespace Financas
             this.ClientSize = new System.Drawing.Size(1129, 735);
             this.Controls.Add(this.checkBoxMostrarSenha);
             this.Controls.Add(this.buttonsair);
-            this.Controls.Add(this.buttonCdastraLogin);
             this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.labelSenhaLogin);
             this.Controls.Add(this.labelUsuarioLogin);
@@ -187,7 +171,7 @@ namespace Financas
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";
@@ -208,7 +192,6 @@ namespace Financas
         private System.Windows.Forms.Label labelSenhaLogin;
         private System.Windows.Forms.Button buttonEntrar;
         private System.Windows.Forms.Button buttonsair;
-        private System.Windows.Forms.Button buttonCdastraLogin;
         private System.Windows.Forms.CheckBox checkBoxMostrarSenha;
     }
 }

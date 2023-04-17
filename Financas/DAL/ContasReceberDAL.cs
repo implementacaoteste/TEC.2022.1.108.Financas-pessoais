@@ -46,10 +46,15 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE ContasReceber SET ValorReceber=@ValorReceber, Descricao=@Descricao WHERE Id = @Id";
+                cmd.CommandText = "UPDATE ContasReceber SET ValorReceber=@ValorReceber, Descricao=@Descricao, IdContato=@IdContato, IdBanco=@IdBanco, IdFormaPagamento=@IdFormaPagamento, DataEmissao=@DataEmissao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Id", _contasReceber.Id);
                 cmd.Parameters.AddWithValue("@ValorReceber", _contasReceber.ValorReceber);
                 cmd.Parameters.AddWithValue("@Descricao", _contasReceber.Descricao);
+                cmd.Parameters.AddWithValue("@IdContato", _contasReceber.IdContato);
+                cmd.Parameters.AddWithValue("@IdBanco", _contasReceber.IdBanco);
+                cmd.Parameters.AddWithValue("@IdFormaPagamento", _contasReceber.IdFormaPagamento);
+                cmd.Parameters.AddWithValue("@DataEmissao", _contasReceber.DataEmissao);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
