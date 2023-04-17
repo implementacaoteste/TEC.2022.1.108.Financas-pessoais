@@ -125,6 +125,7 @@
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(188, 22);
             this.textBoxDescricao.TabIndex = 2;
+            this.textBoxDescricao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxDescricao_KeyDown);
             // 
             // receitaBindingSource
             // 
@@ -273,6 +274,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de receita";
             this.Load += new System.EventHandler(this.FormCadastroReceita_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroReceita_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -55,8 +55,6 @@
             this.labelDataFinal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonQuitarContasReceber = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contasReceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -98,70 +96,6 @@
             this.dataGridViewTextBoxColumn3.Width = 140;
             // 
             // ValorReceber
-            // 
-            this.ValorReceber.DataPropertyName = "ValorReceber";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.ValorReceber.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ValorReceber.HeaderText = "Valor";
-            this.ValorReceber.MinimumWidth = 6;
-            this.ValorReceber.Name = "ValorReceber";
-            this.ValorReceber.ReadOnly = true;
-            this.ValorReceber.Width = 80;
-            // 
-            // Contato
-            // 
-            this.Contato.DataPropertyName = "Contato";
-            this.Contato.HeaderText = "Contato";
-            this.Contato.MinimumWidth = 6;
-            this.Contato.Name = "Contato";
-            this.Contato.ReadOnly = true;
-            this.Contato.Width = 115;
-            // 
-            // FormaPagamento
-            // 
-            this.FormaPagamento.DataPropertyName = "FormaPagamento";
-            this.FormaPagamento.HeaderText = "FormaPagamento";
-            this.FormaPagamento.MinimumWidth = 6;
-            this.FormaPagamento.Name = "FormaPagamento";
-            this.FormaPagamento.ReadOnly = true;
-            this.FormaPagamento.Width = 167;
-            // 
-            // Banco
-            // 
-            this.Banco.DataPropertyName = "Banco";
-            this.Banco.HeaderText = "Banco";
-            this.Banco.MinimumWidth = 6;
-            this.Banco.Name = "Banco";
-            this.Banco.ReadOnly = true;
-            this.Banco.Width = 85;
-            // 
-            // DataEmissao
-            // 
-            this.DataEmissao.DataPropertyName = "DataEmissao";
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle5;
-            this.DataEmissao.HeaderText = "Data de emissao";
-            this.DataEmissao.MinimumWidth = 8;
-            this.DataEmissao.Name = "DataEmissao";
-            this.DataEmissao.ReadOnly = true;
-            this.DataEmissao.Width = 140;
-            // 
-            // DataPagamento
-            // 
-            this.DataPagamento.DataPropertyName = "DataPagamento";
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.DataPagamento.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DataPagamento.HeaderText = "Data de pagamento";
-            this.DataPagamento.MinimumWidth = 6;
-            this.DataPagamento.Name = "DataPagamento";
-            this.DataPagamento.ReadOnly = true;
-            this.DataPagamento.Width = 125;
-            // 
-            // contasReceberBindingSource
             // 
             this.ValorReceber.DataPropertyName = "ValorReceber";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
@@ -225,9 +159,13 @@
             this.DataPagamento.ReadOnly = true;
             this.DataPagamento.Width = 125;
             // 
+            // contasReceberBindingSource
+            // 
+            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
+            // 
             // buttonBuscarContasReceber
             // 
-            this.buttonBuscarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarContasReceber.Location = new System.Drawing.Point(737, 110);
             this.buttonBuscarContasReceber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarContasReceber.Name = "buttonBuscarContasReceber";
@@ -239,7 +177,7 @@
             // 
             // buttonAlterarContasReceber
             // 
-            this.buttonAlterarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterarContasReceber.Location = new System.Drawing.Point(919, 110);
             this.buttonAlterarContasReceber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAlterarContasReceber.Name = "buttonAlterarContasReceber";
@@ -251,7 +189,7 @@
             // 
             // buttonExcluirContasReceber
             // 
-            this.buttonExcluirContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluirContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluirContasReceber.Location = new System.Drawing.Point(1000, 109);
             this.buttonExcluirContasReceber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluirContasReceber.Name = "buttonExcluirContasReceber";
@@ -263,7 +201,7 @@
             // 
             // buttonAdicionarContasReceber
             // 
-            this.buttonAdicionarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdicionarContasReceber.Location = new System.Drawing.Point(818, 110);
             this.buttonAdicionarContasReceber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionarContasReceber.Name = "buttonAdicionarContasReceber";
@@ -305,7 +243,7 @@
             // 
             // buttonSair
             // 
-            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.Location = new System.Drawing.Point(1000, 654);
             this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSair.Name = "buttonSair";
@@ -376,7 +314,7 @@
             // 
             // buttonQuitarContasReceber
             // 
-            this.buttonQuitarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQuitarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonQuitarContasReceber.Location = new System.Drawing.Point(907, 655);
             this.buttonQuitarContasReceber.Name = "buttonQuitarContasReceber";
             this.buttonQuitarContasReceber.Size = new System.Drawing.Size(75, 23);
@@ -384,20 +322,6 @@
             this.buttonQuitarContasReceber.Text = "Quitar";
             this.buttonQuitarContasReceber.UseVisualStyleBackColor = true;
             this.buttonQuitarContasReceber.Click += new System.EventHandler(this.buttonQuitarContasReceber_Click);
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn3.FillWeight = 42.78075F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descricao";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 140;
-            // 
-            // contasReceberBindingSource
-            // 
-            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
             // 
             // FormConsultaContasReceber
             // 
@@ -421,6 +345,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.contasReceberDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -429,6 +354,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de contas a receber";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormConsultaContasReceber_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).EndInit();
             this.ResumeLayout(false);
