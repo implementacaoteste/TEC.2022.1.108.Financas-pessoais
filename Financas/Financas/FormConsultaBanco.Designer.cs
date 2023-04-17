@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+
             this.bancoDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,10 +90,12 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Saldo";
+
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle5.Format = "C2";
             dataGridViewCellStyle5.NullValue = null;
             this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
+
             this.dataGridViewTextBoxColumn3.HeaderText = "Saldo";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -98,10 +105,12 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Poupanca";
+
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle6.Format = "C2";
             dataGridViewCellStyle6.NullValue = null;
             this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle6;
+
             this.dataGridViewTextBoxColumn4.HeaderText = "Poupanca";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -146,7 +155,7 @@
             // 
             // buttonAdicionarBanco
             // 
-            this.buttonAdicionarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdicionarBanco.Location = new System.Drawing.Point(818, 110);
             this.buttonAdicionarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionarBanco.Name = "buttonAdicionarBanco";
@@ -158,7 +167,7 @@
             // 
             // buttonBuscarBanco
             // 
-            this.buttonBuscarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarBanco.Location = new System.Drawing.Point(737, 110);
             this.buttonBuscarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarBanco.Name = "buttonBuscarBanco";
@@ -170,7 +179,7 @@
             // 
             // buttonExcluirBanco
             // 
-            this.buttonExcluirBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluirBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluirBanco.Location = new System.Drawing.Point(1000, 110);
             this.buttonExcluirBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluirBanco.Name = "buttonExcluirBanco";
@@ -182,7 +191,7 @@
             // 
             // buttonAlterarBanco
             // 
-            this.buttonAlterarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterarBanco.Location = new System.Drawing.Point(919, 110);
             this.buttonAlterarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAlterarBanco.Name = "buttonAlterarBanco";
@@ -194,7 +203,7 @@
             // 
             // buttonSair
             // 
-            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.Location = new System.Drawing.Point(1000, 656);
             this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSair.Name = "buttonSair";
@@ -206,7 +215,7 @@
             // 
             // buttonSelecionarBanco
             // 
-            this.buttonSelecionarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSelecionarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSelecionarBanco.Location = new System.Drawing.Point(885, 656);
             this.buttonSelecionarBanco.Name = "buttonSelecionarBanco";
             this.buttonSelecionarBanco.Size = new System.Drawing.Size(109, 23);

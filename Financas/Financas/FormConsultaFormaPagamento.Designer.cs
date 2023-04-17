@@ -82,7 +82,7 @@
             // 
             // buttonBuscarFormaPagamento
             // 
-            this.buttonBuscarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(737, 110);
             this.buttonBuscarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
@@ -94,7 +94,7 @@
             // 
             // buttonAlterarFormaPagamento
             // 
-            this.buttonAlterarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterarFormaPagamento.Location = new System.Drawing.Point(919, 108);
             this.buttonAlterarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
@@ -106,7 +106,7 @@
             // 
             // buttonExcluirFormaPagamento
             // 
-            this.buttonExcluirFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluirFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluirFormaPagamento.Location = new System.Drawing.Point(1000, 108);
             this.buttonExcluirFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
@@ -118,7 +118,7 @@
             // 
             // buttonAdicionarFormaPagamento
             // 
-            this.buttonAdicionarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdicionarFormaPagamento.Location = new System.Drawing.Point(818, 110);
             this.buttonAdicionarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionarFormaPagamento.Name = "buttonAdicionarFormaPagamento";
@@ -160,7 +160,7 @@
             // 
             // buttonSair
             // 
-            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.Location = new System.Drawing.Point(1000, 654);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
@@ -171,7 +171,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(878, 655);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 23);

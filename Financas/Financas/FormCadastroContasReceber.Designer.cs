@@ -139,6 +139,10 @@
             // 
             this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
             // 
+            // contasReceberBindingSource
+            // 
+            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
@@ -155,7 +159,7 @@
             // descricaoTextBoxContasReceber
             // 
             this.descricaoTextBoxContasReceber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasReceberBindingSource, "Descricao", true));
-            this.descricaoTextBoxContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descricaoTextBoxContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descricaoTextBoxContasReceber.Location = new System.Drawing.Point(69, 321);
             this.descricaoTextBoxContasReceber.Name = "descricaoTextBoxContasReceber";
             this.descricaoTextBoxContasReceber.Size = new System.Drawing.Size(180, 22);
@@ -209,10 +213,14 @@
             // 
             this.contatoBindingSource.DataSource = typeof(Models.Contato);
             // 
+            // contatoBindingSource
+            // 
+            this.contatoBindingSource.DataSource = typeof(Models.Contato);
+            // 
             // bancoTextBox
             // 
             this.bancoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasReceberBindingSource, "Banco", true));
-            this.bancoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bancoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bancoTextBox.Location = new System.Drawing.Point(69, 216);
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(131, 22);
@@ -257,7 +265,9 @@
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
             this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dataEmissaoDateTimePicker.TabIndex = 17;
+
             this.dataEmissaoDateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataEmissaoDateTimePicker_KeyDown);
+
             // 
             // FormCadastroContasReceber
             // 

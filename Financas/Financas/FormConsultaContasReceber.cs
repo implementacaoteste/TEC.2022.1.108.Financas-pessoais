@@ -21,7 +21,7 @@ namespace Financas
 
         private void buttonBuscarContasReceber_Click(object sender, EventArgs e)
         {
-                contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
+                //contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
             try
             {
                 switch (comboBox1.SelectedIndex)
@@ -124,10 +124,33 @@ namespace Financas
 
         private void buttonQuitarContasReceber_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+            if (((ContasReceber)contasReceberBindingSource.Current).DataPagamento != null &&  ((ContasReceber)contasReceberBindingSource.Current).DataPagamento.Value.Year > 2000)
+            {
+                throw new Exception("Este registro já foi pago!");
+            }
             using (FormCadastroReceita frm = new FormCadastroReceita((ContasReceber)contasReceberBindingSource.Current))
             {
                 frm.ShowDialog();
             }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void FormConsultaContasReceber_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
+        }
+
+        private void FormConsultaContasReceber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                Close();
         }
     }
 }

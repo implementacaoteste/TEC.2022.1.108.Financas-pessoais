@@ -22,7 +22,7 @@ namespace Financas
             receitaBindingSource.EndEdit();
 
             if (Id == 0)
-                receitaBLL.Inserir((Receita)receitaBindingSource.Current, contasReceber);
+                    receitaBLL.Inserir((Receita)receitaBindingSource.Current, contasReceber);
             else
                 receitaBLL.Alterar((Receita)receitaBindingSource.Current);
             MessageBox.Show("Registro salvo com sucesso");
@@ -101,6 +101,18 @@ namespace Financas
                 frm.ShowDialog();
             }
 
+        }
+
+        private void FormCadastroReceita_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
+
+        private void textBoxDescricao_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                buttonSalvar_Click(null,null);
         }
     }
 }

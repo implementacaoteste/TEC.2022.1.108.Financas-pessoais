@@ -60,5 +60,42 @@ namespace Financas
 
   
         }
+
+        private void FormCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                Close();
+        }
+
+        private void textBoxNomeCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+                textBoxSenhaCadastroUsuario.Focus();
+        }
+
+        private void textBoxSenhaCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                textBoxNomeUsuarioCadastroUsuario.Focus();
+        }
+
+        private void textBoxNomeUsuarioCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                textBoxConfirmarSenhaCadastroUsuario.Focus();
+        }
+
+        private void textBoxConfirmarSenhaCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                textBoxRendaCadastroUsuario.Focus();
+        }
+
+        private void textBoxRendaCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if( e.KeyCode == Keys.Enter)
+
+                    buttonSalvarCadastrodeUsuario_Click(null, null);
+        }
     }
 }

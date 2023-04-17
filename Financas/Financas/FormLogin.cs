@@ -34,13 +34,6 @@ namespace Financas
             
         }
 
-        private void buttonCdastraLogin_Click(object sender, EventArgs e)
-        {
-            using (FormCadastroUsuario frm = new FormCadastroUsuario())
-            {
-                frm.ShowDialog();
-            } 
-        }
         private void checkBoxMostrarSenha_CheckedChanged(object sender, EventArgs e)
         {
             if(checkBoxMostrarSenha.Checked)
