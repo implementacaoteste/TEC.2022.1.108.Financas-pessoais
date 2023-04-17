@@ -116,5 +116,11 @@ namespace Financas
                 textBoxBuscarDespesas2.Visible = true;
             }
         }
+
+        private void FormConsultaDespesas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                Close();
+        }
     }
 }

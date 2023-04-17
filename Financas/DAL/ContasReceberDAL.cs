@@ -1,6 +1,7 @@
 ﻿using Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography;
@@ -11,61 +12,82 @@ namespace DAL
 {
     public class ContasReceberDAL
     {
-        public void Inserir(ContasReceber _contasReceber)
+        public void Inserir(ContasReceber _contasReceber, SqlTransaction _transaction = null)
         {
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
-            {
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO ContasReceber(ValorReceber, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao)
-                                    VALUES(@ValorReceber, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao)";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@ValorReceber", _contasReceber.ValorReceber);
-                cmd.Parameters.AddWithValue("@Descricao", _contasReceber.Descricao);
-                cmd.Parameters.AddWithValue("@IdContato", _contasReceber.IdContato);
-                cmd.Parameters.AddWithValue("@IdBanco", _contasReceber.IdBanco);
-                cmd.Parameters.AddWithValue("@IdFormaPagamento", _contasReceber.IdFormaPagamento);
-                cmd.Parameters.AddWithValue("@DataEmissao", _contasReceber.DataEmissao);
+            SqlTransaction transaction = _transaction;
 
-                cmd.Connection = cn;
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
+            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                throw new Exception("Ocorreu erro ao tentar inserir uma Conta a receber no banco de dados", ex);
-            }
-            finally
-            {
-                cn.Close();
+                using (SqlCommand cmd = new SqlCommand(@"INSERT INTO ContasReceber(ValorReceber, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao)
+                                                         VALUES(@ValorReceber, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao)", cn))
+                {
+                    try
+                    {
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Parameters.AddWithValue("@ValorReceber", _contasReceber.ValorReceber);
+                        cmd.Parameters.AddWithValue("@Descricao", _contasReceber.Descricao);
+                        cmd.Parameters.AddWithValue("@IdContato", _contasReceber.IdContato);
+                        cmd.Parameters.AddWithValue("@IdBanco", _contasReceber.IdBanco);
+                        cmd.Parameters.AddWithValue("@IdFormaPagamento", _contasReceber.IdFormaPagamento);
+                        cmd.Parameters.AddWithValue("@DataEmissao", _contasReceber.DataEmissao);
+                        if (_transaction == null)
+                        {
+                            cn.Open();
+                            transaction = cn.BeginTransaction();
+                        }
+                        cmd.Transaction = transaction;
+                        cmd.Connection = transaction.Connection;
+
+                        cmd.ExecuteNonQuery();
+
+                        if (_transaction == null)
+                            transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw new Exception("Ocorreu erro ao tentar inserir uma Conta a receber no banco de dados", ex);
+                    }
+
+                }
             }
         }
-        public void Alterar(ContasReceber _contasReceber)
+        public void Alterar(ContasReceber _contasReceber, SqlTransaction _transaction = null)
         {
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
+            SqlTransaction transaction = _transaction;
+
+            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE ContasReceber SET ValorReceber=@ValorReceber, Descricao=@Descricao, IdContato=@IdContato, IdBanco=@IdBanco, IdFormaPagamento=@IdFormaPagamento, DataEmissao=@DataEmissao WHERE Id = @Id";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Id", _contasReceber.Id);
-                cmd.Parameters.AddWithValue("@ValorReceber", _contasReceber.ValorReceber);
-                cmd.Parameters.AddWithValue("@Descricao", _contasReceber.Descricao);
-                cmd.Parameters.AddWithValue("@IdContato", _contasReceber.IdContato);
-                cmd.Parameters.AddWithValue("@IdBanco", _contasReceber.IdBanco);
-                cmd.Parameters.AddWithValue("@IdFormaPagamento", _contasReceber.IdFormaPagamento);
-                cmd.Parameters.AddWithValue("@DataEmissao", _contasReceber.DataEmissao);
-                cmd.Connection = cn;
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu erro ao tentar inserir uma  Conta a receber no banco de dados", ex);
-            }
-            finally
-            {
-                cn.Close();
+                using (SqlCommand cmd = new SqlCommand("UPDATE ContasReceber SET ValorReceber=@ValorReceber, Descricao=@Descricao, IdContato=@IdContato, IdBanco=@IdBanco, IdFormaPagamento=@IdFormaPagamento, DataEmissao=@DataEmissao WHERE Id = @Id", cn))
+                {
+                    try
+                    {
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Parameters.AddWithValue("@ValorReceber", _contasReceber.ValorReceber);
+                        cmd.Parameters.AddWithValue("@Descricao", _contasReceber.Descricao);
+                        cmd.Parameters.AddWithValue("@IdContato", _contasReceber.IdContato);
+                        cmd.Parameters.AddWithValue("@IdBanco", _contasReceber.IdBanco);
+                        cmd.Parameters.AddWithValue("@IdFormaPagamento", _contasReceber.IdFormaPagamento);
+                        cmd.Parameters.AddWithValue("@DataEmissao", _contasReceber.DataEmissao);
+                        if (_transaction == null)
+                        {
+                            cn.Open();
+                            transaction = cn.BeginTransaction();
+                        }
+                        cmd.Transaction = transaction;
+                        cmd.Connection = transaction.Connection;
+                        cmd.ExecuteNonQuery();
+
+                        if (_transaction == null)
+                            transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw new Exception("Ocorreu erro ao tentar inserir uma  Conta a receber no banco de dados", ex);
+                    }
+
+                }
             }
         }
 
