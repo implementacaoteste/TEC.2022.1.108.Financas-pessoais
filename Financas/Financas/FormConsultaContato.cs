@@ -113,6 +113,10 @@ namespace Financas
             }
         }
 
-
+        private void FormConsultaContato_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                Close();
+        }
     }
 }

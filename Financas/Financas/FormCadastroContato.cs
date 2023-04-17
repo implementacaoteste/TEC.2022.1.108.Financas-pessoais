@@ -46,5 +46,37 @@ namespace Financas
             else
                 contatoBindingSource.DataSource = new ContatoBLL().BuscarTodos();
         }
+
+        private void FormCadastroContato_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                Close();
+        }
+
+        private void nomeTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                numeroTextBox.Focus();
+        }
+
+        private void numeroTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                enderecoTextBox.Focus();
+        }
+
+        private void enderecoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                descricaoTextBox.Focus();
+        }
+
+        private void descricaoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if( e.KeyCode == Keys.Enter)
+               /* if (MessageBox.Show("Deseja realmente Sal este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;*/
+            buttonSalvarCadastroContato_Click(null, null);
+        }
     }
 }
