@@ -42,9 +42,9 @@ namespace BLL
         {
             return new ContatoDAL().BuscarPorDescricao(_descricao);
         }
-        public void BuscarPorId(int _id)
+        public Contato BuscarPorId(int _id)
         {
-            new ContatoDAL().BuscarPorId(_id);
+            return new ContatoDAL().BuscarPorId(_id);
         }
     }
 }

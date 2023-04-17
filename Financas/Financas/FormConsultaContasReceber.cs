@@ -21,7 +21,7 @@ namespace Financas
 
         private void buttonBuscarContasReceber_Click(object sender, EventArgs e)
         {
-                contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
+                //contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
             try
             {
                 switch (comboBox1.SelectedIndex)
@@ -124,7 +124,7 @@ namespace Financas
 
         private void buttonQuitarContasReceber_Click(object sender, EventArgs e)
         {
-            using(FormCadastroReceita frm = new FormCadastroReceita())
+            using (FormCadastroReceita frm = new FormCadastroReceita((ContasReceber)contasReceberBindingSource.Current))
             {
                 frm.ShowDialog();
             }

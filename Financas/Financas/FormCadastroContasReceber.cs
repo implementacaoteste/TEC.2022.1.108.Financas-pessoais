@@ -15,7 +15,7 @@ namespace Financas
     public partial class FormCadastroContasReceber : Form
     {
         public int Id;
-        public FormCadastroContasReceber(int id=0)
+        public FormCadastroContasReceber(int id = 0)
         {
             InitializeComponent();
             Id = id;
@@ -27,8 +27,10 @@ namespace Financas
             {
                 ContasReceberBLL contasReceberBLL = new ContasReceberBLL();
                 contasReceberBindingSource.EndEdit();
-
-                contasReceberBLL.Inserir((ContasReceber)contasReceberBindingSource.Current);
+                if (Id == 0)
+                    contasReceberBLL.Inserir((ContasReceber)contasReceberBindingSource.Current);
+                else
+                    contasReceberBLL.Alterar((ContasReceber)contasReceberBindingSource.Current);
             }
             catch
             {
@@ -47,13 +49,13 @@ namespace Financas
 
         private void buttonBuscarContatoContasReceber_Click(object sender, EventArgs e)
         {
-            using(FormConsultaContato frm = new FormConsultaContato(true))
+            using (FormConsultaContato frm = new FormConsultaContato(true))
             {
                 frm.ShowDialog();
                 ((ContasReceber)contasReceberBindingSource.Current).IdContato = frm.Id;
                 textBoxBuscarContato.Text = frm.Nome;
             }
-           // contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNome(textBoxBuscarContato.Text);
+            // contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNome(textBoxBuscarContato.Text);
         }
 
         private void textBoxBuscarContato_TextChanged(object sender, EventArgs e)
@@ -73,7 +75,7 @@ namespace Financas
 
         private void buttonBuscarFormaPagamento_Click(object sender, EventArgs e)
         {
-            using(FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento(true))
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento(true))
             {
                 frm.ShowDialog();
                 ((ContasReceber)contasReceberBindingSource.Current).IdFormaPagamento = frm.Id;

@@ -1,13 +1,6 @@
 ﻿using BLL;
 using Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Financas
@@ -15,10 +8,12 @@ namespace Financas
     public partial class FormCadastroReceita : Form
     {
         public int Id;
-        public FormCadastroReceita(int id = 0)
+        private ContasReceber contasReceber;
+        public FormCadastroReceita(ContasReceber _contasReceber = null, int _id = 0)
         {
             InitializeComponent();
-            Id = id;
+            Id = _id;
+            contasReceber = _contasReceber;
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
@@ -27,7 +22,7 @@ namespace Financas
             receitaBindingSource.EndEdit();
 
             if (Id == 0)
-                receitaBLL.Inserir((Receita)receitaBindingSource.Current);
+                    receitaBLL.Inserir((Receita)receitaBindingSource.Current, contasReceber);
             else
                 receitaBLL.Alterar((Receita)receitaBindingSource.Current);
             MessageBox.Show("Registro salvo com sucesso");
@@ -45,6 +40,23 @@ namespace Financas
                 receitaBindingSource.AddNew();
             else
                 receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorId(Id);
+
+            if (contasReceber != null)
+            {
+                ((Receita)receitaBindingSource.Current).Valor = contasReceber.ValorReceber;
+                textBoxGanhos.Text = contasReceber.ValorReceber.ToString();
+                ((Receita)receitaBindingSource.Current).Descricao = contasReceber.Descricao;
+                textBoxDescricao.Text = contasReceber.Descricao;
+                ((Receita)receitaBindingSource.Current).IdContato = contasReceber.IdContato;
+                ((Receita)receitaBindingSource.Current).Contato = contasReceber.Contato;
+                contatoTextBox.Text = contasReceber.Contato;
+                ((Receita)receitaBindingSource.Current).IdBanco = contasReceber.IdBanco;
+                ((Receita)receitaBindingSource.Current).Banco = contasReceber.Banco;
+                bancoTextBox.Text = contasReceber.Banco;
+                ((Receita)receitaBindingSource.Current).IdFormaPagamento = contasReceber.IdFormaPagamento;
+                ((Receita)receitaBindingSource.Current).FormaPagamento = contasReceber.FormaPagamento;
+                formaPagamentoTextBox.Text = contasReceber.FormaPagamento;
+            }
         }
 
         private void buttonBuscarContatoReceita_Click(object sender, EventArgs e)
@@ -66,7 +78,7 @@ namespace Financas
 
                 ((Receita)receitaBindingSource.Current).IdBanco = frm.Id;
                 bancoTextBox.Text = frm.Nome;
-              
+
             }
         }
 

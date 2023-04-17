@@ -13,20 +13,32 @@ namespace DAL
 {
     public class ReceitaDAL
     {
-        public void Inserir(Receita _receita)
+        public void Inserir(Receita _receita, ContasReceber _contasReceber = null)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Receita(Valor, Descricao)
-                                    VALUES(@Valor, @Descricao)";
+                cmd.CommandText = @"INSERT INTO Receita(Valor, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao)
+                                    VALUES(@Valor, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Valor", _receita.Valor);
                 cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
+                cmd.Parameters.AddWithValue("@IdContato", _receita.IdContato);
+                cmd.Parameters.AddWithValue("@IdBanco", _receita.IdBanco);
+                cmd.Parameters.AddWithValue("@IdFormaPagamento", _receita.IdFormaPagamento);
+                cmd.Parameters.AddWithValue("@DataEmissao", _receita.DataEmissao);
                 cmd.Connection = cn;
                 cn.Open();
+
+                if (_contasReceber != null)
+                {
+                    _contasReceber.DataPagamento = _receita.DataEmissao;
+                    new ContasReceberDAL().Alterar(_contasReceber);
+                }
+
                 cmd.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {

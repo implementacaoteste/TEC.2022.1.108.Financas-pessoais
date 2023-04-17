@@ -22,7 +22,7 @@ namespace Financas
         private void buttonAlterarReceita_Click(object sender, EventArgs e)
         {
             int id = ((Receita)receitaBindingSource.Current).Id;
-            using (FormCadastroReceita frm = new FormCadastroReceita(id))
+            using (FormCadastroReceita frm = new FormCadastroReceita(null, id))
             {
                 frm.ShowDialog();
             }

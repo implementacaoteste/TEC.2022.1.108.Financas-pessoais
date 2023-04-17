@@ -44,7 +44,7 @@ namespace Financas
             if (Id == 0)
                 contatoBindingSource.AddNew();
             else
-                contatoBindingSource.DataSource = new ContatoBLL().BuscarTodos();
+                contatoBindingSource.DataSource = new ContatoBLL().BuscarPorId(Id);
         }
 
         private void FormCadastroContato_KeyDown(object sender, KeyEventArgs e)

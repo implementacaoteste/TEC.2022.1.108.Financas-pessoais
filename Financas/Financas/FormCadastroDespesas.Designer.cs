@@ -39,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
-            this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxGastos = new System.Windows.Forms.TextBox();
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.contatoTextBox = new System.Windows.Forms.TextBox();
@@ -48,16 +47,17 @@
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.formaPagamentoTextBox = new System.Windows.Forms.TextBox();
             this.buttonBuscarFormaPagamentoDespesas = new System.Windows.Forms.Button();
-            this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataEmissaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             valorLabel = new System.Windows.Forms.Label();
             descricaoLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
             bancoLabel = new System.Windows.Forms.Label();
             formaPagamentoLabel = new System.Windows.Forms.Label();
             dataEmissaoLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // valorLabel
@@ -161,10 +161,6 @@
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
-            // despesasBindingSource
-            // 
-            this.despesasBindingSource.DataSource = typeof(Models.Despesas);
-            // 
             // textBoxGastos
             // 
             this.textBoxGastos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Valor", true));
@@ -180,6 +176,7 @@
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(253, 22);
             this.textBoxDescricao.TabIndex = 10;
+            this.textBoxDescricao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxDescricao_KeyDown);
             // 
             // contatoTextBox
             // 
@@ -238,10 +235,6 @@
             this.buttonBuscarFormaPagamentoDespesas.UseVisualStyleBackColor = true;
             this.buttonBuscarFormaPagamentoDespesas.Click += new System.EventHandler(this.buttonBuscarFormaPagamentoDespesas_Click);
             // 
-            // contasPagarBindingSource
-            // 
-            this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
-            // 
             // dataEmissaoDateTimePicker
             // 
             this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.contasPagarBindingSource, "DataEmissao", true));
@@ -249,6 +242,14 @@
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
             this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dataEmissaoDateTimePicker.TabIndex = 17;
+            // 
+            // contasPagarBindingSource
+            // 
+            this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
+            // 
+            // despesasBindingSource
+            // 
+            this.despesasBindingSource.DataSource = typeof(Models.Despesas);
             // 
             // FormCadastroDespesas
             // 
@@ -285,8 +286,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de despesas";
             this.Load += new System.EventHandler(this.FormCadastroDespesas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroDespesas_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
