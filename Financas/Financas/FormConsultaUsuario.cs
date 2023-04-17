@@ -72,5 +72,11 @@ namespace Financas
         {
             Close();
         }
+
+        private void FormConsultaUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                Close();
+        }
     }
 }

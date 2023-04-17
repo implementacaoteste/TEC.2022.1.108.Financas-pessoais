@@ -102,6 +102,18 @@ namespace Financas
             }
 
         }
+
+        private void FormCadastroReceita_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
+
+        private void textBoxDescricao_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                buttonSalvar_Click(null,null);
+        }
     }
 }
 

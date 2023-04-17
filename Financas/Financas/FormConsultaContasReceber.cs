@@ -146,5 +146,11 @@ namespace Financas
         {
             comboBox1.SelectedIndex = 0;
         }
+
+        private void FormConsultaContasReceber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                Close();
+        }
     }
 }

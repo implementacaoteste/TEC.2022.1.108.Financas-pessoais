@@ -314,6 +314,7 @@
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -322,6 +323,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Despesas";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormConsultaDespesas_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.despesasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -118,5 +118,11 @@ namespace Financas
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void FormConsultaBanco_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
     }
 }

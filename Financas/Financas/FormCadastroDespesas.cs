@@ -85,7 +85,7 @@ namespace Financas
         private void textBoxDescricao_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
-                buttonSalvar_Click(sender, e);
+                buttonSalvar_Click(null, null);
         }
     }
 }

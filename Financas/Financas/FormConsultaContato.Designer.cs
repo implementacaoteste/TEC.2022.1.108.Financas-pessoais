@@ -286,6 +286,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Contatos";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormConsultaContato_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.contatoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).EndInit();
             this.ResumeLayout(false);

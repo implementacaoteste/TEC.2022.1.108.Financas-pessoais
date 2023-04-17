@@ -96,6 +96,7 @@
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(223, 22);
             this.nomeTextBox.TabIndex = 2;
+            this.nomeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
             // 
             // contatoBindingSource
             // 
@@ -108,6 +109,7 @@
             this.enderecoTextBox.Name = "enderecoTextBox";
             this.enderecoTextBox.Size = new System.Drawing.Size(506, 22);
             this.enderecoTextBox.TabIndex = 3;
+            this.enderecoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enderecoTextBox_KeyDown);
             // 
             // numeroTextBox
             // 
@@ -116,6 +118,7 @@
             this.numeroTextBox.Name = "numeroTextBox";
             this.numeroTextBox.Size = new System.Drawing.Size(181, 22);
             this.numeroTextBox.TabIndex = 5;
+            this.numeroTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numeroTextBox_KeyDown);
             // 
             // descricaoTextBox
             // 
@@ -124,6 +127,7 @@
             this.descricaoTextBox.Name = "descricaoTextBox";
             this.descricaoTextBox.Size = new System.Drawing.Size(506, 22);
             this.descricaoTextBox.TabIndex = 7;
+            this.descricaoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descricaoTextBox_KeyDown);
             // 
             // label1
             // 
@@ -179,6 +183,7 @@
             this.Controls.Add(label2);
             this.Controls.Add(this.nomeTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroContato";
@@ -187,6 +192,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de contato";
             this.Load += new System.EventHandler(this.FormCadastroContato_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroContato_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -128,5 +128,11 @@ namespace Financas
                 frm.ShowDialog();
             }
         }
+
+        private void FormConsultaContasPagar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                Close();
+        }
     }
 }
