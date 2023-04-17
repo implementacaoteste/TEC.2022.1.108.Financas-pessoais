@@ -149,7 +149,7 @@
             // 
             // buttonBuscarReceita
             // 
-            this.buttonBuscarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarReceita.Location = new System.Drawing.Point(737, 110);
             this.buttonBuscarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarReceita.Name = "buttonBuscarReceita";
@@ -161,7 +161,7 @@
             // 
             // buttonAlterarReceita
             // 
-            this.buttonAlterarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterarReceita.Location = new System.Drawing.Point(919, 110);
             this.buttonAlterarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAlterarReceita.Name = "buttonAlterarReceita";
@@ -173,7 +173,7 @@
             // 
             // buttonExcluirReceita
             // 
-            this.buttonExcluirReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluirReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluirReceita.Location = new System.Drawing.Point(1000, 110);
             this.buttonExcluirReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluirReceita.Name = "buttonExcluirReceita";
@@ -185,7 +185,7 @@
             // 
             // buttonAdicionarReceita
             // 
-            this.buttonAdicionarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdicionarReceita.Location = new System.Drawing.Point(818, 110);
             this.buttonAdicionarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionarReceita.Name = "buttonAdicionarReceita";
@@ -226,7 +226,7 @@
             // 
             // buttonSair
             // 
-            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.Location = new System.Drawing.Point(1000, 654);
             this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSair.Name = "buttonSair";
