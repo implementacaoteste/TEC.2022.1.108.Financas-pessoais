@@ -111,5 +111,12 @@ namespace Financas
                 textBoxConsultarReceita2.Visible = true;
             }
         }
+
+        private void FormConsultaReceita_KeyDown(object sender, KeyEventArgs e)
+        {
+                if(e.KeyCode == Keys.Escape)
+                    Close();
+            
+        }
     }
 }
