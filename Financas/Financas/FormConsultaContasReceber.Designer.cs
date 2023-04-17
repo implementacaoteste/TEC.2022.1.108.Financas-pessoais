@@ -33,12 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contasReceberDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorReceber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contasReceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarContasReceber = new System.Windows.Forms.Button();
             this.buttonAlterarContasReceber = new System.Windows.Forms.Button();
             this.buttonExcluirContasReceber = new System.Windows.Forms.Button();
@@ -85,7 +87,81 @@
             this.contasReceberDataGridView.Size = new System.Drawing.Size(1040, 515);
             this.contasReceberDataGridView.TabIndex = 1;
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn3.FillWeight = 42.78075F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descricao";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 140;
+            // 
             // ValorReceber
+            // 
+            this.ValorReceber.DataPropertyName = "ValorReceber";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ValorReceber.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ValorReceber.HeaderText = "Valor";
+            this.ValorReceber.MinimumWidth = 6;
+            this.ValorReceber.Name = "ValorReceber";
+            this.ValorReceber.ReadOnly = true;
+            this.ValorReceber.Width = 80;
+            // 
+            // Contato
+            // 
+            this.Contato.DataPropertyName = "Contato";
+            this.Contato.HeaderText = "Contato";
+            this.Contato.MinimumWidth = 6;
+            this.Contato.Name = "Contato";
+            this.Contato.ReadOnly = true;
+            this.Contato.Width = 115;
+            // 
+            // FormaPagamento
+            // 
+            this.FormaPagamento.DataPropertyName = "FormaPagamento";
+            this.FormaPagamento.HeaderText = "FormaPagamento";
+            this.FormaPagamento.MinimumWidth = 6;
+            this.FormaPagamento.Name = "FormaPagamento";
+            this.FormaPagamento.ReadOnly = true;
+            this.FormaPagamento.Width = 167;
+            // 
+            // Banco
+            // 
+            this.Banco.DataPropertyName = "Banco";
+            this.Banco.HeaderText = "Banco";
+            this.Banco.MinimumWidth = 6;
+            this.Banco.Name = "Banco";
+            this.Banco.ReadOnly = true;
+            this.Banco.Width = 85;
+            // 
+            // DataEmissao
+            // 
+            this.DataEmissao.DataPropertyName = "DataEmissao";
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DataEmissao.HeaderText = "Data de emissao";
+            this.DataEmissao.MinimumWidth = 8;
+            this.DataEmissao.Name = "DataEmissao";
+            this.DataEmissao.ReadOnly = true;
+            this.DataEmissao.Width = 140;
+            // 
+            // DataPagamento
+            // 
+            this.DataPagamento.DataPropertyName = "DataPagamento";
+            dataGridViewCellStyle6.Format = "d";
+            dataGridViewCellStyle6.NullValue = null;
+            this.DataPagamento.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DataPagamento.HeaderText = "Data de pagamento";
+            this.DataPagamento.MinimumWidth = 6;
+            this.DataPagamento.Name = "DataPagamento";
+            this.DataPagamento.ReadOnly = true;
+            this.DataPagamento.Width = 125;
+            // 
+            // contasReceberBindingSource
             // 
             this.ValorReceber.DataPropertyName = "ValorReceber";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;

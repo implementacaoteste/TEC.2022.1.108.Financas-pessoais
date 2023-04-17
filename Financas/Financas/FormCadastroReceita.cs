@@ -22,7 +22,7 @@ namespace Financas
             receitaBindingSource.EndEdit();
 
             if (Id == 0)
-                receitaBLL.Inserir((Receita)receitaBindingSource.Current, contasReceber);
+                    receitaBLL.Inserir((Receita)receitaBindingSource.Current, contasReceber);
             else
                 receitaBLL.Alterar((Receita)receitaBindingSource.Current);
             MessageBox.Show("Registro salvo com sucesso");

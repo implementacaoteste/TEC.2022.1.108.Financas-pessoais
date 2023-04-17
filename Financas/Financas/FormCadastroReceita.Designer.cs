@@ -233,6 +233,7 @@
             // dataEmissaoDateTimePicker
             // 
             this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.receitaBindingSource, "DataEmissao", true));
+            this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "DataEmissao", true));
             this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(390, 303);
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
             this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
