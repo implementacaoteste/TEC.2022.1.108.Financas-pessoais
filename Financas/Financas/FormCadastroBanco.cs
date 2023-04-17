@@ -28,6 +28,7 @@ namespace Financas
 
         private void buttonSalvarCadBanco_Click(object sender, EventArgs e)
         {
+           
             BancoBLL BancoBLL = new BancoBLL();
             bancoBindingSource.EndEdit();
 
@@ -46,6 +47,48 @@ namespace Financas
                 bancoBindingSource.AddNew();
             else
                 bancoBindingSource.DataSource = new BancoBLL().BuscarPorId(Id);
+        }
+
+        private void FormCadastroBanco_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
+
+        private void nomeTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                saldoTextBox.Focus();
+
+
+            }
+        }
+
+        private void saldoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                poupancaTextBox.Focus();
+
+
+            }
+        }
+
+        private void poupancaTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                buttonSalvarCadBanco_Click(null,null);
+
+
+            }
         }
     }
 }

@@ -81,6 +81,73 @@ namespace Financas
             }
         }
 
+        private void FormCadastroContasPaga_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
 
+
+        private void valorPagarTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                contatoTextBox.Focus();
+            }
+        }
+
+        private void contatoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                bancoTextBox.Focus();
+            }
+        }
+
+        private void bancoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                formaPagamentoTextBox.Focus();
+            }
+            
+
+        }
+
+        private void formaPagamentoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+
+                descricaoTextBox.Focus();
+            }
+        }
+
+        private void descricaoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                dataEmissaoDateTimePicker.Focus();
+            }
+            
+        }
+
+        private void dataEmissaoDateTimePicker_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                buttonSalvarCadastroContasPagar_Click(null, null);
+
+
+            }
+        }
     }
 }

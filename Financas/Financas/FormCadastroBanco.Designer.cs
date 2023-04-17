@@ -34,8 +34,8 @@
             System.Windows.Forms.Label saldoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroBanco));
             this.label1 = new System.Windows.Forms.Label();
-            this.bancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.bancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poupancaTextBox = new System.Windows.Forms.TextBox();
             this.saldoTextBox = new System.Windows.Forms.TextBox();
             this.buttonSalvarCadBanco = new System.Windows.Forms.Button();
@@ -90,10 +90,6 @@
             this.label1.Text = "Cadastro do banco";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bancoBindingSource
-            // 
-            this.bancoBindingSource.DataSource = typeof(Models.Banco);
-            // 
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bancoBindingSource, "Nome", true));
@@ -102,6 +98,11 @@
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(270, 22);
             this.nomeTextBox.TabIndex = 3;
+            this.nomeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
+            // 
+            // bancoBindingSource
+            // 
+            this.bancoBindingSource.DataSource = typeof(Models.Banco);
             // 
             // poupancaTextBox
             // 
@@ -111,6 +112,7 @@
             this.poupancaTextBox.Name = "poupancaTextBox";
             this.poupancaTextBox.Size = new System.Drawing.Size(270, 22);
             this.poupancaTextBox.TabIndex = 5;
+            this.poupancaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.poupancaTextBox_KeyDown);
             // 
             // saldoTextBox
             // 
@@ -120,6 +122,7 @@
             this.saldoTextBox.Name = "saldoTextBox";
             this.saldoTextBox.Size = new System.Drawing.Size(194, 22);
             this.saldoTextBox.TabIndex = 7;
+            this.saldoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.saldoTextBox_KeyDown);
             // 
             // buttonSalvarCadBanco
             // 
@@ -162,6 +165,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -171,6 +175,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Banco";
             this.Load += new System.EventHandler(this.FormCadastroBanco_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroBanco_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.bancoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

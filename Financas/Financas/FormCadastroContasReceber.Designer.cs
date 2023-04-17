@@ -133,6 +133,11 @@
             this.valorReceberTextBoxContasReceber.Name = "valorReceberTextBoxContasReceber";
             this.valorReceberTextBoxContasReceber.Size = new System.Drawing.Size(164, 22);
             this.valorReceberTextBoxContasReceber.TabIndex = 2;
+            this.valorReceberTextBoxContasReceber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.valorReceberTextBoxContasReceber_KeyDown);
+            // 
+            // contasReceberBindingSource
+            // 
+            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
             // 
             // contasReceberBindingSource
             // 
@@ -159,6 +164,7 @@
             this.descricaoTextBoxContasReceber.Name = "descricaoTextBoxContasReceber";
             this.descricaoTextBoxContasReceber.Size = new System.Drawing.Size(180, 22);
             this.descricaoTextBoxContasReceber.TabIndex = 4;
+            this.descricaoTextBoxContasReceber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descricaoTextBoxContasReceber_KeyDown);
             // 
             // buttonBuscarContatoContasReceber
             // 
@@ -201,6 +207,11 @@
             this.textBoxBuscarContato.Size = new System.Drawing.Size(217, 22);
             this.textBoxBuscarContato.TabIndex = 10;
             this.textBoxBuscarContato.TextChanged += new System.EventHandler(this.textBoxBuscarContato_TextChanged);
+            this.textBoxBuscarContato.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxBuscarContato_KeyDown);
+            // 
+            // contatoBindingSource
+            // 
+            this.contatoBindingSource.DataSource = typeof(Models.Contato);
             // 
             // contatoBindingSource
             // 
@@ -214,6 +225,7 @@
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(131, 22);
             this.bancoTextBox.TabIndex = 13;
+            this.bancoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bancoTextBox_KeyDown);
             // 
             // formaPagamentoTextBox
             // 
@@ -222,6 +234,7 @@
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(217, 22);
             this.formaPagamentoTextBox.TabIndex = 14;
+            this.formaPagamentoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formaPagamentoTextBox_KeyDown);
             // 
             // buttonBuscarBanco
             // 
@@ -252,6 +265,9 @@
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
             this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dataEmissaoDateTimePicker.TabIndex = 17;
+
+            this.dataEmissaoDateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataEmissaoDateTimePicker_KeyDown);
+
             // 
             // FormCadastroContasReceber
             // 
@@ -279,6 +295,7 @@
             this.Controls.Add(valorReceberLabel);
             this.Controls.Add(this.valorReceberTextBoxContasReceber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroContasReceber";
@@ -287,6 +304,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro contas de contas a receber";
             this.Load += new System.EventHandler(this.FormCadastroContasReceber_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroContasReceber_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).EndInit();
             this.ResumeLayout(false);
