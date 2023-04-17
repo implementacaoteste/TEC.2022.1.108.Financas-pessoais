@@ -145,7 +145,7 @@
             // 
             // buttonAdicionarBanco
             // 
-            this.buttonAdicionarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdicionarBanco.Location = new System.Drawing.Point(818, 110);
             this.buttonAdicionarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionarBanco.Name = "buttonAdicionarBanco";
@@ -157,7 +157,7 @@
             // 
             // buttonBuscarBanco
             // 
-            this.buttonBuscarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarBanco.Location = new System.Drawing.Point(737, 110);
             this.buttonBuscarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarBanco.Name = "buttonBuscarBanco";
@@ -169,7 +169,7 @@
             // 
             // buttonExcluirBanco
             // 
-            this.buttonExcluirBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluirBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluirBanco.Location = new System.Drawing.Point(1000, 110);
             this.buttonExcluirBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluirBanco.Name = "buttonExcluirBanco";
@@ -181,7 +181,7 @@
             // 
             // buttonAlterarBanco
             // 
-            this.buttonAlterarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterarBanco.Location = new System.Drawing.Point(919, 110);
             this.buttonAlterarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAlterarBanco.Name = "buttonAlterarBanco";
@@ -193,7 +193,7 @@
             // 
             // buttonSair
             // 
-            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.Location = new System.Drawing.Point(1000, 656);
             this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSair.Name = "buttonSair";
@@ -205,7 +205,7 @@
             // 
             // buttonSelecionarBanco
             // 
-            this.buttonSelecionarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSelecionarBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSelecionarBanco.Location = new System.Drawing.Point(885, 656);
             this.buttonSelecionarBanco.Name = "buttonSelecionarBanco";
             this.buttonSelecionarBanco.Size = new System.Drawing.Size(109, 23);
