@@ -86,7 +86,10 @@ namespace Financas
         private void FormCadastroContasReceber_Load(object sender, EventArgs e)
         {
             if (Id == 0)
+            {
                 contasReceberBindingSource.AddNew();
+                ((ContasReceber)contasReceberBindingSource.Current).DataEmissao = DateTime.Now;
+            }
             else
                 contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorId(Id);
         }

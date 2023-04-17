@@ -124,10 +124,27 @@ namespace Financas
 
         private void buttonQuitarContasReceber_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+            if (((ContasReceber)contasReceberBindingSource.Current).DataPagamento != null &&  ((ContasReceber)contasReceberBindingSource.Current).DataPagamento.Value.Year > 2000)
+            {
+                throw new Exception("Este registro já foi pago!");
+            }
             using (FormCadastroReceita frm = new FormCadastroReceita((ContasReceber)contasReceberBindingSource.Current))
             {
                 frm.ShowDialog();
             }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void FormConsultaContasReceber_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
         }
     }
 }

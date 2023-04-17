@@ -58,7 +58,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE ContasReceber SET ValorReceber=@ValorReceber, Descricao=@Descricao, IdContato=@IdContato, IdBanco=@IdBanco, IdFormaPagamento=@IdFormaPagamento, DataEmissao=@DataEmissao WHERE Id = @Id", cn))
+                using (SqlCommand cmd = new SqlCommand("UPDATE ContasReceber SET ValorReceber=@ValorReceber, Descricao=@Descricao, IdContato=@IdContato, IdBanco=@IdBanco, IdFormaPagamento=@IdFormaPagamento, DataEmissao=@DataEmissao, DataPagamento=@DataPagamento WHERE Id = @Id", cn))
                 {
                     try
                     {
@@ -69,6 +69,8 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@IdBanco", _contasReceber.IdBanco);
                         cmd.Parameters.AddWithValue("@IdFormaPagamento", _contasReceber.IdFormaPagamento);
                         cmd.Parameters.AddWithValue("@DataEmissao", _contasReceber.DataEmissao);
+                        cmd.Parameters.AddWithValue("@DataPagamento", _contasReceber.DataPagamento);
+                        cmd.Parameters.AddWithValue("@Id", _contasReceber.Id);
                         if (_transaction == null)
                         {
                             cn.Open();
