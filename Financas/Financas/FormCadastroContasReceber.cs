@@ -88,5 +88,70 @@ namespace Financas
             else
                 contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorId(Id);
         }
+
+        private void FormCadastroContasReceber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
+
+        private void valorReceberTextBoxContasReceber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                textBoxBuscarContato.Focus();
+            }
+        }
+
+        private void textBoxBuscarContato_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                bancoTextBox.Focus();
+            }
+        }
+
+        private void bancoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                formaPagamentoTextBox.Focus();
+            }
+        }
+
+        private void formaPagamentoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                descricaoTextBoxContasReceber.Focus();
+            }
+        }
+
+        private void descricaoTextBoxContasReceber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                dataEmissaoDateTimePicker.Focus();
+            }
+        }
+
+        private void dataEmissaoDateTimePicker_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                buttonSalvarCadastroContasReceber_Click(null, null);
+
+
+            }
+        }
     }
 }

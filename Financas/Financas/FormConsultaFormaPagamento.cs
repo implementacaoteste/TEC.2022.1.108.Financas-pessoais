@@ -119,5 +119,13 @@ namespace Financas
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void FormConsultaFormaPagamento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }
