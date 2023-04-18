@@ -100,7 +100,7 @@
             this.buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
             this.buttonAlterarFormaPagamento.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterarFormaPagamento.TabIndex = 7;
-            this.buttonAlterarFormaPagamento.Text = "A&lterar";
+            this.buttonAlterarFormaPagamento.Text = "Al&terar";
             this.buttonAlterarFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonAlterarFormaPagamento.Click += new System.EventHandler(this.buttonAlterarFormaPagamento_Click);
             // 
