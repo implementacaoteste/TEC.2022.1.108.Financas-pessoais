@@ -58,7 +58,7 @@
             this.labelNome.Location = new System.Drawing.Point(61, 102);
             this.labelNome.Name = "labelNome";
             this.labelNome.Size = new System.Drawing.Size(58, 20);
-            this.labelNome.TabIndex = 0;
+            this.labelNome.TabIndex = 1;
             this.labelNome.Text = "Nome:";
             // 
             // labelNomeUsuario
@@ -68,7 +68,7 @@
             this.labelNomeUsuario.Location = new System.Drawing.Point(62, 216);
             this.labelNomeUsuario.Name = "labelNomeUsuario";
             this.labelNomeUsuario.Size = new System.Drawing.Size(141, 20);
-            this.labelNomeUsuario.TabIndex = 1;
+            this.labelNomeUsuario.TabIndex = 5;
             this.labelNomeUsuario.Text = "Nome de usuário:";
             // 
             // labelSenha
@@ -78,7 +78,7 @@
             this.labelSenha.Location = new System.Drawing.Point(406, 102);
             this.labelSenha.Name = "labelSenha";
             this.labelSenha.Size = new System.Drawing.Size(61, 20);
-            this.labelSenha.TabIndex = 2;
+            this.labelSenha.TabIndex = 3;
             this.labelSenha.Text = "Senha:";
             // 
             // textBoxNomeCadastroUsuario
@@ -88,7 +88,8 @@
             this.textBoxNomeCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeCadastroUsuario.Name = "textBoxNomeCadastroUsuario";
             this.textBoxNomeCadastroUsuario.Size = new System.Drawing.Size(282, 22);
-            this.textBoxNomeCadastroUsuario.TabIndex = 1;
+
+            this.textBoxNomeCadastroUsuario.TabIndex = 2;
             this.textBoxNomeCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNomeCadastroUsuario_KeyDown);
             // 
             // textBoxNomeUsuarioCadastroUsuario
@@ -98,7 +99,8 @@
             this.textBoxNomeUsuarioCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeUsuarioCadastroUsuario.Name = "textBoxNomeUsuarioCadastroUsuario";
             this.textBoxNomeUsuarioCadastroUsuario.Size = new System.Drawing.Size(281, 22);
-            this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 3;
+
+            this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 6;
             this.textBoxNomeUsuarioCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNomeUsuarioCadastroUsuario_KeyDown);
             // 
             // textBoxSenhaCadastroUsuario
@@ -108,7 +110,7 @@
             this.textBoxSenhaCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSenhaCadastroUsuario.Name = "textBoxSenhaCadastroUsuario";
             this.textBoxSenhaCadastroUsuario.Size = new System.Drawing.Size(235, 22);
-            this.textBoxSenhaCadastroUsuario.TabIndex = 2;
+            this.textBoxSenhaCadastroUsuario.TabIndex = 4;
             this.textBoxSenhaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSenhaCadastroUsuario_KeyDown);
             // 
             // labelAvisoNome
@@ -120,7 +122,7 @@
             this.labelAvisoNome.Location = new System.Drawing.Point(72, 154);
             this.labelAvisoNome.Name = "labelAvisoNome";
             this.labelAvisoNome.Size = new System.Drawing.Size(186, 32);
-            this.labelAvisoNome.TabIndex = 6;
+            this.labelAvisoNome.TabIndex = 12;
             this.labelAvisoNome.Text = "Obs: O nome deve conter \r\n  mais de três caracteres";
             // 
             // labelAvisoSenha
@@ -132,7 +134,7 @@
             this.labelAvisoSenha.Location = new System.Drawing.Point(413, 155);
             this.labelAvisoSenha.Name = "labelAvisoSenha";
             this.labelAvisoSenha.Size = new System.Drawing.Size(189, 32);
-            this.labelAvisoSenha.TabIndex = 7;
+            this.labelAvisoSenha.TabIndex = 13;
             this.labelAvisoSenha.Text = "Obs: A senha deve conter \r\n  mais de três caracteres";
             // 
             // buttonSalvarCadastroUsuario
@@ -142,7 +144,7 @@
             this.buttonSalvarCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCadastroUsuario.Name = "buttonSalvarCadastroUsuario";
             this.buttonSalvarCadastroUsuario.Size = new System.Drawing.Size(85, 39);
-            this.buttonSalvarCadastroUsuario.TabIndex = 8;
+            //this.buttonSalvarCadastroUsuario.TabIndex = 8;
             this.buttonSalvarCadastroUsuario.Text = "Salvar";
             this.buttonSalvarCadastroUsuario.UseVisualStyleBackColor = true;
             // 
@@ -153,7 +155,7 @@
             this.buttonCancelarCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadastroUsuario.Name = "buttonCancelarCadastroUsuario";
             this.buttonCancelarCadastroUsuario.Size = new System.Drawing.Size(85, 39);
-            this.buttonCancelarCadastroUsuario.TabIndex = 9;
+            //this.buttonCancelarCadastroUsuario.TabIndex = 9;
             this.buttonCancelarCadastroUsuario.Text = "Cancelar";
             this.buttonCancelarCadastroUsuario.UseVisualStyleBackColor = true;
             // 
@@ -164,7 +166,7 @@
             this.labelConfirmarSenha.Location = new System.Drawing.Point(406, 214);
             this.labelConfirmarSenha.Name = "labelConfirmarSenha";
             this.labelConfirmarSenha.Size = new System.Drawing.Size(140, 20);
-            this.labelConfirmarSenha.TabIndex = 10;
+            this.labelConfirmarSenha.TabIndex = 7;
             this.labelConfirmarSenha.Text = "Confirmar Senha:";
             // 
             // textBoxConfirmarSenhaCadastroUsuario
@@ -173,7 +175,7 @@
             this.textBoxConfirmarSenhaCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConfirmarSenhaCadastroUsuario.Name = "textBoxConfirmarSenhaCadastroUsuario";
             this.textBoxConfirmarSenhaCadastroUsuario.Size = new System.Drawing.Size(235, 22);
-            this.textBoxConfirmarSenhaCadastroUsuario.TabIndex = 4;
+            this.textBoxConfirmarSenhaCadastroUsuario.TabIndex = 8;
             this.textBoxConfirmarSenhaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxConfirmarSenhaCadastroUsuario_KeyDown);
             // 
             // labelRendaCadastroUsuario
@@ -183,7 +185,7 @@
             this.labelRendaCadastroUsuario.Location = new System.Drawing.Point(62, 307);
             this.labelRendaCadastroUsuario.Name = "labelRendaCadastroUsuario";
             this.labelRendaCadastroUsuario.Size = new System.Drawing.Size(62, 20);
-            this.labelRendaCadastroUsuario.TabIndex = 12;
+            this.labelRendaCadastroUsuario.TabIndex = 14;
             this.labelRendaCadastroUsuario.Text = "Renda:";
             // 
             // textBoxRendaCadastroUsuario
@@ -193,7 +195,7 @@
             this.textBoxRendaCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRendaCadastroUsuario.Name = "textBoxRendaCadastroUsuario";
             this.textBoxRendaCadastroUsuario.Size = new System.Drawing.Size(207, 22);
-            this.textBoxRendaCadastroUsuario.TabIndex = 5;
+            this.textBoxRendaCadastroUsuario.TabIndex = 9;
             this.textBoxRendaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxRendaCadastroUsuario_KeyDown);
             // 
             // label1
@@ -205,7 +207,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(718, 69);
-            this.label1.TabIndex = 14;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de usuário";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -216,7 +218,7 @@
             this.buttonCancelarCadastrodeUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadastrodeUsuario.Name = "buttonCancelarCadastrodeUsuario";
             this.buttonCancelarCadastrodeUsuario.Size = new System.Drawing.Size(106, 36);
-            this.buttonCancelarCadastrodeUsuario.TabIndex = 7;
+            this.buttonCancelarCadastrodeUsuario.TabIndex = 11;
             this.buttonCancelarCadastrodeUsuario.Text = "Cancelar";
             this.buttonCancelarCadastrodeUsuario.UseVisualStyleBackColor = true;
             this.buttonCancelarCadastrodeUsuario.Click += new System.EventHandler(this.buttonCancelarCadastrodeUsuario_Click);
@@ -228,7 +230,7 @@
             this.buttonSalvarCadastrodeUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCadastrodeUsuario.Name = "buttonSalvarCadastrodeUsuario";
             this.buttonSalvarCadastrodeUsuario.Size = new System.Drawing.Size(84, 36);
-            this.buttonSalvarCadastrodeUsuario.TabIndex = 6;
+            this.buttonSalvarCadastrodeUsuario.TabIndex = 10;
             this.buttonSalvarCadastrodeUsuario.Text = "Salvar";
             this.buttonSalvarCadastrodeUsuario.UseVisualStyleBackColor = true;
             this.buttonSalvarCadastrodeUsuario.Click += new System.EventHandler(this.buttonSalvarCadastrodeUsuario_Click);

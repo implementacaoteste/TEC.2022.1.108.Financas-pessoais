@@ -50,16 +50,17 @@ namespace Financas
            
         }
 
-        private void FormCadastroFormaPagamento_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Escape)
-                Close();
-        }
-
         private void textBoxDescricao_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             buttonSalvar_Click(null, null);
         }
+
+        private void FormConsultaFormaPagamento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
+
     }
 }

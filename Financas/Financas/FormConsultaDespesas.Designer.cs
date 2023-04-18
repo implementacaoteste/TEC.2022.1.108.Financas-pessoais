@@ -76,7 +76,7 @@
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscar.TabIndex = 8;
-            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
@@ -88,7 +88,7 @@
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(75, 23);
             this.buttonExcluir.TabIndex = 5;
-            this.buttonExcluir.Text = "Excluir";
+            this.buttonExcluir.Text = "&Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
@@ -98,7 +98,7 @@
             this.textBoxBuscarDespesas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxBuscarDespesas.Multiline = true;
             this.textBoxBuscarDespesas.Name = "textBoxBuscarDespesas";
-            this.textBoxBuscarDespesas.Size = new System.Drawing.Size(498, 22);
+            this.textBoxBuscarDespesas.Size = new System.Drawing.Size(269, 22);
             this.textBoxBuscarDespesas.TabIndex = 8;
             // 
             // despesasDataGridView
@@ -195,7 +195,7 @@
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(95, 23);
             this.buttonAdicionar.TabIndex = 8;
-            this.buttonAdicionar.Text = "Adicionar";
+            this.buttonAdicionar.Text = "&Adicionar";
             this.buttonAdicionar.UseVisualStyleBackColor = true;
             this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 
@@ -207,7 +207,7 @@
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterar.TabIndex = 10;
-            this.buttonAlterar.Text = "Alterar";
+            this.buttonAlterar.Text = "Al&terar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 

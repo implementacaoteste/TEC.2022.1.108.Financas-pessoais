@@ -137,7 +137,6 @@ namespace Financas
         {
             try
             {
-
                 if (((ContasReceber)contasReceberBindingSource.Current).DataPagamento != null && ((ContasReceber)contasReceberBindingSource.Current).DataPagamento.Value.Year > 2000)
                 {
                     throw new Exception("Este registro já foi pago!");
@@ -163,5 +162,7 @@ namespace Financas
             if (e.KeyCode == Keys.Escape)
                 Close();
         }
+
+
     }
 }

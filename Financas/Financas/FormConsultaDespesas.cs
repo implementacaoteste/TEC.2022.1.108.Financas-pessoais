@@ -71,7 +71,7 @@ namespace Financas
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
             int id = ((Despesas)despesasBindingSource.Current).Id;
-            using (FormCadastroDespesas frm = new FormCadastroDespesas(id))
+            using (FormCadastroDespesas frm = new FormCadastroDespesas(null, id))
             {
                 frm.ShowDialog();
             }
