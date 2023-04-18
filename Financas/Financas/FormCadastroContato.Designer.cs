@@ -56,7 +56,7 @@
             descricaoLabel.Location = new System.Drawing.Point(73, 263);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
-            descricaoLabel.TabIndex = 6;
+            descricaoLabel.TabIndex = 7;
             descricaoLabel.Text = "Descrição:";
             // 
             // label2
@@ -76,7 +76,7 @@
             label3.Location = new System.Drawing.Point(73, 191);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(85, 20);
-            label3.TabIndex = 2;
+            label3.TabIndex = 5;
             label3.Text = "Endereço:";
             // 
             // label4
@@ -86,7 +86,7 @@
             label4.Location = new System.Drawing.Point(398, 115);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(73, 20);
-            label4.TabIndex = 4;
+            label4.TabIndex = 3;
             label4.Text = "Número:";
             // 
             // nomeTextBox
@@ -108,7 +108,7 @@
             this.enderecoTextBox.Location = new System.Drawing.Point(73, 214);
             this.enderecoTextBox.Name = "enderecoTextBox";
             this.enderecoTextBox.Size = new System.Drawing.Size(506, 22);
-            this.enderecoTextBox.TabIndex = 3;
+            this.enderecoTextBox.TabIndex = 6;
             this.enderecoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enderecoTextBox_KeyDown);
             // 
             // numeroTextBox
@@ -117,7 +117,7 @@
             this.numeroTextBox.Location = new System.Drawing.Point(398, 138);
             this.numeroTextBox.Name = "numeroTextBox";
             this.numeroTextBox.Size = new System.Drawing.Size(181, 22);
-            this.numeroTextBox.TabIndex = 5;
+            this.numeroTextBox.TabIndex = 4;
             this.numeroTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numeroTextBox_KeyDown);
             // 
             // descricaoTextBox
@@ -126,7 +126,7 @@
             this.descricaoTextBox.Location = new System.Drawing.Point(73, 286);
             this.descricaoTextBox.Name = "descricaoTextBox";
             this.descricaoTextBox.Size = new System.Drawing.Size(506, 22);
-            this.descricaoTextBox.TabIndex = 7;
+            this.descricaoTextBox.TabIndex = 8;
             this.descricaoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descricaoTextBox_KeyDown);
             // 
             // label1
@@ -138,7 +138,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(705, 76);
-            this.label1.TabIndex = 8;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de contato";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -148,7 +148,7 @@
             this.buttonCancelarCadastroContato.Location = new System.Drawing.Point(523, 376);
             this.buttonCancelarCadastroContato.Name = "buttonCancelarCadastroContato";
             this.buttonCancelarCadastroContato.Size = new System.Drawing.Size(106, 36);
-            this.buttonCancelarCadastroContato.TabIndex = 9;
+            this.buttonCancelarCadastroContato.TabIndex = 10;
             this.buttonCancelarCadastroContato.Text = "Cancelar";
             this.buttonCancelarCadastroContato.UseVisualStyleBackColor = true;
             this.buttonCancelarCadastroContato.Click += new System.EventHandler(this.buttonCancelarCadastroContato_Click);
