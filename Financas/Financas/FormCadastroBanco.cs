@@ -83,8 +83,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                    return;
+      
                 buttonSalvarCadBanco_Click(null,null);
 
 
