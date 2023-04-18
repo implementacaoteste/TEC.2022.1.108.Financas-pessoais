@@ -97,10 +97,7 @@
             // ValorPagar
             // 
             this.ValorPagar.DataPropertyName = "ValorPagar";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ValorPagar.DefaultCellStyle = dataGridViewCellStyle1;
+
             this.ValorPagar.HeaderText = "Valor";
             this.ValorPagar.MinimumWidth = 6;
             this.ValorPagar.Name = "ValorPagar";
@@ -137,9 +134,7 @@
             // DataEmissao
             // 
             this.DataEmissao.DataPropertyName = "DataEmissao";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle2;
+
             this.DataEmissao.HeaderText = "Data de emissao";
             this.DataEmissao.MinimumWidth = 6;
             this.DataEmissao.Name = "DataEmissao";
@@ -149,9 +144,7 @@
             // DataPagamento
             // 
             this.DataPagamento.DataPropertyName = "DataPagamento";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.DataPagamento.DefaultCellStyle = dataGridViewCellStyle3;
+
             this.DataPagamento.HeaderText = "Data de pagamento";
             this.DataPagamento.MinimumWidth = 6;
             this.DataPagamento.Name = "DataPagamento";
