@@ -120,7 +120,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Forma de pagamento";
             this.Load += new System.EventHandler(this.FormFormaPagamento_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroFormaPagamento_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

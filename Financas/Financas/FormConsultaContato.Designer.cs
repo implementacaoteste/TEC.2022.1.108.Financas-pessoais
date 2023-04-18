@@ -100,7 +100,7 @@
             this.contatoDataGridView.RowHeadersWidth = 51;
             this.contatoDataGridView.RowTemplate.Height = 24;
             this.contatoDataGridView.Size = new System.Drawing.Size(1040, 515);
-            this.contatoDataGridView.TabIndex = 1;
+            this.contatoDataGridView.TabIndex = 9;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -156,7 +156,7 @@
             this.label2.Location = new System.Drawing.Point(32, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 16);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Consulta";
             // 
             // buttonBuscar
@@ -165,8 +165,8 @@
             this.buttonBuscar.Location = new System.Drawing.Point(737, 110);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
-            this.buttonBuscar.TabIndex = 4;
-            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.TabIndex = 5;
+            this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
@@ -176,8 +176,8 @@
             this.buttonAdicionar.Location = new System.Drawing.Point(818, 110);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(95, 23);
-            this.buttonAdicionar.TabIndex = 5;
-            this.buttonAdicionar.Text = "Adicionar";
+            this.buttonAdicionar.TabIndex = 6;
+            this.buttonAdicionar.Text = "&Adicionar";
             this.buttonAdicionar.UseVisualStyleBackColor = true;
             this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 
@@ -187,8 +187,8 @@
             this.buttonExcluir.Location = new System.Drawing.Point(1000, 109);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluir.TabIndex = 6;
-            this.buttonExcluir.Text = "Excluir";
+            this.buttonExcluir.TabIndex = 8;
+            this.buttonExcluir.Text = "&Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
@@ -198,7 +198,7 @@
             this.buttonSair.Location = new System.Drawing.Point(1000, 656);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
-            this.buttonSair.TabIndex = 6;
+            this.buttonSair.TabIndex = 11;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
@@ -210,7 +210,7 @@
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterar.TabIndex = 7;
-            this.buttonAlterar.Text = "Alterar";
+            this.buttonAlterar.Text = "A&lterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
@@ -227,7 +227,7 @@
             this.buttonSelecionar.Location = new System.Drawing.Point(891, 656);
             this.buttonSelecionar.Name = "buttonSelecionar";
             this.buttonSelecionar.Size = new System.Drawing.Size(103, 23);
-            this.buttonSelecionar.TabIndex = 8;
+            this.buttonSelecionar.TabIndex = 10;
             this.buttonSelecionar.Text = "Selecionar";
             this.buttonSelecionar.UseVisualStyleBackColor = true;
             this.buttonSelecionar.Click += new System.EventHandler(this.buttonSelecionarContato_Click);
@@ -245,7 +245,7 @@
             this.comboBoxBuscar.Location = new System.Drawing.Point(610, 108);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxBuscar.TabIndex = 9;
+            this.comboBoxBuscar.TabIndex = 4;
             // 
             // label3
             // 
@@ -254,7 +254,7 @@
             this.label3.Location = new System.Drawing.Point(610, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 16);
-            this.label3.TabIndex = 10;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Buscar por";
             // 
             // FormConsultaContato

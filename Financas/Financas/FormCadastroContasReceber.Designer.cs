@@ -124,7 +124,7 @@
             dataEmissaoLabel.Name = "dataEmissaoLabel";
             dataEmissaoLabel.Size = new System.Drawing.Size(143, 20);
             dataEmissaoLabel.TabIndex = 16;
-            dataEmissaoLabel.Text = "Data de Emissâo:";
+            dataEmissaoLabel.Text = "Data de Emissão:";
             // 
             // valorReceberTextBoxContasReceber
             // 
@@ -132,12 +132,8 @@
             this.valorReceberTextBoxContasReceber.Location = new System.Drawing.Point(69, 134);
             this.valorReceberTextBoxContasReceber.Name = "valorReceberTextBoxContasReceber";
             this.valorReceberTextBoxContasReceber.Size = new System.Drawing.Size(164, 22);
-            this.valorReceberTextBoxContasReceber.TabIndex = 2;
+            this.valorReceberTextBoxContasReceber.TabIndex = 1;
             this.valorReceberTextBoxContasReceber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.valorReceberTextBoxContasReceber_KeyDown);
-            // 
-            // contasReceberBindingSource
-            // 
-            this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
             // 
             // contasReceberBindingSource
             // 
@@ -163,7 +159,7 @@
             this.descricaoTextBoxContasReceber.Location = new System.Drawing.Point(69, 321);
             this.descricaoTextBoxContasReceber.Name = "descricaoTextBoxContasReceber";
             this.descricaoTextBoxContasReceber.Size = new System.Drawing.Size(180, 22);
-            this.descricaoTextBoxContasReceber.TabIndex = 4;
+            this.descricaoTextBoxContasReceber.TabIndex = 5;
             this.descricaoTextBoxContasReceber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descricaoTextBoxContasReceber_KeyDown);
             // 
             // buttonBuscarContatoContasReceber
@@ -183,7 +179,7 @@
             this.buttonSalvarCadastroContasReceber.Location = new System.Drawing.Point(408, 389);
             this.buttonSalvarCadastroContasReceber.Name = "buttonSalvarCadastroContasReceber";
             this.buttonSalvarCadastroContasReceber.Size = new System.Drawing.Size(77, 36);
-            this.buttonSalvarCadastroContasReceber.TabIndex = 8;
+            this.buttonSalvarCadastroContasReceber.TabIndex = 6;
             this.buttonSalvarCadastroContasReceber.Text = "Salvar";
             this.buttonSalvarCadastroContasReceber.UseVisualStyleBackColor = true;
             this.buttonSalvarCadastroContasReceber.Click += new System.EventHandler(this.buttonSalvarCadastroContasReceber_Click);
@@ -194,7 +190,7 @@
             this.buttonCancelarCadastroContasReceber.Location = new System.Drawing.Point(505, 389);
             this.buttonCancelarCadastroContasReceber.Name = "buttonCancelarCadastroContasReceber";
             this.buttonCancelarCadastroContasReceber.Size = new System.Drawing.Size(87, 36);
-            this.buttonCancelarCadastroContasReceber.TabIndex = 9;
+            this.buttonCancelarCadastroContasReceber.TabIndex = 7;
             this.buttonCancelarCadastroContasReceber.Text = "Cancelar";
             this.buttonCancelarCadastroContasReceber.UseVisualStyleBackColor = true;
             this.buttonCancelarCadastroContasReceber.Click += new System.EventHandler(this.buttonCancelarCadastroContasReceber_Click);
@@ -205,13 +201,9 @@
             this.textBoxBuscarContato.Location = new System.Drawing.Point(315, 134);
             this.textBoxBuscarContato.Name = "textBoxBuscarContato";
             this.textBoxBuscarContato.Size = new System.Drawing.Size(217, 22);
-            this.textBoxBuscarContato.TabIndex = 10;
+            this.textBoxBuscarContato.TabIndex = 2;
             this.textBoxBuscarContato.TextChanged += new System.EventHandler(this.textBoxBuscarContato_TextChanged);
             this.textBoxBuscarContato.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxBuscarContato_KeyDown);
-            // 
-            // contatoBindingSource
-            // 
-            this.contatoBindingSource.DataSource = typeof(Models.Contato);
             // 
             // contatoBindingSource
             // 
@@ -224,7 +216,7 @@
             this.bancoTextBox.Location = new System.Drawing.Point(69, 216);
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(131, 22);
-            this.bancoTextBox.TabIndex = 13;
+            this.bancoTextBox.TabIndex = 3;
             this.bancoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bancoTextBox_KeyDown);
             // 
             // formaPagamentoTextBox
@@ -233,7 +225,7 @@
             this.formaPagamentoTextBox.Location = new System.Drawing.Point(315, 216);
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(217, 22);
-            this.formaPagamentoTextBox.TabIndex = 14;
+            this.formaPagamentoTextBox.TabIndex = 4;
             this.formaPagamentoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formaPagamentoTextBox_KeyDown);
             // 
             // buttonBuscarBanco
@@ -265,9 +257,7 @@
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
             this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dataEmissaoDateTimePicker.TabIndex = 17;
-
             this.dataEmissaoDateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataEmissaoDateTimePicker_KeyDown);
-
             // 
             // FormCadastroContasReceber
             // 
