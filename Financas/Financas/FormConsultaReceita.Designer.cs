@@ -155,7 +155,7 @@
             this.buttonBuscarReceita.Name = "buttonBuscarReceita";
             this.buttonBuscarReceita.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarReceita.TabIndex = 8;
-            this.buttonBuscarReceita.Text = "Buscar";
+            this.buttonBuscarReceita.Text = "&Buscar";
             this.buttonBuscarReceita.UseVisualStyleBackColor = true;
             this.buttonBuscarReceita.Click += new System.EventHandler(this.buttonBuscarReceita_Click);
             // 
@@ -167,7 +167,7 @@
             this.buttonAlterarReceita.Name = "buttonAlterarReceita";
             this.buttonAlterarReceita.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterarReceita.TabIndex = 9;
-            this.buttonAlterarReceita.Text = "Alterar";
+            this.buttonAlterarReceita.Text = "A&lterar";
             this.buttonAlterarReceita.UseVisualStyleBackColor = true;
             this.buttonAlterarReceita.Click += new System.EventHandler(this.buttonAlterarReceita_Click);
             // 
@@ -179,7 +179,7 @@
             this.buttonExcluirReceita.Name = "buttonExcluirReceita";
             this.buttonExcluirReceita.Size = new System.Drawing.Size(75, 23);
             this.buttonExcluirReceita.TabIndex = 10;
-            this.buttonExcluirReceita.Text = "Excluir";
+            this.buttonExcluirReceita.Text = "&Excluir";
             this.buttonExcluirReceita.UseVisualStyleBackColor = true;
             this.buttonExcluirReceita.Click += new System.EventHandler(this.buttonExcluirReceita_Click);
             // 
@@ -191,7 +191,7 @@
             this.buttonAdicionarReceita.Name = "buttonAdicionarReceita";
             this.buttonAdicionarReceita.Size = new System.Drawing.Size(95, 23);
             this.buttonAdicionarReceita.TabIndex = 11;
-            this.buttonAdicionarReceita.Text = "Adicionar";
+            this.buttonAdicionarReceita.Text = "&Adicionar";
             this.buttonAdicionarReceita.UseVisualStyleBackColor = true;
             this.buttonAdicionarReceita.Click += new System.EventHandler(this.buttonAdicionarReceita_Click);
             // 
@@ -324,7 +324,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de receita";
-            
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormConsultaReceita_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.receitaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).EndInit();
