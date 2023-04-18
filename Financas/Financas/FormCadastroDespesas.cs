@@ -7,7 +7,7 @@ namespace Financas
 {
     public partial class FormCadastroDespesas : Form
     {
-        public  int Id;
+        public int Id;
         private ContasPagar contasPagar;
         public FormCadastroDespesas(ContasPagar _contasPagar = null, int id=0)
         {
@@ -18,21 +18,15 @@ namespace Financas
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DespesasBLL despesasBLL = new DespesasBLL();
-                despesasBindingSource.EndEdit();
+            DespesasBLL despesasBLL = new DespesasBLL();
+            despesasBindingSource.EndEdit();
 
-                despesasBLL.Inserir((Despesas)despesasBindingSource.Current);
-            }
-            catch
-            {
-                MessageBox.Show("Registro salvo com sucesso!");
-            }
-            finally
-            {
-                Close();
-            }
+            if (Id == 0)
+                despesasBLL.Inserir((Despesas)despesasBindingSource.Current, contasPagar);
+            else
+                despesasBLL.Alterar((Despesas)despesasBindingSource.Current);
+            MessageBox.Show("Registro salvo com sucesso");
+            Close();
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -45,7 +39,24 @@ namespace Financas
             if (Id == 0)
                 despesasBindingSource.AddNew();
             else
-                despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos();
+                despesasBindingSource.DataSource = new DespesasBLL().BuscarPorId(Id);
+
+            if (contasPagar != null)
+            {
+                ((Despesas)despesasBindingSource.Current).Valor = contasPagar.ValorPagar;
+                textBoxGastos.Text = contasPagar.ValorPagar.ToString();
+                ((Despesas)despesasBindingSource.Current).Descricao = contasPagar.Descricao;
+                textBoxDescricao.Text = contasPagar.Descricao;
+                ((Despesas)despesasBindingSource.Current).IdContato = contasPagar.IdContato;
+                ((Despesas)despesasBindingSource.Current).Contato = contasPagar.Contato;
+                contatoTextBox.Text = contasPagar.Contato;
+                ((Despesas)despesasBindingSource.Current).IdBanco = contasPagar.IdBanco;
+                ((Despesas)despesasBindingSource.Current).Banco = contasPagar.Banco;
+                bancoTextBox.Text = contasPagar.Banco;
+                ((Despesas)despesasBindingSource.Current).IdFormaPagamento = contasPagar.IdFormaPagamento;
+                ((Despesas)despesasBindingSource.Current).FormaPagamento = contasPagar.FormaPagamento;
+                formaPagamentoTextBox.Text = contasPagar.FormaPagamento;
+            }
         }
 
         private void buttonBuscarContatoDespesas_Click(object sender, EventArgs e)

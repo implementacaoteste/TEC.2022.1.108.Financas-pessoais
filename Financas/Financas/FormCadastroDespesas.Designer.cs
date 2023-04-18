@@ -49,7 +49,6 @@
             this.formaPagamentoTextBox = new System.Windows.Forms.TextBox();
             this.buttonBuscarFormaPagamentoDespesas = new System.Windows.Forms.Button();
             this.dataEmissaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             valorLabel = new System.Windows.Forms.Label();
             descricaoLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
@@ -57,7 +56,6 @@
             formaPagamentoLabel = new System.Windows.Forms.Label();
             dataEmissaoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // valorLabel
@@ -241,15 +239,12 @@
             // 
             // dataEmissaoDateTimePicker
             // 
-            this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.contasPagarBindingSource, "DataEmissao", true));
+            this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "DataEmissao", true));
+            this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.despesasBindingSource, "DataEmissao", true));
             this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(385, 329);
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
             this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dataEmissaoDateTimePicker.TabIndex = 15;
-            // 
-            // contasPagarBindingSource
-            // 
-            this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
             // 
             // FormCadastroDespesas
             // 
@@ -288,7 +283,6 @@
             this.Load += new System.EventHandler(this.FormCadastroDespesas_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroDespesas_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,7 +302,6 @@
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.TextBox formaPagamentoTextBox;
         private System.Windows.Forms.Button buttonBuscarFormaPagamentoDespesas;
-        private System.Windows.Forms.BindingSource contasPagarBindingSource;
         private System.Windows.Forms.DateTimePicker dataEmissaoDateTimePicker;
     }
 }

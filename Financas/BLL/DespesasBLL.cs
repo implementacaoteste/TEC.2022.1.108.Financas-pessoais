@@ -10,9 +10,9 @@ namespace BLL
 {
     public class DespesasBLL
     {
-        public void Inserir(Despesas _despesas)
+        public void Inserir(Despesas _despesas, ContasPagar _contasPagar = null)
         {
-            new DespesasDAL().Inserir(_despesas);
+            new DespesasDAL().Inserir(_despesas, _contasPagar);
         }
         public void Alterar(Despesas _despesas)
         {
@@ -30,9 +30,9 @@ namespace BLL
         {
             return new DespesasDAL().BuscarPorDescricao(_descricao);
         }
-        public void BuscarPorId(int _id)
+        public Despesas BuscarPorId(int _id)
         {
-            new DespesasDAL().BuscarPorId(_id);
+           return new DespesasDAL().BuscarPorId(_id);
         }
         public List<Despesas> BuscarPorBanco(string _banco)
         {
