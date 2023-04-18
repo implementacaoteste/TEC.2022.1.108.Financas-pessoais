@@ -125,7 +125,7 @@
             this.descricaoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.descricaoTextBox.Name = "descricaoTextBox";
             this.descricaoTextBox.Size = new System.Drawing.Size(212, 22);
-            this.descricaoTextBox.TabIndex = 2;
+            this.descricaoTextBox.TabIndex = 5;
             this.descricaoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descricaoTextBox_KeyDown);
             // 
             // contasPagarBindingSource
@@ -139,7 +139,7 @@
             this.valorPagarTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.valorPagarTextBox.Name = "valorPagarTextBox";
             this.valorPagarTextBox.Size = new System.Drawing.Size(164, 22);
-            this.valorPagarTextBox.TabIndex = 4;
+            this.valorPagarTextBox.TabIndex = 1;
             this.valorPagarTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.valorPagarTextBox_KeyDown);
             // 
             // label1
@@ -175,7 +175,7 @@
             this.buttonSalvarCadastroContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCadastroContasPagar.Name = "buttonSalvarCadastroContasPagar";
             this.buttonSalvarCadastroContasPagar.Size = new System.Drawing.Size(77, 36);
-            this.buttonSalvarCadastroContasPagar.TabIndex = 7;
+            this.buttonSalvarCadastroContasPagar.TabIndex = 6;
             this.buttonSalvarCadastroContasPagar.Text = "Salvar";
             this.buttonSalvarCadastroContasPagar.UseVisualStyleBackColor = true;
             this.buttonSalvarCadastroContasPagar.Click += new System.EventHandler(this.buttonSalvarCadastroContasPagar_Click);
@@ -186,7 +186,7 @@
             this.contatoTextBox.Location = new System.Drawing.Point(315, 134);
             this.contatoTextBox.Name = "contatoTextBox";
             this.contatoTextBox.Size = new System.Drawing.Size(217, 22);
-            this.contatoTextBox.TabIndex = 8;
+            this.contatoTextBox.TabIndex = 2;
             this.contatoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.contatoTextBox_KeyDown);
             // 
             // buttonBuscarContatoContasPagar
@@ -206,7 +206,7 @@
             this.bancoTextBox.Location = new System.Drawing.Point(69, 216);
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(131, 22);
-            this.bancoTextBox.TabIndex = 11;
+            this.bancoTextBox.TabIndex = 3;
             this.bancoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bancoTextBox_KeyDown);
             // 
             // button1
@@ -226,7 +226,7 @@
             this.formaPagamentoTextBox.Location = new System.Drawing.Point(315, 216);
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(217, 22);
-            this.formaPagamentoTextBox.TabIndex = 14;
+            this.formaPagamentoTextBox.TabIndex = 4;
             this.formaPagamentoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formaPagamentoTextBox_KeyDown);
             // 
             // button2

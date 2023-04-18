@@ -34,7 +34,6 @@
             this.labelNomeUsuario = new System.Windows.Forms.Label();
             this.labelSenha = new System.Windows.Forms.Label();
             this.textBoxNomeCadastroUsuario = new System.Windows.Forms.TextBox();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxNomeUsuarioCadastroUsuario = new System.Windows.Forms.TextBox();
             this.textBoxSenhaCadastroUsuario = new System.Windows.Forms.TextBox();
             this.labelAvisoNome = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelarCadastrodeUsuario = new System.Windows.Forms.Button();
             this.buttonSalvarCadastrodeUsuario = new System.Windows.Forms.Button();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,12 +88,8 @@
             this.textBoxNomeCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeCadastroUsuario.Name = "textBoxNomeCadastroUsuario";
             this.textBoxNomeCadastroUsuario.Size = new System.Drawing.Size(282, 22);
-            this.textBoxNomeCadastroUsuario.TabIndex = 3;
+            this.textBoxNomeCadastroUsuario.TabIndex = 1;
             this.textBoxNomeCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNomeCadastroUsuario_KeyDown);
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
             // 
             // textBoxNomeUsuarioCadastroUsuario
             // 
@@ -102,7 +98,7 @@
             this.textBoxNomeUsuarioCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeUsuarioCadastroUsuario.Name = "textBoxNomeUsuarioCadastroUsuario";
             this.textBoxNomeUsuarioCadastroUsuario.Size = new System.Drawing.Size(281, 22);
-            this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 4;
+            this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 3;
             this.textBoxNomeUsuarioCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNomeUsuarioCadastroUsuario_KeyDown);
             // 
             // textBoxSenhaCadastroUsuario
@@ -112,7 +108,7 @@
             this.textBoxSenhaCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSenhaCadastroUsuario.Name = "textBoxSenhaCadastroUsuario";
             this.textBoxSenhaCadastroUsuario.Size = new System.Drawing.Size(235, 22);
-            this.textBoxSenhaCadastroUsuario.TabIndex = 5;
+            this.textBoxSenhaCadastroUsuario.TabIndex = 2;
             this.textBoxSenhaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSenhaCadastroUsuario_KeyDown);
             // 
             // labelAvisoNome
@@ -177,7 +173,7 @@
             this.textBoxConfirmarSenhaCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConfirmarSenhaCadastroUsuario.Name = "textBoxConfirmarSenhaCadastroUsuario";
             this.textBoxConfirmarSenhaCadastroUsuario.Size = new System.Drawing.Size(235, 22);
-            this.textBoxConfirmarSenhaCadastroUsuario.TabIndex = 11;
+            this.textBoxConfirmarSenhaCadastroUsuario.TabIndex = 4;
             this.textBoxConfirmarSenhaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxConfirmarSenhaCadastroUsuario_KeyDown);
             // 
             // labelRendaCadastroUsuario
@@ -197,7 +193,7 @@
             this.textBoxRendaCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRendaCadastroUsuario.Name = "textBoxRendaCadastroUsuario";
             this.textBoxRendaCadastroUsuario.Size = new System.Drawing.Size(207, 22);
-            this.textBoxRendaCadastroUsuario.TabIndex = 13;
+            this.textBoxRendaCadastroUsuario.TabIndex = 5;
             this.textBoxRendaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxRendaCadastroUsuario_KeyDown);
             // 
             // label1
@@ -220,7 +216,7 @@
             this.buttonCancelarCadastrodeUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadastrodeUsuario.Name = "buttonCancelarCadastrodeUsuario";
             this.buttonCancelarCadastrodeUsuario.Size = new System.Drawing.Size(106, 36);
-            this.buttonCancelarCadastrodeUsuario.TabIndex = 15;
+            this.buttonCancelarCadastrodeUsuario.TabIndex = 7;
             this.buttonCancelarCadastrodeUsuario.Text = "Cancelar";
             this.buttonCancelarCadastrodeUsuario.UseVisualStyleBackColor = true;
             this.buttonCancelarCadastrodeUsuario.Click += new System.EventHandler(this.buttonCancelarCadastrodeUsuario_Click);
@@ -232,10 +228,14 @@
             this.buttonSalvarCadastrodeUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCadastrodeUsuario.Name = "buttonSalvarCadastrodeUsuario";
             this.buttonSalvarCadastrodeUsuario.Size = new System.Drawing.Size(84, 36);
-            this.buttonSalvarCadastrodeUsuario.TabIndex = 15;
+            this.buttonSalvarCadastrodeUsuario.TabIndex = 6;
             this.buttonSalvarCadastrodeUsuario.Text = "Salvar";
             this.buttonSalvarCadastrodeUsuario.UseVisualStyleBackColor = true;
             this.buttonSalvarCadastrodeUsuario.Click += new System.EventHandler(this.buttonSalvarCadastrodeUsuario_Click);
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
             // 
             // FormCadastroUsuario
             // 
