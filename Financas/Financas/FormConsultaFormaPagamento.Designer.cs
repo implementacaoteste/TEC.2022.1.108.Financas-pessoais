@@ -65,7 +65,7 @@
             this.formaPagamentoDataGridView.RowHeadersWidth = 51;
             this.formaPagamentoDataGridView.RowTemplate.Height = 24;
             this.formaPagamentoDataGridView.Size = new System.Drawing.Size(1040, 515);
-            this.formaPagamentoDataGridView.TabIndex = 1;
+            this.formaPagamentoDataGridView.TabIndex = 9;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -87,8 +87,8 @@
             this.buttonBuscarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
             this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(75, 23);
-            this.buttonBuscarFormaPagamento.TabIndex = 8;
-            this.buttonBuscarFormaPagamento.Text = "Buscar";
+            this.buttonBuscarFormaPagamento.TabIndex = 5;
+            this.buttonBuscarFormaPagamento.Text = "&Buscar";
             this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscarFormaPagamento_Click);
             // 
@@ -99,8 +99,8 @@
             this.buttonAlterarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
             this.buttonAlterarFormaPagamento.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlterarFormaPagamento.TabIndex = 9;
-            this.buttonAlterarFormaPagamento.Text = "Alterar";
+            this.buttonAlterarFormaPagamento.TabIndex = 7;
+            this.buttonAlterarFormaPagamento.Text = "Al&terar";
             this.buttonAlterarFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonAlterarFormaPagamento.Click += new System.EventHandler(this.buttonAlterarFormaPagamento_Click);
             // 
@@ -111,8 +111,8 @@
             this.buttonExcluirFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
             this.buttonExcluirFormaPagamento.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluirFormaPagamento.TabIndex = 10;
-            this.buttonExcluirFormaPagamento.Text = "Excluir";
+            this.buttonExcluirFormaPagamento.TabIndex = 8;
+            this.buttonExcluirFormaPagamento.Text = "&Excluir";
             this.buttonExcluirFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonExcluirFormaPagamento.Click += new System.EventHandler(this.buttonExcluirFormaPagamento_Click);
             // 
@@ -123,8 +123,8 @@
             this.buttonAdicionarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionarFormaPagamento.Name = "buttonAdicionarFormaPagamento";
             this.buttonAdicionarFormaPagamento.Size = new System.Drawing.Size(95, 23);
-            this.buttonAdicionarFormaPagamento.TabIndex = 11;
-            this.buttonAdicionarFormaPagamento.Text = "Adicionar";
+            this.buttonAdicionarFormaPagamento.TabIndex = 6;
+            this.buttonAdicionarFormaPagamento.Text = "&Adicionar";
             this.buttonAdicionarFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonAdicionarFormaPagamento.Click += new System.EventHandler(this.buttonAdicionarFormaPagamento_Click_1);
             // 
@@ -134,7 +134,7 @@
             this.textBoxConsultarFormaPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarFormaPagamento.Name = "textBoxConsultarFormaPagamento";
             this.textBoxConsultarFormaPagamento.Size = new System.Drawing.Size(486, 22);
-            this.textBoxConsultarFormaPagamento.TabIndex = 7;
+            this.textBoxConsultarFormaPagamento.TabIndex = 2;
             // 
             // label1
             // 
@@ -143,7 +143,7 @@
             this.label1.Location = new System.Drawing.Point(32, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 16);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Consulta";
             // 
             // label2
@@ -154,7 +154,7 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(1111, 82);
-            this.label2.TabIndex = 12;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Consulta de forma de pagamento";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -164,8 +164,8 @@
             this.buttonSair.Location = new System.Drawing.Point(1000, 654);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
-            this.buttonSair.TabIndex = 13;
-            this.buttonSair.Text = "Sair";
+            this.buttonSair.TabIndex = 11;
+            this.buttonSair.Text = "&Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click_1);
             // 
@@ -175,8 +175,8 @@
             this.button1.Location = new System.Drawing.Point(878, 655);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Selecionar";
+            this.button1.TabIndex = 10;
+            this.button1.Text = "&Selecionar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -190,7 +190,7 @@
             this.comboBox1.Location = new System.Drawing.Point(608, 108);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 15;
+            this.comboBox1.TabIndex = 4;
             // 
             // label3
             // 
@@ -199,7 +199,7 @@
             this.label3.Location = new System.Drawing.Point(605, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 16);
-            this.label3.TabIndex = 16;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Buscar por";
             // 
             // FormConsultaFormaPagamento
