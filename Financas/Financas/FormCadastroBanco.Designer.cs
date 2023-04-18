@@ -54,7 +54,7 @@
             nomeLabel.Location = new System.Drawing.Point(40, 103);
             nomeLabel.Name = "nomeLabel";
             nomeLabel.Size = new System.Drawing.Size(58, 20);
-            nomeLabel.TabIndex = 2;
+            nomeLabel.TabIndex = 1;
             nomeLabel.Text = "Nome:";
             // 
             // poupancaLabel
@@ -64,7 +64,7 @@
             poupancaLabel.Location = new System.Drawing.Point(40, 187);
             poupancaLabel.Name = "poupancaLabel";
             poupancaLabel.Size = new System.Drawing.Size(88, 20);
-            poupancaLabel.TabIndex = 4;
+            poupancaLabel.TabIndex = 5;
             poupancaLabel.Text = "Poupança:";
             // 
             // saldoLabel
@@ -74,7 +74,7 @@
             saldoLabel.Location = new System.Drawing.Point(378, 103);
             saldoLabel.Name = "saldoLabel";
             saldoLabel.Size = new System.Drawing.Size(56, 20);
-            saldoLabel.TabIndex = 6;
+            saldoLabel.TabIndex = 3;
             saldoLabel.Text = "Saldo:";
             // 
             // label1
@@ -97,7 +97,7 @@
             this.nomeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(270, 22);
-            this.nomeTextBox.TabIndex = 3;
+            this.nomeTextBox.TabIndex = 2;
             this.nomeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
             // 
             // bancoBindingSource
@@ -111,7 +111,7 @@
             this.poupancaTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.poupancaTextBox.Name = "poupancaTextBox";
             this.poupancaTextBox.Size = new System.Drawing.Size(270, 22);
-            this.poupancaTextBox.TabIndex = 5;
+            this.poupancaTextBox.TabIndex = 6;
             this.poupancaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.poupancaTextBox_KeyDown);
             // 
             // saldoTextBox
@@ -121,7 +121,7 @@
             this.saldoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saldoTextBox.Name = "saldoTextBox";
             this.saldoTextBox.Size = new System.Drawing.Size(194, 22);
-            this.saldoTextBox.TabIndex = 7;
+            this.saldoTextBox.TabIndex = 4;
             this.saldoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.saldoTextBox_KeyDown);
             // 
             // buttonSalvarCadBanco
@@ -130,7 +130,7 @@
             this.buttonSalvarCadBanco.Location = new System.Drawing.Point(378, 329);
             this.buttonSalvarCadBanco.Name = "buttonSalvarCadBanco";
             this.buttonSalvarCadBanco.Size = new System.Drawing.Size(84, 36);
-            this.buttonSalvarCadBanco.TabIndex = 8;
+            this.buttonSalvarCadBanco.TabIndex = 7;
             this.buttonSalvarCadBanco.Text = "Salvar";
             this.buttonSalvarCadBanco.UseVisualStyleBackColor = true;
             this.buttonSalvarCadBanco.Click += new System.EventHandler(this.buttonSalvarCadBanco_Click);
