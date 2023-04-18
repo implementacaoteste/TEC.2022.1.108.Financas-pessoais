@@ -488,7 +488,7 @@
         private System.Windows.Forms.TextBox textBoxConsultarContasReceber2;
         private System.Windows.Forms.Label labelDataInicial;
         private System.Windows.Forms.Label labelDataFinal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn  dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorReceber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contato;
         private System.Windows.Forms.DataGridViewTextBoxColumn FormaPagamento;
