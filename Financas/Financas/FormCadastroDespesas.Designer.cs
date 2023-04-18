@@ -40,6 +40,7 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.textBoxGastos = new System.Windows.Forms.TextBox();
+            this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.contatoTextBox = new System.Windows.Forms.TextBox();
             this.buttonBuscarContatoDespesas = new System.Windows.Forms.Button();
@@ -49,15 +50,14 @@
             this.buttonBuscarFormaPagamentoDespesas = new System.Windows.Forms.Button();
             this.dataEmissaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             valorLabel = new System.Windows.Forms.Label();
             descricaoLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
             bancoLabel = new System.Windows.Forms.Label();
             formaPagamentoLabel = new System.Windows.Forms.Label();
             dataEmissaoLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // valorLabel
@@ -68,7 +68,7 @@
             valorLabel.Location = new System.Drawing.Point(61, 112);
             valorLabel.Name = "valorLabel";
             valorLabel.Size = new System.Drawing.Size(53, 20);
-            valorLabel.TabIndex = 8;
+            valorLabel.TabIndex = 1;
             valorLabel.Text = "Valor:";
             // 
             // descricaoLabel
@@ -79,7 +79,7 @@
             descricaoLabel.Location = new System.Drawing.Point(63, 301);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
-            descricaoLabel.TabIndex = 9;
+            descricaoLabel.TabIndex = 12;
             descricaoLabel.Text = "Descrição:";
             // 
             // contatoLabel
@@ -90,7 +90,7 @@
             contatoLabel.Location = new System.Drawing.Point(385, 112);
             contatoLabel.Name = "contatoLabel";
             contatoLabel.Size = new System.Drawing.Size(65, 20);
-            contatoLabel.TabIndex = 10;
+            contatoLabel.TabIndex = 3;
             contatoLabel.Text = "Credor:";
             // 
             // bancoLabel
@@ -101,7 +101,7 @@
             bancoLabel.Location = new System.Drawing.Point(62, 203);
             bancoLabel.Name = "bancoLabel";
             bancoLabel.Size = new System.Drawing.Size(62, 20);
-            bancoLabel.TabIndex = 12;
+            bancoLabel.TabIndex = 6;
             bancoLabel.Text = "Banco:";
             // 
             // formaPagamentoLabel
@@ -112,7 +112,7 @@
             formaPagamentoLabel.Location = new System.Drawing.Point(385, 208);
             formaPagamentoLabel.Name = "formaPagamentoLabel";
             formaPagamentoLabel.Size = new System.Drawing.Size(174, 20);
-            formaPagamentoLabel.TabIndex = 14;
+            formaPagamentoLabel.TabIndex = 9;
             formaPagamentoLabel.Text = "Forma de Pagamento:";
             // 
             // dataEmissaoLabel
@@ -123,7 +123,7 @@
             dataEmissaoLabel.Location = new System.Drawing.Point(387, 298);
             dataEmissaoLabel.Name = "dataEmissaoLabel";
             dataEmissaoLabel.Size = new System.Drawing.Size(143, 20);
-            dataEmissaoLabel.TabIndex = 16;
+            dataEmissaoLabel.TabIndex = 14;
             dataEmissaoLabel.Text = "Data de Emissão:";
             // 
             // label1
@@ -145,7 +145,7 @@
             this.buttonCancelar.Location = new System.Drawing.Point(523, 404);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(106, 36);
-            this.buttonCancelar.TabIndex = 6;
+            this.buttonCancelar.TabIndex = 17;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
@@ -156,7 +156,7 @@
             this.buttonSalvar.Location = new System.Drawing.Point(417, 405);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(84, 36);
-            this.buttonSalvar.TabIndex = 7;
+            this.buttonSalvar.TabIndex = 16;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
@@ -167,7 +167,11 @@
             this.textBoxGastos.Location = new System.Drawing.Point(62, 135);
             this.textBoxGastos.Name = "textBoxGastos";
             this.textBoxGastos.Size = new System.Drawing.Size(133, 22);
-            this.textBoxGastos.TabIndex = 9;
+            this.textBoxGastos.TabIndex = 2;
+            // 
+            // despesasBindingSource
+            // 
+            this.despesasBindingSource.DataSource = typeof(Models.Despesas);
             // 
             // textBoxDescricao
             // 
@@ -175,7 +179,7 @@
             this.textBoxDescricao.Location = new System.Drawing.Point(62, 329);
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(253, 22);
-            this.textBoxDescricao.TabIndex = 10;
+            this.textBoxDescricao.TabIndex = 13;
             this.textBoxDescricao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxDescricao_KeyDown);
             // 
             // contatoTextBox
@@ -184,7 +188,7 @@
             this.contatoTextBox.Location = new System.Drawing.Point(385, 135);
             this.contatoTextBox.Name = "contatoTextBox";
             this.contatoTextBox.Size = new System.Drawing.Size(154, 22);
-            this.contatoTextBox.TabIndex = 11;
+            this.contatoTextBox.TabIndex = 4;
             // 
             // buttonBuscarContatoDespesas
             // 
@@ -192,7 +196,7 @@
             this.buttonBuscarContatoDespesas.Location = new System.Drawing.Point(545, 125);
             this.buttonBuscarContatoDespesas.Name = "buttonBuscarContatoDespesas";
             this.buttonBuscarContatoDespesas.Size = new System.Drawing.Size(84, 36);
-            this.buttonBuscarContatoDespesas.TabIndex = 12;
+            this.buttonBuscarContatoDespesas.TabIndex = 5;
             this.buttonBuscarContatoDespesas.Text = "Buscar";
             this.buttonBuscarContatoDespesas.UseVisualStyleBackColor = true;
             this.buttonBuscarContatoDespesas.Click += new System.EventHandler(this.buttonBuscarContatoDespesas_Click);
@@ -203,7 +207,7 @@
             this.bancoTextBox.Location = new System.Drawing.Point(62, 225);
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.Size = new System.Drawing.Size(154, 22);
-            this.bancoTextBox.TabIndex = 13;
+            this.bancoTextBox.TabIndex = 7;
             // 
             // buttonBuscar
             // 
@@ -211,7 +215,7 @@
             this.buttonBuscar.Location = new System.Drawing.Point(222, 217);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(84, 36);
-            this.buttonBuscar.TabIndex = 14;
+            this.buttonBuscar.TabIndex = 8;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
@@ -222,7 +226,7 @@
             this.formaPagamentoTextBox.Location = new System.Drawing.Point(385, 231);
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(197, 22);
-            this.formaPagamentoTextBox.TabIndex = 15;
+            this.formaPagamentoTextBox.TabIndex = 10;
             // 
             // buttonBuscarFormaPagamentoDespesas
             // 
@@ -230,7 +234,7 @@
             this.buttonBuscarFormaPagamentoDespesas.Location = new System.Drawing.Point(588, 220);
             this.buttonBuscarFormaPagamentoDespesas.Name = "buttonBuscarFormaPagamentoDespesas";
             this.buttonBuscarFormaPagamentoDespesas.Size = new System.Drawing.Size(84, 36);
-            this.buttonBuscarFormaPagamentoDespesas.TabIndex = 16;
+            this.buttonBuscarFormaPagamentoDespesas.TabIndex = 11;
             this.buttonBuscarFormaPagamentoDespesas.Text = "Buscar";
             this.buttonBuscarFormaPagamentoDespesas.UseVisualStyleBackColor = true;
             this.buttonBuscarFormaPagamentoDespesas.Click += new System.EventHandler(this.buttonBuscarFormaPagamentoDespesas_Click);
@@ -241,15 +245,11 @@
             this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(385, 329);
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
             this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
-            this.dataEmissaoDateTimePicker.TabIndex = 17;
+            this.dataEmissaoDateTimePicker.TabIndex = 15;
             // 
             // contasPagarBindingSource
             // 
             this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
-            // 
-            // despesasBindingSource
-            // 
-            this.despesasBindingSource.DataSource = typeof(Models.Despesas);
             // 
             // FormCadastroDespesas
             // 
@@ -287,8 +287,8 @@
             this.Text = "Cadastro de despesas";
             this.Load += new System.EventHandler(this.FormCadastroDespesas_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroDespesas_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
