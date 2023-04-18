@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contasPagarDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,10 +97,10 @@
             // ValorPagar
             // 
             this.ValorPagar.DataPropertyName = "ValorPagar";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.ValorPagar.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ValorPagar.DefaultCellStyle = dataGridViewCellStyle1;
             this.ValorPagar.HeaderText = "Valor";
             this.ValorPagar.MinimumWidth = 6;
             this.ValorPagar.Name = "ValorPagar";
@@ -137,9 +137,9 @@
             // DataEmissao
             // 
             this.DataEmissao.DataPropertyName = "DataEmissao";
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataEmissao.HeaderText = "Data de emissao";
             this.DataEmissao.MinimumWidth = 6;
             this.DataEmissao.Name = "DataEmissao";
@@ -149,9 +149,9 @@
             // DataPagamento
             // 
             this.DataPagamento.DataPropertyName = "DataPagamento";
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.DataPagamento.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.DataPagamento.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataPagamento.HeaderText = "Data de pagamento";
             this.DataPagamento.MinimumWidth = 6;
             this.DataPagamento.Name = "DataPagamento";
@@ -173,6 +173,7 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Consulta de contas a pagar";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+ 
             // 
             // labelConsultarContasPagar
             // 
