@@ -214,11 +214,11 @@
             // labelInforamaConsultaDespesa
             // 
             this.labelInforamaConsultaDespesa.AutoSize = true;
-            this.labelInforamaConsultaDespesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInforamaConsultaDespesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInforamaConsultaDespesa.Location = new System.Drawing.Point(32, 112);
             this.labelInforamaConsultaDespesa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelInforamaConsultaDespesa.Name = "labelInforamaConsultaDespesa";
-            this.labelInforamaConsultaDespesa.Size = new System.Drawing.Size(67, 16);
+            this.labelInforamaConsultaDespesa.Size = new System.Drawing.Size(59, 16);
             this.labelInforamaConsultaDespesa.TabIndex = 11;
             this.labelInforamaConsultaDespesa.Text = "Consulta";
             // 
@@ -263,10 +263,10 @@
             // labelDataInicial
             // 
             this.labelDataInicial.AutoSize = true;
-            this.labelDataInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDataInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataInicial.Location = new System.Drawing.Point(103, 91);
             this.labelDataInicial.Name = "labelDataInicial";
-            this.labelDataInicial.Size = new System.Drawing.Size(85, 16);
+            this.labelDataInicial.Size = new System.Drawing.Size(73, 16);
             this.labelDataInicial.TabIndex = 17;
             this.labelDataInicial.Text = "Data inicial";
             this.labelDataInicial.Visible = false;
@@ -274,10 +274,10 @@
             // labelDataFinal
             // 
             this.labelDataFinal.AutoSize = true;
-            this.labelDataFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDataFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataFinal.Location = new System.Drawing.Point(378, 91);
             this.labelDataFinal.Name = "labelDataFinal";
-            this.labelDataFinal.Size = new System.Drawing.Size(73, 16);
+            this.labelDataFinal.Size = new System.Drawing.Size(63, 16);
             this.labelDataFinal.TabIndex = 17;
             this.labelDataFinal.Text = "Data final";
             this.labelDataFinal.Visible = false;
@@ -285,10 +285,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(607, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 16);
+            this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 17;
             this.label2.Text = "Buscar por";
             this.label2.Visible = false;
