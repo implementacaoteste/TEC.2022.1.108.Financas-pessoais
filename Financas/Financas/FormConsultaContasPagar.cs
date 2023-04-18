@@ -156,5 +156,7 @@ namespace Financas
             if(e.KeyCode == Keys.Escape)
                 Close();
         }
+
+
     }
 }

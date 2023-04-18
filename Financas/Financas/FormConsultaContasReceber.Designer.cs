@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contasReceberDataGridView = new System.Windows.Forms.DataGridView();
             this.ValorReceber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +39,17 @@
             this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorReceberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataEmissaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataPagamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idContatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bancoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idBancoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formaPagamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFormaPagamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contasReceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarContasReceber = new System.Windows.Forms.Button();
             this.buttonAlterarContasReceber = new System.Windows.Forms.Button();
@@ -76,7 +83,18 @@
             this.FormaPagamento,
             this.Banco,
             this.DataEmissao,
-            this.DataPagamento});
+            this.DataPagamento,
+            this.idDataGridViewTextBoxColumn,
+            this.valorReceberDataGridViewTextBoxColumn,
+            this.descricaoDataGridViewTextBoxColumn,
+            this.dataEmissaoDataGridViewTextBoxColumn,
+            this.dataPagamentoDataGridViewTextBoxColumn,
+            this.contatoDataGridViewTextBoxColumn,
+            this.idContatoDataGridViewTextBoxColumn,
+            this.bancoDataGridViewTextBoxColumn,
+            this.idBancoDataGridViewTextBoxColumn,
+            this.formaPagamentoDataGridViewTextBoxColumn,
+            this.idFormaPagamentoDataGridViewTextBoxColumn});
             this.contasReceberDataGridView.DataSource = this.contasReceberBindingSource;
             this.contasReceberDataGridView.Location = new System.Drawing.Point(35, 135);
             this.contasReceberDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -90,10 +108,10 @@
             // ValorReceber
             // 
             this.ValorReceber.DataPropertyName = "ValorReceber";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ValorReceber.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ValorReceber.DefaultCellStyle = dataGridViewCellStyle4;
             this.ValorReceber.HeaderText = "Valor";
             this.ValorReceber.MinimumWidth = 6;
             this.ValorReceber.Name = "ValorReceber";
@@ -130,9 +148,9 @@
             // DataEmissao
             // 
             this.DataEmissao.DataPropertyName = "DataEmissao";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle5;
             this.DataEmissao.HeaderText = "Data de emissao";
             this.DataEmissao.MinimumWidth = 8;
             this.DataEmissao.Name = "DataEmissao";
@@ -142,22 +160,118 @@
             // DataPagamento
             // 
             this.DataPagamento.DataPropertyName = "DataPagamento";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.DataPagamento.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "d";
+            dataGridViewCellStyle6.NullValue = null;
+            this.DataPagamento.DefaultCellStyle = dataGridViewCellStyle6;
             this.DataPagamento.HeaderText = "Data de pagamento";
             this.DataPagamento.MinimumWidth = 6;
             this.DataPagamento.Name = "DataPagamento";
             this.DataPagamento.ReadOnly = true;
             this.DataPagamento.Width = 125;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // valorReceberDataGridViewTextBoxColumn
+            // 
+            this.valorReceberDataGridViewTextBoxColumn.DataPropertyName = "ValorReceber";
+            this.valorReceberDataGridViewTextBoxColumn.HeaderText = "ValorReceber";
+            this.valorReceberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.valorReceberDataGridViewTextBoxColumn.Name = "valorReceberDataGridViewTextBoxColumn";
+            this.valorReceberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorReceberDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descricaoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataEmissaoDataGridViewTextBoxColumn
+            // 
+            this.dataEmissaoDataGridViewTextBoxColumn.DataPropertyName = "DataEmissao";
+            this.dataEmissaoDataGridViewTextBoxColumn.HeaderText = "DataEmissao";
+            this.dataEmissaoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataEmissaoDataGridViewTextBoxColumn.Name = "dataEmissaoDataGridViewTextBoxColumn";
+            this.dataEmissaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataEmissaoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataPagamentoDataGridViewTextBoxColumn
+            // 
+            this.dataPagamentoDataGridViewTextBoxColumn.DataPropertyName = "DataPagamento";
+            this.dataPagamentoDataGridViewTextBoxColumn.HeaderText = "DataPagamento";
+            this.dataPagamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataPagamentoDataGridViewTextBoxColumn.Name = "dataPagamentoDataGridViewTextBoxColumn";
+            this.dataPagamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataPagamentoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // contatoDataGridViewTextBoxColumn
+            // 
+            this.contatoDataGridViewTextBoxColumn.DataPropertyName = "Contato";
+            this.contatoDataGridViewTextBoxColumn.HeaderText = "Contato";
+            this.contatoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.contatoDataGridViewTextBoxColumn.Name = "contatoDataGridViewTextBoxColumn";
+            this.contatoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.contatoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idContatoDataGridViewTextBoxColumn
+            // 
+            this.idContatoDataGridViewTextBoxColumn.DataPropertyName = "IdContato";
+            this.idContatoDataGridViewTextBoxColumn.HeaderText = "IdContato";
+            this.idContatoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idContatoDataGridViewTextBoxColumn.Name = "idContatoDataGridViewTextBoxColumn";
+            this.idContatoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idContatoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // bancoDataGridViewTextBoxColumn
+            // 
+            this.bancoDataGridViewTextBoxColumn.DataPropertyName = "Banco";
+            this.bancoDataGridViewTextBoxColumn.HeaderText = "Banco";
+            this.bancoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.bancoDataGridViewTextBoxColumn.Name = "bancoDataGridViewTextBoxColumn";
+            this.bancoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bancoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idBancoDataGridViewTextBoxColumn
+            // 
+            this.idBancoDataGridViewTextBoxColumn.DataPropertyName = "IdBanco";
+            this.idBancoDataGridViewTextBoxColumn.HeaderText = "IdBanco";
+            this.idBancoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idBancoDataGridViewTextBoxColumn.Name = "idBancoDataGridViewTextBoxColumn";
+            this.idBancoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idBancoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // formaPagamentoDataGridViewTextBoxColumn
+            // 
+            this.formaPagamentoDataGridViewTextBoxColumn.DataPropertyName = "FormaPagamento";
+            this.formaPagamentoDataGridViewTextBoxColumn.HeaderText = "FormaPagamento";
+            this.formaPagamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.formaPagamentoDataGridViewTextBoxColumn.Name = "formaPagamentoDataGridViewTextBoxColumn";
+            this.formaPagamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.formaPagamentoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idFormaPagamentoDataGridViewTextBoxColumn
+            // 
+            this.idFormaPagamentoDataGridViewTextBoxColumn.DataPropertyName = "IdFormaPagamento";
+            this.idFormaPagamentoDataGridViewTextBoxColumn.HeaderText = "IdFormaPagamento";
+            this.idFormaPagamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idFormaPagamentoDataGridViewTextBoxColumn.Name = "idFormaPagamentoDataGridViewTextBoxColumn";
+            this.idFormaPagamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idFormaPagamentoDataGridViewTextBoxColumn.Width = 125;
+            // 
             // contasReceberBindingSource
             // 
             this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
             // 
-            // buttonBuscarContasReceber
-            // 
-
             // buttonBuscarContasReceber
             // 
             this.buttonBuscarContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,7 +280,7 @@
             this.buttonBuscarContasReceber.Name = "buttonBuscarContasReceber";
             this.buttonBuscarContasReceber.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarContasReceber.TabIndex = 8;
-            this.buttonBuscarContasReceber.Text = "Buscar";
+            this.buttonBuscarContasReceber.Text = "&Buscar";
             this.buttonBuscarContasReceber.UseVisualStyleBackColor = true;
             this.buttonBuscarContasReceber.Click += new System.EventHandler(this.buttonBuscarContasReceber_Click);
             // 
@@ -178,7 +292,7 @@
             this.buttonAlterarContasReceber.Name = "buttonAlterarContasReceber";
             this.buttonAlterarContasReceber.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterarContasReceber.TabIndex = 9;
-            this.buttonAlterarContasReceber.Text = "Alterar";
+            this.buttonAlterarContasReceber.Text = "A&lterar";
             this.buttonAlterarContasReceber.UseVisualStyleBackColor = true;
             this.buttonAlterarContasReceber.Click += new System.EventHandler(this.buttonAlterarContasReceber_Click);
             // 
@@ -190,7 +304,7 @@
             this.buttonExcluirContasReceber.Name = "buttonExcluirContasReceber";
             this.buttonExcluirContasReceber.Size = new System.Drawing.Size(75, 23);
             this.buttonExcluirContasReceber.TabIndex = 10;
-            this.buttonExcluirContasReceber.Text = "Excluir";
+            this.buttonExcluirContasReceber.Text = "&Excluir";
             this.buttonExcluirContasReceber.UseVisualStyleBackColor = true;
             this.buttonExcluirContasReceber.Click += new System.EventHandler(this.buttonExcluirContasReceber_Click);
             // 
@@ -202,16 +316,16 @@
             this.buttonAdicionarContasReceber.Name = "buttonAdicionarContasReceber";
             this.buttonAdicionarContasReceber.Size = new System.Drawing.Size(95, 23);
             this.buttonAdicionarContasReceber.TabIndex = 11;
-            this.buttonAdicionarContasReceber.Text = "Adicionar";
+            this.buttonAdicionarContasReceber.Text = "&Adicionar";
             this.buttonAdicionarContasReceber.UseVisualStyleBackColor = true;
             this.buttonAdicionarContasReceber.Click += new System.EventHandler(this.buttonAdicionarContasReceber_Click);
             // 
             // textBoxConsultarContasReceber
             // 
-            this.textBoxConsultarContasReceber.Location = new System.Drawing.Point(106, 109);
+            this.textBoxConsultarContasReceber.Location = new System.Drawing.Point(105, 108);
             this.textBoxConsultarContasReceber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarContasReceber.Name = "textBoxConsultarContasReceber";
-            this.textBoxConsultarContasReceber.Size = new System.Drawing.Size(498, 22);
+            this.textBoxConsultarContasReceber.Size = new System.Drawing.Size(269, 22);
             this.textBoxConsultarContasReceber.TabIndex = 7;
             // 
             // label1
@@ -238,7 +352,6 @@
             // 
             // buttonSair
             // 
-
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.Location = new System.Drawing.Point(1000, 654);
             this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -251,9 +364,7 @@
             // 
             // comboBox1
             // 
-
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Todos",
@@ -271,7 +382,7 @@
             // 
             // textBoxConsultarContasReceber2
             // 
-            this.textBoxConsultarContasReceber2.Location = new System.Drawing.Point(381, 108);
+            this.textBoxConsultarContasReceber2.Location = new System.Drawing.Point(380, 108);
             this.textBoxConsultarContasReceber2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarContasReceber2.Name = "textBoxConsultarContasReceber2";
             this.textBoxConsultarContasReceber2.Size = new System.Drawing.Size(223, 22);
@@ -387,5 +498,16 @@
         private System.Windows.Forms.Label label3;
         
         private System.Windows.Forms.Button buttonQuitarContasReceber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorReceberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataEmissaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataPagamentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contatoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idContatoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bancoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idBancoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn formaPagamentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idFormaPagamentoDataGridViewTextBoxColumn;
     }
 }

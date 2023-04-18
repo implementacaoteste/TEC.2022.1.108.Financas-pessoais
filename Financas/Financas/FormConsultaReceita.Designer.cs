@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.receitaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,10 +93,10 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle3;
             this.Valor.HeaderText = "Valor";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -133,10 +133,10 @@
             // DataEmissao
             // 
             this.DataEmissao.DataPropertyName = "DataEmissao";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle4;
             this.DataEmissao.HeaderText = "Data de Emissao";
             this.DataEmissao.MinimumWidth = 6;
             this.DataEmissao.Name = "DataEmissao";
@@ -155,7 +155,7 @@
             this.buttonBuscarReceita.Name = "buttonBuscarReceita";
             this.buttonBuscarReceita.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarReceita.TabIndex = 8;
-            this.buttonBuscarReceita.Text = "Buscar";
+            this.buttonBuscarReceita.Text = "&Buscar";
             this.buttonBuscarReceita.UseVisualStyleBackColor = true;
             this.buttonBuscarReceita.Click += new System.EventHandler(this.buttonBuscarReceita_Click);
             // 
@@ -167,7 +167,7 @@
             this.buttonAlterarReceita.Name = "buttonAlterarReceita";
             this.buttonAlterarReceita.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterarReceita.TabIndex = 9;
-            this.buttonAlterarReceita.Text = "Alterar";
+            this.buttonAlterarReceita.Text = "A&lterar";
             this.buttonAlterarReceita.UseVisualStyleBackColor = true;
             this.buttonAlterarReceita.Click += new System.EventHandler(this.buttonAlterarReceita_Click);
             // 
@@ -179,7 +179,7 @@
             this.buttonExcluirReceita.Name = "buttonExcluirReceita";
             this.buttonExcluirReceita.Size = new System.Drawing.Size(75, 23);
             this.buttonExcluirReceita.TabIndex = 10;
-            this.buttonExcluirReceita.Text = "Excluir";
+            this.buttonExcluirReceita.Text = "&Excluir";
             this.buttonExcluirReceita.UseVisualStyleBackColor = true;
             this.buttonExcluirReceita.Click += new System.EventHandler(this.buttonExcluirReceita_Click);
             // 
@@ -191,16 +191,16 @@
             this.buttonAdicionarReceita.Name = "buttonAdicionarReceita";
             this.buttonAdicionarReceita.Size = new System.Drawing.Size(95, 23);
             this.buttonAdicionarReceita.TabIndex = 11;
-            this.buttonAdicionarReceita.Text = "Adicionar";
+            this.buttonAdicionarReceita.Text = "&Adicionar";
             this.buttonAdicionarReceita.UseVisualStyleBackColor = true;
             this.buttonAdicionarReceita.Click += new System.EventHandler(this.buttonAdicionarReceita_Click);
             // 
             // textBoxConsultarReceita
             // 
-            this.textBoxConsultarReceita.Location = new System.Drawing.Point(106, 112);
+            this.textBoxConsultarReceita.Location = new System.Drawing.Point(106, 108);
             this.textBoxConsultarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarReceita.Name = "textBoxConsultarReceita";
-            this.textBoxConsultarReceita.Size = new System.Drawing.Size(498, 22);
+            this.textBoxConsultarReceita.Size = new System.Drawing.Size(269, 22);
             this.textBoxConsultarReceita.TabIndex = 7;
             // 
             // label1
@@ -265,7 +265,7 @@
             // 
             // textBoxConsultarReceita2
             // 
-            this.textBoxConsultarReceita2.Location = new System.Drawing.Point(381, 109);
+            this.textBoxConsultarReceita2.Location = new System.Drawing.Point(381, 108);
             this.textBoxConsultarReceita2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarReceita2.Name = "textBoxConsultarReceita2";
             this.textBoxConsultarReceita2.Size = new System.Drawing.Size(223, 22);
@@ -324,7 +324,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de receita";
-            
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormConsultaReceita_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.receitaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).EndInit();
