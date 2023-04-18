@@ -129,9 +129,7 @@
             this.textBoxConsultarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarBanco.Name = "textBoxConsultarBanco";
             this.textBoxConsultarBanco.Size = new System.Drawing.Size(498, 22);
-
-            this.textBoxConsultarBanco.TabIndex = 2;
-
+            this.textBoxConsultarBanco.TabIndex = 1;
             // 
             // label2
             // 
@@ -144,7 +142,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Consultar banco";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-  
             // 
             // buttonAdicionarBanco
             // 
@@ -165,7 +162,7 @@
             this.buttonBuscarBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarBanco.Name = "buttonBuscarBanco";
             this.buttonBuscarBanco.Size = new System.Drawing.Size(75, 23);
-            this.buttonBuscarBanco.TabIndex = 5;
+            this.buttonBuscarBanco.TabIndex = 1;
             this.buttonBuscarBanco.Text = "&Buscar";
             this.buttonBuscarBanco.UseVisualStyleBackColor = true;
             this.buttonBuscarBanco.Click += new System.EventHandler(this.buttonBuscarBanco_Click);
@@ -227,9 +224,7 @@
             this.comboBoxBuscar.Location = new System.Drawing.Point(610, 108);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(121, 24);
-
-            this.comboBoxBuscar.TabIndex = 7;
-
+            this.comboBoxBuscar.TabIndex = 2;
             // 
             // label3
             // 
