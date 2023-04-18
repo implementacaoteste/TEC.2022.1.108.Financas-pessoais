@@ -67,12 +67,23 @@ namespace Financas
 
         private void buttonAlterarConsultaContasPagar_Click(object sender, EventArgs e)
         {
-            int id = ((ContasPagar)contasPagarBindingSource.Current).Id;
-            using (FormCadastroContasPaga frm = new FormCadastroContasPaga(id))
+            try
             {
-                frm.ShowDialog();
+                int id = ((ContasPagar)contasPagarBindingSource.Current).Id;
+                if (((ContasPagar)contasPagarBindingSource.Current).DataPagamento != null && ((ContasReceber)contasPagarBindingSource.Current).DataPagamento.Value.Year > 2000)
+                {
+                    throw new Exception("Este registro já foi pago! não pode ser alterado");
+                }
+                using (FormCadastroContasPaga frm = new FormCadastroContasPaga(id))
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscarConsultaContasPagar_Click(null, null);
             }
-            buttonBuscarConsultaContasPagar_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonExcluirConsultaContasPagar_Click(object sender, EventArgs e)
@@ -123,9 +134,20 @@ namespace Financas
 
         private void buttonPagarContasPagar_Click(object sender, EventArgs e)
         {
-            using(FormCadastroDespesas frm = new FormCadastroDespesas())
+            try
             {
-                frm.ShowDialog();
+                if (((ContasPagar)contasPagarBindingSource.Current).DataPagamento != null && ((ContasPagar)contasPagarBindingSource.Current).DataPagamento.Value.Year > 2000)
+                {
+                    throw new Exception("Este registro já foi pago!");
+                }
+                using (FormCadastroDespesas frm = new FormCadastroDespesas((ContasPagar)contasPagarBindingSource.Current))
+                {
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

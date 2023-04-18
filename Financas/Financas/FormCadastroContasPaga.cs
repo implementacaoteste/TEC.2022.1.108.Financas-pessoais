@@ -15,7 +15,7 @@ namespace Financas
     public partial class FormCadastroContasPaga : Form
     {
         public int Id;
-        public FormCadastroContasPaga(int id=0)
+        public FormCadastroContasPaga(int id = 0)
         {
             InitializeComponent();
             Id = id;
@@ -29,8 +29,7 @@ namespace Financas
         private void buttonSalvarCadastroContasPagar_Click(object sender, EventArgs e)
         {
             ContasPagarBLL contasPagarBLL = new ContasPagarBLL();
-           // ContasPagarBLL ContaPagaroBLL = new ContasPagarBLL();
-           contasPagarBindingSource.EndEdit();
+            contasPagarBindingSource.EndEdit();
 
             if (Id == 0)
                 contasPagarBLL.Inserir((ContasPagar)contasPagarBindingSource.Current);
@@ -44,11 +43,12 @@ namespace Financas
         private void FormCadastroContasPaga_Load(object sender, EventArgs e)
         {
             if (Id == 0)
-
+            {
                 contasPagarBindingSource.AddNew();
+                ((ContasPagar)contasPagarBindingSource.Current).DataEmissao = DateTime.Now;
+            }
             else
-                contasPagarBindingSource.DataSource = new ContasPagarBLL();
-            
+                contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorId(Id);
         }
 
         private void buttonBuscarContatoContasPagar_Click(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace Financas
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using(FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento(true))
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento(true))
             {
                 frm.ShowDialog();
                 ((ContasPagar)contasPagarBindingSource.Current).IdFormaPagamento = frm.Id;
@@ -115,13 +115,13 @@ namespace Financas
 
                 formaPagamentoTextBox.Focus();
             }
-            
+
 
         }
 
         private void formaPagamentoTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
 
                 descricaoTextBox.Focus();
@@ -135,7 +135,7 @@ namespace Financas
 
                 dataEmissaoDateTimePicker.Focus();
             }
-            
+
         }
 
         private void dataEmissaoDateTimePicker_KeyDown(object sender, KeyEventArgs e)
