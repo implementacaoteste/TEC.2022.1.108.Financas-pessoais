@@ -52,6 +52,7 @@
             this.labelDataFinal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonPagarContasPagar = new System.Windows.Forms.Button();
+            this.buttonEstornar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -310,12 +311,23 @@
             this.buttonPagarContasPagar.UseVisualStyleBackColor = true;
             this.buttonPagarContasPagar.Click += new System.EventHandler(this.buttonPagarContasPagar_Click);
             // 
+            // buttonEstornar
+            // 
+            this.buttonEstornar.Location = new System.Drawing.Point(35, 655);
+            this.buttonEstornar.Name = "buttonEstornar";
+            this.buttonEstornar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEstornar.TabIndex = 15;
+            this.buttonEstornar.Text = "Estornar";
+            this.buttonEstornar.UseVisualStyleBackColor = true;
+            this.buttonEstornar.Click += new System.EventHandler(this.buttonEstornar_Click);
+            // 
             // FormConsultaContasPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1111, 688);
+            this.Controls.Add(this.buttonEstornar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonPagarContasPagar);
             this.Controls.Add(this.labelDataFinal);
@@ -378,5 +390,6 @@
 
 
         private System.Windows.Forms.Button buttonPagarContasPagar;
+        private System.Windows.Forms.Button buttonEstornar;
     }
 }

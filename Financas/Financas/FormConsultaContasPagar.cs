@@ -157,6 +157,9 @@ namespace Financas
                 Close();
         }
 
+        private void buttonEstornar_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
