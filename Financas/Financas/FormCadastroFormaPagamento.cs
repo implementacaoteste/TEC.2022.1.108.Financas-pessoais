@@ -56,11 +56,10 @@ namespace Financas
             buttonSalvar_Click(null, null);
         }
 
-        private void FormConsultaFormaPagamento_KeyDown(object sender, KeyEventArgs e)
+        private void FormCadastroFormaPagamento_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
                 Close();
         }
-
     }
 }
