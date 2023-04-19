@@ -2,6 +2,7 @@
 using Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -429,9 +430,40 @@ namespace DAL
             }
         }
 
-        internal void ExcluirPorIdContasReceber(int id)
+        internal void ExcluirPorIdContasReceber(int _id, SqlTransaction _transaction = null)
         {
-            throw new NotImplementedException();
+            SqlTransaction transaction = _transaction;
+
+            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
+            {
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM Receita WHERE Id = @Id", cn))
+                {
+                    try
+                    {
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Parameters.AddWithValue("@Id", _id);
+                        if (_transaction == null)
+                        {
+                            cn.Open();
+                            transaction = cn.BeginTransaction();
+                        }
+                        cmd.Transaction = transaction;
+                        cmd.Connection = transaction.Connection;
+                        cmd.ExecuteNonQuery();
+
+                        if (_transaction == null)
+                            transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
+                            transaction.Rollback();
+
+                        throw new Exception("Ocorreu erro ao tentar estornar uma Receita no banco de dados", ex);
+                    }
+
+                }
+            }
         }
     }
 }

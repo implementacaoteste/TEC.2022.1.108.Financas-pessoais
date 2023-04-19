@@ -29,6 +29,7 @@ CREATE TABLE Despesas
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
+	IdContasPagar INT,
 	IdContato INT,
 	IdBanco INT,
 	IdFormaPagamento INT,
@@ -43,6 +44,7 @@ CREATE TABLE Receita
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
+	IdContasReceber INT,
 	IdContato INT,
 	IdBanco INT,
 	IdFormaPagamento INT,
@@ -63,7 +65,7 @@ CREATE TABLE ContasPagar
 	ValorPagar FLOAT,
 	Descricao VARCHAR(250),
 	DataEmissao DATE,
-	DataPagamento DATE
+	DataPagamento DATE DEFAULT NULL
 )
 GO
 
@@ -78,7 +80,7 @@ CREATE TABLE ContasReceber
 	ValorReceber FLOAT,
 	Descricao VARCHAR(250), 
 	DataEmissao DATE,
-	DataPagamento DATE
+	DataPagamento DATE DEFAULT NULL
 )
 GO
 
@@ -131,6 +133,20 @@ IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID
 ALTER TABLE Receita
 ADD CONSTRAINT FK_Receita_Usuario
 FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Despesas') AND name = 'FK_Despesas_ContasPagar')
+ALTER TABLE Despesas
+ADD CONSTRAINT FK_Despesas_ContasPagar
+FOREIGN KEY (IdContasPagar) REFERENCES ContasPagar(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Receita') AND name = 'FK_Receita_ContasReceber')
+ALTER TABLE Receita
+ADD CONSTRAINT FK_Receita_ContasReceber
+FOREIGN KEY (IdContasReceber) REFERENCES ContasReceber(Id)
 
 GO
 
@@ -288,3 +304,10 @@ GO
 --INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 2)
 --INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
 --GO
+
+
+exec sp_executesql N'INSERT INTO FormaPagamento(Descricao)
+                                    VALUES(@Descricao)',N'@Descricao nvarchar(3)',@Descricao=N'Pix'
+
+exec sp_executesql N'INSERT INTO ContasReceber(ValorReceber, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao)
+                                                         VALUES(@ValorReceber, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao)',N'@ValorReceber float,@Descricao nvarchar(5),@IdContato int,@IdBanco int,@IdFormaPagamento int,@DataEmissao datetime',@ValorReceber=24,@Descricao=N'Teste',@IdContato=3,@IdBanco=2,@IdFormaPagamento=1,@DataEmissao='2023-04-19 16:50:26.313'

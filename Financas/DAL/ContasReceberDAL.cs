@@ -58,10 +58,22 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE ContasReceber SET ValorReceber=@ValorReceber, Descricao=@Descricao, IdContato=@IdContato, IdBanco=@IdBanco, IdFormaPagamento=@IdFormaPagamento, DataEmissao=@DataEmissao, DataPagamento=@DataPagamento WHERE Id = @Id", cn))
+                //using (SqlCommand cmd = new SqlCommand(@"UPDATE ContasReceber 
+                //                                         SET
+                //                                            ValorReceber = @ValorReceber, 
+                //                                            Descricao = @Descricao, 
+                //                                            IdContato = @IdContato, 
+                //                                            IdBanco = @IdBanco, 
+                //                                            IdFormaPagamento = @IdFormaPagamento, 
+                //                                            DataEmissao = @DataEmissao, 
+                //                                            DataPagamento = @DataPagamento 
+                //                                        WHERE Id = @Id", cn))
+                using (SqlCommand cmd = new SqlCommand())
                 {
                     try
                     {
+                       
+
                         cmd.CommandType = System.Data.CommandType.Text;
                         cmd.Parameters.AddWithValue("@ValorReceber", _contasReceber.ValorReceber);
                         cmd.Parameters.AddWithValue("@Descricao", _contasReceber.Descricao);
@@ -71,6 +83,21 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@DataEmissao", _contasReceber.DataEmissao);
                         cmd.Parameters.AddWithValue("@DataPagamento", _contasReceber.DataPagamento);
                         cmd.Parameters.AddWithValue("@Id", _contasReceber.Id);
+
+                        cmd.CommandText = @"UPDATE ContasReceber 
+                                                         SET
+";
+
+                        foreach (SqlParameter item in cmd.Parameters)
+                        {
+                            if (item.Value != null)
+                            {
+                                cmd.CommandText += item.ParameterName.Replace("@", "") + " = " + item.ParameterName + ",";
+                            }
+                        }
+
+                        cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length - 1) + " WHERE Id = @Id";
+
                         if (_transaction == null)
                         {
                             cn.Open();
@@ -85,7 +112,8 @@ namespace DAL
                     }
                     catch (Exception ex)
                     {
-                        transaction.Rollback();
+                        if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
+                            transaction.Rollback();
                         throw new Exception("Ocorreu erro ao tentar inserir uma  Conta a receber no banco de dados", ex);
                     }
 
@@ -548,15 +576,17 @@ namespace DAL
                         transaction = cn.BeginTransaction();
                     }
 
-                    Alterar(_contasReceber, _transaction);
+                    Alterar(_contasReceber, transaction);
                     new ReceitaDAL().ExcluirPorIdContasReceber(_contasReceber.Id);
-                    
+
                     if (_transaction == null)
                         transaction.Commit();
                 }
                 catch (Exception ex)
                 {
-                    transaction.Rollback();
+                    if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
+                        transaction.Rollback();
+
                     throw new Exception("Ocorreu erro ao tentar estornar um pagamento de uma  Conta a receber no banco de dados", ex);
                 }
             }
