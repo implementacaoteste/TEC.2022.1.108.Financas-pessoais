@@ -28,7 +28,6 @@ namespace Financas
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
@@ -38,25 +37,9 @@ namespace Financas
             this.buttonEntrar = new System.Windows.Forms.Button();
             this.buttonsair = new System.Windows.Forms.Button();
             this.checkBoxMostrarSenha = new System.Windows.Forms.CheckBox();
-            label1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip;
-            label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(34)))), ((int)(((byte)(91)))));
-            label1.Dock = System.Windows.Forms.DockStyle.Top;
-            label1.Enabled = false;
-            label1.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.ForeColor = System.Drawing.Color.Transparent;
-            label1.Location = new System.Drawing.Point(0, 0);
-            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(1129, 62);
-            label1.TabIndex = 0;
-            label1.Text = "LOGIN";
-            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -153,11 +136,25 @@ namespace Financas
             this.checkBoxMostrarSenha.UseVisualStyleBackColor = true;
             this.checkBoxMostrarSenha.CheckedChanged += new System.EventHandler(this.checkBoxMostrarSenha_CheckedChanged);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(34)))), ((int)(((byte)(91)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1129, 70);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "LOGIN";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.UseCompatibleTextRendering = true;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1129, 735);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBoxMostrarSenha);
             this.Controls.Add(this.buttonsair);
             this.Controls.Add(this.buttonEntrar);
@@ -165,7 +162,6 @@ namespace Financas
             this.Controls.Add(this.labelUsuarioLogin);
             this.Controls.Add(this.textBoxSenhaLogin);
             this.Controls.Add(this.textBoxUsuario);
-            this.Controls.Add(label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -193,5 +189,6 @@ namespace Financas
         private System.Windows.Forms.Button buttonEntrar;
         private System.Windows.Forms.Button buttonsair;
         private System.Windows.Forms.CheckBox checkBoxMostrarSenha;
+        private System.Windows.Forms.Label label1;
     }
 }
