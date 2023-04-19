@@ -112,6 +112,7 @@
             this.Controls.Add(this.textBoxDescricao);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroFormaPagamento";
@@ -120,6 +121,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Forma de pagamento";
             this.Load += new System.EventHandler(this.FormFormaPagamento_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroFormaPagamento_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -488,6 +488,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de contas a receber";
             this.Load += new System.EventHandler(this.FormConsultaContasReceber_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormConsultaContasReceber_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasReceberBindingSource)).EndInit();
             this.ResumeLayout(false);

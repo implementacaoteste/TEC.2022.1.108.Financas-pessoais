@@ -161,6 +161,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Escape)
                 Close();
+
         }
 
         private void buttonEstornar_Click(object sender, EventArgs e)
