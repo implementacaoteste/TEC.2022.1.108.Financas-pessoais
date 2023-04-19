@@ -151,6 +151,17 @@ namespace Financas
                 MessageBox.Show(ex.Message);
             }
         }
+        private void buttonEstornarContasReceber_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new ContasReceberBLL().EstornarBaixa((ContasReceber)contasReceberBindingSource.Current);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void FormConsultaContasReceber_Load(object sender, EventArgs e)
         {
@@ -164,9 +175,5 @@ namespace Financas
 
         }
 
-        private void buttonEstornar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

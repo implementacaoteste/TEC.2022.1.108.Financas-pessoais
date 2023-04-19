@@ -532,5 +532,34 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public void EstornarBaixa(ContasReceber _contasReceber, SqlTransaction _transaction = null)
+        {
+            SqlTransaction transaction = _transaction;
+            _contasReceber.DataPagamento = null;
+
+            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
+            {
+                try
+                {
+                    if (_transaction == null)
+                    {
+                        cn.Open();
+                        transaction = cn.BeginTransaction();
+                    }
+
+                    Alterar(_contasReceber, _transaction);
+                    new ReceitaDAL().ExcluirPorIdContasReceber(_contasReceber.Id);
+                    
+                    if (_transaction == null)
+                        transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    throw new Exception("Ocorreu erro ao tentar estornar um pagamento de uma  Conta a receber no banco de dados", ex);
+                }
+            }
+        }
     }
 }

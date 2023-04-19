@@ -428,5 +428,10 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        internal void ExcluirPorIdContasReceber(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -54,5 +54,13 @@ namespace BLL
         {
             return new ContasReceberDAL().BuscarPorBanco(_banco);
         }
+
+        public void EstornarBaixa(ContasReceber _contasReceber)
+        {
+            if (_contasReceber.DataPagamento == null)
+                throw new Exception("Este registro ainda não foi pago!");
+
+            new ContasReceberDAL().EstornarBaixa(_contasReceber);
+        }
     }
 }

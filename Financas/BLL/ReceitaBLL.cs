@@ -12,6 +12,9 @@ namespace BLL
     {
         public void Inserir(Receita _receita, ContasReceber _contasReceber = null)
         {
+            if (_contasReceber.DataPagamento != null && _contasReceber.DataPagamento.Value.Year > 2000)
+                throw new Exception("Este registro já foi pago!");
+
             new ReceitaDAL().Inserir(_receita, _contasReceber);
         }
         public void Alterar(Receita _receita)
