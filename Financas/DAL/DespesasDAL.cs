@@ -115,8 +115,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesa, Despesas.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
-                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id
+                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesas, Despesas.Valor, Despesas.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
+                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
                                     WHERE Despesas.Id = @Id";
@@ -129,12 +129,13 @@ namespace DAL
                     if (rd.Read())
                     {
                         despesas = new Despesas();
-                        despesas.Id = Convert.ToInt32(rd["ID"]);
+                        despesas.Id = Convert.ToInt32(rd["Id"]);
                         despesas.Valor = (double)rd["Valor"];
-                        despesas.Descricao = rd["Descricao"].ToString();
-                        despesas.Contato = rd["Nome"].ToString();
-                        despesas.FormaPagamento = rd["Descricao"].ToString();
-                        despesas.Banco = rd["Nome"].ToString();
+                        despesas.Descricao = rd["DescricaoDespesas"].ToString();
+                        despesas.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        despesas.Contato = rd["Contato"].ToString();
+                        despesas.FormaPagamento = rd["FormaPagamento"].ToString();
+                        despesas.Banco = rd["Banco"].ToString();
                     }
                 }
                 return despesas;
@@ -160,8 +161,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesa, Despesas.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
-                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id
+                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesas, Despesas.Valor, Despesas.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
+                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id";
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -173,10 +174,11 @@ namespace DAL
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["Id"]);
                         despesas.Valor = (double)rd["Valor"];
-                        despesas.Descricao = rd["Descricao"].ToString();
-                        despesas.Contato = rd["Nome"].ToString();
-                        despesas.FormaPagamento = rd["Descricao"].ToString();
-                        despesas.Banco = rd["Nome"].ToString();
+                        despesas.Descricao = rd["DescricaoDespesas"].ToString();
+                        despesas.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        despesas.Contato = rd["Contato"].ToString();
+                        despesas.FormaPagamento = rd["FormaPagamento"].ToString();
+                        despesas.Banco = rd["Banco"].ToString();
                         despesa.Add(despesas);
                     }
                 }
@@ -202,8 +204,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesa, Despesas.Valor, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
-                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id
+                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesas, Despesas.Valor, Despesas.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
+                                    INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
                                     WHERE Despesas.Descricao LIKE @Descricao";
@@ -218,10 +220,11 @@ namespace DAL
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["Id"]);
                         despesas.Valor = (double)rd["Valor"];
-                        despesas.Descricao = rd["Descricao"].ToString();
-                        despesas.Contato = rd["Nome"].ToString();
-                        despesas.FormaPagamento = rd["Descricao"].ToString();
-                        despesas.Banco = rd["Nome"].ToString();
+                        despesas.Descricao = rd["DescricaoDespesas"].ToString();
+                        despesas.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
+                        despesas.Contato = rd["Contato"].ToString();
+                        despesas.FormaPagamento = rd["FormaPagamento"].ToString();
+                        despesas.Banco = rd["Banco"].ToString();
                         despesa.Add(despesas);
                     }
                 }
@@ -263,11 +266,11 @@ namespace DAL
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["Id"]);
                         despesas.Valor = (double)rd["Valor"];
-                        despesas.Descricao = rd["Descricao"].ToString();
+                        despesas.Descricao = rd["DescricaoDespesas"].ToString();
                         despesas.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        despesas.Contato = rd["Nome"].ToString();
-                        despesas.FormaPagamento = rd["Descricao"].ToString();
-                        despesas.Banco = rd["Nome"].ToString();
+                        despesas.Contato = rd["Contato"].ToString();
+                        despesas.FormaPagamento = rd["FormaPagamento"].ToString();
+                        despesas.Banco = rd["Banco"].ToString();
                         todasDespesas.Add(despesas);
                     }
                 }
@@ -309,11 +312,11 @@ namespace DAL
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["Id"]);
                         despesas.Valor = (double)rd["Valor"];
-                        despesas.Descricao = rd["Descricao"].ToString();
+                        despesas.Descricao = rd["DescricaoDespesas"].ToString();
                         despesas.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        despesas.Contato = rd["Nome"].ToString();
-                        despesas.FormaPagamento = rd["Descricao"].ToString();
-                        despesas.Banco = rd["Nome"].ToString();
+                        despesas.Contato = rd["Contato"].ToString();
+                        despesas.FormaPagamento = rd["FormaPagamento"].ToString();
+                        despesas.Banco = rd["Banco"].ToString();
                         todasDespesas.Add(despesas);
                     }
                 }
@@ -355,11 +358,11 @@ namespace DAL
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["Id"]);
                         despesas.Valor = (double)rd["Valor"];
-                        despesas.Descricao = rd["Descricao"].ToString();
+                        despesas.Descricao = rd["DescricaoDespesas"].ToString();
                         despesas.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        despesas.Contato = rd["Nome"].ToString();
-                        despesas.FormaPagamento = rd["Descricao"].ToString();
-                        despesas.Banco = rd["Nome"].ToString();
+                        despesas.Contato = rd["Contato"].ToString();
+                        despesas.FormaPagamento = rd["FormaPagamento"].ToString();
+                        despesas.Banco = rd["Banco"].ToString();
                         todasDespesas.Add(despesas);
                     }
                 }
@@ -403,11 +406,11 @@ namespace DAL
                         despesas = new Despesas();
                         despesas.Id = Convert.ToInt32(rd["Id"]);
                         despesas.Valor = (double)rd["Valor"];
-                        despesas.Descricao = rd["Descricao"].ToString();
+                        despesas.Descricao = rd["DescricaoDespesas"].ToString();
                         despesas.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        despesas.Contato = rd["Nome"].ToString();
-                        despesas.FormaPagamento = rd["Descricao"].ToString();
-                        despesas.Banco = rd["Nome"].ToString();
+                        despesas.Contato = rd["Contato"].ToString();
+                        despesas.FormaPagamento = rd["FormaPagamento"].ToString();
+                        despesas.Banco = rd["Banco"].ToString();
                         todasDespesas.Add(despesas);
                     }
                 }
