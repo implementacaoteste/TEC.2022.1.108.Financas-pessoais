@@ -89,8 +89,8 @@ namespace Financas
             if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            int id = ((Receita)despesasBindingSource.Current).Id;
-            new ReceitaBLL().Excluir(id);
+            int id = ((Despesas)despesasBindingSource.Current).Id;
+            new DespesasBLL().Excluir(id);
             despesasBindingSource.RemoveCurrent();
 
             MessageBox.Show("Registro excluído com sucesso!");
