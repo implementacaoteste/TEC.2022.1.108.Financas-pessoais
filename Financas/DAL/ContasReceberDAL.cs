@@ -55,25 +55,14 @@ namespace DAL
         public void Alterar(ContasReceber _contasReceber, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
+            List<SqlParameter> sqlParametersRemover = new List<SqlParameter>();
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                //using (SqlCommand cmd = new SqlCommand(@"UPDATE ContasReceber 
-                //                                         SET
-                //                                            ValorReceber = @ValorReceber, 
-                //                                            Descricao = @Descricao, 
-                //                                            IdContato = @IdContato, 
-                //                                            IdBanco = @IdBanco, 
-                //                                            IdFormaPagamento = @IdFormaPagamento, 
-                //                                            DataEmissao = @DataEmissao, 
-                //                                            DataPagamento = @DataPagamento 
-                //                                        WHERE Id = @Id", cn))
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     try
                     {
-                       
-
                         cmd.CommandType = System.Data.CommandType.Text;
                         cmd.Parameters.AddWithValue("@ValorReceber", _contasReceber.ValorReceber);
                         cmd.Parameters.AddWithValue("@Descricao", _contasReceber.Descricao);
@@ -84,25 +73,30 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@DataPagamento", _contasReceber.DataPagamento);
                         cmd.Parameters.AddWithValue("@Id", _contasReceber.Id);
 
-                        cmd.CommandText = @"UPDATE ContasReceber 
-                                                         SET
-";
-
+                        cmd.CommandText = "UPDATE ContasReceber\r\nSET";
+                        
                         foreach (SqlParameter item in cmd.Parameters)
                         {
-                            if (item.Value != null)
+                            if (item.Value != null && item.ParameterName != "@Id")
+                                cmd.CommandText += "\r\t" + item.ParameterName.Replace("@", "") + " = " + item.ParameterName + ",";
+                            else if (item.ParameterName != "@Id")
                             {
-                                cmd.CommandText += item.ParameterName.Replace("@", "") + " = " + item.ParameterName + ",";
+                                sqlParametersRemover.Add(item);
+                                cmd.CommandText += "\r\t" + item.ParameterName.Replace("@", "") + " = NULL,";
                             }
                         }
 
-                        cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length - 1) + " WHERE Id = @Id";
+                        foreach (SqlParameter item in sqlParametersRemover)
+                            cmd.Parameters.Remove(item);
+
+                        cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length - 1) + "\r\nWHERE Id = @Id";
 
                         if (_transaction == null)
                         {
                             cn.Open();
                             transaction = cn.BeginTransaction();
                         }
+
                         cmd.Transaction = transaction;
                         cmd.Connection = transaction.Connection;
                         cmd.ExecuteNonQuery();
@@ -116,7 +110,6 @@ namespace DAL
                             transaction.Rollback();
                         throw new Exception("Ocorreu erro ao tentar inserir uma  Conta a receber no banco de dados", ex);
                     }
-
                 }
             }
         }
