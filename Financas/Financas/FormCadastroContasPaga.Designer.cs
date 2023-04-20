@@ -274,6 +274,7 @@
             this.Controls.Add(this.valorPagarTextBox);
             this.Controls.Add(descricaoLabel);
             this.Controls.Add(this.descricaoTextBox);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

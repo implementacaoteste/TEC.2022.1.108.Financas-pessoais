@@ -182,6 +182,7 @@
             this.Controls.Add(this.enderecoTextBox);
             this.Controls.Add(label2);
             this.Controls.Add(this.nomeTextBox);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.MaximizeBox = false;
