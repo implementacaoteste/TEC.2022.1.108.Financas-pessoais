@@ -20,8 +20,8 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Receita(Valor, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao)
-                                    VALUES(@Valor, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao)";
+                cmd.CommandText = @"INSERT INTO Receita(Valor, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao, IdContasReceber)
+                                    VALUES(@Valor, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao, @IdContasReceber)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Valor", _receita.Valor);
                 cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
@@ -29,6 +29,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@IdBanco", _receita.IdBanco);
                 cmd.Parameters.AddWithValue("@IdFormaPagamento", _receita.IdFormaPagamento);
                 cmd.Parameters.AddWithValue("@DataEmissao", _receita.DataEmissao);
+                cmd.Parameters.AddWithValue("@IdContasReceber", _contasReceber.Id);
                 cmd.Connection = cn;
                 cn.Open();
 
@@ -430,18 +431,18 @@ namespace DAL
             }
         }
 
-        internal void ExcluirPorIdContasReceber(int _id, SqlTransaction _transaction = null)
+        internal void ExcluirPorIdContasReceber(int _idContasReceber, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("DELETE FROM Receita WHERE Id = @Id", cn))
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM Receita WHERE IdContasReceber = @Id", cn))
                 {
                     try
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
-                        cmd.Parameters.AddWithValue("@Id", _id);
+                        cmd.Parameters.AddWithValue("@Id", _idContasReceber);
                         if (_transaction == null)
                         {
                             cn.Open();

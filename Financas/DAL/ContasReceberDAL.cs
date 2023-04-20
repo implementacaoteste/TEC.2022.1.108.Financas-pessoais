@@ -45,8 +45,9 @@ namespace DAL
                     }
                     catch (Exception ex)
                     {
-                        transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar inserir uma Conta a receber no banco de dados", ex);
+                        if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
+                            transaction.Rollback();
+                        throw new Exception("Ocorreu erro ao tentar inserir uma  Conta a receber no banco de dados", ex);
                     }
 
                 }
@@ -108,7 +109,7 @@ namespace DAL
                     {
                         if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
                             transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar inserir uma  Conta a receber no banco de dados", ex);
+                        throw new Exception("Ocorreu erro ao tentar alterar uma  Conta a receber no banco de dados", ex);
                     }
                 }
             }
@@ -141,8 +142,9 @@ namespace DAL
                     }
                     catch (Exception ex)
                     {
-                        transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar excluir uma Conta a receber no banco de dados", ex);
+                        if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
+                            transaction.Rollback();
+                        throw new Exception("Ocorreu erro ao tentar excluir uma  Conta a receber no banco de dados", ex);
                     }
 
                 }

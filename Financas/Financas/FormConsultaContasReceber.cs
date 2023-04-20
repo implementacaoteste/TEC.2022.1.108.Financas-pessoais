@@ -150,17 +150,20 @@ namespace Financas
             {
                 MessageBox.Show(ex.Message);
             }
+            buttonBuscarContasReceber_Click(null, null);
         }
         private void buttonEstornarContasReceber_Click(object sender, EventArgs e)
         {
             try
             {
                 new ContasReceberBLL().EstornarBaixa((ContasReceber)contasReceberBindingSource.Current);
+                throw new Exception("Registro estornado com sucesso!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            buttonBuscarContasReceber_Click(null, null);
         }
 
         private void FormConsultaContasReceber_Load(object sender, EventArgs e)
