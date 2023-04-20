@@ -111,6 +111,7 @@
             this.Controls.Add(descricaoLabel);
             this.Controls.Add(this.textBoxDescricao);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.MaximizeBox = false;

@@ -34,6 +34,7 @@
             this.labelNomeUsuario = new System.Windows.Forms.Label();
             this.labelSenha = new System.Windows.Forms.Label();
             this.textBoxNomeCadastroUsuario = new System.Windows.Forms.TextBox();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxNomeUsuarioCadastroUsuario = new System.Windows.Forms.TextBox();
             this.textBoxSenhaCadastroUsuario = new System.Windows.Forms.TextBox();
             this.labelAvisoNome = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelarCadastrodeUsuario = new System.Windows.Forms.Button();
             this.buttonSalvarCadastrodeUsuario = new System.Windows.Forms.Button();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,9 +88,12 @@
             this.textBoxNomeCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeCadastroUsuario.Name = "textBoxNomeCadastroUsuario";
             this.textBoxNomeCadastroUsuario.Size = new System.Drawing.Size(282, 22);
-
             this.textBoxNomeCadastroUsuario.TabIndex = 2;
             this.textBoxNomeCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNomeCadastroUsuario_KeyDown);
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
             // 
             // textBoxNomeUsuarioCadastroUsuario
             // 
@@ -99,7 +102,6 @@
             this.textBoxNomeUsuarioCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeUsuarioCadastroUsuario.Name = "textBoxNomeUsuarioCadastroUsuario";
             this.textBoxNomeUsuarioCadastroUsuario.Size = new System.Drawing.Size(281, 22);
-
             this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 6;
             this.textBoxNomeUsuarioCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNomeUsuarioCadastroUsuario_KeyDown);
             // 
@@ -144,7 +146,7 @@
             this.buttonSalvarCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCadastroUsuario.Name = "buttonSalvarCadastroUsuario";
             this.buttonSalvarCadastroUsuario.Size = new System.Drawing.Size(85, 39);
-            //this.buttonSalvarCadastroUsuario.TabIndex = 8;
+            this.buttonSalvarCadastroUsuario.TabIndex = 16;
             this.buttonSalvarCadastroUsuario.Text = "Salvar";
             this.buttonSalvarCadastroUsuario.UseVisualStyleBackColor = true;
             // 
@@ -155,7 +157,7 @@
             this.buttonCancelarCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadastroUsuario.Name = "buttonCancelarCadastroUsuario";
             this.buttonCancelarCadastroUsuario.Size = new System.Drawing.Size(85, 39);
-            //this.buttonCancelarCadastroUsuario.TabIndex = 9;
+            this.buttonCancelarCadastroUsuario.TabIndex = 15;
             this.buttonCancelarCadastroUsuario.Text = "Cancelar";
             this.buttonCancelarCadastroUsuario.UseVisualStyleBackColor = true;
             // 
@@ -234,10 +236,6 @@
             this.buttonSalvarCadastrodeUsuario.Text = "Salvar";
             this.buttonSalvarCadastrodeUsuario.UseVisualStyleBackColor = true;
             this.buttonSalvarCadastrodeUsuario.Click += new System.EventHandler(this.buttonSalvarCadastrodeUsuario_Click);
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(Models.Usuario);
             // 
             // FormCadastroUsuario
             // 
