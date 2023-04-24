@@ -47,6 +47,9 @@ namespace Financas
                 bancoBindingSource.AddNew();
             else
                 bancoBindingSource.DataSource = new BancoBLL().BuscarPorId(Id);
+
+            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
         }
 
         private void FormCadastroBanco_KeyDown(object sender, KeyEventArgs e)

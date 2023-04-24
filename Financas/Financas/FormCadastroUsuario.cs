@@ -25,11 +25,13 @@ namespace Financas
 
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
-
+          
             if (Id == 0)
                 usuarioBindingSource.AddNew();
             else
                 usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
+            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
         }
 
         private void buttonCancelarCadastrodeUsuario_Click(object sender, EventArgs e)

@@ -92,6 +92,8 @@ namespace Financas
             }
             else
                 contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorId(Id);
+            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
         }
 
         private void FormCadastroContasReceber_KeyDown(object sender, KeyEventArgs e)

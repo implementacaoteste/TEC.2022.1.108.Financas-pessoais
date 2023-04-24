@@ -45,6 +45,8 @@ namespace Financas
                 contatoBindingSource.AddNew();
             else
                 contatoBindingSource.DataSource = new ContatoBLL().BuscarPorId(Id);
+            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
         }
 
         private void FormCadastroContato_KeyDown(object sender, KeyEventArgs e)

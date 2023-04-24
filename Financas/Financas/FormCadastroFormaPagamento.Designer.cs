@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descricaoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroFormaPagamento));
             this.label1 = new System.Windows.Forms.Label();
             this.formaPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
@@ -103,8 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PowderBlue;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(624, 391);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);

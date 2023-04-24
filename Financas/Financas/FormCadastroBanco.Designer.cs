@@ -32,7 +32,6 @@
             System.Windows.Forms.Label nomeLabel;
             System.Windows.Forms.Label poupancaLabel;
             System.Windows.Forms.Label saldoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroBanco));
             this.label1 = new System.Windows.Forms.Label();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.bancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,6 +59,7 @@
             // poupancaLabel
             // 
             poupancaLabel.AutoSize = true;
+            poupancaLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
             poupancaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             poupancaLabel.Location = new System.Drawing.Point(40, 187);
             poupancaLabel.Name = "poupancaLabel";
@@ -70,6 +70,7 @@
             // saldoLabel
             // 
             saldoLabel.AutoSize = true;
+            saldoLabel.BackColor = System.Drawing.SystemColors.Control;
             saldoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             saldoLabel.Location = new System.Drawing.Point(378, 103);
             saldoLabel.Name = "saldoLabel";
@@ -151,8 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(630, 389);
             this.Controls.Add(this.buttonCancelarCadBanco);
@@ -166,6 +166,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);

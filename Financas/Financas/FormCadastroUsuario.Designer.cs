@@ -54,6 +54,7 @@
             // labelNome
             // 
             this.labelNome.AutoSize = true;
+            this.labelNome.BackColor = System.Drawing.SystemColors.Control;
             this.labelNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNome.Location = new System.Drawing.Point(61, 102);
             this.labelNome.Name = "labelNome";
@@ -64,6 +65,7 @@
             // labelNomeUsuario
             // 
             this.labelNomeUsuario.AutoSize = true;
+            this.labelNomeUsuario.BackColor = System.Drawing.SystemColors.Control;
             this.labelNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNomeUsuario.Location = new System.Drawing.Point(62, 216);
             this.labelNomeUsuario.Name = "labelNomeUsuario";
@@ -74,6 +76,7 @@
             // labelSenha
             // 
             this.labelSenha.AutoSize = true;
+            this.labelSenha.BackColor = System.Drawing.SystemColors.Control;
             this.labelSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSenha.Location = new System.Drawing.Point(406, 102);
             this.labelSenha.Name = "labelSenha";
@@ -164,6 +167,7 @@
             // labelConfirmarSenha
             // 
             this.labelConfirmarSenha.AutoSize = true;
+            this.labelConfirmarSenha.BackColor = System.Drawing.SystemColors.Control;
             this.labelConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConfirmarSenha.Location = new System.Drawing.Point(406, 214);
             this.labelConfirmarSenha.Name = "labelConfirmarSenha";
@@ -183,6 +187,7 @@
             // labelRendaCadastroUsuario
             // 
             this.labelRendaCadastroUsuario.AutoSize = true;
+            this.labelRendaCadastroUsuario.BackColor = System.Drawing.SystemColors.Control;
             this.labelRendaCadastroUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRendaCadastroUsuario.Location = new System.Drawing.Point(62, 307);
             this.labelRendaCadastroUsuario.Name = "labelRendaCadastroUsuario";
@@ -241,7 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(718, 424);
             this.Controls.Add(this.buttonSalvarCadastrodeUsuario);
