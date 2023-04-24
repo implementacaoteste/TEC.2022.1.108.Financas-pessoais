@@ -1,6 +1,7 @@
 ﻿using Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -12,41 +13,80 @@ namespace DAL
 {
     public class DespesasDAL
     {
-        public void Inserir(Despesas _despesas, ContasPagar _contasPagar = null)
+        public void Inserir(Despesas _despesas, ContasPagar _contasPagar = null, SqlTransaction _transaction = null)
         {
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
+            SqlTransaction transaction = _transaction;
+            List<SqlParameter> sqlParametersRemover = new List<SqlParameter>();
+            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Despesas(Valor, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao, IdContasPagar)
-                                    VALUES(@Valor, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao, @IdContasPagar)";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Valor", _despesas.Valor);
-                cmd.Parameters.AddWithValue("@Descricao", _despesas.Descricao);
-                cmd.Parameters.AddWithValue("@IdContato", _despesas.IdContato);
-                cmd.Parameters.AddWithValue("@IdBanco", _despesas.IdBanco);
-                cmd.Parameters.AddWithValue("@IdFormaPagamento", _despesas.IdFormaPagamento);
-                cmd.Parameters.AddWithValue("@DataEmissao", _despesas.DataEmissao);
-                cmd.Parameters.AddWithValue("@IdContasPagar", _contasPagar.Id);
-                cmd.Connection = cn;
-                cn.Open();
-
-                if (_contasPagar != null)
+                using (SqlCommand cmd = new SqlCommand())
                 {
-                    _contasPagar.DataPagamento = _despesas.DataEmissao;
-                    new ContasPagarDAL().Alterar(_contasPagar);
+                    try
+                    {
+                        string parametros = "";
+
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Parameters.AddWithValue("@Valor", _despesas.Valor);
+                        cmd.Parameters.AddWithValue("@Descricao", _despesas.Descricao);
+                        cmd.Parameters.AddWithValue("@IdContato", _despesas.IdContato);
+                        cmd.Parameters.AddWithValue("@IdBanco", _despesas.IdBanco);
+                        cmd.Parameters.AddWithValue("@IdFormaPagamento", _despesas.IdFormaPagamento);
+                        cmd.Parameters.AddWithValue("@DataEmissao", _despesas.DataEmissao);
+
+                        cmd.CommandText = "INSERT INTO Despesas(";
+
+                        foreach (SqlParameter item in cmd.Parameters)
+                        {
+                            if (item.Value != null && item.ParameterName != "@Id")
+                            {
+                                parametros += item.ParameterName + ", ";
+                                cmd.CommandText += "\r\t" + item.ParameterName.Replace("@", "") + ",";
+                            }
+                            else if (item.ParameterName != "@Id")
+                            {
+                                sqlParametersRemover.Add(item);
+                                cmd.CommandText += "\r\t" + item.ParameterName.Replace("@", "") + " = NULL,";
+                            }
+                        }
+
+                        foreach (SqlParameter item in sqlParametersRemover)
+                            cmd.Parameters.Remove(item);
+
+                        cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length - 1) + ") VALUES(" + parametros.Substring(0, parametros.Length -2) + ")";
+
+                        if (_transaction == null)
+                        {
+                            cn.Open();
+                            transaction = cn.BeginTransaction();
+                        }
+
+                        if (_contasPagar != null)
+                            cmd.Parameters.AddWithValue("@IdContasPagar", _contasPagar.Id);
+                        else
+                            cmd.Parameters.AddWithValue("@IdContasPagar", null);
+
+
+                        cmd.Transaction = transaction;
+                        cmd.Connection = transaction.Connection;
+                        if (_contasPagar != null)
+                        {
+                            _contasPagar.DataPagamento = _despesas.DataEmissao;
+                            new ContasPagarDAL().Alterar(_contasPagar);
+                        }
+
+                        cmd.ExecuteNonQuery();
+
+                        if (_transaction == null)
+                            transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
+                            transaction.Rollback();
+                        throw new Exception("Ocorreu erro ao tentar alterar uma  Conta a receber no banco de dados", ex);
+                    }
+
                 }
-
-                cmd.ExecuteNonQuery();
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu erro ao tentar inserir uma Despesa no banco de dados", ex);
-            }
-            finally
-            {
-                cn.Close();
             }
         }
         public void Alterar(Despesas _despesas)

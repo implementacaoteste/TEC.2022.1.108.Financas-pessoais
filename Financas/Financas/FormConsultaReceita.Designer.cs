@@ -324,6 +324,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de receita";
+            this.Load += new System.EventHandler(this.FormConsultaReceita_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormConsultaReceita_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.receitaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).EndInit();

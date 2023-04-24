@@ -106,7 +106,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Saldo, Poupanca FROM Banco WHERE Id = @Id";
+                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor - Despesas.Valor, 0) AS Saldo, Banco.Poupanca FROM Banco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
+                                    WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -145,7 +148,9 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Saldo, Poupanca FROM Banco";
+                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor - Despesas.Valor, 0) AS Saldo, Banco.Poupanca FROM Banco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -182,7 +187,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Saldo, Poupanca FROM Banco WHERE Nome LIKE @Nome";
+                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor - Despesas.Valor, 0) AS Saldo, Banco.Poupanca FROM Banco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
+                                    WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");

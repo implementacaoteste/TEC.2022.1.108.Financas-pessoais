@@ -119,6 +119,9 @@ namespace Financas
             
         }
 
-        
+        private void FormConsultaReceita_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
+        }
     }
 }
