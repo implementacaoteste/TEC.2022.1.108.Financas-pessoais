@@ -553,7 +553,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void EstornarBaixa(ContasPagar _contasPagar, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
