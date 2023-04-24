@@ -47,7 +47,9 @@ namespace Financas
                 formaPagamentoBindingSource.AddNew();
             else
                 formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorId(Id);
-           
+            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+
         }
 
         private void textBoxDescricao_KeyDown(object sender, KeyEventArgs e)

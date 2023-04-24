@@ -49,6 +49,8 @@ namespace Financas
             }
             else
                 contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorId(Id);
+            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
         }
 
         private void buttonBuscarContatoContasPagar_Click(object sender, EventArgs e)

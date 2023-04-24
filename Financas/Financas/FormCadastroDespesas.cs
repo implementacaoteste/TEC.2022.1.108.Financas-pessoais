@@ -1,6 +1,7 @@
 ﻿using BLL;
 using Models;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Financas
@@ -36,6 +37,8 @@ namespace Financas
 
         private void FormCadastroDespesas_Load(object sender, EventArgs e)
         {
+            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             if (Id == 0)
                 despesasBindingSource.AddNew();
             else

@@ -35,7 +35,6 @@
             System.Windows.Forms.Label bancoLabel;
             System.Windows.Forms.Label formaPagamentoLabel;
             System.Windows.Forms.Label dataEmissaoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroReceita));
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxGanhos = new System.Windows.Forms.TextBox();
@@ -244,8 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.AliceBlue;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(737, 401);
             this.Controls.Add(dataEmissaoLabel);
             this.Controls.Add(this.dataEmissaoDateTimePicker);

@@ -35,7 +35,6 @@
             System.Windows.Forms.Label bancoLabel;
             System.Windows.Forms.Label formaPagamentoLabel;
             System.Windows.Forms.Label dataEmissaoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroContasPaga));
             this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.valorPagarTextBox = new System.Windows.Forms.TextBox();
@@ -61,6 +60,7 @@
             // descricaoLabel
             // 
             descricaoLabel.AutoSize = true;
+            descricaoLabel.BackColor = System.Drawing.SystemColors.Control;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descricaoLabel.Location = new System.Drawing.Point(69, 304);
             descricaoLabel.Name = "descricaoLabel";
@@ -71,6 +71,7 @@
             // valorPagarLabel
             // 
             valorPagarLabel.AutoSize = true;
+            valorPagarLabel.BackColor = System.Drawing.SystemColors.Control;
             valorPagarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             valorPagarLabel.Location = new System.Drawing.Point(69, 112);
             valorPagarLabel.Name = "valorPagarLabel";
@@ -81,6 +82,7 @@
             // contatoLabel
             // 
             contatoLabel.AutoSize = true;
+            contatoLabel.BackColor = System.Drawing.SystemColors.Control;
             contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contatoLabel.Location = new System.Drawing.Point(315, 111);
             contatoLabel.Name = "contatoLabel";
@@ -91,6 +93,7 @@
             // bancoLabel
             // 
             bancoLabel.AutoSize = true;
+            bancoLabel.BackColor = System.Drawing.SystemColors.Control;
             bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             bancoLabel.Location = new System.Drawing.Point(69, 193);
             bancoLabel.Name = "bancoLabel";
@@ -101,6 +104,7 @@
             // formaPagamentoLabel
             // 
             formaPagamentoLabel.AutoSize = true;
+            formaPagamentoLabel.BackColor = System.Drawing.SystemColors.Control;
             formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             formaPagamentoLabel.Location = new System.Drawing.Point(315, 193);
             formaPagamentoLabel.Name = "formaPagamentoLabel";
@@ -111,6 +115,7 @@
             // dataEmissaoLabel
             // 
             dataEmissaoLabel.AutoSize = true;
+            dataEmissaoLabel.BackColor = System.Drawing.SystemColors.Control;
             dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataEmissaoLabel.Location = new System.Drawing.Point(377, 302);
             dataEmissaoLabel.Name = "dataEmissaoLabel";
@@ -253,8 +258,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(686, 455);
             this.Controls.Add(dataEmissaoLabel);
             this.Controls.Add(this.dataEmissaoDateTimePicker);
