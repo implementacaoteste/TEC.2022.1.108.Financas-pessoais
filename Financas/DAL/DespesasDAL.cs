@@ -18,8 +18,8 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Despesas(Valor, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao)
-                                    VALUES(@Valor, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao)";
+                cmd.CommandText = @"INSERT INTO Despesas(Valor, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao, IdContasPagar)
+                                    VALUES(@Valor, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao, @IdContasPagar)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Valor", _despesas.Valor);
                 cmd.Parameters.AddWithValue("@Descricao", _despesas.Descricao);
@@ -27,6 +27,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@IdBanco", _despesas.IdBanco);
                 cmd.Parameters.AddWithValue("@IdFormaPagamento", _despesas.IdFormaPagamento);
                 cmd.Parameters.AddWithValue("@DataEmissao", _despesas.DataEmissao);
+                cmd.Parameters.AddWithValue("@IdContasPagar", _contasPagar.Id);
                 cmd.Connection = cn;
                 cn.Open();
 
@@ -424,6 +425,42 @@ namespace DAL
             finally
             {
                 cn.Close();
+            }
+        }
+
+        internal void ExcluirPorIdContasReceber(int _idContasPagar, SqlTransaction _transaction = null)
+        {
+            SqlTransaction transaction = _transaction;
+
+            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
+            {
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM Despesas WHERE IdContasPagar = @Id", cn))
+                {
+                    try
+                    {
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Parameters.AddWithValue("@Id", _idContasPagar);
+                        if (_transaction == null)
+                        {
+                            cn.Open();
+                            transaction = cn.BeginTransaction();
+                        }
+                        cmd.Transaction = transaction;
+                        cmd.Connection = transaction.Connection;
+                        cmd.ExecuteNonQuery();
+
+                        if (_transaction == null)
+                            transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
+                            transaction.Rollback();
+
+                        throw new Exception("Ocorreu erro ao tentar estornar uma Despesa no banco de dados", ex);
+                    }
+
+                }
             }
         }
     }

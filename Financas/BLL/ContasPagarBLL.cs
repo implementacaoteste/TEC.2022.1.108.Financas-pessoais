@@ -50,9 +50,16 @@ namespace BLL
         {
             return new ContasPagarDAL().BuscarPorFormaPagamento(_formaPagamento);
         }
-        public List<Receita> BuscarPorBanco(string _banco)
+        public List<ContasPagar> BuscarPorBanco(string _banco)
         {
-            return new ReceitaDAL().BuscarPorBanco(_banco);
+            return new ContasPagarDAL().BuscarPorBanco(_banco);
+        }
+        public void EstornarBaixa(ContasPagar _contasPagar)
+        {
+            if (_contasPagar.DataPagamento == null)
+                throw new Exception("Este registro ainda não foi pago!");
+
+            new ContasPagarDAL().EstornarBaixa(_contasPagar);
         }
     }
 }

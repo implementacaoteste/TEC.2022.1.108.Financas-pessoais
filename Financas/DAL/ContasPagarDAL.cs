@@ -55,10 +55,11 @@ namespace DAL
         public void Alterar(ContasPagar _contasPagar, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
+            List<SqlParameter> sqlParametersRemover = new List<SqlParameter>();
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE ContasPagar SET ValorPagar=@ValorPagar, Descricao=@Descricao, IdContato=@IdContato, IdBanco=@IdBanco, IdFormaPagamento=@IdFormaPagamento, DataEmissao=@DataEmissao, DataPagamento=@DataPagamento WHERE Id = @Id", cn))
+                using (SqlCommand cmd = new SqlCommand())
                 {
                     try
                     {
@@ -71,11 +72,31 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@DataEmissao", _contasPagar.DataEmissao);
                         cmd.Parameters.AddWithValue("@DataPagamento", _contasPagar.DataPagamento);
                         cmd.Parameters.AddWithValue("@Id", _contasPagar.Id);
+
+                        cmd.CommandText = "UPDATE ContasPagar\r\nSET";
+
+                        foreach (SqlParameter item in cmd.Parameters)
+                        {
+                            if (item.Value != null && item.ParameterName != "@Id")
+                                cmd.CommandText += "\r\t" + item.ParameterName.Replace("@", "") + " = " + item.ParameterName + ",";
+                            else if (item.ParameterName != "@Id")
+                            {
+                                sqlParametersRemover.Add(item);
+                                cmd.CommandText += "\r\t" + item.ParameterName.Replace("@", "") + " = NULL,";
+                            }
+                        }
+
+                        foreach (SqlParameter item in sqlParametersRemover)
+                            cmd.Parameters.Remove(item);
+
+                        cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length - 1) + "\r\nWHERE Id = @Id";
+
                         if (_transaction == null)
                         {
                             cn.Open();
                             transaction = cn.BeginTransaction();
                         }
+
                         cmd.Transaction = transaction;
                         cmd.Connection = transaction.Connection;
                         cmd.ExecuteNonQuery();
@@ -85,10 +106,10 @@ namespace DAL
                     }
                     catch (Exception ex)
                     {
-                        transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar inserir uma  Conta a receber no banco de dados", ex);
+                        if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
+                            transaction.Rollback();
+                        throw new Exception("Ocorreu erro ao tentar alterar uma  Conta a receber no banco de dados", ex);
                     }
-
                 }
             }
         }
@@ -530,6 +551,37 @@ namespace DAL
             finally
             {
                 cn.Close();
+            }
+        }
+
+        public void EstornarBaixa(ContasPagar _contasPagar, SqlTransaction _transaction = null)
+        {
+            SqlTransaction transaction = _transaction;
+            _contasPagar.DataPagamento = null;
+
+            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
+            {
+                try
+                {
+                    if (_transaction == null)
+                    {
+                        cn.Open();
+                        transaction = cn.BeginTransaction();
+                    }
+
+                    Alterar(_contasPagar, transaction);
+                    new DespesasDAL().ExcluirPorIdContasReceber(_contasPagar.Id, transaction);
+
+                    if (_transaction == null)
+                        transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
+                        transaction.Rollback();
+
+                    throw new Exception("Ocorreu erro ao tentar estornar um pagamento de uma  Conta a receber no banco de dados", ex);
+                }
             }
         }
     }

@@ -149,6 +149,7 @@ namespace Financas
             {
                 MessageBox.Show(ex.Message);
             }
+            buttonBuscarConsultaContasPagar_Click(null, null);
         }
 
         private void FormConsultaContasPagar_KeyDown(object sender, KeyEventArgs e)
@@ -157,9 +158,18 @@ namespace Financas
                 Close();
         }
 
-        private void buttonEstornar_Click(object sender, EventArgs e)
+        private void buttonEstornarContasPagar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                new ContasPagarBLL().EstornarBaixa((ContasPagar)contasPagarBindingSource.Current);
+                throw new Exception("Registro estornado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            buttonBuscarConsultaContasPagar_Click(null, null);
         }
     }
 }

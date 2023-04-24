@@ -319,7 +319,7 @@
             this.buttonEstornar.TabIndex = 15;
             this.buttonEstornar.Text = "Estornar";
             this.buttonEstornar.UseVisualStyleBackColor = true;
-            this.buttonEstornar.Click += new System.EventHandler(this.buttonEstornar_Click);
+            this.buttonEstornar.Click += new System.EventHandler(this.buttonEstornarContasPagar_Click);
             // 
             // FormConsultaContasPagar
             // 
