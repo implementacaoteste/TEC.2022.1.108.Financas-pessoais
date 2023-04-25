@@ -135,9 +135,9 @@ namespace Financas
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void comboBoxBuscar_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            bancoBindingSource.DataSource = new BancoBLL().BuscarTodos();
         }
     }
 }
