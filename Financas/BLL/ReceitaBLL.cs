@@ -23,8 +23,10 @@ namespace BLL
         }
         public void Excluir(int _id)
         {
-            if (new ReceitaDAL().BuscarPorId(_id).IdContasReceber != 0)
-                throw new Exception("tale coisa e coisa e tale");
+            int idContasReceber = new ReceitaDAL().BuscarPorId(_id).IdContasReceber;
+
+            if (idContasReceber != 0)
+                throw new Exception("Registro não pode ser excluido, porque é preciso estornar o registro de contas a receber de id: " + idContasReceber);
 
             new ReceitaDAL().Excluir(_id);
         }

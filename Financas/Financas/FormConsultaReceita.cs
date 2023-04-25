@@ -75,20 +75,28 @@ namespace Financas
 
         private void buttonExcluirReceita_Click(object sender, EventArgs e)
         {
-            if (receitaBindingSource.Count <= 0)
+            try
             {
-                MessageBox.Show("Não existe registro para ser excluído");
-                return;
+
+                if (receitaBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro para ser excluído");
+                    return;
+                }
+
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                int id = ((Receita)receitaBindingSource.Current).Id;
+                new ReceitaBLL().Excluir(id);
+                receitaBindingSource.RemoveCurrent();
+                MessageBox.Show("Registro excluído com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
-            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
-
-            int id = ((Receita)receitaBindingSource.Current).Id;
-            new ReceitaBLL().Excluir(id);
-            receitaBindingSource.RemoveCurrent();
-
-            MessageBox.Show("Registro excluído com sucesso!");
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
@@ -114,9 +122,9 @@ namespace Financas
 
         private void FormConsultaReceita_KeyDown(object sender, KeyEventArgs e)
         {
-                if(e.KeyCode == Keys.Escape)
-                    Close();
-            
+            if (e.KeyCode == Keys.Escape)
+                Close();
+
         }
 
         private void FormConsultaReceita_Load(object sender, EventArgs e)

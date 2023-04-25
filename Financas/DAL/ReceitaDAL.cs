@@ -68,6 +68,12 @@ namespace DAL
 
                         cmd.Transaction = transaction;
                         cmd.Connection = transaction.Connection;
+
+                        if (_contasReceber != null)
+                        {
+                            _contasReceber.DataPagamento = _receita.DataEmissao;
+                            new ContasReceberDAL().Alterar(_contasReceber, transaction);
+                        }
                         cmd.ExecuteNonQuery();
 
                         if (_transaction == null)
@@ -81,46 +87,6 @@ namespace DAL
                     }
                 }
             }
-            //SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            //try
-            //{
-            //    SqlCommand cmd = cn.CreateCommand();
-            //    cmd.CommandText = @"INSERT INTO Receita(Valor, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao, IdContasReceber)
-            //                        VALUES(@Valor, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao, @IdContasReceber)";
-            //    cmd.CommandType = System.Data.CommandType.Text;
-            //    cmd.Parameters.AddWithValue("@Valor", _receita.Valor);
-            //    cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
-            //    cmd.Parameters.AddWithValue("@IdContato", _receita.IdContato);
-            //    cmd.Parameters.AddWithValue("@IdBanco", _receita.IdBanco);
-            //    cmd.Parameters.AddWithValue("@IdFormaPagamento", _receita.IdFormaPagamento);
-            //    cmd.Parameters.AddWithValue("@DataEmissao", _receita.DataEmissao);
-
-            //    if (_contasReceber != null)
-            //        cmd.Parameters.AddWithValue("@IdContasReceber", _contasReceber.Id);
-            //    else
-            //        cmd.CommandText = cmd.CommandText.Replace("@IdContasReceber", "null");
-
-
-            //    cmd.Connection = cn;
-            //    cn.Open();
-
-            //    if (_contasReceber != null)
-            //    {
-            //        _contasReceber.DataPagamento = _receita.DataEmissao;
-            //        new ContasReceberDAL().Alterar(_contasReceber);
-            //    }
-
-            //    cmd.ExecuteNonQuery();
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception("Ocorreu erro ao tentar inserir uma Receita no banco de dados", ex);
-            //}
-            //finally
-            //{
-            //    cn.Close();
-            //}
         }
         public void Alterar(Receita _receita)
         {
