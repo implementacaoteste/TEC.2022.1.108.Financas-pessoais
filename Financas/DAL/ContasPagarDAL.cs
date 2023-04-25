@@ -569,7 +569,7 @@ namespace DAL
                     }
 
                     Alterar(_contasPagar, transaction);
-                    new DespesasDAL().ExcluirPorIdContasReceber(_contasPagar.Id, transaction);
+                    new DespesasDAL().ExcluirPorIdContasPagar(_contasPagar.Id, transaction);
 
                     if (_transaction == null)
                         transaction.Commit();
