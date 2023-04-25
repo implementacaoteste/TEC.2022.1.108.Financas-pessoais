@@ -30,8 +30,6 @@ namespace Financas
                 usuarioBindingSource.AddNew();
             else
                 usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
-            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
         }
 
         private void buttonCancelarCadastrodeUsuario_Click(object sender, EventArgs e)
@@ -54,6 +52,7 @@ namespace Financas
 
         private void FormCadastroUsuario_Load_1(object sender, EventArgs e)
         {
+            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
             if (Id == 0)
                 usuarioBindingSource.AddNew();
             else
