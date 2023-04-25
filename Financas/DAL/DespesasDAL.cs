@@ -32,6 +32,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@IdBanco", _despesas.IdBanco);
                         cmd.Parameters.AddWithValue("@IdFormaPagamento", _despesas.IdFormaPagamento);
                         cmd.Parameters.AddWithValue("@DataEmissao", _despesas.DataEmissao);
+                        cmd.Parameters.AddWithValue("@IdContasPagar", _contasPagar.Id);
 
                         cmd.CommandText = "INSERT INTO Despesas(";
 
@@ -40,19 +41,19 @@ namespace DAL
                             if (item.Value != null && item.ParameterName != "@Id")
                             {
                                 parametros += item.ParameterName + ", ";
-                                cmd.CommandText += "\r\t" + item.ParameterName.Replace("@", "") + ",";
+                                cmd.CommandText += item.ParameterName.Replace("@", "") + ",";
                             }
                             else if (item.ParameterName != "@Id")
                             {
                                 sqlParametersRemover.Add(item);
-                                cmd.CommandText += "\r\t" + item.ParameterName.Replace("@", "") + " = NULL,";
+                                cmd.CommandText += item.ParameterName.Replace("@", "") + " = NULL,";
                             }
                         }
 
                         foreach (SqlParameter item in sqlParametersRemover)
                             cmd.Parameters.Remove(item);
 
-                        cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length - 1) + ") VALUES(" + parametros.Substring(0, parametros.Length -2) + ")";
+                        cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length - 1) + ")\r\nVALUES(" + parametros.Substring(0, parametros.Length -2) + ")";
 
                         if (_transaction == null)
                         {
@@ -60,18 +61,12 @@ namespace DAL
                             transaction = cn.BeginTransaction();
                         }
 
-                        if (_contasPagar != null)
-                            cmd.Parameters.AddWithValue("@IdContasPagar", _contasPagar.Id);
-                        else
-                            cmd.Parameters.AddWithValue("@IdContasPagar", null);
-
-
                         cmd.Transaction = transaction;
                         cmd.Connection = transaction.Connection;
                         if (_contasPagar != null)
                         {
                             _contasPagar.DataPagamento = _despesas.DataEmissao;
-                            new ContasPagarDAL().Alterar(_contasPagar);
+                            new ContasPagarDAL().Alterar(_contasPagar, transaction);
                         }
 
                         cmd.ExecuteNonQuery();
@@ -468,7 +463,7 @@ namespace DAL
             }
         }
 
-        internal void ExcluirPorIdContasReceber(int _idContasPagar, SqlTransaction _transaction = null)
+        public void ExcluirPorIdContasPagar(int _idContasPagar, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
 

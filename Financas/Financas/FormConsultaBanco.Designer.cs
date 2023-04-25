@@ -36,7 +36,6 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.textBoxConsultarBanco = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonAdicionarBanco = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.buttonSelecionarBanco = new System.Windows.Forms.Button();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bancoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -112,18 +112,6 @@
             // 
             this.bancoBindingSource.DataSource = typeof(Models.Banco);
             this.bancoBindingSource.CurrentChanged += new System.EventHandler(this.bancoBindingSource_CurrentChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(41, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Consulta";
             // 
             // textBoxConsultarBanco
             // 
@@ -241,12 +229,24 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Buscar por";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(41, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Consulta";
+            // 
             // FormConsultaBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1111, 688);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxBuscar);
             this.Controls.Add(this.buttonSelecionarBanco);
@@ -257,7 +257,6 @@
             this.Controls.Add(this.buttonAdicionarBanco);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxConsultarBanco);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.bancoDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
@@ -283,7 +282,6 @@
 
         private System.Windows.Forms.BindingSource bancoBindingSource;
         private System.Windows.Forms.DataGridView bancoDataGridView;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxConsultarBanco;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonAdicionarBanco;
@@ -297,5 +295,6 @@
         private System.Windows.Forms.Button buttonSelecionarBanco;
         private System.Windows.Forms.ComboBox comboBoxBuscar;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

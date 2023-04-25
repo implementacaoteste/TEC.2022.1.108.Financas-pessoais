@@ -97,7 +97,7 @@ namespace Financas
         private void FormConsultaBanco_Load(object sender, EventArgs e)
         {
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+  
         }
 
         private void buttonSelecionarBanco_Click(object sender, EventArgs e)
