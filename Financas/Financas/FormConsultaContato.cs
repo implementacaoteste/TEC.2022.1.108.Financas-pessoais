@@ -118,5 +118,10 @@ namespace Financas
             if(e.KeyCode == Keys.Escape)
                 Close();
         }
+
+        private void FormConsultaContato_Load(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
+        }
     }
 }
