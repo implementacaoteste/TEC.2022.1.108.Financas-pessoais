@@ -127,5 +127,14 @@ namespace Financas
                 Close();
             }
         }
+
+        private void FormConsultaFormaPagamento_Load(object sender, EventArgs e)
+        { 
+            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+
+        }
     }
 }
