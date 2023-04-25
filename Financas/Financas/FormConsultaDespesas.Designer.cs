@@ -58,6 +58,7 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
@@ -214,6 +215,7 @@
             // labelInforamaConsultaDespesa
             // 
             this.labelInforamaConsultaDespesa.AutoSize = true;
+            this.labelInforamaConsultaDespesa.BackColor = System.Drawing.Color.Transparent;
             this.labelInforamaConsultaDespesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInforamaConsultaDespesa.Location = new System.Drawing.Point(32, 112);
             this.labelInforamaConsultaDespesa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -258,40 +260,39 @@
             this.textBoxBuscarDespesas2.Name = "textBoxBuscarDespesas2";
             this.textBoxBuscarDespesas2.Size = new System.Drawing.Size(223, 22);
             this.textBoxBuscarDespesas2.TabIndex = 16;
-            this.textBoxBuscarDespesas2.Visible = false;
             // 
             // labelDataInicial
             // 
             this.labelDataInicial.AutoSize = true;
+            this.labelDataInicial.BackColor = System.Drawing.Color.Transparent;
             this.labelDataInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataInicial.Location = new System.Drawing.Point(103, 91);
             this.labelDataInicial.Name = "labelDataInicial";
             this.labelDataInicial.Size = new System.Drawing.Size(73, 16);
             this.labelDataInicial.TabIndex = 17;
             this.labelDataInicial.Text = "Data inicial";
-            this.labelDataInicial.Visible = false;
             // 
             // labelDataFinal
             // 
             this.labelDataFinal.AutoSize = true;
+            this.labelDataFinal.BackColor = System.Drawing.Color.Transparent;
             this.labelDataFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataFinal.Location = new System.Drawing.Point(378, 91);
             this.labelDataFinal.Name = "labelDataFinal";
             this.labelDataFinal.Size = new System.Drawing.Size(63, 16);
             this.labelDataFinal.TabIndex = 17;
             this.labelDataFinal.Text = "Data final";
-            this.labelDataFinal.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(607, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 17;
             this.label2.Text = "Buscar por";
-            this.label2.Visible = false;
             // 
             // FormConsultaDespesas
             // 
@@ -323,6 +324,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Despesas";
+            this.Load += new System.EventHandler(this.FormConsultaDespesas_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormConsultaDespesas_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.despesasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).EndInit();
