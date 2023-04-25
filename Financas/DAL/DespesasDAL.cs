@@ -61,12 +61,6 @@ namespace DAL
                             transaction = cn.BeginTransaction();
                         }
 
-                        //if (_contasPagar != null)
-                        //    cmd.Parameters.AddWithValue("@IdContasPagar", _contasPagar.Id);
-                        //else
-                        //    cmd.Parameters.AddWithValue("@IdContasPagar", null);
-
-
                         cmd.Transaction = transaction;
                         cmd.Connection = transaction.Connection;
                         if (_contasPagar != null)
