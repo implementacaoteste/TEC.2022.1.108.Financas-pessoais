@@ -105,7 +105,7 @@ namespace Financas
         {
             labelDataInicial.Visible = false;
             labelDataFinal.Visible = false;
-            textBoxBuscarDespesas.Width = 498;
+            textBoxBuscarDespesas.Width = 375;
             textBoxBuscarDespesas2.Visible = false;
 
             if (comboBox1.SelectedIndex == 2)
@@ -125,12 +125,22 @@ namespace Financas
 
         private void FormConsultaDespesas_Load(object sender, EventArgs e)
         {
+            textBoxBuscarDespesas.Width = 375;
+
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
-            this.labelInforamaConsultaDespesa.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelDataInicial.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelDataFinal.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelInforamaConsultaDespesa.BackColor = System.Drawing.SystemColors.Control;
+            this.labelInforamaConsultaDespesa.ForeColor = System.Drawing.SystemColors.ControlText;
+
+            this.labelDataInicial.BackColor = System.Drawing.SystemColors.Control;
+            this.labelDataInicial.ForeColor = System.Drawing.SystemColors.ControlText;
+
+            this.labelDataFinal.BackColor = System.Drawing.SystemColors.Control;
+            this.labelDataFinal.ForeColor = System.Drawing.SystemColors.ControlText;
+
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
         }
     }
 }
