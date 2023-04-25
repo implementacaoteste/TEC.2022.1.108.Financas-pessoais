@@ -60,6 +60,7 @@
             // descricaoLabel
             // 
             descricaoLabel.AutoSize = true;
+            descricaoLabel.BackColor = System.Drawing.SystemColors.Control;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descricaoLabel.Location = new System.Drawing.Point(61, 276);
             descricaoLabel.Name = "descricaoLabel";
@@ -70,6 +71,7 @@
             // valorLabel
             // 
             valorLabel.AutoSize = true;
+            valorLabel.BackColor = System.Drawing.SystemColors.Control;
             valorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             valorLabel.Location = new System.Drawing.Point(65, 96);
             valorLabel.Name = "valorLabel";
@@ -80,6 +82,7 @@
             // contatoLabel
             // 
             contatoLabel.AutoSize = true;
+            contatoLabel.BackColor = System.Drawing.SystemColors.Control;
             contatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contatoLabel.Location = new System.Drawing.Point(389, 96);
             contatoLabel.Name = "contatoLabel";
@@ -90,6 +93,7 @@
             // bancoLabel
             // 
             bancoLabel.AutoSize = true;
+            bancoLabel.BackColor = System.Drawing.SystemColors.Control;
             bancoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             bancoLabel.Location = new System.Drawing.Point(61, 180);
             bancoLabel.Name = "bancoLabel";
@@ -100,6 +104,7 @@
             // formaPagamentoLabel
             // 
             formaPagamentoLabel.AutoSize = true;
+            formaPagamentoLabel.BackColor = System.Drawing.SystemColors.Control;
             formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             formaPagamentoLabel.Location = new System.Drawing.Point(386, 180);
             formaPagamentoLabel.Name = "formaPagamentoLabel";
@@ -110,6 +115,7 @@
             // dataEmissaoLabel
             // 
             dataEmissaoLabel.AutoSize = true;
+            dataEmissaoLabel.BackColor = System.Drawing.SystemColors.Control;
             dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataEmissaoLabel.Location = new System.Drawing.Point(390, 276);
             dataEmissaoLabel.Name = "dataEmissaoLabel";
