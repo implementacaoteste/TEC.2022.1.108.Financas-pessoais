@@ -152,9 +152,10 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.PowderBlue;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1111, 82);
@@ -165,6 +166,7 @@
             // labelConsultarContasPagar
             // 
             this.labelConsultarContasPagar.AutoSize = true;
+            this.labelConsultarContasPagar.BackColor = System.Drawing.SystemColors.Control;
             this.labelConsultarContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConsultarContasPagar.Location = new System.Drawing.Point(41, 115);
             this.labelConsultarContasPagar.Name = "labelConsultarContasPagar";
@@ -270,6 +272,7 @@
             // labelDataInicial
             // 
             this.labelDataInicial.AutoSize = true;
+            this.labelDataInicial.BackColor = System.Drawing.SystemColors.Control;
             this.labelDataInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataInicial.Location = new System.Drawing.Point(103, 91);
             this.labelDataInicial.Name = "labelDataInicial";
@@ -281,6 +284,7 @@
             // labelDataFinal
             // 
             this.labelDataFinal.AutoSize = true;
+            this.labelDataFinal.BackColor = System.Drawing.SystemColors.Control;
             this.labelDataFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDataFinal.Location = new System.Drawing.Point(378, 91);
             this.labelDataFinal.Name = "labelDataFinal";
@@ -292,6 +296,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(610, 91);
             this.label2.Name = "label2";
@@ -325,7 +330,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1111, 688);
             this.Controls.Add(this.buttonEstornar);
             this.Controls.Add(this.label2);
@@ -353,6 +358,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Contas a Pagar";
+            this.Load += new System.EventHandler(this.FormConsultaContasPagar_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormConsultaContasPagar_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasPagarBindingSource)).EndInit();
