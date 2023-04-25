@@ -44,13 +44,13 @@ CREATE TABLE Receita
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
-	IdContasReceber INT,
-	IdContato INT,
-	IdBanco INT,
-	IdFormaPagamento INT,
-	Valor FLOAT,
-	Descricao VARCHAR(250),
-	DataEmissao DATE
+	IdContasReceber INT NULL,
+	IdContato INT NULL,
+	IdBanco INT NULL,
+	IdFormaPagamento INT NULL,
+	Valor FLOAT NULL,
+	Descricao VARCHAR(250) NULL,
+	DataEmissao DATE NULL
 )
 GO
 
