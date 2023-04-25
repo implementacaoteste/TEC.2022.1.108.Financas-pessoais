@@ -12,6 +12,7 @@ namespace BLL
     {
         public void Inserir(Despesas _despesas, ContasPagar _contasPagar = null)
         {
+
             new DespesasDAL().Inserir(_despesas, _contasPagar);
         }
         public void Alterar(Despesas _despesas)

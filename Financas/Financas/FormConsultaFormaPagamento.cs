@@ -34,7 +34,7 @@ namespace Financas
                     case 1:
                         formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(textBoxConsultarFormaPagamento.Text);
                         break;
-                   
+
                     default:
                         break;
                 }
@@ -129,11 +129,18 @@ namespace Financas
         }
 
         private void FormConsultaFormaPagamento_Load(object sender, EventArgs e)
-        { 
-            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+        {
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
+                this.label1.ForeColor = System.Drawing.SystemColors.Control;
+                this.label2.ForeColor = System.Drawing.SystemColors.Control;
+                this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }

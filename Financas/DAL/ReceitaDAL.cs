@@ -14,42 +14,113 @@ namespace DAL
 {
     public class ReceitaDAL
     {
-        public void Inserir(Receita _receita, ContasReceber _contasReceber = null)
+        public void Inserir(Receita _receita, ContasReceber _contasReceber = null, SqlTransaction _transaction = null)
         {
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
-            {
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Receita(Valor, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao, IdContasReceber)
-                                    VALUES(@Valor, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao, @IdContasReceber)";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Valor", _receita.Valor);
-                cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
-                cmd.Parameters.AddWithValue("@IdContato", _receita.IdContato);
-                cmd.Parameters.AddWithValue("@IdBanco", _receita.IdBanco);
-                cmd.Parameters.AddWithValue("@IdFormaPagamento", _receita.IdFormaPagamento);
-                cmd.Parameters.AddWithValue("@DataEmissao", _receita.DataEmissao);
-                cmd.Parameters.AddWithValue("@IdContasReceber", _contasReceber.Id);
-                cmd.Connection = cn;
-                cn.Open();
+            SqlTransaction transaction = _transaction;
+            List<SqlParameter> sqlParametersRemover = new List<SqlParameter>();
 
-                if (_contasReceber != null)
+            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
+            {
+                using (SqlCommand cmd = new SqlCommand())
                 {
-                    _contasReceber.DataPagamento = _receita.DataEmissao;
-                    new ContasReceberDAL().Alterar(_contasReceber);
+                    try
+                    {
+                        string parametros = "";
+
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Parameters.AddWithValue("@Valor", _receita.Valor);
+                        cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
+                        cmd.Parameters.AddWithValue("@IdContato", _receita.IdContato);
+                        cmd.Parameters.AddWithValue("@IdBanco", _receita.IdBanco);
+                        cmd.Parameters.AddWithValue("@IdFormaPagamento", _receita.IdFormaPagamento);
+                        cmd.Parameters.AddWithValue("@DataEmissao", _receita.DataEmissao);
+                        if (_contasReceber != null)
+                            cmd.Parameters.AddWithValue("@IdContasReceber", _contasReceber.Id);
+                        else
+                            cmd.CommandText = cmd.CommandText.Replace("@IdContasReceber", "null");
+
+                        cmd.CommandText = "INSERT INTO Receita(";
+
+                        foreach(SqlParameter item in cmd.Parameters)
+                        {
+                            if (item.Value != null && item.ParameterName != "@Id")
+                            {
+                                parametros += item.ParameterName + ", ";
+                                cmd.CommandText += item.ParameterName.Replace("@", "") + ",";
+                            }
+                            else if (item.ParameterName != "@Id")
+                            {
+                                sqlParametersRemover.Add(item);
+                                cmd.CommandText += item.ParameterName.Replace("@", "") + " = NULL,";
+                            }
+                        }
+
+                        foreach (SqlParameter item in sqlParametersRemover)
+                            cmd.Parameters.Remove(item);
+
+                        cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length - 1) + ")\r\nVALUES(" + parametros.Substring(0, parametros.Length - 2) + ")";
+
+                        if (_transaction == null)
+                        {
+                            cn.Open();
+                            transaction = cn.BeginTransaction();
+                        }
+
+                        cmd.Transaction = transaction;
+                        cmd.Connection = transaction.Connection;
+                        cmd.ExecuteNonQuery();
+
+                        if (_transaction == null)
+                            transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
+                            transaction.Rollback();
+                        throw new Exception("Ocorreu erro ao tentar Inserir uma  receita no banco de dados", ex);
+                    }
                 }
+            }
+            //SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            //try
+            //{
+            //    SqlCommand cmd = cn.CreateCommand();
+            //    cmd.CommandText = @"INSERT INTO Receita(Valor, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao, IdContasReceber)
+            //                        VALUES(@Valor, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao, @IdContasReceber)";
+            //    cmd.CommandType = System.Data.CommandType.Text;
+            //    cmd.Parameters.AddWithValue("@Valor", _receita.Valor);
+            //    cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
+            //    cmd.Parameters.AddWithValue("@IdContato", _receita.IdContato);
+            //    cmd.Parameters.AddWithValue("@IdBanco", _receita.IdBanco);
+            //    cmd.Parameters.AddWithValue("@IdFormaPagamento", _receita.IdFormaPagamento);
+            //    cmd.Parameters.AddWithValue("@DataEmissao", _receita.DataEmissao);
 
-                cmd.ExecuteNonQuery();
+            //    if (_contasReceber != null)
+            //        cmd.Parameters.AddWithValue("@IdContasReceber", _contasReceber.Id);
+            //    else
+            //        cmd.CommandText = cmd.CommandText.Replace("@IdContasReceber", "null");
 
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu erro ao tentar inserir uma Receita no banco de dados", ex);
-            }
-            finally
-            {
-                cn.Close();
-            }
+
+            //    cmd.Connection = cn;
+            //    cn.Open();
+
+            //    if (_contasReceber != null)
+            //    {
+            //        _contasReceber.DataPagamento = _receita.DataEmissao;
+            //        new ContasReceberDAL().Alterar(_contasReceber);
+            //    }
+
+            //    cmd.ExecuteNonQuery();
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw new Exception("Ocorreu erro ao tentar inserir uma Receita no banco de dados", ex);
+            //}
+            //finally
+            //{
+            //    cn.Close();
+            //}
         }
         public void Alterar(Receita _receita)
         {
@@ -118,7 +189,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Receita.Id, Receita.Descricao AS DescricaoReceita, Receita.Valor, Receita.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
+                cmd.CommandText = @"SELECT Receita.Id, Receita.IdContasReceber, Receita.Descricao AS DescricaoReceita, Receita.Valor, Receita.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Receita
                                     INNER JOIN Contato ON Receita.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Receita.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Receita.IdBanco = Banco.Id
@@ -134,18 +205,18 @@ namespace DAL
                         receita = new Receita();
                         receita.Id = Convert.ToInt32(rd["ID"]);
                         receita.Valor = (double)rd["Valor"];
-                        receita.Descricao = rd["Descricao"].ToString();
+                        receita.Descricao = rd["DescricaoReceita"].ToString();
                         receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        receita.Contato = rd["Nome"].ToString();
-                        receita.FormaPagamento = rd["Descricao"].ToString();
-                        receita.Banco = rd["Nome"].ToString();
+                        receita.Contato = rd["Contato"].ToString();
+                        receita.FormaPagamento = rd["FormaPagamento"].ToString();
+                        receita.Banco = rd["Banco"].ToString();
+                        receita.IdContasReceber = Convert.ToInt32(rd["IdContasReceber"].ToString() == "" ? 0 : rd["IdContasReceber"]);
                     }
                 }
                 return receita;
             }
             catch (Exception ex)
             {
-
                 throw new Exception("Ocorreu um erro ao tentar buscar as receitas por id do banco de dados", ex);
             }
             finally
