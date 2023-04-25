@@ -260,6 +260,7 @@
             this.textBoxBuscarDespesas2.Name = "textBoxBuscarDespesas2";
             this.textBoxBuscarDespesas2.Size = new System.Drawing.Size(223, 22);
             this.textBoxBuscarDespesas2.TabIndex = 16;
+            this.textBoxBuscarDespesas2.Visible = false;
             // 
             // labelDataInicial
             // 
@@ -271,6 +272,7 @@
             this.labelDataInicial.Size = new System.Drawing.Size(73, 16);
             this.labelDataInicial.TabIndex = 17;
             this.labelDataInicial.Text = "Data inicial";
+            this.labelDataInicial.Visible = false;
             // 
             // labelDataFinal
             // 
@@ -282,6 +284,7 @@
             this.labelDataFinal.Size = new System.Drawing.Size(63, 16);
             this.labelDataFinal.TabIndex = 17;
             this.labelDataFinal.Text = "Data final";
+            this.labelDataFinal.Visible = false;
             // 
             // label2
             // 
