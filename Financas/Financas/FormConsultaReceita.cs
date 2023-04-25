@@ -123,11 +123,19 @@ namespace Financas
         {
             comboBox1.SelectedIndex = 0;
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
-            this.labelDataInicial.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelDataFinal.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelDataInicial.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelDataInicial.BackColor = System.Drawing.SystemColors.Control;
+
+            this.labelDataFinal.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelDataFinal.BackColor = System.Drawing.SystemColors.Control;
+
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
         }
     }
 }
