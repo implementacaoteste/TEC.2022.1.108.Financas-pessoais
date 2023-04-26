@@ -142,7 +142,7 @@
             this.buttonCancelarCadBanco.Location = new System.Drawing.Point(466, 329);
             this.buttonCancelarCadBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadBanco.Name = "buttonCancelarCadBanco";
-            this.buttonCancelarCadBanco.Size = new System.Drawing.Size(106, 36);
+            this.buttonCancelarCadBanco.Size = new System.Drawing.Size(90, 36);
             this.buttonCancelarCadBanco.TabIndex = 8;
             this.buttonCancelarCadBanco.Text = "Cancelar";
             this.buttonCancelarCadBanco.UseVisualStyleBackColor = true;
