@@ -176,5 +176,10 @@ namespace Financas
         {
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
         }
+
+        private void textBoxConsultaContasPagar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

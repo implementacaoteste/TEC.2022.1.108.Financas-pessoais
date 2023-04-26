@@ -38,8 +38,6 @@
             this.textBoxSenhaCadastroUsuario = new System.Windows.Forms.TextBox();
             this.labelAvisoNome = new System.Windows.Forms.Label();
             this.labelAvisoSenha = new System.Windows.Forms.Label();
-            this.buttonSalvarCadastroUsuario = new System.Windows.Forms.Button();
-            this.buttonCancelarCadastroUsuario = new System.Windows.Forms.Button();
             this.labelConfirmarSenha = new System.Windows.Forms.Label();
             this.textBoxConfirmarSenhaCadastroUsuario = new System.Windows.Forms.TextBox();
             this.labelRendaCadastroUsuario = new System.Windows.Forms.Label();
@@ -141,28 +139,6 @@
             this.labelAvisoSenha.TabIndex = 13;
             this.labelAvisoSenha.Text = "Obs: A senha deve conter \r\n  mais de três caracteres";
             // 
-            // buttonSalvarCadastroUsuario
-            // 
-            this.buttonSalvarCadastroUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadastroUsuario.Location = new System.Drawing.Point(379, 455);
-            this.buttonSalvarCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonSalvarCadastroUsuario.Name = "buttonSalvarCadastroUsuario";
-            this.buttonSalvarCadastroUsuario.Size = new System.Drawing.Size(85, 39);
-            this.buttonSalvarCadastroUsuario.TabIndex = 16;
-            this.buttonSalvarCadastroUsuario.Text = "Salvar";
-            this.buttonSalvarCadastroUsuario.UseVisualStyleBackColor = true;
-            // 
-            // buttonCancelarCadastroUsuario
-            // 
-            this.buttonCancelarCadastroUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastroUsuario.Location = new System.Drawing.Point(483, 455);
-            this.buttonCancelarCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonCancelarCadastroUsuario.Name = "buttonCancelarCadastroUsuario";
-            this.buttonCancelarCadastroUsuario.Size = new System.Drawing.Size(85, 39);
-            this.buttonCancelarCadastroUsuario.TabIndex = 15;
-            this.buttonCancelarCadastroUsuario.Text = "Cancelar";
-            this.buttonCancelarCadastroUsuario.UseVisualStyleBackColor = true;
-            // 
             // labelConfirmarSenha
             // 
             this.labelConfirmarSenha.AutoSize = true;
@@ -246,7 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(718, 424);
+            this.ClientSize = new System.Drawing.Size(718, 435);
             this.Controls.Add(this.buttonSalvarCadastrodeUsuario);
             this.Controls.Add(this.buttonCancelarCadastrodeUsuario);
             this.Controls.Add(this.label1);
@@ -254,8 +230,6 @@
             this.Controls.Add(this.labelRendaCadastroUsuario);
             this.Controls.Add(this.textBoxConfirmarSenhaCadastroUsuario);
             this.Controls.Add(this.labelConfirmarSenha);
-            this.Controls.Add(this.buttonCancelarCadastroUsuario);
-            this.Controls.Add(this.buttonSalvarCadastroUsuario);
             this.Controls.Add(this.labelAvisoSenha);
             this.Controls.Add(this.labelAvisoNome);
             this.Controls.Add(this.textBoxSenhaCadastroUsuario);
@@ -266,6 +240,8 @@
             this.Controls.Add(this.labelNome);
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCadastroUsuario";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -290,8 +266,6 @@
         private System.Windows.Forms.TextBox textBoxSenhaCadastroUsuario;
         private System.Windows.Forms.Label labelAvisoNome;
         private System.Windows.Forms.Label labelAvisoSenha;
-        private System.Windows.Forms.Button buttonSalvarCadastroUsuario;
-        private System.Windows.Forms.Button buttonCancelarCadastroUsuario;
         private System.Windows.Forms.Label labelConfirmarSenha;
         private System.Windows.Forms.TextBox textBoxConfirmarSenhaCadastroUsuario;
         private System.Windows.Forms.Label labelRendaCadastroUsuario;

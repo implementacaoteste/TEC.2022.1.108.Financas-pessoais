@@ -114,7 +114,7 @@ namespace Financas
         {
             labelDataInicial.Visible = false;
             labelDataFinal.Visible = false;
-            textBoxConsultarContasReceber.Width = 498;
+            textBoxConsultarContasReceber.Width = 375;
             textBoxConsultarContasReceber2.Visible = false;
 
             if (comboBox1.SelectedIndex == 2)
@@ -186,5 +186,9 @@ namespace Financas
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

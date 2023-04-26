@@ -153,7 +153,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
@@ -212,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1111, 688);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);

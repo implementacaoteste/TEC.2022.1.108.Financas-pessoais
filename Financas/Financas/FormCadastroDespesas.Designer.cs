@@ -131,7 +131,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(788, 88);
+            this.label1.Size = new System.Drawing.Size(740, 88);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de despesas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,7 +139,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.Location = new System.Drawing.Point(523, 404);
+            this.buttonCancelar.Location = new System.Drawing.Point(566, 399);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(106, 36);
             this.buttonCancelar.TabIndex = 17;
@@ -150,7 +150,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(417, 405);
+            this.buttonSalvar.Location = new System.Drawing.Point(476, 399);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(84, 36);
             this.buttonSalvar.TabIndex = 16;
@@ -184,13 +184,13 @@
             this.contatoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.despesasBindingSource, "Contato", true));
             this.contatoTextBox.Location = new System.Drawing.Point(385, 135);
             this.contatoTextBox.Name = "contatoTextBox";
-            this.contatoTextBox.Size = new System.Drawing.Size(154, 22);
+            this.contatoTextBox.Size = new System.Drawing.Size(197, 22);
             this.contatoTextBox.TabIndex = 4;
             // 
             // buttonBuscarContatoDespesas
             // 
             this.buttonBuscarContatoDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarContatoDespesas.Location = new System.Drawing.Point(545, 125);
+            this.buttonBuscarContatoDespesas.Location = new System.Drawing.Point(588, 127);
             this.buttonBuscarContatoDespesas.Name = "buttonBuscarContatoDespesas";
             this.buttonBuscarContatoDespesas.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscarContatoDespesas.TabIndex = 5;
@@ -242,7 +242,7 @@
             this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.despesasBindingSource, "DataEmissao", true));
             this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(385, 329);
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
-            this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(197, 22);
             this.dataEmissaoDateTimePicker.TabIndex = 15;
             // 
             // FormCadastroDespesas
@@ -250,7 +250,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(788, 455);
+            this.ClientSize = new System.Drawing.Size(740, 456);
             this.Controls.Add(dataEmissaoLabel);
             this.Controls.Add(this.dataEmissaoDateTimePicker);
             this.Controls.Add(this.buttonBuscarFormaPagamentoDespesas);
