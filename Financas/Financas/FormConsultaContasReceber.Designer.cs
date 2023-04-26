@@ -264,6 +264,7 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Consulta de contas a receber";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // buttonSair
             // 

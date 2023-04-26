@@ -54,6 +54,7 @@ namespace Financas
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBoxUsuario
             // 
@@ -102,7 +103,7 @@ namespace Financas
             // buttonEntrar
             // 
             this.buttonEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEntrar.Location = new System.Drawing.Point(465, 422);
+            this.buttonEntrar.Location = new System.Drawing.Point(464, 397);
             this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(96, 34);
@@ -114,7 +115,7 @@ namespace Financas
             // buttonsair
             // 
             this.buttonsair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonsair.Location = new System.Drawing.Point(603, 422);
+            this.buttonsair.Location = new System.Drawing.Point(602, 397);
             this.buttonsair.Margin = new System.Windows.Forms.Padding(4);
             this.buttonsair.Name = "buttonsair";
             this.buttonsair.Size = new System.Drawing.Size(97, 34);
@@ -127,7 +128,7 @@ namespace Financas
             // 
             this.checkBoxMostrarSenha.AutoSize = true;
             this.checkBoxMostrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(549, 313);
+            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(536, 337);
             this.checkBoxMostrarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxMostrarSenha.Name = "checkBoxMostrarSenha";
             this.checkBoxMostrarSenha.Size = new System.Drawing.Size(120, 19);
