@@ -86,7 +86,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(630, 66);
+            this.label1.Size = new System.Drawing.Size(609, 66);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro do banco";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,7 +128,7 @@
             // buttonSalvarCadBanco
             // 
             this.buttonSalvarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadBanco.Location = new System.Drawing.Point(378, 329);
+            this.buttonSalvarCadBanco.Location = new System.Drawing.Point(376, 329);
             this.buttonSalvarCadBanco.Name = "buttonSalvarCadBanco";
             this.buttonSalvarCadBanco.Size = new System.Drawing.Size(84, 36);
             this.buttonSalvarCadBanco.TabIndex = 7;
@@ -139,7 +139,7 @@
             // buttonCancelarCadBanco
             // 
             this.buttonCancelarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadBanco.Location = new System.Drawing.Point(488, 329);
+            this.buttonCancelarCadBanco.Location = new System.Drawing.Point(466, 329);
             this.buttonCancelarCadBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadBanco.Name = "buttonCancelarCadBanco";
             this.buttonCancelarCadBanco.Size = new System.Drawing.Size(106, 36);
@@ -154,7 +154,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(630, 389);
+            this.ClientSize = new System.Drawing.Size(609, 389);
             this.Controls.Add(this.buttonCancelarCadBanco);
             this.Controls.Add(this.buttonSalvarCadBanco);
             this.Controls.Add(saldoLabel);

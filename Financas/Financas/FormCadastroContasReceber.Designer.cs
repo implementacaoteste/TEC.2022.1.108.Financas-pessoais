@@ -119,7 +119,7 @@
             dataEmissaoLabel.AutoSize = true;
             dataEmissaoLabel.BackColor = System.Drawing.SystemColors.Control;
             dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataEmissaoLabel.Location = new System.Drawing.Point(358, 296);
+            dataEmissaoLabel.Location = new System.Drawing.Point(316, 298);
             dataEmissaoLabel.Name = "dataEmissaoLabel";
             dataEmissaoLabel.Size = new System.Drawing.Size(143, 20);
             dataEmissaoLabel.TabIndex = 16;
@@ -175,7 +175,7 @@
             // buttonSalvarCadastroContasReceber
             // 
             this.buttonSalvarCadastroContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadastroContasReceber.Location = new System.Drawing.Point(408, 389);
+            this.buttonSalvarCadastroContasReceber.Location = new System.Drawing.Point(455, 389);
             this.buttonSalvarCadastroContasReceber.Name = "buttonSalvarCadastroContasReceber";
             this.buttonSalvarCadastroContasReceber.Size = new System.Drawing.Size(77, 36);
             this.buttonSalvarCadastroContasReceber.TabIndex = 6;
@@ -186,7 +186,7 @@
             // buttonCancelarCadastroContasReceber
             // 
             this.buttonCancelarCadastroContasReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastroContasReceber.Location = new System.Drawing.Point(505, 389);
+            this.buttonCancelarCadastroContasReceber.Location = new System.Drawing.Point(538, 389);
             this.buttonCancelarCadastroContasReceber.Name = "buttonCancelarCadastroContasReceber";
             this.buttonCancelarCadastroContasReceber.Size = new System.Drawing.Size(87, 36);
             this.buttonCancelarCadastroContasReceber.TabIndex = 7;
@@ -252,9 +252,9 @@
             // dataEmissaoDateTimePicker
             // 
             this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.contasReceberBindingSource, "DataEmissao", true));
-            this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(356, 321);
+            this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(315, 321);
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
-            this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(214, 22);
             this.dataEmissaoDateTimePicker.TabIndex = 17;
             this.dataEmissaoDateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataEmissaoDateTimePicker_KeyDown);
             // 
@@ -263,7 +263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(694, 455);
+            this.ClientSize = new System.Drawing.Size(694, 445);
             this.Controls.Add(dataEmissaoLabel);
             this.Controls.Add(this.dataEmissaoDateTimePicker);
             this.Controls.Add(this.buttonBuscarFormaPagamento);

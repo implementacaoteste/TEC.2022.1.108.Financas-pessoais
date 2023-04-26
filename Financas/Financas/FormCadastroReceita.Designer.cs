@@ -147,7 +147,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(386, 345);
+            this.buttonSalvar.Location = new System.Drawing.Point(483, 374);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(84, 36);
             this.buttonSalvar.TabIndex = 16;
@@ -158,7 +158,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.Location = new System.Drawing.Point(486, 345);
+            this.buttonCancelar.Location = new System.Drawing.Point(573, 374);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(106, 36);
             this.buttonCancelar.TabIndex = 17;
@@ -184,7 +184,7 @@
             this.contatoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "Contato", true));
             this.contatoTextBox.Location = new System.Drawing.Point(389, 117);
             this.contatoTextBox.Name = "contatoTextBox";
-            this.contatoTextBox.Size = new System.Drawing.Size(154, 22);
+            this.contatoTextBox.Size = new System.Drawing.Size(200, 22);
             this.contatoTextBox.TabIndex = 4;
             // 
             // bancoTextBox
@@ -206,7 +206,7 @@
             // buttonBuscarContatoReceita
             // 
             this.buttonBuscarContatoReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarContatoReceita.Location = new System.Drawing.Point(551, 107);
+            this.buttonBuscarContatoReceita.Location = new System.Drawing.Point(595, 109);
             this.buttonBuscarContatoReceita.Name = "buttonBuscarContatoReceita";
             this.buttonBuscarContatoReceita.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscarContatoReceita.TabIndex = 5;
@@ -250,7 +250,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(737, 401);
+            this.ClientSize = new System.Drawing.Size(737, 433);
             this.Controls.Add(dataEmissaoLabel);
             this.Controls.Add(this.dataEmissaoDateTimePicker);
             this.Controls.Add(this.contatoTextBox);
