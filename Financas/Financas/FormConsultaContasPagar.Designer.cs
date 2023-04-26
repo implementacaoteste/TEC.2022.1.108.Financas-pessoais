@@ -181,6 +181,7 @@
             this.textBoxConsultaContasPagar.Name = "textBoxConsultaContasPagar";
             this.textBoxConsultaContasPagar.Size = new System.Drawing.Size(498, 22);
             this.textBoxConsultaContasPagar.TabIndex = 3;
+            this.textBoxConsultaContasPagar.TextChanged += new System.EventHandler(this.textBoxConsultaContasPagar_TextChanged);
             // 
             // buttonBuscarConsultaContasPagar
             // 
@@ -262,7 +263,7 @@
             // 
             // textBoxConsultaContasPagar2
             // 
-            this.textBoxConsultaContasPagar2.Location = new System.Drawing.Point(381, 108);
+            this.textBoxConsultaContasPagar2.Location = new System.Drawing.Point(381, 109);
             this.textBoxConsultaContasPagar2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultaContasPagar2.Name = "textBoxConsultaContasPagar2";
             this.textBoxConsultaContasPagar2.Size = new System.Drawing.Size(223, 22);
