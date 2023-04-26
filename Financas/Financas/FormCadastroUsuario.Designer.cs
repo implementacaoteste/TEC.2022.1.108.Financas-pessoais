@@ -188,7 +188,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(718, 69);
+            this.label1.Size = new System.Drawing.Size(737, 69);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de usuário";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -222,7 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(718, 435);
+            this.ClientSize = new System.Drawing.Size(737, 455);
             this.Controls.Add(this.buttonSalvarCadastrodeUsuario);
             this.Controls.Add(this.buttonCancelarCadastrodeUsuario);
             this.Controls.Add(this.label1);
@@ -241,7 +241,9 @@
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(755, 502);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(755, 502);
             this.Name = "FormCadastroUsuario";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
