@@ -80,20 +80,26 @@ namespace Financas
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
-            if (despesasBindingSource.Count <= 0)
+            try
             {
-                MessageBox.Show("Não existe registro para ser excluído");
-                return;
+                if (despesasBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro para ser excluído");
+                    return;
+                }
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                int id = ((Despesas)despesasBindingSource.Current).Id;
+                new DespesasBLL().Excluir(id);
+                despesasBindingSource.RemoveCurrent();
+
+                MessageBox.Show("Registro excluído com sucesso!");
             }
-
-            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
-
-            int id = ((Despesas)despesasBindingSource.Current).Id;
-            new DespesasBLL().Excluir(id);
-            despesasBindingSource.RemoveCurrent();
-
-            MessageBox.Show("Registro excluído com sucesso!");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
