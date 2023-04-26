@@ -129,10 +129,13 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
+
             this.label2.Size = new System.Drawing.Size(1111, 90);
+
             this.label2.TabIndex = 0;
             this.label2.Text = "Consultar banco";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
             // 
             // buttonAdicionarBanco
             // 
@@ -245,7 +248,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+
             this.ClientSize = new System.Drawing.Size(1111, 693);
+
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxBuscar);

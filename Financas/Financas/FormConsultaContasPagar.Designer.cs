@@ -237,7 +237,7 @@
             this.buttonSair.Location = new System.Drawing.Point(1000, 654);
             this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(75, 23);
+            this.buttonSair.Size = new System.Drawing.Size(75, 24);
             this.buttonSair.TabIndex = 14;
             this.buttonSair.Text = "&Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
@@ -311,7 +311,7 @@
             this.buttonPagarContasPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPagarContasPagar.Location = new System.Drawing.Point(919, 654);
             this.buttonPagarContasPagar.Name = "buttonPagarContasPagar";
-            this.buttonPagarContasPagar.Size = new System.Drawing.Size(75, 23);
+            this.buttonPagarContasPagar.Size = new System.Drawing.Size(75, 24);
             this.buttonPagarContasPagar.TabIndex = 13;
             this.buttonPagarContasPagar.Text = "&Pagar";
             this.buttonPagarContasPagar.UseVisualStyleBackColor = true;
@@ -321,7 +321,7 @@
             // 
             this.buttonEstornar.Location = new System.Drawing.Point(35, 655);
             this.buttonEstornar.Name = "buttonEstornar";
-            this.buttonEstornar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEstornar.Size = new System.Drawing.Size(75, 24);
             this.buttonEstornar.TabIndex = 15;
             this.buttonEstornar.Text = "Estornar";
             this.buttonEstornar.UseVisualStyleBackColor = true;
