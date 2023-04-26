@@ -12,6 +12,8 @@ namespace BLL
     {
         public void Inserir(Despesas _despesas, ContasPagar _contasPagar = null)
         {
+            if (_contasPagar != null && _contasPagar.DataPagamento != null && _contasPagar.DataPagamento.Value.Year > 2000)
+                throw new Exception("Este registro já foi pago!");
 
             new DespesasDAL().Inserir(_despesas, _contasPagar);
         }
@@ -21,6 +23,11 @@ namespace BLL
         }
         public void Excluir(int _id)
         {
+            int idContasPagar = new DespesasDAL().BuscarPorId(_id).IdContasPagar;
+
+            if (idContasPagar != 0)
+                throw new Exception("Registro não pode ser excluido, porque é preciso estornar o registro de contas a pagar de id: " + idContasPagar);
+
             new DespesasDAL().Excluir(_id);
         }
         public List<Despesas> BuscarTodos()

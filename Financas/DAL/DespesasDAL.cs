@@ -32,8 +32,11 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@IdBanco", _despesas.IdBanco);
                         cmd.Parameters.AddWithValue("@IdFormaPagamento", _despesas.IdFormaPagamento);
                         cmd.Parameters.AddWithValue("@DataEmissao", _despesas.DataEmissao);
+                        if (_contasPagar != null)
+                            cmd.Parameters.AddWithValue("@IdContasPagar", _contasPagar.Id);
+                        else
+                            cmd.CommandText = cmd.CommandText.Replace("@IdContasPagar", "null");
 
-                        
                         cmd.CommandText = "INSERT INTO Despesas(";
 
                         foreach (SqlParameter item in cmd.Parameters)
@@ -46,6 +49,7 @@ namespace DAL
                             else if (item.ParameterName != "@Id")
                             {
                                 sqlParametersRemover.Add(item);
+                                cmd.CommandText += item.ParameterName.Replace("@", "") + " = NULL,";
                             }
                         }
 
@@ -150,7 +154,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesas, Despesas.Valor, Despesas.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
+                cmd.CommandText = @"SELECT Despesas.Id,Despesas.IdContasPagar, Despesas.Descricao AS DescricaoDespesas, Despesas.Valor, Despesas.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco FROM Despesas
                                     INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
@@ -171,6 +175,7 @@ namespace DAL
                         despesas.Contato = rd["Contato"].ToString();
                         despesas.FormaPagamento = rd["FormaPagamento"].ToString();
                         despesas.Banco = rd["Banco"].ToString();
+                        despesas.IdContasPagar = Convert.ToInt32(rd["IdContasPagar"].ToString() == "" ? 0 : rd["IdContasPagar"]);
                     }
                 }
                 return despesas;
