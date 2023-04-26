@@ -48,7 +48,6 @@
             this.buttonSelecionar = new System.Windows.Forms.Button();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonSelecionarContato = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contatoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -254,13 +253,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Buscar por";
             // 
-            // buttonSelecionarContato
-            // 
-            this.buttonSelecionarContato.Location = new System.Drawing.Point(12, 30);
-            this.buttonSelecionarContato.Name = "buttonSelecionarContato";
-            this.buttonSelecionarContato.Size = new System.Drawing.Size(75, 23);
-            this.buttonSelecionarContato.TabIndex = 0;
-            // 
             // FormConsultaContato
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -269,7 +261,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxBuscar);
             this.Controls.Add(this.buttonSelecionar);
-            this.Controls.Add(this.buttonSelecionarContato);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonExcluir);
@@ -320,6 +311,5 @@
         private System.Windows.Forms.Button buttonSelecionar;
         private System.Windows.Forms.ComboBox comboBoxBuscar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonSelecionarContato;
     }
 }
