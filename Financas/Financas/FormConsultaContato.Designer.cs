@@ -265,7 +265,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1111, 688);
+            this.ClientSize = new System.Drawing.Size(1111, 693);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxBuscar);
             this.Controls.Add(this.buttonSelecionar);
