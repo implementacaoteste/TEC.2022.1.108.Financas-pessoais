@@ -106,7 +106,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor - Despesas.Valor, 0) AS Saldo, Banco.Poupanca FROM Banco
+                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca FROM Banco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
                                     WHERE Id = @Id";
@@ -148,7 +148,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor - Despesas.Valor, 0) AS Saldo, Banco.Poupanca FROM Banco
+                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca FROM Banco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco";
                 cmd.CommandType = System.Data.CommandType.Text;
