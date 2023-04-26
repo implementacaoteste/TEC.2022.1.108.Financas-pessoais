@@ -13,5 +13,6 @@ namespace Models
         public string Endereco { get; set; }
         public string Numero { get; set; }
         public string Descricao { get; set; }
+        public bool Ativo { get; set; }
     }
 }
