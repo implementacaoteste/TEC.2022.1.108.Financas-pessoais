@@ -20,6 +20,7 @@ CREATE TABLE Usuario
 	Nome VARCHAR(150),
 	NomeUsuario VARCHAR(150),
 	Senha VARCHAR(50),
+	Ativo BIT,
 	Renda FLOAT
 )
 GO
@@ -91,7 +92,8 @@ CREATE TABLE Contato
 	Nome VARCHAR(150),
 	Endereco VARCHAR(150),
 	Numero VARCHAR(11),
-	Descricao VARCHAR(250)
+	Descricao VARCHAR(250),
+	Ativo BIT,
 )
 GO
 
@@ -109,7 +111,8 @@ CREATE TABLE Banco
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(150),
 	Saldo FLOAT,
-	Poupanca FLOAT
+	Poupanca FLOAT,
+	Ativo BIT,
 )
 GO
 
