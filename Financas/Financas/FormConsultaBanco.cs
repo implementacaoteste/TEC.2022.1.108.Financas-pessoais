@@ -96,8 +96,15 @@ namespace Financas
 
         private void FormConsultaBanco_Load(object sender, EventArgs e)
         {
-            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
-  
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
+                this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSelecionarBanco_Click(object sender, EventArgs e)
@@ -128,9 +135,9 @@ namespace Financas
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void comboBoxBuscar_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            bancoBindingSource.DataSource = new BancoBLL().BuscarTodos();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +21,7 @@ namespace Financas
 
         private void banToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using(FormConsultaBanco frm = new FormConsultaBanco())
+            using (FormConsultaBanco frm = new FormConsultaBanco())
             {
                 frm.ShowDialog();
             }
@@ -67,7 +69,7 @@ namespace Financas
 
         private void formaDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using(FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
             {
                 frm.ShowDialog();
             }
@@ -91,10 +93,10 @@ namespace Financas
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-             using(FormLogin florm = new FormLogin())
-             {
-                 florm.ShowDialog();
-             }
+            using (FormLogin florm = new FormLogin())
+            {
+                florm.ShowDialog();
+            }
         }
 
         private void contatoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,7 +146,7 @@ namespace Financas
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using(FormConsultaUsuario frm = new FormConsultaUsuario())
+            using (FormConsultaUsuario frm = new FormConsultaUsuario())
             {
                 frm.ShowDialog();
             }
@@ -169,6 +171,66 @@ namespace Financas
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cadastroDespesaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new DespesasBLL().Inserir(new Models.Despesas()
+                {
+                    DataEmissao = DateTime.Now,
+                    Descricao = "Teste",
+                    IdBanco = 3,
+                    IdContato = 2,
+                    IdFormaPagamento = 1,
+                    Valor = 25
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cadastroReceitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new ReceitaBLL().Inserir(new Models.Receita()
+                {
+                    DataEmissao = DateTime.Now,
+                    Descricao = "Sem contas a receber",
+                    IdBanco = 3,
+                    IdContato = 2,
+                    IdFormaPagamento = 1,
+                    Valor = 25
+                });
+
+                new ReceitaBLL().Inserir(new Models.Receita()
+                {
+                    DataEmissao = DateTime.Now,
+                    Descricao = "Com contas a receber",
+                    IdBanco = 3,
+                    IdContato = 2,
+                    IdFormaPagamento = 1,
+                    Valor = 58,
+                    IdContasReceber = 1
+                },
+                new ContasReceber()
+                {
+                    Id = 1,
+                    IdBanco = 3,
+                    IdContato = 2,
+                    DataEmissao = DateTime.Now,
+                    IdFormaPagamento = 1,
+                    ValorReceber = 58
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

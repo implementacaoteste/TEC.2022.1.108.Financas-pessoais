@@ -52,11 +52,11 @@ namespace Financas
                         break;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
@@ -119,28 +119,38 @@ namespace Financas
 
         private void FormConsultaDespesas_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
                 Close();
         }
 
         private void FormConsultaDespesas_Load(object sender, EventArgs e)
         {
-            textBoxBuscarDespesas.Width = 375;
+            try
+            {
+                labelDataInicial.Visible = false;
+                labelDataFinal.Visible = false;
+                textBoxBuscarDespesas.Width = 375;
+                textBoxBuscarDespesas2.Visible = false;
 
-            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
-            this.labelInforamaConsultaDespesa.BackColor = System.Drawing.SystemColors.Control;
-            this.labelInforamaConsultaDespesa.ForeColor = System.Drawing.SystemColors.ControlText;
+                this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
+                this.labelInforamaConsultaDespesa.BackColor = System.Drawing.SystemColors.Control;
+                this.labelInforamaConsultaDespesa.ForeColor = System.Drawing.SystemColors.ControlText;
 
-            this.labelDataInicial.BackColor = System.Drawing.SystemColors.Control;
-            this.labelDataInicial.ForeColor = System.Drawing.SystemColors.ControlText;
+                this.labelDataInicial.BackColor = System.Drawing.SystemColors.Control;
+                this.labelDataInicial.ForeColor = System.Drawing.SystemColors.ControlText;
 
-            this.labelDataFinal.BackColor = System.Drawing.SystemColors.Control;
-            this.labelDataFinal.ForeColor = System.Drawing.SystemColors.ControlText;
+                this.labelDataFinal.BackColor = System.Drawing.SystemColors.Control;
+                this.labelDataFinal.ForeColor = System.Drawing.SystemColors.ControlText;
 
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+                this.label2.BackColor = System.Drawing.SystemColors.Control;
+                this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
 
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+                this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

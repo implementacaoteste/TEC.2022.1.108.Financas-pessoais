@@ -168,8 +168,15 @@ namespace Financas
 
         private void FormConsultaContasReceber_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
-            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
+            try
+            {
+                comboBox1.SelectedIndex = 0;
+                this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FormConsultaContasReceber_KeyDown(object sender, KeyEventArgs e)

@@ -32,8 +32,8 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@IdBanco", _despesas.IdBanco);
                         cmd.Parameters.AddWithValue("@IdFormaPagamento", _despesas.IdFormaPagamento);
                         cmd.Parameters.AddWithValue("@DataEmissao", _despesas.DataEmissao);
-                        cmd.Parameters.AddWithValue("@IdContasPagar", _contasPagar.Id);
 
+                        
                         cmd.CommandText = "INSERT INTO Despesas(";
 
                         foreach (SqlParameter item in cmd.Parameters)
@@ -46,14 +46,13 @@ namespace DAL
                             else if (item.ParameterName != "@Id")
                             {
                                 sqlParametersRemover.Add(item);
-                                cmd.CommandText += item.ParameterName.Replace("@", "") + " = NULL,";
                             }
                         }
 
                         foreach (SqlParameter item in sqlParametersRemover)
                             cmd.Parameters.Remove(item);
 
-                        cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length - 1) + ")\r\nVALUES(" + parametros.Substring(0, parametros.Length -2) + ")";
+                        cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length - 1) + ")\r\nVALUES(" + parametros.Substring(0, parametros.Length - 2) + ")";
 
                         if (_transaction == null)
                         {

@@ -12,7 +12,7 @@ namespace BLL
     {
         public void Inserir(Receita _receita, ContasReceber _contasReceber = null)
         {
-            if (_contasReceber.DataPagamento != null && _contasReceber.DataPagamento.Value.Year > 2000)
+            if (_contasReceber != null && _contasReceber.DataPagamento != null && _contasReceber.DataPagamento.Value.Year > 2000)
                 throw new Exception("Este registro já foi pago!");
 
             new ReceitaDAL().Inserir(_receita, _contasReceber);
@@ -23,6 +23,11 @@ namespace BLL
         }
         public void Excluir(int _id)
         {
+            int idContasReceber = new ReceitaDAL().BuscarPorId(_id).IdContasReceber;
+
+            if (idContasReceber != 0)
+                throw new Exception("Registro não pode ser excluido, porque é preciso estornar o registro de contas a receber de id: " + idContasReceber);
+
             new ReceitaDAL().Excluir(_id);
         }
         public List<Receita> BuscarTodos()

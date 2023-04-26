@@ -34,7 +34,7 @@ namespace Financas
                     case 1:
                         formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(textBoxConsultarFormaPagamento.Text);
                         break;
-                   
+
                     default:
                         break;
                 }
