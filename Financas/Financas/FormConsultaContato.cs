@@ -20,7 +20,7 @@ namespace Financas
         {
             InitializeComponent();
 
-            buttonSelecionar.Visible = _selecionar;
+            buttonSelecionarContato.Visible = _selecionar;
 
         }
 
