@@ -35,6 +35,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.buttonAdicionar = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
-            this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -66,13 +66,13 @@
             this.dataGridViewTextBoxColumn5,
             this.Ativo});
             this.usuarioDataGridView.DataSource = this.usuarioBindingSource;
-            this.usuarioDataGridView.Location = new System.Drawing.Point(35, 135);
+            this.usuarioDataGridView.Location = new System.Drawing.Point(26, 135);
             this.usuarioDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usuarioDataGridView.Name = "usuarioDataGridView";
             this.usuarioDataGridView.ReadOnly = true;
             this.usuarioDataGridView.RowHeadersWidth = 51;
             this.usuarioDataGridView.RowTemplate.Height = 24;
-            this.usuarioDataGridView.Size = new System.Drawing.Size(1040, 515);
+            this.usuarioDataGridView.Size = new System.Drawing.Size(1058, 515);
             this.usuarioDataGridView.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn2
@@ -105,6 +105,15 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 107;
+            // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "Ativo";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.MinimumWidth = 6;
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
+            this.Ativo.Width = 125;
             // 
             // label1
             // 
@@ -198,15 +207,6 @@
             this.buttonSair.Text = "&Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            // 
-            // Ativo
-            // 
-            this.Ativo.DataPropertyName = "Ativo";
-            this.Ativo.HeaderText = "Ativo";
-            this.Ativo.MinimumWidth = 6;
-            this.Ativo.Name = "Ativo";
-            this.Ativo.ReadOnly = true;
-            this.Ativo.Width = 125;
             // 
             // FormConsultaUsuario
             // 
