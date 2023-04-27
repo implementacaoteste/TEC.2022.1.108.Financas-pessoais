@@ -44,7 +44,7 @@
             descricaoLabel.AutoSize = true;
             descricaoLabel.BackColor = System.Drawing.SystemColors.Control;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(36, 169);
+            descricaoLabel.Location = new System.Drawing.Point(61, 169);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
             descricaoLabel.TabIndex = 2;
@@ -58,7 +58,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(529, 104);
+            this.label1.Size = new System.Drawing.Size(612, 86);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro forma de pagamento";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,18 +70,18 @@
             // textBoxDescricao
             // 
             this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formaPagamentoBindingSource, "Descricao", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(36, 192);
+            this.textBoxDescricao.Location = new System.Drawing.Point(61, 192);
             this.textBoxDescricao.Name = "textBoxDescricao";
-            this.textBoxDescricao.Size = new System.Drawing.Size(445, 22);
+            this.textBoxDescricao.Size = new System.Drawing.Size(467, 22);
             this.textBoxDescricao.TabIndex = 3;
             this.textBoxDescricao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxDescricao_KeyDown);
             // 
             // buttonCancelar
             // 
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.Location = new System.Drawing.Point(391, 329);
+            this.buttonCancelar.Location = new System.Drawing.Point(423, 294);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(90, 36);
+            this.buttonCancelar.Size = new System.Drawing.Size(106, 36);
             this.buttonCancelar.TabIndex = 4;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -90,7 +90,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(301, 329);
+            this.buttonSalvar.Location = new System.Drawing.Point(329, 294);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(84, 36);
             this.buttonSalvar.TabIndex = 5;
@@ -103,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(529, 389);
+            this.ClientSize = new System.Drawing.Size(612, 389);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(descricaoLabel);
