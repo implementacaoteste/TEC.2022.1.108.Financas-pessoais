@@ -19,11 +19,6 @@ namespace Financas
             InitializeComponent();
         }
 
-        private void despesasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             try
