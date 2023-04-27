@@ -72,13 +72,13 @@
             this.Banco,
             this.DataEmissao});
             this.receitaDataGridView.DataSource = this.receitaBindingSource;
-            this.receitaDataGridView.Location = new System.Drawing.Point(35, 135);
+            this.receitaDataGridView.Location = new System.Drawing.Point(23, 137);
             this.receitaDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.receitaDataGridView.Name = "receitaDataGridView";
             this.receitaDataGridView.ReadOnly = true;
             this.receitaDataGridView.RowHeadersWidth = 51;
             this.receitaDataGridView.RowTemplate.Height = 24;
-            this.receitaDataGridView.Size = new System.Drawing.Size(1040, 515);
+            this.receitaDataGridView.Size = new System.Drawing.Size(1076, 515);
             this.receitaDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn3
