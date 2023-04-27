@@ -22,6 +22,8 @@ namespace Financas
             Id = id;
         }
 
+
+
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Close();

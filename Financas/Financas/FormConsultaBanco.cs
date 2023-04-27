@@ -42,6 +42,13 @@ namespace Financas
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+            
+
+        private void bancoBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void buttonAdicionarBanco_Click(object sender, EventArgs e)
@@ -55,8 +62,8 @@ namespace Financas
 
         private void buttonAlterarBanco_Click(object sender, EventArgs e)
         {
-            int id = ((Banco)bancoBindingSource.Current).Id;
 
+            int id = ((Banco)bancoBindingSource.Current).Id;
             using (FormCadastroBanco frm = new FormCadastroBanco(id))
             {
                 frm.ShowDialog();
