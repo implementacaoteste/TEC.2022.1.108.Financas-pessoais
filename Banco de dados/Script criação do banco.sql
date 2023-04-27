@@ -288,7 +288,7 @@ GO
 
 INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Gean', 'rua C', '63992929292', 'vizinho', 1)
 INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Alice', 'rua X', '1181818181', 'colega do serviço', 1)
-INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Bruno', 'rua Z', '63991919191', 'irmão')
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Bruno', 'rua Z', '63991919191', 'irmão', 1)
 INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Bruna', 'rua Jardim', '63992747474', 'colega de escola', 1)
 INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Marcelo', 'rua N', '63991121212', 'vizinha da mãe', 1)
 GO
@@ -307,10 +307,3 @@ GO
 --INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 2)
 --INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
 --GO
-
-
-exec sp_executesql N'INSERT INTO FormaPagamento(Descricao)
-                                    VALUES(@Descricao)',N'@Descricao nvarchar(3)',@Descricao=N'Pix'
-
-exec sp_executesql N'INSERT INTO ContasReceber(ValorReceber, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao)
-                                                         VALUES(@ValorReceber, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao)',N'@ValorReceber float,@Descricao nvarchar(5),@IdContato int,@IdBanco int,@IdFormaPagamento int,@DataEmissao datetime',@ValorReceber=24,@Descricao=N'Teste',@IdContato=3,@IdBanco=2,@IdFormaPagamento=1,@DataEmissao='2023-04-19 16:50:26.313'
