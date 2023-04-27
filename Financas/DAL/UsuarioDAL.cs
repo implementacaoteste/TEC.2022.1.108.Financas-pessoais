@@ -48,7 +48,7 @@ namespace DAL
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _usuario.Id);
                 cmd.Parameters.AddWithValue("@Nome", _usuario.Nome);
-               cmd.Parameters.AddWithValue("@NomeUsuario", _usuario.NomeUsuario);
+                cmd.Parameters.AddWithValue("@NomeUsuario", _usuario.NomeUsuario);
                 cmd.Parameters.AddWithValue("@Senha", _usuario.Senha);
                 cmd.Parameters.AddWithValue("@Renda", _usuario.Renda);
                 cmd.Parameters.AddWithValue("Ativo", _usuario.Ativo);
@@ -256,5 +256,51 @@ namespace DAL
 
         }
 
+        public Usuario ValidarMovimentacaoUsuario(int _id)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Usuario usuario = new Usuario();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT TOP 1 Usuario.Id, Usuario.Nome, Usuario.NomeUsuario, Usuario.Senha, Usuario.Ativo, Usuario.Renda FROM Usuario 
+                                    LEFT JOIN Despesas ON Usuario.Id = Despesas.IdUsuario 
+                                    LEFT JOIN Receita ON Usuario.Id = Receita.IdUsuario 
+                                    LEFT JOIN ContasPagar ON Usuario.Id = ContasPagar.IdUsuario 
+                                    LEFT JOIN ContasReceber ON Usuario.Id = ContasReceber.IdUsuario
+                                    WHERE Usuario.Id = @Id
+                                    AND (Despesas.IdUsuario IS NOT NULL
+                                    OR Receita.IdUsuario IS NOT NULL
+                                    OR ContasPagar.IdUsuario IS NOT NULL
+                                    OR ContasReceber.IdUsuario IS NOT NULL)";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", _id);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        usuario = new Usuario();
+                        usuario.Id = Convert.ToInt32(rd["ID"]);
+                        usuario.Nome = rd["Nome"].ToString();
+                        usuario.NomeUsuario = rd["NomeUsuario"].ToString();
+                        usuario.Senha = rd["Senha"].ToString();
+                        usuario.Renda = (double)rd["Renda"];
+                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]); 
+                    }
+                }
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar os usuários por id do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

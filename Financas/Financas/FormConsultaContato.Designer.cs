@@ -45,7 +45,7 @@
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
-            this.buttonSelecionar = new System.Windows.Forms.Button();
+            this.buttonSelecionarContato = new System.Windows.Forms.Button();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -218,16 +218,16 @@
             this.buttonAlterar.UseVisualStyleBackColor = true;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
-            // buttonSelecionar
+            // buttonSelecionarContato
             // 
-            this.buttonSelecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(891, 656);
-            this.buttonSelecionar.Name = "buttonSelecionar";
-            this.buttonSelecionar.Size = new System.Drawing.Size(103, 23);
-            this.buttonSelecionar.TabIndex = 10;
-            this.buttonSelecionar.Text = "&Selecionar";
-            this.buttonSelecionar.UseVisualStyleBackColor = true;
-            this.buttonSelecionar.Click += new System.EventHandler(this.buttonSelecionarContato_Click);
+            this.buttonSelecionarContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSelecionarContato.Location = new System.Drawing.Point(891, 656);
+            this.buttonSelecionarContato.Name = "buttonSelecionarContato";
+            this.buttonSelecionarContato.Size = new System.Drawing.Size(103, 23);
+            this.buttonSelecionarContato.TabIndex = 10;
+            this.buttonSelecionarContato.Text = "&Selecionar";
+            this.buttonSelecionarContato.UseVisualStyleBackColor = true;
+            this.buttonSelecionarContato.Click += new System.EventHandler(this.buttonSelecionarContato_Click);
             // 
             // comboBoxBuscar
             // 
@@ -271,7 +271,7 @@
             this.ClientSize = new System.Drawing.Size(1111, 693);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxBuscar);
-            this.Controls.Add(this.buttonSelecionar);
+            this.Controls.Add(this.buttonSelecionarContato);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonExcluir);
@@ -319,7 +319,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.Button buttonAlterar;
-        private System.Windows.Forms.Button buttonSelecionar;
+        private System.Windows.Forms.Button buttonSelecionarContato;
         private System.Windows.Forms.ComboBox comboBoxBuscar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo;

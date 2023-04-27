@@ -26,6 +26,11 @@ namespace BLL
         }
         public void Excluir(int _id)
         {
+            int id = new UsuarioDAL().ValidarMovimentacaoUsuario(_id).Id;
+
+            if (id != 0)
+                throw new Exception("Registro não pode ser excluido porque existe histórico de movimentação");
+            
             new UsuarioDAL().Excluir(_id);
         }
         public List<Usuario> BuscarTodos()

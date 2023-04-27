@@ -78,7 +78,7 @@
             // bancoBindingSource
             // 
             this.bancoBindingSource.DataSource = typeof(Models.Banco);
-            this.bancoBindingSource.CurrentChanged += new System.EventHandler(this.bancoBindingSource_CurrentChanged);
+         
             // 
             // textBoxConsultarBanco
             // 
