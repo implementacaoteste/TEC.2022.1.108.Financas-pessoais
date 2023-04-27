@@ -48,9 +48,6 @@
             this.contasAReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formaDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroDespesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroReceitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,8 +57,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
-            this.consultaToolStripMenuItem,
-            this.testeToolStripMenuItem});
+            this.consultaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -235,29 +231,6 @@
             this.usuárioToolStripMenuItem.Text = "Usuário";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
             // 
-            // testeToolStripMenuItem
-            // 
-            this.testeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroDespesaToolStripMenuItem,
-            this.cadastroReceitaToolStripMenuItem});
-            this.testeToolStripMenuItem.Name = "testeToolStripMenuItem";
-            this.testeToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
-            this.testeToolStripMenuItem.Text = "Teste";
-            // 
-            // cadastroDespesaToolStripMenuItem
-            // 
-            this.cadastroDespesaToolStripMenuItem.Name = "cadastroDespesaToolStripMenuItem";
-            this.cadastroDespesaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.cadastroDespesaToolStripMenuItem.Text = "Cadastro despesa";
-            this.cadastroDespesaToolStripMenuItem.Click += new System.EventHandler(this.cadastroDespesaToolStripMenuItem_Click);
-            // 
-            // cadastroReceitaToolStripMenuItem
-            // 
-            this.cadastroReceitaToolStripMenuItem.Name = "cadastroReceitaToolStripMenuItem";
-            this.cadastroReceitaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.cadastroReceitaToolStripMenuItem.Text = "Cadastro receita";
-            this.cadastroReceitaToolStripMenuItem.Click += new System.EventHandler(this.cadastroReceitaToolStripMenuItem_Click);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,9 +277,6 @@
         private System.Windows.Forms.ToolStripMenuItem formaDePagamentoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem receitasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastroDespesaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastroReceitaToolStripMenuItem;
     }
 }
 

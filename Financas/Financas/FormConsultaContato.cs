@@ -19,7 +19,9 @@ namespace Financas
         public FormConsultaContato(bool _selecionar = false)
         {
             InitializeComponent();
-            //buttonSelecionarContato.Visible = _selecionar;
+
+            buttonSelecionarContato.Visible = _selecionar;
+
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)

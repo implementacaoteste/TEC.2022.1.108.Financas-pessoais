@@ -17,12 +17,13 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();    
-                cmd.CommandText = @"INSERT INTO Banco(Nome, Saldo, Poupanca)
-                                    VALUES(@Nome, @Saldo, @Poupanca)";
+                cmd.CommandText = @"INSERT INTO Banco(Nome, Saldo, Poupanca, Ativo)
+                                    VALUES(@Nome, @Saldo, @Poupanca, @Ativo)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", _banco.Nome);
                 cmd.Parameters.AddWithValue("@Saldo", _banco.Saldo);
                 cmd.Parameters.AddWithValue("@Poupanca", _banco.Poupanca);
+                cmd.Parameters.AddWithValue("@Ativo", _banco.Ativo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -42,12 +43,13 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Banco SET Nome=@Nome, Saldo=@Saldo, Poupanca=@Poupanca WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Banco SET Nome=@Nome, Saldo=@Saldo, Poupanca=@Poupanca, Ativo = @Ativo WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _banco.Id);
                 cmd.Parameters.AddWithValue("@Nome", _banco.Nome);
                 cmd.Parameters.AddWithValue("@Saldo", _banco.Saldo);
                 cmd.Parameters.AddWithValue("@Poupanca", _banco.Poupanca);
+                cmd.Parameters.AddWithValue("@Ativo", _banco.Ativo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -106,7 +108,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca FROM Banco
+                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo FROM Banco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
                                     WHERE Id = @Id";
@@ -123,6 +125,7 @@ namespace DAL
                         banco.Nome = rd["Nome"].ToString();
                         banco.Saldo = (double)rd["Saldo"];
                         banco.Poupanca = (double)rd["Poupanca"];
+                        banco.Ativo = Convert.ToBoolean(rd["Ativo"]);
                     }
                 }
                 return banco;
@@ -148,7 +151,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca FROM Banco
+                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo FROM Banco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco";
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -162,6 +165,7 @@ namespace DAL
                         banco.Nome = rd["Nome"].ToString();
                         banco.Saldo = (double)rd["Saldo"];
                         banco.Poupanca = (double)rd["Poupanca"];
+                        banco.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         bancos.Add(banco);
                     }
                 }
@@ -187,7 +191,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor - Despesas.Valor, 0) AS Saldo, Banco.Poupanca FROM Banco
+                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor - Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo FROM Banco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
                                     WHERE Nome LIKE @Nome";
@@ -204,6 +208,7 @@ namespace DAL
                         banco.Nome = rd["Nome"].ToString();
                         banco.Saldo = (double)rd["Saldo"];
                         banco.Poupanca = (double)rd["Poupanca"];
+                        banco.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         bancos.Add(banco);
                     }
                 }

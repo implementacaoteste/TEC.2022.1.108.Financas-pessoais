@@ -273,24 +273,24 @@ GO
 --IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Dag'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Dagorlina', 'Dag', '123456', 1)
 --GO
 
-INSERT INTO Banco (Nome, Saldo, Poupanca) VALUES('Inter', 500, 50.5)
-INSERT INTO Banco (Nome, Saldo, Poupanca) VALUES('Nubank', 100.5, 30.0)
-INSERT INTO Banco (Nome, Saldo, Poupanca) VALUES('Caixa', 150.0, 10.5)
-INSERT INTO Banco (Nome, Saldo, Poupanca) VALUES('Banco do Brasil', 250.0, 20.0)
+INSERT INTO Banco (Nome, Poupanca, Ativo) VALUES('Inter', 50.5, 1)
+INSERT INTO Banco (Nome, Poupanca, Ativo) VALUES('Nubank', 30.0, 1)
+INSERT INTO Banco (Nome, Poupanca, Ativo) VALUES('Caixa', 10.5, 1)
+INSERT INTO Banco (Nome, Poupanca, Ativo) VALUES('Banco do Brasil', 20.0, 1)
 GO
 
-INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda)VALUES('Ana', 'Ana', 123456, 1400)
-INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda)VALUES('Lucas', 'Lucas', 123456, 650)
-INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda)VALUES('Maria', 'Maria', 123456, 800)
-INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda)VALUES('João', 'João', 123456, 1000)
-INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda)VALUES('Pedro', 'Pedro', 123456, 2000)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Ana', 'Ana', 123456, 1400, 1)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Lucas', 'Lucas', 123456, 650, 1)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Maria', 'Maria', 123456, 800, 1)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('João', 'João', 123456, 1000, 1)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Pedro', 'Pedro', 123456, 2000, 1)
 GO
 
-INSERT INTO Contato(Nome, Endereco, Numero, Descricao)VALUES('Gean', 'rua C', '63992929292', 'vizinho')
-INSERT INTO Contato(Nome, Endereco, Numero, Descricao)VALUES('Alice', 'rua X', '1181818181', 'colega do serviço')
-INSERT INTO Contato(Nome, Endereco, Numero, Descricao)VALUES('Bruno', 'rua Z', '63991919191', 'irmão')
-INSERT INTO Contato(Nome, Endereco, Numero, Descricao)VALUES('Bruna', 'rua Jardim', '63992747474', 'colega de escola')
-INSERT INTO Contato(Nome, Endereco, Numero, Descricao)VALUES('Marcelo', 'rua N', '63991121212', 'vizinha da mãe')
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Gean', 'rua C', '63992929292', 'vizinho', 1)
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Alice', 'rua X', '1181818181', 'colega do serviço', 1)
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Bruno', 'rua Z', '63991919191', 'irmão', 1)
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Bruna', 'rua Jardim', '63992747474', 'colega de escola', 1)
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Marcelo', 'rua N', '63991121212', 'vizinha da mãe', 1)
 GO
 
 --INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,1)
@@ -307,10 +307,3 @@ GO
 --INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 2)
 --INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
 --GO
-
-
-exec sp_executesql N'INSERT INTO FormaPagamento(Descricao)
-                                    VALUES(@Descricao)',N'@Descricao nvarchar(3)',@Descricao=N'Pix'
-
-exec sp_executesql N'INSERT INTO ContasReceber(ValorReceber, Descricao, IdContato, IdBanco, IdFormaPagamento, DataEmissao)
-                                                         VALUES(@ValorReceber, @Descricao, @IdContato, @IdBanco, @IdFormaPagamento, @DataEmissao)',N'@ValorReceber float,@Descricao nvarchar(5),@IdContato int,@IdBanco int,@IdFormaPagamento int,@DataEmissao datetime',@ValorReceber=24,@Descricao=N'Teste',@IdContato=3,@IdBanco=2,@IdFormaPagamento=1,@DataEmissao='2023-04-19 16:50:26.313'
