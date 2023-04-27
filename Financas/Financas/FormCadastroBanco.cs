@@ -27,8 +27,7 @@ namespace Financas
         }
 
         private void buttonSalvarCadBanco_Click(object sender, EventArgs e)
-        {
-           
+        {          
             BancoBLL BancoBLL = new BancoBLL();
             bancoBindingSource.EndEdit();
 
@@ -64,21 +63,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-
-                saldoTextBox.Focus();
-
-
-            }
-        }
-
-        private void saldoTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-
                 poupancaTextBox.Focus();
-
-
             }
         }
 
@@ -86,10 +71,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-      
                 buttonSalvarCadBanco_Click(null,null);
-
-
             }
         }
     }
