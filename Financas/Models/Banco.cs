@@ -12,6 +12,7 @@ namespace Models
         public string Nome { get; set; }
         public double Saldo { get; set; }
         public double Poupanca { get; set; }
-        public bool Ativo { get; set; } 
+        public bool Ativo { get; set; }
+        public bool PermitirSaldoNegativo { get; set; }
     }
 }

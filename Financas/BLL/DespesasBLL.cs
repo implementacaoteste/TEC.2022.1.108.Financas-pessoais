@@ -40,7 +40,7 @@ namespace BLL
         }
         public Despesas BuscarPorId(int _id)
         {
-           return new DespesasDAL().BuscarPorId(_id);
+            return new DespesasDAL().BuscarPorId(_id);
         }
         public List<Despesas> BuscarPorBanco(string _banco)
         {
@@ -57,6 +57,14 @@ namespace BLL
         public List<Despesas> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
         {
             return new DespesasDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
+        }
+
+        public void ValidarSaldo(double _valor, int _id)
+        {
+            Banco banco = new BancoDAL().BuscarPorId(_id);
+
+            if (!banco.PermitirSaldoNegativo && banco.Saldo < _valor)
+                throw new Exception("Este banco não possui saldo suficiente.");
         }
     }
 }

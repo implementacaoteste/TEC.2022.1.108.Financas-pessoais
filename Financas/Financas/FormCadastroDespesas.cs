@@ -10,7 +10,7 @@ namespace Financas
     {
         public int Id;
         private ContasPagar contasPagar;
-        public FormCadastroDespesas(ContasPagar _contasPagar = null, int id=0)
+        public FormCadastroDespesas(ContasPagar _contasPagar = null, int id = 0)
         {
             InitializeComponent();
             Id = id;
@@ -64,7 +64,7 @@ namespace Financas
 
         private void buttonBuscarContatoDespesas_Click(object sender, EventArgs e)
         {
-            using(FormConsultaContato frm = new FormConsultaContato(true))
+            using (FormConsultaContato frm = new FormConsultaContato(true))
             {
                 frm.ShowDialog();
                 ((Despesas)despesasBindingSource.Current).IdContato = frm.Id;
@@ -74,11 +74,19 @@ namespace Financas
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            using(FormConsultaBanco frm = new FormConsultaBanco(true))
+            try
             {
-                frm.ShowDialog();
-                ((Despesas)despesasBindingSource.Current).IdBanco = frm.Id;
-                bancoTextBox.Text = frm.Nome;
+                using (FormConsultaBanco frm = new FormConsultaBanco(true))
+                {
+                    frm.ShowDialog();
+                    new DespesasBLL().ValidarSaldo(Convert.ToDouble(textBoxGastos.Text), frm.Id);
+                    ((Despesas)despesasBindingSource.Current).IdBanco = frm.Id;
+                    bancoTextBox.Text = frm.Nome;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -94,13 +102,13 @@ namespace Financas
 
         private void FormCadastroDespesas_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
                 Close();
         }
 
         private void textBoxDescricao_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
                 buttonSalvar_Click(null, null);
         }
     }
