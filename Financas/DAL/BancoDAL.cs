@@ -16,7 +16,7 @@ namespace DAL
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
-                SqlCommand cmd = cn.CreateCommand();    
+                SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Banco(Nome, Saldo, Poupanca, Ativo)
                                     VALUES(@Nome, @Saldo, @Poupanca, @Ativo)";
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -225,9 +225,50 @@ namespace DAL
             }
         }
 
-        public object ValidarMovimentacaoBanco(int id)
+        public Banco ValidarMovimentacaoBanco(int _id)
         {
-            throw new NotImplementedException();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Banco banco = new Banco();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT TOP 1 Banco.Id, Banco.Nome, Banco.Poupanca, Banco.Ativo FROM Banco 
+                                    LEFT JOIN Despesas ON Banco.Id = Despesas.IdBanco
+                                    LEFT JOIN Receita ON Banco.Id = Receita.IdBanco
+                                    LEFT JOIN ContasPagar ON Banco.Id = ContasPagar.IdBanco 
+                                    LEFT JOIN ContasReceber ON Banco.Id = ContasReceber.IdBanco
+                                    WHERE Banco.Id = @Id
+                                    AND (Despesas.IdBanco IS NOT NULL
+                                    OR Receita.IdBanco IS NOT NULL
+                                    OR ContasPagar.IdBanco IS NOT NULL
+                                    OR ContasReceber.IdBanco IS NOT NULL)";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", _id);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        banco = new Banco();
+                        banco.Id = Convert.ToInt32(rd["Id"]);
+                        banco.Nome = rd["Nome"].ToString();
+                        //banco.Saldo = (double)rd["Saldo"];
+                        banco.Poupanca = (double)rd["Poupanca"];
+                        banco.Ativo = Convert.ToBoolean(rd["Ativo"]);
+                    }
+                }
+                return banco;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar os bancos do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }
