@@ -39,6 +39,7 @@
             this.saldoTextBox = new System.Windows.Forms.TextBox();
             this.buttonSalvarCadBanco = new System.Windows.Forms.Button();
             this.buttonCancelarCadBanco = new System.Windows.Forms.Button();
+            this.ativoCheckBox = new System.Windows.Forms.CheckBox();
             nomeLabel = new System.Windows.Forms.Label();
             poupancaLabel = new System.Windows.Forms.Label();
             saldoLabel = new System.Windows.Forms.Label();
@@ -86,7 +87,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(612, 66);
+            this.label1.Size = new System.Drawing.Size(627, 66);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro do banco";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,13 +149,28 @@
             this.buttonCancelarCadBanco.UseVisualStyleBackColor = true;
             this.buttonCancelarCadBanco.Click += new System.EventHandler(this.buttonCancelarCadBanco_Click);
             // 
+            // ativoCheckBox
+            // 
+            this.ativoCheckBox.BackColor = System.Drawing.SystemColors.Control;
+            this.ativoCheckBox.Checked = true;
+            this.ativoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bancoBindingSource, "Ativo", true));
+            this.ativoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ativoCheckBox.Location = new System.Drawing.Point(376, 215);
+            this.ativoCheckBox.Name = "ativoCheckBox";
+            this.ativoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.ativoCheckBox.TabIndex = 10;
+            this.ativoCheckBox.Text = "Ativo";
+            this.ativoCheckBox.UseVisualStyleBackColor = false;
+            // 
             // FormCadastroBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(612, 389);
+            this.ClientSize = new System.Drawing.Size(627, 389);
+            this.Controls.Add(this.ativoCheckBox);
             this.Controls.Add(this.buttonCancelarCadBanco);
             this.Controls.Add(this.buttonSalvarCadBanco);
             this.Controls.Add(saldoLabel);
@@ -194,5 +210,6 @@
         private System.Windows.Forms.TextBox saldoTextBox;
         private System.Windows.Forms.Button buttonSalvarCadBanco;
         private System.Windows.Forms.Button buttonCancelarCadBanco;
+        private System.Windows.Forms.CheckBox ativoCheckBox;
     }
 }

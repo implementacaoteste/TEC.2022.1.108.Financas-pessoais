@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelarCadastrodeUsuario = new System.Windows.Forms.Button();
             this.buttonSalvarCadastrodeUsuario = new System.Windows.Forms.Button();
+            this.ativoCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,12 +218,28 @@
             this.buttonSalvarCadastrodeUsuario.UseVisualStyleBackColor = true;
             this.buttonSalvarCadastrodeUsuario.Click += new System.EventHandler(this.buttonSalvarCadastrodeUsuario_Click);
             // 
+            // ativoCheckBox
+            // 
+            this.ativoCheckBox.BackColor = System.Drawing.SystemColors.Control;
+            this.ativoCheckBox.Checked = true;
+            this.ativoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.usuarioBindingSource, "Ativo", true));
+            this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.usuarioBindingSource, "Ativo", true));
+            this.ativoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ativoCheckBox.Location = new System.Drawing.Point(417, 307);
+            this.ativoCheckBox.Name = "ativoCheckBox";
+            this.ativoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.ativoCheckBox.TabIndex = 16;
+            this.ativoCheckBox.Text = "Ativo";
+            this.ativoCheckBox.UseVisualStyleBackColor = false;
+            // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(737, 455);
+            this.Controls.Add(this.ativoCheckBox);
             this.Controls.Add(this.buttonSalvarCadastrodeUsuario);
             this.Controls.Add(this.buttonCancelarCadastrodeUsuario);
             this.Controls.Add(this.label1);
@@ -275,5 +292,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCancelarCadastrodeUsuario;
         private System.Windows.Forms.Button buttonSalvarCadastrodeUsuario;
+        private System.Windows.Forms.CheckBox ativoCheckBox;
     }
 }

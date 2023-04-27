@@ -16,13 +16,14 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Usuario(Nome, Senha, Renda, NomeUsuario)
-                                    VALUES(@Nome, @Senha, @Renda, @NomeUsuario)";
+                cmd.CommandText = @"INSERT INTO Usuario(Nome, Senha, Renda, NomeUsuario, Ativo)
+                                    VALUES(@Nome, @Senha, @Renda, @NomeUsuario, @Ativo)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", _usuario.Nome);
                 cmd.Parameters.AddWithValue("@Senha", _usuario.Senha);
                 cmd.Parameters.AddWithValue("@Renda", _usuario.Renda);
                 cmd.Parameters.AddWithValue("@NomeUsuario", _usuario.NomeUsuario);
+                cmd.Parameters.AddWithValue("@Ativo", _usuario.Ativo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -43,13 +44,14 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Usuario SET Nome=@Nome,NomeUsuario=@NomeUsuario, Senha=@Senha, Renda=@Renda  WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Usuario SET Nome=@Nome,NomeUsuario=@NomeUsuario, Senha=@Senha, Renda=@Renda, Ativo=@Ativo  WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _usuario.Id);
                 cmd.Parameters.AddWithValue("@Nome", _usuario.Nome);
                cmd.Parameters.AddWithValue("@NomeUsuario", _usuario.NomeUsuario);
                 cmd.Parameters.AddWithValue("@Senha", _usuario.Senha);
                 cmd.Parameters.AddWithValue("@Renda", _usuario.Renda);
+                cmd.Parameters.AddWithValue("Ativo", _usuario.Ativo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -107,7 +109,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Renda, Senha FROM Usuario";
+                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Renda, Senha , Ativo FROM Usuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -119,6 +121,7 @@ namespace DAL
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.Senha = rd["Senha"].ToString();
                         usuario.Renda = (double)rd["Renda"];
+                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         usuarios.Add(usuario);
                     }
                 }
@@ -144,7 +147,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Senha, Renda, NomeUsuario FROM Usuario WHERE Nome LIKE @Nome";
+                cmd.CommandText = "SELECT Id, Nome, Senha, Renda, NomeUsuario, Ativo FROM Usuario WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
@@ -159,6 +162,7 @@ namespace DAL
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();
                         usuario.Senha = rd["Senha"].ToString();
                         usuario.Renda = (double)rd["Renda"];
+                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         usuarios.Add(usuario);
                     }
                 }
@@ -182,7 +186,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Senha, Renda FROM Usuario WHERE NomeUsuario = @NomeUsuario";
+                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Senha, Renda, Ativo FROM Usuario WHERE NomeUsuario = @NomeUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@NomeUsuario", _nomeUsuario);
@@ -197,6 +201,7 @@ namespace DAL
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();
                         usuario.Renda = (double)rd["Renda"];
                         usuario.Senha = rd["Senha"].ToString();
+                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
                     }
                 }
                 return usuario;
@@ -219,7 +224,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome,Renda, Senha , NomeUsuario FROM Usuario WHERE Id = @Id";
+                cmd.CommandText = "SELECT Id, Nome,Renda, Senha , NomeUsuario, Ativo FROM Usuario WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -234,6 +239,7 @@ namespace DAL
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();
                         usuario.Senha = rd["Senha"].ToString();
                         usuario.Renda = (double)rd["Renda"];
+                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
                     }
                 }
                 return usuario;

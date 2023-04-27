@@ -17,13 +17,14 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Contato(Nome, Endereco, Numero,Descricao)
-                                    VALUES(@Nome, @Endereco, @Numero,@Descricao)";
+                cmd.CommandText = @"INSERT INTO Contato(Nome, Endereco, Numero,Descricao,Ativo)
+                                    VALUES(@Nome, @Endereco, @Numero,@Descricao,@Ativo)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", _contato.Nome);
                 cmd.Parameters.AddWithValue("@Endereco", _contato.Endereco);
                 cmd.Parameters.AddWithValue("@Numero", _contato.Numero);
                 cmd.Parameters.AddWithValue("@Descricao", _contato.Descricao);
+                cmd.Parameters.AddWithValue("@Ativo",_contato.Ativo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -43,13 +44,14 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Contato SET Nome=@Nome, Endereco=@Endereco, Numero=@Numero , Descricao=@Descricao WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Contato SET Nome=@Nome, Endereco=@Endereco, Numero=@Numero , Descricao=@Descricao, Ativo=@Ativo WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("Id", _contato.Id);
                 cmd.Parameters.AddWithValue("@Nome", _contato.Nome);
                 cmd.Parameters.AddWithValue("@Endereco", _contato.Endereco);
                 cmd.Parameters.AddWithValue("@Numero", _contato.Numero);
                 cmd.Parameters.AddWithValue("@Descricao",_contato.Descricao);
+                cmd.Parameters.AddWithValue("Ativo", _contato.Ativo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -105,7 +107,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato WHERE Id = @Id";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -120,6 +122,7 @@ namespace DAL
                         contato.Endereco = rd["Endereco"].ToString();
                         contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
+                        contato.Ativo = Convert.ToBoolean(rd["Ativo"]);
                     }
                 }
                 return contato;
@@ -145,7 +148,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -158,6 +161,7 @@ namespace DAL
                         contato.Endereco = rd["Endereco"].ToString();
                         contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
+                        contato.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         contatos.Add(contato);
                     }
                 }
@@ -183,7 +187,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato WHERE Nome LIKE @Nome";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
@@ -198,6 +202,7 @@ namespace DAL
                         contato.Endereco = rd["Endereco"].ToString();
                         contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
+                        contato.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         contatos.Add(contato);
                     }
                 }
@@ -223,7 +228,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato WHERE Endereco LIKE @Endereco";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Endereco LIKE @Endereco";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Endereco", "%" + _endereco + "%");
@@ -238,6 +243,7 @@ namespace DAL
                         contato.Endereco = rd["Endereco"].ToString();
                         contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
+                        contato.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         contatos.Add(contato);
                     }
                 }
@@ -263,7 +269,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato WHERE Numero LIKE @Numero";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Numero LIKE @Numero";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Numero", "%" + _numero + "%");
@@ -278,6 +284,7 @@ namespace DAL
                         contato.Endereco = rd["Endereco"].ToString();
                         contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
+                        contato.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         contatos.Add(contato);
                     }
                 }
@@ -303,7 +310,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao FROM Contato WHERE Descricao LIKE @Descricao";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
@@ -318,6 +325,7 @@ namespace DAL
                         contato.Endereco = rd["Endereco"].ToString();
                         contato.Numero = rd["Numero"].ToString();
                         contato.Descricao = rd["Descricao"].ToString();
+                        contato.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         contatos.Add(contato);
                     }
                 }

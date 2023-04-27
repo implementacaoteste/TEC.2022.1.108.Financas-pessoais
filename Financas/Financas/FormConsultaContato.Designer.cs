@@ -48,6 +48,7 @@
             this.buttonSelecionar = new System.Windows.Forms.Button();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.contatoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contatoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -85,7 +86,8 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.dataGridViewTextBoxColumn5,
+            this.Ativo});
             this.contatoDataGridView.DataSource = this.contatoBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -253,6 +255,15 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Buscar por";
             // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "Ativo";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.MinimumWidth = 6;
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
+            this.Ativo.Width = 125;
+            // 
             // FormConsultaContato
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -311,5 +322,6 @@
         private System.Windows.Forms.Button buttonSelecionar;
         private System.Windows.Forms.ComboBox comboBoxBuscar;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo;
     }
 }

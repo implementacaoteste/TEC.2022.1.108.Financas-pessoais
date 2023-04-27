@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelarCadastroContato = new System.Windows.Forms.Button();
             this.buttonSalvarCadastroContato = new System.Windows.Forms.Button();
+            this.ativoCheckBox = new System.Windows.Forms.CheckBox();
             descricaoLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -167,12 +168,27 @@
             this.buttonSalvarCadastroContato.UseVisualStyleBackColor = true;
             this.buttonSalvarCadastroContato.Click += new System.EventHandler(this.buttonSalvarCadastroContato_Click);
             // 
+            // ativoCheckBox
+            // 
+            this.ativoCheckBox.BackColor = System.Drawing.SystemColors.Control;
+            this.ativoCheckBox.Checked = true;
+            this.ativoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.contatoBindingSource, "Ativo", true));
+            this.ativoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ativoCheckBox.Location = new System.Drawing.Point(75, 329);
+            this.ativoCheckBox.Name = "ativoCheckBox";
+            this.ativoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.ativoCheckBox.TabIndex = 12;
+            this.ativoCheckBox.Text = "Ativo";
+            this.ativoCheckBox.UseVisualStyleBackColor = false;
+            // 
             // FormCadastroContato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(637, 402);
+            this.ClientSize = new System.Drawing.Size(637, 408);
+            this.Controls.Add(this.ativoCheckBox);
             this.Controls.Add(this.buttonSalvarCadastroContato);
             this.Controls.Add(this.buttonCancelarCadastroContato);
             this.Controls.Add(this.label1);
@@ -212,5 +228,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCancelarCadastroContato;
         private System.Windows.Forms.Button buttonSalvarCadastroContato;
+        private System.Windows.Forms.CheckBox ativoCheckBox;
     }
 }
