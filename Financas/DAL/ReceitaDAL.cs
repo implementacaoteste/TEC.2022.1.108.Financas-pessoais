@@ -88,6 +88,7 @@ namespace DAL
                 }
             }
         }
+      
         public void Alterar(Receita _receita)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -260,7 +261,7 @@ namespace DAL
                         receita = new Receita();
                         receita.Id = Convert.ToInt32(rd["Id"]);
                         receita.Valor = (double)rd["Valor"];
-                        receita.Descricao = rd["Descricao"].ToString();
+                        receita.Descricao = rd["DescricaoReceita"].ToString();
                         receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
                         receita.Contato = rd["Nome"].ToString();
                         receita.FormaPagamento = rd["Descricao"].ToString();
@@ -280,7 +281,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
 
         public List<Receita> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
         {
