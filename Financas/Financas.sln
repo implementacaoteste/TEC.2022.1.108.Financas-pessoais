@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Financas", "Financas\Financas.csproj", "{994EDDF5-41C3-4526-A89C-C1A79A298D38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormFinancas", "Financas\FormFinancas.csproj", "{994EDDF5-41C3-4526-A89C-C1A79A298D38}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{B0B49034-7948-4F5B-96D1-0C287EE29623}"
 EndProject
