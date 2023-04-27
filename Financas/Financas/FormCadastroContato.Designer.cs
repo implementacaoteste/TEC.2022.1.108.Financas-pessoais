@@ -141,7 +141,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(637, 76);
+            this.label1.Size = new System.Drawing.Size(621, 76);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de contato";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,9 +149,9 @@
             // buttonCancelarCadastroContato
             // 
             this.buttonCancelarCadastroContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastroContato.Location = new System.Drawing.Point(462, 352);
+            this.buttonCancelarCadastroContato.Location = new System.Drawing.Point(473, 352);
             this.buttonCancelarCadastroContato.Name = "buttonCancelarCadastroContato";
-            this.buttonCancelarCadastroContato.Size = new System.Drawing.Size(106, 36);
+            this.buttonCancelarCadastroContato.Size = new System.Drawing.Size(95, 36);
             this.buttonCancelarCadastroContato.TabIndex = 10;
             this.buttonCancelarCadastroContato.Text = "Cancelar";
             this.buttonCancelarCadastroContato.UseVisualStyleBackColor = true;
@@ -187,7 +187,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(637, 408);
+            this.ClientSize = new System.Drawing.Size(621, 408);
             this.Controls.Add(this.ativoCheckBox);
             this.Controls.Add(this.buttonSalvarCadastroContato);
             this.Controls.Add(this.buttonCancelarCadastroContato);
