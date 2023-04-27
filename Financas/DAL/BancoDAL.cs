@@ -219,5 +219,10 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public object ValidarMovimentacaoBanco(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
