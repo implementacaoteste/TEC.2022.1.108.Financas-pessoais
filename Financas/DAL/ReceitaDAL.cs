@@ -261,7 +261,7 @@ namespace DAL
                         receita = new Receita();
                         receita.Id = Convert.ToInt32(rd["Id"]);
                         receita.Valor = (double)rd["Valor"];
-                        receita.Descricao = rd["Descricao"].ToString();
+                        receita.Descricao = rd["DescricaoReceita"].ToString();
                         receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
                         receita.Contato = rd["Contato"].ToString();
                         receita.FormaPagamento = rd["FormaPagamento"].ToString();

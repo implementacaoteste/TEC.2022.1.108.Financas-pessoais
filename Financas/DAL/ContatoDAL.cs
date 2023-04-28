@@ -343,7 +343,7 @@ namespace DAL
             }
         }
 
-        public object ValidarMovinteçãoContato(int id)
+        public Contato ValidarMovinteçãoContato(int id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             Contato contato = new Contato();
@@ -351,16 +351,16 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT TOP 1 Banco.Id, Banco.Nome, Banco.Poupanca, Banco.Ativo FROM Banco 
-                                    LEFT JOIN Despesas ON Banco.Id = Despesas.IdBanco
-                                    LEFT JOIN Receita ON Banco.Id = Receita.IdBanco
-                                    LEFT JOIN ContasPagar ON Banco.Id = ContasPagar.IdBanco 
-                                    LEFT JOIN ContasReceber ON Banco.Id = ContasReceber.IdBanco
-                                    WHERE Banco.Id = @Id
-                                    AND (Despesas.IdBanco IS NOT NULL
-                                    OR Receita.IdBanco IS NOT NULL
-                                    OR ContasPagar.IdBanco IS NOT NULL
-                                    OR ContasReceber.IdBanco IS NOT NULL)";
+                cmd.CommandText = @"SELECT TOP 1 Contato.Id, Contato.Nome, Contato.Endereco, Contato.Numero, Contato.Descricao,Contato.Ativo FROM Contato
+                                    LEFT JOIN Despesas ON Contato.Id = Despesas.IdContato
+                                    LEFT JOIN Receita ON Contato.Id = Receita.IdContato
+                                    LEFT JOIN ContasPagar ON Contato.Id = ContasPagar.IdContato
+                                    LEFT JOIN ContasReceber ON Contato.Id = ContasReceber.IdContato
+                                    WHERE Contato.Id = @Id
+                                    AND (Despesas.IdContato IS NOT NULL
+                                    OR Receita.IdContato IS NOT NULL
+                                    OR ContasPagar.IdContato IS NOT NULL
+                                    OR ContasReceber.IdContato IS NOT NULL)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", id);
