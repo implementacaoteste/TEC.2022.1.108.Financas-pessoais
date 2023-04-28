@@ -404,7 +404,7 @@ namespace DAL
                         receita.Descricao = rd["Descricao"].ToString();
                         receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
                         receita.Contato = rd["Contato"].ToString();
-                        receita.FormaPagamento = rd["Descricao"].ToString();
+                        receita.FormaPagamento = rd["FormaPagamento"].ToString();
                         receita.Banco = rd["Banco"].ToString();
                         receitas.Add(receita);
                     }
@@ -450,7 +450,7 @@ namespace DAL
                         receita.Descricao = rd["Descricao"].ToString();
                         receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
                         receita.Contato = rd["Contato"].ToString();
-                        receita.FormaPagamento = rd["Descricao"].ToString();
+                        receita.FormaPagamento = rd["FormaPagamento"].ToString();
                         receita.Banco = rd["Banco"].ToString();
                         receitas.Add(receita);
                     }
