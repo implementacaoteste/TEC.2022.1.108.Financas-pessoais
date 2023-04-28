@@ -16,6 +16,7 @@ namespace DAL
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
+               
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Contato(Nome, Endereco, Numero,Descricao,Ativo)
                                     VALUES(@Nome, @Endereco, @Numero,@Descricao,@Ativo)";
@@ -335,6 +336,54 @@ namespace DAL
             {
 
                 throw new Exception("Ocorreu um erro ao tentar buscar os contatos por descrição do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public object ValidarMovinteçãoContato(int id)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Contato contato = new Contato();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT TOP 1 Banco.Id, Banco.Nome, Banco.Poupanca, Banco.Ativo FROM Banco 
+                                    LEFT JOIN Despesas ON Banco.Id = Despesas.IdBanco
+                                    LEFT JOIN Receita ON Banco.Id = Receita.IdBanco
+                                    LEFT JOIN ContasPagar ON Banco.Id = ContasPagar.IdBanco 
+                                    LEFT JOIN ContasReceber ON Banco.Id = ContasReceber.IdBanco
+                                    WHERE Banco.Id = @Id
+                                    AND (Despesas.IdBanco IS NOT NULL
+                                    OR Receita.IdBanco IS NOT NULL
+                                    OR ContasPagar.IdBanco IS NOT NULL
+                                    OR ContasReceber.IdBanco IS NOT NULL)";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", _id);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        contato = new Contato();
+                        contato.Id = Convert.ToInt32(rd["ID"]);
+                        contato.Nome = rd["Nome"].ToString();
+                        contato.Endereco = rd["Endereco"].ToString();
+                        contato.Numero = rd["Numero"].ToString();
+                        contato.Descricao = rd["Descricao"].ToString();
+                        contato.Ativo = Convert.ToBoolean(rd["Ativo"]);
+                       
+                    }
+                }
+                return contato;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar os bancos do banco de dados", ex);
             }
             finally
             {
