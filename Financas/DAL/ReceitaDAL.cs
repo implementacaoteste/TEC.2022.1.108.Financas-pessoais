@@ -215,7 +215,7 @@ namespace DAL
                         receita = new Receita();
                         receita.Id = Convert.ToInt32(rd["Id"]);
                         receita.Valor = (double)rd["Valor"];
-                        receita.Descricao = rd["DescricaoReceita"].ToString();
+                        receita.Descricao = rd["Descricao"].ToString();
                         receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
                         receita.Contato = rd["Contato"].ToString();
                         receita.FormaPagamento = rd["FormaPagamento"].ToString();
@@ -263,9 +263,9 @@ namespace DAL
                         receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
                         receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        receita.Contato = rd["Nome"].ToString();
+                        receita.Contato = rd["Contato"].ToString();
                         receita.FormaPagamento = rd["FormaPagamento"].ToString();
-                        receita.Banco = rd["Nome"].ToString();
+                        receita.Banco = rd["Banco"].ToString();
                         receitas.Add(receita);
                     }
                 }
@@ -311,9 +311,9 @@ namespace DAL
                         receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
                         receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        receita.Contato = rd["Nome"].ToString();
-                        receita.FormaPagamento = rd["Descricao"].ToString();
-                        receita.Banco = rd["Nome"].ToString();
+                        receita.Contato = rd["Contato"].ToString();
+                        receita.FormaPagamento = rd["FormaPagamento"].ToString();
+                        receita.Banco = rd["Banco"].ToString();
                         receitas.Add(receita);
                     }
                 }
@@ -357,9 +357,9 @@ namespace DAL
                         receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
                         receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        receita.Contato = rd["Nome"].ToString();
-                        receita.FormaPagamento = rd["Descricao"].ToString();
-                        receita.Banco = rd["Nome"].ToString();
+                        receita.Contato = rd["Contato"].ToString();
+                        receita.FormaPagamento = rd["FormaPagamento"].ToString();
+                        receita.Banco = rd["Banco"].ToString();
                         receitas.Add(receita);
                     }
                 }
@@ -403,9 +403,9 @@ namespace DAL
                         receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
                         receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        receita.Contato = rd["Nome"].ToString();
+                        receita.Contato = rd["Contato"].ToString();
                         receita.FormaPagamento = rd["Descricao"].ToString();
-                        receita.Banco = rd["Nome"].ToString();
+                        receita.Banco = rd["Banco"].ToString();
                         receitas.Add(receita);
                     }
                 }
@@ -449,9 +449,9 @@ namespace DAL
                         receita.Valor = (double)rd["Valor"];
                         receita.Descricao = rd["Descricao"].ToString();
                         receita.DataEmissao = Convert.ToDateTime(rd["DataEmissao"]);
-                        receita.Contato = rd["Nome"].ToString();
+                        receita.Contato = rd["Contato"].ToString();
                         receita.FormaPagamento = rd["Descricao"].ToString();
-                        receita.Banco = rd["Nome"].ToString();
+                        receita.Banco = rd["Banco"].ToString();
                         receitas.Add(receita);
                     }
                 }
