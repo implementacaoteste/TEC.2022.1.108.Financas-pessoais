@@ -33,7 +33,7 @@ namespace Financas
                         break;
                     case 1:
                         bancoBindingSource.DataSource = new BancoBLL().BuscarPorNome(textBoxConsultarBanco.Text);
-                        break;                    
+                        break;
                     default:
                         break;
                 }
@@ -66,20 +66,28 @@ namespace Financas
 
         private void buttonExcluirBanco_Click(object sender, EventArgs e)
         {
-            if (bancoBindingSource.Count <= 0)
+            try
             {
-                MessageBox.Show("Não existe registro para ser excluído");
-                return;
+
+                if (bancoBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro para ser excluído");
+                    return;
+                }
+
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                int id = ((Banco)bancoBindingSource.Current).Id;
+                new BancoBLL().Excluir(id);
+                bancoBindingSource.RemoveCurrent();
+
+                MessageBox.Show("Registro excluído com sucesso!");
             }
-
-            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
-
-            int id = ((Banco)bancoBindingSource.Current).Id;
-            new BancoBLL().Excluir(id);
-            bancoBindingSource.RemoveCurrent();
-
-            MessageBox.Show("Registro excluído com sucesso!");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
@@ -94,7 +102,7 @@ namespace Financas
                 this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
                 this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
                 this.label1.BackColor = System.Drawing.SystemColors.Control;
-                this.label3.ForeColor = System.Drawing.SystemColors.ControlText;   
+                this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
                 this.label3.BackColor = System.Drawing.SystemColors.Control;
             }
             catch (Exception ex)

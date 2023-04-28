@@ -20,6 +20,11 @@ namespace BLL
         }
         public void Excluir(int _id)
         {
+            int id = new BancoDAL().ValidarMovimentacaoBanco(_id).Id;
+
+            if (id != 0)
+                throw new Exception("Registro não pode ser excluido porque existe histórico de movimentação");
+
             new BancoDAL().Excluir(_id);
         }
         public List<Banco> BuscarTodos()
