@@ -383,7 +383,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar os bancos do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar por contato do banco de dados", ex);
             }
             finally
             {
