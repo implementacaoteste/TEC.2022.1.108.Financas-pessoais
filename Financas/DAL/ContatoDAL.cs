@@ -363,7 +363,7 @@ namespace DAL
                                     OR ContasReceber.IdBanco IS NOT NULL)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Id", _id);
+                cmd.Parameters.AddWithValue("@Id", id);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
