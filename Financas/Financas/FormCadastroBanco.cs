@@ -19,6 +19,7 @@ namespace Financas
         {
             InitializeComponent();
             Id = id;
+         
         }
 
           private void buttonCancelarCadBanco_Click(object sender, EventArgs e)
