@@ -74,5 +74,10 @@ namespace Financas
                 buttonSalvarCadBanco_Click(null,null);
             }
         }
+
+        private void ativoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            ativoCheckBox.Checked = true;
+        }
     }
 }
