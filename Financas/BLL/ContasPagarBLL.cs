@@ -36,10 +36,16 @@ namespace BLL
         }
         public List<ContasPagar> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
         {
+            if (_periodoInicial > _periodoFinal)
+                throw new Exception("Data inicial não pode ser maior que a data final");
+
             return new ContasPagarDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
         }
         public List<ContasPagar> BuscarPagamento(DateTime _periodoInicial, DateTime _periodoFinal)
         {
+            if (_periodoInicial > _periodoFinal)
+                throw new Exception("Data inicial não pode ser maior que a data final");
+
             return new ContasPagarDAL().BuscarPagamento(_periodoInicial, _periodoFinal);
         }
         public List<ContasPagar> BuscarPorContato(string _contato)

@@ -56,6 +56,9 @@ namespace BLL
         }
         public List<Despesas> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
         {
+            if (_periodoInicial > _periodoFinal)
+                throw new Exception("Data inicial não pode ser maior que a data final");
+
             return new DespesasDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
         }
 
