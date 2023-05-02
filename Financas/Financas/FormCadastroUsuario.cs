@@ -15,17 +15,17 @@ namespace Financas
     public partial class FormCadastroUsuario : Form
     {
         public int Id;
-     
-        public FormCadastroUsuario(int id=0 )
+
+        public FormCadastroUsuario(int id = 0)
         {
             InitializeComponent();
             Id = id;
-          
+
         }
 
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
-          
+
             if (Id == 0)
                 usuarioBindingSource.AddNew();
             else
@@ -39,15 +39,22 @@ namespace Financas
 
         private void buttonSalvarCadastrodeUsuario_Click(object sender, EventArgs e)
         {
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-            usuarioBindingSource.EndEdit();
+            try
+            {
+                UsuarioBLL usuarioBLL = new UsuarioBLL();
+                usuarioBindingSource.EndEdit();
 
-            if (Id == 0)
-                usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current);
-            else 
-                usuarioBLL.Alterar((Usuario)usuarioBindingSource.Current);
-            MessageBox.Show("Registro salvo com sucesso");
-            Close();
+                if (Id == 0)
+                    usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current, textBoxConfirmarSenhaCadastroUsuario.Text);
+                else
+                    usuarioBLL.Alterar((Usuario)usuarioBindingSource.Current);
+                MessageBox.Show("Registro salvo com sucesso");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FormCadastroUsuario_Load_1(object sender, EventArgs e)
@@ -59,18 +66,18 @@ namespace Financas
 
                 usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
 
-  
+
         }
 
         private void FormCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
                 Close();
         }
 
         private void textBoxNomeCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
                 textBoxSenhaCadastroUsuario.Focus();
         }
 
@@ -94,9 +101,9 @@ namespace Financas
 
         private void textBoxRendaCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
         {
-            if( e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
 
-                    buttonSalvarCadastrodeUsuario_Click(null, null);
+                buttonSalvarCadastrodeUsuario_Click(null, null);
         }
     }
 }
