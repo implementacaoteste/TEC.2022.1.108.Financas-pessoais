@@ -57,20 +57,27 @@ namespace Financas
 
         private void buttonExcluirFormaPagamento_Click(object sender, EventArgs e)
         {
-            if (formaPagamentoBindingSource.Count <= 0)
+            try
             {
-                MessageBox.Show("Não existe registro para ser excluído");
-                return;
+                if (formaPagamentoBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro para ser excluído");
+                    return;
+                }
+
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                int id = ((FormaPagamento)formaPagamentoBindingSource.Current).Id;
+                new FormaPagamentoBLL().Excluir(id);
+                formaPagamentoBindingSource.RemoveCurrent();
+
+                MessageBox.Show("Registro excluído com sucesso!");
             }
-
-            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
-
-            int id = ((FormaPagamento)formaPagamentoBindingSource.Current).Id;
-            new FormaPagamentoBLL().Excluir(id);
-            formaPagamentoBindingSource.RemoveCurrent();
-
-            MessageBox.Show("Registro excluído com sucesso!");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void buttonAdicionarFormaPagamento_Click(object sender, EventArgs e)
         {
@@ -129,7 +136,7 @@ namespace Financas
         }
 
         private void FormConsultaFormaPagamento_Load(object sender, EventArgs e)
-        { 
+        {
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;

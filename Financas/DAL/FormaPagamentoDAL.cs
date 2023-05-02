@@ -198,5 +198,48 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public FormaPagamento ValidarMovinteçãoFormaPagamento(int id)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            FormaPagamento formaPagamento = new FormaPagamento();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT TOP 1 FormaPagamento.Id, FormaPagamento.Descricao FROM FormaPagamento
+                                    LEFT JOIN Despesas ON FormaPagamento.Id = Despesas.IdFormaPagamento
+                                    LEFT JOIN Receita ON FormaPagamento.Id = Receita.IdFormaPagamento
+                                    LEFT JOIN ContasPagar ON FormaPagamento.Id = ContasPagar.IdFormaPagamento
+                                    LEFT JOIN ContasReceber ON FormaPagamento.Id = ContasReceber.IdFormaPagamento
+                                    WHERE FormaPagamento.Id = @Id
+                                    AND (Despesas.IdFormaPagamento IS NOT NULL
+                                    OR Receita.IdFormaPagamento IS NOT NULL
+                                    OR ContasPagar.IdFormaPagamento IS NOT NULL
+                                    OR ContasReceber.IdFormaPagamento IS NOT NULL)";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", id);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        formaPagamento = new FormaPagamento();
+                        formaPagamento.Id = Convert.ToInt32(rd["Id"]);
+                        formaPagamento.Descricao = rd["Descricao"].ToString();
+                    }
+                }
+                return formaPagamento;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar por Forma de pagamento do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

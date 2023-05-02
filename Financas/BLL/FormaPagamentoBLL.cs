@@ -20,6 +20,10 @@ namespace BLL
         }
         public void Excluir(int _id)
         {
+            int id = new FormaPagamentoDAL().ValidarMovinteçãoFormaPagamento(_id).Id;
+            if (id != 0)
+                throw new Exception("Registro não pode ser excluido porque existe histórico de movimentação.");
+
             new FormaPagamentoDAL().Excluir(_id);
         }
         public List<FormaPagamento> BuscarTodos()
