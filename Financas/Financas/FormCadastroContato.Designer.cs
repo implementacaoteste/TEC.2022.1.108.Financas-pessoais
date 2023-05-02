@@ -181,6 +181,7 @@
             this.ativoCheckBox.TabIndex = 12;
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = false;
+            this.ativoCheckBox.CheckedChanged += new System.EventHandler(this.ativoCheckBox_CheckedChanged);
             // 
             // FormCadastroContato
             // 

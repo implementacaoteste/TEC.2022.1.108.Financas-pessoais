@@ -145,6 +145,7 @@ namespace DAL
                         if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
                             transaction.Rollback();
                         throw new Exception("Ocorreu erro ao tentar excluir uma  Conta a receber no banco de dados", ex);
+                        return;
                     }
 
                 }
