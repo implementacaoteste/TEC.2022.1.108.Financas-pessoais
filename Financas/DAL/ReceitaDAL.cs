@@ -97,6 +97,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = "UPDATE Receita SET Valor=@Valor, Descricao=@Descricao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Id", _receita.Id);
                 cmd.Parameters.AddWithValue("@Valor", _receita.Valor);
                 cmd.Parameters.AddWithValue("@Descricao", _receita.Descricao);
                 cmd.Connection = cn;

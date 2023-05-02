@@ -12,12 +12,13 @@ namespace BLL
             if (_usuario.Senha != _confirmacaoDeSenha)
                 throw new Exception("A senha e a confirmação da senha devem ser iguais.");
             if (_usuario.Senha.Length <= 3)
-                throw new Exception("A senha deve ter mais de 3 caracteres.");
+                throw new Exception("A senha deve possuir 3 ou mais caracteres.");
             if (_usuario.Nome.Length <= 2)
-                throw new Exception("O nome deve ter mais de 2 caracteres.");
+                throw new Exception("O nome deve possuir 2 ou mais caracteres.");
         }
-        public void Inserir(Usuario _usuario)
+        public void Inserir(Usuario _usuario, string _confirmacaoDeSenha)
         {
+            ValidarDados(_usuario, _confirmacaoDeSenha);
             new UsuarioDAL().Inserir(_usuario);
         }
         public void Alterar(Usuario _usuario)

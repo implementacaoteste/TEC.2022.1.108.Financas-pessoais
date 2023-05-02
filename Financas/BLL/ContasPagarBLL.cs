@@ -20,6 +20,8 @@ namespace BLL
         }
         public void Excluir(int _id)
         {
+            if (new ContasPagarDAL().BuscarPorId(_id).DataPagamento != null)
+                throw new Exception("Esta conta ja foi paga");
             new ContasPagarDAL().Excluir(_id);
         }
         public List<ContasPagar> BuscarTodos()
