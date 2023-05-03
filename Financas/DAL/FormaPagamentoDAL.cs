@@ -17,10 +17,11 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO FormaPagamento(Descricao)
-                                    VALUES(@Descricao)";
+                cmd.CommandText = @"INSERT INTO FormaPagamento(Descricao,IdUsuario)
+                                    VALUES(@Descricao,@IdUsuario)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Descricao", _formaPagamento.Descricao);
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -102,8 +103,9 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento";
+                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento WHERE FormaPagamento.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -136,10 +138,11 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento WHERE Id = @Id";
+                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento WHERE Id = @Id AND FormaPagamento.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -171,10 +174,11 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento WHERE Descricao LIKE @Descricao";
+                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento WHERE Descricao LIKE @Descricao AND FormaPagamento.Idusuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {

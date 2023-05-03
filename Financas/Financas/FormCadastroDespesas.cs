@@ -19,15 +19,22 @@ namespace Financas
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            DespesasBLL despesasBLL = new DespesasBLL();
-            despesasBindingSource.EndEdit();
+            try
+            {
+                DespesasBLL despesasBLL = new DespesasBLL();
+                despesasBindingSource.EndEdit();
 
-            if (Id == 0)
-                despesasBLL.Inserir((Despesas)despesasBindingSource.Current, contasPagar);
-            else
-                despesasBLL.Alterar((Despesas)despesasBindingSource.Current);
-            MessageBox.Show("Registro salvo com sucesso");
-            Close();
+                if (Id == 0)
+                    despesasBLL.Inserir((Despesas)despesasBindingSource.Current, contasPagar);
+                else
+                    despesasBLL.Alterar((Despesas)despesasBindingSource.Current);
+                MessageBox.Show("Registro salvo com sucesso");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
