@@ -390,7 +390,7 @@ namespace DAL
                                     WHERE Contato.Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Descricao", "%" + _contato + "%");
+                cmd.Parameters.AddWithValue("@Nome", "%" + _contato + "%");
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
