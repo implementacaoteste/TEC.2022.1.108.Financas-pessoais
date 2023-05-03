@@ -59,12 +59,22 @@ namespace Financas
 
         private void FormCadastroUsuario_Load_1(object sender, EventArgs e)
         {
-            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
-            if (Id == 0)
-                usuarioBindingSource.AddNew();
-            else
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
+                if (Id == 0)
+                {
+                    usuarioBindingSource.AddNew();
+                    ativoCheckBox.Checked = true;
+                }
+                else
 
-                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
+                    usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
 
         }
@@ -108,7 +118,7 @@ namespace Financas
 
         private void ativoCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            ativoCheckBox.Checked = true;
+
         }
     }
 }
