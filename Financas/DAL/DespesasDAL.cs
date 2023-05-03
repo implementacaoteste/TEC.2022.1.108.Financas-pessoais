@@ -346,7 +346,7 @@ namespace DAL
                                     INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
-                                    WHERE FormaPagamento.Descricao LIKE @Descricao AND Despesas.idusuario = @IdUsuario";
+                                    WHERE FormaPagamento.Descricao LIKE @Descricao AND Despesas.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _formaPagamento + "%");
@@ -440,7 +440,7 @@ namespace DAL
                                     INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
-                                    WHERE Despesas.DataEmissao BETWEEN @DataInicial AND @DataFinal AND Despesas.idUsuario = @IdUsuario";
+                                    WHERE Despesas.DataEmissao BETWEEN @DataInicial AND @DataFinal AND Despesas.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@DataInicial", _periodoInicial);
