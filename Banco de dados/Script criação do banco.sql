@@ -89,6 +89,7 @@ IF OBJECT_ID('Contato', 'U') IS NULL
 CREATE TABLE Contato
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
+	IdUsuario INT,
 	Nome VARCHAR(150),
 	Endereco VARCHAR(150),
 	Numero VARCHAR(11),
@@ -101,6 +102,7 @@ IF OBJECT_ID('FormaPagamento', 'U') IS NULL
 CREATE TABLE FormaPagamento
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
+	IdUsuario INT,
 	Descricao VARCHAR(250)
 )
 GO
@@ -109,6 +111,7 @@ IF OBJECT_ID('Banco', 'U') IS NULL
 CREATE TABLE Banco
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
+	IdUsuario INT,
 	Nome VARCHAR(150),
 	Saldo FLOAT,
 	Poupanca FLOAT,
@@ -163,6 +166,27 @@ GO
 IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('ContasReceber') AND name = 'FK_ContasReceber_Usuario')
 ALTER TABLE ContasReceber
 ADD CONSTRAINT FK_ContasReceber_Usuario
+FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Contato') AND name = 'FK_Contato_Usuario')
+ALTER TABLE Contato
+ADD CONSTRAINT FK_Contato_Usuario
+FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('Banco') AND name = 'FK_Banco_Usuario')
+ALTER TABLE Banco
+ADD CONSTRAINT FK_Banco_Usuario
+FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('FormaPagamento') AND name = 'FK_FormaPagamento_Usuario')
+ALTER TABLE FormaPagamento
+ADD CONSTRAINT FK_FormaPagamento_Usuario
 FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id)
 
 GO

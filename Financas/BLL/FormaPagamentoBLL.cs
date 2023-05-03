@@ -10,8 +10,14 @@ namespace BLL
 {
     public class FormaPagamentoBLL
     {
+        private void ValidarDados(FormaPagamento _formaPagamento)
+        {
+            if (_formaPagamento.Descricao == null || _formaPagamento.Descricao.Length <=2)
+                throw new Exception("A forma de pagamento deve possuir 2 ou mais caracteres.");
+        }
         public void Inserir(FormaPagamento _formaPagamento)
         {
+            ValidarDados(_formaPagamento);
             new FormaPagamentoDAL().Inserir(_formaPagamento);
         }
         public void Alterar(FormaPagamento _formaPagamento)
