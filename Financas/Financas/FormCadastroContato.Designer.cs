@@ -174,6 +174,7 @@
             this.ativoCheckBox.Checked = true;
             this.ativoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.contatoBindingSource, "Ativo", true));
+            this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.contatoBindingSource, "Ativo", true));
             this.ativoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ativoCheckBox.Location = new System.Drawing.Point(75, 329);
             this.ativoCheckBox.Name = "ativoCheckBox";

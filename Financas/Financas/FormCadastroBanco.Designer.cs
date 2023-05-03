@@ -131,6 +131,7 @@
             this.ativoCheckBox.Checked = true;
             this.ativoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bancoBindingSource, "Ativo", true));
+            this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bancoBindingSource, "Ativo", true));
             this.ativoCheckBox.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.ativoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ativoCheckBox.Location = new System.Drawing.Point(125, 305);

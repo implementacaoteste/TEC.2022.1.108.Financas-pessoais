@@ -38,7 +38,7 @@ namespace Financas
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex. Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -50,12 +50,22 @@ namespace Financas
 
         private void FormCadastroContato_Load(object sender, EventArgs e)
         {
-            if (Id == 0)
-                contatoBindingSource.AddNew();
-            else
-                contatoBindingSource.DataSource = new ContatoBLL().BuscarPorId(Id);
-            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            try
+            {
+                if (Id == 0)
+                {
+                    contatoBindingSource.AddNew();
+                    ativoCheckBox.Checked = true;
+                }
+                else
+                    contatoBindingSource.DataSource = new ContatoBLL().BuscarPorId(Id);
+                this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
+                this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FormCadastroContato_KeyDown(object sender, KeyEventArgs e)
@@ -92,7 +102,7 @@ namespace Financas
 
         private void ativoCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            ativoCheckBox.Checked = true;
+
         }
     }
 }

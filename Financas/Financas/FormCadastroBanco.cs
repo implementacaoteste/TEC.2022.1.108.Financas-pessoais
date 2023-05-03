@@ -44,7 +44,10 @@ namespace Financas
         private void FormCadastroBanco_Load(object sender, EventArgs e)
         {
             if (Id == 0)
+            {
                 bancoBindingSource.AddNew();
+                ativoCheckBox.Checked = true;
+            }
             else
                 bancoBindingSource.DataSource = new BancoBLL().BuscarPorId(Id);
 
@@ -78,7 +81,7 @@ namespace Financas
 
         private void ativoCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            ativoCheckBox.Checked = true;
+           
         }
     }
 }
