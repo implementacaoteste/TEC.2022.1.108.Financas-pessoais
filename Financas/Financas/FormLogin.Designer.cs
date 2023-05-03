@@ -146,7 +146,7 @@ namespace Financas
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1129, 70);
             this.label1.TabIndex = 8;
-            this.label1.Text = "LOGIN";
+            this.label1.Text = "Controle finanças pessoais";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.UseCompatibleTextRendering = true;
             // 
