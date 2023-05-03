@@ -29,14 +29,21 @@ namespace Financas
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            FormaPagamentoBLL formaPagamentoBLL = new FormaPagamentoBLL();
-            formaPagamentoBindingSource.EndEdit();
-            if (Id == 0)
-                formaPagamentoBLL.Inserir((FormaPagamento)formaPagamentoBindingSource.Current);
-            else 
-                formaPagamentoBLL.Alterar((FormaPagamento)formaPagamentoBindingSource.Current);
-            MessageBox.Show("Registro salvo com sucesso");
-            Close();
+            try
+            {
+                FormaPagamentoBLL formaPagamentoBLL = new FormaPagamentoBLL();
+                formaPagamentoBindingSource.EndEdit();
+                if (Id == 0)
+                    formaPagamentoBLL.Inserir((FormaPagamento)formaPagamentoBindingSource.Current);
+                else
+                    formaPagamentoBLL.Alterar((FormaPagamento)formaPagamentoBindingSource.Current);
+                MessageBox.Show("Registro salvo com sucesso");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+            }
         }
 
         private void FormFormaPagamento_Load(object sender, EventArgs e)
@@ -52,8 +59,8 @@ namespace Financas
 
         private void textBoxDescricao_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
-            buttonSalvar_Click(null, null);
+            if (e.KeyCode == Keys.Enter)
+                buttonSalvar_Click(null, null);
         }
 
         private void FormCadastroFormaPagamento_KeyDown(object sender, KeyEventArgs e)
