@@ -13,7 +13,7 @@ namespace BLL
         private void ValidarDados(FormaPagamento _formaPagamento)
         {
             if (_formaPagamento.Descricao == null || _formaPagamento.Descricao.Length <=2)
-                throw new Exception("A forma de pagamento deve possuir 2 ou mais caracteres.");
+                throw new Exception("A forma de pagamento deve possuir 3 ou mais caracteres.");
         }
         public void Inserir(FormaPagamento _formaPagamento)
         {
