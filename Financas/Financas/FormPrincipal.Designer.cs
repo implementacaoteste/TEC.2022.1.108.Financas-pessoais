@@ -204,7 +204,7 @@
             this.contasAPagarToolStripMenuItem.Name = "contasAPagarToolStripMenuItem";
             this.contasAPagarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.contasAPagarToolStripMenuItem.Size = new System.Drawing.Size(290, 26);
-            this.contasAPagarToolStripMenuItem.Text = "Contas a Pagar";
+            this.contasAPagarToolStripMenuItem.Text = "Contas a pagar";
             this.contasAPagarToolStripMenuItem.Click += new System.EventHandler(this.contasAPagarToolStripMenuItem_Click);
             // 
             // contasAReceberToolStripMenuItem
