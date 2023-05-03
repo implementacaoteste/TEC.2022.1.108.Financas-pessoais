@@ -189,11 +189,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Senha, Renda, Ativo FROM Usuario WHERE NomeUsuario = @NomeUsuario AND Usuario.IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Senha, Renda, Ativo FROM Usuario WHERE NomeUsuario = @NomeUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@NomeUsuario", _nomeUsuario);
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -228,7 +227,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome,Renda, Senha , NomeUsuario, Ativo FROM Usuario WHERE Id = @Id AND Usuario.IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Nome,Renda, Senha , NomeUsuario, Ativo FROM Usuario WHERE Id = @Id AND IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
