@@ -37,6 +37,7 @@ namespace Financas
 
         private void FormCadastroReceita_Load(object sender, EventArgs e)
         {
+            panel1.BackColor = Color.FromArgb(100,0,0,0);
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             if (Id == 0)

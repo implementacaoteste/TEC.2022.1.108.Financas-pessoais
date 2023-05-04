@@ -59,6 +59,7 @@ namespace Financas
 
         private void FormCadastroUsuario_Load_1(object sender, EventArgs e)
         {
+            panel1.BackColor = Color.FromArgb(100,0,0,0);
             try
             {
                 this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");

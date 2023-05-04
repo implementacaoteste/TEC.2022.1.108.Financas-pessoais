@@ -85,6 +85,7 @@ namespace Financas
 
         private void FormCadastroContasReceber_Load(object sender, EventArgs e)
         {
+            panel1.BackColor = Color.FromArgb(100,0,0,0);
             if (Id == 0)
             {
                 contasReceberBindingSource.AddNew();
@@ -159,6 +160,11 @@ namespace Financas
 
 
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -48,6 +48,7 @@ namespace Financas
 
         private void FormFormaPagamento_Load(object sender, EventArgs e)
         {
+            panel1.BackColor = Color.FromArgb(100,0,0,0);
             if (Id == 0)
                 formaPagamentoBindingSource.AddNew();
             else

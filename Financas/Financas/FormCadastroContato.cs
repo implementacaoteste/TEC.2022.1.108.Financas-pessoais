@@ -50,6 +50,7 @@ namespace Financas
 
         private void FormCadastroContato_Load(object sender, EventArgs e)
         {
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
             try
             {
                 if (Id == 0)

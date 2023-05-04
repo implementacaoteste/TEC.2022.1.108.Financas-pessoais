@@ -35,8 +35,10 @@
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             descricaoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // descricaoLabel
@@ -44,7 +46,7 @@
             descricaoLabel.AutoSize = true;
             descricaoLabel.BackColor = System.Drawing.SystemColors.Control;
             descricaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(36, 169);
+            descricaoLabel.Location = new System.Drawing.Point(22, 28);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
             descricaoLabel.TabIndex = 2;
@@ -70,7 +72,7 @@
             // textBoxDescricao
             // 
             this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formaPagamentoBindingSource, "Descricao", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(36, 192);
+            this.textBoxDescricao.Location = new System.Drawing.Point(17, 51);
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(445, 22);
             this.textBoxDescricao.TabIndex = 3;
@@ -79,7 +81,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.Location = new System.Drawing.Point(391, 329);
+            this.buttonCancelar.Location = new System.Drawing.Point(355, 188);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(90, 36);
             this.buttonCancelar.TabIndex = 4;
@@ -90,7 +92,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(301, 329);
+            this.buttonSalvar.Location = new System.Drawing.Point(265, 188);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(84, 36);
             this.buttonSalvar.TabIndex = 5;
@@ -98,16 +100,24 @@
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBoxDescricao);
+            this.panel1.Controls.Add(this.buttonSalvar);
+            this.panel1.Controls.Add(descricaoLabel);
+            this.panel1.Controls.Add(this.buttonCancelar);
+            this.panel1.Location = new System.Drawing.Point(12, 107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(485, 246);
+            this.panel1.TabIndex = 6;
+            // 
             // FormCadastroFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(529, 389);
-            this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(descricaoLabel);
-            this.Controls.Add(this.textBoxDescricao);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -122,8 +132,9 @@
             this.Load += new System.EventHandler(this.FormFormaPagamento_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroFormaPagamento_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -134,5 +145,6 @@
         private System.Windows.Forms.TextBox textBoxDescricao;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button buttonSalvar;
+        private System.Windows.Forms.Panel panel1;
     }
 }
