@@ -103,9 +103,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento WHERE FormaPagamento.IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Descricao, IdUsuario FROM FormaPagamento";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -138,11 +137,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento WHERE Id = @Id AND FormaPagamento.IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Descricao, IdUsuario FROM FormaPagamento WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -174,11 +172,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento WHERE Descricao LIKE @Descricao AND FormaPagamento.Idusuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Descricao, IdUsuario FROM FormaPagamento WHERE Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {

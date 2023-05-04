@@ -297,12 +297,6 @@ GO
 --IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Dag'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Dagorlina', 'Dag', '123456', 1)
 --GO
 
-INSERT INTO Banco (Nome, Poupanca, Ativo) VALUES('Inter', 50.5, 1)
-INSERT INTO Banco (Nome, Poupanca, Ativo) VALUES('Nubank', 30.0, 1)
-INSERT INTO Banco (Nome, Poupanca, Ativo) VALUES('Caixa', 10.5, 1)
-INSERT INTO Banco (Nome, Poupanca, Ativo) VALUES('Banco do Brasil', 20.0, 1)
-GO
-
 INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Ana', 'Ana', 123456, 1400, 1)
 INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Lucas', 'Lucas', 123456, 650, 1)
 INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Maria', 'Maria', 123456, 800, 1)
@@ -310,20 +304,26 @@ INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('João', 'João'
 INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Pedro', 'Pedro', 123456, 2000, 1)
 GO
 
-INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Gean', 'rua C', '63992929292', 'vizinho', 1)
-INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Alice', 'rua X', '1181818181', 'colega do serviço', 1)
-INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Bruno', 'rua Z', '63991919191', 'irmão', 1)
-INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Bruna', 'rua Jardim', '63992747474', 'colega de escola', 1)
-INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo)VALUES('Marcelo', 'rua N', '63991121212', 'vizinha da mãe', 1)
+INSERT INTO Banco (Nome, Poupanca, Ativo, IdUsuario) VALUES('Inter', 50.5, 1, 1)
+INSERT INTO Banco (Nome, Poupanca, Ativo, IdUsuario) VALUES('Nubank', 30.0, 1, 1)
+INSERT INTO Banco (Nome, Poupanca, Ativo, IdUsuario) VALUES('Caixa', 10.5, 1, 1)
+INSERT INTO Banco (Nome, Poupanca, Ativo, IdUsuario) VALUES('Banco do Brasil', 20.0, 1, 1)
 GO
 
---INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,1)
---INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,2)
---INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,5)
---INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,2)
---INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,1)
---INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,5)
---GO
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo, IdUsuario)VALUES('Gean', 'rua C', '63992929292', 'vizinho', 1, 1)
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo, IdUsuario)VALUES('Alice', 'rua X', '1181818181', 'colega do serviço', 1, 1)
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo, IdUsuario)VALUES('Bruno', 'rua Z', '63991919191', 'irmão', 1, 1)
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo, IdUsuario)VALUES('Bruna', 'rua Jardim', '63992747474', 'colega de escola', 1, 1)
+INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo, IdUsuario)VALUES('Marcelo', 'rua N', '63991121212', 'vizinha da mãe', 1, 1)
+GO
+
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Dinheiro',1)
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Pix',1)
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Cartão',1)
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Credito',1)
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Tranferência',1)
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Boleto',1)
+GO
 
 --INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)(SELECT 1, Id FROM Permissao)
 --GO

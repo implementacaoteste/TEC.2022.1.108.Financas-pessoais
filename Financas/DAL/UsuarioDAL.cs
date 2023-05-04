@@ -110,9 +110,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Renda, Senha , Ativo FROM Usuario WHERE Usuario.IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Renda, Senha , Ativo FROM Usuario";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -149,11 +148,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Senha, Renda, NomeUsuario, Ativo FROM Usuario WHERE Nome LIKE @Nome AND Usuario.IdUsuario = @IdUsuario ";
+                cmd.CommandText = "SELECT Id, Nome, Senha, Renda, NomeUsuario, Ativo FROM Usuario WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -227,11 +225,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome,Renda, Senha , NomeUsuario, Ativo FROM Usuario WHERE Id = @Id AND IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Nome,Renda, Senha , NomeUsuario, Ativo FROM Usuario WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
