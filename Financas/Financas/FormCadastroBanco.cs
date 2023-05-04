@@ -15,20 +15,20 @@ namespace Financas
     public partial class FormCadastroBanco : Form
     {
         public int Id;
-        public FormCadastroBanco(int id=0)
+        public FormCadastroBanco(int id = 0)
         {
             InitializeComponent();
             Id = id;
-         
+
         }
 
-          private void buttonCancelarCadBanco_Click(object sender, EventArgs e)
+        private void buttonCancelarCadBanco_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         private void buttonSalvarCadBanco_Click(object sender, EventArgs e)
-        {          
+        {
             BancoBLL BancoBLL = new BancoBLL();
             bancoBindingSource.EndEdit();
 
@@ -43,7 +43,7 @@ namespace Financas
 
         private void FormCadastroBanco_Load(object sender, EventArgs e)
         {
-            panel1.BackColor = Color.FromArgb(100,0,0,0);
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
 
             if (Id == 0)
             {
@@ -77,13 +77,10 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-                buttonSalvarCadBanco_Click(null,null);
+                buttonSalvarCadBanco_Click(null, null);
             }
         }
 
-        private void ativoCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
+
     }
 }

@@ -50,9 +50,9 @@
             nomeLabel.AutoSize = true;
             nomeLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
             nomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomeLabel.Location = new System.Drawing.Point(89, 33);
+            nomeLabel.Location = new System.Drawing.Point(61, 20);
             nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(58, 20);
+            nomeLabel.Size = new System.Drawing.Size(49, 17);
             nomeLabel.TabIndex = 1;
             nomeLabel.Text = "Nome:";
             // 
@@ -61,9 +61,9 @@
             poupancaLabel.AutoSize = true;
             poupancaLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
             poupancaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            poupancaLabel.Location = new System.Drawing.Point(90, 126);
+            poupancaLabel.Location = new System.Drawing.Point(62, 113);
             poupancaLabel.Name = "poupancaLabel";
-            poupancaLabel.Size = new System.Drawing.Size(88, 20);
+            poupancaLabel.Size = new System.Drawing.Size(76, 17);
             poupancaLabel.TabIndex = 5;
             poupancaLabel.Text = "Poupança:";
             // 
@@ -83,10 +83,10 @@
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bancoBindingSource, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(90, 55);
+            this.nomeTextBox.Location = new System.Drawing.Point(62, 42);
             this.nomeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(270, 22);
+            this.nomeTextBox.Size = new System.Drawing.Size(270, 19);
             this.nomeTextBox.TabIndex = 2;
             this.nomeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
             // 
@@ -97,17 +97,17 @@
             // poupancaTextBox
             // 
             this.poupancaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bancoBindingSource, "Poupanca", true));
-            this.poupancaTextBox.Location = new System.Drawing.Point(90, 148);
+            this.poupancaTextBox.Location = new System.Drawing.Point(62, 135);
             this.poupancaTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.poupancaTextBox.Name = "poupancaTextBox";
-            this.poupancaTextBox.Size = new System.Drawing.Size(270, 22);
+            this.poupancaTextBox.Size = new System.Drawing.Size(270, 19);
             this.poupancaTextBox.TabIndex = 6;
             this.poupancaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.poupancaTextBox_KeyDown);
             // 
             // buttonSalvarCadBanco
             // 
             this.buttonSalvarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarCadBanco.Location = new System.Drawing.Point(269, 233);
+            this.buttonSalvarCadBanco.Location = new System.Drawing.Point(241, 220);
             this.buttonSalvarCadBanco.Name = "buttonSalvarCadBanco";
             this.buttonSalvarCadBanco.Size = new System.Drawing.Size(84, 36);
             this.buttonSalvarCadBanco.TabIndex = 7;
@@ -118,7 +118,7 @@
             // buttonCancelarCadBanco
             // 
             this.buttonCancelarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadBanco.Location = new System.Drawing.Point(359, 233);
+            this.buttonCancelarCadBanco.Location = new System.Drawing.Point(331, 220);
             this.buttonCancelarCadBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadBanco.Name = "buttonCancelarCadBanco";
             this.buttonCancelarCadBanco.Size = new System.Drawing.Size(90, 36);
@@ -136,13 +136,13 @@
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bancoBindingSource, "Ativo", true));
             this.ativoCheckBox.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.ativoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ativoCheckBox.Location = new System.Drawing.Point(93, 209);
+            this.ativoCheckBox.Location = new System.Drawing.Point(65, 196);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(104, 24);
             this.ativoCheckBox.TabIndex = 10;
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = false;
-            this.ativoCheckBox.CheckedChanged += new System.EventHandler(this.ativoCheckBox_CheckedChanged);
+           
             // 
             // panel1
             // 
@@ -157,10 +157,11 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(476, 294);
             this.panel1.TabIndex = 11;
+            
             // 
             // FormCadastroBanco
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
