@@ -109,7 +109,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Id = @Id";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo, IdUsuario FROM Contato WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -150,7 +150,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo, IdUsuario FROM Contato";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -189,7 +189,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato";
+                cmd.CommandText = @"SELECT Id, Nome, Endereco, Numero, Descricao, Ativo, IdUsuario FROM Contato
+                                    WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
@@ -229,7 +230,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato";
+                cmd.CommandText = @"SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato
+                                    WHERE Endereco LIKE @Endereco";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Endereco", "%" + _endereco + "%");
                 cn.Open();
@@ -269,7 +271,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Numero LIKE @Numero";
+                cmd.CommandText = @"SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Numero LIKE @Numero
+                                    WHERE Numero LIKE @Numero";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Numero", "%" + _numero + "%");
@@ -310,7 +313,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Descricao LIKE @Descricao";
+                cmd.CommandText = @"SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato 
+                                    WHERE Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
