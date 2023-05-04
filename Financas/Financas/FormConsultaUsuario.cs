@@ -52,20 +52,27 @@ namespace Financas
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
-            if (usuarioBindingSource.Count <= 0)
+            try
             {
-                MessageBox.Show("Não existe registro para ser excluído");
-                return;
+                if (usuarioBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro para ser excluído");
+                    return;
+                }
+
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                int id = ((Usuario)usuarioBindingSource.Current).Id;
+                new UsuarioBLL().Excluir(id);
+                usuarioBindingSource.RemoveCurrent();
+
+                MessageBox.Show("Registro excluído com sucesso!");
             }
-
-            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
-
-            int id = ((Usuario)usuarioBindingSource.Current).Id;
-            new UsuarioBLL().Excluir(id);
-            usuarioBindingSource.RemoveCurrent();
-
-            MessageBox.Show("Registro excluído com sucesso!");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
@@ -75,7 +82,7 @@ namespace Financas
 
         private void FormConsultaUsuario_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
                 Close();
         }
 
