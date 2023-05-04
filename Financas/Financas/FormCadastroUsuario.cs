@@ -53,6 +53,9 @@ namespace Financas
             }
             catch (Exception ex)
             {
+
+
+                //
                 MessageBox.Show(ex.Message);
             }
         }
