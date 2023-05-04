@@ -81,7 +81,7 @@ namespace Financas
             this.labelUsuarioLogin.AutoSize = true;
             this.labelUsuarioLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsuarioLogin.ForeColor = System.Drawing.Color.Black;
-            this.labelUsuarioLogin.Location = new System.Drawing.Point(301, 297);
+            this.labelUsuarioLogin.Location = new System.Drawing.Point(287, 289);
             this.labelUsuarioLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUsuarioLogin.Name = "labelUsuarioLogin";
             this.labelUsuarioLogin.Size = new System.Drawing.Size(122, 18);
@@ -92,7 +92,7 @@ namespace Financas
             // 
             this.labelSenhaLogin.AutoSize = true;
             this.labelSenhaLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSenhaLogin.Location = new System.Drawing.Point(363, 373);
+            this.labelSenhaLogin.Location = new System.Drawing.Point(354, 369);
             this.labelSenhaLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSenhaLogin.Name = "labelSenhaLogin";
             this.labelSenhaLogin.Size = new System.Drawing.Size(60, 18);
@@ -145,7 +145,7 @@ namespace Financas
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1129, 100);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Controle finanças pessoais";
+            this.label1.Text = "CONTROLE FINANÇAS PESSOAIS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.UseCompatibleTextRendering = true;
             // 
