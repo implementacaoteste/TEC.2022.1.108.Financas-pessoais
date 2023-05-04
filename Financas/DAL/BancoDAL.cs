@@ -109,14 +109,12 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo FROM Banco
+                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo, Banco.IdUsuario FROM Banco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
-                                    WHERE Id = @Id AND Banco.IdUsuario = @IdUsuario";
+                                    WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
-
                 cmd.Parameters.AddWithValue("@Id", _id);
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {

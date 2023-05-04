@@ -109,11 +109,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Id = @Id AND Contato.IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -151,9 +150,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Contato.IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -191,11 +189,9 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Nome LIKE @Nome AND Contato.IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato";
                 cmd.CommandType = System.Data.CommandType.Text;
-
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -233,11 +229,9 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Endereco LIKE @Endereco AND Contato.IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato";
                 cmd.CommandType = System.Data.CommandType.Text;
-
                 cmd.Parameters.AddWithValue("@Endereco", "%" + _endereco + "%");
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -275,11 +269,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Numero LIKE @Numero AND Contato.IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Numero LIKE @Numero";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Numero", "%" + _numero + "%");
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -317,11 +310,10 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Descricao LIKE @Descricao AND Contato.IdUsuario = @IdUsuario";
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo FROM Contato WHERE Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
-                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
