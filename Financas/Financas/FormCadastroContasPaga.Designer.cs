@@ -164,7 +164,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(508, 63);
+            this.label1.Size = new System.Drawing.Size(627, 63);
             this.label1.TabIndex = 5;
             this.label1.Text = "Cadastro de contas a pagar";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -287,9 +287,9 @@
             this.panel1.Controls.Add(bancoLabel);
             this.panel1.Controls.Add(this.buttonBuscarContatoContasPagar);
             this.panel1.Controls.Add(this.bancoTextBox);
-            this.panel1.Location = new System.Drawing.Point(31, 94);
+            this.panel1.Location = new System.Drawing.Point(65, 78);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(465, 288);
+            this.panel1.Size = new System.Drawing.Size(494, 288);
             this.panel1.TabIndex = 18;
             // 
             // FormCadastroContasPaga
@@ -297,7 +297,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(508, 451);
+            this.ClientSize = new System.Drawing.Size(627, 389);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonSalvarCadastroContasPagar);
             this.Controls.Add(this.buttonCancelarCadastroContasPagar);
