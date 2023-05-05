@@ -68,7 +68,7 @@ namespace Financas
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(312, 29);
             this.textBoxUsuario.TabIndex = 2;
-            this.textBoxUsuario.Text = "ana";
+            this.textBoxUsuario.Text = "na";
             // 
             // textBoxSenhaLogin
             // 
@@ -79,7 +79,6 @@ namespace Financas
             this.textBoxSenhaLogin.PasswordChar = '*';
             this.textBoxSenhaLogin.Size = new System.Drawing.Size(312, 29);
             this.textBoxSenhaLogin.TabIndex = 4;
-            this.textBoxSenhaLogin.Text = "123456";
             // 
             // labelUsuarioLogin
             // 
