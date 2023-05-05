@@ -268,7 +268,7 @@
             this.panel1.Controls.Add(this.buttonBuscarContatoDespesas);
             this.panel1.Location = new System.Drawing.Point(32, 91);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(670, 299);
+            this.panel1.Size = new System.Drawing.Size(670, 353);
             this.panel1.TabIndex = 18;
             // 
             // FormCadastroDespesas
