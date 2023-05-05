@@ -73,6 +73,8 @@ namespace DAL
                         if (_contasReceber != null)
                         {
                             _contasReceber.DataPagamento = _receita.DataEmissao;
+                            _contasReceber.IdBanco = _receita.IdBanco;
+                            _contasReceber.IdFormaPagamento = _receita.IdFormaPagamento;
                             new ContasReceberDAL().Alterar(_contasReceber, transaction);
                         }
                         cmd.ExecuteNonQuery();

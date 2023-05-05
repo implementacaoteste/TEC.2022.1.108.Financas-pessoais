@@ -68,6 +68,12 @@ namespace Financas
                 ((Despesas)despesasBindingSource.Current).FormaPagamento = contasPagar.FormaPagamento;
                 formaPagamentoTextBox.Text = contasPagar.FormaPagamento;
             }
+
+            if (contasPagar != null)
+            {
+                buttonBuscarContatoDespesas.Visible = false;
+                this.buttonBuscarContatoDespesas.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            }
         }
 
         private void buttonBuscarContatoDespesas_Click(object sender, EventArgs e)

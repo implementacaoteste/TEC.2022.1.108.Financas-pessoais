@@ -14,6 +14,8 @@ namespace BLL
         {
             if (_contasPagar != null && _contasPagar.DataPagamento != null && _contasPagar.DataPagamento.Value.Year > 2000)
                 throw new Exception("Este registro já foi pago!");
+            
+            ValidarSaldo(_despesas.Valor, _despesas.IdBanco);
 
             new DespesasDAL().Inserir(_despesas, _contasPagar);
         }
@@ -62,9 +64,9 @@ namespace BLL
             return new DespesasDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
         }
 
-        public void ValidarSaldo(double _valor, int _id)
+        public void ValidarSaldo(double _valor, int _idBanco)
         {
-            Banco banco = new BancoDAL().BuscarPorId(_id);
+            Banco banco = new BancoDAL().BuscarPorId(_idBanco);
 
             if (!banco.PermitirSaldoNegativo && banco.Saldo < _valor)
                 throw new Exception("Este banco não possui saldo suficiente.");

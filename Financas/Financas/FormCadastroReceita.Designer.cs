@@ -186,6 +186,7 @@
             this.contatoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "Contato", true));
             this.contatoTextBox.Location = new System.Drawing.Point(342, 41);
             this.contatoTextBox.Name = "contatoTextBox";
+            this.contatoTextBox.ReadOnly = true;
             this.contatoTextBox.Size = new System.Drawing.Size(200, 22);
             this.contatoTextBox.TabIndex = 4;
             // 
@@ -194,6 +195,7 @@
             this.bancoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "Banco", true));
             this.bancoTextBox.Location = new System.Drawing.Point(14, 129);
             this.bancoTextBox.Name = "bancoTextBox";
+            this.bancoTextBox.ReadOnly = true;
             this.bancoTextBox.Size = new System.Drawing.Size(159, 22);
             this.bancoTextBox.TabIndex = 7;
             // 
@@ -202,6 +204,7 @@
             this.formaPagamentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "FormaPagamento", true));
             this.formaPagamentoTextBox.Location = new System.Drawing.Point(339, 129);
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
+            this.formaPagamentoTextBox.ReadOnly = true;
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(204, 22);
             this.formaPagamentoTextBox.TabIndex = 10;
             // 

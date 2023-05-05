@@ -61,6 +61,11 @@ namespace Financas
                 ((Receita)receitaBindingSource.Current).FormaPagamento = contasReceber.FormaPagamento;
                 formaPagamentoTextBox.Text = contasReceber.FormaPagamento;
             }
+            if (contasReceber != null)
+            {
+                buttonBuscarContatoReceita.Visible = false;
+                this.buttonBuscarContatoReceita.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            }
         }
 
         private void buttonBuscarContatoReceita_Click(object sender, EventArgs e)

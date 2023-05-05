@@ -191,12 +191,14 @@
             this.contatoTextBox.Location = new System.Drawing.Point(335, 46);
             this.contatoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.contatoTextBox.Name = "contatoTextBox";
+            this.contatoTextBox.ReadOnly = true;
             this.contatoTextBox.Size = new System.Drawing.Size(197, 22);
             this.contatoTextBox.TabIndex = 4;
             // 
             // buttonBuscarContatoDespesas
             // 
             this.buttonBuscarContatoDespesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarContatoDespesas.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonBuscarContatoDespesas.Location = new System.Drawing.Point(539, 37);
             this.buttonBuscarContatoDespesas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarContatoDespesas.Name = "buttonBuscarContatoDespesas";
@@ -212,6 +214,7 @@
             this.bancoTextBox.Location = new System.Drawing.Point(12, 135);
             this.bancoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bancoTextBox.Name = "bancoTextBox";
+            this.bancoTextBox.ReadOnly = true;
             this.bancoTextBox.Size = new System.Drawing.Size(153, 22);
             this.bancoTextBox.TabIndex = 7;
             // 
@@ -233,6 +236,7 @@
             this.formaPagamentoTextBox.Location = new System.Drawing.Point(335, 142);
             this.formaPagamentoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
+            this.formaPagamentoTextBox.ReadOnly = true;
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(197, 22);
             this.formaPagamentoTextBox.TabIndex = 10;
             // 

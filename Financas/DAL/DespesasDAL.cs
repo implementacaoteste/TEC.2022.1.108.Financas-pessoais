@@ -70,6 +70,8 @@ namespace DAL
                         if (_contasPagar != null)
                         {
                             _contasPagar.DataPagamento = _despesas.DataEmissao;
+                            _contasPagar.IdBanco = _despesas.IdBanco;
+                            _contasPagar.IdFormaPagamento = _despesas.IdFormaPagamento;
                             new ContasPagarDAL().Alterar(_contasPagar, transaction);
                         }
 
