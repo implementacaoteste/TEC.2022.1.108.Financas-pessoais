@@ -39,8 +39,8 @@ namespace Financas
 
         private void buttonSalvarCadastrodeUsuario_Click(object sender, EventArgs e)
         {
-            //try
-           // {
+            try
+           {
                 UsuarioBLL usuarioBLL = new UsuarioBLL();
                 usuarioBindingSource.EndEdit();
 
@@ -50,12 +50,12 @@ namespace Financas
                     usuarioBLL.Alterar((Usuario)usuarioBindingSource.Current);
                 MessageBox.Show("Registro salvo com sucesso");
                 Close();
-            //}
-            //catch (Exception ex)
-           // {
+            }
+            catch (Exception ex)
+            {
                
-               // MessageBox.Show(ex.Message);
-           // }
+               MessageBox.Show(ex.Message);
+           }
         }
 
         private void FormCadastroUsuario_Load_1(object sender, EventArgs e)
