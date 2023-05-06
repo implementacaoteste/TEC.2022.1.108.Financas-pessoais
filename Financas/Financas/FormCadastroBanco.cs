@@ -81,6 +81,9 @@ namespace Financas
             }
         }
 
+        private void ativoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

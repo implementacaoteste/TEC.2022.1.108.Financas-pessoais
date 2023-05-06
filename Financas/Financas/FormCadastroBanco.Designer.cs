@@ -138,11 +138,11 @@
             this.ativoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ativoCheckBox.Location = new System.Drawing.Point(65, 196);
             this.ativoCheckBox.Name = "ativoCheckBox";
-            this.ativoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.ativoCheckBox.Size = new System.Drawing.Size(62, 24);
             this.ativoCheckBox.TabIndex = 10;
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = false;
-           
+            this.ativoCheckBox.CheckedChanged += new System.EventHandler(this.ativoCheckBox_CheckedChanged);
             // 
             // panel1
             // 
@@ -157,7 +157,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(476, 294);
             this.panel1.TabIndex = 11;
-            
             // 
             // FormCadastroBanco
             // 
