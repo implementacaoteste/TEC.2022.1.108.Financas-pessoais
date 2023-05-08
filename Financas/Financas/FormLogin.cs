@@ -64,7 +64,11 @@ namespace Financas
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://finanaspessoais1.durable.co/?pt=NjQ1NDIzMzI2ZDZlNTU4OTM2OWFiMTdlOjE2ODM1Njc4NzguNTk1OnByZXZpZXc=");
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=P3KYR-HZmu0");
+
+
+            //https:/finanaspessoais1.durable.co/?pt=NjQ1NDIzMzI2ZDZlNTU4OTM2OWFiMTdlOjE2ODM1Njc4NzguNTk1OnByZXZpZXc=
+            //https:/www.youtube.com/watch?v=P3KYR-HZmu0
         }
     }
 }
