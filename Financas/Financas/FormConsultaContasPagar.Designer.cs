@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contasPagarDataGridView = new System.Windows.Forms.DataGridView();
             this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -271,11 +272,15 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 275;
+            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // ValorPagar
             // 
             this.ValorPagar.DataPropertyName = "ValorPagar";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ValorPagar.DefaultCellStyle = dataGridViewCellStyle1;
             this.ValorPagar.HeaderText = "Valor";
             this.ValorPagar.MinimumWidth = 6;
             this.ValorPagar.Name = "ValorPagar";
@@ -298,7 +303,6 @@
             this.FormaPagamento.MinimumWidth = 6;
             this.FormaPagamento.Name = "FormaPagamento";
             this.FormaPagamento.ReadOnly = true;
-            this.FormaPagamento.Width = 167;
             // 
             // Banco
             // 
@@ -316,7 +320,6 @@
             this.DataEmissao.MinimumWidth = 6;
             this.DataEmissao.Name = "DataEmissao";
             this.DataEmissao.ReadOnly = true;
-            this.DataEmissao.Width = 140;
             // 
             // DataPagamento
             // 
@@ -325,7 +328,6 @@
             this.DataPagamento.MinimumWidth = 6;
             this.DataPagamento.Name = "DataPagamento";
             this.DataPagamento.ReadOnly = true;
-            this.DataPagamento.Width = 125;
             // 
             // FormConsultaContasPagar
             // 
