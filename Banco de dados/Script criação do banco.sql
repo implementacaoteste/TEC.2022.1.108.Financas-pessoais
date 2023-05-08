@@ -94,7 +94,7 @@ CREATE TABLE Contato
 	Endereco VARCHAR(150),
 	Numero VARCHAR(11),
 	Descricao VARCHAR(250),
-	Ativo BIT,
+	Ativo BIT
 )
 GO
 
@@ -103,7 +103,8 @@ CREATE TABLE FormaPagamento
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT,
-	Descricao VARCHAR(250)
+	Descricao VARCHAR(250),
+	Ativo BIT
 )
 GO
 

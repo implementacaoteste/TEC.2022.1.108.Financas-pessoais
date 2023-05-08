@@ -273,7 +273,7 @@ namespace DAL
             }
         }
 
-        public object BuscarPorInativo(string _inativo)
+        public List<Banco> BuscarPorInativo(string _inativo)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             List<Banco> bancos = new List<Banco>();

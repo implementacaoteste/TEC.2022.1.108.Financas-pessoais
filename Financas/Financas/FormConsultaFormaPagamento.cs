@@ -38,6 +38,7 @@ namespace Financas
                         formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorInativo(textBoxConsultarFormaPagamento.Text);
                         break;
 
+
                     default:
                         break;
                 }

@@ -393,5 +393,45 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public object BuscarPorInativo(string inativo)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            List<Contato> contatos = new List<Contato>();
+            Contato contato;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome, Endereco, Numero, Descricao, Ativo, IdUsuario FROM Contato WHERE Ativo = 0";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        contato = new Contato();
+                        contato.Id = Convert.ToInt32(rd["Id"]);
+                        contato.Nome = rd["Nome"].ToString();
+                        contato.Endereco = rd["Endereco"].ToString();
+                        contato.Numero = rd["Numero"].ToString();
+                        contato.Descricao = rd["Descricao"].ToString();
+                        contato.Ativo = Convert.ToBoolean(rd["Ativo"]);
+                        contatos.Add(contato);
+                    }
+                }
+                return contatos;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar todos os contato inativos do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

@@ -242,6 +242,45 @@ namespace DAL
             {
                 cn.Close();
             }
+            
+
+            
+        }
+        public List<FormaPagamento> BuscarPorInativo(string _inativo)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<FormaPagamento> formaPagamentos = new List<FormaPagamento>();
+            FormaPagamento formaPagamento;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Descricao, IdUsuario FROM FormaPagamento WHERE Descricao LIKE @Descricao";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _inativo + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        formaPagamento = new FormaPagamento();
+                        formaPagamento.Id = Convert.ToInt32(rd["Id"]);
+                        formaPagamento.Descricao = rd["Descricao"].ToString();
+                        formaPagamentos.Add(formaPagamento);
+                    }
+                }
+                return formaPagamentos;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as formas de pagamento por descrição do banco de dados", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
 
         public object BuscarPorInativo(string _inativo)
