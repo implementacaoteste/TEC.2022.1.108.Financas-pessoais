@@ -220,14 +220,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Properties\DataSources\Models.Banco.datasource" />
+    <None Include="Properties\DataSources\Models.Banco1.datasource" />
     <None Include="Properties\DataSources\Models.Constantes.datasource" />
+    <None Include="Properties\DataSources\Models.Constantes1.datasource" />
     <None Include="Properties\DataSources\Models.ContasPagar.datasource" />
+    <None Include="Properties\DataSources\Models.ContasPagar1.datasource" />
     <None Include="Properties\DataSources\Models.ContasReceber.datasource" />
+    <None Include="Properties\DataSources\Models.ContasReceber1.datasource" />
     <None Include="Properties\DataSources\Models.Contato.datasource" />
+    <None Include="Properties\DataSources\Models.Contato1.datasource" />
     <None Include="Properties\DataSources\Models.Despesas.datasource" />
+    <None Include="Properties\DataSources\Models.Despesas1.datasource" />
     <None Include="Properties\DataSources\Models.FormaPagamento.datasource" />
+    <None Include="Properties\DataSources\Models.FormaPagamento1.datasource" />
     <None Include="Properties\DataSources\Models.Receita.datasource" />
+    <None Include="Properties\DataSources\Models.Receita1.datasource" />
     <None Include="Properties\DataSources\Models.Usuario.datasource" />
+    <None Include="Properties\DataSources\Models.Usuario1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

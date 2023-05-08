@@ -12,7 +12,7 @@ namespace BLL
     {
         private void ValidarDadosContato(Contato _contato)
         {
-            if (_contato.Numero.Length < 11 || _contato.Numero.Length > 11)
+            if (_contato.Numero.Replace("(","").Replace(")", "").Replace("-", "").Replace(" ","").Length != 11)
                 throw new Exception("O número do contato deve conter 11 caracteres");
         }
         public void Inserir(Contato _contato)

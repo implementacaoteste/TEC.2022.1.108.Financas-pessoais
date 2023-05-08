@@ -36,13 +36,13 @@
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.contatoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enderecoTextBox = new System.Windows.Forms.TextBox();
-            this.numeroTextBox = new System.Windows.Forms.TextBox();
             this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelarCadastroContato = new System.Windows.Forms.Button();
             this.buttonSalvarCadastroContato = new System.Windows.Forms.Button();
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.numeroTextBox = new System.Windows.Forms.MaskedTextBox();
             descricaoLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -117,15 +117,6 @@
             this.enderecoTextBox.TabIndex = 6;
             this.enderecoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enderecoTextBox_KeyDown);
             // 
-            // numeroTextBox
-            // 
-            this.numeroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Numero", true));
-            this.numeroTextBox.Location = new System.Drawing.Point(324, 43);
-            this.numeroTextBox.Name = "numeroTextBox";
-            this.numeroTextBox.Size = new System.Drawing.Size(196, 22);
-            this.numeroTextBox.TabIndex = 4;
-            this.numeroTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numeroTextBox_KeyDown);
-            // 
             // descricaoTextBox
             // 
             this.descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Descricao", true));
@@ -143,7 +134,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(621, 76);
+            this.label1.Size = new System.Drawing.Size(625, 76);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de contato";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,7 +175,6 @@
             this.ativoCheckBox.TabIndex = 12;
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = false;
-            this.ativoCheckBox.CheckedChanged += new System.EventHandler(this.ativoCheckBox_CheckedChanged);
             // 
             // panel1
             // 
@@ -201,15 +191,24 @@
             this.panel1.Controls.Add(this.descricaoTextBox);
             this.panel1.Location = new System.Drawing.Point(37, 61);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(556, 335);
+            this.panel1.Size = new System.Drawing.Size(588, 335);
             this.panel1.TabIndex = 13;
+            // 
+            // numeroTextBox
+            // 
+            this.numeroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contatoBindingSource, "Numero", true));
+            this.numeroTextBox.Location = new System.Drawing.Point(324, 43);
+            this.numeroTextBox.Mask = "(99) 00000-0000";
+            this.numeroTextBox.Name = "numeroTextBox";
+            this.numeroTextBox.Size = new System.Drawing.Size(109, 22);
+            this.numeroTextBox.TabIndex = 13;
             // 
             // FormCadastroContato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(621, 408);
+            this.ClientSize = new System.Drawing.Size(625, 408);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
@@ -236,12 +235,12 @@
         private System.Windows.Forms.BindingSource contatoBindingSource;
         private System.Windows.Forms.TextBox nomeTextBox;
         private System.Windows.Forms.TextBox enderecoTextBox;
-        private System.Windows.Forms.TextBox numeroTextBox;
         private System.Windows.Forms.TextBox descricaoTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCancelarCadastroContato;
         private System.Windows.Forms.Button buttonSalvarCadastroContato;
         private System.Windows.Forms.CheckBox ativoCheckBox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MaskedTextBox numeroTextBox;
     }
 }

@@ -92,7 +92,7 @@ CREATE TABLE Contato
 	IdUsuario INT,
 	Nome VARCHAR(150),
 	Endereco VARCHAR(150),
-	Numero VARCHAR(11),
+	Numero VARCHAR(15),
 	Descricao VARCHAR(250),
 	Ativo BIT,
 )

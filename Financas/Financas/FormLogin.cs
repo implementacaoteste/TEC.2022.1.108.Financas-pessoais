@@ -31,6 +31,7 @@ namespace Financas
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                textBoxSenhaLogin.Text = "";
             }
         }
 
@@ -55,7 +56,10 @@ namespace Financas
             if (e.KeyCode == Keys.Enter)
             {
                 if (textBoxSenhaLogin.Focused)
+                {
                     buttonEntrar_Click(null, null);
+                    return;
+                }
 
                 e.SuppressKeyPress = true;
                 this.SelectNextControl(this.ActiveControl, true, true, true, true);

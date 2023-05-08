@@ -74,10 +74,9 @@ namespace Financas
             // 
             this.textBoxSenhaLogin.Location = new System.Drawing.Point(431, 362);
             this.textBoxSenhaLogin.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxSenhaLogin.Multiline = true;
             this.textBoxSenhaLogin.Name = "textBoxSenhaLogin";
             this.textBoxSenhaLogin.PasswordChar = '*';
-            this.textBoxSenhaLogin.Size = new System.Drawing.Size(312, 29);
+            this.textBoxSenhaLogin.Size = new System.Drawing.Size(312, 22);
             this.textBoxSenhaLogin.TabIndex = 4;
             // 
             // labelUsuarioLogin
