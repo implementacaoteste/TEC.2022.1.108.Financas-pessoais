@@ -112,6 +112,8 @@ namespace Financas
             {
                 if (contatoBindingSource.Count > 0)
                 {
+                    if (!((Contato)contatoBindingSource.Current).Ativo)
+                        throw new Exception("Este contato está inativo.Você precisa ativá-lo ou escolher outro contato");
                     Id = ((Contato)contatoBindingSource.Current).Id;
                     Nome = ((Contato)contatoBindingSource.Current).Nome;
                     Close();
