@@ -151,9 +151,9 @@
             // buttonCancelarCadastroContato
             // 
             this.buttonCancelarCadastroContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarCadastroContato.Location = new System.Drawing.Point(425, 257);
+            this.buttonCancelarCadastroContato.Location = new System.Drawing.Point(414, 257);
             this.buttonCancelarCadastroContato.Name = "buttonCancelarCadastroContato";
-            this.buttonCancelarCadastroContato.Size = new System.Drawing.Size(95, 36);
+            this.buttonCancelarCadastroContato.Size = new System.Drawing.Size(106, 36);
             this.buttonCancelarCadastroContato.TabIndex = 10;
             this.buttonCancelarCadastroContato.Text = "Cancelar";
             this.buttonCancelarCadastroContato.UseVisualStyleBackColor = true;

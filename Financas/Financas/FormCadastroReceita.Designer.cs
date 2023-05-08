@@ -110,9 +110,9 @@
             formaPagamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             formaPagamentoLabel.Location = new System.Drawing.Point(339, 104);
             formaPagamentoLabel.Name = "formaPagamentoLabel";
-            formaPagamentoLabel.Size = new System.Drawing.Size(174, 20);
+            formaPagamentoLabel.Size = new System.Drawing.Size(172, 20);
             formaPagamentoLabel.TabIndex = 9;
-            formaPagamentoLabel.Text = "Forma de Pagamento:";
+            formaPagamentoLabel.Text = "Forma de pagamento:";
             // 
             // dataEmissaoLabel
             // 
@@ -121,9 +121,9 @@
             dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataEmissaoLabel.Location = new System.Drawing.Point(343, 200);
             dataEmissaoLabel.Name = "dataEmissaoLabel";
-            dataEmissaoLabel.Size = new System.Drawing.Size(120, 20);
+            dataEmissaoLabel.Size = new System.Drawing.Size(118, 20);
             dataEmissaoLabel.TabIndex = 14;
-            dataEmissaoLabel.Text = "Data Emissao:";
+            dataEmissaoLabel.Text = "Data emissao:";
             // 
             // textBoxDescricao
             // 

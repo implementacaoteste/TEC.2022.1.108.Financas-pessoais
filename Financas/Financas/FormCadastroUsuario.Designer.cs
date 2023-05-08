@@ -149,9 +149,9 @@
             this.labelConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConfirmarSenha.Location = new System.Drawing.Point(381, 121);
             this.labelConfirmarSenha.Name = "labelConfirmarSenha";
-            this.labelConfirmarSenha.Size = new System.Drawing.Size(140, 20);
+            this.labelConfirmarSenha.Size = new System.Drawing.Size(138, 20);
             this.labelConfirmarSenha.TabIndex = 7;
-            this.labelConfirmarSenha.Text = "Confirmar Senha:";
+            this.labelConfirmarSenha.Text = "Confirmar senha:";
             // 
             // textBoxConfirmarSenhaCadastroUsuario
             // 
@@ -228,7 +228,7 @@
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.usuarioBindingSource, "Ativo", true));
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.usuarioBindingSource, "Ativo", true));
             this.ativoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ativoCheckBox.Location = new System.Drawing.Point(392, 214);
+            this.ativoCheckBox.Location = new System.Drawing.Point(381, 234);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(104, 24);
             this.ativoCheckBox.TabIndex = 16;
