@@ -40,7 +40,7 @@ namespace BLL
             return new BancoDAL().BuscarPorId(_id);
         }
 
-        public object BuscarPorInativo(string _Inativo)
+        public List<Banco> BuscarPorInativo(string _Inativo)
         {
             return new BancoDAL().BuscarPorInativo(_Inativo);
         }
