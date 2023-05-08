@@ -44,5 +44,9 @@ namespace BLL
         {
             return new FormaPagamentoDAL().BuscarPorId(_id);
         }
+        public List<FormaPagamento> BuscarPorInativo(string _Inativo)
+        {
+            return new FormaPagamentoDAL().BuscarPorInativo(_Inativo);
+        }
     }
 }
