@@ -34,6 +34,9 @@ namespace Financas
                     case 1:
                         bancoBindingSource.DataSource = new BancoBLL().BuscarPorNome(textBoxConsultarBanco.Text);
                         break;
+                    case 2:
+                        bancoBindingSource.DataSource = new BancoBLL().BuscarPorInativo(textBoxConsultarBanco.Text);
+                        break;
                     default:
                         break;
                 }
@@ -117,6 +120,9 @@ namespace Financas
             {
                 if (bancoBindingSource.Count > 0)
                 {
+                    if (!((Banco)bancoBindingSource.Current).Ativo)
+                        throw new Exception("Este banco está inativo. Você precisa ativá-lo ou escolher outro banco.");
+                    
                     Id = ((Banco)bancoBindingSource.Current).Id;
                     Nome = ((Banco)bancoBindingSource.Current).Nome;
                     Close();
