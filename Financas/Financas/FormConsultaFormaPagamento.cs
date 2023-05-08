@@ -155,6 +155,27 @@ namespace Financas
 
         }
 
+        private void buttonSelecionar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (formaPagamentoBindingSource.Count > 0)
+                {
+                    if (!((FormaPagamento)formaPagamentoBindingSource.Current).Ativo)
+                        throw new Exception("Esta forma de pagamento está inativa. Você precisa ativá-la ou escolher outra.");
 
+                    Id = ((FormaPagamento)formaPagamentoBindingSource.Current).Id;
+                    Descricao = ((FormaPagamento)formaPagamentoBindingSource.Current).Descricao;
+                    Close();
+                }
+                else
+                    MessageBox.Show("Não existe um Devedor para ser selecionado.");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
