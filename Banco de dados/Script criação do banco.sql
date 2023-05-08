@@ -94,7 +94,7 @@ CREATE TABLE Contato
 	Endereco VARCHAR(150),
 	Numero VARCHAR(11),
 	Descricao VARCHAR(250),
-	Ativo BIT
+	Ativo BIT,
 )
 GO
 
