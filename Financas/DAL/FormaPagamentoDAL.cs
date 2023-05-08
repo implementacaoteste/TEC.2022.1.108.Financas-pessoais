@@ -17,10 +17,11 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO FormaPagamento(Descricao,IdUsuario)
-                                    VALUES(@Descricao,@IdUsuario)";
+                cmd.CommandText = @"INSERT INTO FormaPagamento(Descricao,IdUsuario,Ativo)
+                                    VALUES(@Descricao,@IdUsuario, @Ativo)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Descricao", _formaPagamento.Descricao);
+                cmd.Parameters.AddWithValue("@Ativo", _formaPagamento.Ativo);
                 cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cmd.Connection = cn;
                 cn.Open();
@@ -103,7 +104,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao, IdUsuario FROM FormaPagamento";
+                cmd.CommandText = "SELECT Id, Descricao, IdUsuario FROM FormaPagamento WHERE FormaPagamento.Ativo = 1";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -172,7 +173,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao, IdUsuario FROM FormaPagamento WHERE Descricao LIKE @Descricao";
+                cmd.CommandText = "SELECT Id, Descricao, IdUsuario FROM FormaPagamento WHERE Descricao LIKE @Descricao AND FormaPagamento.Ativo = 1";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
@@ -240,6 +241,45 @@ namespace DAL
             finally
             {
                 cn.Close();
+            }
+        }
+
+        public object BuscarPorInativo(string _inativo)
+        {
+            {
+                SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+                List<FormaPagamento> formasPagamento = new List<FormaPagamento>();
+                FormaPagamento formaPagamento;
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = cn;
+                    cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento WHERE FormaPagamento.Ativo = 0";
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    cn.Open();
+                    using (SqlDataReader rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            formaPagamento = new FormaPagamento();
+                            formaPagamento.Id = Convert.ToInt32(rd["Id"]);
+                            formaPagamento.Descricao = rd["Descricao"].ToString();
+                            formaPagamento.Ativo = Convert.ToBoolean(rd["Ativo"]);
+                            formasPagamento.Add(formaPagamento);
+                        }
+                    }
+                    return formasPagamento;
+                }
+                catch (Exception ex)
+                {
+
+                    throw new Exception("Ocorreu um erro ao tentar buscar as formas de pagamento por inatividade no banco de dados", ex);
+                }
+                finally
+                {
+                    cn.Close();
+                }
             }
         }
     }

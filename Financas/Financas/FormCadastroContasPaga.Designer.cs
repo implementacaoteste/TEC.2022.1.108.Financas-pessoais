@@ -121,9 +121,9 @@
             dataEmissaoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataEmissaoLabel.Location = new System.Drawing.Point(281, 239);
             dataEmissaoLabel.Name = "dataEmissaoLabel";
-            dataEmissaoLabel.Size = new System.Drawing.Size(143, 20);
+            dataEmissaoLabel.Size = new System.Drawing.Size(141, 20);
             dataEmissaoLabel.TabIndex = 16;
-            dataEmissaoLabel.Text = "Data de Emissão:";
+            dataEmissaoLabel.Text = "Data de emissão:";
             // 
             // descricaoTextBox
             // 
@@ -256,7 +256,7 @@
             // dataEmissaoDateTimePicker
             // 
             this.dataEmissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.contasPagarBindingSource, "DataEmissao", true));
-            this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(340, 268);
+            this.dataEmissaoDateTimePicker.Location = new System.Drawing.Point(281, 268);
             this.dataEmissaoDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
             this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
@@ -283,7 +283,7 @@
             this.panel1.Controls.Add(this.buttonBuscarContatoContasPagar);
             this.panel1.Controls.Add(this.bancoTextBox);
             this.panel1.Location = new System.Drawing.Point(81, 96);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(645, 370);
             this.panel1.TabIndex = 18;

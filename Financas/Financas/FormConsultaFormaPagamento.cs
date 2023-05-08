@@ -19,7 +19,7 @@ namespace Financas
         public FormConsultaFormaPagamento(bool _selecionar = false)
         {
             InitializeComponent();
-            button1.Visible = _selecionar;
+            buttonSelecionar.Visible = _selecionar;
         }
 
         private void buttonBuscarFormaPagamento_Click(object sender, EventArgs e)
@@ -33,6 +33,9 @@ namespace Financas
                         break;
                     case 1:
                         formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(textBoxConsultarFormaPagamento.Text);
+                        break;
+                    case 2:
+                        formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorInativo(textBoxConsultarFormaPagamento.Text);
                         break;
 
                     default:
@@ -107,12 +110,15 @@ namespace Financas
             Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSelecionar_Click(object sender, EventArgs e)
         {
             try
             {
                 if (formaPagamentoBindingSource.Count > 0)
                 {
+                    if (!((FormaPagamento)formaPagamentoBindingSource.Current).Ativo)
+                        throw new Exception("Esta forma de pagamento está inativa. Você precisa ativá-la ou escolher outra.");
+
                     Id = ((FormaPagamento)formaPagamentoBindingSource.Current).Id;
                     Descricao = ((FormaPagamento)formaPagamentoBindingSource.Current).Descricao;
                     Close();
@@ -147,5 +153,7 @@ namespace Financas
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
 
         }
+
+
     }
 }

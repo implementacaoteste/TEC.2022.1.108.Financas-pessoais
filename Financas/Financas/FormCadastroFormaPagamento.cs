@@ -50,7 +50,10 @@ namespace Financas
         {
             panel1.BackColor = Color.FromArgb(100,0,0,0);
             if (Id == 0)
+            {
                 formaPagamentoBindingSource.AddNew();
+                ativoCheckBox.Checked = true;
+            }
             else
                 formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorId(Id);
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");

@@ -307,7 +307,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar os bancos por nome do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar os bancos por inatividade no banco de dados", ex);
             }
             finally
             {
