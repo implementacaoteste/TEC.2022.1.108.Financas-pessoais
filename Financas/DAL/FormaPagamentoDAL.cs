@@ -42,10 +42,11 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE FormaPagamento SET Descricao=@Descricao WHERE Id = @Id";
+                cmd.CommandText = "UPDATE FormaPagamento SET Descricao=@Descricao, Ativo=@Ativo WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _formaPagamento.Id);
                 cmd.Parameters.AddWithValue("@Descricao", _formaPagamento.Descricao);
+                cmd.Parameters.AddWithValue("@Ativo", _formaPagamento.Ativo);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -104,7 +105,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao, IdUsuario FROM FormaPagamento WHERE FormaPagamento.Ativo = 1";
+                cmd.CommandText = "SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento WHERE Ativo = 1";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -114,6 +115,7 @@ namespace DAL
                         formaPagamento = new FormaPagamento();
                         formaPagamento.Id = Convert.ToInt32(rd["Id"]);
                         formaPagamento.Descricao = rd["Descricao"].ToString();
+                        formaPagamento.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         formaPagamentos.Add(formaPagamento);
                     }
                 }
@@ -138,7 +140,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao, IdUsuario FROM FormaPagamento WHERE Id = @Id";
+                cmd.CommandText = "SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento WHERE Id = @Id AND Ativo = 1";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -150,6 +152,7 @@ namespace DAL
                         formaPagamento = new FormaPagamento();
                         formaPagamento.Id = Convert.ToInt32(rd["ID"]);
                         formaPagamento.Descricao = rd["Descricao"].ToString();
+                        formaPagamento.Ativo = Convert.ToBoolean(rd["Ativo"]);
                     }
                     return formaPagamento;
                 }
@@ -173,7 +176,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao, IdUsuario FROM FormaPagamento WHERE Descricao LIKE @Descricao AND FormaPagamento.Ativo = 1";
+                cmd.CommandText = "SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento WHERE Descricao LIKE @Descricao AND Ativo = 1";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
@@ -185,6 +188,7 @@ namespace DAL
                         formaPagamento = new FormaPagamento();
                         formaPagamento.Id = Convert.ToInt32(rd["Id"]);
                         formaPagamento.Descricao = rd["Descricao"].ToString();
+                        formaPagamento.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         formaPagamentos.Add(formaPagamento);
                     }
                 }
@@ -258,7 +262,7 @@ namespace DAL
                 {
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = cn;
-                    cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento WHERE FormaPagamento.Ativo = 0";
+                    cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento WHERE Ativo = 0";
                     cmd.CommandType = System.Data.CommandType.Text;
 
                     cn.Open();
