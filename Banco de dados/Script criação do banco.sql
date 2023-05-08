@@ -94,7 +94,7 @@ CREATE TABLE Contato
 	Endereco VARCHAR(150),
 	Numero VARCHAR(11),
 	Descricao VARCHAR(250),
-	Ativo BIT
+	Ativo BIT,
 )
 GO
 
@@ -318,12 +318,12 @@ INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo, IdUsuario)VALUES('
 INSERT INTO Contato(Nome, Endereco, Numero, Descricao, Ativo, IdUsuario)VALUES('Marcelo', 'rua N', '63991121212', 'vizinha da mãe', 1, 1)
 GO
 
-INSERT INTO FormaPagamento(Descricao, IdUsuario, Ativo) VALUES('Dinheiro',1,1)
-INSERT INTO FormaPagamento(Descricao, IdUsuario, Ativo) VALUES('Pix',1,1)
-INSERT INTO FormaPagamento(Descricao, IdUsuario, Ativo) VALUES('Cartão',1,1)
-INSERT INTO FormaPagamento(Descricao, IdUsuario, Ativo) VALUES('Credito',1,1)
-INSERT INTO FormaPagamento(Descricao, IdUsuario, Ativo) VALUES('Tranferência',1,1)
-INSERT INTO FormaPagamento(Descricao, IdUsuario, Ativo) VALUES('Boleto',1,1)
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Dinheiro',1)
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Pix',1)
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Cartão',1)
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Credito',1)
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Tranferência',1)
+INSERT INTO FormaPagamento(Descricao, IdUsuario) VALUES('Boleto',1)
 GO
 
 --INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)(SELECT 1, Id FROM Permissao)
