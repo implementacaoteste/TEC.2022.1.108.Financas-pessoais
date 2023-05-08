@@ -45,6 +45,9 @@ namespace Financas
                     case 4:
                         contatoBindingSource.DataSource = new ContatoBLL().BuscarPorDescricao(textBoxBuscar.Text);
                         break;
+                    case 5:
+                        contatoBindingSource.DataSource = new ContatoBLL().BuscarPorInativo(textBoxBuscar.Text);
+                        break;
                     default:
                         break;
                 }

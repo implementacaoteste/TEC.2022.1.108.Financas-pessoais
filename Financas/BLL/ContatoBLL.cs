@@ -56,5 +56,10 @@ namespace BLL
         {
             return new ContatoDAL().BuscarPorId(_id);
         }
+
+        public object BuscarPorInativo(string _inativo)
+        {
+            return new ContatoDAL().BuscarPorInativo(_inativo);
+        }
     }
 }
