@@ -69,13 +69,13 @@
             // 
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuarioToolStripMenuItem,
-            this.contatoToolStripMenuItem,
             this.bancoToolStripMenuItem,
-            this.contasAPagarToolStripMenuItem1,
+            this.receitasToolStripMenuItem1,
             this.despesasToolStripMenuItem1,
+            this.contatoToolStripMenuItem,
+            this.contasAPagarToolStripMenuItem1,
             this.contasAReceberToolStripMenuItem1,
-            this.formaDePagamentoToolStripMenuItem1,
-            this.receitasToolStripMenuItem1});
+            this.formaDePagamentoToolStripMenuItem1});
             this.cadastroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cadastroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cadastroToolStripMenuItem.Image")));
@@ -151,14 +151,14 @@
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuárioToolStripMenuItem,
             this.banToolStripMenuItem,
-            this.contatoToolStripMenuItem1,
             this.receitasToolStripMenuItem,
             this.despesasToolStripMenuItem,
+            this.contatoToolStripMenuItem1,
             this.contasAPagarToolStripMenuItem,
             this.contasAReceberToolStripMenuItem,
-            this.formaDePagamentoToolStripMenuItem,
-            this.usuárioToolStripMenuItem});
+            this.formaDePagamentoToolStripMenuItem});
             this.consultaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.consultaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultaToolStripMenuItem.Image")));
