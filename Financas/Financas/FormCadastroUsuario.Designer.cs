@@ -105,7 +105,7 @@
             this.textBoxNomeUsuarioCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeUsuarioCadastroUsuario.Name = "textBoxNomeUsuarioCadastroUsuario";
             this.textBoxNomeUsuarioCadastroUsuario.Size = new System.Drawing.Size(281, 22);
-            this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 6;
+            this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 2;
             this.textBoxNomeUsuarioCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNomeUsuarioCadastroUsuario_KeyDown);
             // 
             // textBoxSenhaCadastroUsuario
@@ -159,7 +159,7 @@
             this.textBoxConfirmarSenhaCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConfirmarSenhaCadastroUsuario.Name = "textBoxConfirmarSenhaCadastroUsuario";
             this.textBoxConfirmarSenhaCadastroUsuario.Size = new System.Drawing.Size(235, 22);
-            this.textBoxConfirmarSenhaCadastroUsuario.TabIndex = 8;
+            this.textBoxConfirmarSenhaCadastroUsuario.TabIndex = 5;
             this.textBoxConfirmarSenhaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxConfirmarSenhaCadastroUsuario_KeyDown);
             // 
             // labelRendaCadastroUsuario
@@ -180,7 +180,7 @@
             this.textBoxRendaCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRendaCadastroUsuario.Name = "textBoxRendaCadastroUsuario";
             this.textBoxRendaCadastroUsuario.Size = new System.Drawing.Size(207, 22);
-            this.textBoxRendaCadastroUsuario.TabIndex = 9;
+            this.textBoxRendaCadastroUsuario.TabIndex = 3;
             this.textBoxRendaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxRendaCadastroUsuario_KeyDown);
             // 
             // label1
@@ -203,7 +203,7 @@
             this.buttonCancelarCadastrodeUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelarCadastrodeUsuario.Name = "buttonCancelarCadastrodeUsuario";
             this.buttonCancelarCadastrodeUsuario.Size = new System.Drawing.Size(106, 36);
-            this.buttonCancelarCadastrodeUsuario.TabIndex = 11;
+            this.buttonCancelarCadastrodeUsuario.TabIndex = 8;
             this.buttonCancelarCadastrodeUsuario.Text = "Cancelar";
             this.buttonCancelarCadastrodeUsuario.UseVisualStyleBackColor = true;
             this.buttonCancelarCadastrodeUsuario.Click += new System.EventHandler(this.buttonCancelarCadastrodeUsuario_Click);
@@ -215,7 +215,7 @@
             this.buttonSalvarCadastrodeUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCadastrodeUsuario.Name = "buttonSalvarCadastrodeUsuario";
             this.buttonSalvarCadastrodeUsuario.Size = new System.Drawing.Size(84, 36);
-            this.buttonSalvarCadastrodeUsuario.TabIndex = 10;
+            this.buttonSalvarCadastrodeUsuario.TabIndex = 7;
             this.buttonSalvarCadastrodeUsuario.Text = "Salvar";
             this.buttonSalvarCadastrodeUsuario.UseVisualStyleBackColor = true;
             this.buttonSalvarCadastrodeUsuario.Click += new System.EventHandler(this.buttonSalvarCadastrodeUsuario_Click);

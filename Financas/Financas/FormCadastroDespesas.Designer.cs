@@ -145,7 +145,7 @@
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(107, 36);
-            this.buttonCancelar.TabIndex = 17;
+            this.buttonCancelar.TabIndex = 7;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
@@ -157,7 +157,7 @@
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(84, 36);
-            this.buttonSalvar.TabIndex = 16;
+            this.buttonSalvar.TabIndex = 6;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
@@ -182,7 +182,7 @@
             this.textBoxDescricao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(253, 22);
-            this.textBoxDescricao.TabIndex = 13;
+            this.textBoxDescricao.TabIndex = 5;
             this.textBoxDescricao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxDescricao_KeyDown);
             // 
             // contatoTextBox
@@ -193,7 +193,7 @@
             this.contatoTextBox.Name = "contatoTextBox";
             this.contatoTextBox.ReadOnly = true;
             this.contatoTextBox.Size = new System.Drawing.Size(197, 22);
-            this.contatoTextBox.TabIndex = 4;
+            this.contatoTextBox.TabIndex = 2;
             // 
             // buttonBuscarContatoDespesas
             // 
@@ -216,7 +216,7 @@
             this.bancoTextBox.Name = "bancoTextBox";
             this.bancoTextBox.ReadOnly = true;
             this.bancoTextBox.Size = new System.Drawing.Size(153, 22);
-            this.bancoTextBox.TabIndex = 7;
+            this.bancoTextBox.TabIndex = 3;
             // 
             // buttonBuscar
             // 
@@ -238,7 +238,7 @@
             this.formaPagamentoTextBox.Name = "formaPagamentoTextBox";
             this.formaPagamentoTextBox.ReadOnly = true;
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(197, 22);
-            this.formaPagamentoTextBox.TabIndex = 10;
+            this.formaPagamentoTextBox.TabIndex = 4;
             // 
             // buttonBuscarFormaPagamentoDespesas
             // 
