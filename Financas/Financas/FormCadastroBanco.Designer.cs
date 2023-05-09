@@ -90,7 +90,7 @@
             this.nomeTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(359, 22);
-            this.nomeTextBox.TabIndex = 2;
+            this.nomeTextBox.TabIndex = 1;
             this.nomeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
             // 
             // bancoBindingSource
@@ -104,7 +104,7 @@
             this.poupancaTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.poupancaTextBox.Name = "poupancaTextBox";
             this.poupancaTextBox.Size = new System.Drawing.Size(359, 22);
-            this.poupancaTextBox.TabIndex = 6;
+            this.poupancaTextBox.TabIndex = 2;
             this.poupancaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.poupancaTextBox_KeyDown);
             // 
             // buttonSalvarCadBanco
@@ -114,7 +114,7 @@
             this.buttonSalvarCadBanco.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSalvarCadBanco.Name = "buttonSalvarCadBanco";
             this.buttonSalvarCadBanco.Size = new System.Drawing.Size(112, 44);
-            this.buttonSalvarCadBanco.TabIndex = 7;
+            this.buttonSalvarCadBanco.TabIndex = 4;
             this.buttonSalvarCadBanco.Text = "Salvar";
             this.buttonSalvarCadBanco.UseVisualStyleBackColor = true;
             this.buttonSalvarCadBanco.Click += new System.EventHandler(this.buttonSalvarCadBanco_Click);
@@ -126,7 +126,7 @@
             this.buttonCancelarCadBanco.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.buttonCancelarCadBanco.Name = "buttonCancelarCadBanco";
             this.buttonCancelarCadBanco.Size = new System.Drawing.Size(120, 44);
-            this.buttonCancelarCadBanco.TabIndex = 8;
+            this.buttonCancelarCadBanco.TabIndex = 5;
             this.buttonCancelarCadBanco.Text = "Cancelar";
             this.buttonCancelarCadBanco.UseVisualStyleBackColor = true;
             this.buttonCancelarCadBanco.Click += new System.EventHandler(this.buttonCancelarCadBanco_Click);
@@ -144,7 +144,7 @@
             this.ativoCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(83, 30);
-            this.ativoCheckBox.TabIndex = 10;
+            this.ativoCheckBox.TabIndex = 3;
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = false;
             // 
