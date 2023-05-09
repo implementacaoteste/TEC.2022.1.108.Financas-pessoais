@@ -20,12 +20,14 @@ namespace DAL
                 cmd.CommandText = @"INSERT INTO Banco(Nome, Saldo, Poupanca, Ativo, IdUsuario)
                                     VALUES(@Nome, @Saldo, @Poupanca, @Ativo, @IdUsuario)";
                 cmd.CommandType = System.Data.CommandType.Text;
+
                 cmd.Parameters.AddWithValue("@Nome", _banco.Nome);
                 cmd.Parameters.AddWithValue("@Saldo", _banco.Saldo);
                 cmd.Parameters.AddWithValue("@Poupanca", _banco.Poupanca);
                 cmd.Parameters.AddWithValue("@Ativo", _banco.Ativo);
                 cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cmd.Connection = cn;
+
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
@@ -46,12 +48,14 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = "UPDATE Banco SET Nome=@Nome, Saldo=@Saldo, Poupanca=@Poupanca, Ativo = @Ativo WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
+
                 cmd.Parameters.AddWithValue("@Id", _banco.Id);
                 cmd.Parameters.AddWithValue("@Nome", _banco.Nome);
                 cmd.Parameters.AddWithValue("@Saldo", _banco.Saldo);
                 cmd.Parameters.AddWithValue("@Poupanca", _banco.Poupanca);
                 cmd.Parameters.AddWithValue("@Ativo", _banco.Ativo);
                 cmd.Connection = cn;
+
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
@@ -112,9 +116,12 @@ namespace DAL
                 cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo, Banco.IdUsuario FROM Banco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
-                                    WHERE Id = @Id";
+                                    WHERE Id = @Id AND Ativo = 1 AND IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
+
                 cmd.Parameters.AddWithValue("@Id", _id);
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -154,9 +161,10 @@ namespace DAL
                 cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo, Banco.IdUsuario FROM Banco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
-                                    WHERE Banco.Ativo = 1";
+                                    WHERE Banco.Ativo = 1 AND Banco.IdUsuario = @IdUsuario";
 
                 cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -196,9 +204,10 @@ namespace DAL
                 cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor - Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo, Banco.IdUsuario FROM Banco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
-                                    WHERE Nome LIKE @Nome AND Banco.Ativo = 1";
+                                    WHERE Nome LIKE @Nome AND Banco.Ativo = 1 AND Banco.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -285,9 +294,10 @@ namespace DAL
                 cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo, Banco.IdUsuario FROM Banco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
-                                    WHERE Banco.Ativo = 0";
+                                    WHERE Banco.Ativo = 0 AND Banco.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
