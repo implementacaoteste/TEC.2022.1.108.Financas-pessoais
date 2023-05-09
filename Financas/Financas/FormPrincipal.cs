@@ -165,11 +165,6 @@ namespace Financas
             }
         }
 
-        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cadastroDespesaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -230,6 +225,13 @@ namespace Financas
             }
         }
 
-
+        private void mudarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Constantes.IdUsuarioLogado = 0;
+            using (FormLogin frm = new FormLogin())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

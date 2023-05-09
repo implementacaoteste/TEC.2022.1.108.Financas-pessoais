@@ -48,6 +48,7 @@
             this.contasAPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasAReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formaDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mudarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
-            this.consultaToolStripMenuItem});
+            this.consultaToolStripMenuItem,
+            this.mudarUsuarioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -82,7 +84,6 @@
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.cadastroToolStripMenuItem.Text = "C&adastro";
-
             // 
             // usuarioToolStripMenuItem
             // 
@@ -166,7 +167,6 @@
             this.consultaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.consultaToolStripMenuItem.Text = "&Consulta";
-            this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // usuárioToolStripMenuItem
             // 
@@ -232,6 +232,16 @@
             this.formaDePagamentoToolStripMenuItem.Text = "Forma de pagamento";
             this.formaDePagamentoToolStripMenuItem.Click += new System.EventHandler(this.formaDePagamentoToolStripMenuItem_Click);
             // 
+            // mudarUsuarioToolStripMenuItem
+            // 
+            this.mudarUsuarioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mudarUsuarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.mudarUsuarioToolStripMenuItem.Name = "mudarUsuarioToolStripMenuItem";
+            this.mudarUsuarioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
+            this.mudarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
+            this.mudarUsuarioToolStripMenuItem.Text = "&Mudar usuario";
+            this.mudarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.mudarUsuarioToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -278,6 +288,7 @@
         private System.Windows.Forms.ToolStripMenuItem formaDePagamentoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem receitasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mudarUsuarioToolStripMenuItem;
     }
 }
 
