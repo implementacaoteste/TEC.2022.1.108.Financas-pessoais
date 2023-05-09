@@ -107,10 +107,7 @@ namespace Financas
             }
         }
 
-        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void bancoToolStripMenuItem_Click(object sender, EventArgs e)
         {
