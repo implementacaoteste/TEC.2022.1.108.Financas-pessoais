@@ -198,10 +198,12 @@ namespace DAL
                                     INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
-                                    WHERE Despesas.Id = @Id";
+                                    WHERE Despesas.Id = @Id AND Despesas.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -247,8 +249,12 @@ namespace DAL
                 cmd.CommandText = @"SELECT Despesas.Id, Despesas.Descricao AS DescricaoDespesas, Despesas.Valor, Despesas.DataEmissao, Contato.Nome AS Contato, FormaPagamento.Descricao AS FormaPagamento, Banco.Nome AS Banco, Despesas.IdUsuario FROM Despesas
                                     INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
-                                    INNER JOIN Banco ON Despesas.IdBanco = Banco.Id";
+                                    INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
+                                    WHERE Despesas.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -291,10 +297,12 @@ namespace DAL
                                     INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
-                                    WHERE Despesas.Descricao LIKE @Descricao";
+                                    WHERE Despesas.Descricao LIKE @Descricao AND Despesas.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -337,10 +345,12 @@ namespace DAL
                                     INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
-                                    WHERE Banco.Nome LIKE @Nome";
+                                    WHERE Banco.Nome LIKE @Nome AND Despesas.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", "%" + _banco + "%");
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -383,10 +393,12 @@ namespace DAL
                                     INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
-                                    WHERE FormaPagamento.Descricao LIKE @Descricao";
+                                    WHERE FormaPagamento.Descricao LIKE @Descricao AND Despesas.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _formaPagamento + "%");
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -429,10 +441,12 @@ namespace DAL
                                     INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
-                                    WHERE Contato.Nome LIKE @Nome";
+                                    WHERE Contato.Nome LIKE @Nome AND Despesas.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", "%" + _contato + "%");
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -475,11 +489,12 @@ namespace DAL
                                     INNER JOIN Contato ON Despesas.IdContato = Contato.Id 
                                     INNER JOIN FormaPagamento ON Despesas.IdFormaPagamento = FormaPagamento.Id
                                     INNER JOIN Banco ON Despesas.IdBanco = Banco.Id
-                                    WHERE Despesas.DataEmissao BETWEEN @DataInicial AND @DataFinal";
+                                    WHERE Despesas.DataEmissao BETWEEN @DataInicial AND @DataFinal AND Despesas.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@DataInicial", _periodoInicial);
                 cmd.Parameters.AddWithValue("@DataFinal", _periodoFinal);
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
 
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())

@@ -101,7 +101,7 @@
             this.nomeTextBox.Location = new System.Drawing.Point(14, 43);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(262, 22);
-            this.nomeTextBox.TabIndex = 2;
+            this.nomeTextBox.TabIndex = 1;
             this.nomeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
             // 
             // contatoBindingSource
@@ -114,7 +114,7 @@
             this.enderecoTextBox.Location = new System.Drawing.Point(14, 119);
             this.enderecoTextBox.Name = "enderecoTextBox";
             this.enderecoTextBox.Size = new System.Drawing.Size(506, 22);
-            this.enderecoTextBox.TabIndex = 6;
+            this.enderecoTextBox.TabIndex = 3;
             this.enderecoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enderecoTextBox_KeyDown);
             // 
             // descricaoTextBox
@@ -123,7 +123,7 @@
             this.descricaoTextBox.Location = new System.Drawing.Point(14, 191);
             this.descricaoTextBox.Name = "descricaoTextBox";
             this.descricaoTextBox.Size = new System.Drawing.Size(506, 22);
-            this.descricaoTextBox.TabIndex = 8;
+            this.descricaoTextBox.TabIndex = 4;
             this.descricaoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descricaoTextBox_KeyDown);
             // 
             // label1
@@ -146,7 +146,7 @@
             this.buttonCancelarCadastroContato.Location = new System.Drawing.Point(414, 257);
             this.buttonCancelarCadastroContato.Name = "buttonCancelarCadastroContato";
             this.buttonCancelarCadastroContato.Size = new System.Drawing.Size(106, 36);
-            this.buttonCancelarCadastroContato.TabIndex = 10;
+            this.buttonCancelarCadastroContato.TabIndex = 7;
             this.buttonCancelarCadastroContato.Text = "Cancelar";
             this.buttonCancelarCadastroContato.UseVisualStyleBackColor = true;
             this.buttonCancelarCadastroContato.Click += new System.EventHandler(this.buttonCancelarCadastroContato_Click);
@@ -157,7 +157,7 @@
             this.buttonSalvarCadastroContato.Location = new System.Drawing.Point(324, 257);
             this.buttonSalvarCadastroContato.Name = "buttonSalvarCadastroContato";
             this.buttonSalvarCadastroContato.Size = new System.Drawing.Size(84, 36);
-            this.buttonSalvarCadastroContato.TabIndex = 9;
+            this.buttonSalvarCadastroContato.TabIndex = 6;
             this.buttonSalvarCadastroContato.Text = "Salvar";
             this.buttonSalvarCadastroContato.UseVisualStyleBackColor = true;
             this.buttonSalvarCadastroContato.Click += new System.EventHandler(this.buttonSalvarCadastroContato_Click);
@@ -173,7 +173,7 @@
             this.ativoCheckBox.Location = new System.Drawing.Point(27, 234);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.ativoCheckBox.TabIndex = 12;
+            this.ativoCheckBox.TabIndex = 5;
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = false;
             // 
@@ -203,7 +203,7 @@
             this.numeroTextBox.Mask = "(99) 00000-0000";
             this.numeroTextBox.Name = "numeroTextBox";
             this.numeroTextBox.Size = new System.Drawing.Size(109, 22);
-            this.numeroTextBox.TabIndex = 13;
+            this.numeroTextBox.TabIndex = 2;
             // 
             // FormCadastroContato
             // 

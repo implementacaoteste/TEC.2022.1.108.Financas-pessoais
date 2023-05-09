@@ -105,8 +105,12 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento WHERE Ativo = 1";
+                cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento
+                                    WHERE Ativo = 1 AND IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -140,10 +144,13 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento WHERE Id = @Id AND Ativo = 1";
+                cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento
+                                    WHERE Id = @Id AND Ativo = 1 AND IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -176,10 +183,13 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento WHERE Descricao LIKE @Descricao AND Ativo = 1";
+                cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento 
+                                    WHERE Descricao LIKE @Descricao AND Ativo = 1 AND IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -250,8 +260,6 @@ namespace DAL
 
             
         }
-        
-
         public object BuscarPorInativo(string _inativo)
         {
             {
@@ -262,8 +270,11 @@ namespace DAL
                 {
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = cn;
-                    cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento WHERE Ativo = 0";
+                    cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento 
+                                        WHERE Ativo = 0 AND IdUsuario = @IdUsuario";
                     cmd.CommandType = System.Data.CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
 
                     cn.Open();
                     using (SqlDataReader rd = cmd.ExecuteReader())
