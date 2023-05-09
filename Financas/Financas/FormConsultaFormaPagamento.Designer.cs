@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.formaPagamentoDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.formaPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
             this.buttonAlterarFormaPagamento = new System.Windows.Forms.Button();
@@ -44,6 +42,8 @@
             this.buttonSelecionar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -68,24 +68,6 @@
             this.formaPagamentoDataGridView.RowTemplate.Height = 24;
             this.formaPagamentoDataGridView.Size = new System.Drawing.Size(1040, 515);
             this.formaPagamentoDataGridView.TabIndex = 9;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // Ativo
-            // 
-            this.Ativo.DataPropertyName = "Ativo";
-            this.Ativo.HeaderText = "Ativo";
-            this.Ativo.MinimumWidth = 6;
-            this.Ativo.Name = "Ativo";
-            this.Ativo.ReadOnly = true;
-            this.Ativo.Width = 125;
             // 
             // formaPagamentoBindingSource
             // 
@@ -172,7 +154,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Consulta de forma de pagamento";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // buttonSair
             // 
@@ -220,6 +201,23 @@
             this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Buscar por";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "Ativo";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.MinimumWidth = 6;
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
             // 
             // FormConsultaFormaPagamento
             // 
