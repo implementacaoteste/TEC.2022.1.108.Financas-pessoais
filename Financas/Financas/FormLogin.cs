@@ -74,5 +74,15 @@ namespace Financas
             //https:/finanaspessoais1.durable.co/?pt=NjQ1NDIzMzI2ZDZlNTU4OTM2OWFiMTdlOjE2ODM1Njc4NzguNTk1OnByZXZpZXc=
             //https:/www.youtube.com/watch?v=P3KYR-HZmu0
         }
+
+        private void buttonEntrar_MouseEnter(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void buttonEntrar_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
