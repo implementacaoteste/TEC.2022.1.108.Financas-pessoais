@@ -74,5 +74,11 @@ namespace Financas
             //https:/finanaspessoais1.durable.co/?pt=NjQ1NDIzMzI2ZDZlNTU4OTM2OWFiMTdlOjE2ODM1Njc4NzguNTk1OnByZXZpZXc=
             //https:/www.youtube.com/watch?v=P3KYR-HZmu0
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            label1.ForeColor = label1.ForeColor == Color.Transparent ? Color.Red : Color.Transparent;
+
+        }
     }
 }

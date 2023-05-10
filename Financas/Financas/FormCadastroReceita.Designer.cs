@@ -189,6 +189,7 @@
             this.contatoTextBox.ReadOnly = true;
             this.contatoTextBox.Size = new System.Drawing.Size(200, 22);
             this.contatoTextBox.TabIndex = 4;
+            this.contatoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.contatoTextBox_KeyDown);
             // 
             // bancoTextBox
             // 
