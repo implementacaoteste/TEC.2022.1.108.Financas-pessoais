@@ -75,9 +75,14 @@ namespace Financas
             //https:/www.youtube.com/watch?v=P3KYR-HZmu0
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void buttonEntrar_MouseEnter(object sender, EventArgs e)
         {
-            label1.ForeColor = label1.ForeColor == Color.Transparent ? Color.Red : Color.Transparent;
+           
+        }
+
+        private void buttonEntrar_MouseLeave(object sender, EventArgs e)
+        {
+            
 
         }
     }
