@@ -83,6 +83,7 @@ namespace Financas
         private void buttonEntrar_MouseLeave(object sender, EventArgs e)
         {
             
+
         }
     }
 }

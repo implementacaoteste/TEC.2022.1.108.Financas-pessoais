@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Financas
 {
@@ -136,8 +137,18 @@ namespace Financas
         private void FormConsultaContato_Load(object sender, EventArgs e)
         {
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
+            comboBoxBuscar.SelectedIndex = 1;
         }
 
+        private void textBoxBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                buttonBuscar_Click(null, null);
+        }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

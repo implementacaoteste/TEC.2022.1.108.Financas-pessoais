@@ -39,6 +39,7 @@
             this.buttonCancelarCadBanco = new System.Windows.Forms.Button();
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             nomeLabel = new System.Windows.Forms.Label();
             poupancaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bancoBindingSource)).BeginInit();
@@ -163,6 +164,9 @@
             this.panel1.Size = new System.Drawing.Size(635, 362);
             this.panel1.TabIndex = 11;
             // 
+            // timer1
+            // 
+            // 
             // FormCadastroBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -204,5 +208,6 @@
         private System.Windows.Forms.Button buttonCancelarCadBanco;
         private System.Windows.Forms.CheckBox ativoCheckBox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

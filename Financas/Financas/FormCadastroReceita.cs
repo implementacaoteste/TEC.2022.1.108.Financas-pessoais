@@ -129,6 +129,14 @@ namespace Financas
             if(e.KeyCode==Keys.Escape)
                 Close();
         }
+
+        private void contatoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                buttonBuscarContatoReceita_Click(null, null);
+        }
+
+       
     }
 }
 
