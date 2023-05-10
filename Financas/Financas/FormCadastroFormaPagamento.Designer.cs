@@ -50,7 +50,7 @@
             descricaoLabel.Location = new System.Drawing.Point(21, 28);
             descricaoLabel.Name = "descricaoLabel";
             descricaoLabel.Size = new System.Drawing.Size(91, 20);
-            descricaoLabel.TabIndex = 2;
+            descricaoLabel.TabIndex = 0;
             descricaoLabel.Text = "Descrição:";
             // 
             // label1
@@ -106,6 +106,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ativoCheckBox);
             this.panel1.Controls.Add(this.textBoxDescricao);
             this.panel1.Controls.Add(this.buttonSalvar);
             this.panel1.Controls.Add(descricaoLabel);
@@ -114,7 +115,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(485, 246);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 1;
             // 
             // ativoCheckBox
             // 
@@ -125,7 +126,7 @@
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.formaPagamentoBindingSource, "Ativo", true));
             this.ativoCheckBox.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.ativoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ativoCheckBox.Location = new System.Drawing.Point(37, 299);
+            this.ativoCheckBox.Location = new System.Drawing.Point(25, 188);
             this.ativoCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(83, 30);
@@ -139,7 +140,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(529, 389);
-            this.Controls.Add(this.ativoCheckBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
