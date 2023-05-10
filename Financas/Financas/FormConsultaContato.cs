@@ -17,6 +17,7 @@ namespace Financas
     {
         public int Id;
         public string Nome;
+        private string filtro;
         public FormConsultaContato(bool _selecionar = false)
         {
             InitializeComponent();
@@ -142,13 +143,41 @@ namespace Financas
 
         private void textBoxBuscar_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
-                buttonBuscar_Click(null, null);
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (filtro != textBoxBuscar.Text)
+                {
+                    buttonBuscar_Click(null, null);
+                    filtro = textBoxBuscar.Text;
+                }
+                else
+                {
+                    buttonSelecionarContato_Click(null, null);
+                }
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                contatoBindingSource.MovePrevious();
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                contatoBindingSource.MoveNext();
+                e.Handled = true;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void contatoDataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                buttonSelecionarContato_Click(null, null);
+
+            e.Handled = true;
         }
     }
 }
