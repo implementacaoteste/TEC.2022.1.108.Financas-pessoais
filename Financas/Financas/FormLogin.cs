@@ -85,5 +85,10 @@ namespace Financas
             
 
         }
+
+        private void textBoxSenhaLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

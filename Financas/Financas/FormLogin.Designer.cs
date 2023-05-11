@@ -53,7 +53,7 @@ namespace Financas
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(847, 597);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -76,6 +76,7 @@ namespace Financas
             this.textBoxSenhaLogin.PasswordChar = '*';
             this.textBoxSenhaLogin.Size = new System.Drawing.Size(235, 20);
             this.textBoxSenhaLogin.TabIndex = 4;
+            this.textBoxSenhaLogin.TextChanged += new System.EventHandler(this.textBoxSenhaLogin_TextChanged);
             // 
             // labelUsuarioLogin
             // 
@@ -127,7 +128,7 @@ namespace Financas
             this.checkBoxMostrarSenha.AutoSize = true;
             this.checkBoxMostrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxMostrarSenha.Location = new System.Drawing.Point(393, 339);
-            this.checkBoxMostrarSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxMostrarSenha.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxMostrarSenha.Name = "checkBoxMostrarSenha";
             this.checkBoxMostrarSenha.Size = new System.Drawing.Size(92, 16);
             this.checkBoxMostrarSenha.TabIndex = 5;
@@ -166,7 +167,7 @@ namespace Financas
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(340, 470);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 36);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -178,7 +179,7 @@ namespace Financas
             this.pictureBox3.BackColor = System.Drawing.SystemColors.Highlight;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(403, 122);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(94, 85);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

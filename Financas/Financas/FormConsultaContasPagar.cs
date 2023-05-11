@@ -174,6 +174,7 @@ namespace Financas
 
         private void FormConsultaContasPagar_Load(object sender, EventArgs e)
         {
+            
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
         }
 
