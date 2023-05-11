@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using Models;
@@ -48,13 +42,14 @@ namespace Financas
             if (Id == 0)
             {
                 bancoBindingSource.AddNew();
+                ((Banco)bancoBindingSource.Current).Ativo = 
                 ativoCheckBox.Checked = true;
             }
             else
                 bancoBindingSource.DataSource = new BancoBLL().BuscarPorId(Id);
 
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = SystemColors.Control;
         }
 
         private void FormCadastroBanco_KeyDown(object sender, KeyEventArgs e)

@@ -133,7 +133,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-
+                buttonBuscarFormaPagamento_Click(null, null);
                 descricaoTextBoxContasReceber.Focus();
             }
         }

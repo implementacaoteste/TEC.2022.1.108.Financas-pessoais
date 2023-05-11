@@ -137,5 +137,11 @@ namespace Financas
             if (e.KeyCode == Keys.Enter)
                 buttonBuscar_Click(null, null);
         }
+
+        private void formaPagamentoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                buttonBuscarFormaPagamentoDespesas_Click(null, null);
+        }
     }
 }

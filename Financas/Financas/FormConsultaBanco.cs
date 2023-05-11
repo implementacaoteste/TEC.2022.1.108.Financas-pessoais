@@ -103,6 +103,7 @@ namespace Financas
         {
             try
             {
+                filtro = textBoxConsultarBanco.Text;
                 comboBoxBuscar.SelectedIndex = 1;
                 this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
                 this.label1.ForeColor = System.Drawing.SystemColors.ControlText;

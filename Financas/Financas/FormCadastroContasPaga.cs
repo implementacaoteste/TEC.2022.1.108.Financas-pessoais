@@ -126,7 +126,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-
+                button2_Click(sender, e);
                 descricaoTextBox.Focus();
             }
         }

@@ -48,6 +48,7 @@ namespace Financas
                 if (Id == 0)
                 {
                     contatoBindingSource.AddNew();
+                    ((Contato)contatoBindingSource.Current).Ativo =
                     ativoCheckBox.Checked = true;
                 }
                 else

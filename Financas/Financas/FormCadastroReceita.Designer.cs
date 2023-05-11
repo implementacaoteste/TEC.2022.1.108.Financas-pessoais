@@ -210,6 +210,7 @@
             this.formaPagamentoTextBox.ReadOnly = true;
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(204, 22);
             this.formaPagamentoTextBox.TabIndex = 10;
+            this.formaPagamentoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formaPagamentoTextBox_KeyDown);
             // 
             // buttonBuscarContatoReceita
             // 
@@ -218,6 +219,7 @@
             this.buttonBuscarContatoReceita.Name = "buttonBuscarContatoReceita";
             this.buttonBuscarContatoReceita.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscarContatoReceita.TabIndex = 5;
+            this.buttonBuscarContatoReceita.TabStop = false;
             this.buttonBuscarContatoReceita.Text = "Buscar";
             this.buttonBuscarContatoReceita.UseVisualStyleBackColor = true;
             this.buttonBuscarContatoReceita.Click += new System.EventHandler(this.buttonBuscarContatoReceita_Click);

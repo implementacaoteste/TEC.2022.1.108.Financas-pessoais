@@ -51,7 +51,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Escape)
                  Application.Exit();
-                
+
 
             if (e.KeyCode == Keys.Enter)
             {
@@ -64,6 +64,8 @@ namespace Financas
                 e.SuppressKeyPress = true;
                 this.SelectNextControl(this.ActiveControl, true, true, true, true);
             }
+            else if (e.KeyCode == Keys.F1)
+                linkLabel1_LinkClicked(null, null);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

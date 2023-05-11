@@ -1,13 +1,7 @@
 ﻿using BLL;
 using Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Financas
@@ -16,6 +10,7 @@ namespace Financas
     {
         public int Id;
         public string Descricao;
+        private string filtro;
         public FormConsultaFormaPagamento(bool _selecionar = false)
         {
             InitializeComponent();
@@ -146,15 +141,15 @@ namespace Financas
 
         private void FormConsultaFormaPagamento_Load(object sender, EventArgs e)
         {
+            comboBox1.SelectedIndex = 1;
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
 
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = 
+            this.label3.ForeColor = SystemColors.ControlText;
 
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-
+            this.label2.ForeColor = 
+            this.label1.BackColor = 
+            this.label3.BackColor = SystemColors.Control;
         }
 
         private void buttonSelecionar_Click_1(object sender, EventArgs e)
@@ -178,6 +173,41 @@ namespace Financas
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void textBoxConsultarFormaPagamento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (filtro != textBoxConsultarFormaPagamento.Text)
+                {
+                    buttonBuscarFormaPagamento_Click(null, null);
+                    filtro = textBoxConsultarFormaPagamento.Text;
+                }
+                else
+                {
+                    buttonSelecionar_Click(null, null);
+                }
+
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                formaPagamentoBindingSource.MovePrevious();
+                e.Handled = true;
+            }
+             else if(e.KeyCode == Keys.Down)
+            {
+                formaPagamentoBindingSource.MoveNext();
+                e.Handled = true;
+            }
+            
+        }
+
+        private void formaPagamentoDataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                buttonSelecionar_Click(null, null);
+            e.Handled = true;
         }
     }
 }

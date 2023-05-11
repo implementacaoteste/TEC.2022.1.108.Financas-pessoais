@@ -241,6 +241,7 @@
             this.formaPagamentoTextBox.ReadOnly = true;
             this.formaPagamentoTextBox.Size = new System.Drawing.Size(197, 22);
             this.formaPagamentoTextBox.TabIndex = 9;
+            this.formaPagamentoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formaPagamentoTextBox_KeyDown);
             // 
             // buttonBuscarFormaPagamentoDespesas
             // 
