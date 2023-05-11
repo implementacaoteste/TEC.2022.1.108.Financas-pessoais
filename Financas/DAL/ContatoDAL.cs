@@ -60,7 +60,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu erro ao tentar inserir um Contato no banco de dados", ex);
+                throw new Exception("Ocorreu erro ao tentar alterar um Contato no banco de dados", ex);
             }
             finally
             {
@@ -223,7 +223,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar os contatos por nome do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar o contato por nome do banco de dados", ex);
             }
             finally
             {
@@ -267,7 +267,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar os contatos por Endereço do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar o contato por Endereço do banco de dados", ex);
             }
             finally
             {
@@ -311,7 +311,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar os contatos por número do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar o contato por número do banco de dados", ex);
             }
             finally
             {

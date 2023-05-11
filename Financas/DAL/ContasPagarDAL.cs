@@ -47,7 +47,7 @@ namespace DAL
                     catch (Exception ex)
                     {
                         transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar inserir uma Conta a pagar no banco de dados", ex);
+                        throw new Exception("Ocorreu erro ao tentar inserir uma conta a pagar no banco de dados", ex);
                     }
 
                 }
@@ -109,7 +109,7 @@ namespace DAL
                     {
                         if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
                             transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar alterar uma  Conta a receber no banco de dados", ex);
+                        throw new Exception("Ocorreu erro ao tentar alterar uma Conta a receber no banco de dados", ex);
                     }
                 }
             }
@@ -193,7 +193,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar as contas a pagar por id do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar uma conta a pagar por id do banco de dados", ex);
             }
             finally
             {

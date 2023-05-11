@@ -94,7 +94,7 @@ namespace DAL
                     catch (Exception ex)
                     {
                         transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar excluir um grupo de usuario no banco de dados", ex);
+                        throw new Exception("Ocorreu erro ao tentar excluir um usuário no banco de dados", ex);
                     }
 
                 }

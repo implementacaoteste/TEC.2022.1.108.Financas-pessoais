@@ -86,7 +86,7 @@ namespace DAL
                     {
                         if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
                             transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar Inserir uma  receita no banco de dados", ex);
+                        throw new Exception("Ocorreu erro ao tentar inserir uma receita no banco de dados", ex);
                     }
                 }
             }
@@ -109,7 +109,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu erro ao tentar alterar uma Receita no banco de dados", ex);
+                throw new Exception("Ocorreu erro ao tentar alterar uma receita no banco de dados", ex);
             }
             finally
             {
