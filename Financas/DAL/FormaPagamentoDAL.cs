@@ -128,7 +128,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar todos as formas de pagamento do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar todas as formas de pagamento do banco de dados", ex);
             }
             finally
             {
@@ -166,7 +166,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar as formas de pagamento por id do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar uma forma de pagamento por id do banco de dados", ex);
             }
             finally
             {

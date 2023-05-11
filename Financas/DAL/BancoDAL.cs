@@ -140,7 +140,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar as contas a pagar por id do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar o Banco por id do banco de dados", ex);
             }
             finally
             {

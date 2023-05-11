@@ -84,7 +84,7 @@ namespace DAL
                     {
                         if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
                             transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar alterar uma  Conta a receber no banco de dados", ex);
+                        throw new Exception("Ocorreu erro ao tentar inserir uma despesa no banco de dados", ex);
                     }
 
                 }
@@ -228,7 +228,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar as despesas por id do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar uma despesa por id do banco de dados", ex);
             }
             finally
             {

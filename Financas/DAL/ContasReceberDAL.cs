@@ -48,7 +48,7 @@ namespace DAL
                     {
                         if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
                             transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar inserir uma  Conta a receber no banco de dados", ex);
+                        throw new Exception("Ocorreu erro ao tentar inserir uma Conta a receber no banco de dados", ex);
                     }
 
                 }
@@ -110,7 +110,7 @@ namespace DAL
                     {
                         if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
                             transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar alterar uma  Conta a receber no banco de dados", ex);
+                        throw new Exception("Ocorreu erro ao tentar alterar uma Conta a receber no banco de dados", ex);
                     }
                 }
             }
@@ -145,9 +145,9 @@ namespace DAL
                     {
                         if (transaction.Connection != null && transaction.Connection.State == System.Data.ConnectionState.Open)
                             transaction.Rollback();
-                        throw new Exception("Ocorreu erro ao tentar excluir uma  Conta a receber no banco de dados", ex);
-                        return;
+                        throw new Exception("Ocorreu erro ao tentar excluir uma conta a receber no banco de dados", ex);
                     }
+                        return;
 
                 }
             }
@@ -196,7 +196,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar as contas a receber por id do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar uma conta a receber por id do banco de dados", ex);
             }
             finally
             {
@@ -249,7 +249,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar todos os contato do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar todas as contas do banco de dados", ex);
             }
             finally
             {
@@ -302,7 +302,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar as contas a receber por descrição do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar uma conta a receber por descrição do banco de dados", ex);
             }
             finally
             {
@@ -512,7 +512,7 @@ namespace DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Ocorreu um erro ao tentar buscar as contas a receber por banco do banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar as contas a receber por banco no banco de dados", ex);
             }
             finally
             {
