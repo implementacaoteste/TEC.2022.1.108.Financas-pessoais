@@ -53,30 +53,28 @@ namespace Financas
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1129, 735);
+            this.pictureBox1.Size = new System.Drawing.Size(847, 597);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(431, 286);
-            this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUsuario.Location = new System.Drawing.Point(323, 232);
             this.textBoxUsuario.Multiline = true;
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(312, 29);
+            this.textBoxUsuario.Size = new System.Drawing.Size(235, 24);
             this.textBoxUsuario.TabIndex = 2;
             this.textBoxUsuario.Text = "na";
             // 
             // textBoxSenhaLogin
             // 
-            this.textBoxSenhaLogin.Location = new System.Drawing.Point(431, 362);
-            this.textBoxSenhaLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSenhaLogin.Location = new System.Drawing.Point(323, 294);
             this.textBoxSenhaLogin.Name = "textBoxSenhaLogin";
             this.textBoxSenhaLogin.PasswordChar = '*';
-            this.textBoxSenhaLogin.Size = new System.Drawing.Size(312, 22);
+            this.textBoxSenhaLogin.Size = new System.Drawing.Size(235, 20);
             this.textBoxSenhaLogin.TabIndex = 4;
             // 
             // labelUsuarioLogin
@@ -84,10 +82,9 @@ namespace Financas
             this.labelUsuarioLogin.AutoSize = true;
             this.labelUsuarioLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsuarioLogin.ForeColor = System.Drawing.Color.Black;
-            this.labelUsuarioLogin.Location = new System.Drawing.Point(287, 289);
-            this.labelUsuarioLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUsuarioLogin.Location = new System.Drawing.Point(215, 235);
             this.labelUsuarioLogin.Name = "labelUsuarioLogin";
-            this.labelUsuarioLogin.Size = new System.Drawing.Size(122, 18);
+            this.labelUsuarioLogin.Size = new System.Drawing.Size(103, 15);
             this.labelUsuarioLogin.TabIndex = 1;
             this.labelUsuarioLogin.Text = "Nome Usuario:";
             // 
@@ -95,21 +92,19 @@ namespace Financas
             // 
             this.labelSenhaLogin.AutoSize = true;
             this.labelSenhaLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSenhaLogin.Location = new System.Drawing.Point(355, 369);
-            this.labelSenhaLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSenhaLogin.Location = new System.Drawing.Point(266, 300);
             this.labelSenhaLogin.Name = "labelSenhaLogin";
-            this.labelSenhaLogin.Size = new System.Drawing.Size(60, 18);
+            this.labelSenhaLogin.Size = new System.Drawing.Size(52, 15);
             this.labelSenhaLogin.TabIndex = 3;
             this.labelSenhaLogin.Text = "Senha:";
             // 
             // buttonEntrar
             // 
             this.buttonEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEntrar.Location = new System.Drawing.Point(469, 497);
-            this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEntrar.Location = new System.Drawing.Point(352, 404);
             this.buttonEntrar.Name = "buttonEntrar";
-            this.buttonEntrar.Size = new System.Drawing.Size(96, 34);
-            this.buttonEntrar.TabIndex = 5;
+            this.buttonEntrar.Size = new System.Drawing.Size(72, 28);
+            this.buttonEntrar.TabIndex = 6;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = true;
             this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
@@ -119,11 +114,10 @@ namespace Financas
             // buttonsair
             // 
             this.buttonsair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonsair.Location = new System.Drawing.Point(603, 497);
-            this.buttonsair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonsair.Location = new System.Drawing.Point(452, 404);
             this.buttonsair.Name = "buttonsair";
-            this.buttonsair.Size = new System.Drawing.Size(97, 34);
-            this.buttonsair.TabIndex = 6;
+            this.buttonsair.Size = new System.Drawing.Size(73, 28);
+            this.buttonsair.TabIndex = 7;
             this.buttonsair.Text = "Sair";
             this.buttonsair.UseVisualStyleBackColor = true;
             this.buttonsair.Click += new System.EventHandler(this.buttonsair_Click);
@@ -132,11 +126,11 @@ namespace Financas
             // 
             this.checkBoxMostrarSenha.AutoSize = true;
             this.checkBoxMostrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(524, 417);
-            this.checkBoxMostrarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(393, 339);
+            this.checkBoxMostrarSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBoxMostrarSenha.Name = "checkBoxMostrarSenha";
-            this.checkBoxMostrarSenha.Size = new System.Drawing.Size(120, 19);
-            this.checkBoxMostrarSenha.TabIndex = 7;
+            this.checkBoxMostrarSenha.Size = new System.Drawing.Size(92, 16);
+            this.checkBoxMostrarSenha.TabIndex = 5;
             this.checkBoxMostrarSenha.Text = "Mostrar a Senha";
             this.checkBoxMostrarSenha.UseVisualStyleBackColor = true;
             this.checkBoxMostrarSenha.CheckedChanged += new System.EventHandler(this.checkBoxMostrarSenha_CheckedChanged);
@@ -147,8 +141,9 @@ namespace Financas
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1129, 100);
+            this.label1.Size = new System.Drawing.Size(847, 81);
             this.label1.TabIndex = 8;
             this.label1.Text = "CONTROLE FINANÇAS PESSOAIS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,10 +153,11 @@ namespace Financas
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(508, 582);
+            this.linkLabel1.Location = new System.Drawing.Point(381, 473);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(212, 31);
-            this.linkLabel1.TabIndex = 9;
+            this.linkLabel1.Size = new System.Drawing.Size(169, 26);
+            this.linkLabel1.TabIndex = 8;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Suporte Tecnico";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -169,10 +165,10 @@ namespace Financas
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(451, 578);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(338, 470);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(52, 34);
+            this.pictureBox2.Size = new System.Drawing.Size(39, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -181,19 +177,19 @@ namespace Financas
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.Highlight;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(537, 150);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(403, 122);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(125, 105);
+            this.pictureBox3.Size = new System.Drawing.Size(94, 85);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 735);
+            this.ClientSize = new System.Drawing.Size(847, 597);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.linkLabel1);
@@ -209,7 +205,6 @@ namespace Financas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";

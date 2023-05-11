@@ -54,7 +54,7 @@
             nomeLabel.Location = new System.Drawing.Point(81, 25);
             nomeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(58, 20);
+            nomeLabel.Size = new System.Drawing.Size(49, 17);
             nomeLabel.TabIndex = 1;
             nomeLabel.Text = "Nome:";
             // 
@@ -66,7 +66,7 @@
             poupancaLabel.Location = new System.Drawing.Point(83, 139);
             poupancaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             poupancaLabel.Name = "poupancaLabel";
-            poupancaLabel.Size = new System.Drawing.Size(88, 20);
+            poupancaLabel.Size = new System.Drawing.Size(76, 17);
             poupancaLabel.TabIndex = 5;
             poupancaLabel.Text = "Poupança:";
             // 
@@ -90,7 +90,7 @@
             this.nomeTextBox.Location = new System.Drawing.Point(83, 52);
             this.nomeTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(359, 22);
+            this.nomeTextBox.Size = new System.Drawing.Size(359, 19);
             this.nomeTextBox.TabIndex = 1;
             this.nomeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
             // 
@@ -104,7 +104,7 @@
             this.poupancaTextBox.Location = new System.Drawing.Point(83, 166);
             this.poupancaTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.poupancaTextBox.Name = "poupancaTextBox";
-            this.poupancaTextBox.Size = new System.Drawing.Size(359, 22);
+            this.poupancaTextBox.Size = new System.Drawing.Size(359, 19);
             this.poupancaTextBox.TabIndex = 2;
             this.poupancaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.poupancaTextBox_KeyDown);
             // 
@@ -148,6 +148,7 @@
             this.ativoCheckBox.TabIndex = 3;
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = false;
+            
             // 
             // panel1
             // 
@@ -164,12 +165,9 @@
             this.panel1.Size = new System.Drawing.Size(635, 362);
             this.panel1.TabIndex = 11;
             // 
-            // timer1
-            // 
-            // 
             // FormCadastroBanco
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
