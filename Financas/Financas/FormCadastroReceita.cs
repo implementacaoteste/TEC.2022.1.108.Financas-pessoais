@@ -136,7 +136,16 @@ namespace Financas
                 buttonBuscarContatoReceita_Click(null, null);
         }
 
-       
+        private void contatoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bancoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                buttonBuscarBancoReceita_Click(null, null);
+        }
     }
 }
 

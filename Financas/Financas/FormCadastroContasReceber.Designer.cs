@@ -218,7 +218,6 @@
             this.textBoxBuscarContato.ReadOnly = true;
             this.textBoxBuscarContato.Size = new System.Drawing.Size(164, 20);
             this.textBoxBuscarContato.TabIndex = 3;
-            this.textBoxBuscarContato.TextChanged += new System.EventHandler(this.textBoxBuscarContato_TextChanged);
             this.textBoxBuscarContato.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxBuscarContato_KeyDown);
             // 
             // contatoBindingSource

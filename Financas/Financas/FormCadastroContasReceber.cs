@@ -58,10 +58,7 @@ namespace Financas
             // contatoBindingSource.DataSource = new ContatoBLL().BuscarPorNome(textBoxBuscarContato.Text);
         }
 
-        private void textBoxBuscarContato_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void buttonBuscarBanco_Click(object sender, EventArgs e)
         {
@@ -118,7 +115,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-
+                buttonBuscarContatoContasReceber_Click(sender, e);
                 bancoTextBox.Focus();
             }
         }
@@ -127,7 +124,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-
+                buttonBuscarBanco_Click(null,null);
                 formaPagamentoTextBox.Focus();
             }
         }

@@ -125,5 +125,17 @@ namespace Financas
             if (e.KeyCode == Keys.Enter)
                 buttonSalvar_Click(null, null);
         }
+
+        private void contatoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                buttonBuscarContatoDespesas_Click(null,null);
+        }
+
+        private void bancoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                buttonBuscar_Click(null, null);
+        }
     }
 }

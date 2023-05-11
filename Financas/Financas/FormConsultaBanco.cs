@@ -16,6 +16,7 @@ namespace Financas
     {
         public int Id;
         public string Nome;
+        private string filtro;
         public FormConsultaBanco(bool _selecionarBanco = false)
         {
             InitializeComponent();
@@ -102,6 +103,7 @@ namespace Financas
         {
             try
             {
+                comboBoxBuscar.SelectedIndex = 1;
                 this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
                 this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
                 this.label1.BackColor = System.Drawing.SystemColors.Control;
@@ -150,6 +152,31 @@ namespace Financas
             bancoBindingSource.DataSource = new BancoBLL().BuscarTodos();
         }
 
+        private void textBoxConsultarBanco_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if(filtro != textBoxConsultarBanco.Text)
+                {
+                    buttonBuscarBanco_Click(null, null);
+                    filtro = textBoxConsultarBanco.Text;
 
+                }
+                else
+                {
+                    buttonSelecionarBanco_Click(null,null);
+                }
+            }
+             else if (e.KeyCode == Keys.Up)
+            {
+                bancoBindingSource.MovePrevious();
+                e.Handled = true;
+            }
+            else if(e.KeyCode == Keys.Down)
+            {
+                bancoBindingSource.MoveNext();
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -106,7 +106,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-
+              buttonBuscarContatoContasPagar_Click(sender, e);
                 bancoTextBox.Focus();
             }
         }
@@ -115,7 +115,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-
+                button1_Click(sender, e);
                 formaPagamentoTextBox.Focus();
             }
 
