@@ -68,6 +68,8 @@
             this.formaPagamentoDataGridView.RowTemplate.Height = 24;
             this.formaPagamentoDataGridView.Size = new System.Drawing.Size(1040, 515);
             this.formaPagamentoDataGridView.TabIndex = 9;
+            this.formaPagamentoDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.formaPagamentoDataGridView_CellContentClick);
+            this.formaPagamentoDataGridView.DoubleClick += new System.EventHandler(this.formaPagamentoDataGridView_DoubleClick);
             this.formaPagamentoDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formaPagamentoDataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn2
@@ -209,6 +211,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 

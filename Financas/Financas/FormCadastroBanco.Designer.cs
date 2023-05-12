@@ -112,7 +112,7 @@
             // 
             this.buttonSalvarCadBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvarCadBanco.Location = new System.Drawing.Point(444, 334);
-            this.buttonSalvarCadBanco.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonSalvarCadBanco.Margin = new System.Windows.Forms.Padding(5);
             this.buttonSalvarCadBanco.Name = "buttonSalvarCadBanco";
             this.buttonSalvarCadBanco.Size = new System.Drawing.Size(121, 54);
             this.buttonSalvarCadBanco.TabIndex = 4;
@@ -142,7 +142,7 @@
             this.ativoCheckBox.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.ativoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ativoCheckBox.Location = new System.Drawing.Point(115, 278);
-            this.ativoCheckBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ativoCheckBox.Margin = new System.Windows.Forms.Padding(5);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(111, 37);
             this.ativoCheckBox.TabIndex = 3;
@@ -159,7 +159,7 @@
             this.panel1.Controls.Add(this.buttonSalvarCadBanco);
             this.panel1.Controls.Add(poupancaLabel);
             this.panel1.Location = new System.Drawing.Point(63, 105);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(847, 446);
             this.panel1.TabIndex = 0;
@@ -185,7 +185,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "1";
             this.Load += new System.EventHandler(this.FormCadastroBanco_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormCadastroBanco_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.bancoBindingSource)).EndInit();

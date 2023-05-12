@@ -170,6 +170,7 @@
             this.textBoxGastos.Name = "textBoxGastos";
             this.textBoxGastos.Size = new System.Drawing.Size(133, 22);
             this.textBoxGastos.TabIndex = 1;
+            this.textBoxGastos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxGastos_KeyDown);
             // 
             // despesasBindingSource
             // 

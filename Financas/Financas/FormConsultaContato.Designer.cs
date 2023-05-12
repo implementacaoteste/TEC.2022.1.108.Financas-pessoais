@@ -105,6 +105,7 @@
             this.contatoDataGridView.RowTemplate.Height = 24;
             this.contatoDataGridView.Size = new System.Drawing.Size(1040, 515);
             this.contatoDataGridView.TabIndex = 9;
+            this.contatoDataGridView.DoubleClick += new System.EventHandler(this.contatoDataGridView_DoubleClick);
             this.contatoDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.contatoDataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn2

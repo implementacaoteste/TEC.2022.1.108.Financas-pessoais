@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsAppPrincipal;
 
 namespace Financas
 {
@@ -27,7 +28,12 @@ namespace Financas
         {
 
             if (Id == 0)
+            {
+
                 usuarioBindingSource.AddNew();
+            ((Usuario)usuarioBindingSource.Current).Ativo =
+                ativoCheckBox1.Checked = true;
+            }
             else
                 usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
         }
@@ -53,7 +59,17 @@ namespace Financas
             }
             catch (Exception ex)
             {
-               
+                int idErro = new TratarErro().PegarId(ex);
+
+                if (idErro == 1 || idErro == 2)
+                {
+                    textBoxSenhaCadastroUsuario.Focus();
+                    textBoxSenhaCadastroUsuario.Text =
+                    textBoxConfirmarSenhaCadastroUsuario.Text = "";
+                }
+                else if (idErro == 3)
+                    textBoxNomeCadastroUsuario.Focus();
+
                MessageBox.Show(ex.Message);
            }
         }
@@ -67,7 +83,8 @@ namespace Financas
                 if (Id == 0)
                 {
                     usuarioBindingSource.AddNew();
-                    ativoCheckBox.Checked = true;
+                    ((Usuario)usuarioBindingSource.Current).Ativo =
+                    ativoCheckBox1.Checked = true;
                 }
                 else
 
@@ -90,19 +107,19 @@ namespace Financas
         private void textBoxNomeCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                textBoxSenhaCadastroUsuario.Focus();
+                textBoxNomeUsuarioCadastroUsuario.Focus();
         }
 
         private void textBoxSenhaCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                textBoxNomeUsuarioCadastroUsuario.Focus();
+                textBoxConfirmarSenhaCadastroUsuario.Focus();
         }
 
         private void textBoxNomeUsuarioCadastroUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                textBoxConfirmarSenhaCadastroUsuario.Focus();
+                textBoxSenhaCadastroUsuario.Focus();
         }
 
         private void textBoxConfirmarSenhaCadastroUsuario_KeyDown(object sender, KeyEventArgs e)

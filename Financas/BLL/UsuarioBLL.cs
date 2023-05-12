@@ -10,11 +10,11 @@ namespace BLL
         private void ValidarDados(Usuario _usuario, string _confirmacaoDeSenha)
         {
             if (_usuario.Senha != _confirmacaoDeSenha)
-                throw new Exception("A senha e a confirmação da senha devem ser iguais.");
-            if (_usuario.Senha.Length <= 3)
-                throw new Exception("A senha deve possuir 3 ou mais caracteres.");
-            if (_usuario.Nome.Length <= 2)
-                throw new Exception("O nome deve possuir 2 ou mais caracteres.");
+                throw new Exception("A senha e a confirmação da senha devem ser iguais.") { Data = { { "Id", 1 } } };
+            if (_usuario.Senha.Length < 3)
+                throw new Exception("A senha deve possuir 3 ou mais caracteres.") { Data = { { "Id", 2 } } };
+            if (_usuario.Nome.Length < 2)
+                throw new Exception("O nome deve possuir 2 ou mais caracteres.") { Data = { { "Id", 3 } } };
         }
         public void Inserir(Usuario _usuario, string _confirmacaoDeSenha)
         {
@@ -31,7 +31,7 @@ namespace BLL
 
             if (id != 0)
                 throw new Exception("Registro não pode ser excluido porque existe histórico de movimentação");
-            
+
             new UsuarioDAL().Excluir(_id);
         }
         public List<Usuario> BuscarTodos()

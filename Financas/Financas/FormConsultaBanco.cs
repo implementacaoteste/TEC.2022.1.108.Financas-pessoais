@@ -121,6 +121,9 @@ namespace Financas
         {
             try
             {
+                if (!buttonSelecionarBanco.Visible)
+                    return;
+
                 if (bancoBindingSource.Count > 0)
                 {
                     if (!((Banco)bancoBindingSource.Current).Ativo)
@@ -178,6 +181,11 @@ namespace Financas
                 bancoBindingSource.MoveNext();
                 e.Handled = true;
             }
+        }
+
+        private void bancoDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            buttonSelecionarBanco_Click(null, null);
         }
     }
 }

@@ -74,6 +74,7 @@
             this.bancoDataGridView.RowTemplate.Height = 24;
             this.bancoDataGridView.Size = new System.Drawing.Size(1040, 514);
             this.bancoDataGridView.TabIndex = 9;
+            this.bancoDataGridView.DoubleClick += new System.EventHandler(this.bancoDataGridView_DoubleClick);
             // 
             // dataGridViewTextBoxColumn2
             // 

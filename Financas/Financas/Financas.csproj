@@ -156,6 +156,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TratarErro.cs" />
     <EmbeddedResource Include="FormCadastroBanco.resx">
       <DependentUpon>FormCadastroBanco.cs</DependentUpon>
     </EmbeddedResource>
