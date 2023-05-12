@@ -76,6 +76,7 @@ namespace Financas
 
                 ((Receita)receitaBindingSource.Current).IdContato = frm.Id;
                 contatoTextBox.Text = frm.Nome;
+                bancoTextBox.Focus();
             }
         }
 
@@ -151,6 +152,12 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
                 buttonBuscarFormaPagamentoReceita_Click(null, null);
+        }
+
+        private void textBoxGanhos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                contatoTextBox.Focus();
         }
     }
 }

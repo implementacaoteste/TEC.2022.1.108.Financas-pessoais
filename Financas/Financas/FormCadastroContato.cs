@@ -96,8 +96,7 @@ namespace Financas
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            int i = 0;
-            i += 1;
+           
         }
 
         private void label1_Click(object sender, EventArgs e)

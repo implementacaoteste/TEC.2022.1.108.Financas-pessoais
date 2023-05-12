@@ -145,6 +145,7 @@
             this.textBoxGanhos.Name = "textBoxGanhos";
             this.textBoxGanhos.Size = new System.Drawing.Size(133, 22);
             this.textBoxGanhos.TabIndex = 2;
+            this.textBoxGanhos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxGanhos_KeyDown);
             // 
             // buttonSalvar
             // 
