@@ -88,6 +88,7 @@ namespace Financas
 
                 ((Receita)receitaBindingSource.Current).IdBanco = frm.Id;
                 bancoTextBox.Text = frm.Nome;
+                formaPagamentoTextBox.Focus();
 
             }
         }
@@ -99,6 +100,7 @@ namespace Financas
                 frm.ShowDialog();
                 ((Receita)receitaBindingSource.Current).IdFormaPagamento = frm.Id;
                 formaPagamentoTextBox.Text = frm.Descricao;
+                textBoxDescricao.Focus();
             }
         }
 
@@ -158,6 +160,11 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
                 contatoTextBox.Focus();
+        }
+
+        private void textBoxGanhos_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

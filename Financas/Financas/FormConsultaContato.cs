@@ -180,6 +180,9 @@ namespace Financas
             e.Handled = true;
         }
 
-       
+        private void contatoDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            buttonSelecionarContato_Click(null, null);
+        }
     }
 }

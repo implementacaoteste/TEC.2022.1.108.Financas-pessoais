@@ -83,6 +83,7 @@ namespace Financas
                 frm.ShowDialog();
                 ((Despesas)despesasBindingSource.Current).IdContato = frm.Id;
                 contatoTextBox.Text = frm.Nome;
+                bancoTextBox.Focus();
             }
         }
 
@@ -96,6 +97,7 @@ namespace Financas
                     new DespesasBLL().ValidarSaldo(Convert.ToDouble(textBoxGastos.Text), frm.Id);
                     ((Despesas)despesasBindingSource.Current).IdBanco = frm.Id;
                     bancoTextBox.Text = frm.Nome;
+                    formaPagamentoTextBox.Focus();
                 }
             }
             catch (Exception ex)
@@ -111,6 +113,7 @@ namespace Financas
                 frm.ShowDialog();
                 ((Despesas)despesasBindingSource.Current).IdFormaPagamento = frm.Id;
                 formaPagamentoTextBox.Text = frm.Descricao;
+                textBoxDescricao.Focus();
             }
         }
 
@@ -143,5 +146,17 @@ namespace Financas
             if(e.KeyCode == Keys.Enter)
                 buttonBuscarFormaPagamentoDespesas_Click(null, null);
         }
+
+        private void textBoxGastos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                contatoTextBox.Focus();
+        }
+
+        
+
+        
+
+        
     }
 }

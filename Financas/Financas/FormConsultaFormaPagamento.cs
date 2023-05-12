@@ -141,6 +141,7 @@ namespace Financas
 
         private void FormConsultaFormaPagamento_Load(object sender, EventArgs e)
         {
+            
             comboBox1.SelectedIndex = 1;
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
 
@@ -208,6 +209,21 @@ namespace Financas
             if (e.KeyCode == Keys.Enter)
                 buttonSelecionar_Click(null, null);
             e.Handled = true;
+        }
+
+        private void formaPagamentoDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            buttonSelecionar_Click(null, null);
+        }
+
+        private void formaPagamentoDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarTodos();
         }
     }
 }
