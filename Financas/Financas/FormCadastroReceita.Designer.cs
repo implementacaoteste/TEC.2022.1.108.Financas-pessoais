@@ -231,6 +231,7 @@
             this.buttonBuscarBancoReceita.Name = "buttonBuscarBancoReceita";
             this.buttonBuscarBancoReceita.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscarBancoReceita.TabIndex = 8;
+            this.buttonBuscarBancoReceita.TabStop = false;
             this.buttonBuscarBancoReceita.Text = "Buscar";
             this.buttonBuscarBancoReceita.UseVisualStyleBackColor = true;
             this.buttonBuscarBancoReceita.Click += new System.EventHandler(this.buttonBuscarBancoReceita_Click);
@@ -242,6 +243,7 @@
             this.buttonBuscarFormaPagamentoReceita.Name = "buttonBuscarFormaPagamentoReceita";
             this.buttonBuscarFormaPagamentoReceita.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscarFormaPagamentoReceita.TabIndex = 11;
+            this.buttonBuscarFormaPagamentoReceita.TabStop = false;
             this.buttonBuscarFormaPagamentoReceita.Text = "Buscar";
             this.buttonBuscarFormaPagamentoReceita.UseVisualStyleBackColor = true;
             this.buttonBuscarFormaPagamentoReceita.Click += new System.EventHandler(this.buttonBuscarFormaPagamentoReceita_Click);

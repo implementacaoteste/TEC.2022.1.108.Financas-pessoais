@@ -205,6 +205,7 @@
             this.buttonBuscarContatoDespesas.Name = "buttonBuscarContatoDespesas";
             this.buttonBuscarContatoDespesas.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscarContatoDespesas.TabIndex = 4;
+            this.buttonBuscarContatoDespesas.TabStop = false;
             this.buttonBuscarContatoDespesas.Text = "Buscar";
             this.buttonBuscarContatoDespesas.UseVisualStyleBackColor = true;
             this.buttonBuscarContatoDespesas.Click += new System.EventHandler(this.buttonBuscarContatoDespesas_Click);
@@ -228,6 +229,7 @@
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscar.TabIndex = 7;
+            this.buttonBuscar.TabStop = false;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
@@ -251,6 +253,7 @@
             this.buttonBuscarFormaPagamentoDespesas.Name = "buttonBuscarFormaPagamentoDespesas";
             this.buttonBuscarFormaPagamentoDespesas.Size = new System.Drawing.Size(84, 36);
             this.buttonBuscarFormaPagamentoDespesas.TabIndex = 10;
+            this.buttonBuscarFormaPagamentoDespesas.TabStop = false;
             this.buttonBuscarFormaPagamentoDespesas.Text = "Buscar";
             this.buttonBuscarFormaPagamentoDespesas.UseVisualStyleBackColor = true;
             this.buttonBuscarFormaPagamentoDespesas.Click += new System.EventHandler(this.buttonBuscarFormaPagamentoDespesas_Click);

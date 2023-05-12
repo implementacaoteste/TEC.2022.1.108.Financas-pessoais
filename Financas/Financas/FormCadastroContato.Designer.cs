@@ -199,7 +199,7 @@
             this.panel1.Location = new System.Drawing.Point(37, 62);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 335);
+            this.panel1.Size = new System.Drawing.Size(576, 335);
             this.panel1.TabIndex = 13;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -212,7 +212,7 @@
             this.numeroTextBox.Name = "numeroTextBox";
             this.numeroTextBox.Size = new System.Drawing.Size(109, 22);
             this.numeroTextBox.TabIndex = 3;
-            this.numeroTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nomeTextBox_KeyDown);
+            this.numeroTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numeroTextBox_KeyDown);
             // 
             // FormCadastroContato
             // 
