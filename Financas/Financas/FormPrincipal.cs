@@ -241,5 +241,20 @@ namespace Financas
         {
             System.Diagnostics.Process.Start("https://gean-teste.github.io/financaspessoais/");
         }
+
+        private void FormPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                if (MessageBox.Show("Deseja realmente sair do sistema?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    Application.Exit();
+                    return;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
