@@ -173,7 +173,7 @@
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
             this.usuárioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.U)));
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(290, 26);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
             // 
@@ -248,7 +248,8 @@
             this.mudarUsuarioToolStripMenuItem.Name = "mudarUsuarioToolStripMenuItem";
             this.mudarUsuarioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
             this.mudarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
-            this.mudarUsuarioToolStripMenuItem.Text = "&Mudar usuario";
+            this.mudarUsuarioToolStripMenuItem.Tag = "";
+            this.mudarUsuarioToolStripMenuItem.Text = "&Voltar ao login";
             this.mudarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.mudarUsuarioToolStripMenuItem_Click);
             // 
             // FormPrincipal
