@@ -278,7 +278,7 @@
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 35;
+            this.idDataGridViewTextBoxColumn.Width = 30;
             // 
             // Descricao
             // 

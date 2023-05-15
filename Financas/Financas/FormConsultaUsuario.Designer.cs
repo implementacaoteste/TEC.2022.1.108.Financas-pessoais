@@ -175,7 +175,7 @@
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 35;
+            this.Id.Width = 30;
             // 
             // dataGridViewTextBoxColumn2
             // 

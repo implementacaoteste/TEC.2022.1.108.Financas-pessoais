@@ -121,7 +121,7 @@
             this.DataEmissao});
             this.despesasDataGridView.DataSource = this.despesasBindingSource;
             this.despesasDataGridView.Location = new System.Drawing.Point(35, 135);
-            this.despesasDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.despesasDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.despesasDataGridView.Name = "despesasDataGridView";
             this.despesasDataGridView.ReadOnly = true;
             this.despesasDataGridView.RowHeadersWidth = 51;
@@ -136,7 +136,7 @@
             // 
             this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdicionar.Location = new System.Drawing.Point(819, 110);
-            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(95, 23);
             this.buttonAdicionar.TabIndex = 9;
@@ -148,7 +148,7 @@
             // 
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterar.Location = new System.Drawing.Point(919, 110);
-            this.buttonAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlterar.TabIndex = 10;
@@ -249,7 +249,7 @@
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 35;
+            this.Id.Width = 30;
             // 
             // dataGridViewTextBoxColumn7
             // 
