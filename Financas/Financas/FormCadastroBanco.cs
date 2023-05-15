@@ -22,16 +22,23 @@ namespace Financas
 
         private void buttonSalvarCadBanco_Click(object sender, EventArgs e)
         {
-            BancoBLL BancoBLL = new BancoBLL();
-            bancoBindingSource.EndEdit();
+            try
+            {
+                BancoBLL BancoBLL = new BancoBLL();
+                bancoBindingSource.EndEdit();
 
-            if (Id == 0)
-                BancoBLL.Inserir((Banco)bancoBindingSource.Current);
-            else
-                BancoBLL.Alterar((Banco)bancoBindingSource.Current);
+                if (Id == 0)
+                    BancoBLL.Inserir((Banco)bancoBindingSource.Current);
+                else
+                    BancoBLL.Alterar((Banco)bancoBindingSource.Current);
 
-            MessageBox.Show("Registro salvo com sucesso");
-            Close();
+                MessageBox.Show("Registro salvo com sucesso");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FormCadastroBanco_Load(object sender, EventArgs e)

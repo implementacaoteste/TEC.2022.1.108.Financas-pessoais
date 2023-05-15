@@ -53,6 +53,7 @@ namespace Financas
                     default:
                         break;
                 }
+                textBoxBuscar.Focus();
             }
             catch (Exception ex)
             {

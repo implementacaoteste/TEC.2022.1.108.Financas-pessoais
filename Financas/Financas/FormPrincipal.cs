@@ -93,10 +93,7 @@ namespace Financas
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            using (FormLogin florm = new FormLogin())
-            {
-                florm.ShowDialog();
-            }
+            Autenticar();
         }
 
         private void contatoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -227,11 +224,22 @@ namespace Financas
 
         private void mudarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Autenticar();
+        }
+
+        private void Autenticar()
+        {
             Constantes.IdUsuarioLogado = 0;
             using (FormLogin frm = new FormLogin())
             {
                 frm.ShowDialog();
             }
+            linkLabel1.Visible = Constantes.IdUsuarioLogado == -1;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://gean-teste.github.io/financaspessoais/");
         }
     }
 }

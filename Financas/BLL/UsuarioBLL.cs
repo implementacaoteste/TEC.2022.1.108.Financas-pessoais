@@ -2,6 +2,7 @@
 using Models;
 using System;
 using System.Collections.Generic;
+using System.Security.Permissions;
 
 namespace BLL
 {
@@ -52,6 +53,12 @@ namespace BLL
         }
         public void Altenticar(string _nomeUsuario, string _senha)
         {
+            if (_nomeUsuario == Constantes.NomeUsuarioSuporte && _senha == Constantes.SenhaSuporte)
+            {
+                Constantes.IdUsuarioLogado = -1;
+                return;
+            }
+
             Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
             if (_senha == usuario.Senha && usuario.Ativo)
                 Constantes.IdUsuarioLogado = usuario.Id;
