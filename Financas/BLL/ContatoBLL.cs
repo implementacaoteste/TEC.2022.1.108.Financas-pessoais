@@ -17,15 +17,21 @@ namespace BLL
         }
         public void Inserir(Contato _contato)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             ValidarDadosContato(_contato);
             new ContatoDAL().Inserir(_contato);
         }
         public void Alterar(Contato _contato)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             new ContatoDAL().Alterar(_contato);
         }
         public void Excluir(int _id)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             int id = new ContatoDAL().ValidarMovinteçãoContato (_id).Id;
             if (id != 0)
                 throw new Exception("Registro não pode ser excluido porque existe histórico de movimentação.");

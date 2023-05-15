@@ -12,14 +12,20 @@ namespace BLL
     {
         public void Inserir(ContasReceber _contasReceber)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             new ContasReceberDAL().Inserir(_contasReceber);
         }
         public void Alterar(ContasReceber _contasReceber)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             new ContasReceberDAL().Alterar(_contasReceber);
         }
         public void Excluir(int _id)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             new ContasReceberDAL().Excluir(_id);
         }
         public List<ContasReceber> BuscarTodos()
