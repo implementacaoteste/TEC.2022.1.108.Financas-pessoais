@@ -28,21 +28,28 @@ namespace Financas
 
         private void buttonSalvarCadastroContasPagar_Click(object sender, EventArgs e)
         {
-            ContasPagarBLL contasPagarBLL = new ContasPagarBLL();
-            contasPagarBindingSource.EndEdit();
+            try
+            {
+                ContasPagarBLL contasPagarBLL = new ContasPagarBLL();
+                contasPagarBindingSource.EndEdit();
 
-            if (Id == 0)
-                contasPagarBLL.Inserir((ContasPagar)contasPagarBindingSource.Current);
-            else
-                contasPagarBLL.Alterar((ContasPagar)contasPagarBindingSource.Current);
+                if (Id == 0)
+                    contasPagarBLL.Inserir((ContasPagar)contasPagarBindingSource.Current);
+                else
+                    contasPagarBLL.Alterar((ContasPagar)contasPagarBindingSource.Current);
 
-            MessageBox.Show("Registro salvo com sucesso");
-            Close();
+                MessageBox.Show("Registro salvo com sucesso");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FormCadastroContasPaga_Load(object sender, EventArgs e)
         {
-            panel1.BackColor = Color.FromArgb(100, 0,0,0);
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
             if (Id == 0)
             {
                 contasPagarBindingSource.AddNew();
@@ -106,7 +113,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-              buttonBuscarContatoContasPagar_Click(sender, e);
+                buttonBuscarContatoContasPagar_Click(sender, e);
                 bancoTextBox.Focus();
             }
         }
@@ -146,7 +153,7 @@ namespace Financas
             if (e.KeyCode == Keys.Enter)
             {
                 //if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                  //  return;
+                //  return;
                 buttonSalvarCadastroContasPagar_Click(null, null);
 
 
