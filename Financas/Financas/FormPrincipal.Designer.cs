@@ -248,8 +248,11 @@
             this.mudarUsuarioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mudarUsuarioToolStripMenuItem.Image")));
             this.mudarUsuarioToolStripMenuItem.Name = "mudarUsuarioToolStripMenuItem";
             this.mudarUsuarioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
+
             this.mudarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.mudarUsuarioToolStripMenuItem.Text = "&Mudar usuario";
+
+
             this.mudarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.mudarUsuarioToolStripMenuItem_Click);
             // 
             // linkLabel1
