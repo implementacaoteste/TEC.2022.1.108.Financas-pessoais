@@ -166,7 +166,7 @@
             this.consultaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultaToolStripMenuItem.Image")));
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(102, 26);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.consultaToolStripMenuItem.Text = "&Consulta";
             // 
             // usuárioToolStripMenuItem
@@ -248,11 +248,8 @@
             this.mudarUsuarioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mudarUsuarioToolStripMenuItem.Image")));
             this.mudarUsuarioToolStripMenuItem.Name = "mudarUsuarioToolStripMenuItem";
             this.mudarUsuarioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
-
-            this.mudarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.mudarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
             this.mudarUsuarioToolStripMenuItem.Text = "&Mudar usuario";
-
-
             this.mudarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.mudarUsuarioToolStripMenuItem_Click);
             // 
             // linkLabel1
@@ -287,6 +284,7 @@
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormPrincipal_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
