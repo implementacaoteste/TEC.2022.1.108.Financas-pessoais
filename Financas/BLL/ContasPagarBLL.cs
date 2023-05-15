@@ -12,14 +12,20 @@ namespace BLL
     {
         public void Inserir(ContasPagar _contasPagar)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             new ContasPagarDAL().Inserir(_contasPagar);
         }
         public void Alterar(ContasPagar _contasPagar)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             new ContasPagarDAL().Alterar(_contasPagar);
         }
         public void Excluir(int _id)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             if (new ContasPagarDAL().BuscarPorId(_id).DataPagamento != null)
                 throw new Exception("Esta conta ja foi paga");
             new ContasPagarDAL().Excluir(_id);

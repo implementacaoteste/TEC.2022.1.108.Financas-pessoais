@@ -154,7 +154,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, Endereco, Numero, Descricao, Ativo, IdUsuario FROM Contato
-                                    WHERE Ativo = 1 AND IdUsuario = @IdUsuario";
+                                    WHERE Ativo = 1 AND (IdUsuario = @IdUsuario OR @IdUsuario = -1)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);

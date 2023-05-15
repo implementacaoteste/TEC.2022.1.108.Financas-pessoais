@@ -17,15 +17,21 @@ namespace BLL
         }
         public void Inserir(FormaPagamento _formaPagamento)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             ValidarDados(_formaPagamento);
             new FormaPagamentoDAL().Inserir(_formaPagamento);
         }
         public void Alterar(FormaPagamento _formaPagamento)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             new FormaPagamentoDAL().Alterar(_formaPagamento);
         }
         public void Excluir(int _id)
         {
+            if (Constantes.IdUsuarioLogado == -1)
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             int id = new FormaPagamentoDAL().ValidarMovinteçãoFormaPagamento(_id).Id;
             if (id != 0)
                 throw new Exception("Registro não pode ser excluido porque existe histórico de movimentação.");
