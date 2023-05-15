@@ -36,7 +36,7 @@ namespace Financas
 
         private void FormCadastroBanco_Load(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+     
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
 
             if (Id == 0)
