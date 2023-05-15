@@ -36,10 +36,7 @@ namespace Financas
             {
                 MessageBox.Show("Registro salvo com sucesso!");
             }
-            finally
-            {
-                Close();
-            }
+
         }
 
         private void buttonCancelarCadastroContasReceber_Click(object sender, EventArgs e)

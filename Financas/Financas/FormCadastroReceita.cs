@@ -19,15 +19,22 @@ namespace Financas
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            ReceitaBLL receitaBLL = new ReceitaBLL();
-            receitaBindingSource.EndEdit();
+            try
+            {
+                ReceitaBLL receitaBLL = new ReceitaBLL();
+                receitaBindingSource.EndEdit();
 
-            if (Id == 0)
+                if (Id == 0)
                     receitaBLL.Inserir((Receita)receitaBindingSource.Current, contasReceber);
-            else
-                receitaBLL.Alterar((Receita)receitaBindingSource.Current);
-            MessageBox.Show("Registro salvo com sucesso");
-            Close();
+                else
+                    receitaBLL.Alterar((Receita)receitaBindingSource.Current);
+                MessageBox.Show("Registro salvo com sucesso");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -37,7 +44,7 @@ namespace Financas
 
         private void FormCadastroReceita_Load(object sender, EventArgs e)
         {
-            panel1.BackColor = Color.FromArgb(100,0,0,0);
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             if (Id == 0)
@@ -115,21 +122,21 @@ namespace Financas
 
         }
 
-       /* private void FormCadastroReceita_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-                Close();
-        }*/
+        /* private void FormCadastroReceita_KeyDown(object sender, KeyEventArgs e)
+         {
+             if (e.KeyCode == Keys.Escape)
+                 Close();
+         }*/
 
         private void textBoxDescricao_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
-                buttonSalvar_Click(null,null);
+            if (e.KeyCode == Keys.Enter)
+                buttonSalvar_Click(null, null);
         }
 
         private void FormCadastroReceita_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
                 Close();
         }
 
