@@ -153,7 +153,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Cadastro de contas a receber";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // descricaoTextBoxContasReceber
             // 
@@ -301,7 +300,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(645, 345);
             this.panel1.TabIndex = 18;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // FormCadastroContasReceber
             // 

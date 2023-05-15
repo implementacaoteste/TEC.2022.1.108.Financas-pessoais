@@ -31,6 +31,9 @@ namespace Financas
                     contasReceberBLL.Inserir((ContasReceber)contasReceberBindingSource.Current);
                 else
                     contasReceberBLL.Alterar((ContasReceber)contasReceberBindingSource.Current);
+
+                MessageBox.Show("Registro salvo com sucesso");
+                Close();
             }
             catch
             {
@@ -147,23 +150,8 @@ namespace Financas
         private void dataEmissaoDateTimePicker_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            {
-                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                    return;
                 buttonSalvarCadastroContasReceber_Click(null, null);
-
-
-            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
