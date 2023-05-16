@@ -137,14 +137,14 @@ namespace Financas
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
-                textBoxConsultaContasPagar.Width = 248;
+                textBoxConsultaContasPagar.Width = 190;
                 textBoxConsultaContasPagar2.Visible = true;
             }
             if (comboBox1.SelectedIndex == 3)
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
-                textBoxConsultaContasPagar.Width = 248;
+                textBoxConsultaContasPagar.Width = 190;
                 textBoxConsultaContasPagar2.Visible = true;
             }
         }
@@ -220,10 +220,7 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
                 buttonBuscarConsultaContasPagar_Click(null, null);
-        }
-
-        private void textBoxConsultaContasPagar_KeyDown(object sender, KeyEventArgs e)
-        {
+            
             if (e.KeyCode == Keys.Up)
             {
                 contasPagarBindingSource.MovePrevious();
@@ -237,6 +234,13 @@ namespace Financas
             }
         }
 
+        private void textBoxConsultaContasPagar_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                textBoxConsultaContasPagar2.Focus();
+            }
+        }
     }
 }
 
