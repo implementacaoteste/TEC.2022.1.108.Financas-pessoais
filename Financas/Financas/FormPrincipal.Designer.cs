@@ -288,7 +288,7 @@
             this.toolStripStatusLabelUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabelUsuario.ForeColor = System.Drawing.Color.Navy;
             this.toolStripStatusLabelUsuario.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabelUsuario.Image")));
-            this.toolStripStatusLabelUsuario.LinkColor = System.Drawing.Color.Blue;
+            this.toolStripStatusLabelUsuario.LinkColor = System.Drawing.Color.Navy;
             this.toolStripStatusLabelUsuario.Name = "toolStripStatusLabelUsuario";
             this.toolStripStatusLabelUsuario.Size = new System.Drawing.Size(125, 20);
             this.toolStripStatusLabelUsuario.Text = "Usuário: Rosa";
