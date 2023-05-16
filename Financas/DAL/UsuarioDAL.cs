@@ -212,10 +212,6 @@ namespace DAL
 
                 throw new Exception("Ocorreu um erro ao tentar buscar os usuários por nome usuário do banco de dados", ex);
             }
-            finally
-            {
-                cn.Close();
-            }
         }
         public Usuario BuscarPorId(int _id)
         {
