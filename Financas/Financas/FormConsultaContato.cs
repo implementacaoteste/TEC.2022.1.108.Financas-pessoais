@@ -113,6 +113,9 @@ namespace Financas
         {
             try
             {
+                if (!buttonSelecionarContato.Visible)
+                    return;
+
                 if (contatoBindingSource.Count > 0)
                 {
                     if (!((Contato)contatoBindingSource.Current).Ativo)
