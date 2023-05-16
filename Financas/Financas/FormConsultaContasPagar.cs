@@ -191,7 +191,9 @@ namespace Financas
 
         private void FormConsultaContasPagar_Load(object sender, EventArgs e)
         {
+
             comboBox1.SelectedIndex = 2;
+
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
         }
 
@@ -199,6 +201,7 @@ namespace Financas
         {
 
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -218,5 +221,28 @@ namespace Financas
             if (e.KeyCode == Keys.Enter)
                 buttonBuscarConsultaContasPagar_Click(null, null);
         }
+
+        private void textBoxConsultaContasPagar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                contasPagarBindingSource.MovePrevious();
+                e.Handled = true;
+
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                contasPagarBindingSource.MoveNext();
+                e.Handled = true;
+            }
+        }
+
     }
 }
+
+
+
+
+
+
+
