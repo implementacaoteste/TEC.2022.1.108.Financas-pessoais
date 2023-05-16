@@ -68,7 +68,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1111, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1111, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,7 +87,7 @@
             this.cadastroToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cadastroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cadastroToolStripMenuItem.Image")));
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(103, 26);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.cadastroToolStripMenuItem.Text = "C&adastro";
             // 
             // usuarioToolStripMenuItem
@@ -298,7 +298,7 @@
             // 
             this.toolStripStatusLabel2.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.Navy;
+            this.toolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.toolStripStatusLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel2.Image")));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(86, 20);
