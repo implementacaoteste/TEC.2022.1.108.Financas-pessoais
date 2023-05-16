@@ -187,5 +187,10 @@ namespace Financas
         {
             buttonSelecionarBanco_Click(null, null);
         }
+
+        private void textBoxConsultarBanco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -96,5 +96,19 @@ namespace Financas
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
         }
+
+        private void textBoxBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                usuarioBindingSource.MovePrevious();
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                usuarioBindingSource.MoveNext();
+                e.Handled = true;
+            }
+        }
     }
 }
