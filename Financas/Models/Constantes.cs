@@ -9,6 +9,7 @@ namespace Models
     public static class Constantes
     {
         public static int IdUsuarioLogado;
+        public static string NomeUsuarioLogado;
 
         public static string NomeUsuarioSuporte { get { return "Suporte"; } }
         public static string SenhaSuporte

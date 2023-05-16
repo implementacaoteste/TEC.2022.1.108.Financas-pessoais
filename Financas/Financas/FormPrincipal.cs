@@ -235,6 +235,7 @@ namespace Financas
                 frm.ShowDialog();
             }
             linkLabel1.Visible = Constantes.IdUsuarioLogado == -1;
+            toolStripStatusLabelUsuario.Text = "Usuário: " + Constantes.NomeUsuarioLogado;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -255,6 +256,11 @@ namespace Financas
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void toolStripStatusLabelUsuario_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

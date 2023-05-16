@@ -70,7 +70,7 @@
             this.labelNomeUsuario.Location = new System.Drawing.Point(366, 9);
             this.labelNomeUsuario.Name = "labelNomeUsuario";
             this.labelNomeUsuario.Size = new System.Drawing.Size(141, 20);
-            this.labelNomeUsuario.TabIndex = 6;
+            this.labelNomeUsuario.TabIndex = 2;
             this.labelNomeUsuario.Text = "Nome de usuário:";
             // 
             // labelSenha
@@ -81,7 +81,7 @@
             this.labelSenha.Location = new System.Drawing.Point(32, 112);
             this.labelSenha.Name = "labelSenha";
             this.labelSenha.Size = new System.Drawing.Size(61, 20);
-            this.labelSenha.TabIndex = 2;
+            this.labelSenha.TabIndex = 5;
             this.labelSenha.Text = "Senha:";
             // 
             // textBoxNomeCadastroUsuario
@@ -105,7 +105,7 @@
             this.textBoxNomeUsuarioCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeUsuarioCadastroUsuario.Name = "textBoxNomeUsuarioCadastroUsuario";
             this.textBoxNomeUsuarioCadastroUsuario.Size = new System.Drawing.Size(281, 22);
-            this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 7;
+            this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 3;
             this.textBoxNomeUsuarioCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNomeUsuarioCadastroUsuario_KeyDown);
             // 
             // textBoxSenhaCadastroUsuario
@@ -116,7 +116,7 @@
             this.textBoxSenhaCadastroUsuario.Name = "textBoxSenhaCadastroUsuario";
             this.textBoxSenhaCadastroUsuario.PasswordChar = '*';
             this.textBoxSenhaCadastroUsuario.Size = new System.Drawing.Size(235, 22);
-            this.textBoxSenhaCadastroUsuario.TabIndex = 3;
+            this.textBoxSenhaCadastroUsuario.TabIndex = 6;
             this.textBoxSenhaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSenhaCadastroUsuario_KeyDown);
             // 
             // labelAvisoNome
@@ -140,7 +140,7 @@
             this.labelAvisoSenha.Location = new System.Drawing.Point(39, 165);
             this.labelAvisoSenha.Name = "labelAvisoSenha";
             this.labelAvisoSenha.Size = new System.Drawing.Size(189, 32);
-            this.labelAvisoSenha.TabIndex = 5;
+            this.labelAvisoSenha.TabIndex = 9;
             this.labelAvisoSenha.Text = "Obs: A senha deve conter \r\n  mais de três caracteres";
             // 
             // labelConfirmarSenha
@@ -151,7 +151,7 @@
             this.labelConfirmarSenha.Location = new System.Drawing.Point(381, 121);
             this.labelConfirmarSenha.Name = "labelConfirmarSenha";
             this.labelConfirmarSenha.Size = new System.Drawing.Size(138, 20);
-            this.labelConfirmarSenha.TabIndex = 8;
+            this.labelConfirmarSenha.TabIndex = 7;
             this.labelConfirmarSenha.Text = "Confirmar senha:";
             // 
             // textBoxConfirmarSenhaCadastroUsuario
@@ -161,7 +161,7 @@
             this.textBoxConfirmarSenhaCadastroUsuario.Name = "textBoxConfirmarSenhaCadastroUsuario";
             this.textBoxConfirmarSenhaCadastroUsuario.PasswordChar = '*';
             this.textBoxConfirmarSenhaCadastroUsuario.Size = new System.Drawing.Size(235, 22);
-            this.textBoxConfirmarSenhaCadastroUsuario.TabIndex = 9;
+            this.textBoxConfirmarSenhaCadastroUsuario.TabIndex = 8;
             this.textBoxConfirmarSenhaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxConfirmarSenhaCadastroUsuario_KeyDown);
             // 
             // labelRendaCadastroUsuario

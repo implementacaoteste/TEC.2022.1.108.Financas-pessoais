@@ -62,12 +62,16 @@ namespace BLL
             if (_nomeUsuario == Constantes.NomeUsuarioSuporte && _senha == Constantes.SenhaSuporte)
             {
                 Constantes.IdUsuarioLogado = -1;
+                Constantes.NomeUsuarioLogado = Constantes.NomeUsuarioSuporte;
                 return;
             }
 
             Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
             if (_senha == usuario.Senha && usuario.Ativo)
+            {
                 Constantes.IdUsuarioLogado = usuario.Id;
+                Constantes.NomeUsuarioLogado = usuario.NomeUsuario;
+            }
             else
                 throw new Exception("Usuario ou senha inválido.");
         }
