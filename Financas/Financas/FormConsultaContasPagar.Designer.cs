@@ -85,83 +85,6 @@
             this.contasPagarDataGridView.RowTemplate.Height = 24;
             this.contasPagarDataGridView.Size = new System.Drawing.Size(1040, 515);
             this.contasPagarDataGridView.TabIndex = 12;
-            this.contasPagarDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.contasPagarDataGridView_KeyDown);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // ValorPagar
-            // 
-            this.ValorPagar.DataPropertyName = "ValorPagar";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ValorPagar.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ValorPagar.HeaderText = "Valor";
-            this.ValorPagar.MinimumWidth = 6;
-            this.ValorPagar.Name = "ValorPagar";
-            this.ValorPagar.ReadOnly = true;
-            this.ValorPagar.Width = 80;
-            // 
-            // Contato
-            // 
-            this.Contato.DataPropertyName = "Contato";
-            this.Contato.HeaderText = "Contato";
-            this.Contato.MinimumWidth = 6;
-            this.Contato.Name = "Contato";
-            this.Contato.ReadOnly = true;
-            this.Contato.Width = 115;
-            // 
-            // FormaPagamento
-            // 
-            this.FormaPagamento.DataPropertyName = "FormaPagamento";
-            this.FormaPagamento.HeaderText = "Forma de Pagamento";
-            this.FormaPagamento.MinimumWidth = 6;
-            this.FormaPagamento.Name = "FormaPagamento";
-            this.FormaPagamento.ReadOnly = true;
-            this.FormaPagamento.Width = 125;
-            // 
-            // Banco
-            // 
-            this.Banco.DataPropertyName = "Banco";
-            this.Banco.HeaderText = "Banco";
-            this.Banco.MinimumWidth = 6;
-            this.Banco.Name = "Banco";
-            this.Banco.ReadOnly = true;
-            this.Banco.Width = 85;
-            // 
-            // DataEmissao
-            // 
-            this.DataEmissao.DataPropertyName = "DataEmissao";
-            this.DataEmissao.HeaderText = "Data de emissao";
-            this.DataEmissao.MinimumWidth = 6;
-            this.DataEmissao.Name = "DataEmissao";
-            this.DataEmissao.ReadOnly = true;
-            this.DataEmissao.Width = 125;
-            // 
-            // DataPagamento
-            // 
-            this.DataPagamento.DataPropertyName = "DataPagamento";
-            this.DataPagamento.HeaderText = "Data de pagamento";
-            this.DataPagamento.MinimumWidth = 6;
-            this.DataPagamento.Name = "DataPagamento";
-            this.DataPagamento.ReadOnly = true;
-            this.DataPagamento.Width = 125;
             // 
             // Id
             // 
@@ -270,13 +193,13 @@
             // 
             // textBoxConsultaContasPagar
             // 
-            this.textBoxConsultaContasPagar.Location = new System.Drawing.Point(106, 109);
+            this.textBoxConsultaContasPagar.Location = new System.Drawing.Point(103, 109);
             this.textBoxConsultaContasPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultaContasPagar.Name = "textBoxConsultaContasPagar";
-            this.textBoxConsultaContasPagar.Size = new System.Drawing.Size(498, 22);
+            this.textBoxConsultaContasPagar.Size = new System.Drawing.Size(269, 22);
             this.textBoxConsultaContasPagar.TabIndex = 3;
             this.textBoxConsultaContasPagar.TextChanged += new System.EventHandler(this.textBoxConsultaContasPagar_TextChanged);
-            this.textBoxConsultaContasPagar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxConsultaContasPagar_KeyDown);
+            this.textBoxConsultaContasPagar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxConsultaContasPagar_KeyDown_1);
             // 
             // buttonBuscarConsultaContasPagar
             // 
@@ -358,7 +281,7 @@
             // 
             // textBoxConsultaContasPagar2
             // 
-            this.textBoxConsultaContasPagar2.Location = new System.Drawing.Point(381, 109);
+            this.textBoxConsultaContasPagar2.Location = new System.Drawing.Point(378, 109);
             this.textBoxConsultaContasPagar2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultaContasPagar2.Name = "textBoxConsultaContasPagar2";
             this.textBoxConsultaContasPagar2.Size = new System.Drawing.Size(223, 22);
