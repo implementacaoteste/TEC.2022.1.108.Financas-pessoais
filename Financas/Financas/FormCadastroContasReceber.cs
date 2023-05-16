@@ -35,9 +35,9 @@ namespace Financas
                 MessageBox.Show("Registro salvo com sucesso");
                 Close();
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Registro salvo com sucesso!");
+                MessageBox.Show(ex.Message);
             }
 
         }

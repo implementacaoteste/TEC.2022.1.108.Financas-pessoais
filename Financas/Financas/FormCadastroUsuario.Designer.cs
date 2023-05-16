@@ -104,7 +104,7 @@
             this.textBoxNomeUsuarioCadastroUsuario.Location = new System.Drawing.Point(366, 31);
             this.textBoxNomeUsuarioCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNomeUsuarioCadastroUsuario.Name = "textBoxNomeUsuarioCadastroUsuario";
-            this.textBoxNomeUsuarioCadastroUsuario.Size = new System.Drawing.Size(281, 22);
+            this.textBoxNomeUsuarioCadastroUsuario.Size = new System.Drawing.Size(236, 22);
             this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 3;
             this.textBoxNomeUsuarioCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNomeUsuarioCadastroUsuario_KeyDown);
             // 
@@ -148,7 +148,7 @@
             this.labelConfirmarSenha.AutoSize = true;
             this.labelConfirmarSenha.BackColor = System.Drawing.SystemColors.Control;
             this.labelConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConfirmarSenha.Location = new System.Drawing.Point(381, 121);
+            this.labelConfirmarSenha.Location = new System.Drawing.Point(367, 113);
             this.labelConfirmarSenha.Name = "labelConfirmarSenha";
             this.labelConfirmarSenha.Size = new System.Drawing.Size(138, 20);
             this.labelConfirmarSenha.TabIndex = 7;
@@ -156,7 +156,7 @@
             // 
             // textBoxConfirmarSenhaCadastroUsuario
             // 
-            this.textBoxConfirmarSenhaCadastroUsuario.Location = new System.Drawing.Point(381, 144);
+            this.textBoxConfirmarSenhaCadastroUsuario.Location = new System.Drawing.Point(367, 136);
             this.textBoxConfirmarSenhaCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConfirmarSenhaCadastroUsuario.Name = "textBoxConfirmarSenhaCadastroUsuario";
             this.textBoxConfirmarSenhaCadastroUsuario.PasswordChar = '*';
