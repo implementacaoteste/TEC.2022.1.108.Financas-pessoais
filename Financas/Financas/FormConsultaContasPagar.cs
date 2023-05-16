@@ -14,6 +14,10 @@ namespace Financas
 {
     public partial class FormConsultaContasPagar : Form
     {
+        private DateTime dataInicial;
+        private DateTime dataFinal;
+        private string filtro;
+
         public FormConsultaContasPagar()
         {
             InitializeComponent();
@@ -23,6 +27,9 @@ namespace Financas
         {
             try
             {
+                if ((comboBox1.SelectedIndex != 2 && filtro == textBoxConsultaContasPagar.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(textBoxConsultaContasPagar.Text) && dataFinal == Convert.ToDateTime(textBoxConsultaContasPagar2.Text)))
+                    return;
+
                 switch (comboBox1.SelectedIndex)
                 {
                     case 0:
@@ -32,7 +39,14 @@ namespace Financas
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorDescricao(textBoxConsultaContasPagar.Text);
                         break;
                     case 2:
+                        if (textBoxConsultaContasPagar.Text == "")
+                            throw new Exception("Informe a data inicial") { Data = { { "Id", 5 } } };
+                        if (textBoxConsultaContasPagar2.Text == "")
+                            throw new Exception("Informe a data final") { Data = { { "Id", 6 } } };
+
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
+                        dataInicial = Convert.ToDateTime(textBoxConsultaContasPagar.Text);
+                        dataFinal = Convert.ToDateTime(textBoxConsultaContasPagar2.Text);
                         break;
                     case 3:
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPagamento(Convert.ToDateTime(textBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
@@ -49,6 +63,9 @@ namespace Financas
                     default:
                         break;
                 }
+
+                if (comboBox1.SelectedIndex != 2)
+                    filtro = textBoxConsultaContasPagar2.Text;
             }
             catch (Exception ex)
             {
@@ -154,7 +171,7 @@ namespace Financas
 
         private void FormConsultaContasPagar_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
                 Close();
         }
 
@@ -174,7 +191,9 @@ namespace Financas
 
         private void FormConsultaContasPagar_Load(object sender, EventArgs e)
         {
-            
+
+            comboBox1.SelectedIndex = 2;
+
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
         }
 
@@ -182,5 +201,48 @@ namespace Financas
         {
 
         }
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxConsultaContasPagar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBoxConsultaContasPagar2.Focus();
+            }
+        }
+
+        private void textBoxConsultaContasPagar2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                buttonBuscarConsultaContasPagar_Click(null, null);
+        }
+
+        private void textBoxConsultaContasPagar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                contasPagarBindingSource.MovePrevious();
+                e.Handled = true;
+
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                contasPagarBindingSource.MoveNext();
+                e.Handled = true;
+            }
+        }
+
     }
 }
+
+
+
+
+
+
+
