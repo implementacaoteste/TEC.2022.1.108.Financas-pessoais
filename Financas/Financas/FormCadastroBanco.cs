@@ -71,17 +71,10 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Enter)
             {
-                poupancaTextBox.Focus();
-            }
-        }
-
-        private void poupancaTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
                 buttonSalvarCadBanco_Click(null, null);
             }
         }
+
 
         private void label2_Click(object sender, EventArgs e)
         {
