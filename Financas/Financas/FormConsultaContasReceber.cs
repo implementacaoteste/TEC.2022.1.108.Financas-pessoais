@@ -28,7 +28,9 @@ namespace Financas
             //contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
             try
             {
-                switch (comboBox1.SelectedIndex)
+                if((comboBox1.SelectedIndex != 2 && filtro == textBoxConsultarContasReceber.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(textBoxConsultarContasReceber.Text) && dataFinal == Convert.ToDateTime(textBoxConsultarContasReceber2.Text)))
+                  return;
+                    switch (comboBox1.SelectedIndex)
                 {
                     case 0:
                         contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
@@ -37,7 +39,14 @@ namespace Financas
                         contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorDescricao(textBoxConsultarContasReceber.Text);
                         break;
                     case 2:
+
+                        if (textBoxConsultarContasReceber.Text == "")
+                            throw new Exception("informe a data inicial") { Data = { { "Id", 5 } } };
+                        if(textBoxConsultarContasReceber2.Text == "")
+                            throw new Exception("informe a data inicial") { Data = { { "Id", 6 } } };
                         contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultarContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
+                      
+                        
                         break;
                     case 3:
                         contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPagamento(Convert.ToDateTime(textBoxConsultarContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
@@ -176,7 +185,7 @@ namespace Financas
         {
             try
             {
-                comboBox1.SelectedIndex = 0;
+                comboBox1.SelectedIndex = 2;
                 this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
             }
             catch (Exception ex)
@@ -190,6 +199,22 @@ namespace Financas
             if (e.KeyCode == Keys.Escape)
                 Close();
 
+        }
+
+        private void textBoxConsultarContasReceber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                textBoxConsultarContasReceber2.Focus();
+            }
+        }
+
+        private void textBoxConsultarContasReceber2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                buttonBuscarContasReceber_Click(null, null);
+            }
         }
     }
 }
