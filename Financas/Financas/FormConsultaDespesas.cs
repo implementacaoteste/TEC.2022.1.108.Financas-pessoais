@@ -17,6 +17,8 @@ namespace Financas
         private DateTime dataInicial;
         private DateTime dataFinal;
         private string filtro;
+        
+
         public FormConsultaDespesas()
         {
             InitializeComponent();
@@ -26,7 +28,10 @@ namespace Financas
         {
             try
             {
-                switch (comboBox1.SelectedIndex)
+                if ((comboBox1.SelectedIndex != 2 && filtro == textBoxBuscarDespesas.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(textBoxBuscarDespesas.Text) && dataFinal == Convert.ToDateTime(textBoxBuscarDespesas.Text)))
+                    
+                    return;
+                    switch (comboBox1.SelectedIndex)
                 {
                     case 0:
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos();
@@ -35,6 +40,11 @@ namespace Financas
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarPorDescricao(textBoxBuscarDespesas.Text);
                         break;
                     case 2:
+                        if(textBoxBuscarDespesas.Text == "")
+                            throw new Exception("Informa a data inicial") { Data = { { "Id", 5 } } };
+                        if (textBoxBuscarDespesas2.Text == "")
+                            throw new Exception("Informa a data inicial") { Data = { {"Id", 6 } } };
+                       
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxBuscarDespesas.Text), Convert.ToDateTime(textBoxBuscarDespesas2.Text));
                         break;
                     case 3:
