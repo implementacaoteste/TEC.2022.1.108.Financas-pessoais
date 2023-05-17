@@ -17,12 +17,12 @@ namespace BLL
             if (_usuario.Nome.Length < 2)
                 throw new Exception("O nome deve possuir 2 ou mais caracteres.") { Data = { { "Id", 3 } } };
             if (_usuario.NomeUsuario.Contains(" "))
-                throw new Exception("O nome de usuário não pode conter espaço.") { Data = { { "Id", 5 } } };
+                throw new Exception("O nome de usuário não pode conter espaço.") { Data = { { "Id", 4 } } };
 
             Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_usuario.NomeUsuario);
             
             if (usuario.NomeUsuario != null && usuario.NomeUsuario.ToUpper() == _usuario.NomeUsuario.ToUpper() && usuario.Id != _usuario.Id)
-                throw new Exception("Já existe um usuário com esse nome de usuario.") { Data = { { "Id", 4 } } };
+                throw new Exception("Já existe um usuário com esse nome de usuario.") { Data = { { "Id", 5 } } };
         }
         public void Inserir(Usuario _usuario, string _confirmacaoDeSenha)
         {
