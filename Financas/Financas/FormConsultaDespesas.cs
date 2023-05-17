@@ -14,6 +14,9 @@ namespace Financas
 {
     public partial class FormConsultaDespesas : Form
     {
+        private DateTime dataInicial;
+        private DateTime dataFinal;
+        private string filtro;
         public FormConsultaDespesas()
         {
             InitializeComponent();
@@ -46,6 +49,8 @@ namespace Financas
                     default:
                         break;
                 }
+                if (comboBox1.SelectedIndex != 2)
+                    filtro = textBoxBuscarDespesas2.Text;
             }
             catch (Exception ex)
             {
