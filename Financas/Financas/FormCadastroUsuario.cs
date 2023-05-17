@@ -71,6 +71,8 @@ namespace Financas
                     textBoxNomeCadastroUsuario.Focus();
                 else if (idErro == 4)
                     textBoxNomeUsuarioCadastroUsuario.Focus();
+                else if (idErro == 5)
+                    textBoxNomeUsuarioCadastroUsuario.Focus();
 
                 MessageBox.Show(ex.Message);
            }
