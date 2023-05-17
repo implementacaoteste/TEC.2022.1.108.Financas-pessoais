@@ -13,7 +13,11 @@ using System.Windows.Forms;
 namespace Financas
 {
     public partial class FormConsultaContasReceber : Form
+
     {
+        private DateTime dataInicial;
+        private DateTime dataFinal;
+        private string filtro;
         public FormConsultaContasReceber()
         {
             InitializeComponent();
@@ -50,6 +54,8 @@ namespace Financas
                     default:
                         break;
                 }
+                if (comboBox1.SelectedIndex != 2)
+                    filtro = textBoxConsultarContasReceber2.Text;
             }
             catch (Exception ex)
             {
