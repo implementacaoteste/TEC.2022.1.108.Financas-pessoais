@@ -10,10 +10,16 @@ namespace BLL
 {
     public class ContasPagarBLL
     {
+        private void ValidarDados(ContasPagar _contasPagar)
+        {
+            if (_contasPagar.Descricao == null || _contasPagar.Descricao.Trim().Length <= 4)
+                throw new Exception("A descrição deve ter 5 ou mais caracteres");
+        }
         public void Inserir(ContasPagar _contasPagar)
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+            ValidarDados(_contasPagar);
             new ContasPagarDAL().Inserir(_contasPagar);
         }
         public void Alterar(ContasPagar _contasPagar)

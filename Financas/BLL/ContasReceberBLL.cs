@@ -12,9 +12,12 @@ namespace BLL
     {
         public void Inserir(ContasReceber _contasReceber)
         {
+            _contasReceber.Descricao = _contasReceber.Descricao.Trim();
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             new ContasReceberDAL().Inserir(_contasReceber);
+            if (_contasReceber.Descricao.Length < 3)
+                throw new Exception("O campo descrição deve ter mais que dois caractéres.") { Data = { { "Id", 0 } } };
         }
         public void Alterar(ContasReceber _contasReceber)
         {
