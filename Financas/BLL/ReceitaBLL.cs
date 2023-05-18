@@ -10,22 +10,26 @@ namespace BLL
 {
     public class ReceitaBLL
     {
-        public void Inserir(Receita _receita, ContasReceber _contasReceber = null)
+        private void ValidarDados(Receita _receita)
         {
             _receita.Descricao = _receita.Descricao.Trim();
+            if (_receita.Descricao.Length < 3)
+                throw new Exception("O campo descrição deve ter mais que dois caracteres!") { Data = { { "Id", 0 } } };
+        }
+        public void Inserir(Receita _receita, ContasReceber _contasReceber = null)
+        {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             if (_contasReceber != null && _contasReceber.DataPagamento != null && _contasReceber.DataPagamento.Value.Year > 2000)
                 throw new Exception("Este registro já foi pago!");
-            if (_receita.Descricao.Length < 3)
-                throw new Exception("O campo descrição deve ter mais que dois caracteres!") { Data = { { "Id", 0 } } };
-
+            ValidarDados(_receita);
             new ReceitaDAL().Inserir(_receita, _contasReceber);
         }
         public void Alterar(Receita _receita)
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+            ValidarDados(_receita);
             new ReceitaDAL().Alterar(_receita);
         }
         public void Excluir(int _id)
