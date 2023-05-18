@@ -139,6 +139,12 @@ namespace Financas
                 buttonSalvarCadastrodeUsuario_Click(null, null);
         }
 
-       
+        private void textBoxNomeUsuarioCadastroUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
