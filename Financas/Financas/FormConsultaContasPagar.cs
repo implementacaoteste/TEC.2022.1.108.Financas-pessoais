@@ -42,7 +42,8 @@ namespace Financas
                         if (textBoxConsultaContasPagar.Text == "")
                             throw new Exception("Informe a data inicial") { Data = { { "Id", 5 } } };
                         if (textBoxConsultaContasPagar2.Text == "")
-                            throw new Exception("Informe a data final") { Data = { { "Id", 6 } } };
+               
+                        throw new Exception("Informe a data final") { Data = { { "Id", 6 } } };
 
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
                         dataInicial = Convert.ToDateTime(textBoxConsultaContasPagar.Text);
@@ -61,6 +62,8 @@ namespace Financas
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorBanco(textBoxConsultaContasPagar.Text);
                         break;
                     default:
+                     
+                            
                         break;
                 }
 

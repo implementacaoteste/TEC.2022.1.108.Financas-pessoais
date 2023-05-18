@@ -46,6 +46,9 @@ namespace Financas
                             throw new Exception("Informa a data inicial") { Data = { {"Id", 6 } } };
                        
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxBuscarDespesas.Text), Convert.ToDateTime(textBoxBuscarDespesas2.Text));
+                        dataInicial = Convert.ToDateTime(textBoxBuscarDespesas.Text);
+                        dataFinal = Convert.ToDateTime(textBoxBuscarDespesas2.Text);
+
                         break;
                     case 3:
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarPorContato(textBoxBuscarDespesas.Text);
@@ -80,12 +83,25 @@ namespace Financas
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            int id = ((Despesas)despesasBindingSource.Current).Id;
-            using (FormCadastroDespesas frm = new FormCadastroDespesas(null, id))
+
+
+            try
             {
-                frm.ShowDialog();
+                int id = ((ContasReceber)despesasBindingSource.Current).Id;
+                if (((ContasReceber)despesasBindingSource.Current).DataPagamento != null && ((ContasReceber)despesasBindingSource.Current).DataPagamento.Value.Year > 2000)
+                {
+                    throw new Exception("Este registro já foi pago! não pode ser alterado");
+                }
+                using (FormCadastroContasReceber frm = new FormCadastroContasReceber(id))
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscar_Click(null, null);
             }
-            buttonBuscar_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonExcluir_Click(object sender, EventArgs e)

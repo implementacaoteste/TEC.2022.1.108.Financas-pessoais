@@ -16,8 +16,8 @@ namespace BLL
                 throw new Exception("A senha deve possuir 3 ou mais caracteres.") { Data = { { "Id", 2 } } };
             if (_usuario.Nome.Length < 2)
                 throw new Exception("O nome deve possuir 2 ou mais caracteres.") { Data = { { "Id", 3 } } };
-            if (_usuario.NomeUsuario.Contains(" "))
-                throw new Exception("O nome de usuário não pode conter espaço.") { Data = { { "Id", 4 } } };
+           // if (_usuario.NomeUsuario.Contains(" "))
+           //     throw new Exception("O nome de usuário não pode conter espaço.") { Data = { { "Id", 4 } } };
 
             Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_usuario.NomeUsuario);
             
