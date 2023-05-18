@@ -10,19 +10,24 @@ namespace BLL
 {
     public class ContasReceberBLL
     {
-        public void Inserir(ContasReceber _contasReceber)
+        private void ValidarDados(ContasReceber _contasReceber)
         {
             _contasReceber.Descricao = _contasReceber.Descricao.Trim();
+            if (_contasReceber.Descricao == null || _contasReceber.Descricao.Trim().Length <= 4)
+                throw new Exception("A descrição precisa ter 5 ou mais caracteres");// { Data = { { "Id", 0 } } };
+        }
+        public void Inserir(ContasReceber _contasReceber)
+        {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+            ValidarDados(_contasReceber);
             new ContasReceberDAL().Inserir(_contasReceber);
-            if (_contasReceber.Descricao.Length < 3)
-                throw new Exception("O campo descrição deve ter mais que dois caractéres.") { Data = { { "Id", 0 } } };
         }
         public void Alterar(ContasReceber _contasReceber)
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+            ValidarDados(_contasReceber);
             new ContasReceberDAL().Alterar(_contasReceber);
         }
         public void Excluir(int _id)

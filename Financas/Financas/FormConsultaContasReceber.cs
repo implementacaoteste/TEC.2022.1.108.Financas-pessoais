@@ -28,9 +28,9 @@ namespace Financas
             //contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
             try
             {
-                if((comboBox1.SelectedIndex != 2 && filtro == textBoxConsultarContasReceber.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(textBoxConsultarContasReceber.Text) && dataFinal == Convert.ToDateTime(textBoxConsultarContasReceber2.Text)))
-                  return;
-                    switch (comboBox1.SelectedIndex)
+                if ((comboBox1.SelectedIndex != 2 && filtro == textBoxConsultarContasReceber.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(textBoxConsultarContasReceber.Text) && dataFinal == Convert.ToDateTime(textBoxConsultarContasReceber2.Text)))
+                    return;
+                switch (comboBox1.SelectedIndex)
                 {
                     case 0:
                         contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
@@ -42,7 +42,7 @@ namespace Financas
 
                         if (textBoxConsultarContasReceber.Text == "")
                             throw new Exception("informe a data inicial") { Data = { { "Id", 5 } } };
-                        if(textBoxConsultarContasReceber2.Text == "")
+                        if (textBoxConsultarContasReceber2.Text == "")
                             throw new Exception("informe a data final") { Data = { { "Id", 6 } } };
                         contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultarContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
                         dataInicial = Convert.ToDateTime(textBoxConsultarContasReceber.Text);
@@ -79,6 +79,7 @@ namespace Financas
             {
                 frm.ShowDialog();
             }
+            filtro = textBoxConsultarContasReceber.Text = " ";
             buttonBuscarContasReceber_Click(null, null);
         }
 
@@ -204,7 +205,7 @@ namespace Financas
 
         private void textBoxConsultarContasReceber_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 textBoxConsultarContasReceber2.Focus();
             }
@@ -212,7 +213,7 @@ namespace Financas
 
         private void textBoxConsultarContasReceber2_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 buttonBuscarContasReceber_Click(null, null);
             }
