@@ -71,6 +71,8 @@ namespace Financas
                     textBoxNomeCadastroUsuario.Focus();
                 else if (idErro == 4)
                     textBoxNomeUsuarioCadastroUsuario.Focus();
+                else if (idErro == 5)
+                    textBoxNomeUsuarioCadastroUsuario.Focus();
 
                 MessageBox.Show(ex.Message);
            }
@@ -137,14 +139,6 @@ namespace Financas
                 buttonSalvarCadastrodeUsuario_Click(null, null);
         }
 
-        private void ativoCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

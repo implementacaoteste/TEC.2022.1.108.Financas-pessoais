@@ -45,8 +45,9 @@ namespace Financas
                         if(textBoxConsultarContasReceber2.Text == "")
                             throw new Exception("informe a data final") { Data = { { "Id", 6 } } };
                         contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultarContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
-                      
-                        
+                        dataInicial = Convert.ToDateTime(textBoxConsultarContasReceber.Text);
+                        dataFinal = Convert.ToDateTime(textBoxConsultarContasReceber2.Text);
+
                         break;
                     case 3:
                         contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPagamento(Convert.ToDateTime(textBoxConsultarContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
