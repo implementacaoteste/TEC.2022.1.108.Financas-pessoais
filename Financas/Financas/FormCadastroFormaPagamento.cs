@@ -52,6 +52,7 @@ namespace Financas
             if (Id == 0)
             {
                 formaPagamentoBindingSource.AddNew();
+                ((FormaPagamento)formaPagamentoBindingSource.Current).Ativo =
                 ativoCheckBox.Checked = true;
             }
             else
