@@ -10,11 +10,16 @@ namespace BLL
 {
     public class BancoBLL
     {
+        private void ValidarDados(Banco _banco)
+        {
+            if (_banco.Nome == null || _banco.Nome.Trim().Length <= 1)
+                throw new Exception("O banco deve possuir 2 ou mais caracteres.");
+        }
         public void Inserir(Banco _banco)
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
-
+            ValidarDados(_banco);
             new BancoDAL().Inserir(_banco);
         }
         public void Alterar(Banco _banco)
