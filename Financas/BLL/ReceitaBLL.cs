@@ -12,10 +12,13 @@ namespace BLL
     {
         public void Inserir(Receita _receita, ContasReceber _contasReceber = null)
         {
+            _receita.Descricao = _receita.Descricao.Trim();
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             if (_contasReceber != null && _contasReceber.DataPagamento != null && _contasReceber.DataPagamento.Value.Year > 2000)
                 throw new Exception("Este registro já foi pago!");
+            if (_receita.Descricao.Length < 3)
+                throw new Exception("O campo descrição deve ter mais que dois caracteres!") { Data = { { "Id", 0 } } };
 
             new ReceitaDAL().Inserir(_receita, _contasReceber);
         }
