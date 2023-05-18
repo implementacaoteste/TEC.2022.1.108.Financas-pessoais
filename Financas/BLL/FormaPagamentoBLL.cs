@@ -17,8 +17,11 @@ namespace BLL
         }
         public void Inserir(FormaPagamento _formaPagamento)
         {
+            _formaPagamento.Descricao = _formaPagamento.Descricao.Trim();
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+            if (_formaPagamento.Descricao.Length < 3)
+                throw new Exception("O campo descrição deve ter mais que dois caracteres!") { Data = { { "Id", 0 } } };
             ValidarDados(_formaPagamento);
             new FormaPagamentoDAL().Inserir(_formaPagamento);
         }
