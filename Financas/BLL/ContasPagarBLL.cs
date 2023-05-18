@@ -26,6 +26,7 @@ namespace BLL
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+            ValidarDados(_contasPagar);
             new ContasPagarDAL().Alterar(_contasPagar);
         }
         public void Excluir(int _id)
