@@ -68,7 +68,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1111, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1111, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,7 +87,7 @@
             this.cadastroToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cadastroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cadastroToolStripMenuItem.Image")));
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(103, 26);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.cadastroToolStripMenuItem.Text = "C&adastro";
             // 
             // usuarioToolStripMenuItem
@@ -170,7 +170,7 @@
             this.consultaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultaToolStripMenuItem.Image")));
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(102, 26);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.consultaToolStripMenuItem.Text = "&Consulta";
             // 
             // usuárioToolStripMenuItem
@@ -252,15 +252,16 @@
             this.mudarUsuarioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mudarUsuarioToolStripMenuItem.Image")));
             this.mudarUsuarioToolStripMenuItem.Name = "mudarUsuarioToolStripMenuItem";
             this.mudarUsuarioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
-            this.mudarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.mudarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
             this.mudarUsuarioToolStripMenuItem.Text = "&Mudar usuario";
             this.mudarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.mudarUsuarioToolStripMenuItem_Click);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.ForeColor = System.Drawing.Color.Transparent;
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(411, 9);
+            this.linkLabel1.Location = new System.Drawing.Point(496, 9);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(44, 16);
             this.linkLabel1.TabIndex = 1;
