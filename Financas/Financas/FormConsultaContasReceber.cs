@@ -79,7 +79,7 @@ namespace Financas
             {
                 frm.ShowDialog();
             }
-            filtro = textBoxConsultarContasReceber.Text = " ";
+            filtro = textBoxConsultarContasReceber.Text + " ";
             buttonBuscarContasReceber_Click(null, null);
         }
 
@@ -96,6 +96,7 @@ namespace Financas
                 {
                     frm.ShowDialog();
                 }
+                filtro = textBoxConsultarContasReceber.Text + " ";
                 buttonBuscarContasReceber_Click(null, null);
             }
             catch (Exception ex)
@@ -118,6 +119,9 @@ namespace Financas
             int id = ((ContasReceber)contasReceberBindingSource.Current).Id;
             new ContasReceberBLL().Excluir(id);
             contasReceberBindingSource.RemoveCurrent();
+
+            filtro = textBoxConsultarContasReceber.Text + " ";
+            buttonBuscarContasReceber_Click(null, null);
 
             MessageBox.Show("Registro excluído com sucesso!");
         }
@@ -187,7 +191,7 @@ namespace Financas
         {
             try
             {
-                comboBox1.SelectedIndex = 2;
+                comboBox1.SelectedIndex = 0;
                 this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
             }
             catch (Exception ex)
