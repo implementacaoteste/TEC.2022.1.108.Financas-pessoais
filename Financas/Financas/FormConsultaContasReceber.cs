@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsAppPrincipal;
 
 namespace Financas
 {
@@ -28,7 +29,7 @@ namespace Financas
             //contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
             try
             {
-                if ((comboBox1.SelectedIndex != 2 && filtro == textBoxConsultarContasReceber.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(textBoxConsultarContasReceber.Text) && dataFinal == Convert.ToDateTime(textBoxConsultarContasReceber2.Text)))
+                if ((comboBox1.SelectedIndex != 2 && filtro == textBoxConsultarContasReceber.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text) && dataFinal == Convert.ToDateTime(textBoxConsultarContasReceber2.Text)))
                     return;
                 switch (comboBox1.SelectedIndex)
                 {
@@ -40,17 +41,25 @@ namespace Financas
                         break;
                     case 2:
 
-                        if (textBoxConsultarContasReceber.Text == "")
+                        if (maskedTextBoxConsultaContasReceber.Text == "")
                             throw new Exception("informe a data inicial") { Data = { { "Id", 5 } } };
                         if (textBoxConsultarContasReceber2.Text == "")
                             throw new Exception("informe a data final") { Data = { { "Id", 6 } } };
-                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultarContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
-                        dataInicial = Convert.ToDateTime(textBoxConsultarContasReceber.Text);
+                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorPeriodo(Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
+                        dataInicial = Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text);
                         dataFinal = Convert.ToDateTime(textBoxConsultarContasReceber2.Text);
 
                         break;
                     case 3:
-                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPagamento(Convert.ToDateTime(textBoxConsultarContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
+                        if (maskedTextBoxConsultaContasReceber.Text == "")
+                            throw new Exception("informe a data inicial") { Data = { { "Id", 5 } } };
+                        if (textBoxConsultarContasReceber2.Text == "")
+                            throw new Exception("informe a data final") { Data = { { "Id", 6 } } };
+                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPagamento(Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
+                        dataInicial = Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text);
+                        dataFinal = Convert.ToDateTime(textBoxConsultarContasReceber2.Text);
+
+                        //contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPagamento(Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
                         break;
                     case 4:
                         contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorContato(textBoxConsultarContasReceber.Text);
@@ -69,6 +78,12 @@ namespace Financas
             }
             catch (Exception ex)
             {
+                int idErro = new TratarErro().PegarId(ex);
+                
+                if (idErro == 5)
+                {
+                    maskedTextBoxConsultaContasReceber.Focus();
+                }
                 MessageBox.Show(ex.Message);
             }
         }
@@ -136,20 +151,28 @@ namespace Financas
             labelDataInicial.Visible = false;
             labelDataFinal.Visible = false;
             textBoxConsultarContasReceber.Width = 375;
+            textBoxConsultarContasReceber.Visible = true;
             textBoxConsultarContasReceber2.Visible = false;
+            maskedTextBoxConsultaContasReceber.Visible = false;
 
             if (comboBox1.SelectedIndex == 2)
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
-                textBoxConsultarContasReceber.Width = 248;
+                //textBoxConsultarContasReceber.Width = 248;
+                textBoxConsultarContasReceber.Visible = false;
+                maskedTextBoxConsultaContasReceber.Width = 200;
+                maskedTextBoxConsultaContasReceber.Visible = true;
                 textBoxConsultarContasReceber2.Visible = true;
             }
             if (comboBox1.SelectedIndex == 3)
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
-                textBoxConsultarContasReceber.Width = 248;
+                //textBoxConsultarContasReceber.Width = 248;
+                textBoxConsultarContasReceber.Visible = false;
+                maskedTextBoxConsultaContasReceber.Width = 200;
+                maskedTextBoxConsultaContasReceber.Visible = true;
                 textBoxConsultarContasReceber2.Visible = true;
             }
         }

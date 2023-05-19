@@ -141,10 +141,10 @@ namespace Financas
 
         private void textBoxNomeUsuarioCadastroUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == ' ')
-            {
-                e.Handled = true;
-            }
+            //if(e.KeyChar == ' ')
+            //{
+            //    e.Handled = true;
+            //}
         }
     }
 }

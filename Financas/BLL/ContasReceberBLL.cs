@@ -14,7 +14,7 @@ namespace BLL
         {
             _contasReceber.Descricao = _contasReceber.Descricao.Trim();
             if (_contasReceber.Descricao == null || _contasReceber.Descricao.Trim().Length <= 4)
-                throw new Exception("A descrição precisa ter 5 ou mais caracteres");// { Data = { { "Id", 0 } } };
+                throw new Exception("A descrição precisa ter 5 ou mais caracteres") { Data = { { "Id", 0 } } };
         }
         public void Inserir(ContasReceber _contasReceber)
         {
