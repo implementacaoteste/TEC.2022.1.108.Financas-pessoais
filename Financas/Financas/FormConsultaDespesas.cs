@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using WindowsFormsAppPrincipal;
 
 namespace Financas
 {
@@ -17,7 +18,7 @@ namespace Financas
         private DateTime dataInicial;
         private DateTime dataFinal;
         private string filtro;
-        
+
 
         public FormConsultaDespesas()
         {
@@ -28,10 +29,9 @@ namespace Financas
         {
             try
             {
-                if ((comboBox1.SelectedIndex != 2 && filtro == textBoxBuscarDespesas.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(textBoxBuscarDespesas.Text) && dataFinal == Convert.ToDateTime(textBoxBuscarDespesas.Text)))
-                    
+                if ((comboBox1.SelectedIndex != 2 && filtro == textBoxBuscarDespesas.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(maskedTextBoxBuscarDespesas.Text) && dataFinal == Convert.ToDateTime(textBoxBuscarDespesas.Text)))
                     return;
-                    switch (comboBox1.SelectedIndex)
+                switch (comboBox1.SelectedIndex)
                 {
                     case 0:
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos();
@@ -40,15 +40,14 @@ namespace Financas
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarPorDescricao(textBoxBuscarDespesas.Text);
                         break;
                     case 2:
-                        if(textBoxBuscarDespesas.Text == "")
+                        if (maskedTextBoxBuscarDespesas.Text == "")
                             throw new Exception("Informa a data inicial") { Data = { { "Id", 5 } } };
                         if (textBoxBuscarDespesas2.Text == "")
-                            throw new Exception("Informa a data inicial") { Data = { {"Id", 6 } } };
-                       
-                        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxBuscarDespesas.Text), Convert.ToDateTime(textBoxBuscarDespesas2.Text));
-                        dataInicial = Convert.ToDateTime(textBoxBuscarDespesas.Text);
-                        dataFinal = Convert.ToDateTime(textBoxBuscarDespesas2.Text);
+                            throw new Exception("Informa a data inicial") { Data = { { "Id", 6 } } };
 
+                        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorPeriodo(Convert.ToDateTime(maskedTextBoxBuscarDespesas.Text), Convert.ToDateTime(textBoxBuscarDespesas2.Text));
+                        dataInicial = Convert.ToDateTime(maskedTextBoxBuscarDespesas.Text);
+                        dataFinal = Convert.ToDateTime(textBoxBuscarDespesas2.Text);
                         break;
                     case 3:
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarPorContato(textBoxBuscarDespesas.Text);
@@ -67,6 +66,12 @@ namespace Financas
             }
             catch (Exception ex)
             {
+                int idErro = new TratarErro().PegarId(ex);
+
+                if (idErro == 5)
+                {
+                    maskedTextBoxBuscarDespesas.Focus();
+                }
                 MessageBox.Show(ex.Message);
             }
 
@@ -78,6 +83,7 @@ namespace Financas
             {
                 frm.ShowDialog();
             }
+            filtro = textBoxBuscarDespesas.Text + " ";
             buttonBuscar_Click(null, null);
         }
 
@@ -96,6 +102,7 @@ namespace Financas
                 {
                     frm.ShowDialog();
                 }
+                filtro = textBoxBuscarDespesas.Text + " ";
                 buttonBuscar_Click(null, null);
             }
             catch (Exception ex)
@@ -120,6 +127,9 @@ namespace Financas
                 new DespesasBLL().Excluir(id);
                 despesasBindingSource.RemoveCurrent();
 
+                filtro = textBoxBuscarDespesas.Text + " ";
+                buttonBuscar_Click(null, null);
+
                 MessageBox.Show("Registro excluído com sucesso!");
             }
             catch (Exception ex)
@@ -138,13 +148,17 @@ namespace Financas
             labelDataInicial.Visible = false;
             labelDataFinal.Visible = false;
             textBoxBuscarDespesas.Width = 375;
+            textBoxBuscarDespesas.Visible = true;
             textBoxBuscarDespesas2.Visible = false;
+            maskedTextBoxBuscarDespesas.Visible = false;
 
             if (comboBox1.SelectedIndex == 2)
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
-                textBoxBuscarDespesas.Width = 248;
+                textBoxBuscarDespesas.Visible = false;
+                maskedTextBoxBuscarDespesas.Width = 200;
+                maskedTextBoxBuscarDespesas.Visible = true;
                 textBoxBuscarDespesas2.Visible = true;
             }
         }

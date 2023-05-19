@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsAppPrincipal;
 
 namespace Financas
 {
@@ -27,7 +28,7 @@ namespace Financas
         {
             try
             {
-                if ((comboBox1.SelectedIndex != 2 && filtro == textBoxConsultaContasPagar.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(textBoxConsultaContasPagar.Text) && dataFinal == Convert.ToDateTime(textBoxConsultaContasPagar2.Text)))
+                if ((comboBox1.SelectedIndex != 2 && filtro == textBoxConsultaContasPagar.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(maskedTextBoxConsultaContasPagar.Text) && dataFinal == Convert.ToDateTime(textBoxConsultaContasPagar2.Text)))
                     return;
 
                 switch (comboBox1.SelectedIndex)
@@ -39,18 +40,26 @@ namespace Financas
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorDescricao(textBoxConsultaContasPagar.Text);
                         break;
                     case 2:
-                        if (textBoxConsultaContasPagar.Text == "")
+                        if (maskedTextBoxConsultaContasPagar.Text == "")
                             throw new Exception("Informe a data inicial") { Data = { { "Id", 5 } } };
                         if (textBoxConsultaContasPagar2.Text == "")
                
                         throw new Exception("Informe a data final") { Data = { { "Id", 6 } } };
 
-                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
-                        dataInicial = Convert.ToDateTime(textBoxConsultaContasPagar.Text);
+                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorPeriodo(Convert.ToDateTime(maskedTextBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
+                        dataInicial = Convert.ToDateTime(maskedTextBoxConsultaContasPagar.Text);
                         dataFinal = Convert.ToDateTime(textBoxConsultaContasPagar2.Text);
                         break;
                     case 3:
-                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPagamento(Convert.ToDateTime(textBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
+                        if (maskedTextBoxConsultaContasPagar.Text == "")
+                            throw new Exception("Informe a data inicial") { Data = { { "Id", 5 } } };
+                        if (textBoxConsultaContasPagar2.Text == "")
+
+                            throw new Exception("Informe a data final") { Data = { { "Id", 6 } } };
+
+                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPagamento(Convert.ToDateTime(maskedTextBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
+                        dataInicial = Convert.ToDateTime(maskedTextBoxConsultaContasPagar.Text);
+                        dataFinal = Convert.ToDateTime(textBoxConsultaContasPagar2.Text);
                         break;
                     case 4:
                         contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorContato(textBoxConsultaContasPagar.Text);
@@ -72,6 +81,12 @@ namespace Financas
             }
             catch (Exception ex)
             {
+                int idErro = new TratarErro().PegarId(ex);
+
+                if (idErro == 5)
+                {
+                    maskedTextBoxConsultaContasPagar.Focus();
+                }
                 MessageBox.Show(ex.Message);
             }
         }
@@ -82,6 +97,7 @@ namespace Financas
             {
                 frm.ShowDialog();
             }
+            filtro = textBoxConsultaContasPagar.Text + " ";
             buttonBuscarConsultaContasPagar_Click(null, null);
         }
 
@@ -98,6 +114,7 @@ namespace Financas
                 {
                     frm.ShowDialog();
                 }
+                filtro = textBoxConsultaContasPagar.Text + " ";
                 buttonBuscarConsultaContasPagar_Click(null, null);
             }
             catch (Exception ex)
@@ -121,6 +138,9 @@ namespace Financas
             new ContasPagarBLL().Excluir(id);
             contasPagarBindingSource.RemoveCurrent();
 
+            filtro = textBoxConsultaContasPagar.Text + " ";
+            buttonBuscarConsultaContasPagar_Click(null, null);
+
             MessageBox.Show("Registro excluído com sucesso!");
         }
 
@@ -133,21 +153,31 @@ namespace Financas
         {
             labelDataInicial.Visible = false;
             labelDataFinal.Visible = false;
-            textBoxConsultaContasPagar.Width = 498;
+            textBoxConsultaContasPagar.Width = 375;
+            textBoxConsultaContasPagar.Visible = true;
             textBoxConsultaContasPagar2.Visible = false;
+            maskedTextBoxConsultaContasPagar.Visible = false;
 
+            if (comboBox1.SelectedIndex == 1 || comboBox1.SelectedIndex == 4 || comboBox1.SelectedIndex == 5 || comboBox1.SelectedIndex == 6)
+            {
+                textBoxConsultaContasPagar.Width = 375;
+            }
             if (comboBox1.SelectedIndex == 2)
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
-                textBoxConsultaContasPagar.Width = 190;
+                textBoxConsultaContasPagar.Visible = false;
+                maskedTextBoxConsultaContasPagar.Width = 190;
+                maskedTextBoxConsultaContasPagar.Visible = true;
                 textBoxConsultaContasPagar2.Visible = true;
             }
             if (comboBox1.SelectedIndex == 3)
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
-                textBoxConsultaContasPagar.Width = 190;
+                textBoxConsultaContasPagar.Visible = false;
+                maskedTextBoxConsultaContasPagar.Width = 190;
+                maskedTextBoxConsultaContasPagar.Visible = true;
                 textBoxConsultaContasPagar2.Visible = true;
             }
         }
@@ -195,7 +225,8 @@ namespace Financas
         private void FormConsultaContasPagar_Load(object sender, EventArgs e)
         {
 
-            comboBox1.SelectedIndex = 2;
+            comboBox1.SelectedIndex = 0;
+            textBoxConsultaContasPagar.Width = 375;
 
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
         }

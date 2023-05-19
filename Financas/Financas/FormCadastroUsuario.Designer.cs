@@ -106,7 +106,6 @@
             this.textBoxNomeUsuarioCadastroUsuario.Name = "textBoxNomeUsuarioCadastroUsuario";
             this.textBoxNomeUsuarioCadastroUsuario.Size = new System.Drawing.Size(236, 22);
             this.textBoxNomeUsuarioCadastroUsuario.TabIndex = 3;
-            this.textBoxNomeUsuarioCadastroUsuario.TextChanged += new System.EventHandler(this.textBoxNomeUsuarioCadastroUsuario_TextChanged);
             this.textBoxNomeUsuarioCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNomeUsuarioCadastroUsuario_KeyDown);
             this.textBoxNomeUsuarioCadastroUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNomeUsuarioCadastroUsuario_KeyPress);
             // 

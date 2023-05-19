@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultaDespesas));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonBuscar = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.labelInforamaConsultaDespesa = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBoxBuscarDespesas2 = new System.Windows.Forms.TextBox();
             this.labelDataInicial = new System.Windows.Forms.Label();
             this.labelDataFinal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +53,8 @@
             this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maskedTextBoxBuscarDespesas = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxBuscarDespesas2 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.despesasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.despesasBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -198,15 +200,6 @@
             this.comboBox1.TabIndex = 7;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // textBoxBuscarDespesas2
-            // 
-            this.textBoxBuscarDespesas2.Location = new System.Drawing.Point(381, 110);
-            this.textBoxBuscarDespesas2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxBuscarDespesas2.Name = "textBoxBuscarDespesas2";
-            this.textBoxBuscarDespesas2.Size = new System.Drawing.Size(223, 22);
-            this.textBoxBuscarDespesas2.TabIndex = 5;
-            this.textBoxBuscarDespesas2.Visible = false;
-            // 
             // labelDataInicial
             // 
             this.labelDataInicial.AutoSize = true;
@@ -245,6 +238,8 @@
             // Id
             // 
             this.Id.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
@@ -272,10 +267,10 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle2;
             this.Valor.HeaderText = "Valor";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -309,16 +304,37 @@
             this.DataEmissao.ReadOnly = true;
             this.DataEmissao.Width = 140;
             // 
+            // maskedTextBoxBuscarDespesas
+            // 
+            this.maskedTextBoxBuscarDespesas.Location = new System.Drawing.Point(106, 110);
+            this.maskedTextBoxBuscarDespesas.Mask = "00/00/0000";
+            this.maskedTextBoxBuscarDespesas.Name = "maskedTextBoxBuscarDespesas";
+            this.maskedTextBoxBuscarDespesas.Size = new System.Drawing.Size(269, 22);
+            this.maskedTextBoxBuscarDespesas.TabIndex = 14;
+            this.maskedTextBoxBuscarDespesas.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBoxBuscarDespesas.Visible = false;
+            // 
+            // textBoxBuscarDespesas2
+            // 
+            this.textBoxBuscarDespesas2.Location = new System.Drawing.Point(382, 109);
+            this.textBoxBuscarDespesas2.Mask = "00/00/0000";
+            this.textBoxBuscarDespesas2.Name = "textBoxBuscarDespesas2";
+            this.textBoxBuscarDespesas2.Size = new System.Drawing.Size(223, 22);
+            this.textBoxBuscarDespesas2.TabIndex = 14;
+            this.textBoxBuscarDespesas2.ValidatingType = typeof(System.DateTime);
+            this.textBoxBuscarDespesas2.Visible = false;
+            // 
             // FormConsultaDespesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1111, 693);
+            this.Controls.Add(this.textBoxBuscarDespesas2);
+            this.Controls.Add(this.maskedTextBoxBuscarDespesas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelDataFinal);
             this.Controls.Add(this.labelDataInicial);
-            this.Controls.Add(this.textBoxBuscarDespesas2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelInforamaConsultaDespesa);
             this.Controls.Add(this.buttonAlterar);
@@ -364,7 +380,6 @@
         private System.Windows.Forms.BindingSource despesasBindingSource;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBoxBuscarDespesas2;
         private System.Windows.Forms.Label labelDataInicial;
         private System.Windows.Forms.Label labelDataFinal;
         private System.Windows.Forms.Label label2;
@@ -375,5 +390,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FormaPagamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Banco;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataEmissao;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxBuscarDespesas;
+        private System.Windows.Forms.MaskedTextBox textBoxBuscarDespesas2;
     }
 }

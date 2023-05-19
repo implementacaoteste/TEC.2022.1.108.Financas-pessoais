@@ -9,11 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsAppPrincipal;
 
 namespace Financas
 {
     public partial class FormConsultaReceita : Form
     {
+        private DateTime dataInicial;
+        private DateTime dataFinal;
+        private string filtro;
         public FormConsultaReceita()
         {
             InitializeComponent();
@@ -26,6 +30,7 @@ namespace Financas
             {
                 frm.ShowDialog();
             }
+            filtro = textBoxConsultarReceita.Text + " ";
             buttonBuscarReceita_Click(null, null);
         }
 
@@ -33,6 +38,8 @@ namespace Financas
         {
             try
             {
+                if ((comboBox1.SelectedIndex != 2 && filtro == textBoxConsultarReceita.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(maskedTextBoxConsultarReceita.Text) && dataFinal == Convert.ToDateTime(textBoxConsultarReceita2.Text)))
+                    return;
                 switch (comboBox1.SelectedIndex)
                 {
                     case 0:
@@ -42,7 +49,14 @@ namespace Financas
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorDescricao(textBoxConsultarReceita.Text);
                         break;
                     case 2:
-                        receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorPeriodo(Convert.ToDateTime(textBoxConsultarReceita.Text), Convert.ToDateTime(textBoxConsultarReceita2.Text));
+                        if (maskedTextBoxConsultarReceita.Text == "")
+                            throw new Exception("Informa a data inicial") { Data = { { "Id", 5 } } };
+                        if (textBoxConsultarReceita2.Text == "")
+                            throw new Exception("Informa a data inicial") { Data = { { "Id", 6 } } };
+
+                        receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorPeriodo(Convert.ToDateTime(maskedTextBoxConsultarReceita.Text), Convert.ToDateTime(textBoxConsultarReceita2.Text));
+                        dataInicial = Convert.ToDateTime(maskedTextBoxConsultarReceita.Text);
+                        dataFinal = Convert.ToDateTime(textBoxConsultarReceita2.Text);
                         break;
                     case 3:
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorContato(textBoxConsultarReceita.Text);
@@ -56,9 +70,17 @@ namespace Financas
                     default:
                         break;
                 }
+                if (comboBox1.SelectedIndex != 2)
+                    filtro = textBoxConsultarReceita2.Text;
             }
             catch (Exception ex)
             {
+                int idErro = new TratarErro().PegarId(ex);
+
+                if (idErro == 5)
+                {
+                    textBoxConsultarReceita.Focus();
+                }
                 MessageBox.Show(ex.Message);
             }
 
@@ -70,6 +92,7 @@ namespace Financas
             {
                 frm.ShowDialog();
             }
+            filtro = textBoxConsultarReceita.Text + " ";
             buttonBuscarReceita_Click(null, null);
         }
 
@@ -90,6 +113,10 @@ namespace Financas
                 int id = ((Receita)receitaBindingSource.Current).Id;
                 new ReceitaBLL().Excluir(id);
                 receitaBindingSource.RemoveCurrent();
+
+                filtro = textBoxConsultarReceita.Text + " ";
+                buttonBuscarReceita_Click(null, null);
+
                 MessageBox.Show("Registro excluído com sucesso!");
             }
             catch (Exception ex)
@@ -109,13 +136,17 @@ namespace Financas
             labelDataInicial.Visible = false;
             labelDataFinal.Visible = false;
             textBoxConsultarReceita.Width = 375;
+            textBoxConsultarReceita.Visible = true;    
             textBoxConsultarReceita2.Visible = false;
+            maskedTextBoxConsultarReceita.Visible = false;
 
             if (comboBox1.SelectedIndex == 2)
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
-                textBoxConsultarReceita.Width = 248;
+                textBoxConsultarReceita.Visible = false;
+                maskedTextBoxConsultarReceita.Width = 200;
+                maskedTextBoxConsultarReceita.Visible = true;
                 textBoxConsultarReceita2.Visible = true;
             }
         }
