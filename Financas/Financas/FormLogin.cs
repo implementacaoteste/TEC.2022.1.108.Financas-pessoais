@@ -70,7 +70,7 @@ namespace Financas
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://finanaspessoais1.durable.co/?pt=NjQ1NDIzMzI2ZDZlNTU4OTM2OWFiMTdlOjE2ODM5MjQ0NzcuMTU4OnByZXZpZXc=");
+            System.Diagnostics.Process.Start("https://finanaspessoais1.durable.co/?pt=NjQ1NDIzMzI2ZDZlNTU4OTM2OWFiMTdlOjE2ODQ3NzE0NzEuMzAzOnByZXZpZXc=");
 
 
             //https:/finanaspessoais1.durable.co/?pt=NjQ1NDIzMzI2ZDZlNTU4OTM2OWFiMTdlOjE2ODM1Njc4NzguNTk1OnByZXZpZXc=
@@ -88,6 +88,9 @@ namespace Financas
 
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
