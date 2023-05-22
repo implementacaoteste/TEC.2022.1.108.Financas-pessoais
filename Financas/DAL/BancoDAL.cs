@@ -324,5 +324,43 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public Banco BuscarPorNomeBanco(string _nome)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Banco banco = new Banco();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo, Banco.IdUsuario FROM Banco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
+                                    WHERE Nome LIKE @Nome AND Banco.Ativo = 1 AND Banco.IdUsuario = @IdUsuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+                cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        banco = new Banco();
+                        banco.Id = Convert.ToInt32(rd["Id"]);
+                        banco.Nome = rd["Nome"].ToString();
+                        banco.Saldo = (double)rd["Saldo"];
+                        banco.Poupanca = (double)rd["Poupanca"];
+                        banco.Ativo = Convert.ToBoolean(rd["Ativo"]);
+                    }
+                }
+                return banco;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar os bancos por nome do banco de dados", ex);
+            }
+        }
     }
 }

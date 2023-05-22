@@ -209,10 +209,6 @@ namespace DAL
 
                 throw new Exception("Ocorreu um erro ao tentar buscar as formas de pagamento por descrição do banco de dados", ex);
             }
-            finally
-            {
-                cn.Close();
-            }
         }
 
         public FormaPagamento ValidarMovinteçãoFormaPagamento(int id)
@@ -299,6 +295,41 @@ namespace DAL
                 {
                     cn.Close();
                 }
+            }
+        }
+
+        public FormaPagamento BuscarPorDescricaoPagamento(string _descricao)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            FormaPagamento formaPagamento = new FormaPagamento(); 
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento 
+                                    WHERE Descricao LIKE @Descricao AND Ativo = 1 AND IdUsuario = @IdUsuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
+                cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
+
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        formaPagamento = new FormaPagamento();
+                        formaPagamento.Id = Convert.ToInt32(rd["Id"]);
+                        formaPagamento.Descricao = rd["Descricao"].ToString();
+                        formaPagamento.Ativo = Convert.ToBoolean(rd["Ativo"]);
+                    }
+                }
+                return formaPagamento;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar as formas de pagamento por descrição do banco de dados", ex);
             }
         }
     }

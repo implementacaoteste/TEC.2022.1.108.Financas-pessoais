@@ -14,6 +14,11 @@ namespace BLL
         {
             if (_formaPagamento.Descricao == null || _formaPagamento.Descricao.Trim().Length <= 2)
                 throw new Exception("A forma de pagamento deve possuir 3 ou mais caracteres.");
+
+            FormaPagamento formaPagamento = new FormaPagamentoDAL().BuscarPorDescricaoPagamento(_formaPagamento.Descricao);
+
+            if (formaPagamento.Descricao != null && formaPagamento.Descricao.ToUpper() == _formaPagamento.Descricao.ToUpper() && formaPagamento.Id != _formaPagamento.Id)
+                throw new Exception("Já existe um banco com esse nome de usuario.");
         }
         public void Inserir(FormaPagamento _formaPagamento)
         {
@@ -49,6 +54,10 @@ namespace BLL
         public List<FormaPagamento> BuscarPorDescricao(string _descricao)
         {
             return new FormaPagamentoDAL().BuscarPorDescricao(_descricao);
+        }
+        public FormaPagamento BuscarPorDescricaoPagamento(string _descricao)
+        {
+            return new FormaPagamentoDAL().BuscarPorDescricaoPagamento(_descricao);
         }
         public FormaPagamento BuscarPorId(int _id)
         {

@@ -14,6 +14,11 @@ namespace BLL
         {
             if (_banco.Nome == null || _banco.Nome.Trim().Length <= 1)
                 throw new Exception("O banco deve possuir 2 ou mais caracteres.");
+
+            Banco banco = new BancoDAL().BuscarPorNomeBanco(_banco.Nome);
+
+            if (banco.Nome != null && banco.Nome.ToUpper() == _banco.Nome.ToUpper() && banco.Id != _banco.Id)
+                throw new Exception("Já existe um banco com esse nome de usuario.");
         }
         public void Inserir(Banco _banco)
         {
@@ -48,6 +53,10 @@ namespace BLL
         public List<Banco> BuscarPorNome(string _nome)
         {
             return new BancoDAL().BuscarPorNome(_nome);
+        }
+        public Banco BuscarPorNomeBanco(string _nome)
+        {
+            return new BancoDAL().BuscarPorNomeBanco(_nome);
         }
         public Banco BuscarPorId(int _id)
         {
