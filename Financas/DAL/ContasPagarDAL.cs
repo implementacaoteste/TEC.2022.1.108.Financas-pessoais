@@ -306,7 +306,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<ContasPagar> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        public List<ContasPagar> BuscarPorEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             List<ContasPagar> contaPagar = new List<ContasPagar>();

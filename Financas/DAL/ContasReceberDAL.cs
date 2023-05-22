@@ -309,7 +309,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<ContasReceber> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        public List<ContasReceber> BuscarPorEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             List<ContasReceber> contaReceber = new List<ContasReceber>();

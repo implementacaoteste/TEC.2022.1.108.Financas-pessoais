@@ -47,7 +47,7 @@ namespace Financas
 
                             throw new Exception("Informe a data final") { Data = { { "Id", 6 } } };
 
-                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorPeriodo(Convert.ToDateTime(maskedTextBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
+                        contasPagarBindingSource.DataSource = new ContasPagarBLL().BuscarPorEmissao(Convert.ToDateTime(maskedTextBoxConsultaContasPagar.Text), Convert.ToDateTime(textBoxConsultaContasPagar2.Text));
                         dataInicial = Convert.ToDateTime(maskedTextBoxConsultaContasPagar.Text);
                         dataFinal = Convert.ToDateTime(textBoxConsultaContasPagar2.Text);
                         break;
