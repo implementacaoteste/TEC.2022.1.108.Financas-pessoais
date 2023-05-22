@@ -428,7 +428,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label labelDataInicial;
         private System.Windows.Forms.Label labelDataFinal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Label label3;
         
         private System.Windows.Forms.Button buttonQuitarContasReceber;

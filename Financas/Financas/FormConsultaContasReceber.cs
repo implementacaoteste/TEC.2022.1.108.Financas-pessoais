@@ -22,14 +22,15 @@ namespace Financas
         public FormConsultaContasReceber()
         {
             InitializeComponent();
+            textBoxConsultarContasReceber2.Text =
+            maskedTextBoxConsultaContasReceber.Text = DateTime.Now.Date.ToString().Substring(0, 10);
         }
 
         private void buttonBuscarContasReceber_Click(object sender, EventArgs e)
         {
-            //contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarTodos();
             try
             {
-                if ((comboBox1.SelectedIndex != 2 && filtro == textBoxConsultarContasReceber.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text) && dataFinal == Convert.ToDateTime(textBoxConsultarContasReceber2.Text)))
+                if (Buscar())
                     return;
                 switch (comboBox1.SelectedIndex)
                 {
@@ -79,12 +80,27 @@ namespace Financas
             catch (Exception ex)
             {
                 int idErro = new TratarErro().PegarId(ex);
-                
+
                 if (idErro == 5)
                 {
                     maskedTextBoxConsultaContasReceber.Focus();
                 }
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private bool Buscar()
+        {
+            try
+            {
+                if (comboBox1.SelectedIndex == 2 || comboBox1.SelectedIndex == 3)
+                    return dataInicial == Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text) && dataFinal == Convert.ToDateTime(textBoxConsultarContasReceber2.Text);
+                else
+                    return filtro == textBoxConsultarContasReceber.Text;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 
@@ -94,8 +110,16 @@ namespace Financas
             {
                 frm.ShowDialog();
             }
-            filtro = textBoxConsultarContasReceber.Text + " ";
+
+            HabilitarBusca();
             buttonBuscarContasReceber_Click(null, null);
+        }
+
+        private void HabilitarBusca()
+        {
+            filtro = textBoxConsultarContasReceber.Text + " ";
+            dataInicial = Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text).AddDays(1);
+            dataFinal = Convert.ToDateTime(textBoxConsultarContasReceber2.Text).AddDays(1);
         }
 
         private void buttonAlterarContasReceber_Click(object sender, EventArgs e)
@@ -111,7 +135,7 @@ namespace Financas
                 {
                     frm.ShowDialog();
                 }
-                filtro = textBoxConsultarContasReceber.Text + " ";
+                HabilitarBusca();
                 buttonBuscarContasReceber_Click(null, null);
             }
             catch (Exception ex)
@@ -135,7 +159,7 @@ namespace Financas
             new ContasReceberBLL().Excluir(id);
             contasReceberBindingSource.RemoveCurrent();
 
-            filtro = textBoxConsultarContasReceber.Text + " ";
+            HabilitarBusca();
             buttonBuscarContasReceber_Click(null, null);
 
             MessageBox.Show("Registro excluído com sucesso!");
@@ -154,6 +178,8 @@ namespace Financas
             textBoxConsultarContasReceber.Visible = true;
             textBoxConsultarContasReceber2.Visible = false;
             maskedTextBoxConsultaContasReceber.Visible = false;
+            HabilitarBusca();
+
 
             if (comboBox1.SelectedIndex == 2)
             {
