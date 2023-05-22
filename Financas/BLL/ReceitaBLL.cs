@@ -55,12 +55,12 @@ namespace BLL
         {
            return new ReceitaDAL().BuscarPorId(_id);
         }
-        public List<Receita> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        public List<Receita> BuscarPorEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
         {
             if (_periodoInicial > _periodoFinal)
                 throw new Exception("Data inicial não pode ser maior que a data final");
 
-            return new ReceitaDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
+            return new ReceitaDAL().BuscarPorEmissao(_periodoInicial, _periodoFinal);
         }
         public List<Receita> BuscarPorContato(string _contato)
         {

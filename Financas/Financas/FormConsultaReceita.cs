@@ -54,7 +54,7 @@ namespace Financas
                         if (textBoxConsultarReceita2.Text == "")
                             throw new Exception("Informa a data inicial") { Data = { { "Id", 6 } } };
 
-                        receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorPeriodo(Convert.ToDateTime(maskedTextBoxConsultarReceita.Text), Convert.ToDateTime(textBoxConsultarReceita2.Text));
+                        receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorEmissao(Convert.ToDateTime(maskedTextBoxConsultarReceita.Text), Convert.ToDateTime(textBoxConsultarReceita2.Text));
                         dataInicial = Convert.ToDateTime(maskedTextBoxConsultarReceita.Text);
                         dataFinal = Convert.ToDateTime(textBoxConsultarReceita2.Text);
                         break;

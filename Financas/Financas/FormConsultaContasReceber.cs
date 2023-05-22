@@ -46,7 +46,7 @@ namespace Financas
                             throw new Exception("informe a data inicial") { Data = { { "Id", 5 } } };
                         if (textBoxConsultarContasReceber2.Text == "")
                             throw new Exception("informe a data final") { Data = { { "Id", 6 } } };
-                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorPeriodo(Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
+                        contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorEmissao(Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
                         dataInicial = Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text);
                         dataFinal = Convert.ToDateTime(textBoxConsultarContasReceber2.Text);
 
@@ -60,7 +60,6 @@ namespace Financas
                         dataInicial = Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text);
                         dataFinal = Convert.ToDateTime(textBoxConsultarContasReceber2.Text);
 
-                        //contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPagamento(Convert.ToDateTime(maskedTextBoxConsultaContasReceber.Text), Convert.ToDateTime(textBoxConsultarContasReceber2.Text));
                         break;
                     case 4:
                         contasReceberBindingSource.DataSource = new ContasReceberBLL().BuscarPorContato(textBoxConsultarContasReceber.Text);
@@ -185,7 +184,6 @@ namespace Financas
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
-                //textBoxConsultarContasReceber.Width = 248;
                 textBoxConsultarContasReceber.Visible = false;
                 maskedTextBoxConsultaContasReceber.Width = 200;
                 maskedTextBoxConsultaContasReceber.Visible = true;
@@ -195,7 +193,6 @@ namespace Financas
             {
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
-                //textBoxConsultarContasReceber.Width = 248;
                 textBoxConsultarContasReceber.Visible = false;
                 maskedTextBoxConsultaContasReceber.Width = 200;
                 maskedTextBoxConsultaContasReceber.Visible = true;

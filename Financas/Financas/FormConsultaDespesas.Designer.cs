@@ -37,6 +37,13 @@
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.textBoxBuscarDespesas = new System.Windows.Forms.TextBox();
             this.despesasDataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonAdicionar = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
@@ -46,13 +53,6 @@
             this.labelDataInicial = new System.Windows.Forms.Label();
             this.labelDataFinal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maskedTextBoxBuscarDespesas = new System.Windows.Forms.MaskedTextBox();
             this.textBoxBuscarDespesas2 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.despesasDataGridView)).BeginInit();
@@ -130,111 +130,6 @@
             this.despesasDataGridView.Size = new System.Drawing.Size(1040, 514);
             this.despesasDataGridView.TabIndex = 12;
             // 
-            // despesasBindingSource
-            // 
-            this.despesasBindingSource.DataSource = typeof(Models.Despesas);
-            // 
-            // buttonAdicionar
-            // 
-            this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionar.Location = new System.Drawing.Point(819, 110);
-            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAdicionar.Name = "buttonAdicionar";
-            this.buttonAdicionar.Size = new System.Drawing.Size(95, 23);
-            this.buttonAdicionar.TabIndex = 9;
-            this.buttonAdicionar.Text = "&Adicionar";
-            this.buttonAdicionar.UseVisualStyleBackColor = true;
-            this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
-            // 
-            // buttonAlterar
-            // 
-            this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterar.Location = new System.Drawing.Point(919, 110);
-            this.buttonAlterar.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlterar.TabIndex = 10;
-            this.buttonAlterar.Text = "Al&terar";
-            this.buttonAlterar.UseVisualStyleBackColor = true;
-            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
-            // 
-            // labelInforamaConsultaDespesa
-            // 
-            this.labelInforamaConsultaDespesa.AutoSize = true;
-            this.labelInforamaConsultaDespesa.BackColor = System.Drawing.Color.Transparent;
-            this.labelInforamaConsultaDespesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInforamaConsultaDespesa.Location = new System.Drawing.Point(32, 112);
-            this.labelInforamaConsultaDespesa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelInforamaConsultaDespesa.Name = "labelInforamaConsultaDespesa";
-            this.labelInforamaConsultaDespesa.Size = new System.Drawing.Size(59, 16);
-            this.labelInforamaConsultaDespesa.TabIndex = 2;
-            this.labelInforamaConsultaDespesa.Text = "Consulta";
-            // 
-            // buttonSair
-            // 
-            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(1000, 654);
-            this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(75, 23);
-            this.buttonSair.TabIndex = 13;
-            this.buttonSair.Text = "Sair";
-            this.buttonSair.UseVisualStyleBackColor = true;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Todos",
-            "Descrição",
-            "Periodo",
-            "Contato",
-            "Forma pagamento",
-            "Banco"});
-            this.comboBox1.Location = new System.Drawing.Point(611, 108);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // labelDataInicial
-            // 
-            this.labelDataInicial.AutoSize = true;
-            this.labelDataInicial.BackColor = System.Drawing.Color.Transparent;
-            this.labelDataInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDataInicial.Location = new System.Drawing.Point(103, 91);
-            this.labelDataInicial.Name = "labelDataInicial";
-            this.labelDataInicial.Size = new System.Drawing.Size(73, 16);
-            this.labelDataInicial.TabIndex = 1;
-            this.labelDataInicial.Text = "Data inicial";
-            this.labelDataInicial.Visible = false;
-            // 
-            // labelDataFinal
-            // 
-            this.labelDataFinal.AutoSize = true;
-            this.labelDataFinal.BackColor = System.Drawing.Color.Transparent;
-            this.labelDataFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDataFinal.Location = new System.Drawing.Point(379, 91);
-            this.labelDataFinal.Name = "labelDataFinal";
-            this.labelDataFinal.Size = new System.Drawing.Size(63, 16);
-            this.labelDataFinal.TabIndex = 4;
-            this.labelDataFinal.Text = "Data final";
-            this.labelDataFinal.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(607, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 16);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Buscar por";
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -303,6 +198,111 @@
             this.DataEmissao.Name = "DataEmissao";
             this.DataEmissao.ReadOnly = true;
             this.DataEmissao.Width = 140;
+            // 
+            // despesasBindingSource
+            // 
+            this.despesasBindingSource.DataSource = typeof(Models.Despesas);
+            // 
+            // buttonAdicionar
+            // 
+            this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionar.Location = new System.Drawing.Point(819, 110);
+            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAdicionar.Name = "buttonAdicionar";
+            this.buttonAdicionar.Size = new System.Drawing.Size(95, 23);
+            this.buttonAdicionar.TabIndex = 9;
+            this.buttonAdicionar.Text = "&Adicionar";
+            this.buttonAdicionar.UseVisualStyleBackColor = true;
+            this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
+            // 
+            // buttonAlterar
+            // 
+            this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterar.Location = new System.Drawing.Point(919, 110);
+            this.buttonAlterar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAlterar.Name = "buttonAlterar";
+            this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterar.TabIndex = 10;
+            this.buttonAlterar.Text = "Al&terar";
+            this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
+            // 
+            // labelInforamaConsultaDespesa
+            // 
+            this.labelInforamaConsultaDespesa.AutoSize = true;
+            this.labelInforamaConsultaDespesa.BackColor = System.Drawing.Color.Transparent;
+            this.labelInforamaConsultaDespesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInforamaConsultaDespesa.Location = new System.Drawing.Point(32, 112);
+            this.labelInforamaConsultaDespesa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelInforamaConsultaDespesa.Name = "labelInforamaConsultaDespesa";
+            this.labelInforamaConsultaDespesa.Size = new System.Drawing.Size(59, 16);
+            this.labelInforamaConsultaDespesa.TabIndex = 2;
+            this.labelInforamaConsultaDespesa.Text = "Consulta";
+            // 
+            // buttonSair
+            // 
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Location = new System.Drawing.Point(1000, 654);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(75, 23);
+            this.buttonSair.TabIndex = 13;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Todos",
+            "Descrição",
+            "Emissão",
+            "Contato",
+            "Forma pagamento",
+            "Banco"});
+            this.comboBox1.Location = new System.Drawing.Point(611, 108);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // labelDataInicial
+            // 
+            this.labelDataInicial.AutoSize = true;
+            this.labelDataInicial.BackColor = System.Drawing.Color.Transparent;
+            this.labelDataInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDataInicial.Location = new System.Drawing.Point(103, 91);
+            this.labelDataInicial.Name = "labelDataInicial";
+            this.labelDataInicial.Size = new System.Drawing.Size(73, 16);
+            this.labelDataInicial.TabIndex = 1;
+            this.labelDataInicial.Text = "Data inicial";
+            this.labelDataInicial.Visible = false;
+            // 
+            // labelDataFinal
+            // 
+            this.labelDataFinal.AutoSize = true;
+            this.labelDataFinal.BackColor = System.Drawing.Color.Transparent;
+            this.labelDataFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDataFinal.Location = new System.Drawing.Point(379, 91);
+            this.labelDataFinal.Name = "labelDataFinal";
+            this.labelDataFinal.Size = new System.Drawing.Size(63, 16);
+            this.labelDataFinal.TabIndex = 4;
+            this.labelDataFinal.Text = "Data final";
+            this.labelDataFinal.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(607, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Buscar por";
             // 
             // maskedTextBoxBuscarDespesas
             // 

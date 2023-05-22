@@ -45,7 +45,7 @@ namespace Financas
                         if (textBoxBuscarDespesas2.Text == "")
                             throw new Exception("Informa a data inicial") { Data = { { "Id", 6 } } };
 
-                        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorPeriodo(Convert.ToDateTime(maskedTextBoxBuscarDespesas.Text), Convert.ToDateTime(textBoxBuscarDespesas2.Text));
+                        despesasBindingSource.DataSource = new DespesasBLL().BuscarPorEmissao(Convert.ToDateTime(maskedTextBoxBuscarDespesas.Text), Convert.ToDateTime(textBoxBuscarDespesas2.Text));
                         dataInicial = Convert.ToDateTime(maskedTextBoxBuscarDespesas.Text);
                         dataFinal = Convert.ToDateTime(textBoxBuscarDespesas2.Text);
                         break;

@@ -294,7 +294,7 @@ namespace DAL
             }
         }
 
-        public List<Receita> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        public List<Receita> BuscarPorEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             List<Receita> receitas = new List<Receita>();

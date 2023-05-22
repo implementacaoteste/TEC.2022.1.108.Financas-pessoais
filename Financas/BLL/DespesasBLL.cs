@@ -66,12 +66,12 @@ namespace BLL
         {
             return new DespesasDAL().BuscarPorContato(_contato);
         }
-        public List<Despesas> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        public List<Despesas> BuscarPorEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
         {
             if (_periodoInicial > _periodoFinal)
                 throw new Exception("Data inicial não pode ser maior que a data final");
 
-            return new DespesasDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
+            return new DespesasDAL().BuscarPorEmissao(_periodoInicial, _periodoFinal);
         }
 
         public void ValidarSaldo(double _valor, int _idBanco)

@@ -48,12 +48,12 @@ namespace BLL
         {
             return new ContasReceberDAL().BuscarPorId(_id);
         }
-        public List<ContasReceber> BuscarPorPeriodo(DateTime _periodoInicial, DateTime _periodoFinal)
+        public List<ContasReceber> BuscarPorEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
         {
             if (_periodoInicial > _periodoFinal)
                 throw new Exception("Data inicial não pode ser maior que a data final");
 
-            return new ContasReceberDAL().BuscarPorPeriodo(_periodoInicial, _periodoFinal);
+            return new ContasReceberDAL().BuscarPorEmissao(_periodoInicial, _periodoFinal);
         }
         public List<ContasReceber> BuscarPagamento(DateTime _periodoInicial, DateTime _periodoFinal)
         {
