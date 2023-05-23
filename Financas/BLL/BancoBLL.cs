@@ -18,7 +18,7 @@ namespace BLL
             Banco banco = new BancoDAL().BuscarPorNomeBanco(_banco.Nome);
 
             if (banco.Nome != null && banco.Nome.ToUpper() == _banco.Nome.ToUpper() && banco.Id != _banco.Id)
-                throw new Exception("Já existe um banco com esse nome de usuario.");
+                throw new Exception("Já existe um banco com esse nome.");
         }
         public void Inserir(Banco _banco)
         {

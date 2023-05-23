@@ -18,7 +18,7 @@ namespace BLL
             FormaPagamento formaPagamento = new FormaPagamentoDAL().BuscarPorDescricaoPagamento(_formaPagamento.Descricao);
 
             if (formaPagamento.Descricao != null && formaPagamento.Descricao.ToUpper() == _formaPagamento.Descricao.ToUpper() && formaPagamento.Id != _formaPagamento.Id)
-                throw new Exception("Já existe um banco com esse nome de usuario.");
+                throw new Exception("Já existe uma forma de pagamento com esse nome.");
         }
         public void Inserir(FormaPagamento _formaPagamento)
         {
