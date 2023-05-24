@@ -13,34 +13,35 @@ namespace BLL
     {
         private void ValidarDadosContato(Contato _contato)
         {
+            _contato.Descricao = _contato.Descricao.Trim();
+            _contato.Endereco = _contato.Endereco.Trim();
+            _contato.Nome = _contato.Nome.Trim();
 
-            if (_contato.Numero.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Length != 11)
-                throw new Exception("O número do contato deve conter 11 caracteres");
-            
-            if (_contato.Descricao.Length < 3)
-                throw new Exception("O campo descrição deve ter mais que dois caractéres.") { Data = { { "Id", 0 } } };
+            if (_contato.Numero == null || _contato.Numero.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Length != 11)
+                throw new Exception("O número do contato deve conter 11 caracteres") { Data = { { "Id", 0 } } }; ;
+
+            if (_contato.Descricao == null || _contato.Descricao.Length < 3)
+                throw new Exception("O campo descrição deve ter mais que dois caractéres.") { Data = { { "Id", 1 } } };
+            if (_contato.Endereco == null || _contato.Descricao.Length < 3)
+                throw new Exception("O campo endereco deve ter mais que dois caractéres.") { Data = { { "Id", 2 } } }; ;
+            if (_contato.Nome == null || _contato.Descricao.Length < 3)
+                throw new Exception("O campo nome deve ter mais que dois caractéres.") { Data = { { "Id", 3 } } }; ;
         }
         public void Inserir(Contato _contato)
         {
-            _contato.Descricao = _contato.Descricao.Trim();
-
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
 
             ValidarDadosContato(_contato);
             new ContatoDAL().Inserir(_contato);
         }
-
-
-
-
         public void Alterar(Contato _contato)
         {
             if (Constantes.IdUsuarioLogado == -1)
-            {
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
-                new ContatoDAL().Alterar(_contato);
-            }
+
+            ValidarDadosContato(_contato);
+            new ContatoDAL().Alterar(_contato);
         }
         public void Excluir(int _id)
         {

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsAppPrincipal;
 
 namespace Financas
 {
@@ -37,6 +38,10 @@ namespace Financas
             }
             catch(Exception ex)
             {
+                int idErro = new TratarErro().PegarId(ex);
+
+                if (idErro == 1)
+                    descricaoTextBoxContasReceber.Focus();
                 MessageBox.Show(ex.Message);
             }
 

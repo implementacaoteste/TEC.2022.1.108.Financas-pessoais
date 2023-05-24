@@ -53,7 +53,7 @@ namespace Financas
                 if (Id == 0)
                     usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current, textBoxConfirmarSenhaCadastroUsuario.Text);
                 else
-                    usuarioBLL.Alterar((Usuario)usuarioBindingSource.Current);
+                    usuarioBLL.Alterar((Usuario)usuarioBindingSource.Current, textBoxConfirmarSenhaCadastroUsuario.Text);
                 MessageBox.Show("Registro salvo com sucesso");
                 Close();
             }
@@ -61,17 +61,15 @@ namespace Financas
             {
                 int idErro = new TratarErro().PegarId(ex);
 
-                if (idErro == 1 || idErro == 2)
+                if (idErro == 1)
                 {
                     textBoxSenhaCadastroUsuario.Focus();
                     textBoxSenhaCadastroUsuario.Text =
                     textBoxConfirmarSenhaCadastroUsuario.Text = "";
                 }
-                else if (idErro == 3)
+                else if (idErro == 2)
                     textBoxNomeCadastroUsuario.Focus();
-                else if (idErro == 4)
-                    textBoxNomeUsuarioCadastroUsuario.Focus();
-                else if (idErro == 5)
+                else if (idErro == 3)
                     textBoxNomeUsuarioCadastroUsuario.Focus();
 
                 MessageBox.Show(ex.Message);

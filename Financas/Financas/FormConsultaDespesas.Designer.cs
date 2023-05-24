@@ -34,7 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultaDespesas));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonBuscar = new System.Windows.Forms.Button();
-            this.buttonExcluir = new System.Windows.Forms.Button();
             this.textBoxBuscarDespesas = new System.Windows.Forms.TextBox();
             this.despesasDataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +45,6 @@
             this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.despesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonAdicionar = new System.Windows.Forms.Button();
-            this.buttonAlterar = new System.Windows.Forms.Button();
             this.labelInforamaConsultaDespesa = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -75,7 +73,7 @@
             // 
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonBuscar.Location = new System.Drawing.Point(737, 110);
+            this.buttonBuscar.Location = new System.Drawing.Point(898, 109);
             this.buttonBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
@@ -84,25 +82,13 @@
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
-            // buttonExcluir
-            // 
-            this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluir.Location = new System.Drawing.Point(1000, 110);
-            this.buttonExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluir.TabIndex = 11;
-            this.buttonExcluir.Text = "&Excluir";
-            this.buttonExcluir.UseVisualStyleBackColor = true;
-            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
-            // 
             // textBoxBuscarDespesas
             // 
-            this.textBoxBuscarDespesas.Location = new System.Drawing.Point(107, 110);
+            this.textBoxBuscarDespesas.Location = new System.Drawing.Point(98, 110);
             this.textBoxBuscarDespesas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxBuscarDespesas.Multiline = true;
             this.textBoxBuscarDespesas.Name = "textBoxBuscarDespesas";
-            this.textBoxBuscarDespesas.Size = new System.Drawing.Size(269, 22);
+            this.textBoxBuscarDespesas.Size = new System.Drawing.Size(278, 22);
             this.textBoxBuscarDespesas.TabIndex = 3;
             // 
             // despesasDataGridView
@@ -206,7 +192,7 @@
             // buttonAdicionar
             // 
             this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionar.Location = new System.Drawing.Point(819, 110);
+            this.buttonAdicionar.Location = new System.Drawing.Point(980, 109);
             this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(95, 23);
@@ -214,18 +200,6 @@
             this.buttonAdicionar.Text = "&Adicionar";
             this.buttonAdicionar.UseVisualStyleBackColor = true;
             this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
-            // 
-            // buttonAlterar
-            // 
-            this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterar.Location = new System.Drawing.Point(919, 110);
-            this.buttonAlterar.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlterar.TabIndex = 10;
-            this.buttonAlterar.Text = "Al&terar";
-            this.buttonAlterar.UseVisualStyleBackColor = true;
-            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // labelInforamaConsultaDespesa
             // 
@@ -262,7 +236,7 @@
             "Contato",
             "Forma pagamento",
             "Banco"});
-            this.comboBox1.Location = new System.Drawing.Point(611, 108);
+            this.comboBox1.Location = new System.Drawing.Point(771, 107);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
@@ -274,7 +248,7 @@
             this.labelDataInicial.AutoSize = true;
             this.labelDataInicial.BackColor = System.Drawing.Color.Transparent;
             this.labelDataInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDataInicial.Location = new System.Drawing.Point(103, 91);
+            this.labelDataInicial.Location = new System.Drawing.Point(95, 92);
             this.labelDataInicial.Name = "labelDataInicial";
             this.labelDataInicial.Size = new System.Drawing.Size(73, 16);
             this.labelDataInicial.TabIndex = 1;
@@ -286,7 +260,7 @@
             this.labelDataFinal.AutoSize = true;
             this.labelDataFinal.BackColor = System.Drawing.Color.Transparent;
             this.labelDataFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDataFinal.Location = new System.Drawing.Point(379, 91);
+            this.labelDataFinal.Location = new System.Drawing.Point(451, 89);
             this.labelDataFinal.Name = "labelDataFinal";
             this.labelDataFinal.Size = new System.Drawing.Size(63, 16);
             this.labelDataFinal.TabIndex = 4;
@@ -298,7 +272,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(607, 91);
+            this.label2.Location = new System.Drawing.Point(768, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 6;
@@ -306,7 +280,7 @@
             // 
             // maskedTextBoxBuscarDespesas
             // 
-            this.maskedTextBoxBuscarDespesas.Location = new System.Drawing.Point(106, 110);
+            this.maskedTextBoxBuscarDespesas.Location = new System.Drawing.Point(98, 110);
             this.maskedTextBoxBuscarDespesas.Mask = "00/00/0000";
             this.maskedTextBoxBuscarDespesas.Name = "maskedTextBoxBuscarDespesas";
             this.maskedTextBoxBuscarDespesas.Size = new System.Drawing.Size(269, 22);
@@ -316,10 +290,10 @@
             // 
             // textBoxBuscarDespesas2
             // 
-            this.textBoxBuscarDespesas2.Location = new System.Drawing.Point(382, 109);
+            this.textBoxBuscarDespesas2.Location = new System.Drawing.Point(454, 108);
             this.textBoxBuscarDespesas2.Mask = "00/00/0000";
             this.textBoxBuscarDespesas2.Name = "textBoxBuscarDespesas2";
-            this.textBoxBuscarDespesas2.Size = new System.Drawing.Size(223, 22);
+            this.textBoxBuscarDespesas2.Size = new System.Drawing.Size(311, 22);
             this.textBoxBuscarDespesas2.TabIndex = 14;
             this.textBoxBuscarDespesas2.ValidatingType = typeof(System.DateTime);
             this.textBoxBuscarDespesas2.Visible = false;
@@ -337,12 +311,10 @@
             this.Controls.Add(this.labelDataInicial);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelInforamaConsultaDespesa);
-            this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.despesasDataGridView);
             this.Controls.Add(this.textBoxBuscarDespesas);
             this.Controls.Add(this.buttonSair);
-            this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -370,11 +342,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.TextBox textBoxBuscarDespesas;
         private System.Windows.Forms.DataGridView despesasDataGridView;
-        private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Button buttonAdicionar;
         private System.Windows.Forms.Label labelInforamaConsultaDespesa;
         private System.Windows.Forms.BindingSource despesasBindingSource;

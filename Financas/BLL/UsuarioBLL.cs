@@ -10,19 +10,25 @@ namespace BLL
     {
         private void ValidarDados(Usuario _usuario, string _confirmacaoDeSenha)
         {
-            if (_usuario.Senha != _confirmacaoDeSenha)
-                throw new Exception("A senha e a confirmação da senha devem ser iguais.") { Data = { { "Id", 1 } } };
-            if (_usuario.Senha.Length < 3)
-                throw new Exception("A senha deve possuir 3 ou mais caracteres.") { Data = { { "Id", 2 } } };
-            if (_usuario.Nome.Length < 2)
-                throw new Exception("O nome deve possuir 2 ou mais caracteres.") { Data = { { "Id", 3 } } };
-           if (_usuario.NomeUsuario.Contains(" "))
-              throw new Exception("O nome de usuário não pode conter espaço.") { Data = { { "Id", 4 } } };
+            if (_usuario.Senha == null || _usuario.Senha.Length < 3)
+                throw new Exception("A senha deve possuir 3 ou mais caracteres.") { Data = { { "Id", 1 } } };
+            if (_usuario.Nome == null || _usuario.Nome.Length < 2)
+                throw new Exception("O nome deve possuir 2 ou mais caracteres.") { Data = { { "Id", 2 } } };
+            if (_usuario.NomeUsuario == null || _usuario.NomeUsuario.Contains(" "))
+                throw new Exception("O nome de usuário não pode conter espaço.") { Data = { { "Id", 3 } } };
+            _usuario.Nome = _usuario.Nome.Trim();
+            if (_usuario.Nome == null || _usuario.Nome.Length <= 2)
+                throw new Exception("O nome deve possuir 2 ou mais caracteres.") { Data = { { "Id", 2 } } };
+
 
             Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_usuario.NomeUsuario);
-            
+
             if (usuario.NomeUsuario != null && usuario.NomeUsuario.ToUpper() == _usuario.NomeUsuario.ToUpper() && usuario.Id != _usuario.Id)
-                throw new Exception("Já existe um usuário com esse nome de usuario.") { Data = { { "Id", 5 } } };
+                throw new Exception("Já existe um usuário com esse nome de usuario.") { Data = { { "Id", 3 } } };
+
+
+            if (_usuario.Senha != usuario.Senha && _usuario.Senha != _confirmacaoDeSenha)
+                throw new Exception("A senha e a confirmação da senha devem ser iguais.") { Data = { { "Id", 1 } } };
         }
         public void Inserir(Usuario _usuario, string _confirmacaoDeSenha)
         {
@@ -31,10 +37,11 @@ namespace BLL
             ValidarDados(_usuario, _confirmacaoDeSenha);
             new UsuarioDAL().Inserir(_usuario);
         }
-        public void Alterar(Usuario _usuario)
+        public void Alterar(Usuario _usuario, string _confirmacaoDeSenha)
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+            ValidarDados(_usuario, _confirmacaoDeSenha);
             new UsuarioDAL().Alterar(_usuario);
         }
         public void Excluir(int _id)

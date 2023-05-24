@@ -3,6 +3,7 @@ using Models;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using WindowsFormsAppPrincipal;
 
 namespace Financas
 {
@@ -33,6 +34,14 @@ namespace Financas
             }
             catch (Exception ex)
             {
+                int idErro = new TratarErro().PegarId(ex);
+
+                if (idErro == 0)
+                    textBoxDescricao.Focus();
+                else
+                if (idErro == 1)
+                    textBoxGastos.Focus();
+
                 MessageBox.Show(ex.Message);
             }
         }

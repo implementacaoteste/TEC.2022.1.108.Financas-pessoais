@@ -87,56 +87,55 @@ namespace Financas
             buttonBuscar_Click(null, null);
         }
 
-        private void buttonAlterar_Click(object sender, EventArgs e)
-        {
+        //private void buttonAlterar_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        int id = ((Despesas)despesasBindingSource.Current).Id;
 
+        //        if (((Despesas)despesasBindingSource.Current).DataEmissao != null && ((Despesas)despesasBindingSource.Current).DataPagamento.Value.Year > 2000)
+        //        {
+        //            throw new Exception("Este registro já foi pago! não pode ser alterado");
+        //        }
+        //        using (FormCadastroContasPaga frm = new FormCadastroContasPaga(id))
+        //        {
+        //            frm.ShowDialog();
+        //        }
+        //        filtro = textBoxBuscarDespesas.Text + " ";
+        //        buttonBuscar_Click(null, null);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
-            try
-            {
-                int id = ((ContasReceber)despesasBindingSource.Current).Id;
-                if (((ContasReceber)despesasBindingSource.Current).DataPagamento != null && ((ContasReceber)despesasBindingSource.Current).DataPagamento.Value.Year > 2000)
-                {
-                    throw new Exception("Este registro já foi pago! não pode ser alterado");
-                }
-                using (FormCadastroContasReceber frm = new FormCadastroContasReceber(id))
-                {
-                    frm.ShowDialog();
-                }
-                filtro = textBoxBuscarDespesas.Text + " ";
-                buttonBuscar_Click(null, null);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //private void buttonExcluir_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (despesasBindingSource.Count <= 0)
+        //        {
+        //            MessageBox.Show("Não existe registro para ser excluído");
+        //            return;
+        //        }
+        //        if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+        //            return;
 
-        private void buttonExcluir_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (despesasBindingSource.Count <= 0)
-                {
-                    MessageBox.Show("Não existe registro para ser excluído");
-                    return;
-                }
-                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                    return;
+        //        int id = ((Despesas)despesasBindingSource.Current).Id;
+        //        new DespesasBLL().Excluir(id);
+        //        despesasBindingSource.RemoveCurrent();
 
-                int id = ((Despesas)despesasBindingSource.Current).Id;
-                new DespesasBLL().Excluir(id);
-                despesasBindingSource.RemoveCurrent();
+        //        filtro = textBoxBuscarDespesas.Text + " ";
+        //        buttonBuscar_Click(null, null);
 
-                filtro = textBoxBuscarDespesas.Text + " ";
-                buttonBuscar_Click(null, null);
-
-                MessageBox.Show("Registro excluído com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //        MessageBox.Show("Registro excluído com sucesso!");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
         private void buttonSair_Click(object sender, EventArgs e)
         {
@@ -147,7 +146,7 @@ namespace Financas
         {
             labelDataInicial.Visible = false;
             labelDataFinal.Visible = false;
-            textBoxBuscarDespesas.Width = 375;
+            textBoxBuscarDespesas.Width = 495;
             textBoxBuscarDespesas.Visible = true;
             textBoxBuscarDespesas2.Visible = false;
             maskedTextBoxBuscarDespesas.Visible = false;
@@ -157,7 +156,7 @@ namespace Financas
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
                 textBoxBuscarDespesas.Visible = false;
-                maskedTextBoxBuscarDespesas.Width = 200;
+                maskedTextBoxBuscarDespesas.Width = 255;
                 maskedTextBoxBuscarDespesas.Visible = true;
                 textBoxBuscarDespesas2.Visible = true;
             }
@@ -177,6 +176,7 @@ namespace Financas
                 labelDataFinal.Visible = false;
                 textBoxBuscarDespesas.Width = 375;
                 textBoxBuscarDespesas2.Visible = false;
+                comboBox1.SelectedIndex = 0;
 
                 this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
                 this.labelInforamaConsultaDespesa.BackColor = System.Drawing.SystemColors.Control;

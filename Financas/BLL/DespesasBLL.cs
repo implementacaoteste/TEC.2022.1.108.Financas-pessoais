@@ -10,16 +10,28 @@ namespace BLL
 {
     public class DespesasBLL
     {
+        public void ValidarSaldo(double _valor, int _idBanco)
+        {
+            Banco banco = new BancoDAL().BuscarPorId(_idBanco);
+
+            if (!banco.PermitirSaldoNegativo && banco.Saldo < _valor)
+                throw new Exception("Este banco não possui saldo suficiente.");
+        }
         public void Inserir(Despesas _despesas, ContasPagar _contasPagar = null)
         {
             _despesas.Descricao = _despesas.Descricao.Trim();
-
+            
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+
             if (_contasPagar != null && _contasPagar.DataPagamento != null && _contasPagar.DataPagamento.Value.Year > 2000)
                 throw new Exception("Este registro já foi pago!");
-            if (_despesas.Descricao.Length < 3)
+
+            if (_despesas.Descricao == null || _despesas.Descricao.Length < 3)
                 throw new Exception("O campo descrição deve ter mais que dois caractéres.") { Data = { { "Id", 0 } } };
+
+            if (_despesas.Valor <= 0)
+                throw new Exception("O valor não pode ser 0") { Data = { { "Id", 0 } } }; 
 
             ValidarSaldo(_despesas.Valor, _despesas.IdBanco);
 
@@ -29,6 +41,11 @@ namespace BLL
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+            if (_despesas.Descricao == null || _despesas.Descricao.Length < 3)
+                throw new Exception("O campo descrição deve ter mais que dois caractéres.");
+
+            ValidarSaldo(_despesas.Valor, _despesas.IdBanco);
+
             new DespesasDAL().Alterar(_despesas);
         }
         public void Excluir(int _id)
@@ -74,12 +91,5 @@ namespace BLL
             return new DespesasDAL().BuscarPorEmissao(_periodoInicial, _periodoFinal);
         }
 
-        public void ValidarSaldo(double _valor, int _idBanco)
-        {
-            Banco banco = new BancoDAL().BuscarPorId(_idBanco);
-
-            if (!banco.PermitirSaldoNegativo && banco.Saldo < _valor)
-                throw new Exception("Este banco não possui saldo suficiente.");
-        }
     }
 }

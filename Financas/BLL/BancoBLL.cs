@@ -3,6 +3,7 @@ using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +13,9 @@ namespace BLL
     {
         private void ValidarDados(Banco _banco)
         {
-            if (_banco.Nome == null || _banco.Nome.Trim().Length <= 1)
+            _banco.Nome = _banco.Nome.Trim();
+
+            if (_banco.Nome == null || _banco.Nome.Length <= 1)
                 throw new Exception("O banco deve possuir 2 ou mais caracteres.");
 
             Banco banco = new BancoDAL().BuscarPorNomeBanco(_banco.Nome);
