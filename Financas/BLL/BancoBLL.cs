@@ -16,12 +16,12 @@ namespace BLL
             _banco.Nome = _banco.Nome.Trim();
 
             if (_banco.Nome == null || _banco.Nome.Length <= 1)
-                throw new Exception("O banco deve possuir 2 ou mais caracteres.");
+                throw new Exception("O banco deve possuir 2 ou mais caracteres.") { Data = { { "Id", 0 } } }; 
 
             Banco banco = new BancoDAL().BuscarPorNomeBanco(_banco.Nome);
 
             if (banco.Nome != null && banco.Nome.ToUpper() == _banco.Nome.ToUpper() && banco.Id != _banco.Id)
-                throw new Exception("Já existe um banco com esse nome.");
+                throw new Exception("Já existe um banco com esse nome.") { Data = { { "Id", 0 } } }; 
         }
         public void Inserir(Banco _banco)
         {

@@ -19,19 +19,19 @@ namespace BLL
         }
         public void Inserir(Despesas _despesas, ContasPagar _contasPagar = null)
         {
-            _despesas.Descricao = _despesas.Descricao.Trim();
-            
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
 
             if (_contasPagar != null && _contasPagar.DataPagamento != null && _contasPagar.DataPagamento.Value.Year > 2000)
                 throw new Exception("Este registro já foi pago!");
 
-            if (_despesas.Descricao == null || _despesas.Descricao.Length < 3)
+            if (_despesas.Descricao == null || _despesas.Descricao.Trim().Length < 3)
                 throw new Exception("O campo descrição deve ter mais que dois caractéres.") { Data = { { "Id", 0 } } };
 
+            _despesas.Descricao = _despesas.Descricao.Trim();
+
             if (_despesas.Valor <= 0)
-                throw new Exception("Informe o valor") { Data = { { "Id", 0 } } }; 
+                throw new Exception("Informe o valor") { Data = { { "Id", 0 } } };
 
             ValidarSaldo(_despesas.Valor, _despesas.IdBanco);
 
