@@ -31,7 +31,7 @@ namespace BLL
                 throw new Exception("O campo descrição deve ter mais que dois caractéres.") { Data = { { "Id", 0 } } };
 
             if (_despesas.Valor <= 0)
-                throw new Exception("O valor não pode ser 0") { Data = { { "Id", 0 } } }; 
+                throw new Exception("Informe o valor") { Data = { { "Id", 0 } } }; 
 
             ValidarSaldo(_despesas.Valor, _despesas.IdBanco);
 

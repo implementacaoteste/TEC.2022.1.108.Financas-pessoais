@@ -13,7 +13,10 @@ namespace BLL
         private void ValidarDados(ContasPagar _contasPagar)
         {
             if (_contasPagar.Descricao == null || _contasPagar.Descricao.Trim().Length <= 4)
-                throw new Exception("A descrição deve ter 5 ou mais caracteres");
+                throw new Exception("A descrição deve ter 5 ou mais caracteres") { Data = { { "Id", 0 } } }; 
+
+            if (_contasPagar.ValorPagar <= 0)
+                throw new Exception("Informe o valor") { Data = { { "Id", 1 } } }; 
         }
         public void Inserir(ContasPagar _contasPagar)
         {

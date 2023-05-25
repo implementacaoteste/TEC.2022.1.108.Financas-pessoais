@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using WindowsFormsAppPrincipal;
 
 namespace Financas
 {
@@ -43,6 +44,14 @@ namespace Financas
             }
             catch (Exception ex)
             {
+                int idErro = new TratarErro().PegarId(ex);
+
+                if (idErro == 0)
+                    descricaoTextBox.Focus();
+                else
+                if (idErro == 1)
+                    valorPagarTextBox.Focus();
+
                 MessageBox.Show(ex.Message);
             }
         }

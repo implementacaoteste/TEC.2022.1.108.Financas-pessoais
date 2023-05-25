@@ -13,13 +13,18 @@ namespace BLL
         private void ValidarDados(ContasReceber _contasReceber)
         {
             _contasReceber.Descricao = _contasReceber.Descricao.Trim();
+
             if (_contasReceber.Descricao == null || _contasReceber.Descricao.Trim().Length <= 4)
                 throw new Exception("A descrição precisa ter 5 ou mais caracteres") { Data = { { "Id", 0 } } };
+
+            if (_contasReceber.ValorReceber <= 0)
+                throw new Exception("Informe o valor") { Data = { { "Id", 1 } } };
         }
         public void Inserir(ContasReceber _contasReceber)
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+
             ValidarDados(_contasReceber);
             new ContasReceberDAL().Inserir(_contasReceber);
         }

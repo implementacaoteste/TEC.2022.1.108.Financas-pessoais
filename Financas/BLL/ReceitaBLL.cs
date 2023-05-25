@@ -13,8 +13,12 @@ namespace BLL
         private void ValidarDados(Receita _receita)
         {
             _receita.Descricao = _receita.Descricao.Trim();
+
             if (_receita.Descricao.Length < 3)
-                throw new Exception("O campo descrição deve ter mais que dois caracteres!");
+                throw new Exception("O campo descrição deve ter mais que dois caracteres!") { Data = { { "Id", 0 } } };
+
+            if (_receita.Valor <= 0)
+                throw new Exception("Informe o valor") { Data = { { "Id", 1 } } };
         }
         public void Inserir(Receita _receita, ContasReceber _contasReceber = null)
         {
@@ -53,7 +57,7 @@ namespace BLL
         }
         public Receita BuscarPorId(int _id)
         {
-           return new ReceitaDAL().BuscarPorId(_id);
+            return new ReceitaDAL().BuscarPorId(_id);
         }
         public List<Receita> BuscarPorEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
         {

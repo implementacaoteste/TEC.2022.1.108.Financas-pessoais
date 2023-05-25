@@ -40,8 +40,12 @@ namespace Financas
             {
                 int idErro = new TratarErro().PegarId(ex);
 
-                if (idErro == 1)
+                if (idErro == 0)
                     descricaoTextBoxContasReceber.Focus();
+                else
+                if (idErro == 1)
+                    valorReceberTextBoxContasReceber.Focus();
+
                 MessageBox.Show(ex.Message);
             }
 

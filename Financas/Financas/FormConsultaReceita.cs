@@ -135,7 +135,7 @@ namespace Financas
         {
             labelDataInicial.Visible = false;
             labelDataFinal.Visible = false;
-            textBoxConsultarReceita.Width = 375;
+            textBoxConsultarReceita.Width = 515;
             textBoxConsultarReceita.Visible = true;    
             textBoxConsultarReceita2.Visible = false;
             maskedTextBoxConsultarReceita.Visible = false;
@@ -145,7 +145,7 @@ namespace Financas
                 labelDataInicial.Visible = true;
                 labelDataFinal.Visible = true;
                 textBoxConsultarReceita.Visible = false;
-                maskedTextBoxConsultarReceita.Width = 200;
+                maskedTextBoxConsultarReceita.Width = 255;
                 maskedTextBoxConsultarReceita.Visible = true;
                 textBoxConsultarReceita2.Visible = true;
             }

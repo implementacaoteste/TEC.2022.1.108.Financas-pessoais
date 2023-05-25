@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.receitaDataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +42,6 @@
             this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarReceita = new System.Windows.Forms.Button();
-            this.buttonAlterarReceita = new System.Windows.Forms.Button();
-            this.buttonExcluirReceita = new System.Windows.Forms.Button();
             this.buttonAdicionarReceita = new System.Windows.Forms.Button();
             this.textBoxConsultarReceita = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -88,8 +86,8 @@
             // Id
             // 
             this.Id.DataPropertyName = "Id";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle19;
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
@@ -108,10 +106,10 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle20.Format = "C2";
+            dataGridViewCellStyle20.NullValue = null;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle20;
             this.Valor.HeaderText = "Valor";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -148,10 +146,10 @@
             // DataEmissao
             // 
             this.DataEmissao.DataPropertyName = "DataEmissao";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.Format = "d";
+            dataGridViewCellStyle21.NullValue = null;
+            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle21;
             this.DataEmissao.HeaderText = "Data de Emissao";
             this.DataEmissao.MinimumWidth = 6;
             this.DataEmissao.Name = "DataEmissao";
@@ -165,7 +163,7 @@
             // buttonBuscarReceita
             // 
             this.buttonBuscarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarReceita.Location = new System.Drawing.Point(737, 110);
+            this.buttonBuscarReceita.Location = new System.Drawing.Point(923, 107);
             this.buttonBuscarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBuscarReceita.Name = "buttonBuscarReceita";
             this.buttonBuscarReceita.Size = new System.Drawing.Size(75, 23);
@@ -174,34 +172,10 @@
             this.buttonBuscarReceita.UseVisualStyleBackColor = true;
             this.buttonBuscarReceita.Click += new System.EventHandler(this.buttonBuscarReceita_Click);
             // 
-            // buttonAlterarReceita
-            // 
-            this.buttonAlterarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterarReceita.Location = new System.Drawing.Point(919, 110);
-            this.buttonAlterarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonAlterarReceita.Name = "buttonAlterarReceita";
-            this.buttonAlterarReceita.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlterarReceita.TabIndex = 10;
-            this.buttonAlterarReceita.Text = "A&lterar";
-            this.buttonAlterarReceita.UseVisualStyleBackColor = true;
-            this.buttonAlterarReceita.Click += new System.EventHandler(this.buttonAlterarReceita_Click);
-            // 
-            // buttonExcluirReceita
-            // 
-            this.buttonExcluirReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirReceita.Location = new System.Drawing.Point(1000, 110);
-            this.buttonExcluirReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonExcluirReceita.Name = "buttonExcluirReceita";
-            this.buttonExcluirReceita.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluirReceita.TabIndex = 11;
-            this.buttonExcluirReceita.Text = "&Excluir";
-            this.buttonExcluirReceita.UseVisualStyleBackColor = true;
-            this.buttonExcluirReceita.Click += new System.EventHandler(this.buttonExcluirReceita_Click);
-            // 
             // buttonAdicionarReceita
             // 
             this.buttonAdicionarReceita.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionarReceita.Location = new System.Drawing.Point(819, 110);
+            this.buttonAdicionarReceita.Location = new System.Drawing.Point(1004, 107);
             this.buttonAdicionarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionarReceita.Name = "buttonAdicionarReceita";
             this.buttonAdicionarReceita.Size = new System.Drawing.Size(95, 23);
@@ -212,10 +186,10 @@
             // 
             // textBoxConsultarReceita
             // 
-            this.textBoxConsultarReceita.Location = new System.Drawing.Point(107, 108);
+            this.textBoxConsultarReceita.Location = new System.Drawing.Point(94, 108);
             this.textBoxConsultarReceita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConsultarReceita.Name = "textBoxConsultarReceita";
-            this.textBoxConsultarReceita.Size = new System.Drawing.Size(269, 22);
+            this.textBoxConsultarReceita.Size = new System.Drawing.Size(349, 22);
             this.textBoxConsultarReceita.TabIndex = 3;
             // 
             // label1
@@ -223,7 +197,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 112);
+            this.label1.Location = new System.Drawing.Point(20, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 16);
             this.label1.TabIndex = 2;
@@ -264,7 +238,7 @@
             "Contato",
             "Forma pagamento",
             "Banco"});
-            this.comboBox1.Location = new System.Drawing.Point(611, 108);
+            this.comboBox1.Location = new System.Drawing.Point(787, 106);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
@@ -276,7 +250,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(607, 89);
+            this.label3.Location = new System.Drawing.Point(786, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 6;
@@ -287,7 +261,7 @@
             this.labelDataInicial.AutoSize = true;
             this.labelDataInicial.BackColor = System.Drawing.Color.Transparent;
             this.labelDataInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDataInicial.Location = new System.Drawing.Point(103, 91);
+            this.labelDataInicial.Location = new System.Drawing.Point(91, 90);
             this.labelDataInicial.Name = "labelDataInicial";
             this.labelDataInicial.Size = new System.Drawing.Size(73, 16);
             this.labelDataInicial.TabIndex = 1;
@@ -299,7 +273,7 @@
             this.labelDataFinal.AutoSize = true;
             this.labelDataFinal.BackColor = System.Drawing.Color.Transparent;
             this.labelDataFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDataFinal.Location = new System.Drawing.Point(379, 91);
+            this.labelDataFinal.Location = new System.Drawing.Point(449, 90);
             this.labelDataFinal.Name = "labelDataFinal";
             this.labelDataFinal.Size = new System.Drawing.Size(63, 16);
             this.labelDataFinal.TabIndex = 4;
@@ -308,20 +282,20 @@
             // 
             // maskedTextBoxConsultarReceita
             // 
-            this.maskedTextBoxConsultarReceita.Location = new System.Drawing.Point(106, 108);
+            this.maskedTextBoxConsultarReceita.Location = new System.Drawing.Point(94, 107);
             this.maskedTextBoxConsultarReceita.Mask = "00/00/0000";
             this.maskedTextBoxConsultarReceita.Name = "maskedTextBoxConsultarReceita";
-            this.maskedTextBoxConsultarReceita.Size = new System.Drawing.Size(270, 22);
+            this.maskedTextBoxConsultarReceita.Size = new System.Drawing.Size(246, 22);
             this.maskedTextBoxConsultarReceita.TabIndex = 14;
             this.maskedTextBoxConsultarReceita.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxConsultarReceita.Visible = false;
             // 
             // textBoxConsultarReceita2
             // 
-            this.textBoxConsultarReceita2.Location = new System.Drawing.Point(382, 108);
+            this.textBoxConsultarReceita2.Location = new System.Drawing.Point(449, 107);
             this.textBoxConsultarReceita2.Mask = "00/00/0000";
             this.textBoxConsultarReceita2.Name = "textBoxConsultarReceita2";
-            this.textBoxConsultarReceita2.Size = new System.Drawing.Size(223, 22);
+            this.textBoxConsultarReceita2.Size = new System.Drawing.Size(330, 22);
             this.textBoxConsultarReceita2.TabIndex = 14;
             this.textBoxConsultarReceita2.ValidatingType = typeof(System.DateTime);
             // 
@@ -339,8 +313,6 @@
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonBuscarReceita);
-            this.Controls.Add(this.buttonAlterarReceita);
-            this.Controls.Add(this.buttonExcluirReceita);
             this.Controls.Add(this.buttonAdicionarReceita);
             this.Controls.Add(this.textBoxConsultarReceita);
             this.Controls.Add(this.label3);
@@ -370,8 +342,6 @@
         private System.Windows.Forms.BindingSource receitaBindingSource;
         private System.Windows.Forms.DataGridView receitaDataGridView;
         private System.Windows.Forms.Button buttonBuscarReceita;
-        private System.Windows.Forms.Button buttonAlterarReceita;
-        private System.Windows.Forms.Button buttonExcluirReceita;
         private System.Windows.Forms.Button buttonAdicionarReceita;
         private System.Windows.Forms.TextBox textBoxConsultarReceita;
         private System.Windows.Forms.Label label1;
