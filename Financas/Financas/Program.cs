@@ -17,6 +17,10 @@ namespace Financas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+           // string texto = "123";
+            //texto = new infra.criptografia().CriptografarSenha(texto);
+
             try
             {
                 if (!File.Exists(Environment.CurrentDirectory + "\\ProjetoFundo.png"))

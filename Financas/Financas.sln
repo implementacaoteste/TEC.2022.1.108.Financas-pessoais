@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Financas", "Financas\Financas.csproj", "{994EDDF5-41C3-4526-A89C-C1A79A298D38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infra", "infra\infra.csproj", "{DAF8F36B-CA64-4BB1-B8B2-B825019134A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{994EDDF5-41C3-4526-A89C-C1A79A298D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{994EDDF5-41C3-4526-A89C-C1A79A298D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{994EDDF5-41C3-4526-A89C-C1A79A298D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAF8F36B-CA64-4BB1-B8B2-B825019134A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF8F36B-CA64-4BB1-B8B2-B825019134A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF8F36B-CA64-4BB1-B8B2-B825019134A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF8F36B-CA64-4BB1-B8B2-B825019134A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
