@@ -56,7 +56,7 @@ namespace Financas
                 ativoCheckBox.Checked = true;
             }
             else
-                formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorId(Id);
+                formaPagamentoBindingSource.DataSource = new FormaPagamentoBLL().BuscarPorId(Id, false, true);
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
 

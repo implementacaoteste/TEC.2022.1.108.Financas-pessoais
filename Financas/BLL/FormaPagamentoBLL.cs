@@ -58,9 +58,9 @@ namespace BLL
         {
             return new FormaPagamentoDAL().BuscarPorDescricaoPagamento(_descricao);
         }
-        public FormaPagamento BuscarPorId(int _id)
+        public FormaPagamento BuscarPorId(int _id, bool _apenasInativos, bool _inativo)
         {
-            return new FormaPagamentoDAL().BuscarPorId(_id);
+            return new FormaPagamentoDAL().BuscarPorId(_id, _apenasInativos, _inativo);
         }
 
         public object BuscarPorInativo(string _Inativo)
