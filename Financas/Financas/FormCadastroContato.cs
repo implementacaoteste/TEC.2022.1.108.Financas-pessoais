@@ -63,7 +63,7 @@ namespace Financas
                     ativoCheckBox.Checked = true;
                 }
                 else
-                    contatoBindingSource.DataSource = new ContatoBLL().BuscarPorId(Id);
+                    contatoBindingSource.DataSource = new ContatoBLL().BuscarPorId(Id, false, true);
                 this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
                 this.label1.ForeColor = System.Drawing.SystemColors.Control;
             }

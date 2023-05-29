@@ -101,7 +101,7 @@ namespace DAL
                 }
             }
         }
-        public Contato BuscarPorId(int _id)
+        public Contato BuscarPorId(int _id, bool _apenasInativo, bool _inativo)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             Contato contato = new Contato();
@@ -111,6 +111,15 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, Endereco, Numero, Descricao, Ativo, IdUsuario FROM Contato
                                     WHERE Id = @Id AND IdUsuario = @IdUsuario AND Ativo = 1";
+
+                if(_inativo)
+                    cmd.CommandText = @"SELECT Id, Nome, Endereco, Numero, Descricao, Ativo, IdUsuario FROM Contato
+                                    WHERE Id = @Id AND IdUsuario = @IdUsuario";
+
+                if(_apenasInativo)
+                    cmd.CommandText = @"SELECT Id, Nome, Endereco, Numero, Descricao, Ativo, IdUsuario FROM Contato
+                                    WHERE Id = @Id AND IdUsuario = @IdUsuario AND Ativo = 0";
+
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
