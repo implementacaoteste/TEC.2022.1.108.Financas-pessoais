@@ -42,6 +42,8 @@ namespace Financas
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -64,7 +66,7 @@ namespace Financas
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(431, 315);
+            this.textBoxUsuario.Location = new System.Drawing.Point(426, 351);
             this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsuario.Multiline = true;
             this.textBoxUsuario.Name = "textBoxUsuario";
@@ -73,7 +75,7 @@ namespace Financas
             // 
             // textBoxSenhaLogin
             // 
-            this.textBoxSenhaLogin.Location = new System.Drawing.Point(431, 369);
+            this.textBoxSenhaLogin.Location = new System.Drawing.Point(426, 397);
             this.textBoxSenhaLogin.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSenhaLogin.Name = "textBoxSenhaLogin";
             this.textBoxSenhaLogin.PasswordChar = '*';
@@ -85,7 +87,7 @@ namespace Financas
             this.labelUsuarioLogin.AutoSize = true;
             this.labelUsuarioLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsuarioLogin.ForeColor = System.Drawing.Color.Black;
-            this.labelUsuarioLogin.Location = new System.Drawing.Point(259, 319);
+            this.labelUsuarioLogin.Location = new System.Drawing.Point(258, 355);
             this.labelUsuarioLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUsuarioLogin.Name = "labelUsuarioLogin";
             this.labelUsuarioLogin.Size = new System.Drawing.Size(142, 18);
@@ -96,7 +98,7 @@ namespace Financas
             // 
             this.labelSenhaLogin.AutoSize = true;
             this.labelSenhaLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSenhaLogin.Location = new System.Drawing.Point(352, 373);
+            this.labelSenhaLogin.Location = new System.Drawing.Point(349, 401);
             this.labelSenhaLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSenhaLogin.Name = "labelSenhaLogin";
             this.labelSenhaLogin.Size = new System.Drawing.Size(60, 18);
@@ -106,7 +108,7 @@ namespace Financas
             // buttonEntrar
             // 
             this.buttonEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEntrar.Location = new System.Drawing.Point(470, 474);
+            this.buttonEntrar.Location = new System.Drawing.Point(465, 504);
             this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(96, 34);
@@ -121,7 +123,7 @@ namespace Financas
             // 
             this.buttonsair.BackColor = System.Drawing.Color.Transparent;
             this.buttonsair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonsair.Location = new System.Drawing.Point(601, 474);
+            this.buttonsair.Location = new System.Drawing.Point(603, 504);
             this.buttonsair.Margin = new System.Windows.Forms.Padding(4);
             this.buttonsair.Name = "buttonsair";
             this.buttonsair.Size = new System.Drawing.Size(97, 34);
@@ -134,7 +136,7 @@ namespace Financas
             // 
             this.checkBoxMostrarSenha.AutoSize = true;
             this.checkBoxMostrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(519, 420);
+            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(745, 401);
             this.checkBoxMostrarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxMostrarSenha.Name = "checkBoxMostrarSenha";
             this.checkBoxMostrarSenha.Size = new System.Drawing.Size(120, 19);
@@ -159,26 +161,25 @@ namespace Financas
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(497, 616);
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(501, 667);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(212, 31);
+            this.linkLabel1.Size = new System.Drawing.Size(181, 29);
             this.linkLabel1.TabIndex = 8;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Suporte Tecnico";
+            this.linkLabel1.Text = "Suporte técnico";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(439, 616);
+            this.pictureBox2.Location = new System.Drawing.Point(434, 667);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(52, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 
@@ -201,11 +202,36 @@ namespace Financas
             this.pictureBox4.TabIndex = 12;
             this.pictureBox4.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(462, 446);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 16);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Não possui uma conta? ";
+
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.linkLabel2.Location = new System.Drawing.Point(619, 446);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(81, 16);
+            this.linkLabel2.TabIndex = 14;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Cadastre-se";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1129, 735);
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -253,5 +279,7 @@ namespace Financas
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }
