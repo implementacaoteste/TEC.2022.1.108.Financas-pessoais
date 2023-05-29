@@ -36,7 +36,7 @@ namespace Financas
                         bancoBindingSource.DataSource = new BancoBLL().BuscarPorNome(textBoxConsultarBanco.Text);
                         break;
                     case 2:
-                        bancoBindingSource.DataSource = new BancoBLL().BuscarPorInativo(textBoxConsultarBanco.Text);
+                        bancoBindingSource.DataSource = new BancoBLL().BuscarPorInativo(true);
                         break;
                     default:
                         break;

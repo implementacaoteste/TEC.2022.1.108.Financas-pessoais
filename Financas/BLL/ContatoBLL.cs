@@ -75,9 +75,9 @@ namespace BLL
         {
             return new ContatoDAL().BuscarPorDescricao(_descricao);
         }
-        public Contato BuscarPorId(int _id)
+        public Contato BuscarPorId(int _id, bool _apenasInativo, bool _inativo)
         {
-            return new ContatoDAL().BuscarPorId(_id);
+            return new ContatoDAL().BuscarPorId(_id, _apenasInativo, _inativo);
         }
 
         public object BuscarPorInativo(string _inativo)

@@ -12,7 +12,7 @@ namespace BLL
     {
         public void ValidarSaldo(double _valor, int _idBanco)
         {
-            Banco banco = new BancoDAL().BuscarPorId(_idBanco);
+            Banco banco = new BancoDAL().BuscarPorId(_idBanco, false, true);
 
             if (!banco.PermitirSaldoNegativo && banco.Saldo < _valor)
                 throw new Exception("Este banco não possui saldo suficiente.");
