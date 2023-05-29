@@ -40,7 +40,7 @@ namespace infra
             Array.Reverse(charArray);
             return new string(charArray);
         }
-            
 
+        //wmKdvuWfY4e2P/EYguGYCbf/qc+vH6/f4VtX62USj+I=
     }
 }
