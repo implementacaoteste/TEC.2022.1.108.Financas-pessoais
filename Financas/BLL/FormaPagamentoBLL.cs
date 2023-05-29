@@ -12,9 +12,9 @@ namespace BLL
     {
         private void ValidarDados(FormaPagamento _formaPagamento)
         {
-            _formaPagamento.Descricao = _formaPagamento.Descricao.Trim();
-            if (_formaPagamento.Descricao == null || _formaPagamento.Descricao.Length <= 2)
+            if (_formaPagamento.Descricao == null || _formaPagamento.Descricao.Trim().Length <= 2)
                 throw new Exception("A forma de pagamento deve possuir 3 ou mais caracteres.");
+            _formaPagamento.Descricao = _formaPagamento.Descricao.Trim();
 
             FormaPagamento formaPagamento = new FormaPagamentoDAL().BuscarPorDescricaoPagamento(_formaPagamento.Descricao);
 

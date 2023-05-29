@@ -68,8 +68,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
-
         public void Excluir(int _id, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
@@ -104,8 +102,7 @@ namespace DAL
                 }
             }
         }
-
-        public Banco BuscarPorId(int _id)
+        public Banco BuscarPorId(int _id, bool _apenasInativos, bool _inativo)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             Banco banco = new Banco();
@@ -117,6 +114,18 @@ namespace DAL
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
                                     WHERE Id = @Id AND Ativo = 1 AND IdUsuario = @IdUsuario";
+
+                if (_inativo)
+                    cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo, Banco.IdUsuario FROM Banco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
+                                    WHERE Id = @Id AND IdUsuario = @IdUsuario";
+                if (_apenasInativos)
+                    cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo, Banco.IdUsuario FROM Banco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
+                                    WHERE Id = @Id AND Ativo = 0 AND IdUsuario = @IdUsuario";
+
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -147,7 +156,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Banco> BuscarTodos()
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -191,7 +199,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Banco> BuscarPorNome(string _nome)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -235,7 +242,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public Banco ValidarMovimentacaoBanco(int _id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -281,8 +287,7 @@ namespace DAL
                 cn.Close();
             }
         }
-
-        public List<Banco> BuscarPorInativo(string _inativo)
+        public List<Banco> BuscarPorInativo(bool _apenasInativos, bool _inativo)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             List<Banco> bancos = new List<Banco>();
@@ -294,7 +299,19 @@ namespace DAL
                 cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo, Banco.IdUsuario FROM Banco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
                                     LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
+                                    WHERE Banco.Ativo = 1 AND Banco.IdUsuario = @IdUsuario";
+
+                if (_inativo)
+                    cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo, Banco.IdUsuario FROM Banco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
+                                    WHERE Banco.IdUsuario = @IdUsuario";
+                if(_apenasInativos)
+                    cmd.CommandText = @"SELECT Banco.Id, Banco.Nome, ISNULL(Receita.Valor, 0) - ISNULL(Despesas.Valor, 0) AS Saldo, Banco.Poupanca, Banco.Ativo, Banco.IdUsuario FROM Banco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Receita GROUP BY IdBanco) AS Receita ON Banco.Id = Receita.IdBanco
+                                    LEFT JOIN (SELECT SUM(Valor) AS Valor, IdBanco FROM Despesas GROUP BY IdBanco) AS Despesas ON Banco.Id = Despesas.IdBanco
                                     WHERE Banco.Ativo = 0 AND Banco.IdUsuario = @IdUsuario";
+
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@IdUsuario", Constantes.IdUsuarioLogado);
@@ -324,7 +341,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public Banco BuscarPorNomeBanco(string _nome)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
