@@ -9,7 +9,7 @@ namespace BLL
 {
     public class UsuarioBLL
     {
-        private void ValidarDados(Usuario _usuario, string _confirmacaoDeSenha)
+        private Usuario ValidarDados(Usuario _usuario, string _confirmacaoDeSenha)
         {
             if (_usuario.Senha == null || _usuario.Senha.Length < 3)
                 throw new Exception("A senha deve possuir 3 ou mais caracteres.") { Data = { { "Id", 1 } } };
@@ -30,19 +30,25 @@ namespace BLL
 
             if (_usuario.Senha != usuario.Senha && _usuario.Senha != _confirmacaoDeSenha)
                 throw new Exception("A senha e a confirmação da senha devem ser iguais.") { Data = { { "Id", 1 } } };
+
+            if (usuario.Senha == null || _usuario.Senha != usuario.Senha)
+                _usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
+
+            return _usuario;
         }
         public void Inserir(Usuario _usuario, string _confirmacaoDeSenha)
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             ValidarDados(_usuario, _confirmacaoDeSenha);
-             _usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
+            // _usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
             new UsuarioDAL().Inserir(_usuario);
         }
         public void Alterar(Usuario _usuario, string _confirmacaoDeSenha)
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+           // _usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
             ValidarDados(_usuario, _confirmacaoDeSenha);
             new UsuarioDAL().Alterar(_usuario);
         }

@@ -50,22 +50,40 @@ namespace Financas
 
         private void buttonAdicionarBanco_Click(object sender, EventArgs e)
         {
-            using (FormCadastroBanco frm = new FormCadastroBanco())
+            try
             {
-                frm.ShowDialog();
+                using (FormCadastroBanco frm = new FormCadastroBanco())
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscarBanco_Click(null, null);
             }
-            buttonBuscarBanco_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonAlterarBanco_Click(object sender, EventArgs e)
         {
-            int id = ((Banco)bancoBindingSource.Current).Id;
-
-            using (FormCadastroBanco frm = new FormCadastroBanco(id))
+            try
             {
-                frm.ShowDialog();
+                if (bancoBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro a ser alterado");
+                }
+                int id = ((Banco)bancoBindingSource.Current).Id;
+
+                using (FormCadastroBanco frm = new FormCadastroBanco(id))
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscarBanco_Click(null, null);
             }
-            buttonBuscarBanco_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonExcluirBanco_Click(object sender, EventArgs e)
@@ -128,7 +146,7 @@ namespace Financas
                 {
                     if (!((Banco)bancoBindingSource.Current).Ativo)
                         throw new Exception("Este banco está inativo. Você precisa ativá-lo ou escolher outro banco.");
-                    
+
                     Id = ((Banco)bancoBindingSource.Current).Id;
                     Nome = ((Banco)bancoBindingSource.Current).Nome;
                     Close();
@@ -158,9 +176,9 @@ namespace Financas
 
         private void textBoxConsultarBanco_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                if(filtro != textBoxConsultarBanco.Text)
+                if (filtro != textBoxConsultarBanco.Text)
                 {
                     buttonBuscarBanco_Click(null, null);
                     filtro = textBoxConsultarBanco.Text;
@@ -168,15 +186,15 @@ namespace Financas
                 }
                 else
                 {
-                    buttonSelecionarBanco_Click(null,null);
+                    buttonSelecionarBanco_Click(null, null);
                 }
             }
-             else if (e.KeyCode == Keys.Up)
+            else if (e.KeyCode == Keys.Up)
             {
                 bancoBindingSource.MovePrevious();
                 e.Handled = true;
             }
-            else if(e.KeyCode == Keys.Down)
+            else if (e.KeyCode == Keys.Down)
             {
                 bancoBindingSource.MoveNext();
                 e.Handled = true;

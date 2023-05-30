@@ -63,11 +63,18 @@ namespace Financas
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            using (FormCadastroContato frm = new FormCadastroContato())
+            try
             {
-                frm.ShowDialog();
+                using (FormCadastroContato frm = new FormCadastroContato())
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscar_Click(null, null);
             }
-            buttonBuscar_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonExcluir_Click(object sender, EventArgs e)
@@ -102,12 +109,24 @@ namespace Financas
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            int id = ((Contato)contatoBindingSource.Current).Id;
-            using (FormCadastroContato frm = new FormCadastroContato(id))
+            try
             {
-                frm.ShowDialog();
+                if (contatoBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro a ser alterado");
+                    return;
+                }
+                int id = ((Contato)contatoBindingSource.Current).Id;
+                using (FormCadastroContato frm = new FormCadastroContato(id))
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscar_Click(null, null);
             }
-            buttonBuscar_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void buttonSelecionarContato_Click(object sender, EventArgs e)
         {
@@ -141,8 +160,15 @@ namespace Financas
 
         private void FormConsultaContato_Load(object sender, EventArgs e)
         {
-            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
-            comboBoxBuscar.SelectedIndex = 1;
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
+                comboBoxBuscar.SelectedIndex = 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void textBoxBuscar_KeyDown(object sender, KeyEventArgs e)
