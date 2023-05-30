@@ -19,7 +19,7 @@ namespace Financas
             Application.SetCompatibleTextRenderingDefault(false);
 
            // string texto = "123";
-            //texto = new infra.criptografia().CriptografarSenha(texto);
+           // texto = new infra.criptografia().CriptografarSenha(texto);
 
             try
             {
