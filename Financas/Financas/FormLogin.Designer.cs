@@ -71,7 +71,7 @@ namespace Financas
             this.textBoxUsuario.Multiline = true;
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(312, 22);
-            this.textBoxUsuario.TabIndex = 2;
+            this.textBoxUsuario.TabIndex = 0;
             // 
             // textBoxSenhaLogin
             // 
@@ -80,7 +80,7 @@ namespace Financas
             this.textBoxSenhaLogin.Name = "textBoxSenhaLogin";
             this.textBoxSenhaLogin.PasswordChar = '*';
             this.textBoxSenhaLogin.Size = new System.Drawing.Size(312, 22);
-            this.textBoxSenhaLogin.TabIndex = 4;
+            this.textBoxSenhaLogin.TabIndex = 1;
             // 
             // labelUsuarioLogin
             // 
@@ -112,7 +112,7 @@ namespace Financas
             this.buttonEntrar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(96, 34);
-            this.buttonEntrar.TabIndex = 6;
+            this.buttonEntrar.TabIndex = 4;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = true;
             this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
@@ -127,7 +127,7 @@ namespace Financas
             this.buttonsair.Margin = new System.Windows.Forms.Padding(4);
             this.buttonsair.Name = "buttonsair";
             this.buttonsair.Size = new System.Drawing.Size(97, 34);
-            this.buttonsair.TabIndex = 7;
+            this.buttonsair.TabIndex = 5;
             this.buttonsair.Text = "Sair";
             this.buttonsair.UseVisualStyleBackColor = false;
             this.buttonsair.Click += new System.EventHandler(this.buttonsair_Click);
@@ -139,9 +139,9 @@ namespace Financas
             this.checkBoxMostrarSenha.Location = new System.Drawing.Point(745, 401);
             this.checkBoxMostrarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxMostrarSenha.Name = "checkBoxMostrarSenha";
-            this.checkBoxMostrarSenha.Size = new System.Drawing.Size(120, 19);
-            this.checkBoxMostrarSenha.TabIndex = 5;
-            this.checkBoxMostrarSenha.Text = "Mostrar a Senha";
+            this.checkBoxMostrarSenha.Size = new System.Drawing.Size(118, 19);
+            this.checkBoxMostrarSenha.TabIndex = 2;
+            this.checkBoxMostrarSenha.Text = "Mostrar a senha";
             this.checkBoxMostrarSenha.UseVisualStyleBackColor = true;
             this.checkBoxMostrarSenha.CheckedChanged += new System.EventHandler(this.checkBoxMostrarSenha_CheckedChanged);
             // 
@@ -165,7 +165,7 @@ namespace Financas
             this.linkLabel1.Location = new System.Drawing.Point(501, 667);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(181, 29);
-            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Suporte técnico";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -211,7 +211,6 @@ namespace Financas
             this.label2.Size = new System.Drawing.Size(151, 16);
             this.label2.TabIndex = 13;
             this.label2.Text = "Não possui uma conta? ";
-
             // 
             // linkLabel2
             // 
@@ -220,7 +219,7 @@ namespace Financas
             this.linkLabel2.Location = new System.Drawing.Point(619, 446);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(81, 16);
-            this.linkLabel2.TabIndex = 14;
+            this.linkLabel2.TabIndex = 3;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Cadastre-se";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
