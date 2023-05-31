@@ -108,12 +108,19 @@ namespace Financas
 
         private void buttonAdicionarConsultaContasPagar_Click(object sender, EventArgs e)
         {
-            using (FormCadastroContasPaga frm = new FormCadastroContasPaga())
+            try
             {
-                frm.ShowDialog();
+                using (FormCadastroContasPaga frm = new FormCadastroContasPaga())
+                {
+                    frm.ShowDialog();
+                }
+                HabilitarBusca();
+                buttonBuscarConsultaContasPagar_Click(null, null);
             }
-            HabilitarBusca();
-            buttonBuscarConsultaContasPagar_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void HabilitarBusca()
         {
@@ -146,23 +153,30 @@ namespace Financas
 
         private void buttonExcluirConsultaContasPagar_Click(object sender, EventArgs e)
         {
-            if (contasPagarBindingSource.Count <= 0)
+            try
             {
-                MessageBox.Show("Não existe registro para ser excluído");
-                return;
+                if (contasPagarBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro para ser excluído");
+                    return;
+                }
+
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                int id = ((ContasPagar)contasPagarBindingSource.Current).Id;
+                new ContasPagarBLL().Excluir(id);
+                contasPagarBindingSource.RemoveCurrent();
+
+                HabilitarBusca();
+                buttonBuscarConsultaContasPagar_Click(null, null);
+
+                MessageBox.Show("Registro excluído com sucesso!");
             }
-
-            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
-
-            int id = ((ContasPagar)contasPagarBindingSource.Current).Id;
-            new ContasPagarBLL().Excluir(id);
-            contasPagarBindingSource.RemoveCurrent();
-
-            HabilitarBusca();
-            buttonBuscarConsultaContasPagar_Click(null, null);
-
-            MessageBox.Show("Registro excluído com sucesso!");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
@@ -246,11 +260,17 @@ namespace Financas
 
         private void FormConsultaContasPagar_Load(object sender, EventArgs e)
         {
+            try
+            {
+                comboBox1.SelectedIndex = 0;
+                textBoxConsultaContasPagar.Width = 375;
 
-            comboBox1.SelectedIndex = 0;
-            textBoxConsultaContasPagar.Width = 375;
-
-            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
+                this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void textBoxConsultaContasPagar_TextChanged(object sender, EventArgs e)

@@ -48,12 +48,25 @@ namespace Financas
 
         private void buttonAlterarFormaPagamento_Click(object sender, EventArgs e)
         {
-            int id = ((FormaPagamento)formaPagamentoBindingSource.Current).Id;
-            using (FormCadastroFormaPagamento frm = new FormCadastroFormaPagamento(id))
+            try
             {
-                frm.ShowDialog();
+                if (formaPagamentoBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro a ser alterado");
+                    return;
+                }
+                int id = ((FormaPagamento)formaPagamentoBindingSource.Current).Id;
+                using (FormCadastroFormaPagamento frm = new FormCadastroFormaPagamento(id))
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscarFormaPagamento_Click(null, null);
+
             }
-            buttonBuscarFormaPagamento_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonExcluirFormaPagamento_Click(object sender, EventArgs e)
@@ -82,11 +95,18 @@ namespace Financas
         }
         private void buttonAdicionarFormaPagamento_Click(object sender, EventArgs e)
         {
-            using (FormCadastroFormaPagamento frm = new FormCadastroFormaPagamento())
+            try
             {
-                frm.ShowDialog();
+                using (FormCadastroFormaPagamento frm = new FormCadastroFormaPagamento())
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscarFormaPagamento_Click(null, null);
             }
-            buttonBuscarFormaPagamento_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
@@ -96,11 +116,18 @@ namespace Financas
 
         private void buttonAdicionarFormaPagamento_Click_1(object sender, EventArgs e)
         {
-            using (FormCadastroFormaPagamento frm = new FormCadastroFormaPagamento())
+            try
             {
-                frm.ShowDialog();
+                using (FormCadastroFormaPagamento frm = new FormCadastroFormaPagamento())
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscarFormaPagamento_Click(null, null);
             }
-            buttonBuscarFormaPagamento_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSair_Click_1(object sender, EventArgs e)
@@ -141,16 +168,22 @@ namespace Financas
 
         private void FormConsultaFormaPagamento_Load(object sender, EventArgs e)
         {
-            
-            comboBox1.SelectedIndex = 1;
-            this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
+            try
+            {
+                comboBox1.SelectedIndex = 1;
+                this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
 
-            this.label1.ForeColor = 
-            this.label3.ForeColor = SystemColors.ControlText;
+                this.label1.ForeColor =
+                this.label3.ForeColor = SystemColors.ControlText;
 
-            this.label2.ForeColor = 
-            this.label1.BackColor = 
-            this.label3.BackColor = SystemColors.Control;
+                this.label2.ForeColor =
+                this.label1.BackColor =
+                this.label3.BackColor = SystemColors.Control;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSelecionar_Click_1(object sender, EventArgs e)
@@ -196,12 +229,12 @@ namespace Financas
                 formaPagamentoBindingSource.MovePrevious();
                 e.Handled = true;
             }
-             else if(e.KeyCode == Keys.Down)
+            else if (e.KeyCode == Keys.Down)
             {
                 formaPagamentoBindingSource.MoveNext();
                 e.Handled = true;
             }
-            
+
         }
 
         private void formaPagamentoDataGridView_KeyDown(object sender, KeyEventArgs e)
@@ -218,7 +251,7 @@ namespace Financas
 
         private void formaPagamentoDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

@@ -298,11 +298,11 @@ GO
 --IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Dag'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Dagorlina', 'Dag', '123456', 1)
 --GO
 
-INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Ana', 'Ana', 123456, 1400, 1)
-INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Lucas', 'Lucas', 123456, 650, 1)
-INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Maria', 'Maria', 123456, 800, 1)
-INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('João', 'João', 123456, 1000, 1)
-INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Pedro', 'Pedro', 123456, 2000, 1)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Ana', 'Ana', 'wmKdvuWfY4e2P/EYguGYCbf/qc+vH6/f4VtX62USj+I=', 1400, 1)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Lucas', 'Lucas', 'wmKdvuWfY4e2P/EYguGYCbf/qc+vH6/f4VtX62USj+I=', 650, 1)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Maria', 'Maria', 'wmKdvuWfY4e2P/EYguGYCbf/qc+vH6/f4VtX62USj+I=', 800, 1)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('João', 'João', 'wmKdvuWfY4e2P/EYguGYCbf/qc+vH6/f4VtX62USj+I=', 1000, 1)
+INSERT INTO Usuario(Nome, NomeUsuario, Senha, Renda, Ativo)VALUES('Pedro', 'Pedro', 'wmKdvuWfY4e2P/EYguGYCbf/qc+vH6/f4VtX62USj+I=', 2000, 1)
 GO
 
 INSERT INTO Banco (Nome, Poupanca, Ativo, IdUsuario) VALUES('Inter', 50.5, 1, 1)

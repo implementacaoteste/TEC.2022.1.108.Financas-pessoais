@@ -12,9 +12,9 @@ namespace BLL
     {
         private void ValidarDados(FormaPagamento _formaPagamento)
         {
-            _formaPagamento.Descricao = _formaPagamento.Descricao.Trim();
-            if (_formaPagamento.Descricao == null || _formaPagamento.Descricao.Length <= 2)
+            if (_formaPagamento.Descricao == null || _formaPagamento.Descricao.Trim().Length <= 2)
                 throw new Exception("A forma de pagamento deve possuir 3 ou mais caracteres.");
+            _formaPagamento.Descricao = _formaPagamento.Descricao.Trim();
 
             FormaPagamento formaPagamento = new FormaPagamentoDAL().BuscarPorDescricaoPagamento(_formaPagamento.Descricao);
 
@@ -58,9 +58,9 @@ namespace BLL
         {
             return new FormaPagamentoDAL().BuscarPorDescricaoPagamento(_descricao);
         }
-        public FormaPagamento BuscarPorId(int _id)
+        public FormaPagamento BuscarPorId(int _id, bool _apenasInativos, bool _inativo)
         {
-            return new FormaPagamentoDAL().BuscarPorId(_id);
+            return new FormaPagamentoDAL().BuscarPorId(_id, _apenasInativos, _inativo);
         }
 
         public object BuscarPorInativo(string _Inativo)

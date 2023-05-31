@@ -105,13 +105,20 @@ namespace Financas
 
         private void buttonAdicionarContasReceber_Click(object sender, EventArgs e)
         {
-            using (FormCadastroContasReceber frm = new FormCadastroContasReceber())
+            try
             {
-                frm.ShowDialog();
-            }
+                using (FormCadastroContasReceber frm = new FormCadastroContasReceber())
+                {
+                    frm.ShowDialog();
+                }
 
-            HabilitarBusca();
-            buttonBuscarContasReceber_Click(null, null);
+                HabilitarBusca();
+                buttonBuscarContasReceber_Click(null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void HabilitarBusca()
@@ -125,6 +132,11 @@ namespace Financas
         {
             try
             {
+                if (contasReceberBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existro a ser alterado");
+                    return;
+                }
                 int id = ((ContasReceber)contasReceberBindingSource.Current).Id;
                 if (((ContasReceber)contasReceberBindingSource.Current).DataPagamento != null && ((ContasReceber)contasReceberBindingSource.Current).DataPagamento.Value.Year > 2000)
                 {
@@ -145,23 +157,30 @@ namespace Financas
 
         private void buttonExcluirContasReceber_Click(object sender, EventArgs e)
         {
-            if (contasReceberBindingSource.Count <= 0)
+            try
             {
-                MessageBox.Show("Não existe registro para ser excluído");
-                return;
+                if (contasReceberBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro para ser excluído");
+                    return;
+                }
+
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                int id = ((ContasReceber)contasReceberBindingSource.Current).Id;
+                new ContasReceberBLL().Excluir(id);
+                contasReceberBindingSource.RemoveCurrent();
+
+                HabilitarBusca();
+                buttonBuscarContasReceber_Click(null, null);
+
+                MessageBox.Show("Registro excluído com sucesso!");
             }
-
-            if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
-
-            int id = ((ContasReceber)contasReceberBindingSource.Current).Id;
-            new ContasReceberBLL().Excluir(id);
-            contasReceberBindingSource.RemoveCurrent();
-
-            HabilitarBusca();
-            buttonBuscarContasReceber_Click(null, null);
-
-            MessageBox.Show("Registro excluído com sucesso!");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSair_Click(object sender, EventArgs e)

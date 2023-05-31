@@ -79,12 +79,19 @@ namespace Financas
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            using (FormCadastroDespesas frm = new FormCadastroDespesas())
+            try
             {
-                frm.ShowDialog();
+                using (FormCadastroDespesas frm = new FormCadastroDespesas())
+                {
+                    frm.ShowDialog();
+                }
+                filtro = textBoxBuscarDespesas.Text + " ";
+                buttonBuscar_Click(null, null);
             }
-            filtro = textBoxBuscarDespesas.Text + " ";
-            buttonBuscar_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //private void buttonAlterar_Click(object sender, EventArgs e)

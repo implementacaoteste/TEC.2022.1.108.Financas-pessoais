@@ -13,10 +13,10 @@ namespace BLL
     {
         private void ValidarDados(Banco _banco)
         {
-            _banco.Nome = _banco.Nome.Trim();
 
-            if (_banco.Nome == null || _banco.Nome.Length <= 1)
+            if (_banco.Nome == null || _banco.Nome.Trim().Length <= 1)
                 throw new Exception("O banco deve possuir 2 ou mais caracteres.") { Data = { { "Id", 0 } } }; 
+            _banco.Nome = _banco.Nome.Trim();
 
             Banco banco = new BancoDAL().BuscarPorNomeBanco(_banco.Nome);
 
@@ -61,14 +61,14 @@ namespace BLL
         {
             return new BancoDAL().BuscarPorNomeBanco(_nome);
         }
-        public Banco BuscarPorId(int _id)
+        public Banco BuscarPorId(int _id, bool _apenasInativos, bool _inativo)
         {
-            return new BancoDAL().BuscarPorId(_id);
+            return new BancoDAL().BuscarPorId(_id, _apenasInativos, _inativo);
         }
 
-        public List<Banco> BuscarPorInativo(string _Inativo)
+        public List<Banco> BuscarPorInativo(bool _apenasInativos = false, bool _Inativo = false)
         {
-            return new BancoDAL().BuscarPorInativo(_Inativo);
+            return new BancoDAL().BuscarPorInativo(_apenasInativos, _Inativo);
         }
     }
 }

@@ -59,7 +59,7 @@ namespace Financas
                 ativoCheckBox.Checked = true;
             }
             else
-                bancoBindingSource.DataSource = new BancoBLL().BuscarPorId(Id);
+                bancoBindingSource.DataSource = new BancoBLL().BuscarPorId(Id, false, true);
 
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
             this.label1.ForeColor = SystemColors.Control;
@@ -80,12 +80,6 @@ namespace Financas
                 buttonSalvarCadBanco_Click(null, null);
             }
         }
-
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
-
 
     }
 }

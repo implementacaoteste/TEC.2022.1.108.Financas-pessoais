@@ -136,7 +136,7 @@ namespace DAL
             }
         }
 
-        public FormaPagamento BuscarPorId(int _id)
+        public FormaPagamento BuscarPorId(int _id, bool _apenasInativos, bool _inativo)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             FormaPagamento formaPagamento = new FormaPagamento();
@@ -146,6 +146,15 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento
                                     WHERE Id = @Id AND Ativo = 1 AND IdUsuario = @IdUsuario";
+
+                if (_inativo)
+                    cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento
+                                    WHERE Id = @Id AND IdUsuario = @IdUsuario";
+
+                if (_apenasInativos)
+                    cmd.CommandText = @"SELECT Id, Descricao, Ativo, IdUsuario FROM FormaPagamento
+                                    WHERE Id = @Id AND Ativo = 0 AND IdUsuario = @IdUsuario";
+
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -252,9 +261,9 @@ namespace DAL
             {
                 cn.Close();
             }
-            
 
-            
+
+
         }
         public object BuscarPorInativo(string _inativo)
         {
@@ -301,7 +310,7 @@ namespace DAL
         public FormaPagamento BuscarPorDescricaoPagamento(string _descricao)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            FormaPagamento formaPagamento = new FormaPagamento(); 
+            FormaPagamento formaPagamento = new FormaPagamento();
             try
             {
                 SqlCommand cmd = new SqlCommand();

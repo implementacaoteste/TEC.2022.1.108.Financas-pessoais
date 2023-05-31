@@ -25,13 +25,25 @@ namespace Financas
 
         private void buttonAlterarReceita_Click(object sender, EventArgs e)
         {
-            int id = ((Receita)receitaBindingSource.Current).Id;
-            using (FormCadastroReceita frm = new FormCadastroReceita(null, id))
+            try
             {
-                frm.ShowDialog();
+                if (receitaBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro a ser alterado");
+                    return;
+                }
+                int id = ((Receita)receitaBindingSource.Current).Id;
+                using (FormCadastroReceita frm = new FormCadastroReceita(null, id))
+                {
+                    frm.ShowDialog();
+                }
+                filtro = textBoxConsultarReceita.Text + " ";
+                buttonBuscarReceita_Click(null, null);
             }
-            filtro = textBoxConsultarReceita.Text + " ";
-            buttonBuscarReceita_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonBuscarReceita_Click(object sender, EventArgs e)
@@ -88,12 +100,19 @@ namespace Financas
         }
         private void buttonAdicionarReceita_Click(object sender, EventArgs e)
         {
-            using (FormCadastroReceita frm = new FormCadastroReceita())
+            try
             {
-                frm.ShowDialog();
+                using (FormCadastroReceita frm = new FormCadastroReceita())
+                {
+                    frm.ShowDialog();
+                }
+                filtro = textBoxConsultarReceita.Text + " ";
+                buttonBuscarReceita_Click(null, null);
             }
-            filtro = textBoxConsultarReceita.Text + " ";
-            buttonBuscarReceita_Click(null, null);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonExcluirReceita_Click(object sender, EventArgs e)
@@ -136,7 +155,7 @@ namespace Financas
             labelDataInicial.Visible = false;
             labelDataFinal.Visible = false;
             textBoxConsultarReceita.Width = 515;
-            textBoxConsultarReceita.Visible = true;    
+            textBoxConsultarReceita.Visible = true;
             textBoxConsultarReceita2.Visible = false;
             maskedTextBoxConsultarReceita.Visible = false;
 

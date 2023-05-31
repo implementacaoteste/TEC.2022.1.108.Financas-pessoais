@@ -88,9 +88,16 @@ namespace Financas
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
 
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using (FormCadastroUsuario frm = new FormCadastroUsuario())
+            {
+                frm.ShowDialog();
+            }
         }
+
+
     }
 }

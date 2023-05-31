@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using infra;
 
 namespace Financas
 {
@@ -18,8 +19,11 @@ namespace Financas
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-           // string texto = "123";
-            //texto = new infra.criptografia().CriptografarSenha(texto);
+            // string texto = "123";
+            // texto = new infra.criptografia().CriptografarSenha(texto);
+
+            new Arquivo().GravarLinhaNoFinalDoArquivo(Environment.CurrentDirectory + "\\ArquivoTeste.txt", "Texto a ser gravado no arquivo");
+            Application.Run(new FormPrincipal());
 
             try
             {
