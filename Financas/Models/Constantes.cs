@@ -16,7 +16,7 @@ namespace Models
         {
             get
             {
-                return Convert.ToString(DateTime.Now.Day * 40 + DateTime.Now.Year);
+                return Convert.ToString(DateTime.Now.Month * 40 + DateTime.Now.Year);
             }
         }
     }
