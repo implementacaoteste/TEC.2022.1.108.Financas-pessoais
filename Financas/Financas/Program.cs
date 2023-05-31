@@ -18,11 +18,12 @@ namespace Financas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+           // new Criptografia().GerarChaves();
 
             // string texto = "123";
             // texto = new infra.criptografia().CriptografarSenha(texto);
 
-            new Arquivo().GravarLinhaNoFinalDoArquivo(Environment.CurrentDirectory + "\\ArquivoTeste.txt", "Texto a ser gravado no arquivo");
+            Log.Gravar("o usuario abriu o sistema");
             Application.Run(new FormPrincipal());
 
             try

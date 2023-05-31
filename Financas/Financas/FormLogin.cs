@@ -1,4 +1,5 @@
 ﻿using BLL;
+using infra;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace Financas
 
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
+            Log.Gravar("o usuario logou no sistema");
             try
             {
                 new UsuarioBLL().Altenticar(textBoxUsuario.Text, textBoxSenhaLogin.Text);

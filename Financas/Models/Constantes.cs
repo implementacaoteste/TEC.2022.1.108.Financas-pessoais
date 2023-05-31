@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,11 @@ namespace Models
     {
         public static int IdUsuarioLogado;
         public static string NomeUsuarioLogado;
+        public static string StringDeConexao;
+        public static string DiretorioStringConexao = "c:\\Configuracao\\";
+        public static string CaminhoChavePublica = "c:\\Configuracoes\\ChavePublica.txt";
+        public static string CaminhaChavePrivada = "c:\\Configuracoes\\ChavePrivada.txt";
+        public static string NomeArquivoConexao = "configuracaoConnection.config";
 
         public static string NomeUsuarioSuporte { get { return "Suporte"; } }
         public static string SenhaSuporte
@@ -19,5 +25,17 @@ namespace Models
                 return Convert.ToString(DateTime.Now.Month * 40 + DateTime.Now.Year);
             }
         }
+
+    
+        public static string CaminhoArquivoLog
+        {
+            get
+            {
+                string diretorio = Environment.CurrentDirectory + "\\Logs\\";
+                Directory.CreateDirectory(diretorio);
+                return diretorio + "Log" +  DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString("00") + DateTime.Now.Day.ToString("00") + "Log";
+            }
+        }
+
     }
 }

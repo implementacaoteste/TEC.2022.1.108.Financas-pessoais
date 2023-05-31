@@ -43,7 +43,14 @@
   <ItemGroup>
     <Compile Include="Arquivo.cs" />
     <Compile Include="Criptografia.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{b0b49034-7948-4f5b-96d1-0c287ee29623}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
