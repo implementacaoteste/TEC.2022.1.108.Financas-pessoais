@@ -22,7 +22,7 @@ namespace Financas
             // string texto = "123";
             // texto = new infra.criptografia().CriptografarSenha(texto);
 
-            new Arquivo().GravarLinhaNoFinalDoArquivo(Environment.CurrentDirectory + "\\ArquivoTeste.txt", "Texto a ser gravado no arquivo");
+            Log.Gravar("Usuário abriu o sistema. ");
             Application.Run(new FormPrincipal());
 
             try

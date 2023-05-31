@@ -1,4 +1,5 @@
 ﻿using BLL;
+using infra;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Financas
         public FormPrincipal()
         {
             InitializeComponent();
+            Log.Gravar("Foi chamada a tela principal. ");
         }
 
         private void banToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,9 +79,16 @@ namespace Financas
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (FormCadastroUsuario frm = new FormCadastroUsuario())
+            try
             {
-                frm.ShowDialog();
+                using (FormCadastroUsuario frm = new FormCadastroUsuario())
+                {
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -248,9 +257,9 @@ namespace Financas
             try
             {
                 if (e.KeyCode == Keys.Escape)
-                if (MessageBox.Show("Deseja realmente sair do sistema?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    Application.Exit();
-                    return;
+                    if (MessageBox.Show("Deseja realmente sair do sistema?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        Application.Exit();
+                return;
             }
             catch (Exception ex)
             {
@@ -260,7 +269,7 @@ namespace Financas
 
         private void toolStripStatusLabelUsuario_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
