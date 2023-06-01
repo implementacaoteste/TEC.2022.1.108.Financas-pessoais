@@ -19,12 +19,12 @@ namespace Financas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            List<string> list = new Arquivo().LerLinhasArquivo("C:\\Users\\vsistema\\Documents\\TRABALHO FINANCIAS\\TEC.2022.1.108.Financas-pessoais\\Financas\\Financas\\bin\\Debug\\Logs\\Log20230601.Log", true);
-
+            //new Criptografia().GravarChaves();
+            Log.Gravar("Usuário abriu o sistema. ");
+            List<string> list = new Arquivo().LerLinhasArquivo(Models.Constantes.CaminhoArquivoLog, true);
             // string texto = "123";
             // texto = new infra.criptografia().CriptografarSenha(texto);
 
-            Log.Gravar("Usuário abriu o sistema. ");
             Application.Run(new FormPrincipal());
 
             try
