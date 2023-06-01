@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using infra;
+using Models;
 
 namespace Financas
 {
@@ -28,7 +29,19 @@ namespace Financas
 
             try
             {
-                if (!File.Exists(Environment.CurrentDirectory + "\\ProjetoFundo.png"))
+                if (Constantes.DiretorioStringConexao != "C:\\Configuracoes\\")
+                {
+                    using (FormConexao frm = new FormConexao())
+                    {
+                        frm.ShowDialog();
+                    }
+                }
+                else
+                    using(FormLogin form = new FormLogin())
+                    {
+                        form.ShowDialog();
+                    }
+                    if (!File.Exists(Environment.CurrentDirectory + "\\ProjetoFundo.png"))
                 {
                     throw new Exception("Não foi encontrado o arquivo: " + Environment.CurrentDirectory + "\\ProjetoFundo.png");
                 }
