@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,6 +74,25 @@ namespace infra
             byte[] bytesDescriptografados = rsa.Decrypt(bytesCriptografados, RSAEncryptionPadding.Pkcs1);
             return Encoding.UTF8.GetString(bytesCriptografados);
         }
+
+         public List<string> LerLinhaArquivo(string _caminhoArquivo, bool _criptografado = false)
+        {
+            List<string> linhas = new List<string>();
+            using (StreamReader sr = new StreamReader(_caminhoArquivo))
+            { 
+                string linha;
+                    while ((linha = sr.ReadLine()) != null)
+            
+                if (_criptografado)
+                    linhas.Add(new Criptografia().Descriptografar(linha));
+                else
+                    linhas.Add(linha);
+            }
+            return linhas;
+
+        }
+       
+        
 
         public string CriptografarSenha(string _senha)
            
