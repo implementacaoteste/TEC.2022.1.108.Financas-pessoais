@@ -18,6 +18,7 @@ namespace Financas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            List<string> list = new Arquivo().LerLinhasArquivo("C:\\Users\\vsistema\\Documents\\TRABALHO FINANCIAS\\TEC.2022.1.108.Financas-pessoais\\Financas\\Financas\\bin\\Debug\\Logs\\Log20230601.Log", true);
 
             // string texto = "123";
             // texto = new infra.criptografia().CriptografarSenha(texto);

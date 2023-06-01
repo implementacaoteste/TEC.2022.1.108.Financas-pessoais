@@ -23,6 +23,6 @@ namespace DAL
             }
         }
     }
-            //ESXPRESS2019
-          //Senailab02
+    //ESXPRESS2019
+    //Senailab02
 }
