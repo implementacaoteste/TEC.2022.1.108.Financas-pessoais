@@ -61,7 +61,8 @@ namespace infra
             using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
             {
                 rsa.ImportParameters(GetPrivateKey());
-                byte[] chavePrivadaBytes = rsa.ExportCspBlob(false);
+                byte[] chavePrivadaBytes = rsa.ExportCspBlob(true
+                    );
                 new Arquivo().GravarBytesNoFinalDoArquivo(Constantes.CaminhoChavePrivada, chavePrivadaBytes);
             }
         }
