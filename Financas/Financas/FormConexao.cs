@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace Financas
 
         private void FormConexao_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textBoxServidor_TextChanged(object sender, EventArgs e)
