@@ -21,31 +21,25 @@ namespace Financas
             Application.SetCompatibleTextRenderingDefault(false);
             //new Criptografia().GravarChaves();
             Log.Gravar("Usuário abriu o sistema. ");
-            List<string> list = new Arquivo().LerLinhasArquivo(Models.Constantes.CaminhoArquivoLog, true);
+            //List<string> list = new Arquivo().LerLinhasArquivo(Models.Constantes.CaminhoArquivoLog, true);
             // string texto = "123";
             // texto = new infra.criptografia().CriptografarSenha(texto);
 
-            Application.Run(new FormPrincipal());
 
             try
             {
-                if (Constantes.DiretorioStringConexao != "C:\\Configuracoes\\")
-                {
+                if (!File.Exists(Environment.CurrentDirectory + "\\ProjetoFundo.png"))
+                    throw new Exception("Não foi encontrado o arquivo: " + Environment.CurrentDirectory + "\\ProjetoFundo.png");
+
+                if (!File.Exists("C:\\Configuracoes\\conexao.config"))
                     using (FormConexao frm = new FormConexao())
                     {
                         frm.ShowDialog();
+                        if (frm.CriouConexao)
+                            Application.Run(new FormPrincipal());
                     }
-                }
                 else
-                    using(FormLogin form = new FormLogin())
-                    {
-                        form.ShowDialog();
-                    }
-                    if (!File.Exists(Environment.CurrentDirectory + "\\ProjetoFundo.png"))
-                {
-                    throw new Exception("Não foi encontrado o arquivo: " + Environment.CurrentDirectory + "\\ProjetoFundo.png");
-                }
-                Application.Run(new FormPrincipal());
+                    Application.Run(new FormPrincipal());
             }
             catch (Exception ex)
             {

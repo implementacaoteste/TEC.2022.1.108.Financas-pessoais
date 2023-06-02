@@ -1,21 +1,15 @@
-﻿using Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Financas
 {
     public partial class FormConexao : Form
     {
+        public bool CriouConexao;
         public FormConexao()
         {
             InitializeComponent();
+            CriouConexao = false;
         }
 
         private void FormConexao_Load(object sender, EventArgs e)
