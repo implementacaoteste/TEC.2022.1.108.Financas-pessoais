@@ -50,9 +50,14 @@
     <Compile Include="FormaPagamentoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceitaDAL.cs" />
+    <Compile Include="TesteDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\infra\infra.csproj">
+      <Project>{DAF8F36B-CA64-4BB1-B8B2-B825019134A3}</Project>
+      <Name>infra</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{b0b49034-7948-4f5b-96d1-0c287ee29623}</Project>
       <Name>Models</Name>

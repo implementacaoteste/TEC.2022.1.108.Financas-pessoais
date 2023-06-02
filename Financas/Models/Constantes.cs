@@ -14,7 +14,7 @@ namespace Models
         public static string DiretorioStringConexao = "C:\\Configuracoes\\";
         public static string CaminhoChavePublica = "C:\\Configuracoes\\ChavePublica.txt";
         public static string CaminhoChavePrivada = "C:\\Configuracoes\\ChavePrivada.txt";
-        public static string NomeArquivoConexao = "configuracoesConnection.config";
+        public static string NomeArquivoConexao = "financasConnection.config";
 
 
         public static string NomeUsuarioSuporte { get { return "Suporte"; } }

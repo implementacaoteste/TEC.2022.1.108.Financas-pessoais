@@ -31,7 +31,7 @@ namespace Financas
                 if (!File.Exists(Environment.CurrentDirectory + "\\ProjetoFundo.png"))
                     throw new Exception("Não foi encontrado o arquivo: " + Environment.CurrentDirectory + "\\ProjetoFundo.png");
 
-                if (!File.Exists("C:\\Configuracoes\\conexao.config"))
+                if (!File.Exists(Constantes.DiretorioStringConexao + Constantes.NomeArquivoConexao))
                     using (FormConexao frm = new FormConexao())
                     {
                         frm.ShowDialog();
