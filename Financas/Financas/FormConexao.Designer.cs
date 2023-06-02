@@ -69,9 +69,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(117, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.Size = new System.Drawing.Size(76, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Servidor";
+            this.label2.Text = "Servidor:";
             // 
             // label3
             // 
@@ -80,9 +80,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(448, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 20);
+            this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Banco";
+            this.label3.Text = "Banco:";
             // 
             // label4
             // 
@@ -91,9 +91,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(115, 239);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Nome De Usuario";
+            this.label4.Size = new System.Drawing.Size(148, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Nome De Usuario:";
             // 
             // label5
             // 
@@ -102,16 +102,16 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(448, 240);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Senha";
+            this.label5.Size = new System.Drawing.Size(61, 20);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Senha:";
             // 
             // textBoxBanco
             // 
             this.textBoxBanco.Location = new System.Drawing.Point(447, 136);
             this.textBoxBanco.Name = "textBoxBanco";
             this.textBoxBanco.Size = new System.Drawing.Size(159, 22);
-            this.textBoxBanco.TabIndex = 6;
+            this.textBoxBanco.TabIndex = 4;
             this.textBoxBanco.TextChanged += new System.EventHandler(this.textBoxBanco_TextChanged);
             // 
             // textBoxNomeUsuario
@@ -119,7 +119,7 @@
             this.textBoxNomeUsuario.Location = new System.Drawing.Point(114, 262);
             this.textBoxNomeUsuario.Name = "textBoxNomeUsuario";
             this.textBoxNomeUsuario.Size = new System.Drawing.Size(163, 22);
-            this.textBoxNomeUsuario.TabIndex = 7;
+            this.textBoxNomeUsuario.TabIndex = 6;
             this.textBoxNomeUsuario.TextChanged += new System.EventHandler(this.textBoxNomeUsuario_TextChanged);
             // 
             // textBoxSenha
