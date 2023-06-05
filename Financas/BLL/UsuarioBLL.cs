@@ -89,7 +89,7 @@ namespace BLL
             }
 
             Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
-            if (new Criptografia().CriptografarSenha(_senha) == usuario.Senha && usuario.Ativo)
+            if (_senha == usuario.Senha && usuario.Ativo)
             {
                 Constantes.IdUsuarioLogado = usuario.Id;
                 Constantes.NomeUsuarioLogado = usuario.NomeUsuario;
