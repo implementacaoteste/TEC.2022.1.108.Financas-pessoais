@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Models
 {
     public static class Constantes
+
     {
         public static int IdUsuarioLogado;
         public static string NomeUsuarioLogado;
@@ -15,8 +16,6 @@ namespace Models
         public static string CaminhoChavePublica = "C:\\Configuracoes\\ChavePublica.txt";
         public static string CaminhoChavePrivada = "C:\\Configuracoes\\ChavePrivada.txt";
         public static string NomeArquivoConexao = "financasConnection.config";
-
-
         public static string NomeUsuarioSuporte { get { return "Suporte"; } }
         public static string SenhaSuporte
         {
@@ -25,7 +24,6 @@ namespace Models
                 return Convert.ToString(DateTime.Now.Month * 40 + DateTime.Now.Year);
             }
         }
-
         public static string CaminhoArquivoLog 
         { 
             get 
