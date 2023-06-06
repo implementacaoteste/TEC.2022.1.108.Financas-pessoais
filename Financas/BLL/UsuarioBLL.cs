@@ -41,7 +41,7 @@ namespace BLL
             if (Constantes.IdUsuarioLogado == -1)
                // throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             ValidarDados(_usuario, _confirmacaoDeSenha);
-            // _usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
+            _usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
             new UsuarioDAL().Inserir(_usuario);
         }
         public void Alterar(Usuario _usuario, string _confirmacaoDeSenha)
