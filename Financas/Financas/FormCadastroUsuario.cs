@@ -31,8 +31,8 @@ namespace Financas
             {
 
                 usuarioBindingSource.AddNew();
-            ((Usuario)usuarioBindingSource.Current).Ativo =
-                ativoCheckBox1.Checked = true;
+                ((Usuario)usuarioBindingSource.Current).Ativo =
+                    ativoCheckBox1.Checked = true;
             }
             else
                 usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
@@ -46,7 +46,7 @@ namespace Financas
         private void buttonSalvarCadastrodeUsuario_Click(object sender, EventArgs e)
         {
             try
-           {
+            {
                 UsuarioBLL usuarioBLL = new UsuarioBLL();
                 usuarioBindingSource.EndEdit();
 
@@ -73,12 +73,12 @@ namespace Financas
                     textBoxNomeUsuarioCadastroUsuario.Focus();
 
                 MessageBox.Show(ex.Message);
-           }
+            }
         }
 
         private void FormCadastroUsuario_Load_1(object sender, EventArgs e)
         {
-            panel1.BackColor = Color.FromArgb(100,0,0,0);
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
             try
             {
                 this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
