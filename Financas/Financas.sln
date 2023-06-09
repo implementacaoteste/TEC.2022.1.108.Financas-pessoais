@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Financas", "Financas\Financ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infra", "infra\infra.csproj", "{DAF8F36B-CA64-4BB1-B8B2-B825019134A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentesDesktop", "ComponentesDesktop\ComponentesDesktop.csproj", "{48F2398A-FCEF-4A60-AA8F-4EE3C3310D9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DAF8F36B-CA64-4BB1-B8B2-B825019134A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAF8F36B-CA64-4BB1-B8B2-B825019134A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAF8F36B-CA64-4BB1-B8B2-B825019134A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F2398A-FCEF-4A60-AA8F-4EE3C3310D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F2398A-FCEF-4A60-AA8F-4EE3C3310D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F2398A-FCEF-4A60-AA8F-4EE3C3310D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F2398A-FCEF-4A60-AA8F-4EE3C3310D9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
