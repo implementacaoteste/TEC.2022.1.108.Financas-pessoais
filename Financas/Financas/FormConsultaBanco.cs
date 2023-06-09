@@ -171,7 +171,27 @@ namespace Financas
 
         private void comboBoxBuscar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bancoBindingSource.DataSource = new BancoBLL().BuscarTodos();
+            try
+            {
+                switch (comboBoxBuscar.SelectedIndex)
+                {
+                    case 0:
+                        bancoBindingSource.DataSource = new BancoBLL().BuscarTodos();
+                        break;
+                    case 1:
+                        bancoBindingSource.DataSource = new BancoBLL().BuscarPorNome(textBoxConsultarBanco.Text);
+                        break;
+                    case 2:
+                        bancoBindingSource.DataSource = new BancoBLL().BuscarPorInativo();
+                        break;
+                }
+                textBoxConsultarBanco.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void textBoxConsultarBanco_KeyDown(object sender, KeyEventArgs e)
