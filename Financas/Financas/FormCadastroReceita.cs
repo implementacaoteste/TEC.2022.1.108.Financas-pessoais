@@ -182,6 +182,11 @@ namespace Financas
         {
 
         }
+
+        private void textBoxGanhos_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

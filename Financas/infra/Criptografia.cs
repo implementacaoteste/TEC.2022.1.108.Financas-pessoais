@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using System.IO;
+using System.Net.Http;
 
 namespace infra
 {
@@ -19,13 +20,15 @@ namespace infra
         public string CriptografarSenha(string _senha)
         {
             string retorno = _senha;
-            for (int i = 0; i < _senha.Length;i++)
+
+            for (int i = 0; i < _senha.Length; i++)
             {
                 retorno = GerarHash(retorno);
                 retorno = ReverterTexto(retorno);
                 retorno = GerarHash(retorno);
                 retorno = ReverterTexto(retorno);
             }
+
             return GerarHash(retorno);
         }
         private string GerarHash(string _texto)
@@ -53,7 +56,7 @@ namespace infra
                 byte[] chavePublicaBytes = rsa.ExportCspBlob(false);
                 new Arquivo().GravarBytesNoFinalDoArquivo(Constantes.CaminhoChavePublica, chavePublicaBytes);
             }
-      
+
             using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
             {
                 rsa.ImportParameters(GetPrivateKey());

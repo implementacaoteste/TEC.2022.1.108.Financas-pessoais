@@ -37,7 +37,6 @@
             System.Windows.Forms.Label dataEmissaoLabel;
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxGanhos = new System.Windows.Forms.TextBox();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.buttonBuscarFormaPagamentoReceita = new System.Windows.Forms.Button();
             this.dataEmissaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxGanhos = new ComponentesDesktop.TextBoxDinheiro();
             descricaoLabel = new System.Windows.Forms.Label();
             valorLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
@@ -137,16 +137,6 @@
             // receitaBindingSource
             // 
             this.receitaBindingSource.DataSource = typeof(Models.Receita);
-            // 
-            // textBoxGanhos
-            // 
-            this.textBoxGanhos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "Valor", true));
-            this.textBoxGanhos.Location = new System.Drawing.Point(18, 41);
-            this.textBoxGanhos.Name = "textBoxGanhos";
-            this.textBoxGanhos.Size = new System.Drawing.Size(133, 22);
-            this.textBoxGanhos.TabIndex = 2;
-            this.textBoxGanhos.TextChanged += new System.EventHandler(this.textBoxGanhos_TextChanged);
-            this.textBoxGanhos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxGanhos_KeyDown);
             // 
             // buttonSalvar
             // 
@@ -261,6 +251,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBoxGanhos);
             this.panel1.Controls.Add(this.contatoTextBox);
             this.panel1.Controls.Add(dataEmissaoLabel);
             this.panel1.Controls.Add(this.textBoxDescricao);
@@ -268,7 +259,6 @@
             this.panel1.Controls.Add(descricaoLabel);
             this.panel1.Controls.Add(valorLabel);
             this.panel1.Controls.Add(this.buttonBuscarFormaPagamentoReceita);
-            this.panel1.Controls.Add(this.textBoxGanhos);
             this.panel1.Controls.Add(this.buttonBuscarBancoReceita);
             this.panel1.Controls.Add(this.buttonSalvar);
             this.panel1.Controls.Add(this.buttonBuscarContatoReceita);
@@ -282,6 +272,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(652, 351);
             this.panel1.TabIndex = 18;
+            // 
+            // textBoxGanhos
+            // 
+            this.textBoxGanhos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.receitaBindingSource, "Valor", true));
+            this.textBoxGanhos.Location = new System.Drawing.Point(18, 47);
+            this.textBoxGanhos.Name = "textBoxGanhos";
+            this.textBoxGanhos.Size = new System.Drawing.Size(155, 22);
+            this.textBoxGanhos.TabIndex = 18;
+            this.textBoxGanhos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxGanhos.TextChanged += new System.EventHandler(this.textBoxGanhos_TextChanged_1);
             // 
             // FormCadastroReceita
             // 
@@ -313,7 +313,6 @@
 
         private System.Windows.Forms.BindingSource receitaBindingSource;
         private System.Windows.Forms.TextBox textBoxDescricao;
-        private System.Windows.Forms.TextBox textBoxGanhos;
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Label label1;
@@ -325,5 +324,6 @@
         private System.Windows.Forms.Button buttonBuscarFormaPagamentoReceita;
         private System.Windows.Forms.DateTimePicker dataEmissaoDateTimePicker;
         private System.Windows.Forms.Panel panel1;
+        private ComponentesDesktop.TextBoxDinheiro textBoxGanhos;
     }
 }
