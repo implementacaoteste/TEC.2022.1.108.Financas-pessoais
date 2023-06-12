@@ -144,5 +144,13 @@ namespace Financas
             //    e.Handled = true;
             //}
         }
+
+        private void textBoxRendaCadastroUsuario_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                buttonSalvarCadastrodeUsuario_Click(null,null);
+            }
+        }
     }
 }

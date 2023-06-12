@@ -111,15 +111,6 @@ namespace Financas
             }
         }
 
-        private void valorReceberTextBoxContasReceber_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-
-                textBoxBuscarContato.Focus();
-            }
-        }
-
         private void textBoxBuscarContato_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -162,5 +153,13 @@ namespace Financas
                 buttonSalvarCadastroContasReceber_Click(null, null);
         }
 
+        private void valorReceberTextBoxContasReceber_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                textBoxBuscarContato.Focus();
+            }
+        }
     }
 }

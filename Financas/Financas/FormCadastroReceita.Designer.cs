@@ -271,7 +271,7 @@
             this.panel1.Location = new System.Drawing.Point(33, 70);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(652, 351);
-            this.panel1.TabIndex = 18;
+            this.panel1.TabIndex = 1;
             // 
             // textBoxGanhos
             // 
@@ -279,9 +279,10 @@
             this.textBoxGanhos.Location = new System.Drawing.Point(18, 47);
             this.textBoxGanhos.Name = "textBoxGanhos";
             this.textBoxGanhos.Size = new System.Drawing.Size(155, 22);
-            this.textBoxGanhos.TabIndex = 18;
+            this.textBoxGanhos.TabIndex = 2;
+            this.textBoxGanhos.Text = "0,00";
             this.textBoxGanhos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxGanhos.TextChanged += new System.EventHandler(this.textBoxGanhos_TextChanged_1);
+            this.textBoxGanhos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxGanhos_KeyDown_1);
             // 
             // FormCadastroReceita
             // 

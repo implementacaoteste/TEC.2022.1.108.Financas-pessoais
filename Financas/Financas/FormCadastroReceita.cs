@@ -172,20 +172,10 @@ namespace Financas
                 buttonBuscarFormaPagamentoReceita_Click(null, null);
         }
 
-        private void textBoxGanhos_KeyDown(object sender, KeyEventArgs e)
+        private void textBoxGanhos_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 contatoTextBox.Focus();
-        }
-
-        private void textBoxGanhos_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxGanhos_TextChanged_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
