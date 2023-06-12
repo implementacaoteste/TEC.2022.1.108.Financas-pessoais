@@ -156,12 +156,10 @@ namespace Financas
                 buttonBuscarFormaPagamentoDespesas_Click(null, null);
         }
 
-        private void textBoxGastos_KeyDown(object sender, KeyEventArgs e)
+        private void textBoxGastos_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 contatoTextBox.Focus();
         }
-
-      
     }
 }

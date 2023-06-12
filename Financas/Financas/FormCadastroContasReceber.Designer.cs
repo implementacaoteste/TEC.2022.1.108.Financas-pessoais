@@ -35,7 +35,6 @@
             System.Windows.Forms.Label bancoLabel;
             System.Windows.Forms.Label formaPagamentoLabel;
             System.Windows.Forms.Label dataEmissaoLabel;
-            this.valorReceberTextBoxContasReceber = new System.Windows.Forms.TextBox();
             this.contasReceberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.descricaoTextBoxContasReceber = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@
             this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
             this.dataEmissaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.valorReceberTextBoxContasReceber = new ComponentesDesktop.TextBoxDinheiro();
             valorReceberLabel = new System.Windows.Forms.Label();
             descricaoLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
@@ -127,16 +127,6 @@
             dataEmissaoLabel.TabIndex = 13;
             dataEmissaoLabel.Text = "Data de emissão:";
             // 
-            // valorReceberTextBoxContasReceber
-            // 
-            this.valorReceberTextBoxContasReceber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasReceberBindingSource, "ValorReceber", true));
-            this.valorReceberTextBoxContasReceber.Location = new System.Drawing.Point(52, 36);
-            this.valorReceberTextBoxContasReceber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.valorReceberTextBoxContasReceber.Name = "valorReceberTextBoxContasReceber";
-            this.valorReceberTextBoxContasReceber.Size = new System.Drawing.Size(164, 22);
-            this.valorReceberTextBoxContasReceber.TabIndex = 1;
-            this.valorReceberTextBoxContasReceber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.valorReceberTextBoxContasReceber_KeyDown);
-            // 
             // contasReceberBindingSource
             // 
             this.contasReceberBindingSource.DataSource = typeof(Models.ContasReceber);
@@ -150,7 +140,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(693, 81);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de contas a receber";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -274,13 +264,12 @@
             this.dataEmissaoDateTimePicker.Name = "dataEmissaoDateTimePicker";
             this.dataEmissaoDateTimePicker.Size = new System.Drawing.Size(215, 22);
             this.dataEmissaoDateTimePicker.TabIndex = 14;
-            this.dataEmissaoDateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataEmissaoDateTimePicker_KeyDown);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.valorReceberTextBoxContasReceber);
             this.panel1.Controls.Add(contatoLabel);
             this.panel1.Controls.Add(dataEmissaoLabel);
-            this.panel1.Controls.Add(this.valorReceberTextBoxContasReceber);
             this.panel1.Controls.Add(this.dataEmissaoDateTimePicker);
             this.panel1.Controls.Add(valorReceberLabel);
             this.panel1.Controls.Add(this.buttonBuscarFormaPagamento);
@@ -299,7 +288,17 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(645, 345);
-            this.panel1.TabIndex = 18;
+            this.panel1.TabIndex = 1;
+            // 
+            // valorReceberTextBoxContasReceber
+            // 
+            this.valorReceberTextBoxContasReceber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasReceberBindingSource, "ValorReceber", true));
+            this.valorReceberTextBoxContasReceber.Location = new System.Drawing.Point(51, 35);
+            this.valorReceberTextBoxContasReceber.Name = "valorReceberTextBoxContasReceber";
+            this.valorReceberTextBoxContasReceber.Size = new System.Drawing.Size(164, 22);
+            this.valorReceberTextBoxContasReceber.TabIndex = 1;
+            this.valorReceberTextBoxContasReceber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.valorReceberTextBoxContasReceber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.valorReceberTextBoxContasReceber_KeyDown_1);
             // 
             // FormCadastroContasReceber
             // 
@@ -332,7 +331,6 @@
         #endregion
 
         private System.Windows.Forms.BindingSource contasReceberBindingSource;
-        private System.Windows.Forms.TextBox valorReceberTextBoxContasReceber;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox descricaoTextBoxContasReceber;
         private System.Windows.Forms.Button buttonBuscarContatoContasReceber;
@@ -346,5 +344,6 @@
         private System.Windows.Forms.Button buttonBuscarFormaPagamento;
         private System.Windows.Forms.DateTimePicker dataEmissaoDateTimePicker;
         private System.Windows.Forms.Panel panel1;
+        private ComponentesDesktop.TextBoxDinheiro valorReceberTextBoxContasReceber;
     }
 }
