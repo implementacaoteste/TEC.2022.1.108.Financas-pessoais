@@ -37,7 +37,6 @@
             System.Windows.Forms.Label dataEmissaoLabel;
             this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.contasPagarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.valorPagarTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelarCadastroContasPagar = new System.Windows.Forms.Button();
             this.buttonSalvarCadastroContasPagar = new System.Windows.Forms.Button();
@@ -49,6 +48,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.dataEmissaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxDinheiro1 = new ComponentesDesktop.TextBoxDinheiro();
             descricaoLabel = new System.Windows.Forms.Label();
             valorPagarLabel = new System.Windows.Forms.Label();
             contatoLabel = new System.Windows.Forms.Label();
@@ -139,16 +139,6 @@
             // 
             this.contasPagarBindingSource.DataSource = typeof(Models.ContasPagar);
             // 
-            // valorPagarTextBox
-            // 
-            this.valorPagarTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "ValorPagar", true));
-            this.valorPagarTextBox.Location = new System.Drawing.Point(29, 70);
-            this.valorPagarTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.valorPagarTextBox.Name = "valorPagarTextBox";
-            this.valorPagarTextBox.Size = new System.Drawing.Size(164, 22);
-            this.valorPagarTextBox.TabIndex = 2;
-            this.valorPagarTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.valorPagarTextBox_KeyDown);
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
@@ -195,6 +185,7 @@
             this.contatoTextBox.Name = "contatoTextBox";
             this.contatoTextBox.Size = new System.Drawing.Size(217, 22);
             this.contatoTextBox.TabIndex = 4;
+            this.contatoTextBox.TextChanged += new System.EventHandler(this.contatoTextBox_TextChanged);
             this.contatoTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.contatoTextBox_KeyDown);
             // 
             // buttonBuscarContatoContasPagar
@@ -268,6 +259,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBoxDinheiro1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.buttonSalvarCadastroContasPagar);
             this.panel1.Controls.Add(dataEmissaoLabel);
@@ -276,7 +268,6 @@
             this.panel1.Controls.Add(this.dataEmissaoDateTimePicker);
             this.panel1.Controls.Add(descricaoLabel);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.valorPagarTextBox);
             this.panel1.Controls.Add(formaPagamentoLabel);
             this.panel1.Controls.Add(valorPagarLabel);
             this.panel1.Controls.Add(this.formaPagamentoTextBox);
@@ -290,6 +281,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(645, 370);
             this.panel1.TabIndex = 1;
+            // 
+            // textBoxDinheiro1
+            // 
+            this.textBoxDinheiro1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contasPagarBindingSource, "ValorPagar", true));
+            this.textBoxDinheiro1.Location = new System.Drawing.Point(29, 71);
+            this.textBoxDinheiro1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxDinheiro1.Name = "textBoxDinheiro1";
+            this.textBoxDinheiro1.Size = new System.Drawing.Size(164, 22);
+            this.textBoxDinheiro1.TabIndex = 2;
+            this.textBoxDinheiro1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxDinheiro1.TextChanged += new System.EventHandler(this.textBoxDinheiro1_TextChanged);
+            this.textBoxDinheiro1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxDinheiro1_KeyDown);
             // 
             // FormCadastroContasPaga
             // 
@@ -323,7 +326,6 @@
 
         private System.Windows.Forms.BindingSource contasPagarBindingSource;
         private System.Windows.Forms.TextBox descricaoTextBox;
-        private System.Windows.Forms.TextBox valorPagarTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCancelarCadastroContasPagar;
         private System.Windows.Forms.Button buttonSalvarCadastroContasPagar;
@@ -335,5 +337,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker dataEmissaoDateTimePicker;
         private System.Windows.Forms.Panel panel1;
+        private ComponentesDesktop.TextBoxDinheiro textBoxDinheiro1;
     }
 }

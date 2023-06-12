@@ -41,12 +41,12 @@
             this.labelConfirmarSenha = new System.Windows.Forms.Label();
             this.textBoxConfirmarSenhaCadastroUsuario = new System.Windows.Forms.TextBox();
             this.labelRendaCadastroUsuario = new System.Windows.Forms.Label();
-            this.textBoxRendaCadastroUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelarCadastrodeUsuario = new System.Windows.Forms.Button();
             this.buttonSalvarCadastrodeUsuario = new System.Windows.Forms.Button();
             this.ativoCheckBox1 = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxRendaCadastroUsuario = new ComponentesDesktop.TextBoxDinheiro();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -173,18 +173,8 @@
             this.labelRendaCadastroUsuario.Location = new System.Drawing.Point(40, 225);
             this.labelRendaCadastroUsuario.Name = "labelRendaCadastroUsuario";
             this.labelRendaCadastroUsuario.Size = new System.Drawing.Size(62, 20);
-            this.labelRendaCadastroUsuario.TabIndex = 10;
+            this.labelRendaCadastroUsuario.TabIndex = 9;
             this.labelRendaCadastroUsuario.Text = "Renda:";
-            // 
-            // textBoxRendaCadastroUsuario
-            // 
-            this.textBoxRendaCadastroUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Renda", true));
-            this.textBoxRendaCadastroUsuario.Location = new System.Drawing.Point(40, 247);
-            this.textBoxRendaCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxRendaCadastroUsuario.Name = "textBoxRendaCadastroUsuario";
-            this.textBoxRendaCadastroUsuario.Size = new System.Drawing.Size(207, 22);
-            this.textBoxRendaCadastroUsuario.TabIndex = 11;
-            this.textBoxRendaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxRendaCadastroUsuario_KeyDown);
             // 
             // label1
             // 
@@ -241,6 +231,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBoxRendaCadastroUsuario);
             this.panel1.Controls.Add(this.textBoxSenhaCadastroUsuario);
             this.panel1.Controls.Add(this.ativoCheckBox1);
             this.panel1.Controls.Add(this.labelNome);
@@ -249,7 +240,6 @@
             this.panel1.Controls.Add(this.buttonCancelarCadastrodeUsuario);
             this.panel1.Controls.Add(this.labelSenha);
             this.panel1.Controls.Add(this.textBoxNomeCadastroUsuario);
-            this.panel1.Controls.Add(this.textBoxRendaCadastroUsuario);
             this.panel1.Controls.Add(this.textBoxNomeUsuarioCadastroUsuario);
             this.panel1.Controls.Add(this.labelRendaCadastroUsuario);
             this.panel1.Controls.Add(this.labelAvisoNome);
@@ -261,6 +251,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(647, 352);
             this.panel1.TabIndex = 1;
+            // 
+            // textBoxRendaCadastroUsuario
+            // 
+            this.textBoxRendaCadastroUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Renda", true));
+            this.textBoxRendaCadastroUsuario.Location = new System.Drawing.Point(40, 248);
+            this.textBoxRendaCadastroUsuario.Name = "textBoxRendaCadastroUsuario";
+            this.textBoxRendaCadastroUsuario.Size = new System.Drawing.Size(207, 22);
+            this.textBoxRendaCadastroUsuario.TabIndex = 10;
+            this.textBoxRendaCadastroUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxRendaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxRendaCadastroUsuario_KeyDown_1);
             // 
             // FormCadastroUsuario
             // 
@@ -304,11 +304,11 @@
         private System.Windows.Forms.Label labelConfirmarSenha;
         private System.Windows.Forms.TextBox textBoxConfirmarSenhaCadastroUsuario;
         private System.Windows.Forms.Label labelRendaCadastroUsuario;
-        private System.Windows.Forms.TextBox textBoxRendaCadastroUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCancelarCadastrodeUsuario;
         private System.Windows.Forms.Button buttonSalvarCadastrodeUsuario;
         private System.Windows.Forms.CheckBox ativoCheckBox1;
         private System.Windows.Forms.Panel panel1;
+        private ComponentesDesktop.TextBoxDinheiro textBoxRendaCadastroUsuario;
     }
 }

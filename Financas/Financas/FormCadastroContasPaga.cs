@@ -50,7 +50,8 @@ namespace Financas
                     descricaoTextBox.Focus();
                 else
                 if (idErro == 1)
-                    valorPagarTextBox.Focus();
+                    textBoxDinheiro1.Focus();
+                
 
                 MessageBox.Show(ex.Message);
             }
@@ -167,6 +168,29 @@ namespace Financas
 
 
             }
+        }
+
+        private void valorPagarTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxDinheiro1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                contatoTextBox.Focus();
+            }
+        }
+
+        private void textBoxDinheiro1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contatoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
