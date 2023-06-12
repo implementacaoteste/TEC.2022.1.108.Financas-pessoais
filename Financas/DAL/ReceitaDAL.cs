@@ -487,6 +487,7 @@ namespace DAL
             }
         }
 
+
         internal void ExcluirPorIdContasReceber(int _idContasReceber, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
@@ -518,7 +519,6 @@ namespace DAL
 
                         throw new Exception("Ocorreu erro ao tentar estornar uma Receita no banco de dados", ex);
                     }
-
                 }
             }
         }
