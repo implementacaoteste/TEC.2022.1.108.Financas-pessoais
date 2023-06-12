@@ -174,7 +174,6 @@ namespace Financas
         {
             if (e.KeyCode == Keys.Escape)
                 Close();
-
         }
 
         private void FormConsultaReceita_Load(object sender, EventArgs e)
