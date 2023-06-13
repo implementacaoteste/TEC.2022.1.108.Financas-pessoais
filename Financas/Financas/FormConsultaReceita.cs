@@ -55,7 +55,12 @@ namespace Financas
                 switch (comboBox1.SelectedIndex)
                 {
                     case 0:
-                        receitaBindingSource.DataSource = new ReceitaBLL().BuscarTodos();
+                        SituacaoFinanceira situacaoFinanceira = new ReceitaBLL().BuscarSituacaoFinanceiraTodos();
+                        receitaBindingSource.DataSource = situacaoFinanceira.Receitas;
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
+                        //receitaBindingSource.DataSource = new ReceitaBLL().BuscarTodos();
                         break;
                     case 1:
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorDescricao(textBoxConsultarReceita.Text);

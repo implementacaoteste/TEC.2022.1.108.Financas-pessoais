@@ -42,7 +42,7 @@ namespace DAL
 
                         cmd.CommandText = "INSERT INTO Receita(";
 
-                        foreach(SqlParameter item in cmd.Parameters)
+                        foreach (SqlParameter item in cmd.Parameters)
                         {
                             if (item.Value != null && item.ParameterName != "@Id")
                             {
@@ -91,7 +91,6 @@ namespace DAL
                 }
             }
         }
-      
         public void Alterar(Receita _receita)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -116,7 +115,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void Excluir(int _id, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
@@ -151,7 +149,23 @@ namespace DAL
                 }
             }
         }
-
+        public SituacaoFinanceira BuscarSituacaoFinanceiraTodos()
+        {
+            SituacaoFinanceira situacaoFinanceira = new SituacaoFinanceira();
+            try
+            {
+                situacaoFinanceira.Receitas = new ReceitaDAL().BuscarTodos();
+                situacaoFinanceira.Despesas = new DespesasDAL().BuscarTodos();
+                
+                situacaoFinanceira.TotalReceita = situacaoFinanceira.Receitas.Sum(receita => receita.Valor);
+                situacaoFinanceira.TotalDespesa = situacaoFinanceira.Despesas.Sum(despesa => despesa.Valor);
+                return situacaoFinanceira;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar a situação financeira no banco de dados", ex) { Data = { { "Id", 18 } } };
+            }
+        }
         public Receita BuscarPorId(int _id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -197,7 +211,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Receita> BuscarTodos()
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -245,7 +258,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Receita> BuscarPorDescricao(string _descricao)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -293,7 +305,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Receita> BuscarPorEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -342,7 +353,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Receita> BuscarPorContato(string _contato)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -390,7 +400,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Receita> BuscarPorFormaPagamento(string _formaPagamento)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -438,7 +447,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Receita> BuscarPorBanco(string _banco)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -486,8 +494,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
-
         internal void ExcluirPorIdContasReceber(int _idContasReceber, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;

@@ -47,6 +47,10 @@ namespace BLL
 
             new ReceitaDAL().Excluir(_id);
         }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraTodos()
+        {
+            return new ReceitaDAL().BuscarSituacaoFinanceiraTodos();
+        }
         public List<Receita> BuscarTodos()
         {
             return new ReceitaDAL().BuscarTodos();
