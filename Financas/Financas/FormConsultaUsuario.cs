@@ -56,8 +56,17 @@ namespace Financas
                     MessageBox.Show("Não existe registro a ser alterado");
                     return;
                 }
-                int id = ((Usuario)usuarioBindingSource.Current).Id;
-                using (FormCadastroUsuario frm = new FormCadastroUsuario(id))
+                if (Constantes.IdUsuarioLogado != ((Usuario)usuarioBindingSource.Current).Id)
+                    if (MessageBox.Show("Você não pode alterar os dados de outro usuário. Deseja alterar os seus próprios dados", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                        return;
+
+                MessageBox.Show("Para continuar você precisa confirmar sua identidade.");
+                using (FormLogin frm = new FormLogin())
+                {
+                    frm.ShowDialog();
+                }
+
+                using (FormCadastroUsuario frm = new FormCadastroUsuario(Constantes.IdUsuarioLogado))
                 {
                     frm.ShowDialog();
                 }
