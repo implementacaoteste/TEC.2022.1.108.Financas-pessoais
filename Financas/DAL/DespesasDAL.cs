@@ -150,7 +150,6 @@ namespace DAL
                 }
             }
         }
-
         public void Excluir(int _id, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
@@ -235,7 +234,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Despesas> BuscarTodos()
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -283,7 +281,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Despesas> BuscarPorDescricao(string _descricao)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -331,7 +328,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Despesas> BuscarPorBanco(string _banco)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -379,7 +375,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Despesas> BuscarPorFormaPagamento(string _formaPagamento)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -427,7 +422,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Despesas> BuscarPorContato(string _contato)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -475,7 +469,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Despesas> BuscarPorEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -524,7 +517,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void ExcluirPorIdContasPagar(int _idContasPagar, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;

@@ -47,7 +47,8 @@ namespace Financas
         }
 
         private void buttonBuscarReceita_Click(object sender, EventArgs e)
-        {
+        {   
+            SituacaoFinanceira situacaoFInanceira = new SituacaoFinanceira();
             try
             {
                 if ((comboBox1.SelectedIndex != 2 && filtro == textBoxConsultarReceita.Text) || (comboBox1.SelectedIndex == 2 && dataInicial == Convert.ToDateTime(maskedTextBoxConsultarReceita.Text) && dataFinal == Convert.ToDateTime(textBoxConsultarReceita2.Text)))
@@ -64,6 +65,11 @@ namespace Financas
                         break;
                     case 1:
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorDescricao(textBoxConsultarReceita.Text);
+                        situacaoFinanceira = new ReceitaBLL().BuscarSituacaoFinanceiraDescricao(textBoxConsultarReceita.Text);
+                        receitaBindingSource.DataSource = situacaoFinanceira.Receitas;
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
                         break;
                     case 2:
                         if (maskedTextBoxConsultarReceita.Text == "")
@@ -74,15 +80,35 @@ namespace Financas
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorEmissao(Convert.ToDateTime(maskedTextBoxConsultarReceita.Text), Convert.ToDateTime(textBoxConsultarReceita2.Text));
                         dataInicial = Convert.ToDateTime(maskedTextBoxConsultarReceita.Text);
                         dataFinal = Convert.ToDateTime(textBoxConsultarReceita2.Text);
+                        situacaoFinanceira = new ReceitaBLL().BuscarSituacaoFinanceiraEmissao(Convert.ToDateTime(maskedTextBoxConsultarReceita.Text), Convert.ToDateTime(textBoxConsultarReceita2.Text));
+                        receitaBindingSource.DataSource = situacaoFinanceira.Receitas;
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
                         break;
                     case 3:
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorContato(textBoxConsultarReceita.Text);
+                        situacaoFinanceira = new ReceitaBLL().BuscarSituacaoFinanceiraContato(textBoxConsultarReceita.Text);
+                        receitaBindingSource.DataSource = situacaoFinanceira.Receitas;
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
                         break;
                     case 4:
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorFormaPagamento(textBoxConsultarReceita.Text);
+                        situacaoFinanceira = new ReceitaBLL().BuscarSituacaoFinanceiraFormaPagamento(textBoxConsultarReceita.Text);
+                        receitaBindingSource.DataSource = situacaoFinanceira.Receitas;
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
                         break;
                     case 5:
                         receitaBindingSource.DataSource = new ReceitaBLL().BuscarPorBanco(textBoxConsultarReceita.Text);
+                        situacaoFinanceira = new ReceitaBLL().BuscarSituacaoFinanceiraBanco(textBoxConsultarReceita.Text);
+                        receitaBindingSource.DataSource = situacaoFinanceira.Receitas;
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
                         break;
                     default:
                         break;

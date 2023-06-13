@@ -51,6 +51,26 @@ namespace BLL
         {
             return new ReceitaDAL().BuscarSituacaoFinanceiraTodos();
         }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
+        {
+            return new ReceitaDAL().BuscarSituacaoFinanceiraEmissao(_periodoInicial, _periodoFinal);
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraContato(string _contato)
+        {
+            return new ReceitaDAL().BuscarSituacaoFinanceiraContato(_contato);
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraFormaPagamento(string _formaPagamento)
+        {
+            return new ReceitaDAL().BuscarSituacaoFinanceiraFormaPagamento(_formaPagamento);
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraBanco(string _banco)
+        {
+            return new ReceitaDAL().BuscarSituacaoFinanceiraBanco(_banco);
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraDescricao(string _descricao)
+        {
+            return new ReceitaDAL().BuscarSituacaoFinanceiraDescricao(_descricao);
+        }
         public List<Receita> BuscarTodos()
         {
             return new ReceitaDAL().BuscarTodos();

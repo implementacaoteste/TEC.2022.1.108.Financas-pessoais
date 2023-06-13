@@ -166,6 +166,91 @@ namespace DAL
                 throw new Exception("Ocorreu um erro ao tentar buscar a situação financeira no banco de dados", ex) { Data = { { "Id", 18 } } };
             }
         }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
+        {
+            SituacaoFinanceira situacaoFinanceira = new SituacaoFinanceira();
+            try
+            {
+                situacaoFinanceira.Receitas = new ReceitaDAL().BuscarPorEmissao(_periodoInicial,_periodoFinal);
+                situacaoFinanceira.Despesas = new DespesasDAL().BuscarPorEmissao(_periodoInicial,_periodoFinal);
+
+                situacaoFinanceira.TotalReceita = situacaoFinanceira.Receitas.Sum(Receita => Receita.Valor);
+                situacaoFinanceira.TotalDespesa = situacaoFinanceira.Despesas.Sum(Despesas => Despesas.Valor);
+                return situacaoFinanceira;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar a situação financeira por emissão no banco de dados", ex) { Data = { { "Id", 19 } } };
+            }
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraContato(string _contato)
+        {
+            SituacaoFinanceira situacaoFinanceira = new SituacaoFinanceira();
+            try
+            {
+                situacaoFinanceira.Receitas = new ReceitaDAL().BuscarPorContato(_contato);
+                situacaoFinanceira.Despesas = new DespesasDAL().BuscarPorContato(_contato);
+
+                situacaoFinanceira.TotalReceita = situacaoFinanceira.Receitas.Sum(Receita => Receita.Valor);
+                situacaoFinanceira.TotalDespesa = situacaoFinanceira.Despesas.Sum(Despesas => Despesas.Valor);
+                return situacaoFinanceira;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar a situação financeira por contato no banco de dados", ex) { Data = { { "Id", 20 } } };
+            }
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraFormaPagamento(string _formaPagamento)
+        {
+            SituacaoFinanceira situacaoFinanceira = new SituacaoFinanceira();
+            try
+            {
+                situacaoFinanceira.Receitas = new ReceitaDAL().BuscarPorFormaPagamento(_formaPagamento);
+                situacaoFinanceira.Despesas = new DespesasDAL().BuscarPorFormaPagamento(_formaPagamento);
+
+                situacaoFinanceira.TotalReceita = situacaoFinanceira.Receitas.Sum(Receita => Receita.Valor);
+                situacaoFinanceira.TotalDespesa = situacaoFinanceira.Despesas.Sum(Despesas => Despesas.Valor);
+                return situacaoFinanceira;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar a situação financeira por forma de pagamento no banco de dados", ex) { Data = { { "Id", 21 } } };
+            }
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraBanco(string _banco)
+        {
+            SituacaoFinanceira situacaoFinanceira = new SituacaoFinanceira();
+            try
+            {
+                situacaoFinanceira.Receitas = new ReceitaDAL().BuscarPorBanco(_banco);
+                situacaoFinanceira.Despesas = new DespesasDAL().BuscarPorBanco(_banco);
+
+                situacaoFinanceira.TotalReceita = situacaoFinanceira.Receitas.Sum(Receita => Receita.Valor);
+                situacaoFinanceira.TotalDespesa = situacaoFinanceira.Despesas.Sum(Despesas => Despesas.Valor);
+                return situacaoFinanceira;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar a situação financeira por banco no banco de dados", ex) { Data = { { "Id", 21 } } };
+            }
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraDescricao(string _descricao)
+        {
+            SituacaoFinanceira situacaoFinanceira = new SituacaoFinanceira();
+            try
+            {
+                situacaoFinanceira.Receitas = new ReceitaDAL().BuscarPorDescricao(_descricao);
+                situacaoFinanceira.Despesas = new DespesasDAL().BuscarPorDescricao(_descricao);
+
+                situacaoFinanceira.TotalReceita = situacaoFinanceira.Receitas.Sum(Receita => Receita.Valor);
+                situacaoFinanceira.TotalDespesa = situacaoFinanceira.Despesas.Sum(Despesas => Despesas.Valor);
+                return situacaoFinanceira;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar a situação financeira por descrição no banco de dados", ex) { Data = { { "Id", 21 } } };
+            }
+        }
         public Receita BuscarPorId(int _id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
