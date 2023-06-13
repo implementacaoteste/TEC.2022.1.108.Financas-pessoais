@@ -8,23 +8,28 @@ namespace Financas
     public partial class FormLogin : Form
     {
         public bool Logou;
-        public FormLogin()
+        private bool altenticacaoInicial;
+
+        public FormLogin(bool _altenticacaoInicial = true)
         {
             InitializeComponent();
             Logou = false;
+            altenticacaoInicial = _altenticacaoInicial;
         }
 
         private void buttonsair_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-            //Close();
+            if (altenticacaoInicial)
+                Application.Exit();
+            else
+                Close();
         }
 
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
             try
             {
-                new UsuarioBLL().Altenticar(textBoxUsuario.Text, textBoxSenhaLogin.Text);
+                new UsuarioBLL().Altenticar(textBoxUsuario.Text, textBoxSenhaLogin.Text, altenticacaoInicial);
                 Logou = true;
                 Close();
             }
@@ -37,7 +42,7 @@ namespace Financas
 
         private void checkBoxMostrarSenha_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBoxMostrarSenha.Checked)
+            if (checkBoxMostrarSenha.Checked)
             {
                 textBoxSenhaLogin.PasswordChar = '\u0000';
             }
@@ -46,11 +51,11 @@ namespace Financas
                 textBoxSenhaLogin.PasswordChar = '*';
             }
         }
-               
+
         private void FormLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
-                 Application.Exit();
+                Application.Exit();
 
 
             if (e.KeyCode == Keys.Enter)
@@ -79,12 +84,12 @@ namespace Financas
 
         private void buttonEntrar_MouseEnter(object sender, EventArgs e)
         {
-           
+
         }
 
         private void buttonEntrar_MouseLeave(object sender, EventArgs e)
         {
-            
+
 
         }
 

@@ -26,8 +26,6 @@ namespace BLL
 
             if (usuario.NomeUsuario != null && usuario.NomeUsuario.ToUpper() == _usuario.NomeUsuario.ToUpper() && usuario.Id != _usuario.Id)
                 throw new Exception("Já existe um usuário com esse nome de usuario.") { Data = { { "Id", 3 } } };
-
-
             if (_usuario.Senha != usuario.Senha && _usuario.Senha != _confirmacaoDeSenha)
                 throw new Exception("A senha e a confirmação da senha devem ser iguais.") { Data = { { "Id", 1 } } };
 
@@ -39,17 +37,17 @@ namespace BLL
         public void Inserir(Usuario _usuario, string _confirmacaoDeSenha)
         {
             if (Constantes.IdUsuarioLogado == -1)
-               // throw new Exception("Este usuário não possui permissão para realizar essa operação.");
-            ValidarDados(_usuario, _confirmacaoDeSenha);
+                // throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+                ValidarDados(_usuario, _confirmacaoDeSenha);
             _usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
             new UsuarioDAL().Inserir(_usuario);
         }
         public void Alterar(Usuario _usuario, string _confirmacaoDeSenha)
         {
             if (Constantes.IdUsuarioLogado == -1)
-                //throw new Exception("Este usuário não possui permissão para realizar essa operação.");
-           // _usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
-            ValidarDados(_usuario, _confirmacaoDeSenha);
+                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+                //_usuario.Senha = new Criptografia().CriptografarSenha(_usuario.Senha);
+                ValidarDados(_usuario, _confirmacaoDeSenha);
             new UsuarioDAL().Alterar(_usuario);
         }
         public void Excluir(int _id)
@@ -79,20 +77,27 @@ namespace BLL
         {
             return new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
         }
-        public void Altenticar(string _nomeUsuario, string _senha)
+        public bool Altenticar(string _nomeUsuario, string _senha, bool _altenticacaoInicial)
         {
             if (_nomeUsuario == Constantes.NomeUsuarioSuporte && _senha == Constantes.SenhaSuporte)
             {
-                Constantes.IdUsuarioLogado = -1;
-                Constantes.NomeUsuarioLogado = Constantes.NomeUsuarioSuporte;
-                return;
+                if (_altenticacaoInicial)
+                {
+                    Constantes.IdUsuarioLogado = -1;
+                    Constantes.NomeUsuarioLogado = Constantes.NomeUsuarioSuporte;
+                }
+                return true;
             }
 
             Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
             if (new Criptografia().CriptografarSenha(_senha) == usuario.Senha && usuario.Ativo)
             {
-                Constantes.IdUsuarioLogado = usuario.Id;
-                Constantes.NomeUsuarioLogado = usuario.NomeUsuario;
+                if (_altenticacaoInicial)
+                {
+                    Constantes.IdUsuarioLogado = usuario.Id;
+                    Constantes.NomeUsuarioLogado = usuario.NomeUsuario;
+                }
+                return true;
             }
             else
                 throw new Exception("Usuario ou senha inválido.");
