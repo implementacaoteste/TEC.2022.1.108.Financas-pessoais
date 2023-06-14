@@ -120,7 +120,7 @@
             this.despesasDataGridView.ReadOnly = true;
             this.despesasDataGridView.RowHeadersWidth = 51;
             this.despesasDataGridView.Size = new System.Drawing.Size(1170, 605);
-            this.despesasDataGridView.TabIndex = 12;
+            this.despesasDataGridView.TabIndex = 10;
             // 
             // Id
             // 
@@ -226,7 +226,7 @@
             this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(84, 29);
-            this.buttonSair.TabIndex = 13;
+            this.buttonSair.TabIndex = 11;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
@@ -291,7 +291,7 @@
             this.maskedTextBoxBuscarDespesas.Mask = "00/00/0000";
             this.maskedTextBoxBuscarDespesas.Name = "maskedTextBoxBuscarDespesas";
             this.maskedTextBoxBuscarDespesas.Size = new System.Drawing.Size(302, 26);
-            this.maskedTextBoxBuscarDespesas.TabIndex = 14;
+            this.maskedTextBoxBuscarDespesas.TabIndex = 3;
             this.maskedTextBoxBuscarDespesas.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxBuscarDespesas.Visible = false;
             // 
@@ -302,7 +302,7 @@
             this.textBoxBuscarDespesas2.Mask = "00/00/0000";
             this.textBoxBuscarDespesas2.Name = "textBoxBuscarDespesas2";
             this.textBoxBuscarDespesas2.Size = new System.Drawing.Size(349, 26);
-            this.textBoxBuscarDespesas2.TabIndex = 14;
+            this.textBoxBuscarDespesas2.TabIndex = 5;
             this.textBoxBuscarDespesas2.ValidatingType = typeof(System.DateTime);
             this.textBoxBuscarDespesas2.Visible = false;
             // 
