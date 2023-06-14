@@ -63,6 +63,30 @@ namespace BLL
         {
             return new DespesasDAL().BuscarTodos();
         }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraTodos()
+        {
+            return new DespesasDAL().BuscarSituacaoFinanceiraTodos();
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraEmissao(DateTime _periodoInicial, DateTime _periodoFinal)
+        {
+            return new DespesasDAL().BuscarSituacaoFinanceiraEmissao(_periodoInicial, _periodoFinal);
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraContato(string _contato)
+        {
+            return new DespesasDAL().BuscarSituacaoFinanceiraContato(_contato);
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraFormaPagamento(string _formaPagamento)
+        {
+            return new DespesasDAL().BuscarSituacaoFinanceiraFormaPagamento(_formaPagamento);   
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraBanco(string _banco)
+        {
+            return new DespesasDAL().BuscarSituacaoFinanceiraBanco(_banco);
+        }
+        public SituacaoFinanceira BuscarSituacaoFinanceiraDescricao(string _descricao)
+        {
+            return new DespesasDAL().BuscarSituacaoFinanceiraDescricao(_descricao);
+        }
         public List<Despesas> BuscarPorDescricao(string _descricao)
         {
             return new DespesasDAL().BuscarPorDescricao(_descricao);

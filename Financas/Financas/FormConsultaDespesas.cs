@@ -35,9 +35,19 @@ namespace Financas
                 {
                     case 0:
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarTodos();
+                        SituacaoFinanceira situacaoFinanceira = new DespesasBLL().BuscarSituacaoFinanceiraTodos();
+                        despesasBindingSource.DataSource = situacaoFinanceira.Despesas;
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
                         break;
                     case 1:
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarPorDescricao(textBoxBuscarDespesas.Text);
+                        situacaoFinanceira = new DespesasBLL().BuscarSituacaoFinanceiraDescricao(textBoxBuscarDespesas.Text);
+                        despesasBindingSource.DataSource = situacaoFinanceira.Despesas;
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
                         break;
                     case 2:
                         if (maskedTextBoxBuscarDespesas.Text == "")
@@ -48,15 +58,32 @@ namespace Financas
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarPorEmissao(Convert.ToDateTime(maskedTextBoxBuscarDespesas.Text), Convert.ToDateTime(textBoxBuscarDespesas2.Text));
                         dataInicial = Convert.ToDateTime(maskedTextBoxBuscarDespesas.Text);
                         dataFinal = Convert.ToDateTime(textBoxBuscarDespesas2.Text);
+                        situacaoFinanceira = new DespesasBLL().BuscarSituacaoFinanceiraEmissao(Convert.ToDateTime(maskedTextBoxBuscarDespesas.Text), Convert.ToDateTime(textBoxBuscarDespesas2.Text));
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
                         break;
                     case 3:
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarPorContato(textBoxBuscarDespesas.Text);
+                        situacaoFinanceira = new DespesasBLL().BuscarSituacaoFinanceiraContato(textBoxBuscarDespesas.Text);
+                        despesasBindingSource.DataSource = situacaoFinanceira.Despesas;
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
                         break;
                     case 4:
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarPorFormaPagamento(textBoxBuscarDespesas.Text);
+                        situacaoFinanceira = new DespesasBLL().BuscarSituacaoFinanceiraFormaPagamento(textBoxBuscarDespesas.Text);
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
                         break;
                     case 5:
                         despesasBindingSource.DataSource = new DespesasBLL().BuscarPorBanco(textBoxBuscarDespesas.Text);
+                        situacaoFinanceira = new DespesasBLL().BuscarSituacaoFinanceiraBanco(textBoxBuscarDespesas.Text);
+                        textBoxDespesaTotal.Text = situacaoFinanceira.TotalDespesa.ToString("C");
+                        textBoxReceitaTotal.Text = situacaoFinanceira.TotalReceita.ToString("C");
+                        textBoxSaldoTotal.Text = situacaoFinanceira.Saldo.ToString("C");
                         break;
                     default:
                         break;
