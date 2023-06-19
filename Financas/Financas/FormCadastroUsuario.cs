@@ -26,6 +26,7 @@ namespace Financas
 
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
+            
 
             if (Id == 0)
             {
@@ -53,7 +54,12 @@ namespace Financas
                 if (Id == 0)
                     usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current, textBoxConfirmarSenhaCadastroUsuario.Text);
                 else
+                {
+                    if ((textBoxSenhaCadastroUsuario.Text != "*******") && textBoxConfirmarSenhaCadastroUsuario.Text != "*******")
+                        ((Usuario)usuarioBindingSource.Current).Senha = textBoxSenhaCadastroUsuario.Text = textBoxConfirmarSenhaCadastroUsuario.Text;
+
                     usuarioBLL.Alterar((Usuario)usuarioBindingSource.Current, textBoxConfirmarSenhaCadastroUsuario.Text);
+                }
                 MessageBox.Show("Registro salvo com sucesso");
                 Close();
             }
@@ -78,19 +84,25 @@ namespace Financas
 
         private void FormCadastroUsuario_Load_1(object sender, EventArgs e)
         {
+            
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
             try
             {
+
                 this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
                 if (Id == 0)
                 {
+                  
                     usuarioBindingSource.AddNew();
                     ((Usuario)usuarioBindingSource.Current).Ativo =
                     ativoCheckBox1.Checked = true;
                 }
                 else
-
+                {
                     usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
+                    textBoxSenhaCadastroUsuario.Text = "*******";
+                    textBoxConfirmarSenhaCadastroUsuario.Text = "*******";
+                }
             }
             catch (Exception ex)
             {
@@ -144,6 +156,7 @@ namespace Financas
             //    e.Handled = true;
             //}
         }
+       
 
         private void textBoxRendaCadastroUsuario_KeyDown_1(object sender, KeyEventArgs e)
         {
@@ -152,5 +165,23 @@ namespace Financas
                 buttonSalvarCadastrodeUsuario_Click(null,null);
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+
+        /*private void textBoxSenhaCadastroUsuario_MouseClick(object sender, MouseEventArgs e)
+        {
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+           
+            textBoxSenhaCadastroUsuario.Text = "";
+        }*/
     }
 }

@@ -121,6 +121,7 @@ namespace Financas
 
         private void FormConsultaUsuario_Load(object sender, EventArgs e)
         {
+         
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
         }
