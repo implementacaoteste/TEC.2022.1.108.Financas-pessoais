@@ -26,7 +26,7 @@ namespace Financas
 
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
-            
+
 
             if (Id == 0)
             {
@@ -52,7 +52,10 @@ namespace Financas
                 usuarioBindingSource.EndEdit();
 
                 if (Id == 0)
+                {
+                    ((Usuario)usuarioBindingSource.Current).Senha = textBoxSenhaCadastroUsuario.Text = textBoxConfirmarSenhaCadastroUsuario.Text;
                     usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current, textBoxConfirmarSenhaCadastroUsuario.Text);
+                }
                 else
                 {
                     if ((textBoxSenhaCadastroUsuario.Text != "*******") && textBoxConfirmarSenhaCadastroUsuario.Text != "*******")
@@ -84,7 +87,7 @@ namespace Financas
 
         private void FormCadastroUsuario_Load_1(object sender, EventArgs e)
         {
-            
+
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
             try
             {
@@ -92,7 +95,7 @@ namespace Financas
                 this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo.png");
                 if (Id == 0)
                 {
-                  
+
                     usuarioBindingSource.AddNew();
                     ((Usuario)usuarioBindingSource.Current).Ativo =
                     ativoCheckBox1.Checked = true;
@@ -156,13 +159,13 @@ namespace Financas
             //    e.Handled = true;
             //}
         }
-       
+
 
         private void textBoxRendaCadastroUsuario_KeyDown_1(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                buttonSalvarCadastrodeUsuario_Click(null,null);
+                buttonSalvarCadastrodeUsuario_Click(null, null);
             }
         }
 
@@ -175,7 +178,7 @@ namespace Financas
         {
 
         }
-        
+
 
         /*private void textBoxSenhaCadastroUsuario_MouseClick(object sender, MouseEventArgs e)
         {
