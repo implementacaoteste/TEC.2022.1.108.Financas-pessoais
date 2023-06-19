@@ -282,7 +282,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consulta de Banco";
+            this.Text = "Consulta Bancária";
             this.Load += new System.EventHandler(this.FormConsultaBanco_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormConsultaBanco_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.bancoDataGridView)).EndInit();
