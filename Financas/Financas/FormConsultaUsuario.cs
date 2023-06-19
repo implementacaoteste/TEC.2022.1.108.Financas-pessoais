@@ -61,7 +61,7 @@ namespace Financas
                         return;
 
                 MessageBox.Show("Para continuar você precisa confirmar sua identidade.");
-                Close();
+ 
                 using (FormLogin frm = new FormLogin())
                 {
                     frm.ShowDialog();
