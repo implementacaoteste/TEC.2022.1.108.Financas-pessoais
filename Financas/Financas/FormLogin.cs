@@ -55,7 +55,10 @@ namespace Financas
         private void FormLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
-                Application.Exit();
+                if (altenticacaoInicial)
+                    Application.Exit();
+                else
+                    Close();
 
 
             if (e.KeyCode == Keys.Enter)

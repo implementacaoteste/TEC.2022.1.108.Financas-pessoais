@@ -59,12 +59,15 @@ namespace Financas
                 if (Constantes.IdUsuarioLogado != ((Usuario)usuarioBindingSource.Current).Id)
                     if (MessageBox.Show("Você não pode alterar os dados de outro usuário. Deseja alterar os seus próprios dados", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                         return;
-
-                MessageBox.Show("Para continuar você precisa confirmar sua identidade.");
-                Close();
-                using (FormLogin frm = new FormLogin())
+                if (Constantes.IdUsuarioLogado == ((Usuario)usuarioBindingSource.Current).Id)
+                    if (MessageBox.Show("Para continuar você precisa confirmar sua identidade. \nDeseja continuar?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                        return;
+               
+                using (FormLogin frm = new FormLogin(false))
                 {
                     frm.ShowDialog();
+                    if (!frm.Logou)
+                        return;
                 }
 
                 using (FormCadastroUsuario frm = new FormCadastroUsuario(Constantes.IdUsuarioLogado))
