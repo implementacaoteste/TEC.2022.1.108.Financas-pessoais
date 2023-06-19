@@ -111,7 +111,6 @@
             // 
             // textBoxSenhaCadastroUsuario
             // 
-            this.textBoxSenhaCadastroUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
             this.textBoxSenhaCadastroUsuario.Location = new System.Drawing.Point(36, 134);
             this.textBoxSenhaCadastroUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSenhaCadastroUsuario.Name = "textBoxSenhaCadastroUsuario";
@@ -188,6 +187,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de usuário";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // buttonCancelarCadastrodeUsuario
             // 
@@ -251,6 +251,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(647, 352);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // textBoxRendaCadastroUsuario
             // 
@@ -259,6 +260,7 @@
             this.textBoxRendaCadastroUsuario.Name = "textBoxRendaCadastroUsuario";
             this.textBoxRendaCadastroUsuario.Size = new System.Drawing.Size(207, 22);
             this.textBoxRendaCadastroUsuario.TabIndex = 10;
+            this.textBoxRendaCadastroUsuario.Text = "0,00";
             this.textBoxRendaCadastroUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxRendaCadastroUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxRendaCadastroUsuario_KeyDown_1);
             // 

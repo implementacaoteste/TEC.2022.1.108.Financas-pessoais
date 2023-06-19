@@ -59,6 +59,7 @@ namespace Financas
                 if (Constantes.IdUsuarioLogado != ((Usuario)usuarioBindingSource.Current).Id)
                     if (MessageBox.Show("Você não pode alterar os dados de outro usuário. Deseja alterar os seus próprios dados", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                         return;
+
                 if (Constantes.IdUsuarioLogado == ((Usuario)usuarioBindingSource.Current).Id)
                     if (MessageBox.Show("Para continuar você precisa confirmar sua identidade. \nDeseja continuar?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                         return;
@@ -125,6 +126,7 @@ namespace Financas
 
         private void FormConsultaUsuario_Load(object sender, EventArgs e)
         {
+         
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
         }
