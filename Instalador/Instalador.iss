@@ -26,7 +26,7 @@ ChangesAssociations=yes
 DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
-OutputDir=C:\Users\vsistema\Documents\Instaladores
+OutputDir=C:\Users\vsistema\Documents\TRABALHO FINANCIAS\TEC.2022.1.108.Financas-pessoais\Instalador
 OutputBaseFilename=Instalador Finananças Pessoais
 SetupIconFile=C:\Users\vsistema\Documents\TRABALHO FINANCIAS\TEC.2022.1.108.Financas-pessoais\Imagens\8721676_money_wallet_icon.ico
 Compression=lzma
