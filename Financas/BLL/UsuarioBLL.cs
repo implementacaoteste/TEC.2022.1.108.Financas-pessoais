@@ -36,15 +36,15 @@ namespace BLL
         }
         public void Inserir(Usuario _usuario, string _confirmacaoDeSenha)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+            //if (Constantes.IdUsuarioLogado == -1)
+                //throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             ValidarDados(_usuario, _confirmacaoDeSenha);
             new UsuarioDAL().Inserir(_usuario);
         }
         public void Alterar(Usuario _usuario, string _confirmacaoDeSenha)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+            //if (Constantes.IdUsuarioLogado == -1)
+                //throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             ValidarDados(_usuario, _confirmacaoDeSenha);
             new UsuarioDAL().Alterar(_usuario);
         }
