@@ -38,14 +38,14 @@ namespace BLL
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
-                ValidarDados(_usuario, _confirmacaoDeSenha);
+            ValidarDados(_usuario, _confirmacaoDeSenha);
             new UsuarioDAL().Inserir(_usuario);
         }
         public void Alterar(Usuario _usuario, string _confirmacaoDeSenha)
         {
             if (Constantes.IdUsuarioLogado == -1)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
-                ValidarDados(_usuario, _confirmacaoDeSenha);
+            ValidarDados(_usuario, _confirmacaoDeSenha);
             new UsuarioDAL().Alterar(_usuario);
         }
         public void Excluir(int _id)
@@ -79,7 +79,7 @@ namespace BLL
         {
             if (_nomeUsuario == Constantes.NomeUsuarioSuporte && _senha == Constantes.SenhaSuporte)
             {
-                if (_altenticacaoInicial)
+                if (!_altenticacaoInicial)
                 {
                     Constantes.IdUsuarioLogado = -1;
                     Constantes.NomeUsuarioLogado = Constantes.NomeUsuarioSuporte;
@@ -94,8 +94,11 @@ namespace BLL
                 {
                     Constantes.IdUsuarioLogado = usuario.Id;
                     Constantes.NomeUsuarioLogado = usuario.NomeUsuario;
+                    return true;
                 }
-                return true;
+                if (Constantes.IdUsuarioLogado != usuario.Id)
+                    throw new Exception("Usuario ou senha inválido.");
+                return false;
             }
             else
                 throw new Exception("Usuario ou senha inválido.");

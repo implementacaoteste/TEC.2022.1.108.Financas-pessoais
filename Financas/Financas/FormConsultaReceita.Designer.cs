@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.receitaDataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +39,8 @@
             this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBuscarReceita = new System.Windows.Forms.Button();
             this.buttonAdicionarReceita = new System.Windows.Forms.Button();
             this.textBoxConsultarReceita = new System.Windows.Forms.TextBox();
@@ -54,8 +56,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxReceitaTotal = new ComponentesDesktop.TextBoxDinheiro();
             this.textBoxDespesaTotal = new ComponentesDesktop.TextBoxDinheiro();
             this.textBoxSaldoTotal = new ComponentesDesktop.TextBoxDinheiro();
@@ -92,8 +92,8 @@
             // Id
             // 
             this.Id.DataPropertyName = "Id";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
@@ -103,10 +103,10 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle2;
             this.Valor.HeaderText = "Valor";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -143,15 +143,28 @@
             // DataEmissao
             // 
             this.DataEmissao.DataPropertyName = "DataEmissao";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "d";
-            dataGridViewCellStyle15.NullValue = null;
-            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.DataEmissao.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataEmissao.HeaderText = "Data de Emissao";
             this.DataEmissao.MinimumWidth = 6;
             this.DataEmissao.Name = "DataEmissao";
             this.DataEmissao.ReadOnly = true;
             this.DataEmissao.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descricao";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 140;
+            // 
+            // receitaBindingSource
+            // 
+            this.receitaBindingSource.DataSource = typeof(Models.Receita);
             // 
             // buttonBuscarReceita
             // 
@@ -325,41 +338,34 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Saldo:";
             // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descricao";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 140;
-            // 
-            // receitaBindingSource
-            // 
-            this.receitaBindingSource.DataSource = typeof(Models.Receita);
-            // 
             // textBoxReceitaTotal
             // 
             this.textBoxReceitaTotal.Location = new System.Drawing.Point(23, 641);
             this.textBoxReceitaTotal.Name = "textBoxReceitaTotal";
+            this.textBoxReceitaTotal.ReadOnly = true;
             this.textBoxReceitaTotal.Size = new System.Drawing.Size(100, 22);
             this.textBoxReceitaTotal.TabIndex = 17;
+            this.textBoxReceitaTotal.Text = "0,00";
             this.textBoxReceitaTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxDespesaTotal
             // 
             this.textBoxDespesaTotal.Location = new System.Drawing.Point(144, 641);
             this.textBoxDespesaTotal.Name = "textBoxDespesaTotal";
+            this.textBoxDespesaTotal.ReadOnly = true;
             this.textBoxDespesaTotal.Size = new System.Drawing.Size(100, 22);
             this.textBoxDespesaTotal.TabIndex = 17;
+            this.textBoxDespesaTotal.Text = "0,00";
             this.textBoxDespesaTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxSaldoTotal
             // 
             this.textBoxSaldoTotal.Location = new System.Drawing.Point(263, 641);
             this.textBoxSaldoTotal.Name = "textBoxSaldoTotal";
+            this.textBoxSaldoTotal.ReadOnly = true;
             this.textBoxSaldoTotal.Size = new System.Drawing.Size(100, 22);
             this.textBoxSaldoTotal.TabIndex = 17;
+            this.textBoxSaldoTotal.Text = "0,00";
             this.textBoxSaldoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // FormConsultaReceita

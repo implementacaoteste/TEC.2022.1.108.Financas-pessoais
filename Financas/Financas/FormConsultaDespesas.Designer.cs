@@ -115,7 +115,7 @@
             this.DataEmissao});
             this.despesasDataGridView.DataSource = this.despesasBindingSource;
             this.despesasDataGridView.Location = new System.Drawing.Point(35, 135);
-            this.despesasDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.despesasDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.despesasDataGridView.Name = "despesasDataGridView";
             this.despesasDataGridView.ReadOnly = true;
             this.despesasDataGridView.RowHeadersWidth = 51;
@@ -199,7 +199,7 @@
             // 
             this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdicionar.Location = new System.Drawing.Point(980, 109);
-            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(95, 23);
             this.buttonAdicionar.TabIndex = 9;
@@ -306,9 +306,11 @@
             // 
             // textBoxDespesaTotal
             // 
+            this.textBoxDespesaTotal.ForeColor = System.Drawing.Color.Red;
             this.textBoxDespesaTotal.Location = new System.Drawing.Point(35, 643);
             this.textBoxDespesaTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDespesaTotal.Name = "textBoxDespesaTotal";
+            this.textBoxDespesaTotal.ReadOnly = true;
             this.textBoxDespesaTotal.Size = new System.Drawing.Size(89, 22);
             this.textBoxDespesaTotal.TabIndex = 15;
             this.textBoxDespesaTotal.Text = "0,00";
@@ -316,9 +318,11 @@
             // 
             // textBoxReceitaTotal
             // 
+            this.textBoxReceitaTotal.ForeColor = System.Drawing.Color.Lime;
             this.textBoxReceitaTotal.Location = new System.Drawing.Point(141, 643);
             this.textBoxReceitaTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxReceitaTotal.Name = "textBoxReceitaTotal";
+            this.textBoxReceitaTotal.ReadOnly = true;
             this.textBoxReceitaTotal.Size = new System.Drawing.Size(89, 22);
             this.textBoxReceitaTotal.TabIndex = 15;
             this.textBoxReceitaTotal.Text = "0,00";
@@ -326,9 +330,10 @@
             // 
             // textBoxSaldoTotal
             // 
-            this.textBoxSaldoTotal.Location = new System.Drawing.Point(247, 643);
+            this.textBoxSaldoTotal.Location = new System.Drawing.Point(243, 643);
             this.textBoxSaldoTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSaldoTotal.Name = "textBoxSaldoTotal";
+            this.textBoxSaldoTotal.ReadOnly = true;
             this.textBoxSaldoTotal.Size = new System.Drawing.Size(89, 22);
             this.textBoxSaldoTotal.TabIndex = 15;
             this.textBoxSaldoTotal.Text = "0,00";
