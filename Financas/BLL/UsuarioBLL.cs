@@ -50,7 +50,7 @@ namespace BLL
         }
         public void Excluir(int _id)
         {
-            if (Constantes.IdUsuarioLogado != -1)
+            if (Constantes.IdUsuarioLogado != 0)
                 throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             int id = new UsuarioDAL().ValidarMovimentacaoUsuario(_id).Id;
 
