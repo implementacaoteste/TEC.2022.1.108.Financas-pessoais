@@ -276,7 +276,7 @@
             this.panel1.Controls.Add(bancoLabel);
             this.panel1.Controls.Add(this.buttonBuscarContatoContasPagar);
             this.panel1.Controls.Add(this.bancoTextBox);
-            this.panel1.Location = new System.Drawing.Point(81, 96);
+            this.panel1.Location = new System.Drawing.Point(90, 96);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(645, 370);
@@ -290,6 +290,7 @@
             this.textBoxDinheiro1.Name = "textBoxDinheiro1";
             this.textBoxDinheiro1.Size = new System.Drawing.Size(164, 22);
             this.textBoxDinheiro1.TabIndex = 2;
+            this.textBoxDinheiro1.Text = "0,00";
             this.textBoxDinheiro1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxDinheiro1.TextChanged += new System.EventHandler(this.textBoxDinheiro1_TextChanged);
             this.textBoxDinheiro1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxDinheiro1_KeyDown);
