@@ -133,7 +133,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(354, 343);
+            this.buttonSalvar.Location = new System.Drawing.Point(519, 334);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(77, 36);
             this.buttonSalvar.TabIndex = 9;
@@ -144,7 +144,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.Location = new System.Drawing.Point(464, 344);
+            this.buttonCancelar.Location = new System.Drawing.Point(602, 334);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(101, 36);
             this.buttonCancelar.TabIndex = 10;
@@ -155,7 +155,7 @@
             // buttonSair
             // 
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(597, 344);
+            this.buttonSair.Location = new System.Drawing.Point(114, 334);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 36);
             this.buttonSair.TabIndex = 11;
