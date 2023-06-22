@@ -13,19 +13,18 @@ namespace BLL
     {
         private void ValidarDadosContato(Contato _contato)
         {
-            _contato.Descricao = _contato.Descricao.Trim();
-            _contato.Endereco = _contato.Endereco.Trim();
-            _contato.Nome = _contato.Nome.Trim();
 
-            if (_contato.Numero == null || _contato.Numero.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Length != 11)
+            if (_contato.Numero == null || _contato.Numero.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Length < 10 && _contato.Numero.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Length > 11)
                 throw new Exception("O número do contato deve conter 11 caracteres") { Data = { { "Id", 0 } } }; ;
-
             if (_contato.Descricao == null || _contato.Descricao.Length < 3)
                 throw new Exception("O campo descrição deve ter mais que dois caractéres.") { Data = { { "Id", 1 } } };
+            _contato.Descricao = _contato.Descricao.Trim();
             if (_contato.Endereco == null || _contato.Descricao.Length < 3)
                 throw new Exception("O campo endereco deve ter mais que dois caractéres.") { Data = { { "Id", 2 } } }; ;
+            _contato.Endereco = _contato.Endereco.Trim();
             if (_contato.Nome == null || _contato.Descricao.Length < 3)
                 throw new Exception("O campo nome deve ter mais que dois caractéres.") { Data = { { "Id", 3 } } }; ;
+            _contato.Nome = _contato.Nome.Trim();
         }
         public void Inserir(Contato _contato)
         {

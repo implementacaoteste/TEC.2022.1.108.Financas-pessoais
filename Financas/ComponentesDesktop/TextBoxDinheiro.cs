@@ -14,8 +14,8 @@ namespace ComponentesDesktop
 
         private void InitializeTextBox()
         {
-            this.KeyPress += TextBoxDinheiro_KeyPress;
-            this.TextChanged += TextBoxDinheiro_TextChanged;
+            //this.KeyPress += TextBoxDinheiro_KeyPress;
+            //this.TextChanged += TextBoxDinheiro_TextChanged;
         }
 
         private void TextBoxDinheiro_KeyPress(object sender, KeyPressEventArgs e)

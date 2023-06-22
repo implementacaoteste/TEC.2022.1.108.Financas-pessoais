@@ -56,26 +56,20 @@ namespace Financas
                     MessageBox.Show("Não existe registro a ser alterado");
                     return;
                 }
-                if (Constantes.IdUsuarioLogado != ((Usuario)usuarioBindingSource.Current).Id)
-                    if (MessageBox.Show("Você não pode alterar os dados de outro usuário. Deseja alterar os seus próprios dados", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                        return;
 
-                if (Constantes.IdUsuarioLogado == ((Usuario)usuarioBindingSource.Current).Id)
-                    if (MessageBox.Show("Para continuar você precisa confirmar sua identidade. \nDeseja continuar?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                        return;
-               
-                using (FormLogin frm = new FormLogin(false))
+                if (Constantes.IdUsuarioLogado != 0)
                 {
-                    frm.ShowDialog();
-                    if (!frm.Logou)
-                        return;
-                }
+                    if (Constantes.IdUsuarioLogado != ((Usuario)usuarioBindingSource.Current).Id)
+                        if (MessageBox.Show("Você não pode alterar os dados de outro usuário. Deseja alterar os seus próprios dados", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                            return;
 
-                using (FormCadastroUsuario frm = new FormCadastroUsuario(Constantes.IdUsuarioLogado))
-                {
-                    frm.ShowDialog();
+                    if (Constantes.IdUsuarioLogado == ((Usuario)usuarioBindingSource.Current).Id)
+                        if (MessageBox.Show("Para continuar você precisa confirmar sua identidade. \nDeseja continuar?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                            return;
+
+                    AlterarUsuario(Constantes.IdUsuarioLogado);
                 }
-                buttonBuscar_Click(null, null);
+                AlterarUsuario(((Usuario)usuarioBindingSource.Current).Id);
             }
             catch (Exception ex)
             {
@@ -83,18 +77,30 @@ namespace Financas
             }
         }
 
+        private void AlterarUsuario(int _idUsuario)
+        {
+            using (FormLogin frm = new FormLogin(false))
+            {
+                frm.ShowDialog();
+                if (!frm.Logou)
+                    return;
+            }
+
+            using (FormCadastroUsuario frm = new FormCadastroUsuario(_idUsuario))
+            {
+                frm.ShowDialog();
+            }
+
+            buttonBuscar_Click(null, null);
+        }
+
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
             try
             {
                 if (usuarioBindingSource.Count <= 0)
-                {
-                    MessageBox.Show("Não existe registro para ser excluído");
-                    return;
-                }
-                if (Constantes.IdUsuarioLogado != ((Usuario)usuarioBindingSource.Current).Id)
-                    if (MessageBox.Show("Você não pode excluir os dados de outro usuário. Deseja alterar os seus próprios dados", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                        return;
+                    throw new Exception("Não existe registro para ser excluído");
+
 
                 int id = ((Usuario)usuarioBindingSource.Current).Id;
                 new UsuarioBLL().Excluir(id);
@@ -126,7 +132,7 @@ namespace Financas
 
         private void FormConsultaUsuario_Load(object sender, EventArgs e)
         {
-         
+
             this.BackgroundImage = Image.FromFile(Environment.CurrentDirectory + "\\ProjetoFundo2.png");
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
         }
