@@ -22,23 +22,18 @@ namespace BLL
         }
         public void Inserir(ContasReceber _contasReceber)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
-
             ValidarDados(_contasReceber);
             new ContasReceberDAL().Inserir(_contasReceber);
         }
         public void Alterar(ContasReceber _contasReceber)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             ValidarDados(_contasReceber);
             new ContasReceberDAL().Alterar(_contasReceber);
         }
         public void Excluir(int _id)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
+            if (new ContasReceberDAL().BuscarPorId(_id).DataPagamento != null)
+                throw new Exception("Esta conta ja foi paga!\nPrecisa fazer o estorno para realizar a exlusão");
             new ContasReceberDAL().Excluir(_id);
         }
         public List<ContasReceber> BuscarTodos()

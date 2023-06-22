@@ -134,13 +134,13 @@ namespace Financas
             {
                 if (contasReceberBindingSource.Count <= 0)
                 {
-                    MessageBox.Show("Não existro a ser alterado");
+                    MessageBox.Show("Não existe registro a ser alterado");
                     return;
                 }
                 int id = ((ContasReceber)contasReceberBindingSource.Current).Id;
                 if (((ContasReceber)contasReceberBindingSource.Current).DataPagamento != null && ((ContasReceber)contasReceberBindingSource.Current).DataPagamento.Value.Year > 2000)
                 {
-                    throw new Exception("Este registro já foi pago! não pode ser alterado");
+                    throw new Exception("Este registro já foi pago! \nNão pode ser alterado");
                 }
                 using (FormCadastroContasReceber frm = new FormCadastroContasReceber(id))
                 {

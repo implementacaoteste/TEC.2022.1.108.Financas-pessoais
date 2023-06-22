@@ -22,8 +22,6 @@ namespace BLL
         }
         public void Inserir(Receita _receita, ContasReceber _contasReceber = null)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             if (_contasReceber != null && _contasReceber.DataPagamento != null && _contasReceber.DataPagamento.Value.Year > 2000)
                 throw new Exception("Este registro já foi pago!");
             ValidarDados(_receita);
@@ -31,15 +29,11 @@ namespace BLL
         }
         public void Alterar(Receita _receita)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             ValidarDados(_receita);
             new ReceitaDAL().Alterar(_receita);
         }
         public void Excluir(int _id)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             int idContasReceber = new ReceitaDAL().BuscarPorId(_id).IdContasReceber;
 
             if (idContasReceber != 0)

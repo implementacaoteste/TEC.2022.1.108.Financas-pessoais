@@ -19,9 +19,6 @@ namespace BLL
         }
         public void Inserir(Despesas _despesas, ContasPagar _contasPagar = null)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
-
             if (_contasPagar != null && _contasPagar.DataPagamento != null && _contasPagar.DataPagamento.Value.Year > 2000)
                 throw new Exception("Este registro já foi pago!");
 
@@ -39,8 +36,6 @@ namespace BLL
         }
         public void Alterar(Despesas _despesas)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             if (_despesas.Descricao == null || _despesas.Descricao.Length < 3)
                 throw new Exception("O campo descrição deve ter mais que dois caractéres.");
 
@@ -50,8 +45,6 @@ namespace BLL
         }
         public void Excluir(int _id)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             int idContasPagar = new DespesasDAL().BuscarPorId(_id).IdContasPagar;
 
             if (idContasPagar != 0)

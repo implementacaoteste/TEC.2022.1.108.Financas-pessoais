@@ -133,10 +133,15 @@ namespace Financas
         {
             try
             {
-                int id = ((ContasPagar)contasPagarBindingSource.Current).Id;
-                if (((ContasPagar)contasPagarBindingSource.Current).DataPagamento != null && ((ContasReceber)contasPagarBindingSource.Current).DataPagamento.Value.Year > 2000)
+                if (contasPagarBindingSource.Count <= 0)
                 {
-                    throw new Exception("Este registro já foi pago! não pode ser alterado");
+                    MessageBox.Show("Não existe registro a ser alterado");
+                    return;
+                }
+                int id = ((ContasPagar)contasPagarBindingSource.Current).Id;
+                if (((ContasPagar)contasPagarBindingSource.Current).DataPagamento != null && ((ContasPagar)contasPagarBindingSource.Current).DataPagamento.Value.Year > 2000)
+                {
+                    throw new Exception("Este registro já foi pago! \nNão pode ser alterado");
                 }
                 using (FormCadastroContasPaga frm = new FormCadastroContasPaga(id))
                 {

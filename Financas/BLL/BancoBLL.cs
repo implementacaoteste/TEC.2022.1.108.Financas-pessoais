@@ -25,23 +25,16 @@ namespace BLL
         }
         public void Inserir(Banco _banco)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             ValidarDados(_banco);
             new BancoDAL().Inserir(_banco);
         }
         public void Alterar(Banco _banco)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
             ValidarDados(_banco);
             new BancoDAL().Alterar(_banco);
         }
         public void Excluir(int _id)
         {
-            if (Constantes.IdUsuarioLogado == -1)
-                throw new Exception("Este usuário não possui permissão para realizar essa operação.");
-
             int id = new BancoDAL().ValidarMovimentacaoBanco(_id).Id;
 
             if (id != 0)
