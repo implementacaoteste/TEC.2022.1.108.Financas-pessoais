@@ -14,7 +14,7 @@ namespace BLL
         private void ValidarDadosContato(Contato _contato)
         {
 
-            if (_contato.Numero == null || _contato.Numero.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Length != 11)
+            if (_contato.Numero == null || _contato.Numero.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Length < 10 && _contato.Numero.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Length > 11)
                 throw new Exception("O número do contato deve conter 11 caracteres") { Data = { { "Id", 0 } } }; ;
             if (_contato.Descricao == null || _contato.Descricao.Length < 3)
                 throw new Exception("O campo descrição deve ter mais que dois caractéres.") { Data = { { "Id", 1 } } };
