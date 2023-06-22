@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -242,6 +243,8 @@ namespace Financas
             using (FormLogin frm = new FormLogin())
             {
                 frm.ShowDialog();
+                if(frm.Logou == false)
+                    Application.Exit();
             }
             linkLabel1.Visible = Constantes.IdUsuarioLogado == -1;
             toolStripStatusLabelUsuario.Text = "Usuário: " + Constantes.NomeUsuarioLogado;
